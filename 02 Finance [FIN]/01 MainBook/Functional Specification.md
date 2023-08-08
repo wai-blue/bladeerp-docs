@@ -1,3 +1,5 @@
+# Functional Specification
+
 Sumárny syntetický účet má analytický účet vždy “000”.
 
 Možné hodnoty pre Typ účtu:
