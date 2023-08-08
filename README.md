@@ -1,0 +1,1 @@
+Specifikacia BladeERP
