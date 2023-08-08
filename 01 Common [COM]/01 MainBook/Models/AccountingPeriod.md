@@ -26,7 +26,7 @@ V modeli nie sú použité konštanty.
 | Názov | Popis | Typ | Dĺžka | NULL | Default |
 | - | - | - | - | - | - |
 | id | Unique record ID | INT | 8 | NOT NULL | 0 |
-| name | Názov účtovného obdobia | VARCHAR | 100 | NOT NULL | “” |
+| name | Názov účtovného obdobia | VARCHAR | 100 | NOT NULL | "" |
 | start_date | Začiatok účtovného obdobia | DATE | 8 | NOT NULL |  |
 | end_date | Koniec účtovného obdobia | DATE | 8 | NOT NULL |  |
 | is_open | Príznak, či je účtovné obdobie otvorené a je možné v rámci tohto obdobia pridávať doklady | BOOLEAN | 1 | NOT NULL | 1 |

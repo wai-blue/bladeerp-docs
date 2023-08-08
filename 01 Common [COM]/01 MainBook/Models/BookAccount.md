@@ -32,9 +32,9 @@ Vzor účtovnej osnovy https://www.ako-uctovat.sk/uctovna-osnova.php.
 | Column | Description | Type | Length | NULL | Default |
 | - | - | - | - | - | - |
 | id | Unique record ID | INT | 8 | NOT NULL | 0 |
-| name |  Názov účtu |  VARCHAR |  100 |  NOT NULL |  “” |
-| description |  Popis účtu |  TEXT |   |  NULL |  “” |
-| account |  Číslo účtu |  VARCHAR |  3 |  NOT NULL |  “” |
+| name |  Názov účtu |  VARCHAR |  100 |  NOT NULL |  "" |
+| description |  Popis účtu |  TEXT |   |  NULL |  "" |
+| account |  Číslo účtu |  VARCHAR |  3 |  NOT NULL |  "" |
 | state |  Stav účtu |  ENUM |  1 |  NOT NULL |  1 |
 | side |  Strana, na ktorú sa účtuje |  ENUM |  1 |  NOT NULL |  1 |
 | opening_balance |  Počiatočný stav na účte |  DECIMAL |  15,2 |  NOT NULL |  0 |
