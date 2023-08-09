@@ -6,7 +6,7 @@ Detail nového účtovného obdobia.
 
 ## Main View
 
-UI/Grid
+Grid
 
 ## Layout
 

@@ -6,7 +6,7 @@ Zoznam účtovných období.
 
 ## Main View
 
-UI/Table
+Table
 
 ## Columns
 

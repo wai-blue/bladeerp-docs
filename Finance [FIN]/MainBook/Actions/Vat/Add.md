@@ -6,7 +6,7 @@ Vytvorenie novej sadzby DPH.
 
 ## Main View
 
-UI/Form
+Form
 
 ## Parameters
 

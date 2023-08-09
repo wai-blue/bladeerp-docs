@@ -6,7 +6,7 @@ Vytvorenie nového účtu.
 
 ## Main View
 
-UI/Form
+Form
 
 ## Parameters
 

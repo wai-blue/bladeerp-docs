@@ -6,7 +6,7 @@ Zoznam všetkých účtovných závierok.
 
 ## Main View
 
-UI/Table
+Table
 
 ## Parameters
 

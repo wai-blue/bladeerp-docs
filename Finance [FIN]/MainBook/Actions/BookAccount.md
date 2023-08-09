@@ -8,7 +8,7 @@ Tabuľka sa bude zobrazovať iba v detaili účtovného obdobia. Záznamy sa bud
 
 ## Main View
 
-UI/Table
+Table
 
 ## Columns
 

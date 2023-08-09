@@ -6,7 +6,7 @@ Detail účtovnej závierky. Dáta v uzávierke nie je možné meniť.
 
 ## Main View
 
-UI/Grid
+Grid
 
 ## Parameters
 

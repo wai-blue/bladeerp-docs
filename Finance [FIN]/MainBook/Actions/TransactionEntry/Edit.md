@@ -6,7 +6,7 @@ Detail položky dokladu.
 
 ## Main View
 
-UI/Form
+Form
 
 ## Parameters
 

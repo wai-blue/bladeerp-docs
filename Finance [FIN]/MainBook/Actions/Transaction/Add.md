@@ -6,7 +6,7 @@ Vytvorenie nového dokladu.
 
 ## Main View
 
-UI/Form
+Form
 
 ## Parameters
 

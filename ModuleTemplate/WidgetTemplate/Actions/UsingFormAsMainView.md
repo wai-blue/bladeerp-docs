@@ -6,7 +6,7 @@ Vytvorenie novej uzávierky.
 
 ## Main View
 
-UI/Form
+Form
 
 ## Parameters
 

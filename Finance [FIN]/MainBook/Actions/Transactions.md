@@ -6,7 +6,7 @@ Všetky doklady z denníka.
 
 ## Main View
 
-UI/Table
+Table
 
 ## Parameters
 

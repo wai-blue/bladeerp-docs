@@ -6,7 +6,7 @@ Detail dokladu. Ak je doklad uzavretý, zobrazuje sa iba na čítanie a nie je h
 
 ## Main View
 
-UI/Grid
+Grid
 
 ## Parameters
 

@@ -6,7 +6,7 @@ Zoznam sadzieb DPH v účtovnom období. Zoznam sa bude zobrazovať iba v detail
 
 ## Main View
 
-UI/Table
+Table
 
 ## Parameters
 

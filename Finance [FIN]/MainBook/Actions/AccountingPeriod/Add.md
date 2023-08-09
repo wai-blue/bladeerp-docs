@@ -6,7 +6,7 @@ Vytvorenie nového účtovného obdobia.
 
 ## Main View
 
-UI/Form
+Form
 
 ## Parameters
 

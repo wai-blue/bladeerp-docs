@@ -6,7 +6,7 @@ Zoznam položiek z dokladu. Zoznam sa bude zobrazovať iba v detaile dokladu.
 
 ## Main View
 
-UI/Table
+Table
 
 ## Parameters
 

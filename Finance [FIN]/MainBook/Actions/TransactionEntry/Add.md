@@ -6,7 +6,7 @@ Vytvorenie novej položky dokladu.
 
 ## Main View
 
-UI/Form
+Form
 
 ## Parameters
 
