@@ -17,13 +17,14 @@ Grid
     ```
 * areas:
   * A:
-    * view: UI/InlineForm
+    * view: Form
+    * cssClass: inline
     * template:
       * id_fin_accounting_period
       * date_transaction
       * amount (readonly)
       * is_accounted
   * B:
-    * action:
-      * Widgets/Finance/MainBook/TransactionEntries
+    * action: Widgets/Finance/MainBook/TransactionEntries
+    * parameters:
       * idTransaction = $data[‘id’]

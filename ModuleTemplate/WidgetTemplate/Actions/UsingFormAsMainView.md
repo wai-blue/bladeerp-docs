@@ -1,4 +1,4 @@
-# Finance/AccountingStatement/FinancialStatement/Add
+# UsingFormAsMainView
 
 ## Description
 
@@ -10,6 +10,10 @@ Form
 
 ## Parameters
 
+(vid ADIOS.repo/src/Core/View/Form.php)
+
+* cssClass: inline
+* displayMode: (inline|window|desktop)
 * template:
   * name
   * id_fin_accounting_period (readonly)

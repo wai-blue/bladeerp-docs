@@ -9,8 +9,11 @@
 
 ## Properties
 
+(vid ADIOS.repo/src/Core/Model.php)
+
 | Property | Value |
 | - | - |
+| isCrossTable | TRUE/FALSE |
 | sqlName |  |
 | urlBase |  |
 | lookupSqlValue |  |
@@ -25,6 +28,8 @@
 | id | Unique record ID | INT | 8 | NOT NULL | 0 |
 
 ## Columns
+
+(vid ADIOS.repo/src/Core/DB/DataTypes, hladaj $params)
 
 ## Foreign Keys
 
