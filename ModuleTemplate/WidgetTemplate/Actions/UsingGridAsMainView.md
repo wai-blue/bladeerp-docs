@@ -30,6 +30,6 @@ Grid
     * parameters:
       * idFinancialStatement = $data[‘id’]
   * C:
-    * (view|action): App/Core/MyCustomView
+    * (view|action): App/Core/Views/MyCustomView
     * parameters:
       * ... any parameters that the custom view can accept
