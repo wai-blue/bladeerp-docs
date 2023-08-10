@@ -1,8 +1,8 @@
-# Finance/AccountingStatement/FinancialStatement/View
+# UsingGridAsMainView
 
 ## Description
 
-Detail účtovnej závierky. Dáta v uzávierke nie je možné meniť.
+Sample definition of action using a Grid.
 
 ## Main View
 
@@ -10,14 +10,17 @@ Grid
 
 ## Parameters
 
+*Note: "view" is rendered immediately, "action" is rendered via AJAX request*
+
 * layout:
   ```
-    Area A - Closing Period
-    Area B - Account Balances
+    A A
+    B C
+    B C
   ```
 * areas:
   * A:
-    * view: UI/InlineForm
+    * view: Form
     * template:
       * id_fin_accounting_period (readonly)
       * name (readonly)
@@ -26,3 +29,7 @@ Grid
     * action: Widgets/Finance/MainBook/FinancialStatementsEntries
     * parameters:
       * idFinancialStatement = $data[‘id’]
+  * C:
+    * (view|action): App/Core/MyCustomView
+    * parameters:
+      * ... any parameters that the custom view can accept

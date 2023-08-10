@@ -6,7 +6,7 @@ Some custom action rendering some custom view.
 
 ## Main View
 
-App/Core/View/MyCustomView
+App/Core/Views/MyCustomView
 
 ## Parameters
 
