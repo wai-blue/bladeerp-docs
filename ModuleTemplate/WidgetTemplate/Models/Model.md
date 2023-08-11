@@ -5,18 +5,20 @@
 
 ## Constants
 
-| Constant | Value | Description |
-| -------- | ----- | ----------- |
-|          |       |             |
+[V modeli nie sú použité konštanty.]
 
-V modeli nie sú použité konštanty.
+| Constant                   | Value | Description                    |
+| :------------------------- | :---: | :----------------------------- |
+| FIN_BOOK_ACCOUNT_SIDE_BOTH |   1   | Je možné účtovať na obe strany |
+| FIN_BOOK_ACCOUNT_SIDE_GET  |   2   | Účet na strane Má dať          |
+| FIN_BOOK_ACCOUNT_SIDE_PUT  |   3   | Účet na strane Dal             |
 
 ## Properties
 
 (vid ADIOS.repo/src/Core/Model.php)
 
 | Property              | Value                                     |
-| --------------------- | ----------------------------------------- |
+| :-------------------- | :---------------------------------------- |
 | isCrossTable          | TRUE/FALSE                                |
 | sqlName               | [modulprefix_model_name v množnom čísle]  |
 | urlBase               | [modul/widget/model-name v množnom čísle] |
@@ -27,14 +29,14 @@ V modeli nie sú použité konštanty.
 
 ## SQL Structure
 
-| Column         | Description                    | Type    | Length | NULL     | Default |
-| :------------- | :----------------------------- | :------ | :----- | :------- | :------ |
-| id             | ID záznamu                     | INT     | 8      | NOT NULL |         |
-| name           | Krátky text                    | VARCHAR | 100    | NOT NULL | “”      |
-| description    | Dlhý text                      | TEXT    |        | NULL     |         |
-| maturity_date  | Dátum splatnosti               | DATE    | 8      | NOT NULL |         |
-| is_open        | Logická hodnota                | BOOLEAN | 1      | NOT NULL | 1       |
-| state_sequence | Poradové číslo v select boxoch | INT     | 6      | NOT NULL |         |
+| Column         | Description                    |  Type   | Length | NULL     | Default |
+| :------------- | :----------------------------- | :-----: | :----: | :------- | :-----: |
+| id             | ID záznamu                     |   INT   |   8    | NOT NULL |         |
+| name           | Krátky text                    | VARCHAR |  100   | NOT NULL |   “”    |
+| description    | Dlhý text                      |  TEXT   |        | NULL     |         |
+| maturity_date  | Dátum splatnosti               |  DATE   |   8    | NOT NULL |         |
+| is_open        | Logická hodnota                | BOOLEAN |   1    | NOT NULL |    1    |
+| state_sequence | Poradové číslo v select boxoch |   INT   |   6    | NOT NULL |         |
 
 ## Columns
 
@@ -89,19 +91,23 @@ V modeli nie sú použité konštanty.
 
 ## Foreign Keys
 
+[Model neobsahuje cudzie kľúče.]
+
 | Column                   | Parent table           | Relation | OnUpdate | OnDelete |
-| :----------------------- | :--------------------- | -------- | -------- | -------- |
-| id_fin_accounting_period | fin_accounting_periods | 1:N      | Cascade  | Cascade  |
-| id_fin_account_type      | fin_account_types      | 1:N      | Cascade  | Restrict |
+| :----------------------- | :--------------------- | :------: | -------- | -------- |
+| id_fin_accounting_period | fin_accounting_periods |   1:N    | Cascade  | Cascade  |
+| id_fin_account_type      | fin_account_types      |   1:N    | Cascade  | Restrict |
 
 ## Indexes
 
-| Name           | Type    | Column + Order |
-| :------------- | :------ | :------------- |
-| id             | PRIMARY | id ASC         |
-| simple_index   | INDEX   | name ASC       |
+[Pre túto tabuľku nie sú definované indexy.]
+
+| Name           |  Type   | Column + Order |
+| :------------- | :-----: | -------------: |
+| id             | PRIMARY |         id ASC |
+| simple_index   |  INDEX  |       name ASC |
 | unique_index   | UNIQUE  | start_date ASC |
-| combined_index | INDEX   | is_open ASC    |
+| combined_index |  INDEX  |    is_open ASC |
 |                |         | start_date ASC |
 
 ## Callbacks
