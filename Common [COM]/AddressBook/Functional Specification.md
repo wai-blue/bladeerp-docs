@@ -5,4 +5,6 @@ Adresár slúži na evidenciu:
 * adries (fakturačných aj doručovacích)
 * kontaktných osob
 
+REVIEW DD: Nevidel som zatial v navrhu clenenie na zakaznikov a dodavatelov.
+
 Adresár umožňuje vytvárať a priradzovať subjektom rôzne kategórie.

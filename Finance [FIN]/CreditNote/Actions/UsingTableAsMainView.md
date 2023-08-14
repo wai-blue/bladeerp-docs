@@ -1,14 +1,12 @@
-# Finance/AccountingStatement/FinancialStatementEntries
+# UsingTableAsMainView
 
 ## Description
 
-Tabuľka sa bude zobrazovať iba v detaili účtovnej závierky. Záznamy sa budú vyberať podľa id_fin_financial_statement.
+Sample definition of action using a Table.
 
 ## Main View
 
-UI/Tree
-
-TODO: UI/Tree alebo tabulka?
+Table
 
 ## Parameters
 

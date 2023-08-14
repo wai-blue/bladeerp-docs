@@ -37,6 +37,8 @@ Tabuľka neobsahuje cudzie kľúče.
 | is_active |  INDEX  | is_active DESC |
 | name      | UNIQUE  |       name ASC |
 
+REVIEW DD: Je potrebne mat is_active? Aka bude na to naviazana funkcnost?
+
 ## Columns
 * name:
   * required: true
