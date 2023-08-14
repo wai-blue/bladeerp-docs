@@ -1,5 +1,7 @@
 # ContactHasUser
 
+REVIEW DD: Zamyslam sa, ci je tato tabulka potrebna... V Contact mame lookup na ContactUser, t.j. vieme robit 1:N (1 pouzivatel moze byt spravca viacerych kontaktov). Je potrebne mat M:N? Povedal by som, ze pre zaciatok nam uplne staci 1:N a v buducnosti pridat takuto cross tabulku nie je zasadna zmena. Cize nateraz by som tuto tabulku vyhodil a buducnost ukaze, ci ju budeme potrebovat.
+
 ## Introduction
 Model slúži na prepojenie kontaktov s jeho používateľmi M:N.
 

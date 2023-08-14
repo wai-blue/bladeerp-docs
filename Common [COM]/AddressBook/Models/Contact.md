@@ -32,6 +32,9 @@ V modeli nie sú použité konštanty.
 | language_code          | Preferovaný jazyk    | VARCHAR |   10   | NULL     |         |
 | description            | Poznámka ku kontaktu |  TEXT   |        | NULL     |         |
 
+REVIEW DD: Viackrat sa pouziva is_active. Pride mi to zbytocne.
+REVIEW DD: Mame "id_com_contact_address" a aj ContactAddress.id_com_contact. Obavam sa, ze to bude sposobovat zmatok...
+
 ## Columns
 TODO: Nahradiť vzorové údaje
 * name:

@@ -28,6 +28,8 @@ V modeli nie sú použité konštanty.
 | description | Poznámka ku kategórii   |  TEXT   |        | NULL     |         |
 | is_active   | Či je kategória aktívna | BOOLEAN |   1    | NOT NULL |    1    |
 
+REVIEW DD: Je potrebne mat is_active? Aka bude na to naviazana funkcnost?
+
 ## Columns
 
 * name:

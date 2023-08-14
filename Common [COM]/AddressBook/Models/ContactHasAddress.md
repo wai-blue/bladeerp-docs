@@ -1,5 +1,7 @@
 # ContactHasAddress
 
+REVIEW DD: Podobna uvaha, ako v ContactHasUser... Na zaciatok staci, ked vieme jednemu kontaktu vytvorit N zaznamov s adresou (na to mame lookup ContactAddress.id_com_contact). Vazbu M:N nepotrebujeme.
+
 ## Introduction
 Model slúži na prepojenie kontaktov s adresami M:N .
 

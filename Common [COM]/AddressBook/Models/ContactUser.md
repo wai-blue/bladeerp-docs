@@ -44,6 +44,9 @@ V modeli nie sú použité konštanty.
 | new_pass_key           | Hash pre obnovenie hesla | VARCHAR  |   40   | NULL     |         |
 | new_pass_key_requested | Čas žiadosti o obnovenie | DATETIME |        | NULL     |         |
 
+REVIEW DD: Nie radsej "new_password_key", ked vsade pouzivame vyraz "password"?
+REVIEW DD: "new_pass_key_requested" je typu date, ale nema to v nazve ("_date" na konci). Podobne last_login.
+
 ## Columns
 
 TODO: Nahradiť vzorové údaje

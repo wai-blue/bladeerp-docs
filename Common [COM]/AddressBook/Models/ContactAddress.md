@@ -1,7 +1,7 @@
 # ContactAddress
 
 ## Introduction
-Model slúži na evidenciu fakturačných a doručovacích a doručovacích pre kontakty z adresára.
+Model slúži na evidenciu fakturačných a doručovacích a doručovacích adries pre kontakty z adresára.
 
 ## Constants
 
@@ -38,9 +38,15 @@ V modeli nie sú použité konštanty.
 | gps_longitude  | GPS dĺžka        | VARCHAR |  300   | NULL     |         |
 | gps_latitude   | GPS šírka        | VARCHAR |  300   | NULL     |         |
 
+REVIEW DD: Podla coho sa bude naplnat country_id? Nie je lepsie to mat ako varchar(3)?
+REVIEW DD: 2x is_active stlpec.
+REVIEW DD: Dva riadky pre adresu, cize napr. stlpce "address_line_1" a "address_line_2". Resp. miesto "address" by som pouzil "street", pretoze "address" znamena cely zaznam.
+REVIEW DD: Pri dorucovani je potrebne vediet aj telefon alebo email toho, kto bude preberat zasielku. Viem, ze su tieto udaje v ContactUser, ale nie je to nijako prepojene. A asi by som to ani neprepajal, ovela jednoduchsie je dat telefon a email priamo sem. A rozmyslam dalej - co keby sme zlucili ContactAddress a ContactUser dokopy? (nemam to premyslene, len navrhujem)
+
 ## Columns
 
 TODO: Nahradiť vzorové údaje
+REVIEW: Vsetky navrhy obsahuju aj SQL strukturu, pricom sme sa dohodli, ze tuto zrusime. Mne nevadi, ked tu ostane, ale ako teda?
 * name:
   * required: true
   * type: varchar
