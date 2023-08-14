@@ -20,16 +20,24 @@ V modeli nie sú použité konštanty.
 
 
 ## SQL Structure
+| Column      | Description |  Type   | Length | NULL     | Default |
+| :---------- | :---------- | :-----: | :----: | :------- | :-----: |
+| id          | ID záznamu  |   INT   |   8    | NOT NULL |         |
+| is_active   | Je aktívna? | BOOLEAN |   1    | NOT NULL |    1    |
+| name        | Názov       | VARCHAR |  100   | NOT NULL |         |
+| description | Poznámka    |  TEXT   |        | NULL     |         |
 
-| Column      | Description             |  Type   | Length | NULL     | Default |
-| :---------- | :---------------------- | :-----: | :----: | :------- | :-----: |
-| id          | ID záznamu              |   INT   |   8    | NOT NULL |         |
-| name        | Názov kategórie         | VARCHAR |  100   | NOT NULL |         |
-| description | Poznámka ku kategórii   |  TEXT   |        | NULL     |         |
-| is_active   | Či je kategória aktívna | BOOLEAN |   1    | NOT NULL |    1    |
+## Foreign Keys
+Tabuľka neobsahuje cudzie kľúče.
+
+## Indexes
+| Name      |  Type   | Column + Order |
+| :-------- | :-----: | -------------: |
+| id        | PRIMARY |         id ASC |
+| is_active |  INDEX  | is_active DESC |
+| name      | UNIQUE  |       name ASC |
 
 ## Columns
-
 * name:
   * required: true
   * type: varchar
@@ -48,61 +56,38 @@ V modeli nie sú použité konštanty.
   * description: Is the category active or not?
   * showColumn: true
 
-## Foreign Keys
-
-Tabuľka neobsahuje cudzie kľúče.
-
-## Indexes
-
-| Name |  Type   | Column + Order |
-| :--- | :-----: | -------------: |
-| id   | PRIMARY |         id ASC |
-| name | UNIQUE  |       name ASC |
-
 ## Callbacks
-
 ### onBeforeInsert
-
 Nepovoliť vloženie, ak hodnota **name** už tabuľke existuje.
 
 ### onAfterInsert
-
 Not used.
 
 ### onBeforeUpdate
-
 Neuložiť zmenu, ak hodnota **name** už tabuľke existuje.
 
 ### onAfterUpdate
-
 Not used.
 
 ### onBeforeDelete
-
 Nepovoliť vymazanie, ak je kategória použitá na niektorom kontakte (tbl: **com_contact_has_category**)
 
 ### onAfterDelete
-
 Not used.
 
 ## Formatters
 
 ### tableCellHTMLlFormatter
-
 Not used.
 
 ### tableCellCSVFormatter
-
 Not used.
 
 ### tableCellCSSFormatter
-
 Not used.
 
 ### tableRowCSSFormatter
-
 Not used.
 
 ### cardsCardHtmlFormatter
-
 Not used.

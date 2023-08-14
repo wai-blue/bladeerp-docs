@@ -2,145 +2,133 @@
 
 ## Introduction
 Model slúži na evidenciu a správu kontaktov.
+Primárna adresa kontaktu (cod: id_com_contact_address) slúži ako fakturačná adresa a všetky prepojené adresy (tab:com_contact_addresses, col: id_com_contact) môžu slúžiť ako doručovacie (aj vrátane fakturačnej).
 
 ## Constants
-
 V modeli nie sú použité konštanty.
 
 ## Properties
-
 | Property              | Value                        |
 | :-------------------- | :--------------------------- |
 | isCrossTable          | FALSE                        |
 | sqlName               | com_contacts                 |
 | urlBase               | common/address-book/contacts |
-| lookupSqlValue        | {%TABLE%}.last_name          |
+| lookupSqlValue        | -                            |
 | tableTitle            | Contacts                     |
 | formTitleForInserting | New Contact                  |
 | formTitleForEditing   | Contact                      |
 
 ## SQL Structure
-
 | Column                 | Description          |  Type   | Length | NULL     | Default |
 | :--------------------- | :------------------- | :-----: | :----: | :------- | :-----: |
 | id                     | ID záznamu           |   INT   |   8    | NOT NULL |         |
 | is_active              | Aktívny kontakt?     | BOOLEAN |   1    | NOT NULL |    1    |
-| id_com_contact_user    | ID kontaktnej osoby  |   INT   |   8    | NOT NULL |         |
 | id_com_contact_company | ID spoločnosti       |   INT   |   8    | NULL     |         |
 | id_com_contact_address | ID primárnej adresy  |   INT   |   8    | NULL     |         |
 | id_fin_currency        | ID používanej meny   |   INT   |   8    | NULL     |         |
 | language_code          | Preferovaný jazyk    | VARCHAR |   10   | NULL     |         |
+| website                | WEB stránka          | VARCHAR |  255   | NULL     |         |
 | description            | Poznámka ku kontaktu |  TEXT   |        | NULL     |         |
 
+## Foreign Keys
+| Column                 | Parent table          | Relation | OnUpdate | OnDelete |
+| :--------------------- | :-------------------- | :------: | -------- | -------- |
+| id_com_contact_company | com_contact_companies |   1:1    | Cascade  | Restrict |
+| id_com_contact_address | com_contact_addresses |   1:1    | Cascade  | Restrict |
+| id_fin_currency        | fin_currencies        |   1:1    | Cascade  | Restrict |
+
+## Indexes
+| Name      |  Type   | Column + Order |
+| :-------- | :-----: | -------------: |
+| id        | PRIMARY |         id ASC |
+| is_active |  INDEX  | is_active DESC |
+
 ## Columns
-TODO: Nahradiť vzorové údaje
-* name:
+* is_active:
+  * required: true
+  * type: boolean
+  * title: Is active
+  * description: Is contact active or not?
+  * showColumn: true
+* id_com_contact_company:
+  * required: false
+  * type: lookup
+  * title: Company
+  * model: Widgets/Common/AddressBook/Models/ContactCompany
+  * inputStyle:”select”
+  * showColumn: true
+  * foreignKeyOnUpdate: CASCADE
+  * foreignKeyOnDelete: RESTRICT
+* id_com_contact_address:
+  * required: false
+  * type: lookup
+  * title: Primary Address
+  * model: Widgets/Common/AddressBook/Models/ContactAddress
+  * inputStyle:”select”
+  * showColumn: true
+  * foreignKeyOnUpdate: CASCADE
+  * foreignKeyOnDelete: RESTRICT
+* id_fin_currency:
+  * required: false
+  * type: lookup
+  * title: Primary Currency
+  * model: Widgets/Finance/ExchangeRate/Models/Currency
+  * inputStyle:”select”
+  * showColumn: true
+  * foreignKeyOnUpdate: CASCADE
+  * foreignKeyOnDelete: RESTRICT
+* language_code:
   * required: true
   * type: varchar
-  * title: Name
-  * byte_size: 100
+  * title: Primary Language
+  * byte_size: 20
   * showColumn: true
+* website:
+  * required: false
+  * type: varchar
+  * title: Website
+  * description: URL address of contact.
+  * byte_size: 255
+  * showColumn: false
 * description:
   * required: false
   * type: text
   * title: Description
-  * showColumn: true
-* maturity_date:
-  * required: true
-  * type: date
-  * title: Maturity Date
-  * showColumn: true
-* is_open:
-  * required: true
-  * type: boolean
-  * title: Is open
-  * description: Is the document open or not?
-  * showColumn: true
-* state_sequence:
-  * required: true
-  * type: int
-  * title: Order In Selects
-  * description: Order of the item in input lists.
-  * byte_size: 6
-  * showColumn: true
-* balance:
-  * required: false
-  * type: float
-  * title: Balance
-  * byte_size: 15
-  * decimals: 2
-  * showColumn: true
-* id_fin_accounting_period:
-  * required: true
-  * type: lookup
-  * title: Previous Accounting Period
-  * model: Widgets/Finance/MainBook/Models/AccountingPeriod
-  * inputStyle:”select”
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: CASCADE
-
-
-## Foreign Keys
-
-| Column                  | Parent table          | Relation | OnUpdate | OnDelete |
-| :---------------------- | :-------------------- | :------: | -------- | -------- |
-| id_com_contact_company  | com_contact_companies |   1:N    | Cascade  | Cascade  |
-| id_com_contact_category | com_contact_category  |   1:N    | Cascade  | Restrict |
-| id_fin_currency         | fin_currencies        |   1:1    | Cascade  | Restrict |
-
-## Indexes
-
-| Name       |  Type   | Column + Order |
-| :--------- | :-----: | -------------: |
-| id         | PRIMARY |         id ASC |
-| first_name |  INDEX  | first_name ASC |
-| last_name  |  INDEX  |  last_name ASC |
+  * showColumn: false
 
 ## Callbacks
 
 ### onBeforeInsert
-
-Nepoužíva sa.
+Ak je kontakt spoločnosťou, musí mať vyplnené a previazané údaje o spoločnosti (col: id_com_contact_company)
 
 ### onAfterInsert
-
 Nepoužíva sa.
 
 ### onBeforeUpdate
-
 Nepoužíva sa.
 
 ### onAfterUpdate
-
 Nepoužíva sa.
 
 ### onBeforeDelete
-
 Nepoužíva sa.
 
 ### onAfterDelete
-
 Nepoužíva sa.
 
 ## Formatters
 
 ### tableCellHTMLlFormatter
-
 Nepoužíva sa.
 
 ### tableCellCSVFormatter
-
 Nepoužíva sa.
 
 ### tableCellCSSFormatter
-
 Nepoužíva sa.
 
 ### tableRowCSSFormatter
-
 Nepoužíva sa.
 
 ### cardsCardHtmlFormatter
-
 Nepoužíva sa.

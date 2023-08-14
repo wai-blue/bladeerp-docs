@@ -4,9 +4,7 @@
 [Stručný popis o dátach uchovávaných v modeli.]
 
 ## Constants
-
 [V modeli nie sú použité konštanty.]
-
 | Constant                   | Value | Description                    |
 | :------------------------- | :---: | :----------------------------- |
 | FIN_BOOK_ACCOUNT_SIDE_BOTH |   1   | Je možné účtovať na obe strany |
@@ -14,9 +12,7 @@
 | FIN_BOOK_ACCOUNT_SIDE_PUT  |   3   | Účet na strane Dal             |
 
 ## Properties
-
 (vid ADIOS.repo/src/Core/Model.php)
-
 | Property              | Value                                     |
 | :-------------------- | :---------------------------------------- |
 | isCrossTable          | TRUE/FALSE                                |
@@ -28,7 +24,6 @@
 | formTitleForEditing   | [Model Name]                              |
 
 ## SQL Structure
-
 | Column         | Description                    |  Type   | Length | NULL     | Default |
 | :------------- | :----------------------------- | :-----: | :----: | :------- | :-----: |
 | id             | ID záznamu                     |   INT   |   8    | NOT NULL |         |
@@ -38,10 +33,26 @@
 | is_open        | Logická hodnota                | BOOLEAN |   1    | NOT NULL |    1    |
 | state_sequence | Poradové číslo v select boxoch |   INT   |   6    | NOT NULL |         |
 
+## Foreign Keys
+[Model neobsahuje cudzie kľúče.]
+| Column                   | Parent table           | Relation | OnUpdate | OnDelete |
+| :----------------------- | :--------------------- | :------: | -------- | -------- |
+| id_fin_accounting_period | fin_accounting_periods |   1:N    | Cascade  | Cascade  |
+| id_fin_account_type      | fin_account_types      |   1:N    | Cascade  | Restrict |
+
+## Indexes
+[Pre túto tabuľku nie sú definované indexy.]
+| Name           |  Type   | Column + Order |
+| :------------- | :-----: | -------------: |
+| id             | PRIMARY |         id ASC |
+| simple_index   |  INDEX  |       name ASC |
+| unique_index   | UNIQUE  | start_date ASC |
+| combined_index |  INDEX  |    is_open ASC |
+|                |         | start_date ASC |
+
 ## Columns
-
 (vid ADIOS.repo/src/Core/DB/DataTypes, hladaj $params)
-
+TODO: Replace example columns with real one
 * name:
   * required: true
   * type: varchar
@@ -88,72 +99,39 @@
   * foreignKeyOnUpdate: CASCADE
   * foreignKeyOnDelete: CASCADE
 
-
-## Foreign Keys
-
-[Model neobsahuje cudzie kľúče.]
-
-| Column                   | Parent table           | Relation | OnUpdate | OnDelete |
-| :----------------------- | :--------------------- | :------: | -------- | -------- |
-| id_fin_accounting_period | fin_accounting_periods |   1:N    | Cascade  | Cascade  |
-| id_fin_account_type      | fin_account_types      |   1:N    | Cascade  | Restrict |
-
-## Indexes
-
-[Pre túto tabuľku nie sú definované indexy.]
-
-| Name           |  Type   | Column + Order |
-| :------------- | :-----: | -------------: |
-| id             | PRIMARY |         id ASC |
-| simple_index   |  INDEX  |       name ASC |
-| unique_index   | UNIQUE  | start_date ASC |
-| combined_index |  INDEX  |    is_open ASC |
-|                |         | start_date ASC |
-
 ## Callbacks
 
 ### onBeforeInsert
-
 Nepoužíva sa.
 
 ### onAfterInsert
-
 Nepoužíva sa.
 
 ### onBeforeUpdate
-
 Nepoužíva sa.
 
 ### onAfterUpdate
-
 Nepoužíva sa.
 
 ### onBeforeDelete
-
 Nepoužíva sa.
 
 ### onAfterDelete
-
 Nepoužíva sa.
 
 ## Formatters
 
 ### tableCellHTMLlFormatter
-
 Nepoužíva sa.
 
 ### tableCellCSVFormatter
-
 Nepoužíva sa.
 
 ### tableCellCSSFormatter
-
 Nepoužíva sa.
 
 ### tableRowCSSFormatter
-
 Nepoužíva sa.
 
 ### cardsCardHtmlFormatter
-
 Nepoužíva sa.
