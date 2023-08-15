@@ -25,3 +25,4 @@
       * https://www.topzine.cz/co-znamena-account-manager-vime-co-tato-profese-obnasi
       * https://cs.wikipedia.org/wiki/Account_manager
 
+
