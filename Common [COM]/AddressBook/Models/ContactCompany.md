@@ -74,33 +74,33 @@ Model neobsahuje cudzie kľúče.
 Nepovoliť vloženie, ak hodnota **company_name** alebo **business_number** alebo **tax_number** už tabuľke existuje.
 
 ### onAfterInsert
-Nepoužíva sa.
+Not used.
 
 ### onBeforeUpdate
 Nepovoliť úpravu, ak hodnota **company_name** alebo **business_number** alebo **tax_number** už tabuľke existuje.
 
 ### onAfterUpdate
-Nepoužíva sa.
+Not used.
 
 ### onBeforeDelete
 Nepovoliť vymazanie, ak je firma použitá na niektorom kontakte (tbl: com_contacts)
 
 ### onAfterDelete
-Nepoužíva sa.
+Not used.
 
 ## Formatters
 
-### tableCellHTMLlFormatter
-Nepoužíva sa.
+### tableCellHTMLFormatter
+Not used.
 
 ### tableCellCSVFormatter
-Nepoužíva sa.
+Not used.
 
 ### tableCellCSSFormatter
-Nepoužíva sa.
+Not used.
 
 ### tableRowCSSFormatter
-Nepoužíva sa.
+Not used.
 
 ### cardsCardHtmlFormatter
-Nepoužíva sa.
+Not used.

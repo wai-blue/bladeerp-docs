@@ -137,7 +137,7 @@ Not used.
 
 ## Formatters
 
-### tableCellHTMLlFormatter
+### tableCellHTMLFormatter
 
 Not used.
 

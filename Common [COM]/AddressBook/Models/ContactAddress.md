@@ -125,36 +125,36 @@ V modeli nie sú použité konštanty.
 ## Callbacks
 
 ### onBeforeInsert
-Nepoužíva sa.
+Not used.
 
 ### onAfterInsert
-Nepoužíva sa.
+Not used.
 
 ### onBeforeUpdate
 Nepovoliť deaktivovanie adresy, ktorá je uvedená ako primárna (tab: **com_contact**, col: **id_com_address**).
 
 ### onAfterUpdate
-Nepoužíva sa.
+Not used.
 
 ### onBeforeDelete
 * Nepovoliť vymazanie adresy, ktorá je uvedená ako primárna (tab: **com_contact**, col: **id_com_address**).
 
 ### onAfterDelete
 
-Nepoužíva sa.
+Not used.
 ## Formatters
 
-### tableCellHTMLlFormatter
-Nepoužíva sa.
+### tableCellHTMLFormatter
+Not used.
 
 ### tableCellCSVFormatter
-Nepoužíva sa.
+Not used.
 
 ### tableCellCSSFormatter
-Nepoužíva sa.
+Not used.
 
 ### tableRowCSSFormatter
-Nepoužíva sa.
+Not used.
 
 ### cardsCardHtmlFormatter
-Nepoužíva sa.
+Not used.

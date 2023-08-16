@@ -62,33 +62,33 @@ Model neobsahuje cudzie kľúče.
 Nepovoliť vloženie duplicitnej krajiny podlľa mena (col: **name**) a ani podľa skratky (col: **code**).
 
 ### onAfterInsert
-Nepoužíva sa.
+Not used.
 
 ### onBeforeUpdate
 Nepovoliť uloženie duplicitnej krajiny podlľa mena (col: **name**) a ani podľa skratky (col: **code**).
 
 ### onAfterUpdate
-Nepoužíva sa.
+Not used.
 
 ### onBeforeDelete
-Nepoužíva sa.
+Not used.
 
 ### onAfterDelete
-Nepoužíva sa.
+Not used.
 
 ## Formatters
 
-### tableCellHTMLlFormatter
-Nepoužíva sa.
+### tableCellHTMLFormatter
+Not used.
 
 ### tableCellCSVFormatter
-Nepoužíva sa.
+Not used.
 
 ### tableCellCSSFormatter
-Nepoužíva sa.
+Not used.
 
 ### tableRowCSSFormatter
-Nepoužíva sa.
+Not used.
 
 ### cardsCardHtmlFormatter
-Nepoužíva sa.
+Not used.

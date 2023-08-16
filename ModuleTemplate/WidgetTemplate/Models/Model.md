@@ -102,36 +102,36 @@ TODO: Replace example columns with real one
 ## Callbacks
 
 ### onBeforeInsert
-Nepoužíva sa.
+Not used.
 
 ### onAfterInsert
-Nepoužíva sa.
+Not used.
 
 ### onBeforeUpdate
-Nepoužíva sa.
+Not used.
 
 ### onAfterUpdate
-Nepoužíva sa.
+Not used.
 
 ### onBeforeDelete
-Nepoužíva sa.
+Not used.
 
 ### onAfterDelete
-Nepoužíva sa.
+Not used.
 
 ## Formatters
 
-### tableCellHTMLlFormatter
-Nepoužíva sa.
+### tableCellHTMLFormatter
+Not used.
 
 ### tableCellCSVFormatter
-Nepoužíva sa.
+Not used.
 
 ### tableCellCSSFormatter
-Nepoužíva sa.
+Not used.
 
 ### tableRowCSSFormatter
-Nepoužíva sa.
+Not used.
 
 ### cardsCardHtmlFormatter
-Nepoužíva sa.
+Not used.

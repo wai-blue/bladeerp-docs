@@ -104,34 +104,34 @@ V modeli nie sú použité konštanty.
 Nie je možné pridať osobu s rovnakým emailom (col: **email**).
 
 ### onAfterInsert
-Nepoužíva sa.
+Not used.
 
 ### onBeforeUpdate
 Nie je možné nať osobu s rovnakým emailom (col: **email**).
 
 ### onAfterUpdate
-Nepoužíva sa.
+Not used.
 
 ### onBeforeDelete
-Nepoužíva sa.
+Not used.
 
 ### onAfterDelete
-Nepoužíva sa.
+Not used.
 
 ## Formatters
 
-### tableCellHTMLlFormatter
+### tableCellHTMLFormatter
 
-Nepoužíva sa.
+Not used.
 
 ### tableCellCSVFormatter
-Nepoužíva sa.
+Not used.
 
 ### tableCellCSSFormatter
-Nepoužíva sa.
+Not used.
 
 ### tableRowCSSFormatter
-Nepoužíva sa.
+Not used.
 
 ### cardsCardHtmlFormatter
-Nepoužíva sa.
+Not used.

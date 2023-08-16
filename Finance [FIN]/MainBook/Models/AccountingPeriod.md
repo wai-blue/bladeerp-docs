@@ -107,11 +107,11 @@ Pri vytváraní kópie účtovného obdobia je potrebné aktualizovať stĺpec  
 
 ### onBeforeUpdate
 
-Nepoužíva sa.
+Not used.
 
 ### onAfterUpdate
 
-Nepoužíva sa.
+Not used.
 
 ### onBeforeDelete
 
@@ -119,7 +119,7 @@ Pred vymazaním účtovného obdobia treba skontrolovať, či sú k účtovnému
 
 ### onAfterDelete
 
-Nepoužíva sa.
+Not used.
 
 ## Formatters
 

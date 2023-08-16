@@ -174,7 +174,7 @@ Ak neexistujú iné podúčty pre parent účet, nastaviť pre parent účet sta
 
 ## Formatters
 
-### tableCellHTMLlFormatter
+### tableCellHTMLFormatter
 
 Not used.
 
