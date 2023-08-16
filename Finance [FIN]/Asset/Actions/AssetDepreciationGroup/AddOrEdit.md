@@ -1,8 +1,8 @@
-# Finance/Asset/AssetDepreciationGroup/Add
+# Finance/Asset/AssetDepreciationGroup/AddOrEdit
 
 ## Description
 
-Vytvorenie novej odpisovej skupiny.
+Vytvorenie alebo uprava novej odpisovej skupiny.
 
 ## Main View
 
