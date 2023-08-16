@@ -1,4 +1,4 @@
-# Finance/Bank/BankAccounts
+# Finance/Bank/Accounts
 
 ## Description
 

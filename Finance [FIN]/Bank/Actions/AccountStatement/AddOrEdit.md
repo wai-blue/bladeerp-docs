@@ -1,4 +1,4 @@
-# Finance/Bank/BankTransaction/AddOrEdit
+# Finance/Bank/Transaction/AddOrEdit
 
 ## Description
 

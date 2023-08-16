@@ -1,4 +1,4 @@
-# Finance/Bank/BankTransactions
+# Finance/Bank/Transactions
 
 ## Description
 

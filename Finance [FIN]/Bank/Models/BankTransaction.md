@@ -14,8 +14,8 @@ V modeli nie sú použité konštanty.
 
 | Property               | Value |
 | :-------------------- | :--------------------- |
-| sqlName               | fin_bank_documents     |
-| urlBase               | finance/bank/documents |
+| sqlName               | fin_bank_transactions     |
+| urlBase               | finance/bank/transactions |
 | lookupSqlValue        | -                      |
 | tableTitle            | Bank Transaction         |
 | formTitleForInserting | New Transaction           |
