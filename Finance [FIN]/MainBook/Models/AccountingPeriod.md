@@ -84,7 +84,7 @@ V modeli nie sú použité konštanty.
 
 ## Indexes
 
-| Názov | Typ | Stĺpec + Zoradenie |
+| Name | Type | Column + Order |
 | - | - | - |
 | id | PRIMARY | id ASC |
 | name | UNIQUE | name ASC |
