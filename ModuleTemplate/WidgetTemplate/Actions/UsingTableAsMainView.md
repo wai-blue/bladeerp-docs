@@ -10,6 +10,8 @@ Table
 
 ## Parameters
 
+(vid ADIOS.repo/src/Core/View/Table.php)
+
 * columns:
   * fin_book_accounts.account
   * fin_book_accounts.name

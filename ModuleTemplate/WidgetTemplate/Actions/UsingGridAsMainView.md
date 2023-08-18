@@ -9,6 +9,7 @@ Sample definition of action using a Grid.
 Grid
 
 ## Parameters
+(vid ADIOS.repo/src/Core/View/Grid.php)
 
 *Note: "view" is rendered immediately, "action" is rendered via AJAX request*
 
