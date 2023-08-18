@@ -131,7 +131,7 @@ Not used.
 Not used.
 
 ### onBeforeUpdate
-Nepovoliť deaktivovanie adresy, ktorá je uvedená ako primárna (tab: **com_contact**, col: **id_com_address**).
+Nepovoliť deaktivovanie adresy (col: **is_active**), ktorá je uvedená ako primárna (tab: **com_contact**, col: **id_com_address**).
 
 ### onAfterUpdate
 Not used.
