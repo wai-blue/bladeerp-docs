@@ -65,6 +65,8 @@ Not used.
 
 ## Formatters
 
+V tomto modeli nie sú použité formátery.
+
 ### tableCellHTMLFormatter
 
 Not used.
