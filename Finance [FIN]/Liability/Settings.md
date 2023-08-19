@@ -1,3 +1,3 @@
 # Settings
 
-No custom settings for this widget.
+**Prednastavený číselný rad** pre záväzky (tab: **com_numeric_sequences**).
