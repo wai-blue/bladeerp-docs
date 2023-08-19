@@ -28,6 +28,8 @@ Ročný odpis v prvom roku odpisovania = (vstupná cena / doba odpisovania) / 12
 
 ### Príklad odpisovania
 
+TODO: Poznámka: Miesto ,,Majme:,, by som použil: ,,Ku mesiacu Marec máme nasledovné:,, V Google Docs to je vynechané úple, a v aktuálnej verzii mi to neznie byť v dokumentácii v poriadku
+
 Majme:
   * Vstupná cena majetku: 5000,00 EUR
   * Odpisová skupina: 2 (6 roky)
@@ -86,6 +88,8 @@ Majme:
 ## Účtovné odpisy
 
 Podľa zákona o účtovníctve
+
+TODO: Urobiť kontrolu zátvoriek prosím
 
 Účtovná jednotka si určuje výšku odpisov dlhodobého majetku v odpisovom pláne ak je stanovený), na základe očakávaného použitia majetku a intenzity využitia a tiež na základe očakávaného fyzického opotrebenia majetku, ktorý zodpovedá bežným podmienkam využitia. O účtovných odpisoch je účtovná jednotka povinná účtovať mesačne. Začiatok odpisovania, počet desatinných miest a spôsob zaokrúhľovania sa určí účtovná jednotka sama v internom predpise (ak existuje).
 

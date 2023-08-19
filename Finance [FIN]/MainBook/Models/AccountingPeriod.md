@@ -2,8 +2,10 @@
 
 ## Introduction
 
-Budú tu zapísané všetky účtovné obdobia, ktoré sa používali alebo používajú. Všetky operácie sa týkajú účtovného obdobia. Takéto obdobie býva zvyčajne jeden kalendárny rok, ale je možné nastaviť aj kratšie účtovné obdobia. 
+Budú tu zapísané všetky účtovné obdobia, ktoré sa používali alebo používajú. Všetky operácie sa týkajú účtovného obdobia. Takéto obdobie býva zvyčajne jeden kalendárny rok, ale je možné nastaviť aj kratšie účtovné obdobia.
+
 Práca s účtovnými obdobiami musí byť výlučne v kompetencii Hlavného účtovníka.
+
 Účtovanie dokladov je možné iba do otvoreného účtovného obdobia.
 
 ## Constants
@@ -12,26 +14,26 @@ V modeli nie sú použité konštanty.
 
 ## Properties
 
-| Property | Value |
-| - | - |
-| sqlName | fin_accounting_periods |
-| urlBase | finance/main-book/accounting-periods |
-| lookupSqlValue | {%TABLE%}.name |
-| tableTitle | Accounting periods |
-| formTitleForInserting | New Accounting Period |
-| formTitleForEditing | Accounting Period |
+| Property              | Value                                |
+| :-------------------- | :----------------------------------- |
+| sqlName               | fin_accounting_periods               |
+| urlBase               | finance/main-book/accounting-periods |
+| lookupSqlValue        | {%TABLE%}.name                       |
+| tableTitle            | Accounting periods                   |
+| formTitleForInserting | New Accounting Period                |
+| formTitleForEditing   | Accounting Period                    |
 
 ## SQL Structure
 
-| Názov | Popis | Typ | Dĺžka | NULL | Default |
-| - | - | - | - | - | - |
-| id | Unique record ID | INT | 8 | NOT NULL | 0 |
-| name | Názov účtovného obdobia | VARCHAR | 100 | NOT NULL | "" |
-| start_date | Začiatok účtovného obdobia | DATE | 8 | NOT NULL |  |
-| end_date | Koniec účtovného obdobia | DATE | 8 | NOT NULL |  |
-| is_open | Príznak, či je účtovné obdobie otvorené a je možné v rámci tohto obdobia pridávať doklady | BOOLEAN | 1 | NOT NULL | 1 |
-| id_fin_accounting_period | ID predchádzajúceho účtovného obdobia | INT | 8 | NULL |  |
-| id_fin_currency | Hlavná mena účtovného obdobia | INT | 8 | NOT NULL |  |
+| Názov                    | Popis                                                                                     | Typ     | Dĺžka | NULL     | Default |
+| :----------------------- | :---------------------------------------------------------------------------------------- | :-----: | :---: | :------: | :-----: |
+| id                       | Unique record ID                                                                          | INT     | 8     | NOT NULL | 0       |
+| name                     | Názov účtovného obdobia                                                                   | VARCHAR | 100   | NOT NULL | ""      |
+| start_date               | Začiatok účtovného obdobia                                                                | DATE    | 8     | NOT NULL |         |
+| end_date                 | Koniec účtovného obdobia                                                                  | DATE    | 8     | NOT NULL |         |
+| is_open                  | Príznak, či je účtovné obdobie otvorené a je možné v rámci tohto obdobia pridávať doklady | BOOLEAN | 1     | NOT NULL | 1       |
+| id_fin_accounting_period | ID predchádzajúceho účtovného obdobia                                                     | INT     | 8     | NULL     |         |
+| id_fin_currency          | Hlavná mena účtovného obdobia                                                             | INT     | 8     | NOT NULL |         |
 
 ## Columns
 
@@ -77,19 +79,19 @@ V modeli nie sú použité konštanty.
 
 ## Foreign Keys
 
-| Stĺpec | Parent tabuľka | Väzba | OnUpdate | OnDelete |
-| - | - | - | - | - |
-| id_fin_accounting_period |  fin_accounting_periods |  1:N |  Cascade |  Cascade |
-| id_fin_currency |  fin_currencies |  1:N |  Cascade |  Restrict |
+| Stĺpec                   | Parent tabuľka         | Väzba | OnUpdate | OnDelete |
+| :----------------------- | :--------------------- | :---: | :------: | :------: |
+| id_fin_accounting_period | fin_accounting_periods | 1:N   | Cascade  | Cascade  |
+| id_fin_currency          | fin_currencies         | 1:N   | Cascade  | Restrict |
 
 ## Indexes
 
-| Name | Type | Column + Order |
-| - | - | - |
-| id | PRIMARY | id ASC |
-| name | UNIQUE | name ASC |
-| start_date_u | UNIQUE | start_date ASC |
-| is_open_start_date | INDEX | is_open ASC, start_date ASC |
+| Name               | Type    | Column + Order              |
+| :----------------- | :-----: | :-------------------------- |
+| id                 | PRIMARY | id ASC                      |
+| name               | UNIQUE  | name ASC                    |
+| start_date_u       | UNIQUE  | start_date ASC              |
+| is_open_start_date | INDEX   | is_open ASC, start_date ASC |
 
 ## Callbacks
 

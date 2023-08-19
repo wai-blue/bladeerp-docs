@@ -2,47 +2,48 @@
 
 ## Introduction
 
-Tento model obsahuje všetky údaje, ktoré sa  týkajú účtovnej osnovy. Budú tu zapísané všetky používané účty v rámci Podvojného účtovníctva (nie bankové účty). 
+Tento model obsahuje všetky údaje, ktoré sa  týkajú účtovnej osnovy. Budú tu zapísané všetky používané účty v rámci Podvojného účtovníctva (nie bankové účty).
+
 Vzor účtovnej osnovy https://www.ako-uctovat.sk/uctovna-osnova.php.
 
 ## Constants
 
-| Constant | Value | Description |
-| - | - | - |
-| FIN_BOOK_ACCOUNT_SIDE_BOTH | 1 | Je možné účtovať na obe strany |
-| FIN_BOOK_ACCOUNT_SIDE_GET | 2 | Účet na strane Má dať |
-| FIN_BOOK_ACCOUNT_SIDE_PUT | 3 | Účet na strane Dal |
-| FIN_BOOK_ACCCOUNT_STATE_DEFAULT | 1 | Počiatočný stav, je možné na účet účtovať aj vytvárať podúčty |
-| FIN_BOOK_ACCCOUNT_STATE_SUMMARY | 2 | Po vytvorení prvého podúčtu sa nastaví tento stav a už nie je možné na tento účet účtovať |
-| FIN_BOOK_ACCCOUNT_STATE_ACCOUNTABLE | 3 | Po prvom zaúčtovaní na účet sa nastaví tento stav a nie je možné na účte vytvárať podúčty |
+| Constant                            | Value | Description                                                                               |
+| :---------------------------------- | :---: | :---------------------------------------------------------------------------------------- |
+| FIN_BOOK_ACCOUNT_SIDE_BOTH          | 1     | Je možné účtovať na obe strany                                                            |
+| FIN_BOOK_ACCOUNT_SIDE_GET           | 2     | Účet na strane Má dať                                                                     |
+| FIN_BOOK_ACCOUNT_SIDE_PUT           | 3     | Účet na strane Dal                                                                        |
+| FIN_BOOK_ACCCOUNT_STATE_DEFAULT     | 1     | Počiatočný stav, je možné na účet účtovať aj vytvárať podúčty                             |
+| FIN_BOOK_ACCCOUNT_STATE_SUMMARY     | 2     | Po vytvorení prvého podúčtu sa nastaví tento stav a už nie je možné na tento účet účtovať |
+| FIN_BOOK_ACCCOUNT_STATE_ACCOUNTABLE | 3     | Po prvom zaúčtovaní na účet sa nastaví tento stav a nie je možné na účte vytvárať podúčty |
 
 ## Properties
 
-| Property | Value |
-| - | - |
-| sqlName | fin_book_accounts |
-| urlBase | finance/main-book/book-accounts/ |
-| lookupSqlValue | {%TABLE%}.name |
-| tableTitle | Book Accounts |
-| formTitleForInserting | New Account |
-| formTitleForEditing | Book Account |
+| Property              | Value                            |
+| :-------------------- | :------------------------------- |
+| sqlName               | fin_book_accounts                |
+| urlBase               | finance/main-book/book-accounts/ |
+| lookupSqlValue        | {%TABLE%}.name                   |
+| tableTitle            | Book Accounts                    |
+| formTitleForInserting | New Account                      |
+| formTitleForEditing   | Book Account                     |
 
 ## SQL Structure
 
-| Column | Description | Type | Length | NULL | Default |
-| - | - | - | - | - | - |
-| id | Unique record ID | INT | 8 | NOT NULL | 0 |
-| name |  Názov účtu |  VARCHAR |  100 |  NOT NULL |  "" |
-| description |  Popis účtu |  TEXT |   |  NULL |  "" |
-| account |  Číslo účtu |  VARCHAR |  3 |  NOT NULL |  "" |
-| state |  Stav účtu |  ENUM |  1 |  NOT NULL |  1 |
-| side |  Strana, na ktorú sa účtuje |  ENUM |  1 |  NOT NULL |  1 |
-| opening_balance |  Počiatočný stav na účte |  DECIMAL |  15,2 |  NOT NULL |  0 |
-| current_balance |  Aktuálny zostatok na účte |  DECIMAL |  15,2 |  NOT NULL |  0 |
-| id_parent |  Nadriadený účet v stromovej štruktúre |  INT |  8 |  NULL |   |
-| id_fin_book_account_type |  Typ účtu |  INT |  8 |  NOT NULL |  0 |
-| id_fin_book_account_category |  Druh účtu |  INT |  8 |  NOT NULL |  0 |
-| id_fin_accounting_period |  ID účtovného obdobia |  INT |  8 |  NOT NULL |  0 |
+| Column                       | Description                           | Type    | Length | NULL     | Default |
+| :--------------------------- | :------------------------------------ | :-----: | :----: | :------: | :-----: |
+| id                           | Unique record ID                      | INT     | 8      | NOT NULL | 0       |
+| name                         | Názov účtu                            | VARCHAR | 100    | NOT NULL | ""      |
+| description                  | Popis účtu                            | TEXT    |        | NULL     | ""      |
+| account                      | Číslo účtu                            | VARCHAR | 3      | NOT NULL | ""      |
+| state                        | Stav účtu                             | ENUM    | 1      | NOT NULL | 1       |
+| side                         | Strana, na ktorú sa účtuje            | ENUM    | 1      | NOT NULL | 1       |
+| opening_balance              | Počiatočný stav na účte               | DECIMAL | 15,2   | NOT NULL | 0       |
+| current_balance              | Aktuálny zostatok na účte             | DECIMAL | 15,2   | NOT NULL | 0       |
+| id_parent                    | Nadriadený účet v stromovej štruktúre | INT     | 8      | NULL     |         |
+| id_fin_book_account_type     | Typ účtu                              | INT     | 8      | NOT NULL | 0       |
+| id_fin_book_account_category | Druh účtu                             | INT     | 8      | NOT NULL | 0       |
+| id_fin_accounting_period     | ID účtovného obdobia                  | INT     | 8      | NOT NULL | 0       |
 
 ## Columns
 
@@ -128,23 +129,23 @@ Vzor účtovnej osnovy https://www.ako-uctovat.sk/uctovna-osnova.php.
 
 ## Foreign Keys
 
-| Column | Parent table | Relation | OnUpdate | OnDelete |
-| - | - | - | - | - |
-| id_parent | fin_book_accounts | 1:N | Cascade | Restrict |
-| id_fin_accounting_period | fin_accounting_periods | 1:N | Cascade | Cascade |
-| id_fin_book_account_type | fin_book_account_types | 1:N | Cascade | Restrict |
-| id_fin_book_account_category | fin_book_account_categories | 1:N | Cascade | Restrict |
+| Column                       | Parent table                | Relation | OnUpdate | OnDelete |
+| :--------------------------- | :-------------------------- | :------: | :------: | :------: |
+| id_parent                    | fin_book_accounts           | 1:N      | Cascade  | Restrict |
+| id_fin_accounting_period     | fin_accounting_periods      | 1:N      | Cascade  | Cascade  |
+| id_fin_book_account_type     | fin_book_account_types      | 1:N      | Cascade  | Restrict |
+| id_fin_book_account_category | fin_book_account_categories | 1:N      | Cascade  | Restrict |
 
 ## Indexes
 
-| Name | Type | Column + Order |
-| - | - | - |
-| id | PRIMARY | id ASC |
-| name | INDEX | name ASC |
-| period_id_parent_account | UNIQUE | id_fin_accounting_period ASC, id_parent ASC, account ASC |
-| period | INDEX | id_fin_accounting_period ASC |
-| type | INDEX | type ASC |
-| category | INDEX | category ASC |
+| Name                     | Type    | Column + Order                                           |
+| :----------------------- | :-----: | :------------------------------------------------------: |
+| id                       | PRIMARY | id ASC                                                   |
+| name                     | INDEX   | name ASC                                                 |
+| period_id_parent_account | UNIQUE  | id_fin_accounting_period ASC, id_parent ASC, account ASC |
+| period                   | INDEX   | id_fin_accounting_period ASC                             |
+| type                     | INDEX   | type ASC                                                 |
+| category                 | INDEX   | category ASC                                             |
 
 ## Callbacks
 

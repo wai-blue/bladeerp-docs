@@ -12,12 +12,12 @@ V modeli nie sú použité konštanty.
 
 ## Properties
 
-| Property               | Value |
-| :-------------------- | :--------------------- |
+| Property              | Value                     |
+| :-------------------- | :------------------------ |
 | sqlName               | fin_bank_transactions     |
 | urlBase               | finance/bank/transactions |
-| lookupSqlValue        | -                      |
-| tableTitle            | Bank Transaction         |
+| lookupSqlValue        | -                         |
+| tableTitle            | Bank Transaction          |
 | formTitleForInserting | New Transaction           |
 | formTitleForEditing   | Bank Transaction          |
 

@@ -18,3 +18,7 @@ Table
   * is_accounted
   * id_fin_accounting_period
 * orderBy: number DESC
+
+## Columns
+
+TODO: Tabuľka a celkovo Columns chýba zámerne, alebo je to potrebné nahodiť?

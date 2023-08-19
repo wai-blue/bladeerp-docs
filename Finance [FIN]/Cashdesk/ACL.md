@@ -1,21 +1,17 @@
 # ACL
 
-| Názov role      | Akcia                     |
-| :-------------- | :------------------------ |
-| Hlavný účtovník | Cashdesk/Accounts         |
-|                 | Cashdesk/Account/Add      |
-|                 | Cashdesk/Account/Edit     |
-|                 | Cashdesk/Account/Delete   |
-|                 | Cashdesk/Documents        |
-|                 | Cashdesk/Document/Add     |
-|                 | Cashdesk/Document/Edit    |
-|                 | Cashdesk/Document/Delete  |
-|                 | Cashdesk/Statements       |
-|                 | Cashdesk/Statement/Add    |
-|                 | Cashdesk/Statement/Delete |
-| Účtovník        | Cashdesk/Documents        |
-|                 | Cashdesk/Document/Add     |
-|                 | Cashdesk/Document/Edit    |
-|                 | Cashdesk/Document/Delete  |
-|                 | Cashdesk/Statements       |
-|                 | Cashdesk/Statement/Add    |
+TODO: Urobiť kontrolu prosím, upravené kvôli predchádzajúcej nekompatibilite
+
+| Akcia                     | Hlavný účtovník | Účtovník |
+| :------------------------ | :-------------: | :------: |
+| Cashdesk/Accounts         | X               |          |
+| Cashdesk/Account/Add      | X               |          |
+| Cashdesk/Account/Edit     | X               |          |
+| Cashdesk/Account/Delete   | X               |          |
+| Cashdesk/Documents        | X               | X        |
+| Cashdesk/Document/Add     | X               | X        |
+| Cashdesk/Document/Edit    | X               | X        |
+| Cashdesk/Document/Delete  | X               | X        |
+| Cashdesk/Statements       | X               | X        |
+| Cashdesk/Statement/Add    | X               | X        |
+| Cashdesk/Statement/Delete | X               |          |

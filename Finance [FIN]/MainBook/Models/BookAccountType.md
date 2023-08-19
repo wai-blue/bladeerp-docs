@@ -7,25 +7,26 @@ Táto tabuľka bude slúžiť na definíciu typov účtov.
 ## Constants
 
 | Constant | Value | Description |
-| - | - | - |
+| -------- | ----- | ----------- |
+|          |       |             |
 
 ## Properties
 
-| Property | Value |
-| - | - |
-| sqlName | fin_book_account_types |
-| urlBase | finance/main-book/book-account-types |
-| lookupSqlValue | {%TABLE%}.name |
-| tableTitle | Book Account Types |
-| formTitleForInserting | New Type |
-| formTitleForEditing | Account Type |
+| Property              | Value                                |
+| :-------------------- | :----------------------------------- |
+| sqlName               | fin_book_account_types               |
+| urlBase               | finance/main-book/book-account-types |
+| lookupSqlValue        | {%TABLE%}.name                       |
+| tableTitle            | Book Account Types                   |
+| formTitleForInserting | New Type                             |
+| formTitleForEditing   | Account Type                         |
 
 ## SQL Structure
 
-| Column | Description | Type | Length | NULL | Default |
-| - | - | - | - | - | - |
-| id | Unique record ID | INT | 8 | NOT NULL | 0 |
-| name | Názov typu | VARCHAR | 100 | NOT NULL | "" |
+| Column | Description      | Type    | Length | NULL     | Default |
+| :----- | :--------------- | :-----: | :----: | :------: | :-----: |
+| id     | Unique record ID | INT     | 8      | NOT NULL | 0       |
+| name   | Názov typu       | VARCHAR | 100    | NOT NULL | ""      |
 
 ## Columns
 
@@ -40,14 +41,15 @@ Táto tabuľka bude slúžiť na definíciu typov účtov.
 ## Foreign Keys
 
 | Column | Parent table | Relation | OnUpdate | OnDelete |
-| - | - | - | - | - |
+| ------ | ------------ | -------- | -------- | -------- |
+|        |              |          |          |          |
 
 ## Indexes
 
-| Name | Type | Column + Order |
-| - | - | - |
-| id | PRIMARY | id ASC |
-| name | UNIQUE | name ASC |
+| Name | Type    | Column + Order |
+| :--- | :-----: | :------------- |
+| id   | PRIMARY | id ASC         |
+| name | UNIQUE  | name ASC       |
 
 ## Callbacks
 
@@ -76,6 +78,8 @@ Ak existujú záznamy na tento druh v tabuľke **fin_book_accounts**, nie je mo�
 Not used.
 
 ## Formatters
+
+V tomto modeli nie sú použité formátery.
 
 ### tableCellHTMLFormatter
 

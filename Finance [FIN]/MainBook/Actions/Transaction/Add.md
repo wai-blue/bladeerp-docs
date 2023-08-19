@@ -16,3 +16,7 @@ Form
   * description
 * defaultValues:
   * date_transaction = Predvolený je posledný dátum z účtovného obdobia
+
+## Columns
+
+TODO: Tabuľka a celkovo Columns chýba zámerne, alebo je to potrebné nahodiť?

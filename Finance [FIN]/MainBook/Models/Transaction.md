@@ -7,33 +7,34 @@ Tabuľka bude obsahovať jednotlivé doklady podvojného účtovníctva. Každý
 ## Constants
 
 | Constant | Value | Description |
-| - | - | - |
+| -------- | ----- | ----------- |
+|          |       |             |
 
 ## Properties
 
-| Property | Value |
-| - | - |
-| sqlName | fin_transactions |
-| urlBase | finance/main-book/transactions |
-| lookupSqlValue | - |
-| tableTitle | Transactions |
-| formTitleForInserting | New Transaction |
-| formTitleForEditing | Transaction |
+| Property              | Value                          |
+| :-------------------- | :----------------------------- |
+| sqlName               | fin_transactions               |
+| urlBase               | finance/main-book/transactions |
+| lookupSqlValue        | -                              |
+| tableTitle            | Transactions                   |
+| formTitleForInserting | New Transaction                |
+| formTitleForEditing   | Transaction                    |
 
 ## SQL Structure
 
-| Column | Description | Type | Length | NULL | Default |
-| - | - | - | - | - | - |
-| id | Unique record ID | INT | 8 | NOT NULL | 0 |
-| date_transaction | Dátum transakcie | DATE | 8 | NOT NULL |  |
-| description | Popis transakcie | TEXT |  | NULL | "" |
-| amount | Celková suma transakcie v hlavnej mene | DECIMAL | 15,2 | NOT NULL | 0 |
-| number | Poradové číslo v rámci účtovného obdobia | INT | 11 | NOT NULL | 1 |
-| is_accounted | Je doklad zaúčtovaný | BOOL | 1 | NULL | 0 |
-| amount_currency | Celková suma transakcie v inej mene | DECIMAL | 15,2 | NOT NULL | 0 |
-| exchange_rate | Kurz meny voči hlavnej mene účtovného obdobia | DECIMAL | 15,4 | NOT NULL | 0 |
-| id_fin_currency | ID meny | INT | 8 | NOT NULL | 0 |
-| id_fin_accounting_period | ID účtovného obdobia | INT | 8 | NOT NULL | 0 |
+| Column                   | Description                                   | Type    | Length | NULL     | Default |
+| :----------------------- | :-------------------------------------------- | :-----: | :----: | :------: | :-----: |
+| id                       | Unique record ID                              | INT     | 8      | NOT NULL | 0       |
+| date_transaction         | Dátum transakcie                              | DATE    | 8      | NOT NULL |         |
+| description              | Popis transakcie                              | TEXT    |        | NULL     | ""      |
+| amount                   | Celková suma transakcie v hlavnej mene        | DECIMAL | 15,2   | NOT NULL | 0       |
+| number                   | Poradové číslo v rámci účtovného obdobia      | INT     | 11     | NOT NULL | 1       |
+| is_accounted             | Je doklad zaúčtovaný                          | BOOL    | 1      | NULL     | 0       |
+| amount_currency          | Celková suma transakcie v inej mene           | DECIMAL | 15,2   | NOT NULL | 0       |
+| exchange_rate            | Kurz meny voči hlavnej mene účtovného obdobia | DECIMAL | 15,4   | NOT NULL | 0       |
+| id_fin_currency          | ID meny                                       | INT     | 8      | NOT NULL | 0       |
+| id_fin_accounting_period | ID účtovného obdobia                          | INT     | 8      | NOT NULL | 0       |
 
 ## Columns
 
@@ -94,18 +95,18 @@ Tabuľka bude obsahovať jednotlivé doklady podvojného účtovníctva. Každý
 
 ## Foreign Keys
 
-| Column | Parent table | Relation | OnUpdate | OnDelete |
-| - | - | - | - | - |
-| id_fin_accounting_period | fin_accounting_periods | 1:N | Cascade | Restrict |
-| id_fin_currency | fin_currencies | 1:N | Cascade | Restrict |
+| Column                   | Parent table           | Relation | OnUpdate | OnDelete |
+| :----------------------- | :--------------------- | :------: | :------: | :------: |
+| id_fin_accounting_period | fin_accounting_periods | 1:N      | Cascade  | Restrict |
+| id_fin_currency          | fin_currencies         | 1:N      | Cascade  | Restrict |
 
 ## Indexes
 
-| Name | Type | Column + Order |
-| - | - | - |
-| id | PRIMARY | id ASC |
-| date_transaction | INDEX | date_transaction ASC |
-| id_fin_accounting_period_number | UNIQUE | id_fin_accounting_period ASC, number ASC |
+| Name                            | Type    | Column + Order                           |
+| :------------------------------ | :-----: | :--------------------------------------- |
+| id                              | PRIMARY | id ASC                                   |
+| date_transaction                | INDEX   | date_transaction ASC                     |
+| id_fin_accounting_period_number | UNIQUE  | id_fin_accounting_period ASC, number ASC |
 
 ## Callbacks
 
@@ -136,6 +137,8 @@ Treba od účtov v účtovnej osnove odrátať sumy z položiek dokladu. Dokumen
 Not used.
 
 ## Formatters
+
+V tomto modeli nie sú použité formátery.
 
 ### tableCellHTMLFormatter
 

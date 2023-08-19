@@ -17,3 +17,8 @@ Form
   * id_fin_currency
   * is_accounted
   * id_fin_accounting_period
+
+## Columns
+
+TODO: Tabuľka a celkovo Columns chýba zámerne, alebo je to potrebné nahodiť?
+

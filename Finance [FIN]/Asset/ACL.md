@@ -1,7 +1,7 @@
 # ACL
 
 | Akcia                                  | Hlavný účtovník | Účtovník |
-| :------------------------------------- | :-------------- | :------- |
+| :------------------------------------- | :-------------: | :------: |
 | AssetDepreciationGroups                | X               |          |
 | AssetDepreciationGroup/Add             | X               |          |
 | AssetDepreciationGroup/Edit            | X               |          |

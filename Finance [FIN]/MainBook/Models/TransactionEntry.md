@@ -7,30 +7,31 @@ Táto tabuľka slúži na ukladanie informácií o jednotlivých položkách tra
 ## Constants
 
 | Constant | Value | Description |
-| - | - | - |
+| -------- | ----- | ----------- |
+|          |       |             |
 
 ## Properties
 
-| Property | Value |
-| - | - |
-| sqlName | fin_transaction_entries |
-| urlBase | finance/main-book/transaction-entries |
-| lookupSqlValue | - |
-| tableTitle | Transaction Entries |
-| formTitleForInserting | New Transaction Entry |
-| formTitleForEditing | Transaction Entry |
-| formAddButtonText | Add Transaction Entry |
-| formAddButtonText | Update Transaction Entry |
+| Property              | Value                                 |
+| :-------------------- | :------------------------------------ |
+| sqlName               | fin_transaction_entries               |
+| urlBase               | finance/main-book/transaction-entries |
+| lookupSqlValue        | -                                     |
+| tableTitle            | Transaction Entries                   |
+| formTitleForInserting | New Transaction Entry                 |
+| formTitleForEditing   | Transaction Entry                     |
+| formAddButtonText     | Add Transaction Entry                 |
+| formAddButtonText     | Update Transaction Entry              |
 
 ## SQL Structure
 
-| Column | Description | Type | Length | NULL | Default |
-| - | - | - | - | - | - |
-| id | Unique record ID | INT | 8 | NOT NULL | 0 |
-| amount | Suma položky transakcie v hlavnej mene | DECIMAL | 15,2 | NOT NULL | 0 |
-| amount_currency | Suma položky transakcie v inej mene | DECIMAL | 15,2 | NOT NULL |  |0
-| id_fin_transaction | ID dokladu | INT | 8 | NOT NULL | 0 |
-| id_fin_book_account | ID účtu z účtovnej osnovy | INT | 8 | NOT NULL | 0 |
+| Column              | Description                            | Type    | Length | NULL     | Default |
+| :------------------ | :------------------------------------- | :-----: | :----: | :------: | :-----: |
+| id                  | Unique record ID                       | INT     | 8      | NOT NULL | 0       |
+| amount              | Suma položky transakcie v hlavnej mene | DECIMAL | 15,2   | NOT NULL | 0       |
+| amount_currency     | Suma položky transakcie v inej mene    | DECIMAL | 15,2   | NOT NULL | 0       |
+| id_fin_transaction  | ID dokladu                             | INT     | 8      | NOT NULL | 0       |
+| id_fin_book_account | ID účtu z účtovnej osnovy              | INT     | 8      | NOT NULL | 0       |
 
 ## Columns
 
@@ -66,17 +67,17 @@ Táto tabuľka slúži na ukladanie informácií o jednotlivých položkách tra
 
 ## Foreign Keys
 
-| Column | Parent table | Relation | OnUpdate | OnDelete |
-| - | - | - | - | - |
-| id_fin_transaction | fin_transactions | 1:N | Cascade | Cascade |
-| id_fin_book_account | fin_book_accounts | M:N | Cascade | Restrict |
+| Column              | Parent table      | Relation | OnUpdate | OnDelete |
+| :------------------ | :---------------- | :------: | :------: | :------: |
+| id_fin_transaction  | fin_transactions  | 1:N      | Cascade  | Cascade  |
+| id_fin_book_account | fin_book_accounts | M:N      | Cascade  | Restrict |
 
 ## Indexes
 
-| Name | Type | Column + Order |
-| - | - | - |
-| id | PRIMARY | id ASC |
-| id_fin_transaction | INDEX | id_fin_transaction ASC |
+| Name               | Type    | Column + Order         |
+| :----------------- | :-----: | :--------------------- |
+| id                 | PRIMARY | id ASC                 |
+| id_fin_transaction | INDEX   | id_fin_transaction ASC |
 
 ## Callbacks
 
@@ -105,6 +106,8 @@ Not used.
 Not used.
 
 ## Formatters
+
+V tomto modeli nie sú použité formátery.
 
 ### tableCellHTMLFormatter
 

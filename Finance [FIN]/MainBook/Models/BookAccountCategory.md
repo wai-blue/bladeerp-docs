@@ -1,31 +1,32 @@
 # BookAccountCategory
 
-Táto tabuľka bude slúžiť na definíciu druhov účtov.
-
 ## Introduction
+
+Táto tabuľka bude slúžiť na definíciu druhov účtov.
 
 ## Constants
 
 | Constant | Value | Description |
-| - | - | - |
+| -------- | ----- | ----------- |
+|          |       |             |
 
 ## Properties
 
-| Property | Value |
-| - | - |
-| sqlName | fin_book_account_categories |
-| urlBase | finance/main-book/book-account-categories |
-| lookupSqlValue | {%TABLE%}.name |
-| tableTitle | Book Account Categories |
-| formTitleForInserting | New Category |
-| formTitleForEditing | Account Category |
+| Property              | Value                                     |
+| :-------------------- | :---------------------------------------- |
+| sqlName               | fin_book_account_categories               |
+| urlBase               | finance/main-book/book-account-categories |
+| lookupSqlValue        | {%TABLE%}.name                            |
+| tableTitle            | Book Account Categories                   |
+| formTitleForInserting | New Category                              |
+| formTitleForEditing   | Account Category                          |
 
 ## SQL Structure
 
-| Column | Description | Type | Length | NULL | Default |
-| - | - | - | - | - | - |
-| id | Unique record ID | INT | 8 | NOT NULL | 0 |
-| name | Názov druhu | VARCHAR | 100 | NOT NULL | "" |
+| Column | Description      | Type    | Length | NULL     | Default |
+| :----- | :--------------- | :-----: | :----: | :------: | :-----: |
+| id     | Unique record ID | INT     | 8      | NOT NULL | 0       |
+| name   | Názov druhu      | VARCHAR | 100    | NOT NULL | ""      |
 
 ## Columns
 
@@ -40,14 +41,15 @@ Táto tabuľka bude slúžiť na definíciu druhov účtov.
 ## Foreign Keys
 
 | Column | Parent table | Relation | OnUpdate | OnDelete |
-| - | - | - | - | - |
+| ------ | ------------ | -------- | -------- | -------- |
+|        |              |          |          |          |
 
 ## Indexes
 
-| Name | Type | Column + Order |
-| - | - | - |
-| id | PRIMARY | id ASC |
-| name | UNIQUE | name ASC |
+| Name | Type    | Column + Order |
+| :--- | :-----: | :------------: |
+| id   | PRIMARY | id ASC         |
+| name | UNIQUE  | name ASC       |
 
 ## Callbacks
 

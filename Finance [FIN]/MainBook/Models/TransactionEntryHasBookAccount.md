@@ -7,21 +7,22 @@ Táto tabuľka slúži na ukladanie prepojenia medzi položkou účtovného denn
 ## Constants
 
 | Constant | Value | Description |
-| - | - | - |
+| -------- | ----- | ----------- |
+|          |       |             |
 
 ## Properties
 
-| Property | Value |
-| - | - |
-| sqlName | fin_transaction_entry_has_book_account |
+| Property | Value                                  |
+| :------- | :------------------------------------- |
+| sqlName  | fin_transaction_entry_has_book_account |
 
 ## SQL Structure
 
-| Column | Description | Type | Length | NULL | Default |
-| - | - | - | - | - | - |
-| id | Unique record ID | INT | 8 | NOT NULL | 0 |
-| id_fin_transaction_entry | ID položky dokladu | INT | 8 | NOT NULL | 0 |
-| id_fin_book_account | ID účtu z účtovnej osnovy | INT | 8 | NOT NULL | 0 |
+| Column                   | Description               | Type | Length | NULL     | Default |
+| :----------------------- | :------------------------ | :--: | :----: | :------: | :-----: |
+| id                       | Unique record ID          | INT  | 8      | NOT NULL | 0       |
+| id_fin_transaction_entry | ID položky dokladu        | INT  | 8      | NOT NULL | 0       |
+| id_fin_book_account      | ID účtu z účtovnej osnovy | INT  | 8      | NOT NULL | 0       |
 
 ## Columns
 
@@ -45,16 +46,16 @@ Táto tabuľka slúži na ukladanie prepojenia medzi položkou účtovného denn
 
 ## Foreign Keys
 
-| Column | Parent table | Relation | OnUpdate | OnDelete |
-| - | - | - | - | - |
-| id_fin_transaction_entry |  fin_transaction_entry |  1:N |  Cascade |  Cascade |
-| id_fin_book_account |  fin_book_accounts |  M:N |  Cascade |  Restrict |
+| Column                   | Parent table          | Relation | OnUpdate | OnDelete |
+| :----------------------- | :-------------------- | :------: | :------: | :------: |
+| id_fin_transaction_entry | fin_transaction_entry | 1:N      | Cascade  | Cascade  |
+| id_fin_book_account      | fin_book_accounts     | M:N      | Cascade  | Restrict |
 
 ## Indexes
 
-| Name | Type | Column + Order |
-| - | - | - |
-| id | PRIMARY | id ASC |
+| Name | Type    | Column + Order |
+| ---- | ------- | -------------- |
+| id   | PRIMARY | id ASC         |
 
 ## Callbacks
 
@@ -83,6 +84,8 @@ Not used.
 Not used.
 
 ## Formatters
+
+V tomto modeli nie sú použité formátery.
 
 ### tableCellHTMLFormatter
 

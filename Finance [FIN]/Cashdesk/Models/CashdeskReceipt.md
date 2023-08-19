@@ -11,12 +11,12 @@ V modeli nie sú použité konštanty.
 
 ## Properties
 
-| Property               | Value |
-| :-------------------- | :------------------------- |
+| Property              | Value                     |
+| :-------------------- | :------------------------ |
 | sqlName               | fin_cashdesk_receipts     |
 | urlBase               | finance/cashdesk/receipts |
-| lookupSqlValue        | -                          |
-| tableTitle            | Cashdesk Receipt         |
+| lookupSqlValue        | -                         |
+| tableTitle            | Cashdesk Receipt          |
 | formTitleForInserting | New Cashdesk Receipt      |
 | formTitleForEditing   | Cashdesk Receipt          |
 | formAddButtonText     | Add Receipt               |
@@ -40,7 +40,7 @@ V modeli nie sú použité konštanty.
 | amount_total             | Amount Total       | Celková hodnota dokladu                       | DECIMAL | 15,2  | Y       |
 | exchange_rate            | Exchange Rate      | Kurz meny voči hlavnej mene účtovného obdobia | DECIMAL | 15,2  | Y       |
 | id_fin_currency          | Currency           | ID meny                                       | INT     | 11    | Y       |
-| id_fin_receipt       | Receipt        | ID v denníku hlavnej knihy                    | INT     | 11    | Y       |
+| id_fin_receipt           | Receipt            | ID v denníku hlavnej knihy                    | INT     | 11    | Y       |
 | is_accounted             | Is Accounted       | Je doklad zaúčtovaný                          | BOOL    | 1     | N       |
 
 
@@ -54,7 +54,7 @@ V modeli nie sú použité konštanty.
 | id_com_address           | com_address            | 1:N   | Cascade  | Restrict |
 | id_adios_user            | adios_user             | 1:N   | Cascade  | Restrict |
 | id_fin_currency          | fin_currencies         | 1:N   | Cascade  | Restrict |
-| id_fin_receipt       | fin_receipt        | 1:N   | Cascade  | Restrict |
+| id_fin_receipt           | fin_receipt            | 1:N   | Cascade  | Restrict |
 
 ## Indexes
 

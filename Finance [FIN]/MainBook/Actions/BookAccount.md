@@ -12,11 +12,11 @@ Table
 
 ## Columns
 
-| Názov stĺpca | Formát zobrazenia | Zoradenie | Filter |
-| - | - | - | - |
-| name | TEXT |  | |
-| account | NUMBER | ASC | |
-| opening_balance | DECIMAL |  | |
-| current_balance | DECIMAL |  | |
-| fin_book_account_types.name | LOOKUP |  | |
-| fin_book_account_categories.name | LOOKUP |  | |
+| Názov stĺpca                     | Formát zobrazenia | Zoradenie | Filter |
+| :------------------------------- | :---------------: | :-------: | ------ |
+| name                             | TEXT              |           |        |
+| account                          | NUMBER            | ASC       |        |
+| opening_balance                  | DECIMAL           |           |        |
+| current_balance                  | DECIMAL           |           |        |
+| fin_book_account_types.name      | LOOKUP            |           |        |
+| fin_book_account_categories.name | LOOKUP            |           |        |
