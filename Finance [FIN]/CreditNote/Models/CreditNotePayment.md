@@ -36,7 +36,7 @@ Tabuľka bude slúžiť na evidenciu úhrad dobropisov.
     * required: true
     * type: lookup
     * title: CreditNote
-    * model: Widgets/Finance/CreditNote/Models/CreditNote
+    * model: App/Widgets/Finance/CreditNote/Models/CreditNote
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true

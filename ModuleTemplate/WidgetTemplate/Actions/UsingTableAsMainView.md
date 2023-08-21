@@ -12,8 +12,10 @@ Table
 
 (vid ADIOS.repo/src/Core/View/Table.php)
 
+* model: App/Widgets/Finance/MainBook/Models/AccountingPeriod
 * columns:
-  * fin_book_accounts.account
-  * fin_book_accounts.name
-  * balance
-* orderBy: fin_book_accounts.account ASC
+  * name
+  * start_date
+  * end_date
+  * id_fin_accounting_period
+* orderBy: name ASC

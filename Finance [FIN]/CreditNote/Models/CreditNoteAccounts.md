@@ -35,7 +35,7 @@ Tabuľka bude slúžiť na prepojenie dobropisu s účtovnou osnovou.
     * required: true
     * type: lookup
     * title: CreditNote
-    * model: Widgets/Finance/CreditNote/Models/CreditNote
+    * model: App/Widgets/Finance/CreditNote/Models/CreditNote
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true
@@ -43,7 +43,7 @@ Tabuľka bude slúžiť na prepojenie dobropisu s účtovnou osnovou.
     * required: true
     * type: lookup
     * title: Account
-    * model: Widgets/Finance/MainBook/Models/BookAccount
+    * model: App/Widgets/Finance/MainBook/Models/BookAccount
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true

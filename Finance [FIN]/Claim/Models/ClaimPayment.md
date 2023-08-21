@@ -36,7 +36,7 @@ Tabuľka bude slúžiť na evidenciu úhrad pohľadávok.
     * required: true
     * type: lookup
     * title: Claim
-    * model: Widgets/Finance/Claim/Models/Claim
+    * model: App/Widgets/Finance/Claim/Models/Claim
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true

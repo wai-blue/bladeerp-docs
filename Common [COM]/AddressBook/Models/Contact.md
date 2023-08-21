@@ -55,7 +55,7 @@ V modeli nie sú použité konštanty.
   * required: false
   * type: lookup
   * title: Person
-  * model: Widgets/Common/AddressBook/Models/ContactCompany
+  * model: App/Widgets/Common/AddressBook/Models/ContactCompany
   * inputStyle:”select”
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE
@@ -64,7 +64,7 @@ V modeli nie sú použité konštanty.
   * required: false
   * type: lookup
   * title: Company
-  * model: Widgets/Common/AddressBook/Models/ContactCompany
+  * model: App/Widgets/Common/AddressBook/Models/ContactCompany
   * inputStyle:”select”
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE
@@ -73,7 +73,7 @@ V modeli nie sú použité konštanty.
   * required: false
   * type: lookup
   * title: Primary Address
-  * model: Widgets/Common/AddressBook/Models/ContactAddress
+  * model: App/Widgets/Common/AddressBook/Models/ContactAddress
   * inputStyle:”select”
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE
@@ -82,7 +82,7 @@ V modeli nie sú použité konštanty.
   * required: false
   * type: lookup
   * title: Primary Currency
-  * model: Widgets/Finance/ExchangeRate/Models/Currency
+  * model: App/Widgets/Finance/ExchangeRate/Models/Currency
   * inputStyle:”select”
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE

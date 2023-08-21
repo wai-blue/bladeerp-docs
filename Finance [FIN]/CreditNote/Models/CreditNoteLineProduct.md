@@ -34,7 +34,7 @@ Tabuľka bude slúžiť na prepojenie položiek dobropisov s produktami.
     * required: true
     * type: lookup
     * title: Credit Note Line
-    * model: Widgets/Finance/CreditNote/Models/CreditNoteLine
+    * model: App/Widgets/Finance/CreditNote/Models/CreditNoteLine
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: CASCADE
     * showColumn: true
@@ -42,7 +42,7 @@ Tabuľka bude slúžiť na prepojenie položiek dobropisov s produktami.
     * required: true
     * type: lookup
     * title: Product
-    * model: Widgets/Warehouse/Products/Models/Product
+    * model: App/Widgets/Warehouse/Products/Models/Product
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true

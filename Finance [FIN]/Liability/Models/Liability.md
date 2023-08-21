@@ -52,7 +52,7 @@ Tabuľka slúži na ukladanie základných údajov o záväzkoch.
     * required: true
 	* type: lookup
 	* title: Customer
-	* model: Widgets/Common/AddressBook/Models/???
+	* model: App/Widgets/Common/AddressBook/Models/???
 	* foreignKeyOnUpdate: CASCADE
 	* foreignKeyOnDelete: RESTRICT
 	* showColumn: true
@@ -80,7 +80,7 @@ Tabuľka slúži na ukladanie základných údajov o záväzkoch.
 	* required: true
 	* type: lookup
 	* title: Numeric Sequence
-	* model: Widgets/Common/NumericSequence/Models/NumericSequence
+	* model: App/Widgets/Common/NumericSequence/Models/NumericSequence
 	* foreignKeyOnUpdate: CASCADE
 	* foreignKeyOnDelete: RESTRICT
 	* showColumn: true
@@ -105,7 +105,7 @@ Tabuľka slúži na ukladanie základných údajov o záväzkoch.
 	* required: true
 	* type: lookup
 	* title: Variable Symbol Numeric Sequence
-	* model: Widgets/Common/NumericSequence/Models/NumericSequence
+	* model: App/Widgets/Common/NumericSequence/Models/NumericSequence
 	* foreignKeyOnUpdate: CASCADE
 	* foreignKeyOnDelete: RESTRICT
 	* showColumn: true
@@ -146,7 +146,7 @@ Tabuľka slúži na ukladanie základných údajov o záväzkoch.
 	* required: true
 	* type: lookup
 	* title: Currency
-	* model: Widgets/Finance/ExchangeRate/Models/Currency
+	* model: App/Widgets/Finance/ExchangeRate/Models/Currency
 	* foreignKeyOnUpdate: CASCADE
 	* foreignKeyOnDelete: RESTRICT
 	* showColumn: true

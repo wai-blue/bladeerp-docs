@@ -45,7 +45,7 @@ Táto tabuľka slúži na ukladanie informácií o sadzbách DPH používaných 
 * id_fin_accounting_period:
   * type: lookup
   * title: Accounting Period
-  * model: Widgets/Finance/MainBook/Models/AccountingPeriod
+  * model: App/Widgets/Finance/MainBook/Models/AccountingPeriod
   * required: true
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE
@@ -53,7 +53,7 @@ Táto tabuľka slúži na ukladanie informácií o sadzbách DPH používaných 
 * id_fin_book_account:
   * type: lookup
   * title: Account
-  * model: Widgets/Finance/MainBook/Models/BookAccount
+  * model: App/Widgets/Finance/MainBook/Models/BookAccount
   * required: true
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE

@@ -93,7 +93,7 @@ TODO: Replace example columns with real one
   * required: true
   * type: lookup
   * title: Previous Accounting Period
-  * model: Widgets/Finance/MainBook/Models/AccountingPeriod
+  * model: App/Widgets/Finance/MainBook/Models/AccountingPeriod
   * inputStyle:”select”
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE

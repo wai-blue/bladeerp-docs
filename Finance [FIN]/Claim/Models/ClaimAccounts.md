@@ -36,7 +36,7 @@ Tabuľka bude slúžiť na prepojenie pohľadávky s účtovnou osnovou.
     * required: true
     * type: lookup
     * title: Claim
-    * model: Widgets/Finance/Claim/Models/Claim
+    * model: App/Widgets/Finance/Claim/Models/Claim
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true
@@ -44,7 +44,7 @@ Tabuľka bude slúžiť na prepojenie pohľadávky s účtovnou osnovou.
     * required: true
     * type: lookup
     * title: Account
-    * model: Widgets/Finance/MainBook/Models/BookAccount
+    * model: App/Widgets/Finance/MainBook/Models/BookAccount
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true

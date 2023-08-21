@@ -36,7 +36,7 @@ Tabuľka bude slúžiť na ukladanie hodnôt pre jednotlivé úrovne DPH k záv�
     * required: true
     * type: lookup
     * title: Liability
-    * model: Widgets/Finance/Liability/Models/Liability
+    * model: App/Widgets/Finance/Liability/Models/Liability
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true
@@ -44,7 +44,7 @@ Tabuľka bude slúžiť na ukladanie hodnôt pre jednotlivé úrovne DPH k záv�
     * required: true
     * type: lookup
     * title: VAT Rate
-    * model: Widgets/Finance/MainBook/Models/Vat
+    * model: App/Widgets/Finance/MainBook/Models/Vat
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true

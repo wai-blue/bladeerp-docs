@@ -34,7 +34,7 @@ Tabuľka bude slúžiť na prepojenie dobropisov s pohľadávkami.
     * required: true
     * type: lookup
     * title: CreditNote
-    * model: Widgets/Finance/CreditNote/Models/CreditNote
+    * model: App/Widgets/Finance/CreditNote/Models/CreditNote
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: CASCADE
     * showColumn: true
@@ -42,7 +42,7 @@ Tabuľka bude slúžiť na prepojenie dobropisov s pohľadávkami.
     * required: true
     * type: lookup
     * title: Claim
-    * model: Widgets/Finance/Claim/Models/Claim
+    * model: App/Widgets/Finance/Claim/Models/Claim
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true

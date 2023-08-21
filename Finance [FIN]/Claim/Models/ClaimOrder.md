@@ -34,7 +34,7 @@ Tabuľka bude slúžiť na prepojenie pohľadávok s objednávkami.
     * required: true
     * type: lookup
     * title: Claim
-    * model: Widgets/Finance/Claim/Models/Claim
+    * model: App/Widgets/Finance/Claim/Models/Claim
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: CASCADE
     * showColumn: true
@@ -42,7 +42,7 @@ Tabuľka bude slúžiť na prepojenie pohľadávok s objednávkami.
     * required: true
     * type: lookup
     * title: Order
-    * model: Widgets/Warehouse/Order/Models/Order
+    * model: App/Widgets/Warehouse/Order/Models/Order
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true

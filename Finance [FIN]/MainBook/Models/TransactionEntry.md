@@ -51,7 +51,7 @@ Táto tabuľka slúži na ukladanie informácií o jednotlivých položkách tra
 * id_fin_transaction:
   * type: lookup
   * title: Transaction
-  * model: Widgets/Finance/MainBook/Models/Transaction
+  * model: App/Widgets/Finance/MainBook/Models/Transaction
   * required: true
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE
@@ -59,7 +59,7 @@ Táto tabuľka slúži na ukladanie informácií o jednotlivých položkách tra
 * id_fin_book_account:
   * type: lookup
   * title: Account
-  * model: Widgets/Finance/MainBook/Models/BookAccount
+  * model: App/Widgets/Finance/MainBook/Models/BookAccount
   * required: true
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE

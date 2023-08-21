@@ -39,7 +39,7 @@ Tabuľka bude slúžiť na evidenciu plánovaných úhrad záväzkov.
 	* required: true
 	* type: lookup
 	* title: Liability
-	* model: Widgets/Finance/Liability/Models/Liability
+	* model: App/Widgets/Finance/Liability/Models/Liability
 	* foreignKeyOnUpdate: CASCADE
 	* foreignKeyOnDelete: RESTRICT
 	* showColumn: true

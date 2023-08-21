@@ -79,7 +79,7 @@ Tabuľka bude obsahovať jednotlivé doklady podvojného účtovníctva. Každý
 * id_fin_currency:
   * type: lookup
   * title: Currency
-  * model: Widgets/Finance/ExchangeRate/Models/Currency
+  * model: App/Widgets/Finance/ExchangeRate/Models/Currency
   * required: true
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE
@@ -87,7 +87,7 @@ Tabuľka bude obsahovať jednotlivé doklady podvojného účtovníctva. Každý
 * id_fin_accounting_period:
   * type: lookup
   * title: Accounting Period
-  * model: Widgets/Finance/MainBook/Models/AccountingPeriod
+  * model: App/Widgets/Finance/MainBook/Models/AccountingPeriod
   * required: true
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE

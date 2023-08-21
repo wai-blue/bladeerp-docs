@@ -37,7 +37,7 @@ Pre túto tabuľku nie sú definované indexy.
   * required: true
   * type: lookup
   * title: Contact
-  * model: Widgets/AddressBook/Models/Contact
+  * model: App/Widgets/AddressBook/Models/Contact
   * inputStyle:”select”
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE
@@ -46,7 +46,7 @@ Pre túto tabuľku nie sú definované indexy.
   * required: true
   * type: lookup
   * title: Contact Category
-  * model: Widgets/AddressBook/Models/ContactCategory
+  * model: App/Widgets/AddressBook/Models/ContactCategory
   * inputStyle:”select”
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE

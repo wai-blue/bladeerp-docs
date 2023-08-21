@@ -44,7 +44,7 @@ Tabuľka bude slúžiť na ukladanie položiek pohľadávok.
     * required: true
     * type: lookup
     * title: Claim
-    * model: Widgets/Finance/Claim/Models/Claim
+    * model: App/Widgets/Finance/Claim/Models/Claim
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: CASCADE
     * showColumn: true
@@ -72,7 +72,7 @@ Tabuľka bude slúžiť na ukladanie položiek pohľadávok.
     * required: true
     * type: lookup
     * title: Units
-    * model: Widgets/Warehouse/Models/Unit
+    * model: App/Widgets/Warehouse/Models/Unit
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true
@@ -80,7 +80,7 @@ Tabuľka bude slúžiť na ukladanie položiek pohľadávok.
     * required: true
     * type: lookup
     * title: VAT Rate
-    * model: Widgets/Finance/MainBook/Models/Vat
+    * model: App/Widgets/Finance/MainBook/Models/Vat
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true

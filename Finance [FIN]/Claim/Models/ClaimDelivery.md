@@ -36,7 +36,7 @@ Tabuľka bude slúžiť na prepojenie pohľadávky s konkrétnou dopravou.
     * required: true
     * type: lookup
     * title: Claim
-    * model: Widgets/Finance/Claim/Models/Claim
+    * model: App/Widgets/Finance/Claim/Models/Claim
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: CASCADE
     * showColumn: true
@@ -44,7 +44,7 @@ Tabuľka bude slúžiť na prepojenie pohľadávky s konkrétnou dopravou.
     * required: true
     * type: lookup
     * title: Delivery
-    * model: Widgets/Logistics/Delivery/Models/Delivery
+    * model: App/Widgets/Logistics/Delivery/Models/Delivery
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true

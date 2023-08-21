@@ -34,7 +34,7 @@ Tabuľka bude slúžiť na prepojenie položiek pohľadávok s produktami.
     * required: true
     * type: lookup
     * title: ID Claim Line
-    * model: Widgets/Finance/Claim/Models/ClaimLine
+    * model: App/Widgets/Finance/Claim/Models/ClaimLine
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: CASCADE
     * showColumn: true
@@ -42,7 +42,7 @@ Tabuľka bude slúžiť na prepojenie položiek pohľadávok s produktami.
     * required: true
     * type: lookup
     * title: Product
-    * model: Widgets/Warehouse/Products/Models/Product
+    * model: App/Widgets/Warehouse/Products/Models/Product
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true

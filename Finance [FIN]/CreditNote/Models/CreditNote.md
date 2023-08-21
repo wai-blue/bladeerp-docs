@@ -53,7 +53,7 @@ Tabuľka slúži na ukladanie základných údajov o dobropise.
     * required: true
     * type: lookup
     * title: State
-    * model: Widgets/Finance/CreditNote/Models/CreditNoteState
+    * model: App/Widgets/Finance/CreditNote/Models/CreditNoteState
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true
@@ -61,7 +61,7 @@ Tabuľka slúži na ukladanie základných údajov o dobropise.
     * required: true
     * type: lookup
     * title: Customer
-    * model: Widgets/Common/AddressBook/???
+    * model: App/Widgets/Common/AddressBook/???
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true
@@ -69,7 +69,7 @@ Tabuľka slúži na ukladanie základných údajov o dobropise.
     * required: true
     * type: lookup
     * title: Accounting Period
-    * model: Widgets/Finance/MainBook/Models/AccountingPeriod
+    * model: App/Widgets/Finance/MainBook/Models/AccountingPeriod
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true
@@ -94,7 +94,7 @@ Tabuľka slúži na ukladanie základných údajov o dobropise.
     * required: true
     * type: lookup
     * title: Numeric Sequence
-    * model: Widgets/Common/NumericSequence/Models/NumericSequence
+    * model: App/Widgets/Common/NumericSequence/Models/NumericSequence
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true
@@ -124,7 +124,7 @@ Tabuľka slúži na ukladanie základných údajov o dobropise.
     * required: true
     * type: lookup
     * title: Variable Symbol Numeric Sequence
-    * model: Widgets/Common/NumericSequence/Models/NumericSequence
+    * model: App/Widgets/Common/NumericSequence/Models/NumericSequence
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true
@@ -151,7 +151,7 @@ Tabuľka slúži na ukladanie základných údajov o dobropise.
     * required: true
     * type: lookup
     * title: Currency
-    * model: Widgets/Finance/ExchangeRate/Models/Currency
+    * model: App/Widgets/Finance/ExchangeRate/Models/Currency
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true

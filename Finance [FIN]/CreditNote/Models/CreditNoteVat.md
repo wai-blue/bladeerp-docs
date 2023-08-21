@@ -36,7 +36,7 @@ Tabuľka bude slúžiť na ukladanie DPH k dobropisu.
     * required: true
     * type: lookup
     * title: CreditNote
-    * model: Widgets/Finance/CreditNote/Models/CreditNote
+    * model: App/Widgets/Finance/CreditNote/Models/CreditNote
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true
@@ -44,7 +44,7 @@ Tabuľka bude slúžiť na ukladanie DPH k dobropisu.
     * required: true
     * type: lookup
     * title: VAT Rate
-    * model: Widgets/Finance/MainBook/Models/Vat
+    * model: App/Widgets/Finance/MainBook/Models/Vat
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: CASCADE
     * showColumn: true

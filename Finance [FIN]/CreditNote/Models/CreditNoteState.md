@@ -73,7 +73,7 @@ TODO: Naozaj model neobsahuje MySQL štruktúru? Skontrolovať prosím
     * required: false
     * type: lookup
     * title: Email Template
-    * model: Widgets/Common/Email/Models/Template
+    * model: App/Widgets/Common/Email/Models/Template
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true

@@ -12,6 +12,7 @@ Form
 
 (vid ADIOS.repo/src/Core/View/Form.php)
 
+* model: App/Widgets/Finance/MainBook/Models/AccountingPeriod
 * cssClass: inline
 * displayMode: (inline|window|desktop)
 * template:

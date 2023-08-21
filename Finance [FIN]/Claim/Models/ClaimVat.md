@@ -36,7 +36,7 @@ Tabuľka bude slúžiť na ukladanie DPH k pohľadávke.
     * required: true
     * type: lookup
     * title: Claim
-    * model: Widgets/Finance/Claim/Models/Claim
+    * model: App/Widgets/Finance/Claim/Models/Claim
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: RESTRICT
     * showColumn: true
@@ -44,7 +44,7 @@ Tabuľka bude slúžiť na ukladanie DPH k pohľadávke.
     * required: true
     * type: lookup
     * title: VAT Rate
-    * model: Widgets/Finance/MainBook/Models/Vat
+    * model: App/Widgets/Finance/MainBook/Models/Vat
     * foreignKeyOnUpdate: CASCADE
     * foreignKeyOnDelete: CASCADE
     * showColumn: true

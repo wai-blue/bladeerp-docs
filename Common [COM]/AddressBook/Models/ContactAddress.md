@@ -51,7 +51,7 @@ V modeli nie sú použité konštanty.
   * required: true
   * type: lookup
   * title: Contact
-  * model: Widgets/Common/AddressBook/Models/Contact
+  * model: App/Widgets/Common/AddressBook/Models/Contact
   * inputStyle:”select”
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE
@@ -99,7 +99,7 @@ V modeli nie sú použité konštanty.
   * required: false
   * type: lookup
   * title: Contry
-  * model: Widgets/Common/AddressBook/Models/Country
+  * model: App/Widgets/Common/AddressBook/Models/Country
   * inputStyle:”select”
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE

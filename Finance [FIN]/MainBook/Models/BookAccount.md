@@ -97,7 +97,7 @@ Vzor účtovnej osnovy https://www.ako-uctovat.sk/uctovna-osnova.php.
 * id_parent:
   * type: lookup
   * title: Parent Account
-  * model: Widgets/Finance/MainBook/Models/BookAccount
+  * model: App/Widgets/Finance/MainBook/Models/BookAccount
   * required: false
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE
@@ -105,7 +105,7 @@ Vzor účtovnej osnovy https://www.ako-uctovat.sk/uctovna-osnova.php.
 * id_fin_book_account_type:
   * type: lookup
   * title: Book Account Type
-  * model: Widgets/Finance/MainBook/Models/BookAccountType
+  * model: App/Widgets/Finance/MainBook/Models/BookAccountType
   * required: true
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE
@@ -113,7 +113,7 @@ Vzor účtovnej osnovy https://www.ako-uctovat.sk/uctovna-osnova.php.
 * id_fin_book_account_category:
   * type: lookup
   * title: Book Account Category
-  * model: Widgets/Finance/MainBook/Models/BookAccountCategory
+  * model: App/Widgets/Finance/MainBook/Models/BookAccountCategory
   * required: true
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE
@@ -121,7 +121,7 @@ Vzor účtovnej osnovy https://www.ako-uctovat.sk/uctovna-osnova.php.
 * id_fin_accounting_period:
   * type: lookup
   * title: Accounting Period
-  * model: Widgets/Finance/MainBook/Models/AccountingPeriod
+  * model: App/Widgets/Finance/MainBook/Models/AccountingPeriod
   * required: true
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE

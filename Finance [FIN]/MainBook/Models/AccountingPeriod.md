@@ -64,14 +64,14 @@ V modeli nie sú použité konštanty.
 * id_fin_accounting_period:
   * type: lookup
   * title: Previous Accounting Period
-  * model: Widgets/Finance/MainBook/Models/AccountingPeriod
+  * model: App/Widgets/Finance/MainBook/Models/AccountingPeriod
   * foreignKeyOnUpdate: CASCADE
   * foreignKeyOnDelete: RESTRICT
   * showColumn: true
 * id_fin_currency:
   * type: lookup
   * title: Main Currency
-  * model: Widgets/Finance/ExchangeRate/Models/Currency
+  * model: App/Widgets/Finance/ExchangeRate/Models/Currency
   * foreignKeyOnUpdate: CASCADE
   * foreignKeyOnDelete: RESTRICT
   * showColumn: true

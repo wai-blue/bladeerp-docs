@@ -36,7 +36,7 @@ Tabuľka bude slúžiť na prepojenie záväzku s účtovnou osnovou.
 	* required: true
 	* type: lookup
 	* title: Liability
-	* model: Widgets/Finance/Liability/Models/Liability
+	* model: App/Widgets/Finance/Liability/Models/Liability
 	* foreignKeyOnUpdate: CASCADE
 	* foreignKeyOnDelete: RESTRICT
 	* showColumn: true
@@ -44,7 +44,7 @@ Tabuľka bude slúžiť na prepojenie záväzku s účtovnou osnovou.
 	* required: true
 	* type: lookup
 	* title: Account
-	* model: Widgets/Finance/MainBook/Models/BookAccount
+	* model: App/Widgets/Finance/MainBook/Models/BookAccount
 	* foreignKeyOnUpdate: CASCADE
 	* foreignKeyOnDelete: RESTRICT
 	* showColumn: true
