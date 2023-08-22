@@ -1,3 +1,3 @@
-# Module Finance
+# Module Finance [FIN]
 
 ...
