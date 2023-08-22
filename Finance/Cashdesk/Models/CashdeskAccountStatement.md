@@ -45,19 +45,21 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column                   | Model                                                                                                      | Relation | OnUpdate | OnDelete |
-| :----------------------- | :--------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_fin_cashdesk_accounts | [App/Widgets/Finance/Cashdesk/Models/CashdeskAccount](../../../Finance/Cashdesk/Models/CashdeskAccount.md) |   1:N    | Cascade  | Restrict |
-| id_user                  | ADIOS/Core/User                                                                                            |   1:N    | Cascade  | Restrict |
+| Column                  | Model                                                                                                      | Relation | OnUpdate | OnDelete |
+| :---------------------- | :--------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_fin_cashdesk_account | [App/Widgets/Finance/Cashdesk/Models/CashdeskAccount](../../../Finance/Cashdesk/Models/CashdeskAccount.md) |   1:N    | Cascade  | Restrict |
+| id_user                 | ADIOS/Core/User                                                                                            |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 
 | Name                                          |  Type   |               Column + Order |
 | :-------------------------------------------- | :-----: | ---------------------------: |
-| id                                            | PRIMARY | id                       ASC |
-| datetime_statement                            |  INDEX  | datetime_statement       ASC |
+| id                                            | PRIMARY |                       id ASC |
+| id_fin_cashdesk_account                       |  INDEX  |  id_fin_cashdesk_account ASC |
+| id_user                                       |  INDEX  |                  id_user ASC |
+| datetime_statement                            |  INDEX  |       datetime_statement ASC |
 | id_fin_cashdesk_accounts___datetime_statement | UNIQUE  | id_fin_cashdesk_accounts ASC |
-|                                               |         | datetime_statement       ASC |
+|                                               |         |       datetime_statement ASC |
 
 ## Callbacks
 

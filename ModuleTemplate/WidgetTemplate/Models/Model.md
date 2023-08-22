@@ -35,7 +35,7 @@
 | id                       |                            |    int     |   8    |   TRUE   | ID záznamu                     |
 | name                     | Name                       |  varchar   |  100   |   TRUE   | Krátky text                    |
 | description              | Description                |    text    |        |  FALSE   | Dlhý text                      |
-| maturity_date            | Maturity Date              |    date    |   8    |   TRUE   | Dátum splatnosti               |
+| due_date                 | Due Date                   |    date    |   8    |   TRUE   | Dátum splatnosti               |
 | is_open                  | Is Open                    |  boolean   |   1    |   TRUE   | Logická hodnota                |
 | state_sequence           | State Sequence             |    int     |   6    |   TRUE   | Poradové číslo v select boxoch |
 | id_fin_accounting_period | Previous Accounting Period |   lookup   |   8    |   TRUE   | Previous Accounting Period     |

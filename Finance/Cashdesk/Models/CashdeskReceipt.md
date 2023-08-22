@@ -1,5 +1,7 @@
-# CashdeskReceipt
+# Model Finance/Cashdesk/CashdeskReceipt
 
+NOTE: DD pretukal.
+TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
 TODO: V yml prerobit z CashdeskDocument.
 
 ## Introduction
@@ -7,7 +9,8 @@ TODO: V yml prerobit z CashdeskDocument.
 Pohyby na pokladnicnych uctoch.
 
 ## Constants
-V modeli nie sú použité konštanty.
+
+No constants are defined for this model.
 
 ## Properties
 
@@ -15,93 +18,115 @@ V modeli nie sú použité konštanty.
 | :-------------------- | :------------------------ |
 | sqlName               | fin_cashdesk_receipts     |
 | urlBase               | finance/cashdesk/receipts |
-| lookupSqlValue        | -                         |
+| lookupSqlValue        |                           |
 | tableTitle            | Cashdesk Receipt          |
 | formTitleForInserting | New Cashdesk Receipt      |
 | formTitleForEditing   | Cashdesk Receipt          |
 | formAddButtonText     | Add Receipt               |
 | formSaveButtonText    | Update Receipt            |
 
-## SQL Structure
+## Data Structure
 
-| Názov                    | Title              | Popis                                         | Typ     | Dĺžka | Povinný |
-| :----------------------- | :----------------- | :-------------------------------------------- | :------ | :---- | :------ |
-| id                       | ID                 | Jedinečné ID záznamu                          | INT     | 11    | Y       |
-| id_fin_cashdesk_account  | Cashdesk Account   | ID pokladne                                   | INT     | 11    | Y       |
-| id_fin_accounting_period | Account Period     | ID účtovného obdobia                          | INT     | 11    | Y       |
-| id_com_numeric_sequence  | Document Type      | ID typu dokumentu                             | INT     | 11    | Y       |
-| id_com_address           | Partner            | ID adresára                                   | INT     | 11    | Y       |
-| id_adios_user            | User               | ID užívateľa, ktorý doklad vystavil           | INT     | 11    | Y       |
-| date                     | Creation Date      | Dátum vystavenia pokladničného dokladu        | DATE    | 8     | Y       |
-| number                   | Number             | Poradové číslo dokladu                        | INT     | 8     | Y       |
-| description              | Description        | Popis dokladu                                 | TEXT    |       | N       |
-| amount_without_vat       | Amount Without VAT | Suma bez DPH                                  | DECIMAL | 15,2  | Y       |
-| amount_vat               | Amount VAT         | DPH                                           | DECIMAL | 15,2  | N       |
-| amount_total             | Amount Total       | Celková hodnota dokladu                       | DECIMAL | 15,2  | Y       |
-| exchange_rate            | Exchange Rate      | Kurz meny voči hlavnej mene účtovného obdobia | DECIMAL | 15,2  | Y       |
-| id_fin_currency          | Currency           | ID meny                                       | INT     | 11    | Y       |
-| id_fin_receipt           | Receipt            | ID v denníku hlavnej knihy                    | INT     | 11    | Y       |
-| is_accounted             | Is Accounted       | Je doklad zaúčtovaný                          | BOOL    | 1     | N       |
+| Column                   | Title              | ADIOS Type | Length | Required | Notes                                         |
+| :----------------------- | ------------------ | :--------: | :----: | :------: | :-------------------------------------------- |
+| id                       | ID                 |    int     |   11   |   TRUE   | Jedinečné ID záznamu                          |
+| id_fin_cashdesk_account  | Cashdesk Account   |   lookup   |   11   |   TRUE   | ID pokladne                                   |
+| id_fin_accounting_period | Account Period     |   lookup   |   11   |   TRUE   | ID účtovného obdobia                          |
+| id_com_numeric_sequence  | Document Type      |   lookup   |   11   |   TRUE   | ID typu dokumentu                             |
+| id_com_address           | Partner            |   lookup   |   11   |   TRUE   | ID adresára                                   |
+| id_user                  | User               |   lookup   |   11   |   TRUE   | ID užívateľa, ktorý doklad vystavil           |
+| date                     | Creation Date      |    date    |   8    |   TRUE   | Dátum vystavenia pokladničného dokladu        |
+| number                   | Number             |    int     |   8    |   TRUE   | Poradové číslo dokladu                        |
+| description              | Description        |    text    |        |  FALSE   | Popis dokladu                                 |
+| amount_without_vat       | Amount Without VAT |  decimal   |  15,2  |   TRUE   | Suma bez DPH                                  |
+| amount_vat               | Amount VAT         |  decimal   |  15,2  |  FALSE   | DPH                                           |
+| amount_total             | Amount Total       |  decimal   |  15,2  |   TRUE   | Celková hodnota dokladu                       |
+| exchange_rate            | Exchange Rate      |  decimal   |  15,2  |   TRUE   | Kurz meny voči hlavnej mene účtovného obdobia |
+| id_fin_currency          | Currency           |   lookup   |   11   |   TRUE   | ID meny                                       |
+| id_fin_receipt           | Receipt            |   lookup   |   11   |   TRUE   | ID v denníku hlavnej knihy                    |
+| is_accounted             | Is Accounted       |  boolean   |   1    |  FALSE   | Je doklad zaúčtovaný                          |
 
+REVIEW DD: id_adios_user premenovane na id_user
 
-## Foreign Keys
+### ADIOS Parameters
 
-| Stĺpec                   | Parent tabuľka         | Väzba | OnUpdate | OnDelete |
-| :----------------------- | :--------------------- | :---- | :------- | :------- |
-| id_fin_cashdesk_account  | fin_cashdesk_accounts  | 1:N   | Cascade  | Restrict |
-| id_fin_accounting_period | fin_accounting_periods | 1:N   | Cascade  | Restrict |
-| id_com_numeric_sequence  | com_numeric_sequence   | 1:N   | Cascade  | Restrict |
-| id_com_address           | com_address            | 1:N   | Cascade  | Restrict |
-| id_adios_user            | adios_user             | 1:N   | Cascade  | Restrict |
-| id_fin_currency          | fin_currencies         | 1:N   | Cascade  | Restrict |
-| id_fin_receipt           | fin_receipt            | 1:N   | Cascade  | Restrict |
+No additional ADIOS parameters needs to be defined.
 
-## Indexes
+### Foreign Keys
 
-| Názov                                                    | Typ     | Stĺpec                    | Zoradenie |
-| :------------------------------------------------------- | :------ | :------------------------ | :-------- |
-| id                                                       | PRIMARY | id                        | ASC       |
-| date                                                     | INDEX   | date                      | ASC       |
-| id_fin_accounting_periods_id_com_numeric_sequence_number | UNIQUE  | id_fin_accounting_periods | ASC       |
-|                                                          |         | id_com_numeric_sequence   | ASC       |
-|                                                          |         | number                    | ASC       |
+| Column                   | Model                                                                                                        | Relation | OnUpdate | OnDelete |
+| :----------------------- | :----------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_fin_cashdesk_account  | [App/Widgets/Finance/Cashdesk/Models/CashdeskAccount](../../../Finance/Cashdesk/Models/CashdeskAccount.md)   |   1:N    | Cascade  | Restrict |
+| id_fin_accounting_period | [App/Widgets/Finance/MainBook/Models/AccountingPeriod](../../../Finance/MainBook/Models/AccountingPeriod.md) |   1:N    | Cascade  | Restrict |
+| id_com_numeric_sequence  | com_numeric_sequence                                                                                         |   1:N    | Cascade  | Restrict |
+| id_com_address           | com_address                                                                                                  |   1:N    | Cascade  | Restrict |
+| id_user                  | ADIOS/Core/User                                                                                              |   1:N    | Cascade  | Restrict |
+| id_fin_currency          | [App/Widgets/Finance/ExchangeRate/Models/Currency](../../../Finance/ExchangeRate/Models/Currency.md)         |   1:N    | Cascade  | Restrict |
+| id_fin_receipt           | fin_receipt                                                                                                  |   1:N    | Cascade  | Restrict |
 
-## Columns
+REVIEW DD: Neviem, aky model pre id_fin_receipt.
 
+### Indexes
+
+| Name                                                         |  Type   |                Column + Order |
+| :----------------------------------------------------------- | :-----: | ----------------------------: |
+| id                                                           | PRIMARY |                        id ASC |
+| date                                                         |  INDEX  |                      date ASC |
+| id_fin_cashdesk_account                                      |  INDEX  |   id_fin_cashdesk_account ASC |
+| id_fin_accounting_period                                     |  INDEX  |  id_fin_accounting_period ASC |
+| id_com_numeric_sequence                                      |  INDEX  |   id_com_numeric_sequence ASC |
+| id_com_address                                               |  INDEX  |            id_com_address ASC |
+| id_user                                                      |  INDEX  |                   id_user ASC |
+| id_fin_currency                                              |  INDEX  |           id_fin_currency ASC |
+| id_fin_receipt                                               |  INDEX  |            id_fin_receipt ASC |
+| id_fin_accounting_periods___id_com_numeric_sequence___number | UNIQUE  | id_fin_accounting_periods ASC |
+|                                                              |         |   id_com_numeric_sequence ASC |
+|                                                              |         |                    number ASC |
 
 ## Callbacks
 
 ### onBeforeInsert
+
 Novy blocek je možné pridať iba s dátumom po poslednej závierke. 
 
 ### onAfterInsert
+
 Pri vytváraní noveho blocku je potrebné vytvoriť aj záznam v tabuľke fin_receipts a doklad v nej podrobne rozúčtovať.
 
 ### onBeforeUpdate
+
 Blocek po uzávierke nie je možné upraviť.
 
 ### onAfterUpdate
+
 Pri zmene blocku skontrolovať, či je doklad správne rozúčtovaný v denníku. Ak nie, otvoriť záznam v denníku.
 
 ### onBeforeDelete
+
 Blocek po uzávierke nie je možné vymazať.
 
 ### onAfterDelete
+
 Not used.
 
 ## Formatters
 
 ### tableCellHTMLFormatter
+
 Not used.
 
 ### tableCellCSVFormatter
+
 Not used.
 
 ### tableCellCSSFormatter
+
 Not used.
 
 ### tableRowCSSFormatter
+
 Not used.
 
 ### cardsCardHtmlFormatter
+
 Not used.

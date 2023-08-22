@@ -52,6 +52,7 @@ No additional ADIOS parameters needs to be defined.
 | Name                              |  Type   |               Column + Order |
 | :-------------------------------- | :-----: | ---------------------------: |
 | id                                | PRIMARY |                       id ASC |
+| id_fin_accounting_period          |  INDEX  | id_fin_accounting_period ASC |
 | id_fin_accounting_period___number | UNIQUE  | id_fin_accounting_period ASC |
 |                                   |         |                   number ASC |
 

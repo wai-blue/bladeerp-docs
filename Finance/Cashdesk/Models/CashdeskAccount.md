@@ -32,8 +32,10 @@ No constants are defined for this model.
 | acronym             | Acronym          |  varchar   |   5    |   TRUE   | Skratka pokladne                                         |
 | id_fin_currency     | Currency         |   lookup   |   11   |   TRUE   | ID meny v ktorej je pokladňa vedená                      |
 | id_fin_book_account | Analytic Account |   lookup   |   11   |   TRUE   | ID analytického účtu na ktorom je pokladňa vedená        |
-| id_adios_user       | Cashier          |   lookup   |   11   |   TRUE   | ID pokladníka, ktorý je za pokladňu zodpovedný           |
+| id_user             | Cashier          |   lookup   |   11   |   TRUE   | ID pokladníka, ktorý je za pokladňu zodpovedný           |
 | is_open             | Is Open          |  boolean   |   1    |  FALSE   | Príznak, či je pokladňa otvorená a môže sa na ňu účtovať |
+
+REVIEW DD: id_adios_user premenovany na id_user
 
 ### ADIOS Parameters
 
@@ -45,15 +47,18 @@ No additional ADIOS parameters needs to be defined.
 | :------------------ | :--------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
 | id_fin_currency     | [App/Widgets/Finance/ExchangeRate/Models/Currency](../../../Finance/ExchangeRate/Models/Currency.md) |   1:N    | Cascade  | Restrict |
 | id_fin_book_account | [App/Widgets/Finance/MainBook/Models/BookAccount](../../../Finance/MainBook/Models/BookAccount.md)   |   1:N    | Cascade  | Restrict |
-| id_adios_user       | ADIOS/Core/User                                                                                      |   1:N    | Cascade  | Restrict |
+| id_user             | ADIOS/Core/User                                                                                      |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 
-| Name    |  Type   | Column + Order |
-| :------ | :-----: | -------------: |
-| id      | PRIMARY |         id ASC |
-| name    |  INDEX  |       name ASC |
-| is_open |  INDEX  |   is_open DESC |
+| Name                |  Type   |              Column + Order |
+| :------------------ | :-----: | --------------------------: |
+| id                  | PRIMARY |                      id ASC |
+| id_fin_currency     |  INDEX  | id_fin_cashdesk_account ASC |
+| id_fin_book_account |  INDEX  | id_fin_cashdesk_account ASC |
+| id_user             |  INDEX  | id_fin_cashdesk_account ASC |
+| name                |  INDEX  |                    name ASC |
+| is_open             |  INDEX  |                is_open DESC |
 
 ## Callbacks
 

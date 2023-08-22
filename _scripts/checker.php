@@ -92,13 +92,22 @@ foreach ($modules as $module) {
 
         // Data Structure
         $dataStructure = $md->findTableByColumns(['Column', 'Title', 'ADIOS Type', 'Length', 'Required', 'Notes']);
+        $columns = [];
+
         foreach ($dataStructure as $row) {
-          if (!in_array($row[2], ["varchar", "int", "date", "datetime", "lookup", "file", "image", "boolean", "decimal", "text"])) {
+          $columns[$row[0]] = [
+            'type' => $row[2],
+            'foreignKey' => NULL,
+            'index' => NULL,
+          ];
+
+          if (!in_array($row[2], ["varchar", "int", "date", "datetime", "lookup", "file", "image", "boolean", "decimal", "text", "json"])) {
             $errors[] = "[{$modelRef}] Unknown ADIOS type for `{$row[0]}`.";
           }
-          if ($row[2] == "LOOKUP") {
+          if ($row[2] == "lookup") {
             $modelContainsLookup = TRUE;
           }
+
           if ($row[2] == "lookup" && substr($row[0], 0, 3) != 'id_') {
             $errors[] = "[{$modelRef}] `{$row[0]}` is lookup and does not start with `id_`.";
           }
@@ -120,7 +129,7 @@ foreach ($modules as $module) {
           }
         }
 
-        // Columns
+        // ADIOS Parameters
         $h3AdiosParameters = $md->findContentByH3('ADIOS Parameters');
         if (empty($h3AdiosParameters)) {
           $errors[] = "[{$modelRef}] Definition of ADIOS Parameters is empty.";
@@ -136,6 +145,12 @@ foreach ($modules as $module) {
         ]);
         if ($foreignKeys === NULL || count($foreignKeys) === 0) {
           $warnings[] = "[{$modelRef}] Foreign keys are not defined or table structure is invalid.";
+        } else {
+          foreach ($foreignKeys as $row) {
+            if (isset($columns[$row[0]])) {
+              $columns[$row[0]]['foreignKey'] = $row;
+            }
+          }
         }
 
         // Indexes
@@ -156,6 +171,24 @@ foreach ($modules as $module) {
             $errors[] = "[{$modelRef}] Only one index for column `id` defined and model contains lookups.";
           } else {
             $warnings[] = "[{$modelRef}] Only one index for column `id` defined.";
+          }
+        } else {
+          foreach ($indexes as $row) {
+            if (isset($columns[$row[0]])) {
+              $columns[$row[0]]['index'] = $row;
+            }
+          }
+        }
+
+        // Columns
+        foreach ($columns as $colName => $colDefinition) {
+          if ($colDefinition['type'] == 'lookup') {
+            if ($colDefinition['foreignKey'] === NULL) {
+              $errors[] = "[{$modelRef}] `{$colName}` is lookup but has no foreign key defined.";
+            }
+            if ($colDefinition['index'] === NULL) {
+              $errors[] = "[{$modelRef}] `{$colName}` is lookup but has no index defined.";
+            }
           }
         }
 

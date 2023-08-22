@@ -46,12 +46,12 @@ No additional ADIOS parameters needs to be defined.
 
 ### Indexes
 
-| Name                     | Type    | Column + Order               |
-| :----------------------- | :-----: | :--------------------------- |
-| id                       | PRIMARY | id ASC                       |
-| name                     | UNIQUE  | name ASC                     |
-| closing_date             | INDEX   | closing_date ASC             |
-| id_fin_accounting_period | INDEX   | id_fin_accounting_period ASC |
+| Name                     |  Type   |               Column + Order |
+| :----------------------- | :-----: | ---------------------------: |
+| id                       | PRIMARY |                       id ASC |
+| name                     | UNIQUE  |                     name ASC |
+| closing_date             |  INDEX  |             closing_date ASC |
+| id_fin_accounting_period |  INDEX  | id_fin_accounting_period ASC |
 
 ## Callbacks
 

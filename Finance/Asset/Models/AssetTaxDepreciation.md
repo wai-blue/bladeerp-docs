@@ -29,7 +29,7 @@ No constants are defined for this model.
 | Column                              | Title                                  | ADIOS Type | Length | Required | Notes                        |
 | :---------------------------------- | -------------------------------------- | :--------: | :----: | :------: | :--------------------------- |
 | id                                  | ID                                     |    int     |   11   |   TRUE   | Jedinečné ID záznamu         |
-| id_fin_asset                        | Property                               |    int     |   11   |   TRUE   | Odpisovaný majetok           |
+| id_fin_asset                        | Property                               |   lookup   |   11   |   TRUE   | Odpisovaný majetok           |
 | year                                | Year                                   |    int     |   4    |   TRUE   | Rok odpisu                   |
 | month                               | Month                                  |    int     |   2    |   TRUE   | Mesiac odpisu                |
 | accounting_depreciation_coefficient | Coefficient of Accounting Depreciation |  decimal   |  5,2   |   TRUE   | Koeficient účtovných odpisov |
@@ -52,6 +52,7 @@ No additional ADIOS parameters needs to be defined.
 | Name                |  Type   |   Column + Order |
 | :------------------ | :-----: | ---------------: |
 | id                  | PRIMARY |           id ASC |
+| id_fin_asset        |  INDEX  | id_fin_asset ASC |
 | id_fin_asset___year | UNIQUE  | id_fin_asset ASC |
 |                     |         |         year ASC |
 

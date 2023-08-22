@@ -1,4 +1,4 @@
-# CashdeskReceipt
+# Model Finance/Cashdesk/CashdeskReceiptItem
 
 TODO: V yml prerobit z CashdeskDocumentEntry.
 
@@ -8,7 +8,7 @@ Položky pohybu na pokladni.
 
 ## Constants
 
-V modeli nie sú použité konštanty.
+No constants are defined for this model.
 
 ## Properties
 
@@ -16,38 +16,42 @@ V modeli nie sú použité konštanty.
 | :-------------------- | :----------------------------- |
 | sqlName               | fin_cashdesk_receipt_items     |
 | urlBase               | finance/cashdesk/receipt/items |
-| lookupSqlValue        | -                              |
+| lookupSqlValue        |                                |
 | tableTitle            | Cashdesk Receipt Items         |
 | formTitleForInserting | New Cashdesk Receipt Item      |
 | formTitleForEditing   | Cashdesk Receipt Item          |
 | formAddButtonText     | Add Receipt Item               |
 | formSaveButtonText    | Update Receipt Item            |
 
-## SQL Structure
+## Data Structure
 
-| Názov                    | Title             | Popis                     | Typ     | Dĺžka | Povinný |
-| :----------------------- | :---------------- | :------------------------ | :------ | :---- | :------ |
-| id                       | ID                | Jedinečné ID záznamu      | INT     | 11    | Y       |
-| id_fin_cashdesk_document | Cashdesk Document | ID pokladničného dokladu  | INT     | 11    | Y       |
-| id_fin_book_account      | Book Account      | ID účtu z účtovnej osnovy | INT     | 11    | Y       |
-| amount                   | Amount            | Suma položky transakcie   | DECIMAL | 15,2  | N       |
+| Column                  | Title            | ADIOS Type | Length | Required | Notes                     |
+| :---------------------- | ---------------- | :--------: | :----: | :------: | :------------------------ |
+| id                      | ID               |    int     |   11   |   TRUE   | Jedinečné ID záznamu      |
+| id_fin_cashdesk_receipt | Cashdesk Receipt |   lookup   |   11   |   TRUE   | ID pokladničného dokladu  |
+| id_fin_book_account     | Book Account     |   lookup   |   11   |   TRUE   | ID účtu z účtovnej osnovy |
+| amount                  | Amount           |  decimal   |  15,2  |  FALSE   | Suma položky transakcie   |
 
+REVIEW DD: id_fin_cashdesk_document premenovany na id_fin_cashdesk_receipt
 
-## Foreign Keys
+### ADIOS Parameters
 
-| Stĺpec                   | Parent tabuľka         | Väzba | OnUpdate | OnDelete |
-| :----------------------- | :--------------------- | :---- | :------- | :------- |
-| id_fin_cashdesk_document | fin_cashdesk_documents | 1:N   | Cascade  | Restrict |
-| id_fin_book_account      | fin_book_accounts      | 1:N   | Cascade  | Restrict |
+No additional ADIOS parameters needs to be defined.
 
-## Indexes
+### Foreign Keys
 
-| Názov | Typ     | Stĺpec | Zoradenie |
-| :---- | :------ | :----- | :-------- |
-| id    | PRIMARY | id     | ASC       |
+| Column                  | Model                                                                                                      | Relation | OnUpdate | OnDelete |
+| :---------------------- | :--------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_fin_cashdesk_receipt | [App/Widgets/Finance/Cashdesk/Models/CashdeskReceipt](../../../Finance/Cashdesk/Models/CashdeskReceipt.md) |   1:N    | Cascade  | Restrict |
+| id_fin_book_account     | [App/Widgets/Finance/MainBook/Models/BookAccount](../../../Finance/MainBook/Models/BookAccount.md)         |   1:N    | Cascade  | Restrict |
 
-## Columns
+### Indexes
 
+| Name                    |  Type   |              Column + Order |
+| :---------------------- | :-----: | --------------------------: |
+| id                      | PRIMARY |                      id ASC |
+| id_fin_cashdesk_receipt |  INDEX  | id_fin_cashdesk_receipt ASC |
+| id_fin_book_account     |  INDEX  |     id_fin_book_account ASC |
 
 ## Callbacks
 

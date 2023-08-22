@@ -36,8 +36,8 @@ TODO: Tabuľka je v nesúlade s tou na Google Docs, odkontrolovať prosím.
 | :------------------------- | ------------------- | :--------: | :----: | :------: | :------------------ |
 | id                         |                     |    int     |   8    |   TRUE   | Unique record ID    |
 | balance                    | Balance             |  decimal   |  1,52  |  FALSE   | Balance             |
-| id_fin_book_account        | Book Account        |    int     |   11   |   TRUE   | Book Account        |
-| id_fin_financial_statement | Financial Statement |    int     |   11   |   TRUE   | Financial Statement |
+| id_fin_book_account        | Book Account        |   lookup   |   11   |   TRUE   | Book Account        |
+| id_fin_financial_statement | Financial Statement |   lookup   |   11   |   TRUE   | Financial Statement |
 
 ### ADIOS Parameters
 
@@ -52,10 +52,10 @@ No additional ADIOS parameters needs to be defined.
 
 ### Indexes
 
-| Name                       |  Type   | Column + Order                 |
-| :------------------------- | :-----: | :----------------------------- |
-| id                         | PRIMARY | id ASC                         |
-| id_fin_book_account        |  INDEX  | id_fin_book_account ASC        |
+| Name                       |  Type   |                 Column + Order |
+| :------------------------- | :-----: | -----------------------------: |
+| id                         | PRIMARY |                         id ASC |
+| id_fin_book_account        |  INDEX  |        id_fin_book_account ASC |
 | id_fin_financial_statement |  INDEX  | id_fin_financial_statement ASC |
 
 ## Callbacks
