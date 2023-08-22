@@ -5,6 +5,7 @@
 
 ## Constants
 [V modeli nie sú použité konštanty.]
+### Side
 | Constant                   | Value | Description                    |
 | :------------------------- | :---: | :----------------------------- |
 | FIN_BOOK_ACCOUNT_SIDE_BOTH |   1   | Je možné účtovať na obe strany |
@@ -23,22 +24,35 @@
 | formTitleForInserting | [New …]                                   |
 | formTitleForEditing   | [Model Name]                              |
 
-## SQL Structure
-| Column         | Description                    |  Type   | Length | NULL     | Default |
-| :------------- | :----------------------------- | :-----: | :----: | :------- | :-----: |
-| id             | ID záznamu                     |   INT   |   8    | NOT NULL |         |
-| name           | Krátky text                    | VARCHAR |  100   | NOT NULL |   “”    |
-| description    | Dlhý text                      |  TEXT   |        | NULL     |         |
-| maturity_date  | Dátum splatnosti               |  DATE   |   8    | NOT NULL |         |
-| is_open        | Logická hodnota                | BOOLEAN |   1    | NOT NULL |    1    |
-| state_sequence | Poradové číslo v select boxoch |   INT   |   6    | NOT NULL |         |
+## Data Structure
+| Column                   | Title                      | ADIOS Type | Length | Required | Notes                          |
+| :----------------------- | -------------------------- | :--------: | :----: | :------: | :----------------------------- |
+| id                       |                            |    INT     |   8    |   TRUE   | ID záznamu                     |
+| name                     | Name                       |  VARCHAR   |  100   |   TRUE   | Krátky text                    |
+| description              | Description                |    TEXT    |        |  FALSE   | Dlhý text                      |
+| maturity_date            | Maturity Date              |    DATE    |   8    |   TRUE   | Dátum splatnosti               |
+| is_open                  | Is Open                    |  BOOLEAN   |   1    |   TRUE   | Logická hodnota                |
+| state_sequence           | State Sequence             |    INT     |   6    |   TRUE   | Poradové číslo v select boxoch |
+| id_fin_accounting_period | Previous Accounting Period |   LOOKUP   |   8    |   TRUE   | Previous Accounting Period     |
+| side                     | Account Side               |    INT     |   8    |   TRUE   | Účtovná strana                 |
+| price                    | Total Price                |  DECIMAL   |  15,2  |  FALSE   | Cena                           |
+| attached_file            | Path to Attached File      |    FILE    |  255   |  FALSE   | Relatívna cesta k súboru       |
+| profile_image            | Path to Profile Image      |    FILE    |  255   |  FALSE   | Relatívna cesta k obrázku      |
+  
+
+### ADIOS Parameters 
+| Column         | Parameter   | Value                             |
+| :------------- | :---------- | --------------------------------- |
+| is_open        | description | Is the document open or not?      |
+| state_sequence | description | Order of the item in input lists. |
+| side           | enum_values | [Enum values](#side)              |
 
 ## Foreign Keys
 [Model neobsahuje cudzie kľúče.]
-| Column                   | Parent table           | Relation | OnUpdate | OnDelete |
-| :----------------------- | :--------------------- | :------: | -------- | -------- |
-| id_fin_accounting_period | fin_accounting_periods |   1:N    | Cascade  | Cascade  |
-| id_fin_account_type      | fin_account_types      |   1:N    | Cascade  | Restrict |
+| Column                   | Model                                                                                                                | Relation | OnUpdate | OnDelete |
+| :----------------------- | :------------------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_fin_accounting_period | [App/Widgets/Finance/MainBook/Models/AccountingPeriod](../../../Finance%20[FIN]/MainBook/Models/AccountingPeriod.md) |   1:N    | Cascade  | Cascade  |
+| id_fin_book_account_type | [App/Widgets/Finance/MainBook/Models/BookAccountType](../../../Finance%20[FIN]/MainBook/Models/BookAccountType.md)   |   1:N    | Cascade  | Restrict |
 
 ## Indexes
 [Pre túto tabuľku nie sú definované indexy.]
@@ -49,55 +63,6 @@
 | unique_index   | UNIQUE  | start_date ASC |
 | combined_index |  INDEX  |    is_open ASC |
 |                |         | start_date ASC |
-
-## Columns
-(vid ADIOS.repo/src/Core/DB/DataTypes, hladaj $params)
-TODO: Replace example columns with real one
-* name:
-  * required: true
-  * type: varchar
-  * title: Name
-  * byte_size: 100
-  * showColumn: true
-* description:
-  * required: false
-  * type: text
-  * title: Description
-  * showColumn: true
-* maturity_date:
-  * required: true
-  * type: date
-  * title: Maturity Date
-  * showColumn: true
-* is_open:
-  * required: true
-  * type: boolean
-  * title: Is open
-  * description: Is the document open or not?
-  * showColumn: true
-* state_sequence:
-  * required: true
-  * type: int
-  * title: Order In Selects
-  * description: Order of the item in input lists.
-  * byte_size: 6
-  * showColumn: true
-* balance:
-  * required: false
-  * type: float
-  * title: Balance
-  * byte_size: 15
-  * decimals: 2
-  * showColumn: true
-* id_fin_accounting_period:
-  * required: true
-  * type: lookup
-  * title: Previous Accounting Period
-  * model: App/Widgets/Finance/MainBook/Models/AccountingPeriod
-  * inputStyle:”select”
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: CASCADE
 
 ## Callbacks
 
