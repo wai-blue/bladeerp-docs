@@ -1,4 +1,4 @@
-# CreditNotePayment
+# Model Finance/CreditNote/CreditNotePayment
 
 ## Introduction
 
@@ -6,9 +6,7 @@ Tabuľka bude slúžiť na evidenciu úhrad dobropisov.
 
 ## Constants
 
-| Constant | Value | Description |
-| -------- | ----- | ----------- |
-|          |       |             |
+No constants are defined for this model.
 
 ## Properties
 
@@ -16,55 +14,40 @@ Tabuľka bude slúžiť na evidenciu úhrad dobropisov.
 | :-------------------- | :------------------------------------------------ |
 | sqlName               | fin_credit_note_payments                          |
 | urlBase               | finance/credit-note/{id_fin_credit_note}/payments |
-| lookupSqlValue        | -                                                 |
+| lookupSqlValue        |                                                   |
 | tableTitle            | Payments                                          |
 | formTitleForInserting | New Payment                                       |
 | formTitleForEditing   | Payment                                           |
 
-## SQL Structure
+## Data Structure
 
-| Column             | Description          |  Type   | Length |   NULL   | Default |
-| :----------------- | :------------------- | :-----: | :----: | :------: | :------ |
-| id                 | Jedinečné ID záznamu |   INT   |   8    | NOT NULL |         |
-| id_fin_credit_note | ID dobropisu         |   INT   |   8    | NOT NULL |         |
-| date               | Dátum úhrady         |  DATE   |   8    | NOT NULL |         |
-| price              | Uhradená suma        | DECIMAL |  15,2  | NOT NULL |         |
+| Column             | Title         | ADIOS Type | Length | Required | Notes                |
+| :----------------- | ------------- | :--------: | :----: | :------: | :------------------- |
+| id                 |               |    int     |   8    |   TRUE   | Jedinečné ID záznamu |
+| id_fin_credit_note | Credit Note   |   lookup   |   8    |   TRUE   | ID dobropisu         |
+| date               | Payment Date  |    date    |   8    |   TRUE   | Dátum úhrady         |
+| price              | Payment Price |  decimal   |  15,2  |   TRUE   | Uhradená suma        |
 
-## Columns
+REVIEW DD: `date` premenovat na `payment_date`
+REVIEW DD: `price` by lepsie bolo ako `amount`
 
-* id_fin_credit_note:
-    * required: true
-    * type: lookup
-    * title: CreditNote
-    * model: App/Widgets/Finance/CreditNote/Models/CreditNote
-    * foreignKeyOnUpdate: CASCADE
-    * foreignKeyOnDelete: RESTRICT
-    * showColumn: true
-* date:
-    * required: true
-    * type: date
-    * title: Payment Date
-    * required: true
-    * showColumn: true
-* price:
-    * required: true
-    * type: float
-    * title: Payment Price
-    * byte_size: 15
-    * decimals: 2
-    * showColumn: true
+### ADIOS Parameters
 
-## Foreign Keys
+No additional ADIOS parameters needs to be defined.
 
-| Column             | Parent table     | Relation | OnUpdate | OnDelete |
-| :----------------- | :--------------- | :------: | :------: | :------: |
-| id_fin_credit_note | fin_credit_notes |   1:N    | Cascade  | Restrict |
+### Foreign Keys
 
-## Indexes
+| Column             | Model                                            | Relation | OnUpdate | OnDelete |
+| :----------------- | :----------------------------------------------- | :------: | -------- | -------- |
+| id_fin_credit_note | App/Widgets/Finance/CreditNote/Models/CreditNote |   1:N    | Cascade  | Restrict |
 
-| Name | Type    | Column + Order |
-| :--- | :------ | :------------- |
-| id   | PRIMARY | id ASC         |
+### Indexes
+
+| Name               |  Type   |         Column + Order |
+| :----------------- | :-----: | ---------------------: |
+| id                 | PRIMARY |                 id ASC |
+| id_fin_credit_note |  INDEX  | id_fin_credit_note ASC |
+| date               |  INDEX  |               date ASC |
 
 ## Callbacks
 

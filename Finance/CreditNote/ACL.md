@@ -13,10 +13,10 @@
 | CreditNote/AddFromClaim       | X               |          | X         |
 | CreditNote/Edit               | X               |          | X         |
 | CreditNote/Delete             | X               |          | X         |
-| CreditNoteLines               | X               | X        | X         |
-| CreditNoteLine/Add            | X               |          | X         |
-| CreditNoteLine/Edit           | X               |          | X         |
-| CreditNoteLine/Delete         | X               |          | X         |
+| CreditNoteItems               | X               | X        | X         |
+| CreditNoteItem/Add            | X               |          | X         |
+| CreditNoteItem/Edit           | X               |          | X         |
+| CreditNoteItem/Delete         | X               |          | X         |
 | CreditNoteVats                | X               | X        | X         |
 | CreditNotePayments            | X               | X        | X         |
 | CreditNotePayment/Add         | X               |          | X         |

@@ -1,4 +1,4 @@
-# CreditNoteClaim
+# Model Finance/CreditNot/CreditNoteClaim
 
 ## Introduction
 
@@ -6,9 +6,7 @@ Tabuľka bude slúžiť na prepojenie dobropisov s pohľadávkami.
 
 ## Constants
 
-| Constant | Value | Description |
-| -------- | ----- | ----------- |
-|          |       |             |
+No constants are defined for this model.
 
 ## Properties
 
@@ -16,47 +14,38 @@ Tabuľka bude slúžiť na prepojenie dobropisov s pohľadávkami.
 | :-------------------- | :---------------------------------------------- |
 | sqlName               | fin_credit_note_claims                          |
 | urlBase               | finance/credit-note/{id_fin_credit_note}/claims |
-| lookupSqlValue        | -                                               |
+| lookupSqlValue        |                                                 |
 | tableTitle            | Credit Note Claims                              |
 | formTitleForInserting | New Credit Note Claim                           |
 | formTitleForEditing   | Credit Note Claim                               |
+| isCrossTable          | TRUE                                            |
 
-## SQL Structure
+REVIEW DD: pridane isCrossTable
 
-| Column             | Description   | Type | Length |   NULL   | Default |
-| :----------------- | :------------ | :--: | :----: | :------: | :------ |
-| id_fin_credit_note | ID dobropisu  | INT  |   8    | NOT NULL |         |
-| id_fin_claim       | ID pohľadávky | INT  |   8    | NOT NULL |         |
+## Data Structure
 
-## Columns
+| Column             | Title       | ADIOS Type | Length | Required | Notes         |
+| :----------------- | ----------- | :--------: | :----: | :------: | :------------ |
+| id_fin_credit_note | Credit Note |   lookup   |   8    |   TRUE   | ID dobropisu  |
+| id_fin_claim       | Claim       |   lookup   |   8    |   TRUE   | ID pohľadávky |
 
-* id_fin_credit_note:
-    * required: true
-    * type: lookup
-    * title: CreditNote
-    * model: App/Widgets/Finance/CreditNote/Models/CreditNote
-    * foreignKeyOnUpdate: CASCADE
-    * foreignKeyOnDelete: CASCADE
-    * showColumn: true
-* id_fin_claim:
-    * required: true
-    * type: lookup
-    * title: Claim
-    * model: App/Widgets/Finance/Claim/Models/Claim
-    * foreignKeyOnUpdate: CASCADE
-    * foreignKeyOnDelete: RESTRICT
-    * showColumn: true
+### ADIOS Parameters
 
-## Foreign Keys
+No additional ADIOS parameters needs to be defined.
 
-| Column             | Parent table     | Relation | OnUpdate | OnDelete |
-| :----------------- | :--------------- | :------: | :------: | :------: |
-| id_fin_credit_note | fin_credit_notes |   1:N    | Cascade  | Cascade  |
-| id_fin_claim       | fin_claims       |   1:N    | Cascade  | Restrict |
+### Foreign Keys
 
-## Indexes
+| Column             | Model                                            | Relation | OnUpdate | OnDelete |
+| :----------------- | :----------------------------------------------- | :------: | -------- | -------- |
+| id_fin_credit_note | App/Widgets/Finance/CreditNote/Models/CreditNote |   1:N    | Cascade  | Cascade  |
+| id_fin_claim       | App/Widgets/Finance/Claim/Models/Claim           |   1:N    | Cascade  | Restrict |
 
-Tabuľka nemá iné indexy.
+### Indexes
+
+| Name               | Type  |         Column + Order |
+| :----------------- | :---: | ---------------------: |
+| id_fin_credit_note | INDEX | id_fin_credit_note ASC |
+| id_fin_claim       | INDEX |       id_fin_claim ASC |
 
 ## Callbacks
 

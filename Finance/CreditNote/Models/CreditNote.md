@@ -1,4 +1,4 @@
-# CreditNote
+# Model Finance/CreditNote/CreditNote
 
 ## Introduction
 
@@ -6,9 +6,7 @@ Tabuľka slúži na ukladanie základných údajov o dobropise.
 
 ## Constants
 
-| Constant | Value | Description |
-| -------- | ----- | ----------- |
-|          |       |             |
+No constants are defined for this model.
 
 ## Properties
 
@@ -19,188 +17,73 @@ Tabuľka slúži na ukladanie základných údajov o dobropise.
 | lookupSqlValue        | {%TABLE%}.sequence_code          |
 | tableTitle            | CreditNotes                      |
 | formTitleForInserting | New CreditNote                   |
-| formTitleForEditing   | CreditNote                       |
+| formTitleForEditing   | Credit Note                      |
 
-## SQL Structure
+## Data Structure
 
-| Column                                  | Description                                       | Type    | Length | NULL     | Default |
-| :-------------------------------------- | :------------------------------------------------ | :-----: | :----: | :------: | :-----: |
-| id                                      | Jedinečné ID záznamu                              | INT     | 8      | NOT NULL | AUTO    |
-| id_fin_credit_note_state                | ID stavu dobropisu                                | INT     | 8      | NOT NULL |         |
-| id_com_address                          | ID odberateľa                                     | INT     | 8      | NOT NULL |         |
-| id_fin_accounting_period                | ID účtovného obdobia                              | INT     | 8      | NOT NULL |         |
-| is_accounted                            | Je dobropis zaúčtovaný                            | BOOL    | 1      | NULL     | 0       |
-| supplier                                | Kópia údajov o predajcovi uložené v JSON formáte  | JSON    |        | NOT NULL |         |
-| customer                                | Kópia údajov o zákazníkovi uložené v JSON formáte | JSON    |        | NOT NULL |         |
-| id_com_numeric_sequence                 | ID číselného radu dobropisov                      | INT     | 8      | NOT NULL |         |
-| sequence_code                           | Sekvenčné označenie                               | VARCHAR | 20     | NULL     |         |
-| issued_date                             | Dátum vystavenia                                  | DATE    | 8      | NOT NULL |         |
-| delivery_date                           | Dátum dodania                                     | DATE    | 8      | NOT NULL |         |
-| maturity_date                           | Dátum splatnosti                                  | DATE    | 8      | NOT NULL |         |
-| id_com_numeric_sequence_variable_symbol | ID číselného radu Variabilných symbolov           | INT     | 8      | NOT NULL |         |
-| variable_symbol                         | Variabilný symbol                                 | VARCHAR | 10     | NULL     | “”      |
-| specific_symbol                         | Špecifický symbol                                 | VARCHAR | 10     | NULL     | “”      |
-| constant_symbol                         | Konštantný symbol                                 | VARCHAR | 4      | NULL     | “”      |
-| id_fin_currency                         | ID meny v ktorej sú uvedené sumy                  | INT     | 8      | NOT NULL |         |
-| exchange_rate                           | Hodnota prevodného kurzu voči  hlavnej mene       | DECIMAL | 15,2   | NULL     |         |
-| price_total                             | Celková hodnota dobropisu                         | DECIMAL | 15,2   | NOT NULL |         |
-| price_paid                              | Uhradená hodnota dobropisu                        | DECIMAL | 15,2   | NOT NULL |         |
-| comment                                 | Poznámka k dobropisu                              | TEXT    |        | NULL     |         |
+| Column                                  | Title                            | ADIOS Type | Length | Required | Notes                                             |
+| :-------------------------------------- | -------------------------------- | :--------: | :----: | :------: | :------------------------------------------------ |
+| id                                      |                                  |    int     |   8    | NOT NULL | Jedinečné ID záznamu                              |
+| id_fin_credit_note_state                | State                            |   lookup   |   8    | NOT NULL | ID stavu dobropisu                                |
+| id_com_address                          | Customer                         |   lookup   |   8    | NOT NULL | ID odberateľa                                     |
+| id_fin_accounting_period                | Accounting Period                |   lookup   |   8    | NOT NULL | ID účtovného obdobia                              |
+| is_accounted                            | Is Accounted                     |  boolean   |   1    |   NULL   | Je dobropis zaúčtovaný                            |
+| supplier                                | Supplier                         |    json    |        | NOT NULL | Kópia údajov o predajcovi uložené v JSON formáte  |
+| customer                                | Customer                         |    json    |        | NOT NULL | Kópia údajov o zákazníkovi uložené v JSON formáte |
+| id_com_numeric_sequence                 | Numeric Sequence                 |   lookup   |   8    | NOT NULL | ID číselného radu dobropisov                      |
+| sequence_code                           | Sequence Code                    |  varchar   |  200   |   NULL   | Sekvenčné označenie                               |
+| issue_date                              | Issue Date                       |    date    |   8    | NOT NULL | Dátum vystavenia                                  |
+| delivery_date                           | Delivery Date                    |    date    |   8    | NOT NULL | Dátum dodania                                     |
+| due_date                                | Due Date                         |    date    |   8    | NOT NULL | Dátum splatnosti                                  |
+| id_com_numeric_sequence_variable_symbol | Variable Symbol Numeric Sequence |   lookup   |   8    | NOT NULL | ID číselného radu Variabilných symbolov           |
+| variable_symbol                         | Variable Symbol                  |  varchar   |   10   |   NULL   | Variabilný symbol                                 |
+| specific_symbol                         | Specific Symbol                  |  varchar   |   10   |   NULL   | Špecifický symbol                                 |
+| constant_symbol                         | Constant Symbol                  |  varchar   |   4    |   NULL   | Konštantný symbol                                 |
+| id_fin_currency                         | Currency                         |   lookup   |   8    | NOT NULL | ID meny v ktorej sú uvedené sumy                  |
+| exchange_rate                           | Exchange Rate Value              |  decimal   |  15,2  |   NULL   | Hodnota prevodného kurzu voči  hlavnej mene       |
+| price_total                             | Total Price                      |  decimal   |  15,2  | NOT NULL | Celková hodnota dobropisu                         |
+| price_paid                              | Paid Price                       |  decimal   |  15,2  | NOT NULL | Uhradená hodnota dobropisu                        |
+| comment                                 | Description                      |    text    |        |   NULL   | Poznámka k dobropisu                              |
 
-## Columns
+REVIEW DD: issued_date premenovane na issue_date
+REVIEW DD: maturity_date premenovane na due_date
+REVIEW DD: Stlpec comment ma preco title Description? Navrhujem zjednotit - bud comment alebo description.
 
-* id_fin_credit_note_state:
-    * required: true
-    * type: lookup
-    * title: State
-    * model: App/Widgets/Finance/CreditNote/Models/CreditNoteState
-    * foreignKeyOnUpdate: CASCADE
-    * foreignKeyOnDelete: RESTRICT
-    * showColumn: true
-* id_com_address:
-    * required: true
-    * type: lookup
-    * title: Customer
-    * model: App/Widgets/Common/AddressBook/???
-    * foreignKeyOnUpdate: CASCADE
-    * foreignKeyOnDelete: RESTRICT
-    * showColumn: true
-* id_fin_accounting_period:
-    * required: true
-    * type: lookup
-    * title: Accounting Period
-    * model: App/Widgets/Finance/MainBook/Models/AccountingPeriod
-    * foreignKeyOnUpdate: CASCADE
-    * foreignKeyOnDelete: RESTRICT
-    * showColumn: true
-* is_accounted:
-    * required: false
-    * type: boolean
-    * title: Is Accounted
-    * showColumn: true
-* supplier:
-    * required: true
-    * type: text
-    * title: Supplier
-    * required: true
-    * showColumn: true
-* customer:
-    * required: true
-    * type: text
-    * title: Customer
-    * required: true
-    * showColumn: true
-* id_com_numeric_sequence:
-    * required: true
-    * type: lookup
-    * title: Numeric Sequence
-    * model: App/Widgets/Common/NumericSequence/Models/NumericSequence
-    * foreignKeyOnUpdate: CASCADE
-    * foreignKeyOnDelete: RESTRICT
-    * showColumn: true
-* sequence_code:
-    * required: false
-    * type: varchar
-    * title: Sequence Code
-    * byte_size: 200
-    * showColumn: true
-    * readonly: true
-* delivery_date:
-    * required: false
-    * type: date
-    * title: Delivery Date
-    * showColumn: true
-* issued_date:
-    * type: date
-    * title: Issued Date
-    * required: true
-    * showColumn: true
-* maturity_date:
-    * type: date
-    * title: Maturity Date
-    * required: true
-    * showColumn: true
-* id_com_numeric_sequence_variable_symbol:
-    * required: true
-    * type: lookup
-    * title: Variable Symbol Numeric Sequence
-    * model: App/Widgets/Common/NumericSequence/Models/NumericSequence
-    * foreignKeyOnUpdate: CASCADE
-    * foreignKeyOnDelete: RESTRICT
-    * showColumn: true
-* variable_symbol:
-    * type: varchar
-    * title: Variable Symbol
-    * byte_size: 10
-    * required: false
-    * showColumn: true
-    * readonly: true
-* specific_symbol:
-    * type: varchar
-    * title: Specific Symbol
-    * byte_size: 10
-    * required: false
-    * showColumn: true
-* constant_symbol:
-    * type: varchar
-    * title: Constant Symbol
-    * byte_size: 4
-    * required: false
-    * showColumn: true
-* id_fin_currency:
-    * required: true
-    * type: lookup
-    * title: Currency
-    * model: App/Widgets/Finance/ExchangeRate/Models/Currency
-    * foreignKeyOnUpdate: CASCADE
-    * foreignKeyOnDelete: RESTRICT
-    * showColumn: true
-* exchange_rate:
-    * required: false
-    * type: float
-    * byte_size: 15
-    * decimals: 2
-    * title: Exchange Rate Value
-    * showColumn: true
-* price_total:
-    * required: true
-    * type: float
-    * byte_size: 15
-    * decimals: 2
-    * title: Total Price
-    * showColumn: true
-* price_paid:
-    * required: true
-    * type: float
-    * byte_size: 15
-    * decimals: 2
-    * title: Paid Price
-    * showColumn: true
-* comment:
-    * type: text
-    * title: Description
-    * required: false
-    * showColumn: true
+### ADIOS Parameters
 
-## Foreign Keys
+| Column          | Parameter   | Value                             |
+| :-------------- | :---------- | --------------------------------- |
+| sequence_code   | readonly    | TRUE                              |
+| variable_symbol | readonly    | TRUE                              |
 
-| Column                                  | Parent table           | Relation | OnUpdate | OnDelete |
-| :-------------------------------------- | :--------------------- | :------: | :------: | :------: |
-| id_com_numeric_sequence                 | com_numeric_sequences  |   1:N    | Cascade  | Restrict |
-| id_com_numeric_sequence_variable_symbol | com_numeric_sequences  |   1:N    | Cascade  | Restrict |
-| id_fin_credit_note_state                | fin_credit_note_states |   1:N    | Cascade  | Restrict |
-| id_com_address                          | com_addresses          |   1:N    | Cascade  | Restrict |
-| id_fin_accounting_period                | fin_accounting_periods |   1:N    | Cascade  | Restrict |
-| id_fin_currency                         | fin_currencies         |   1:N    | Cascade  | Restrict |
+### Foreign Keys
 
-## Indexes
+| Column                                  | Model                                                     | Relation | OnUpdate | OnDelete |
+| :-------------------------------------- | :-------------------------------------------------------- | :------: | -------- | -------- |
+| id_fin_credit_note_state                | App/Widgets/Finance/CreditNote/Models/CreditNoteState     |   1:N    | Cascade  | Restrict |
+| id_com_address                          | App/Widgets/Common/AddressBook/???                        |   1:N    | Cascade  | Restrict |
+| id_com_numeric_sequence                 | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
+| id_com_numeric_sequence_variable_symbol | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
+| id_fin_accounting_period                | App/Widgets/Finance/MainBook/Models/AccountingPeriod      |   1:N    | Cascade  | Restrict |
+| id_fin_currency                         | App/Widgets/Finance/ExchangeRate/Models/Currency          |   1:N    | Cascade  | Restrict |
 
-| Name            | Type    | Column + Order      |
-| :-------------- | :-----: | :------------------ |
-| id              | PRIMARY | id ASC              |
-| issued_date     | INDEX   | issued_date ASC     |
-| sequence_code   | UNIQUE  | sequence_code DESC  |
-| variable_symbol | UNIQUE  | variable_symbol ASC |
+### Indexes
+
+| Name                                    |  Type   |                              Column + Order |
+| :-------------------------------------- | :-----: | ------------------------------------------: |
+| id                                      | PRIMARY |                                      id ASC |
+| is_accounted                            |  INDEX  |                            is_accounted ASC |
+| issue_date                              |  INDEX  |                              issue_date ASC |
+| delivery_date                           |  INDEX  |                           delivery_date ASC |
+| due_date                                |  INDEX  |                                due_date ASC |
+| id_fin_credit_note_state                |  INDEX  |                id_fin_credit_note_state ASC |
+| id_com_address                          |  INDEX  |                          id_com_address ASC |
+| id_com_numeric_sequence                 |  INDEX  |                 id_com_numeric_sequence ASC |
+| id_com_numeric_sequence_variable_symbol |  INDEX  | id_com_numeric_sequence_variable_symbol ASC |
+| id_fin_accounting_period                |  INDEX  |                id_fin_accounting_period ASC |
+| id_fin_currency                         |  INDEX  |                         id_fin_currency ASC |
+| sequence_code                           | UNIQUE  |                          sequence_code DESC |
+| variable_symbol                         | UNIQUE  |                         variable_symbol ASC |
 
 ## Callbacks
 
