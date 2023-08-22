@@ -1,4 +1,7 @@
-# BankTransaction
+# Model Finance/Bank/BankTransaction
+
+NOTE: DD pretukal.
+TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
 
 TODO: V GoogleDocs sa toto volalo BankDocument. Treba to v yml prerobit na BankTransaction.
 
@@ -8,7 +11,7 @@ TODO: V GoogleDocs sa toto volalo BankDocument. Treba to v yml prerobit na BankT
 
 ## Constants
 
-V modeli nie sú použité konštanty.
+No constants are defined for this model.
 
 ## Properties
 
@@ -16,91 +19,105 @@ V modeli nie sú použité konštanty.
 | :-------------------- | :------------------------ |
 | sqlName               | fin_bank_transactions     |
 | urlBase               | finance/bank/transactions |
-| lookupSqlValue        | -                         |
+| lookupSqlValue        |                           |
 | tableTitle            | Bank Transaction          |
 | formTitleForInserting | New Transaction           |
 | formTitleForEditing   | Bank Transaction          |
 
-## SQL Structure
+## Data Structure
 
-REVIEW DD: V Google Docs bola struktura tejto tabulka ina, ako v napr. v MainBook.
+| Column                   | Title           | ADIOS Type | Length | Required | Notes                                         |
+| :----------------------- | --------------- | :--------: | :----: | :------: | :-------------------------------------------- |
+| id                       | ID              |    int     |   11   |   TRUE   | Jedinečné ID záznamu                          |
+| id_fin_bank_account      | Name            |   lookup   |   11   |   TRUE   | ID bankového účtu                             |
+| id_fin_accounting_period | Account Period  |   lookup   |   11   |   TRUE   | ID účtovného obdobia                          |
+| id_com_numeric_sequence  | Document Type   |   lookup   |   11   |   TRUE   | ID číselnej rady                              |
+| id_com_address           | Partner         |   lookup   |   11   |   TRUE   | ID adresára                                   |
+| id_adios_user            | User            |   lookup   |   11   |   TRUE   | ID užívateľa, ktorý doklad vystavil           |
+| date                     | Creation Date   |    date    |   8    |   TRUE   | Dátum vystavenia dokladu                      |
+| number                   | Number          |    int     |   8    |   TRUE   | Poradové číslo dokladu                        |
+| description              | Description     |    text    |        |  FALSE   | Popis dokladu                                 |
+| amount                   | Amount          |   float    |  15,2  |   TRUE   | Suma                                          |
+| amount_currency          | Amount Currency |   float    |  15,2  |   TRUE   | Celková suma transakcie v inej mene           |
+| exchange_rate            | Exchange Rate   |   float    |  15,2  |   TRUE   | Kurz meny voči hlavnej mene účtovného obdobia |
+| id_fin_currency          | Currency        |   lookup   |   11   |   TRUE   | ID meny                                       |
+| id_fin_transaction       | Transaction     |   lookup   |   11   |   TRUE   | ID v denníku hlavnej knihy                    |
 
-| Názov                    | Title           | Popis                                         | Typ     | Dĺžka | Povinný |
-| :----------------------- | :-------------- | :-------------------------------------------- | :------ | :---- | :------ |
-| id                       | ID              | Jedinečné ID záznamu                          | INT     | 11    | Y       |
-| id_fin_bank_account      | Name            | ID bankového účtu                             | INT     | 11    | Y       |
-| id_fin_accounting_period | Account Period  | ID účtovného obdobia                          | INT     | 11    | Y       |
-| id_com_numeric_sequence  | Document Type   | ID číselnej rady                              | INT     | 11    | Y       |
-| id_com_address           | Partner         | ID adresára                                   | INT     | 11    | Y       |
-| id_adios_user            | User            | ID užívateľa, ktorý doklad vystavil           | INT     | 11    | Y       |
-| date                     | Creation Date   | Dátum vystavenia dokladu                      | DATE    | 8     | Y       |
-| number                   | Number          | Poradové číslo dokladu                        | INT     | 8     | Y       |
-| description              | Description     | Popis dokladu                                 | TEXT    |       | N       |
-| amount                   | Amount          | Suma                                          | DECIMAL | 15,2  | Y       |
-| amount_currency          | Amount Currency | Celková suma transakcie v inej mene           | DECIMAL | 15,2  | Y       |
-| exchange_rate            | Exchange Rate   | Kurz meny voči hlavnej mene účtovného obdobia | DECIMAL | 15,2  | Y       |
-| id_fin_currency          | Currency        | ID meny                                       | INT     | 11    | Y       |
-| id_fin_transaction       | Transaction     | ID v denníku hlavnej knihy                    | INT     | 11    | Y       |
+TODO: `date` stlpec lepsie pomenovat
 
-## Foreign Keys
+### ADIOS Parameters
 
-| Stĺpec                   | Parent tabuľka         | Väzba | OnUpdate | OnDelete |
-| :----------------------- | :--------------------- | :---- | :------- | :------- |
-| id_fin_currency          | fin_currencies         | 1:N   | Cascade  | Restrict |
-| id_fin_bank_account      | fin_bank_accounts      | 1:N   | Cascade  | Restrict |
-| id_fin_accounting_period | fin_accounting_periods | 1:N   | Cascade  | Restrict |
-| id_com_numeric_sequence  | com_numeric_sequences  | 1:N   | Cascade  | Restrict |
-| id_com_address           | com_address            | 1:N   | Cascade  | Restrict |
-| id_adios_user            | adios_user             | 1:N   | Cascade  | Restrict |
-| id_fin_transaction       | fin_transaction        | 1:N   | Cascade  | Restrict |
+No additional ADIOS parameters needs to be defined.
 
-## Indexes
+### Foreign Keys
 
-| Názov                                                | Typ     | Stĺpec                   | Zoradenie |
-| :--------------------------------------------------- | :------ | :----------------------- | :-------- |
-| id                                                   | PRIMARY | id                       | ASC       |
-| date                                                 | INDEX   | date                     | ASC       |
-| id_fin_accounting_period_id_fin_document_type_number | UNIQUE  | id_fin_accounting_period | ASC       |
-|                                                      |         | id_fin_document_type     | ASC       |
-|                                                      |         | number                   | ASC       |
+| Column                   | Model                                                                                                         | Relation | OnUpdate | OnDelete |
+| :----------------------- | :------------------------------------------------------------------------------------------------------------ | :------: | -------- | -------- |
+| id_fin_currency          | [App/Widgets/Finance/ExchangeRate/Models/Currency](../../../Finance/Bank/Models/BankAccount.md)fin_currencies |   1:N    | Cascade  | Restrict |
+| id_fin_bank_account      | [App/Widgets/Finance/Bank/Models/BankAccount](../../../Finance/Bank/Models/BankAccount.md)                    |   1:N    | Cascade  | Restrict |
+| id_fin_accounting_period | [App/Widgets/Finance/MainBook/Models/AccountingPeriod](../../../Finance/MainBook/Models/AccountingPeriod.md)  |   1:N    | Cascade  | Restrict |
+| id_com_numeric_sequence  | com_numeric_sequences                                                                                         |   1:N    | Cascade  | Restrict |
+| id_com_address           | com_address                                                                                                   |   1:N    | Cascade  | Restrict |
+| id_adios_user            | ADIOS/Core/User                                                                                               |   1:N    | Cascade  | Restrict |
+| id_fin_transaction       | fin_transaction                                                                                               |   1:N    | Cascade  | Restrict |
 
-## Columns
+TODO: dokoncit com_numeric_sequences a com_address
+TODO: fin_transaction - z nazvu tabulky nie je presne jasny model
 
-REVIEW DD: V Google Docs nebola definicia ADIOS columns.
+### Indexes
+
+| Name                                                   |  Type   |               Column + Order |
+| :----------------------------------------------------- | :-----: | ---------------------------: |
+| id                                                     | PRIMARY |                       id ASC |
+| date                                                   |  INDEX  |                     date ASC |
+| id_fin_accounting_period___id_fin_document_type_number | UNIQUE  | id_fin_accounting_period ASC |
+|                                                        |         |     id_fin_document_type ASC |
+|                                                        |         |                   number ASC |
 
 ## Callbacks
 
 ### onBeforeInsert
+
 Novu transakciu je možné pridať iba s dátumom po poslednej závierke. 
 
 ### onAfterInsert
+
 Pri vytváraní novej transakcie je potrebné vytvoriť aj záznam v tabuľke fin_transactions a doklad v nej podrobne rozúčtovať.
 
 ### onBeforeUpdate
+
 Transakciu po uzávierke nie je možné upraviť.
 
 ### onAfterUpdate
+
 Pri zmene transakcie skontrolovať, či je doklad správne rozúčtovaný v denníku. Ak nie, otvoriť záznam v denníku.
 
 ### onBeforeDelete
+
 Transakciu po uzávierke nie je možné vymazať.
 
 ### onAfterDelete
+
 Not used.
 
 ## Formatters
 
 ### tableCellHTMLFormatter
+
 Not used.
 
 ### tableCellCSVFormatter
+
 Not used.
 
 ### tableCellCSSFormatter
+
 Not used.
 
 ### tableRowCSSFormatter
+
 Not used.
 
 ### cardsCardHtmlFormatter
+
 Not used.

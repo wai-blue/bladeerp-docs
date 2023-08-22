@@ -1,4 +1,7 @@
-# BankAccount
+# Model Finance/Bank/BankAccount
+
+NOTE: DD pretukal.
+TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
 
 ## Introduction
 
@@ -6,7 +9,7 @@ Zoznam bankových účtov, ktoré má klient zahrnuté v účtovníctve.
 
 ## Constants
 
-V modeli nie sú použité konštanty.
+No constants are defined for this model.
 
 ## Properties
 
@@ -21,41 +24,41 @@ V modeli nie sú použité konštanty.
 | formAddButtonText     | Add Account           |
 | formSaveButtonText    | Update Account        |
 
-## SQL Structure
+## Data Structure
 
-REVIEW DD: V Google Docs bola struktura tejto tabulka ina, ako v napr. v MainBook.
+| Column              | Title            | ADIOS Type | Length | Required | Notes                                                      |
+| :------------------ | ---------------- | :--------: | :----: | :------: | :--------------------------------------------------------- |
+| id                  | ID               |    int     |   11   |   TRUE   | Jedinečné ID záznamu                                       |
+| name                | Name             |  varchar   |  100   |   TRUE   | Názov bankového účtu                                       |
+| acronym             | Acronym          |  varchar   |   5    |   TRUE   | Skratka  bankového účtu                                    |
+| bank                | Bank Name        |  varchar   |  100   |   TRUE   | Názov banky                                                |
+| iban                | IBAN             |  varchar   |   34   |   TRUE   | IBAN účtu                                                  |
+| swift               | SWIFT            |  varchar   |   11   |   TRUE   | SWIFT banky                                                |
+| id_fin_currency     | Currency         |   lookup   |   11   |   TRUE   | ID meny v ktorej je bankový účet vedený                    |
+| id_fin_book_account | Analytic Account |   lookup   |   11   |   TRUE   | ID analytického účtu na ktorom je bankový účet vedený      |
+| is_open             | Is Open          |  boolean   |   1    |  FALSE   | Príznak, či je bankový účet otvorený a môže sa naň účtovať |
 
-| Názov               | Title            | Popis                                                      | Typ     | Dĺžka | Povinný |
-| :------------------ | :--------------- | :--------------------------------------------------------- | :------ | :---- | :------ |
-| id                  | ID               | Jedinečné ID záznamu                                       | INT     | 11    | Y       |
-| name                | Name             | Názov bankového účtu                                       | VARCHAR | 100   | Y       |
-| acronym             | Acronym          | Skratka  bankového účtu                                    | VARCHAR | 5     | Y       |
-| bank                | Bank Name        | Názov banky                                                | VARCHAR | 100   | Y       |
-| iban                | IBAN             | IBAN účtu                                                  | VARCHAR | 34    | Y       |
-| swift               | SWIFT            | SWIFT banky                                                | VARCHAR | 11    | Y       |
-| id_fin_currency     | Currency         | ID meny v ktorej je bankový účet vedený                    | INT     | 11    | Y       |
-| id_fin_book_account | Analytic Account | ID analytického účtu na ktorom je bankový účet vedený      | INT     | 11    | Y       |
-| is_open             | Is Open          | Príznak, či je bankový účet otvorený a môže sa naň účtovať | BOOLEAN | 1     | N       |
+### ADIOS Parameters
 
-## Foreign Keys
+No additional ADIOS parameters needs to be defined.
 
-| Column              | Parent table     | Relation | OnUpdate | OnDelete |
-| :------------------ | :--------------- | :------: | -------- | -------- |
-| id_fin_currency     | fin_currency     |   1:N    | Cascade  | Restrict |
-| id_fin_book_account | fin_book_account |   1:N    | Cascade  | Restrict |
+### Foreign Keys
 
-## Indexes
+| Column              | Model                                                                                                    | Relation | OnUpdate | OnDelete |
+| :------------------ | :------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_fin_currency     | [App/Widgets/Finance/MainBook/Models/AccountingPeriod](../../../Finance/ExchangeRate/Models/Currency.md) |   1:N    | Cascade  | Restrict |
+| id_fin_book_account | [App/Widgets/Finance/MainBook/Models/BookAccount](../../../Finance/MainBook/Models/BookAccount.md)       |   1:N    | Cascade  | Restrict |
 
-| Názov   | Typ     | Stĺpec  | Zoradenie |
-| :------ | :------ | :------ | :-------- |
-| id      | PRIMARY | id      | ASC       |
-| iban    | UNIQUE  | iban    | ASC       |
-| name    | INDEX   | name    | ASC       |
-| is_open | INDEX   | is_open | DESC      |
+### Indexes
 
-## Columns
-
-REVIEW DD: V Google Docs nebola definicia ADIOS columns.
+| Name                |  Type   |          Column + Order |
+| :------------------ | :-----: | ----------------------: |
+| id                  | PRIMARY |                  id ASC |
+| id_fin_currency     |  INDEX  |     id_fin_currency ASC |
+| id_fin_book_account |  INDEX  | id_fin_book_account ASC |
+| iban                | UNIQUE  |                iban ASC |
+| name                |  INDEX  |                name ASC |
+| is_open             |  INDEX  |            is_open DESC |
 
 ## Callbacks
 

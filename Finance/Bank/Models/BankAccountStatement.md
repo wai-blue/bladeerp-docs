@@ -1,11 +1,15 @@
-# BankAccountStatement
+# Model Finance/Bank/BankAccountStatement
+
+NOTE: DD pretukal.
+TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
 
 ## Introduction
 
 Táto tabuľka slúži na ukladanie závierok na bankových účtoch. Závierky na bankových účtoch slúžia na kontrolu zostatku na bankovom účte voči zaúčtovanému zostatku. Môžu sa robiť na dennej aj na mesačnej báze.
 
 ## Constants
-V modeli nie sú použité konštanty.
+
+No constants are defined for this model.
 
 ## Properties
 
@@ -13,45 +17,49 @@ V modeli nie sú použité konštanty.
 | :-------------------- | :------------------------------ |
 | sqlName               | fin_bank_account_statements     |
 | urlBase               | finance/bank/account-statements |
-| lookupSqlValue        | -                               |
+| lookupSqlValue        |                                 |
 | tableTitle            | Bank Account Statements         |
-| formTitleForInserting | -                               |
-| formTitleForEditing   | -                               |
+| formTitleForInserting |                                 |
+| formTitleForEditing   |                                 |
 | formAddButtonText     | Create Statement                |
-| formSaveButtonText    | -                               |
+| formSaveButtonText    |                                 |
 
-## SQL Structure
+## Data Structure
 
-REVIEW DD: V Google Docs bola struktura tejto tabulka ina, ako v napr. v MainBook.
-
-| Názov               | Title                   | Popis                                   | Typ      | Dĺžka | Povinný |
-| :------------------ | :---------------------- | :-------------------------------------- | :------- | :---- | :------ |
-| id                  | ID                      | Jedinečné ID záznamu                    | INT      | 11    | Y       |
-| id_fin_bank_account | Bank Account            | ID bankového účtu                       | INT      | 11    | Y       |
-| datetime_statement  | Date and Time Statement | Dátum a čas závierky                    | DATETIME |       | Y       |
-| amount_found        | Found Amount            | Suma, ktorá bola pri závierke zistená   | DECIMAL  | 15,2  | N       |
-| amount_expected     | Expected Amount         | Suma, ktorá bola pri závierke očakávaná | DECIMAL  | 15,2  | N       |
-| credit              | Credit                  | Prebytok                                | DECIMAL  | 15,2  | N       |
-| debet               | Debet                   | Manko                                   | DECIMAL  | 15,2  | N       |
-| id_user             | User                    | ID užívateľa, ktorý závierku vykonall   | INT      | 11    | Y       |
+| Column              | Title                   | ADIOS Type | Length | Required | Notes                                   |
+| :------------------ | ----------------------- | :--------: | :----: | :------: | :-------------------------------------- |
+| id                  | ID                      |    int     |   11   |   TRUE   | Jedinečné ID záznamu                    |
+| id_fin_bank_account | Bank Account            |   lookup   |   11   |   TRUE   | ID bankového účtu                       |
+| datetime_statement  | Date and Time Statement |  datetime  |        |   TRUE   | Dátum a čas závierky                    |
+| amount_found        | Found Amount            |   float    |  15,2  |  FALSE   | Suma, ktorá bola pri závierke zistená   |
+| amount_expected     | Expected Amount         |   float    |  15,2  |  FALSE   | Suma, ktorá bola pri závierke očakávaná |
+| credit              | Credit                  |   float    |  15,2  |  FALSE   | Prebytok                                |
+| debet               | Debet                   |   float    |  15,2  |  FALSE   | Manko                                   |
+| id_user             | User                    |   lookup   |   11   |   TRUE   | ID užívateľa, ktorý závierku vykonall   |
 
 TODO: Dusan 16.8. 2023: id_adios_user som premenoval na id_user
 
-## Foreign Keys
-[Model neobsahuje cudzie kľúče.]
-| Column              | Parent table           | Relation | OnUpdate | OnDelete |
-| :------------------ | :--------------------- | :------: | -------- | -------- |
-| id_fin_bank_account | fin_accounting_periods |   1:N    | Cascade  | Cascade  |
-| id_user             | users                  |   1:N    | Cascade  | Restrict |
+### ADIOS Parameters
 
-## Indexes
-[Pre túto tabuľku nie sú definované indexy.]
-| Name                                   |  Type   |          Column + Order |
-| :------------------------------------- | :-----: | ----------------------: |
-| id                                     | PRIMARY |                  id ASC |
-| datetime_statement                     |  INDEX  |  datetime_statement ASC |
-| id_fin_bank_account_datetime_statement | UNIQUE  | id_fin_bank_account ASC |
-|                                        |         |  datetime_statement ASC |
+No additional ADIOS parameters needs to be defined.
+
+### Foreign Keys
+
+| Column              | Model                                                                                      | Relation | OnUpdate | OnDelete |
+| :------------------ | :----------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_fin_bank_account | [App/Widgets/Finance/Bank/Models/BankAccount](../../../Finance/Bank/Models/BankAccount.md) |   1:N    | Cascade  | Cascade  |
+| id_user             | ADIOS/Core/User                                                                            |   1:N    | Cascade  | Restrict |
+
+### Indexes
+
+| Name                                    |  Type   |          Column + Order |
+| :-------------------------------------- | :-----: | ----------------------: |
+| id                                      | PRIMARY |                  id ASC |
+| id_fin_bank_account                     |  INDEX  | id_fin_bank_account ASC |
+| datetime_statement                      |  INDEX  |  datetime_statement ASC |
+| id_user                                 |  INDEX  |             id_user ASC |
+| id_fin_bank_account__datetime_statement | UNIQUE  | id_fin_bank_account ASC |
+|                                         |         |  datetime_statement ASC |
 
 ## Columns
 

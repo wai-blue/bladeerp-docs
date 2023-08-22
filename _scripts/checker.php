@@ -108,6 +108,16 @@ foreach ($modules as $module) {
           if ($row[2] == "date" && substr($row[0], -5) != '_date') {
             $errors[] = "[{$modelRef}] `{$row[0]}` is date and does not end with `_date`.";
           }
+
+          if (substr($row[0], 0, 3) == 'id_' && $row[2] != "lookup") {
+            $errors[] = "[{$modelRef}] `{$row[0]}` starts with `id_` but is not lookup.";
+          }
+          if (substr($row[0], 0, 3) == 'is_' && $row[2] != "boolean") {
+            $errors[] = "[{$modelRef}] `{$row[0]}` starts with `is_` but is not boolean.";
+          }
+          if (substr($row[0], -5) == '_date' && $row[2] != "date") {
+            $errors[] = "[{$modelRef}] `{$row[0]}` ends with `_date` but is not date.";
+          }
         }
 
         // Columns
