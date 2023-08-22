@@ -37,6 +37,8 @@ No constants are defined for this model.
 | coef_next_year           | Koeficient odpisu pre zrýchlené odpisovanie  v ďalších rokoch                            |    int     |   2    |   TRUE   | Koeficient odpisu pre zrýchlené odpisovanie  v ďalších rokoch                             |
 | coef_next_year_inc       | Koeficient odpisu pre zrýchlené odpisovanie v ďalších rokoch pre zvýšenú zostatkovú cenu |    int     |   2    |   TRUE   | Koeficient odpisu pre zrýchlené odpisovanie  v ďalších rokoch pre zvýšenú zostatkovú cenu |
 
+REVIEW DD: coef_* nemaju byt decimals?
+
 ### ADIOS Parameters
 
 No additional ADIOS parameters needs to be defined.
@@ -52,6 +54,11 @@ No additional ADIOS parameters needs to be defined.
 | Name                              |  Type   |               Column + Order |
 | :-------------------------------- | :-----: | ---------------------------: |
 | id                                | PRIMARY |                       id ASC |
+| number                            |  INDEX  |                   number ASC |
+| period                            |  INDEX  |                   period ASC |
+| coef_first_year                   |  INDEX  |          coef_first_year ASC |
+| coef_next_year                    |  INDEX  |           coef_next_year ASC |
+| coef_next_year_inc                |  INDEX  |       coef_next_year_inc ASC |
 | id_fin_accounting_period          |  INDEX  | id_fin_accounting_period ASC |
 | id_fin_accounting_period___number | UNIQUE  | id_fin_accounting_period ASC |
 |                                   |         |                   number ASC |

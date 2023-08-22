@@ -74,14 +74,17 @@ REVIEW DD: issued_date premenovane na issue_date (ani v ostatnych datumovych stl
 | :-------------------------------------- | :-----: | ------------------------------------------: |
 | id                                      | PRIMARY |                                      id ASC |
 | issue_date                              |  INDEX  |                              issue_date ASC |
+| delivery_date                           |  INDEX  |                           delivery_date ASC |
+| due_date                                |  INDEX  |                                due_date ASC |
 | id_fin_claim_state                      |  INDEX  |                      id_fin_claim_state ASC |
 | id_com_address                          |  INDEX  |                          id_com_address ASC |
 | id_fin_accounting_period                |  INDEX  |                id_fin_accounting_period ASC |
+| is_accounted                            |  INDEX  |                            is_accounted ASC |
 | id_com_numeric_sequence                 |  INDEX  |                 id_com_numeric_sequence ASC |
 | id_com_numeric_sequence_variable_symbol |  INDEX  | id_com_numeric_sequence_variable_symbol ASC |
 | id_fin_currency                         |  INDEX  |                         id_fin_currency ASC |
 | sequence_code                           | UNIQUE  |                          sequence_code DESC |
-| variable_symbol                         | UNIQUE  |                          variable_symbolASC |
+| variable_symbol                         | UNIQUE  |                         variable_symbol ASC |
 
 ## Callbacks
 

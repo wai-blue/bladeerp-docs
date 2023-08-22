@@ -53,6 +53,9 @@ No additional ADIOS parameters needs to be defined.
 | :------------------ | :-----: | ---------------: |
 | id                  | PRIMARY |           id ASC |
 | id_fin_asset        |  INDEX  | id_fin_asset ASC |
+| year                |  INDEX  |         year ASC |
+| month               |  INDEX  |        month ASC |
+| posting_date        |  INDEX  | posting_date ASC |
 | id_fin_asset___year | UNIQUE  | id_fin_asset ASC |
 |                     |         |         year ASC |
 

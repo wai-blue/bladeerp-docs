@@ -10,7 +10,9 @@ spl_autoload_register(function($className) {
   }
 });
 
-$modelToCheck = $argv[1] ?? "";
+$moduleToCheck = $argv[1] ?? "";
+$widgetToCheck = $argv[2] ?? "";
+$modelToCheck = $argv[3] ?? "";
 
 $modules = [
   'Finance',
@@ -24,15 +26,17 @@ foreach ($modules as $module) {
   $moduleDir = __DIR__ . '/../' . $module;
   $widgets = scandir($moduleDir);
 
+  if (!empty($moduleToCheck) && $module !== $moduleToCheck) continue;
+
   echo "Checking module {$module}...\n";
 
   foreach ($widgets as $widget) {
     $widgetDir = $moduleDir . '/' . $widget;
+    $widgetRef = str_replace('\\', '/', realpath($widgetDir));
 
     if (in_array($widget, ['.', '..'])) continue;
     if (!is_dir($widgetDir)) continue;
-
-    $widgetRef = str_replace('\\', '/', realpath($widgetDir));
+    if (!empty($widgetToCheck) && strpos($widgetRef, $widgetToCheck) === FALSE) continue;
 
     echo "  Checking widget {$widget}...\n";
 
@@ -57,12 +61,12 @@ foreach ($modules as $module) {
 
         if (in_array($model, ['.', '..'])) continue;
 
-        echo "    Checking model {$model}...\n";
-
         $modelRef = str_replace('\\', '/', realpath($widgetDir . '/Models/' . $model));
         $modelContainsLookup = FALSE;
 
         if (!empty($modelToCheck) && strpos($modelRef, $modelToCheck) === FALSE) continue;
+
+        echo "    Checking model {$model}...\n";
 
         $md = new \Markdown($widgetDir . '/Models/' . $model);
 
@@ -82,12 +86,17 @@ foreach ($modules as $module) {
         }
 
         // Properties
-        $properties = $md->findTableByColumns(['Property', 'Value']);
-        
-        if ($properties === NULL) {
+        $propertiesTable = $md->findTableByColumns(['Property', 'Value']);
+        $properties = [];
+
+        if ($propertiesTable === NULL) {
           $errors[] = "[{$modelRef}] Properties not found.";
-        } else if (count($properties) == 0) {
+        } else if (count($propertiesTable) == 0) {
           $errors[] = "[{$modelRef}] No property defined.";
+        } else {
+          foreach ($propertiesTable as $row) {
+            $properties[$row[0]] = $row[1];
+          }
         }
 
         // Data Structure
@@ -186,10 +195,32 @@ foreach ($modules as $module) {
             if ($colDefinition['foreignKey'] === NULL) {
               $errors[] = "[{$modelRef}] `{$colName}` is lookup but has no foreign key defined.";
             }
-            if ($colDefinition['index'] === NULL) {
-              $errors[] = "[{$modelRef}] `{$colName}` is lookup but has no index defined.";
-            }
           }
+
+          if (
+            in_array($colDefinition['type'], ['date', 'int', 'lookup', 'boolean'])
+            && $colDefinition['index'] === NULL
+          ) {
+            $errors[] = "[{$modelRef}] `{$colName}` is {$colDefinition['type']} but has no index defined.";
+          }
+        }
+
+        if ($properties['isCrossTable'] ?? '' === 'TRUE') {
+          if (isset($columns['id'])) {
+            $errors[] = "[{$modelRef}] Cross-tables cannot contain `id`.";
+          }
+        } else {
+          if (!isset($columns['id'])) {
+            $errors[] = "[{$modelRef}] Column `id` not found.";
+          }
+        }
+
+        // Miscelaneous
+        if (
+          $properties['isCrossTable'] ?? '' === 'TRUE'
+          && strpos($model, 'Has') === FALSE
+        ) {
+          $warnings[] = "[{$modelRef}] Model is a cross-table but does not contain 'Has' in it's name.";
         }
 
       }

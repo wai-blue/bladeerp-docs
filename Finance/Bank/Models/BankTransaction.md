@@ -33,7 +33,7 @@ No constants are defined for this model.
 | id_fin_accounting_period | Account Period  |   lookup   |   11   |   TRUE   | ID účtovného obdobia                          |
 | id_com_numeric_sequence  | Document Type   |   lookup   |   11   |   TRUE   | ID číselnej rady                              |
 | id_com_address           | Partner         |   lookup   |   11   |   TRUE   | ID adresára                                   |
-| id_user            | User            |   lookup   |   11   |   TRUE   | ID užívateľa, ktorý doklad vystavil           |
+| id_user                  | User            |   lookup   |   11   |   TRUE   | ID užívateľa, ktorý doklad vystavil           |
 | date                     | Creation Date   |    date    |   8    |   TRUE   | Dátum vystavenia dokladu                      |
 | number                   | Number          |    int     |   8    |   TRUE   | Poradové číslo dokladu                        |
 | description              | Description     |    text    |        |  FALSE   | Popis dokladu                                 |
@@ -44,6 +44,7 @@ No constants are defined for this model.
 | id_fin_transaction       | Transaction     |   lookup   |   11   |   TRUE   | ID v denníku hlavnej knihy                    |
 
 REVIEW DD: id_adios_user premenovany na id_user
+REVIEW DD: `number` je velmi vseobecny nazov, zle sa s takym pracuje (vyhladava alebo refaktoruje). Navrhujem 'transaction_number'.
 
 TODO: `date` stlpec lepsie pomenovat
 
@@ -60,7 +61,7 @@ No additional ADIOS parameters needs to be defined.
 | id_fin_accounting_period | [App/Widgets/Finance/MainBook/Models/AccountingPeriod](../../../Finance/MainBook/Models/AccountingPeriod.md)  |   1:N    | Cascade  | Restrict |
 | id_com_numeric_sequence  | com_numeric_sequences                                                                                         |   1:N    | Cascade  | Restrict |
 | id_com_address           | com_address                                                                                                   |   1:N    | Cascade  | Restrict |
-| id_user            | ADIOS/Core/User                                                                                               |   1:N    | Cascade  | Restrict |
+| id_user                  | ADIOS/Core/User                                                                                               |   1:N    | Cascade  | Restrict |
 | id_fin_transaction       | fin_transaction                                                                                               |   1:N    | Cascade  | Restrict |
 
 TODO: dokoncit com_numeric_sequences a com_address
@@ -71,6 +72,7 @@ TODO: fin_transaction - z nazvu tabulky nie je presne jasny model
 | Name                                                   |  Type   |               Column + Order |
 | :----------------------------------------------------- | :-----: | ---------------------------: |
 | id                                                     | PRIMARY |                       id ASC |
+| number                                                 |  INDEX  |                   number ASC |
 | id_fin_bank_account                                    |  INDEX  |      id_fin_bank_account ASC |
 | id_fin_accounting_period                               |  INDEX  | id_fin_accounting_period ASC |
 | id_com_numeric_sequence                                |  INDEX  |  id_com_numeric_sequence ASC |

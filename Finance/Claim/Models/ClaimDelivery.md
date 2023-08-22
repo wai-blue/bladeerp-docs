@@ -1,4 +1,7 @@
-# ClaimDelivery
+# Model Finance/Claim/ClaimDelivery
+
+NOTE: DD pretukal.
+TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
 
 ## Introduction
 
@@ -6,9 +9,7 @@ Tabuľka bude slúžiť na prepojenie pohľadávky s konkrétnou dopravou.
 
 ## Constants
 
-| Constant | Value | Description |
-| -------- | ----- | ----------- |
-|          |       |             |
+No constants are defined for this model.
 
 ## Properties
 
@@ -21,62 +22,37 @@ Tabuľka bude slúžiť na prepojenie pohľadávky s konkrétnou dopravou.
 | formTitleForInserting | New Claim Delivery                      |
 | formTitleForEditing   | Claim Delivery                          |
 
-## SQL Structure
+## Data Structure
 
-| Column          | Description          | Type    | Length | NULL     | Default |
-| :-------------- | :------------------- | :-----: | :----: | :------: | ------- |
-| id_fin_claim    | ID pohľadávky        | INT     | 8      | NOT NULL |         |
-| id_log_delivery | ID dopravy           | INT     | 8      | NOT NULL |         |
-| price           | Cena za dopravu      | DECIMAL | 15,2   | NOT NULL |         |
-| cash_fee        | Poplatok za dobierku | DECIMAL | 15,2   | NULL     |         |
+| Column          | Title          | ADIOS Type | Length | Required | Notes                |
+| :-------------- | -------------- | :--------: | :----: | :------: | :------------------- |
+| id              |                |    int     |   8    |   TRUE   | Jedinečné ID záznamu |
+| id_fin_claim    | Claim          |   lookup   |   8    |   TRUE   | ID pohľadávky        |
+| id_log_delivery | Delivery       |   lookup   |   8    |   TRUE   | ID dopravy           |
+| price           | Delivery Price |  decimal   |  15,2  |   TRUE   | Cena za dopravu      |
+| cash_fee        | Cash Fee       |  decimal   |  15,2  |  FALSE   | Poplatok za dobierku |
 
-## Columns
+REVIEW DD: cash_fee - nie je lepsi nazov delivery_fee?
+REVIEW DD: preco id_log_delivery a nie iba id_delivery?
 
-* id_fin_claim:
-    * required: true
-    * type: lookup
-    * title: Claim
-    * model: App/Widgets/Finance/Claim/Models/Claim
-    * foreignKeyOnUpdate: CASCADE
-    * foreignKeyOnDelete: CASCADE
-    * showColumn: true
-* id_log_delivery:
-    * required: true
-    * type: lookup
-    * title: Delivery
-    * model: App/Widgets/Logistics/Delivery/Models/Delivery
-    * foreignKeyOnUpdate: CASCADE
-    * foreignKeyOnDelete: RESTRICT
-    * showColumn: true
-* price:
-    * required: true
-    * type: float
-    * title: Delivery Price
-    * byte_size: 15
-    * decimals: 2
-    * showColumn: true
-* cash_fee:
-    * required: false
-    * type: float
-    * title: Cash Fee
-    * byte_size: 15
-    * decimals: 2
-    * showColumn: true
+### ADIOS Parameters
 
-## Foreign Keys
+No additional ADIOS parameters needs to be defined.
 
-| Column          | Parent table   | Relation | OnUpdate | OnDelete |
-| :-------------- | :------------- | :------: | :------: | :------: |
-| id_fin_claim    | fin_claims     | 1:N      | Cascade  | Cascade  |
-| id_log_delivery | log_deliveries | 1:N      | Cascade  | Restrict |
+### Foreign Keys
 
-## Indexes
+| Column          | Model                                          | Relation | OnUpdate | OnDelete |
+| :-------------- | :--------------------------------------------- | :------: | -------- | -------- |
+| id_fin_claim    | App/Widgets/Finance/Claim/Models/Claim         |   1:N    | Cascade  | Cascade  |
+| id_log_delivery | App/Widgets/Logistics/Delivery/Models/Delivery |   1:N    | Cascade  | Restrict |
 
-Tabuľka nemá iné indexy.
+### Indexes
 
-| Name | Type    | Column + Order |
-| ---- | ------- | -------------- |
-| id   | PRIMARY | id ASC         |
+| Name            |  Type   |      Column + Order |
+| :-------------- | :-----: | ------------------: |
+| id              | PRIMARY |              id ASC |
+| id_fin_claim    |  INDEX  |    id_fin_claim ASC |
+| id_log_delivery |  INDEX  | id_log_delivery ASC |
 
 ## Callbacks
 

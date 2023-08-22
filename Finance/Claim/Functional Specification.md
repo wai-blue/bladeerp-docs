@@ -16,10 +16,10 @@ TODO: Bod 2.5: ,,A sú nejaké pripojená,, Prosím skontrolovať štylistickú 
 	* do emailu pripojiť pohľadávku ak je nastavené (col: is_send_claim)
 	* do emailu pripojiť objednávky ak je nastavené (col: is_send_order) a sú nejaké pripojená  (tab: fin_claim_orders)
 	* odoslať email zákazníkovi
-	* ak je pripojený fyzický produkt  (tab: fin_claim_line_products), potom iniciovať odoslanie tovaru zákazníkovi (napr. notifikácia skladu na zabalenie a odoslanie tovaru)
+	* ak je pripojený fyzický produkt  (tab: fin_claim_item_products), potom iniciovať odoslanie tovaru zákazníkovi (napr. notifikácia skladu na zabalenie a odoslanie tovaru)
 * Tovar odoslaný zákazníkovi [GOODS_SENT]
 	* voliteľný stav
-	* odpočítať tovar zo skladu ak je nastavené (col: is_remove_stock) a je nejaký produkt pripojený  (tab: fin_claim_line_products)
+	* odpočítať tovar zo skladu ak je nastavené (col: is_remove_stock) a je nejaký produkt pripojený  (tab: fin_claim_item_products)
 * V reklamácii [IN_COMPLAINING]
 	* email zákazníkovi
 * Vybavená [CLOSED] - štandardne uzatvorená požiadavka

@@ -1,4 +1,4 @@
-# ClaimPayment
+# Model Finance/Claim/ClaimPayment
 
 ## Introduction
 
@@ -6,9 +6,7 @@ Tabuľka bude slúžiť na evidenciu úhrad pohľadávok.
 
 ## Constants
 
-| Constant | Value | Description |
-| -------- | ----- | ----------- |
-|          |       |             |
+No constants are defined for this model.
 
 ## Properties
 
@@ -21,50 +19,34 @@ Tabuľka bude slúžiť na evidenciu úhrad pohľadávok.
 | formTitleForInserting | New Payment                           |
 | formTitleForEditing   | Payment                               |
 
-## SQL Structure
+## Data Structure
 
-| Column       | Description          | Type    | Length | NULL     | Default |
-| :----------- | :------------------- | :-----: | :----: | :------: | ------- |
-| id           | Jedinečné ID záznamu | INT     | 8      | NOT NULL |         |
-| id_fin_claim | ID pohľadávky        | INT     | 8      | NOT NULL |         |
-| date         | Dátum úhrady         | DATE    | 8      | NOT NULL |         |
-| price        | Uhradená suma        | DECIMAL | 15,2   | NOT NULL |         |
+| Column       | Title         | ADIOS Type | Length | Required | Notes                |
+| :----------- | ------------- | :--------: | :----: | :------: | :------------------- |
+| id           |               |    int     |   8    |   TRUE   | Jedinečné ID záznamu |
+| id_fin_claim | Claim         |   lookup   |   8    |   TRUE   | ID pohľadávky        |
+| date         | Payment Date  |    date    |   8    |   TRUE   | Dátum úhrady         |
+| price        | Payment Price |  decimal   |  15,2  |   TRUE   | Uhradená suma        |
 
-## Columns
+REVIEW DD: Namiesto price navrhujem `amount` (Payment Amount)
 
-* id_fin_claim:
-    * required: true
-    * type: lookup
-    * title: Claim
-    * model: App/Widgets/Finance/Claim/Models/Claim
-    * foreignKeyOnUpdate: CASCADE
-    * foreignKeyOnDelete: RESTRICT
-    * showColumn: true
-* date:
-    * required: true
-    * type: date
-    * title: Payment Date
-    * required: true
-    * showColumn: true
-* price:
-    * required: true
-    * type: float
-    * title: Payment Price
-    * byte_size: 15
-    * decimals: 2
-    * showColumn: true
+### ADIOS Parameters
 
-## Foreign Keys
+No additional ADIOS parameters needs to be defined.
 
-| Column       | Parent table | Relation | OnUpdate | OnDelete |
-| :----------- | :----------- | :------: | :------: | :------: |
-| id_fin_claim | fin_claims   | 1:N      | Cascade  | Restrict |
+### Foreign Keys
 
-## Indexes
+| Column       | Model                                  | Relation | OnUpdate | OnDelete |
+| :----------- | :------------------------------------- | :------: | -------- | -------- |
+| id_fin_claim | App/Widgets/Finance/Claim/Models/Claim |   1:N    | Cascade  | Restrict |
 
-| Name | Type    | Column + Order |
-| :--- | :-----: | :------------- |
-| id   | PRIMARY | id ASC         |
+### Indexes
+
+| Name         | Type    |        Column + Order |
+| :----------- | :------ | --------------------: |
+| id           | PRIMARY |                id ASC |
+| id_fin_claim | INDEX   | id_fin_claim_item ASC |
+
 
 ## Callbacks
 

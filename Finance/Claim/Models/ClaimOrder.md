@@ -1,4 +1,4 @@
-# ClaimOrder
+# Model Finance/Claim/ClaimOrder
 
 ## Introduction
 
@@ -6,9 +6,7 @@ Tabuľka bude slúžiť na prepojenie pohľadávok s objednávkami.
 
 ## Constants
 
-| Constant | Value | Description |
-| -------- | ----- | ----------- |
-|          |       |             |
+No constants are defined for this model.
 
 ## Properties
 
@@ -20,48 +18,34 @@ Tabuľka bude slúžiť na prepojenie pohľadávok s objednávkami.
 | tableTitle            | Claim Orders                        |
 | formTitleForInserting | New Claim Order                     |
 | formTitleForEditing   | Claim Order                         |
+| isCrossTable          | TRUE                                                          |
 
-## SQL Structure
+REVIEW DD: Pridal som property isCrossTable = TRUE
 
-| Column       | Description   | Type | Length | NULL     | Default |
-| :----------- | :------------ | :--: | :----: | :------: | ------- |
-| id_fin_claim | ID pohľadávky | INT  | 8      | NOT NULL |         |
-| id_crm_order | ID objednávky | INT  | 8      | NOT NULL |         |
+## Data Structure
 
-## Columns
+| Column       | Title | ADIOS Type | Length | Required | Notes         |
+| :----------- | ----- | :--------: | :----: | :------: | :------------ |
+| id_fin_claim | Claim |   lookup   |   8    |   TRUE   | ID pohľadávky |
+| id_crm_order | Order |   lookup   |   8    |   TRUE   | ID objednávky |
 
-* id_fin_claim:
-    * required: true
-    * type: lookup
-    * title: Claim
-    * model: App/Widgets/Finance/Claim/Models/Claim
-    * foreignKeyOnUpdate: CASCADE
-    * foreignKeyOnDelete: CASCADE
-    * showColumn: true
-* id_crm_order:
-    * required: true
-    * type: lookup
-    * title: Order
-    * model: App/Widgets/Warehouse/Order/Models/Order
-    * foreignKeyOnUpdate: CASCADE
-    * foreignKeyOnDelete: RESTRICT
-    * showColumn: true
+### ADIOS Parameters
 
-## Foreign Keys
+No additional ADIOS parameters needs to be defined.
 
-| Column       | Parent table | Relation | OnUpdate | OnDelete |
-| :----------- | :----------- | :------: | :------: | :------: |
-| id_fin_claim | fin_claims   | 1:N      | Cascade  | Cascade  |
-| id_crm_order | crm_orders   | 1:N      | Cascade  | Restrict |
+### Foreign Keys
 
+| Column       | Model                                    | Relation | OnUpdate | OnDelete |
+| :----------- | :--------------------------------------- | :------: | -------- | -------- |
+| id_fin_claim | App/Widgets/Finance/Claim/Models/Claim   |   1:N    | Cascade  | Cascade  |
+| id_crm_order | App/Widgets/Warehouse/Order/Models/Order |   1:N    | Cascade  | Restrict |
 
-## Indexes
+### Indexes
 
-Tabuľka nemá iné indexy.
-
-| Name | Type    | Column + Order |
-| ---- | ------- | -------------- |
-| id   | PRIMARY | id ASC         |
+| Name         | Type  |        Column + Order |
+| :----------- | :---- | --------------------: |
+| id_fin_claim | INDEX | id_fin_claim_item ASC |
+| id_crm_order | INDEX |    id_ser_service ASC |
 
 ## Callbacks
 

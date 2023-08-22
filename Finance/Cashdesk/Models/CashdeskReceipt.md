@@ -47,6 +47,7 @@ No constants are defined for this model.
 | is_accounted             | Is Accounted       |  boolean   |   1    |  FALSE   | Je doklad zaúčtovaný                          |
 
 REVIEW DD: id_adios_user premenovane na id_user
+REVIEW DD: `number` je velmi vseobecny nazov, zle sa s takym pracuje (vyhladava alebo refaktoruje). Navrhujem 'receipt_number'.
 
 ### ADIOS Parameters
 
@@ -72,6 +73,8 @@ REVIEW DD: Neviem, aky model pre id_fin_receipt.
 | :----------------------------------------------------------- | :-----: | ----------------------------: |
 | id                                                           | PRIMARY |                        id ASC |
 | date                                                         |  INDEX  |                      date ASC |
+| number                                                       |  INDEX  |                    number ASC |
+| is_accounted                                                 |  INDEX  |              is_accounted ASC |
 | id_fin_cashdesk_account                                      |  INDEX  |   id_fin_cashdesk_account ASC |
 | id_fin_accounting_period                                     |  INDEX  |  id_fin_accounting_period ASC |
 | id_com_numeric_sequence                                      |  INDEX  |   id_com_numeric_sequence ASC |

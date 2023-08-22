@@ -22,10 +22,10 @@ TODO: Dolná tabuľka je podľa Google Docs, urobiť kontrolu prosím a ponecha�
 | Claim/Add                | X               |          | X         |
 | Claim/Edit               | X               |          | X         |
 | Claim/Delete             | X               |          | X         |
-| ClaimLines               | X               | X        | X         |
-| ClaimLine/Add            | X               |          | X         |
-| ClaimLine/Edit           | X               |          | X         |
-| ClaimLine/Delete         | X               |          | X         |
+| ClaimItems               | X               | X        | X         |
+| ClaimItem/Add            | X               |          | X         |
+| ClaimItem/Edit           | X               |          | X         |
+| ClaimItem/Delete         | X               |          | X         |
 | ClaimVats                | X               | X        | X         |
 | ClaimPayments            | X               | X        | X         |
 | ClaimPayment/Add         | X               |          | X         |

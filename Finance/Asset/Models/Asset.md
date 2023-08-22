@@ -81,6 +81,7 @@ Tabuľka slúži na evidenciu majetku.
 | method                    |  INDEX  |                    method ASC |
 | is_automat                |  INDEX  |                is_automat ASC |
 | retirement_date           |  INDEX  |           retirement_date ASC |
+| entry_date                |  INDEX  |                entry_date ASC |
 
 ## Callbacks
 
