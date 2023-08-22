@@ -7,15 +7,15 @@ Model slúži na evidenciu fyzických osôb a ich údajov
 V modeli nie sú použité konštanty.
 
 ## Properties
-| Property              | Value                       |
-| --------------------- | --------------------------- |
-| isCrossTable          | FALSE                       |
-| sqlName               | com_contact_persons         |
-| urlBase               | common/address-book/persons |
-| lookupSqlValue        | {%TABLE%}.first_name        |
-| tableTitle            | Persons                     |
-| formTitleForInserting | New Person                  |
-| formTitleForEditing   | Person                      |
+| Property              | Value                                       |
+| --------------------- | ------------------------------------------- |
+| isCrossTable          | FALSE                                       |
+| sqlName               | com_contact_persons                         |
+| urlBase               | common/address-book/persons                 |
+| lookupSqlValue        | concat(first_name, last_name, phone, email) |
+| tableTitle            | Persons                                     |
+| formTitleForInserting | New Person                                  |
+| formTitleForEditing   | Person                                      |
 
 ## SQL Structure
 | Column         | Description      |  Type   | Length | NULL     | Default |

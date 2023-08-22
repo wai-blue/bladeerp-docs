@@ -7,15 +7,16 @@ Model slúži na evidenciu adries. Všetky adresy môžu slúžiť ako doručova
 V modeli nie sú použité konštanty.
 
 ## Properties
-| Property              | Value                                 |
-| :-------------------- | :------------------------------------ |
-| isCrossTable          | FALSE                                 |
-| sqlName               | com_contact_addresses                 |
-| urlBase               | common/address-book/contact-addresses |
-| lookupSqlValue        | {%TABLE%}.recepient                   |
-| tableTitle            | Contact Addresses                     |
-| formTitleForInserting | New Contact Address                   |
-| formTitleForEditing   | Contact Address                       |
+| Property              | Value                                                                        |
+| :-------------------- | :--------------------------------------------------------------------------- |
+| isCrossTable          | FALSE                                                                        |
+| sqlName               | com_contact_addresses                                                        |
+| urlBase               | common/address-book/contact-addresses                                        |
+| lookupSqlValue        | concat(street_1, " ", city, " ", postal_code), id_com_country.lookupSqlValue |
+| tableTitle            | Contact Addresses                                                            |
+| formTitleForInserting | New Contact Address                                                          |
+| formTitleForEditing   | Contact Address                                                              |
+TODO: Ako riešiť lookupSqlValue v tomto prípade
 
 ## SQL Structure
 | Column         | Description       |  Type   | Length | NULL     | Default |

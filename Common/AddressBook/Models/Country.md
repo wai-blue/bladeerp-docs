@@ -12,7 +12,7 @@ V modeli nie sú použité konštanty.
 | isCrossTable          | FALSE                         |
 | sqlName               | com_countries                 |
 | urlBase               | common/address-book/countries |
-| lookupSqlValue        | {%TABLE%}.name                |
+| lookupSqlValue        | concat(name, " (", code, ")") |
 | tableTitle            | Countries                     |
 | formTitleForInserting | New Country                   |
 | formTitleForEditing   | Country                       |
