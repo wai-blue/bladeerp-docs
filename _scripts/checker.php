@@ -1,7 +1,28 @@
 <?php
 
-/* This scripts checks the consisency of the documentation and returns
-   errors or warnings. */
+/*
+  This scripts checks the consisency of the documentation and returns
+  errors or warnings.
+
+  USAGE
+  
+  EXAMPLE 1:
+    php checker.php
+    Checks everything.
+
+  EXAMPLE 2:
+    php checker.php <MODULE>
+    Checks everything inside the <MODULE> module.
+
+  EXAMPLE 3:
+    php checker.php <MODULE> <WIDGET>
+    Checks everything inside the <MODULE> module and <WIDGET> widget.
+
+  EXAMPLE 4:
+    php checker.php <MODULE> <WIDGET> <MODEL>
+    Checks everything inside the <MODULE> module, <WIDGET> widget and <MODEL> model.
+*/
+
 
 spl_autoload_register(function($className) {
   $classFile = __DIR__ . '/lib/' . str_replace('\\', '/', $className) . '.php';
