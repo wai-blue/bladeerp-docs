@@ -1,11 +1,15 @@
-# AssetTaxDepreciation
+# Model Finance/Asset/AssetTaxDepreciation
+
+NOTE: DD pretukal.
+TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
 
 ## Introduction
+
 Tabuľka na evidovanie daňových odpisov DHM a DNM, z ktorej sa relevantné hodnoty premietnu do kariet majetku. Vypočítavajú sa raz ročne použitím akcie AssetDepreciations/Calculate
 
 ## Constants
 
-V modeli nie sú použité konštanty.
+No constants are defined for this model.
 
 ## Properties
 
@@ -13,49 +17,43 @@ V modeli nie sú použité konštanty.
 | :-------------------- | :------------------------------ |
 | sqlName               | fin_asset_tax_depreciations     |
 | urlBase               | finance/asset/tax-depreciations |
-| lookupSqlValue        | -                               |
+| lookupSqlValue        |                                 |
 | tableTitle            | Asset Tax Depreciations         |
-| formTitleForInserting | -                               |
+| formTitleForInserting |                                 |
 | formTitleForEditing   | Detail Depreciation             |
-| formAddButtonText     | -                               |
-| formSaveButtonText    | -                               |
+| formAddButtonText     |                                 |
+| formSaveButtonText    |                                 |
 
-## SQL Structure
+## Data Structure
 
-REVIEW DD: V Google Docs bola struktura tejto tabulka ina, ako v napr. v MainBook.
+| Column                              | Title                                  | ADIOS Type | Length | Required | Notes                        |
+| :---------------------------------- | -------------------------------------- | :--------: | :----: | :------: | :--------------------------- |
+| id                                  | ID                                     |    int     |   11   |   TRUE   | Jedinečné ID záznamu         |
+| id_fin_asset                        | Property                               |    int     |   11   |   TRUE   | Odpisovaný majetok           |
+| year                                | Year                                   |    int     |   4    |   TRUE   | Rok odpisu                   |
+| month                               | Month                                  |    int     |   2    |   TRUE   | Mesiac odpisu                |
+| accounting_depreciation_coefficient | Coefficient of Accounting Depreciation |   float    |  5,2   |   TRUE   | Koeficient účtovných odpisov |
+| accounting_depreciation_amount      | Amount of Accounting Depreciation      |   float    |  15,2  |   TRUE   | Suma účtovných odpisov       |
+| amount_accounting_residual          | Residual Book Value                    |   float    |  15,2  |   TRUE   | Zostatková účtovná hodnota   |
+| posting_date                        | Posting Date                           |    date    |   8    |   TRUE   | Dátum zaúčtovania            |
 
-| Názov                               | Title                                                                             | Popis                                                    | Typ     | Dĺžka | Povinný |
-| :---------------------------------- | :-------------------------------------------------------------------------------- | :------------------------------------------------------- | :------ | :---- | :------ |
-| id                                  | ID                                                                                | Jedinečné ID záznamu                                     | INT     | 11    | Y       |
-| id_fin_asset                        | Property                                                                          | Odpisovaný majetok                                       | INT     | 11    | Y       |
-| year                                | Year                                                                              | Rok odpisu                                               | INT     | 4     | Y       |
-| number                              | Depreciation Serial Number                                                        | Poradové číslo roku odpisu                               | INT     | 4     | Y       |
-| accounting_depreciation_coefficient | Coefficient of Accounting Depreciation                                            | Koeficient účtovných odpisov                             | DECIMAL | 5,2   | Y       |
-| accounting_depreciation_amount      | Amount of Accounting Depreciation                                                 | Suma účtovných odpisov                                   | DECIMAL | 15,2  | Y       |
-| tax_depreciation_coefficient        | Coefficient of Tax Depreciation                                                   | Koeficient daňových odpisov                              | DECIMAL | 5,2   | Y       |
-| tax_depreciation_amount             | Amount of Tax Depreciation                                                        | Suma daňových odpisov                                    | DECIMAL | 15,2  | Y       |
-| difference                          | The difference between the amount of accounting depreciation and tax depreciation | Rozdiel medzi sumou účtovných odpisov a daňových odpisov | DECIMAL | 15,2  | Y       |
-| amount_accounting_residual          | Residual Book Value                                                               | Zostatková účtovná hodnota                               | DECIMAL | 15,2  | Y       |
-| amount_tax_residual                 | Residual Tax Value                                                                | Zostatková daňová hodnota                                | DECIMAL | 15,2  | Y       |
-| posting_date                        | Posting Date                                                                      | Dátum zaúčtovania                                        | DATE    | 8     | Y       |
+### ADIOS Parameters
 
-## Foreign Keys
+No additional ADIOS parameters needs to be defined.
 
-| Column       | Parent table | Relation | OnUpdate | OnDelete |
-| :----------- | :----------- | :------: | -------- | -------- |
-| id_fin_asset | fin_assets   |   1:N    | Cascade  | Restrict |
+### Foreign Keys
 
-## Indexes
+| Column       | Model                                                                            | Relation | OnUpdate | OnDelete |
+| :----------- | :------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_fin_asset | [App/Widgets/Finance/Asset/Models/Asset](../../../Finance/Asset/Models/Asset.md) |   1:N    | Cascade  | Restrict |
 
-| Name              |  Type   |   Column + Order |
-| :---------------- | :-----: | ---------------: |
-| id                | PRIMARY |           id ASC |
-| id_fin_asset_year | UNIQUE  | id_fin_asset ASC |
-|                   |         |         year ASC |
+### Indexes
 
-## Columns
-
-REVIEW DD: V Google Docs nebola definicia ADIOS columns.
+| Name                |  Type   |   Column + Order |
+| :------------------ | :-----: | ---------------: |
+| id                  | PRIMARY |           id ASC |
+| id_fin_asset___year | UNIQUE  | id_fin_asset ASC |
+|                     |         |         year ASC |
 
 ## Callbacks
 

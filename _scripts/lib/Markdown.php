@@ -57,13 +57,35 @@ class Markdown {
     return $rows;
   }
 
+  public function hasHeading(string $heading, int $level = 1): bool
+  {
+    $headingHashes = str_repeat('#', $level);
+    $re = '/' . '\n? *?' . $headingHashes . ' +' . $heading . '/s';
+    return preg_match($re, $this->content, $m) === 1;
+  }
+
+  public function hasH1(string $heading): bool
+  {
+    return $this->hasHeading($heading, 1);
+  }
+
+  public function hasH2(string $heading): bool
+  {
+    return $this->hasHeading($heading, 2);
+  }
+
+  public function hasH3(string $heading): bool
+  {
+    return $this->hasHeading($heading, 3);
+  }
+
   public function findContentByHeading(string $heading, int $level = 1): ?string
   {
     $content = NULL;
 
     $headingHashes = str_repeat('#', $level);
 
-    $reContent = '\n *?' . $headingHashes . ' +' . $heading . '(.*?)\n *?' . $headingHashes . ' ';
+    $reContent = '\n? *?' . $headingHashes . ' +' . $heading . '(.*?)\n *?' . $headingHashes . ' ';
 
     preg_match('/' . $reContent . '/s', $this->content, $m);
 
@@ -76,5 +98,10 @@ class Markdown {
   public function findContentByH2(string $heading): ?string
   {
     return $this->findContentByHeading($heading, 2);
+  }
+
+  public function findContentByH3(string $heading): ?string
+  {
+    return $this->findContentByHeading($heading, 3);
   }
 }

@@ -1,10 +1,15 @@
-# AssetDepreciationGroup
+# Model Finance/Asset/AssetDepreciationGroup
+
+NOTE: DD pretukal.
+TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
 
 ## Introduction
+
 Táto tabuľka bude slúžiť na evidenciu odpisových skupín pre účtovné obdobia. 
 
 ## Constants
-V modeli nie sú použité konštanty.
+
+No constants are defined for this model.
 
 ## Properties
 
@@ -19,38 +24,36 @@ V modeli nie sú použité konštanty.
 | formAddButtonText     | Add Group                           |
 | formSaveButtonText    | Update Group                        |
 
-## SQL Structure
+## Data Structure
 
-REVIEW DD: V Google Docs bola struktura tejto tabulka ina, ako v napr. v MainBook.
+| Column                   | Title                                                                                    | ADIOS Type | Length | Required | Notes                                                                                     |
+| :----------------------- | ---------------------------------------------------------------------------------------- | :--------: | :----: | :------: | :---------------------------------------------------------------------------------------- |
+| id                       |                                                                                          |    int     |   11   |   TRUE   | Jedinečné ID záznamu                                                                      |
+| id_fin_accounting_period | ID účtovného obdobia                                                                     |    int     |   11   |   TRUE   | ID účtovného obdobia                                                                      |
+| number                   | Číslo odpisovej skupiny                                                                  |    int     |   2    |   TRUE   | Číslo odpisovej skupiny                                                                   |
+| period                   | Doba odpisovania v rokoch                                                                |    int     |   2    |   TRUE   | Doba odpisovania v rokoch                                                                 |
+| description              | Popis                                                                                    |    text    |        |  FALSE   | Popis                                                                                     |
+| coef_first_year          | Koeficient odpisu pre zrýchlené odpisovanie v prvom roku                                 |    int     |   2    |   TRUE   | Koeficient odpisu pre zrýchlené odpisovanie  v prvom roku                                 |
+| coef_next_year           | Koeficient odpisu pre zrýchlené odpisovanie  v ďalších rokoch                            |    int     |   2    |   TRUE   | Koeficient odpisu pre zrýchlené odpisovanie  v ďalších rokoch                             |
+| coef_next_year_inc       | Koeficient odpisu pre zrýchlené odpisovanie v ďalších rokoch pre zvýšenú zostatkovú cenu |    int     |   2    |   TRUE   | Koeficient odpisu pre zrýchlené odpisovanie  v ďalších rokoch pre zvýšenú zostatkovú cenu |
 
-| Názov                    | Popis                                                                                     | Typ  | Dĺžka | Povinný |
-| :----------------------- | :---------------------------------------------------------------------------------------- | :--- | :---- | :------ |
-| id                       | Jedinečné ID záznamu                                                                      | INT  | 11    | Y       |
-| id_fin_accounting_period | ID účtovného obdobia                                                                      | INT  | 11    | Y       |
-| number                   | Číslo odpisovej skupiny                                                                   | INT  | 2     | Y       |
-| period                   | Doba odpisovania v rokoch                                                                 | INT  | 2     | Y       |
-| description              | Popis                                                                                     | TEXT |       | N       |
-| coef_first_year          | Koeficient odpisu pre zrýchlené odpisovanie  v prvom roku                                 | INT  | 2     | Y       |
-| coef_next_year           | Koeficient odpisu pre zrýchlené odpisovanie  v ďalších rokoch                             | INT  | 2     | Y       |
-| coef_next_year_inc       | Koeficient odpisu pre zrýchlené odpisovanie  v ďalších rokoch pre zvýšenú zostatkovú cenu | INT  | 2     | Y       |
+### ADIOS Parameters
 
-## Foreign Keys
+No additional ADIOS parameters needs to be defined.
 
-| Column                   | Parent table           | Relation | OnUpdate | OnDelete |
-| :----------------------- | :--------------------- | :------: | -------- | -------- |
-| id_fin_accounting_period | fin_accounting_periods |   1:N    | Cascade  | Cascade  |
+### Foreign Keys
 
-## Indexes
+| Column                   | Model                                                                                                        | Relation | OnUpdate | OnDelete |
+| :----------------------- | :----------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_fin_accounting_period | [App/Widgets/Finance/MainBook/Models/AccountingPeriod](../../../Finance/MainBook/Models/AccountingPeriod.md) |   1:N    | Cascade  | Cascade  |
+
+### Indexes
 [Pre túto tabuľku nie sú definované indexy.]
-| Name                            |  Type   |               Column + Order |
-| :------------------------------ | :-----: | ---------------------------: |
-| id                              | PRIMARY |                       id ASC |
-| id_fin_accounting_period_number | UNIQUE  | id_fin_accounting_period ASC |
-|                                 |         |                   number ASC |
-
-## Columns
-
-REVIEW DD: V Google Docs nebola definicia ADIOS columns.
+| Name                              |  Type   |               Column + Order |
+| :-------------------------------- | :-----: | ---------------------------: |
+| id                                | PRIMARY |                       id ASC |
+| id_fin_accounting_period___number | UNIQUE  | id_fin_accounting_period ASC |
+|                                   |         |                   number ASC |
 
 ## Callbacks
 

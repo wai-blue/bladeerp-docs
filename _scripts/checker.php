@@ -10,8 +10,10 @@ spl_autoload_register(function($className) {
   }
 });
 
+$modelToCheck = $argv[1] ?? "";
+
 $modules = [
-  'Finance [FIN]',
+  'Finance',
 ];
 
 $errors = [];
@@ -60,7 +62,24 @@ foreach ($modules as $module) {
         $modelRef = str_replace('\\', '/', realpath($widgetDir . '/Models/' . $model));
         $modelContainsLookup = FALSE;
 
+        if (!empty($modelToCheck) && strpos($modelRef, $modelToCheck) === FALSE) continue;
+
         $md = new \Markdown($widgetDir . '/Models/' . $model);
+
+        // Document outline
+        if (
+          $md->hasH1('Model') === FALSE
+          || $md->hasH2('Introduction') === FALSE
+          || $md->hasH2('Constants') === FALSE
+          || $md->hasH2('Properties') === FALSE
+          || $md->hasH2('Data Structure') === FALSE
+          || $md->hasH3('ADIOS Parameters') === FALSE
+          || $md->hasH3('Foreign Keys') === FALSE
+          || $md->hasH3('Indexes') === FALSE
+          || $md->hasH2('Callbacks') === FALSE
+        ) {
+          $errors[] = "[{$modelRef}] Document outline is invalid.";
+        }
 
         // Properties
         $properties = $md->findTableByColumns(['Property', 'Value']);
@@ -71,20 +90,36 @@ foreach ($modules as $module) {
           $errors[] = "[{$modelRef}] No property defined.";
         }
 
-        // Columns
-        $h2Columns = $md->findContentByH2('Columns');
-        if (empty($h2Columns)) {
-          $errors[] = "[{$modelRef}] Definition of Columns is empty.";
-        } else {
-          if (strpos($h2Columns, 'lookup') !== FALSE) {
+        // Data Structure
+        $dataStructure = $md->findTableByColumns(['Column', 'Title', 'ADIOS Type', 'Length', 'Required', 'Notes']);
+        foreach ($dataStructure as $row) {
+          if (!in_array($row[2], ["varchar", "int", "date", "datetime", "lookup", "file", "image", "boolean", "float", "text"])) {
+            $errors[] = "[{$modelRef}] Unknown ADIOS type for `{$row[0]}`.";
+          }
+          if ($row[2] == "LOOKUP") {
             $modelContainsLookup = TRUE;
           }
+          if ($row[2] == "lookup" && substr($row[0], 0, 3) != 'id_') {
+            $errors[] = "[{$modelRef}] `{$row[0]}` is lookup and does not start with `id_`.";
+          }
+          if ($row[2] == "boolean" && substr($row[0], 0, 3) != 'is_') {
+            $errors[] = "[{$modelRef}] `{$row[0]}` is boolean and does not start with `is_`.";
+          }
+          if ($row[2] == "date" && substr($row[0], -5) != '_date') {
+            $errors[] = "[{$modelRef}] `{$row[0]}` is date and does not end with `_date`.";
+          }
+        }
+
+        // Columns
+        $h3AdiosParameters = $md->findContentByH3('ADIOS Parameters');
+        if (empty($h3AdiosParameters)) {
+          $errors[] = "[{$modelRef}] Definition of ADIOS Parameters is empty.";
         }
 
         // Foreign Keys
         $foreignKeys = $md->findTableByColumns([
           'Column',
-          'Parent table',
+          'Model',
           'Relation',
           'OnUpdate',
           'OnDelete',
@@ -113,7 +148,9 @@ foreach ($modules as $module) {
             $warnings[] = "[{$modelRef}] Only one index for column `id` defined.";
           }
         }
+
       }
+
     }
 
 

@@ -1,1 +1,1 @@
-php checker.php
+php checker.php %*

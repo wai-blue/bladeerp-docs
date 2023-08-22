@@ -1,11 +1,13 @@
-# [ModelName]
+# Model [Module]/[Widget]/[Model]
 
 ## Introduction
-[Stručný popis o dátach uchovávaných v modeli.]
+
+[Short description of the model.]
 
 ## Constants
-[V modeli nie sú použité konštanty.]
-### Side
+
+[No constants are defined for this model.]
+
 | Constant                   | Value | Description                    |
 | :------------------------- | :---: | :----------------------------- |
 | FIN_BOOK_ACCOUNT_SIDE_BOTH |   1   | Je možné účtovať na obe strany |
@@ -13,7 +15,9 @@
 | FIN_BOOK_ACCOUNT_SIDE_PUT  |   3   | Účet na strane Dal             |
 
 ## Properties
-(vid ADIOS.repo/src/Core/Model.php)
+
+(see ADIOS.repo/src/Core/Model.php)
+
 | Property              | Value                                     |
 | :-------------------- | :---------------------------------------- |
 | isCrossTable          | TRUE/FALSE                                |
@@ -25,6 +29,7 @@
 | formTitleForEditing   | [Model Name]                              |
 
 ## Data Structure
+
 | Column                   | Title                      | ADIOS Type | Length | Required | Notes                          |
 | :----------------------- | -------------------------- | :--------: | :----: | :------: | :----------------------------- |
 | id                       |                            |    int     |   8    |   TRUE   | ID záznamu                     |
@@ -39,17 +44,23 @@
 | attached_file            | Path to Attached File      |    file    |  255   |  FALSE   | Relatívna cesta k súboru       |
 | profile_image            | Path to Profile Image      |    file    |  255   |  FALSE   | Relatívna cesta k obrázku      |
 
-### ADIOS Parameters 
+### ADIOS Parameters
+
+[No additional ADIOS parameters needs to be defined.]
+
 | Column         | Parameter   | Value                             |
 | :------------- | :---------- | --------------------------------- |
 | is_open        | description | Is the document open or not?      |
 |                | default     | 1                                 |
 | state_sequence | description | Order of the item in input lists. |
 | side           | enum_values | [Enum values](#side)              |
-|                |             |                                   |
+| side           | enum_values | FIN_BOOK_ACCOUNT_SIDE_*           | <- Navrh DD
+
+REVIEW DD: Definicii enum_values nerozumiem. Nikam to neodkazuje. Dal som iny navrh.
 
 ### ADIOS DataTypes
 TODO: Doplnit linky na dokumentaciu, ked uz bude nahodena
+TODO: Moze sa presunut niekde inde? Aby sa to nemuselo stale vymazavat.
 [Kapitola sa pouziva iba na prelinkovanie s dokumentaciou. Po dopisani je potrebne kapitolu vymazat.]
 * [boolean]
 * [color]
@@ -66,58 +77,75 @@ TODO: Doplnit linky na dokumentaciu, ked uz bude nahodena
 * [time]
 * [timestamp] 
 * [varchar]
-* [yaer]
+* [year]
 
-## Foreign Keys
-[Model neobsahuje cudzie kľúče.]
-| Column                   | Model                                                                                                                | Relation | OnUpdate | OnDelete |
-| :----------------------- | :------------------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_fin_accounting_period | [App/Widgets/Finance/MainBook/Models/AccountingPeriod](../../../Finance%20[FIN]/MainBook/Models/AccountingPeriod.md) |   1:N    | Cascade  | Cascade  |
-| id_fin_book_account_type | [App/Widgets/Finance/MainBook/Models/BookAccountType](../../../Finance%20[FIN]/MainBook/Models/BookAccountType.md)   |   1:N    | Cascade  | Restrict |
+### Foreign Keys
 
-## Indexes
-[Pre túto tabuľku nie sú definované indexy.]
-| Name           |  Type   | Column + Order |
-| :------------- | :-----: | -------------: |
-| id             | PRIMARY |         id ASC |
-| simple_index   |  INDEX  |       name ASC |
-| unique_index   | UNIQUE  | start_date ASC |
-| combined_index |  INDEX  |    is_open ASC |
-|                |         | start_date ASC |
+[Model does not contain foreign keys.]
+
+| Column                   | Model                                                                                                        | Relation | OnUpdate | OnDelete |
+| :----------------------- | :----------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_fin_accounting_period | [App/Widgets/Finance/MainBook/Models/AccountingPeriod](../../../Finance/MainBook/Models/AccountingPeriod.md) |   1:N    | Cascade  | Cascade  |
+| id_fin_book_account_type | [App/Widgets/Finance/MainBook/Models/BookAccountType](../../../Finance/MainBook/Models/BookAccountType.md)   |   1:N    | Cascade  | Restrict |
+
+### Indexes
+
+[Model does not contain indexes.]
+
+| Name                 |  Type   | Column + Order |
+| :------------------- | :-----: | -------------: |
+| id                   | PRIMARY |         id ASC |
+| simple_index         |  INDEX  |       name ASC |
+| unique_index         | UNIQUE  | start_date ASC |
+| is_open___start_date |  INDEX  |    is_open ASC |
+|                      |         | start_date ASC |
+
+REVIEW DD: Vo viacstlpcovych indexoch nazvy vyskladavat z jednotlivych stlpcov a spajat cez "___"
 
 ## Callbacks
 
 ### onBeforeInsert
+
 Not used.
 
 ### onAfterInsert
+
 Not used.
 
 ### onBeforeUpdate
+
 Not used.
 
 ### onAfterUpdate
+
 Not used.
 
 ### onBeforeDelete
+
 Not used.
 
 ### onAfterDelete
+
 Not used.
 
 ## Formatters
 
 ### tableCellHTMLFormatter
+
 Not used.
 
 ### tableCellCSVFormatter
+
 Not used.
 
 ### tableCellCSSFormatter
+
 Not used.
 
 ### tableRowCSSFormatter
+
 Not used.
 
 ### cardsCardHtmlFormatter
+
 Not used.

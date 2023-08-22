@@ -1,4 +1,7 @@
-# FinancialStatement
+# Model Finance/AccountingStatement/FinancialStatement
+
+NOTE: DD pretukal.
+TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
 
 ## Introduction
 
@@ -7,9 +10,7 @@ Záznam účtovnej závierky už nie je možné meniť. Vymazať je možné iba 
 
 ## Constants
 
-| Constant | Value | Description |
-| -------- | ----- | ----------- |
-|          |       |             |
+No constants are defined for this model.
 
 ## Properties
 
@@ -24,24 +25,26 @@ Záznam účtovnej závierky už nie je možné meniť. Vymazať je možné iba 
 | formAddButtonText     | Add Statement                |
 | formSaveButtonText    | -                            |
 
-## SQL Structure
+## Data Structure
 
-| Column                   | Description      | Type                                    | Length  | NULL     | Default |
-| :----------------------- | :--------------- | :-------------------------------------- | :-----: | :------: | :-----: |
-| id                       | Unique record ID | INT                                     | 8       | NOT NULL | 0       |
-| name                     | Name             | Názov závierky                          | VARCHAR | 100      | Y       |
-| closing_date             | Closing Date     | Dátum, ku ktorému je závierka vystavená | DATE    | 8        | Y       |
-| id_fin_accounting_period | Financial Period | ID účtovného obdobia                    | INT     | 11       | Y       |
+| Column                   | Title            | ADIOS Type | Length | Required | Notes                                   |
+| :----------------------- | ---------------- | :--------: | :----: | :------: | :-------------------------------------- |
+| id                       |                  |    int     |   8    |   TRUE   | Unique record ID                        |
+| name                     | Name             |  varchar   |  100   |  FALSE   | Názov závierky                          |
+| closing_date             | Closing Date     |    date    |   8    |  FALSE   | Dátum, ku ktorému je závierka vystavená |
+| id_fin_accounting_period | Financial Period |   lookup   |   11   |  FALSE   | ID účtovného obdobia                    |
 
-## Columns
+### ADIOS Parameters
 
-## Foreign Keys
+No additional ADIOS parameters needs to be defined.
 
-| Column                   | Parent table           | Relation | OnUpdate | OnDelete |
-| :----------------------- | :--------------------- | :------: | :------: | :------: |
-| id_fin_accounting_period | fin_accounting_periods | 1:N      | Cascade  | Restrict |
+### Foreign Keys
 
-## Indexes
+| Column                   | Model                                                                                                        | Relation | OnUpdate | OnDelete |
+| :----------------------- | :----------------------------------------------------------------------------------------------------------- | :------: | :------: | :------: |
+| id_fin_accounting_period | [App/Widgets/Finance/MainBook/Models/AccountingPeriod](../../../Finance/MainBook/Models/AccountingPeriod.md) |   1:N    | Cascade  | Restrict |
+
+### Indexes
 
 | Name                     | Type    | Column + Order               |
 | :----------------------- | :-----: | :--------------------------- |
