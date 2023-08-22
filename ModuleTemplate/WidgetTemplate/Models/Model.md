@@ -27,25 +27,46 @@
 ## Data Structure
 | Column                   | Title                      | ADIOS Type | Length | Required | Notes                          |
 | :----------------------- | -------------------------- | :--------: | :----: | :------: | :----------------------------- |
-| id                       |                            |    INT     |   8    |   TRUE   | ID záznamu                     |
-| name                     | Name                       |  VARCHAR   |  100   |   TRUE   | Krátky text                    |
-| description              | Description                |    TEXT    |        |  FALSE   | Dlhý text                      |
-| maturity_date            | Maturity Date              |    DATE    |   8    |   TRUE   | Dátum splatnosti               |
-| is_open                  | Is Open                    |  BOOLEAN   |   1    |   TRUE   | Logická hodnota                |
-| state_sequence           | State Sequence             |    INT     |   6    |   TRUE   | Poradové číslo v select boxoch |
-| id_fin_accounting_period | Previous Accounting Period |   LOOKUP   |   8    |   TRUE   | Previous Accounting Period     |
-| side                     | Account Side               |    INT     |   8    |   TRUE   | Účtovná strana                 |
-| price                    | Total Price                |  DECIMAL   |  15,2  |  FALSE   | Cena                           |
-| attached_file            | Path to Attached File      |    FILE    |  255   |  FALSE   | Relatívna cesta k súboru       |
-| profile_image            | Path to Profile Image      |    FILE    |  255   |  FALSE   | Relatívna cesta k obrázku      |
-  
+| id                       |                            |    int     |   8    |   TRUE   | ID záznamu                     |
+| name                     | Name                       |  varchar   |  100   |   TRUE   | Krátky text                    |
+| description              | Description                |    text    |        |  FALSE   | Dlhý text                      |
+| maturity_date            | Maturity Date              |    date    |   8    |   TRUE   | Dátum splatnosti               |
+| is_open                  | Is Open                    |  boolean   |   1    |   TRUE   | Logická hodnota                |
+| state_sequence           | State Sequence             |    int     |   6    |   TRUE   | Poradové číslo v select boxoch |
+| id_fin_accounting_period | Previous Accounting Period |   lookup   |   8    |   TRUE   | Previous Accounting Period     |
+| side                     | Account Side               |    int     |   8    |   TRUE   | Účtovná strana                 |
+| price                    | Total Price                |   float    |  15,2  |  FALSE   | Cena                           |
+| attached_file            | Path to Attached File      |    file    |  255   |  FALSE   | Relatívna cesta k súboru       |
+| profile_image            | Path to Profile Image      |    file    |  255   |  FALSE   | Relatívna cesta k obrázku      |
 
 ### ADIOS Parameters 
 | Column         | Parameter   | Value                             |
 | :------------- | :---------- | --------------------------------- |
 | is_open        | description | Is the document open or not?      |
+|                | default     | 1                                 |
 | state_sequence | description | Order of the item in input lists. |
 | side           | enum_values | [Enum values](#side)              |
+|                |             |                                   |
+
+### ADIOS DataTypes
+TODO: Doplnit linky na dokumentaciu, ked uz bude nahodena
+[Kapitola sa pouziva iba na prelinkovanie s dokumentaciou. Po dopisani je potrebne kapitolu vymazat.]
+* [boolean]
+* [color]
+* [date]
+* [datetime]
+* [file]
+* [float]
+* [image]
+* [int](https://github.com/wai-blue/adios-docs/tree/master/Documentation/6.Database)
+* [lookup] 
+* [password]
+* [table]
+* [text]
+* [time]
+* [timestamp] 
+* [varchar]
+* [yaer]
 
 ## Foreign Keys
 [Model neobsahuje cudzie kľúče.]
