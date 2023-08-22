@@ -37,9 +37,9 @@ No constants are defined for this model.
 | date                     | Creation Date   |    date    |   8    |   TRUE   | Dátum vystavenia dokladu                      |
 | number                   | Number          |    int     |   8    |   TRUE   | Poradové číslo dokladu                        |
 | description              | Description     |    text    |        |  FALSE   | Popis dokladu                                 |
-| amount                   | Amount          |   float    |  15,2  |   TRUE   | Suma                                          |
-| amount_currency          | Amount Currency |   float    |  15,2  |   TRUE   | Celková suma transakcie v inej mene           |
-| exchange_rate            | Exchange Rate   |   float    |  15,2  |   TRUE   | Kurz meny voči hlavnej mene účtovného obdobia |
+| amount                   | Amount          |  decimal   |  15,2  |   TRUE   | Suma                                          |
+| amount_currency          | Amount Currency |  decimal   |  15,2  |   TRUE   | Celková suma transakcie v inej mene           |
+| exchange_rate            | Exchange Rate   |  decimal   |  15,2  |   TRUE   | Kurz meny voči hlavnej mene účtovného obdobia |
 | id_fin_currency          | Currency        |   lookup   |   11   |   TRUE   | ID meny                                       |
 | id_fin_transaction       | Transaction     |   lookup   |   11   |   TRUE   | ID v denníku hlavnej knihy                    |
 

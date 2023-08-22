@@ -32,9 +32,9 @@ No constants are defined for this model.
 | id_fin_asset                        | Property                               |    int     |   11   |   TRUE   | Odpisovaný majetok           |
 | year                                | Year                                   |    int     |   4    |   TRUE   | Rok odpisu                   |
 | month                               | Month                                  |    int     |   2    |   TRUE   | Mesiac odpisu                |
-| accounting_depreciation_coefficient | Coefficient of Accounting Depreciation |   float    |  5,2   |   TRUE   | Koeficient účtovných odpisov |
-| accounting_depreciation_amount      | Amount of Accounting Depreciation      |   float    |  15,2  |   TRUE   | Suma účtovných odpisov       |
-| amount_accounting_residual          | Residual Book Value                    |   float    |  15,2  |   TRUE   | Zostatková účtovná hodnota   |
+| accounting_depreciation_coefficient | Coefficient of Accounting Depreciation |  decimal   |  5,2   |   TRUE   | Koeficient účtovných odpisov |
+| accounting_depreciation_amount      | Amount of Accounting Depreciation      |  decimal   |  15,2  |   TRUE   | Suma účtovných odpisov       |
+| amount_accounting_residual          | Residual Book Value                    |  decimal   |  15,2  |   TRUE   | Zostatková účtovná hodnota   |
 | posting_date                        | Posting Date                           |    date    |   8    |   TRUE   | Dátum zaúčtovania            |
 
 ### ADIOS Parameters

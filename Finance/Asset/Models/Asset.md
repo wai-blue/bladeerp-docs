@@ -38,7 +38,7 @@ Tabuľka slúži na evidenciu majetku.
 | name                       | Name                                            |  varchar   |   50   |   TRUE   | Názov                                  |
 | description                | Description                                     |    text    |        |  FALSE   | Popis                                  |
 | id_fin_currency            | Currency                                        |   lookup   |   11   |   TRUE   | ID meny v uvedená vstupná cena         |
-| entry_price                | Entry Price                                     |   float    |  15,2  |   TRUE   | Vstupná cena                           |
+| entry_price                | Entry Price                                     |  decimal   |  15,2  |   TRUE   | Vstupná cena                           |
 | entry_date                 | Entry Date                                      |    date    |   8    |   TRUE   | Dátum obstarania                       |
 | procurement_method         | Procurement Method                              |  varchar   |  100   |  FALSE   | Spôsob obstarania                      |
 | commissioning_date         | Commissioning Date                              |    date    |   8    |   TRUE   | Dátum zaradenia do užívania            |
@@ -47,8 +47,8 @@ Tabuľka slúži na evidenciu majetku.
 | type                       | Property Type                                   |    int     |   1    |   TRUE   | Typ majetku                            |
 | method                     | Depreciation Method                             |    int     |   1    |   TRUE   | Metóda odpisovania                     |
 | is_automat                 | Automatically calculate accounting depreciation |  boolean   |   1    |  FALSE   | Automaticky vypočítavať účtovné odpisy |
-| amount_accounting_residual | Residual Book Value                             |   float    |  15,2  |  FALSE   | Zostatková účtovná hodnota             |
-| amount_tax_residual        | Residual Tax Value                              |   float    |  15,2  |  FALSE   | Zostatková daňová hodnota              |
+| amount_accounting_residual | Residual Book Value                             |  decimal   |  15,2  |  FALSE   | Zostatková účtovná hodnota             |
+| amount_tax_residual        | Residual Tax Value                              |  decimal   |  15,2  |  FALSE   | Zostatková daňová hodnota              |
 | retirement_date            | Retirement Date                                 |    date    |   8    |  FALSE   | Dátum vyradenia                        |
 | retirement_reason          | Reason for Retirement                           |  varchar   |  100   |  FALSE   | Dôvod vyradenia                        |
 | retirement_method          | Retirement Method                               |  varchar   |  100   |  FALSE   | Spôsob vyradenia                       |

@@ -31,10 +31,10 @@ No constants are defined for this model.
 | id                  | ID                      |    int     |   11   |   TRUE   | Jedinečné ID záznamu                    |
 | id_fin_bank_account | Bank Account            |   lookup   |   11   |   TRUE   | ID bankového účtu                       |
 | datetime_statement  | Date and Time Statement |  datetime  |        |   TRUE   | Dátum a čas závierky                    |
-| amount_found        | Found Amount            |   float    |  15,2  |  FALSE   | Suma, ktorá bola pri závierke zistená   |
-| amount_expected     | Expected Amount         |   float    |  15,2  |  FALSE   | Suma, ktorá bola pri závierke očakávaná |
-| credit              | Credit                  |   float    |  15,2  |  FALSE   | Prebytok                                |
-| debet               | Debet                   |   float    |  15,2  |  FALSE   | Manko                                   |
+| amount_found        | Found Amount            |  decimal   |  15,2  |  FALSE   | Suma, ktorá bola pri závierke zistená   |
+| amount_expected     | Expected Amount         |  decimal   |  15,2  |  FALSE   | Suma, ktorá bola pri závierke očakávaná |
+| credit              | Credit                  |  decimal   |  15,2  |  FALSE   | Prebytok                                |
+| debet               | Debet                   |  decimal   |  15,2  |  FALSE   | Manko                                   |
 | id_user             | User                    |   lookup   |   11   |   TRUE   | ID užívateľa, ktorý závierku vykonall   |
 
 TODO: Dusan 16.8. 2023: id_adios_user som premenoval na id_user

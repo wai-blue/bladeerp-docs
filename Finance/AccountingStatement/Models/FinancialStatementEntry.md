@@ -35,7 +35,7 @@ TODO: Tabuľka je v nesúlade s tou na Google Docs, odkontrolovať prosím.
 | Column                     | Title               | ADIOS Type | Length | Required | Notes               |
 | :------------------------- | ------------------- | :--------: | :----: | :------: | :------------------ |
 | id                         |                     |    int     |   8    |   TRUE   | Unique record ID    |
-| balance                    | Balance             |   float    |  1,52  |  FALSE   | Balance             |
+| balance                    | Balance             |  decimal   |  1,52  |  FALSE   | Balance             |
 | id_fin_book_account        | Book Account        |    int     |   11   |   TRUE   | Book Account        |
 | id_fin_financial_statement | Financial Statement |    int     |   11   |   TRUE   | Financial Statement |
 

@@ -93,7 +93,7 @@ foreach ($modules as $module) {
         // Data Structure
         $dataStructure = $md->findTableByColumns(['Column', 'Title', 'ADIOS Type', 'Length', 'Required', 'Notes']);
         foreach ($dataStructure as $row) {
-          if (!in_array($row[2], ["varchar", "int", "date", "datetime", "lookup", "file", "image", "boolean", "float", "text"])) {
+          if (!in_array($row[2], ["varchar", "int", "date", "datetime", "lookup", "file", "image", "boolean", "decimal", "text"])) {
             $errors[] = "[{$modelRef}] Unknown ADIOS type for `{$row[0]}`.";
           }
           if ($row[2] == "LOOKUP") {
