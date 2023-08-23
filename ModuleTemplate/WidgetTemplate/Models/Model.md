@@ -61,6 +61,7 @@ REVIEW DD: Definicii enum_values nerozumiem. Nikam to neodkazuje. Dal som iny na
 ### ADIOS DataTypes
 TODO: Doplnit linky na dokumentaciu, ked uz bude nahodena
 TODO: Moze sa presunut niekde inde? Aby sa to nemuselo stale vymazavat.
+TODO: Zdalo sa nam, ze tu je to najlepsie miesto, kedze je prakticke mat tieto info "po ruke". Ak najdeme lepsie miesto, presunieme. A inak, je tu toho viac, co sa vo finale vymazava.
 [Kapitola sa pouziva iba na prelinkovanie s dokumentaciou. Po dopisani je potrebne kapitolu vymazat.]
 * [boolean]
 * [color]
@@ -69,7 +70,7 @@ TODO: Moze sa presunut niekde inde? Aby sa to nemuselo stale vymazavat.
 * [file]
 * [float]
 * [image]
-* [int](https://github.com/wai-blue/adios-docs/tree/master/Documentation/6.Database)
+* [int](https://github.com/wai-blue/adios-docs/blob/main/Documentation/6.Database/Data%20Types/Integer.md)
 * [lookup] 
 * [password]
 * [table]
