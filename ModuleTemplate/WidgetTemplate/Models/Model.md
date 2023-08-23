@@ -8,6 +8,7 @@
 
 [No constants are defined for this model.]
 
+### Side Enums
 | Constant                   | Value | Description                    |
 | :------------------------- | :---: | :----------------------------- |
 | BKP_BOOK_ACCOUNT_SIDE_BOTH |   1   | Je možné účtovať na obe strany |
@@ -52,20 +53,15 @@
 
 [No additional ADIOS parameters needs to be defined.]
 
-| Column         | Parameter   | Value                             |
-| :------------- | :---------- | --------------------------------- |
-| is_open        | description | Is the document open or not?      |
-|                | default     | 1                                 |
-| state_sequence | description | Order of the item in input lists. |
-| side           | enum_values | [Enum values](#side)              |
-| side           | enum_values | BKP_BOOK_ACCOUNT_SIDE_*           | <- Navrh DD
-
-REVIEW DD: Definicii enum_values nerozumiem. Nikam to neodkazuje. Dal som iny navrh.
+| Column         | Parameter   | Value                               |
+| :------------- | :---------- | ----------------------------------- |
+| is_open        | description | Is the document open or not?        |
+|                | default     | 1                                   |
+| state_sequence | description | Order of the item in input lists.   |
+| side           | enum_values | [see Constants - Side](#side-enums) |
 
 ### ADIOS DataTypes
 TODO: Doplnit linky na dokumentaciu, ked uz bude nahodena
-TODO: Moze sa presunut niekde inde? Aby sa to nemuselo stale vymazavat.
-TODO: Zdalo sa nam, ze tu je to najlepsie miesto, kedze je prakticke mat tieto info "po ruke". Ak najdeme lepsie miesto, presunieme. A inak, je tu toho viac, co sa vo finale vymazava.
 [Kapitola sa pouziva iba na prelinkovanie s dokumentaciou. Po dopisani je potrebne kapitolu vymazat.]
 * [boolean]
 * [color]
