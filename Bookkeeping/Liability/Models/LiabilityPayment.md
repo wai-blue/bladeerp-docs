@@ -1,4 +1,4 @@
-# LiabilityPayment
+# Model Bookkeeping/Liability/LiabilityPayment
 
 ## Introduction
 
@@ -6,83 +6,61 @@ Tabuľka bude slúžiť na evidenciu plánovaných úhrad záväzkov.
 
 ## Constants
 
-| Constant | Value | Description |
-| -------- | ----- | ----------- |
-|          |       |             |
+No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value |
-| :-------------------- | :-------------------------------------------- |
-| sqlName               | bkp_liability_payments                        |
+| Property              | Value                                             |
+| :-------------------- | :------------------------------------------------ |
+| sqlName               | bkp_liability_payments                            |
 | urlBase               | bookkeeping/liability/{id_bkp_liability}/payments |
-| lookupSqlValue        | -                                             |
-| tableTitle            | Payments                                      |
-| formTitleForInserting | New Payment                                   |
-| formTitleForEditing   | Payment                                       |
+| lookupSqlValue        |                                                   |
+| tableTitle            | Payments                                          |
+| formTitleForInserting | New Payment                                       |
+| formTitleForEditing   | Payment                                           |
 
 
-## SQL Structure
+## Data Structure
 
-| Column           | Description            |  Type   | Length |   NULL   | Default |
-| :--------------- | :--------------------- | :-----: | :----: | :------: | :------ |
-| id               | Jedinečné ID záznamu   |   INT   |   8    | NOT NULL |         |
-| id_bkp_liability | ID záväzku             |   INT   |   8    | NOT NULL |         |
-| maturity_date    | Plánovaný dátum úhrady |  DATE   |   8    | NOT NULL |         |
-| executed_date    | Dátum úhrady           |  DATE   |   8    |   NULL   |         |
-| price            | Uhradená suma          | DECIMAL |  15,2  | NOT NULL |         |
-| comment          | Poznámka k úhrade      |  TEXT   |        |   NULL   |         |
+| Column           | Title            | ADIOS Type | Length | Required | Notes                                    |
+| :--------------- | ---------------- | :--------: | :----: | :------: | :--------------------------------------- |
+| id               |                  |    int     |   8    |   TRUE   | Unique record ID                         |
+| id_created_by    | Created By       |   lookup   |   8    |   TRUE   | Reference to user who created the record |
+| create_datetime  | Created Datetime |  datetime  |   8    |   TRUE   | When the record was created              |
+| id_updated_by    | Updated By       |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
+| update_datetime  | Updated Datetime |  datetime  |   8    |   TRUE   | When the record was updated              |
+| id_bkp_liability | Liability        |   lookup   |   8    |   TRUE   | ID záväzku                               |
+| due_date         | Due Date         |    date    |   8    |   TRUE   | Plánovaný dátum úhrady                   |
+| payment_date     | Payment Date     |    date    |   8    |  FALSE   | Dátum úhrady                             |
+| price            | Payment Price    |  decimal   |  15,2  |   TRUE   | Uhradená suma                            |
+| comment          | Description      |    text    |        |  FALSE   | Poznámka k úhrade                        |
 
-## Columns
+REVIEW DD: Comment, Description, alebo Poznamka?
 
-* id_bkp_liability:
-	* required: true
-	* type: lookup
-	* title: Liability
-	* model: App/Widgets/Bookkeeping/Liability/Models/Liability
-	* foreignKeyOnUpdate: CASCADE
-	* foreignKeyOnDelete: RESTRICT
-	* showColumn: true
-* planned_date:
-	* required: true
-	* type: date
-	* title: Payment Date
-	* showColumn: true
-* maturity_date:
-	* required: true
-	* type: date
-	* title: Planned Payment Date
-	* showColumn: true
-* executed_date:
-	* required: false
-	* type: date
-	* title: Payment Execution Date
-	* showColumn: true
-* price:
-	* required: true
-	* type: float
-	* title: Payment Price
-	* byte_size: 15
-	* decimals: 2
-	* showColumn: true
-* comment:
-	* required: false
-	* type: text
-	* title: Description
-	* required: false
-	* showColumn: true
+### ADIOS Parameters
 
-## Foreign Keys
+No additional ADIOS parameters needs to be defined.
 
-| Column           | Parent table    | Relation | OnUpdate | OnDelete |
-| :--------------- | :-------------- | :------: | :------: | :------: |
-| id_bkp_liability | bkp_liabilities | 1:N      | Cascade  | Restrict |
+### Foreign Keys
 
-## Indexes
+| Column           | Model                                              | Relation | OnUpdate | OnDelete |
+| :--------------- | :------------------------------------------------- | :------: | -------- | -------- |
+| id_created_by    | ADIOS/Core/User                                    |   1:N    | Cascade  | Cascade  |
+| id_updated_by    | ADIOS/Core/User                                    |   1:N    | Cascade  | Cascade  |
+| id_bkp_liability | App/Widgets/Bookkeeping/Liability/Models/Liability |   1:N    | Cascade  | Cascade  |
 
-| Name | Type    | Column + Order |
-| ---- | ------- | -------------- |
-| id   | PRIMARY | id ASC         |
+### Indexes
+
+| Name             |  Type   |       Column + Order |
+| :--------------- | :-----: | -------------------: |
+| id               | PRIMARY |               id ASC |
+| id_created_by    |  INDEX  |    id_created_by ASC |
+| create_datetime  |  INDEX  |  create_datetime ASC |
+| id_updated_by    |  INDEX  |    id_updated_by ASC |
+| update_datetime  |  INDEX  |  update_datetime ASC |
+| id_bkp_liability |  INDEX  | id_bkp_liability ASC |
+| due_date         |  INDEX  |         due_date ASC |
+| payment_date     |  INDEX  |     payment_date ASC |
 
 ## Callbacks
 

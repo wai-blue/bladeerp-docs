@@ -219,10 +219,17 @@ foreach ($modules as $module) {
           }
 
           if (
-            in_array($colDefinition['type'], ['date', 'int', 'lookup', 'boolean'])
+            in_array($colDefinition['type'], ['lookup', 'boolean'])
             && $colDefinition['index'] === NULL
           ) {
             $errors[] = "[{$modelRef}] `{$colName}` is {$colDefinition['type']} but has no index defined.";
+          }
+
+          if (
+            in_array($colDefinition['type'], ['date', 'int'])
+            && $colDefinition['index'] === NULL
+          ) {
+            $warnings[] = "[{$modelRef}] `{$colName}` is {$colDefinition['type']} but has no index defined.";
           }
         }
 
@@ -253,10 +260,10 @@ foreach ($modules as $module) {
           }
 
           if (
-            !isset($columns['created_datetime'])
-            || $columns['created_datetime']['type'] != 'datetime'
+            !isset($columns['create_datetime'])
+            || $columns['create_datetime']['type'] != 'datetime'
           ) {
-            $errors[] = "[{$modelRef}] `created_datetime` is not defined or is not a datetime.";
+            $errors[] = "[{$modelRef}] `create_datetime` is not defined or is not a datetime.";
           }
 
           if (
@@ -267,10 +274,10 @@ foreach ($modules as $module) {
           }
 
           if (
-            !isset($columns['updated_datetime'])
-            || $columns['updated_datetime']['type'] != 'datetime'
+            !isset($columns['update_datetime'])
+            || $columns['update_datetime']['type'] != 'datetime'
           ) {
-            $errors[] = "[{$modelRef}] `updated_datetime` is not defined or is not a datetime.";
+            $errors[] = "[{$modelRef}] `update_datetime` is not defined or is not a datetime.";
           }
         }
 

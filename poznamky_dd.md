@@ -21,3 +21,4 @@
 
 
 
+* Nebolo by lepsie App/Widgets/Bookkeeping/ExchangeRate/Models/Currency prehodit niekam do Common?

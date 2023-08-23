@@ -27,9 +27,9 @@ No constants are defined for this model.
 | :------------------- | ---------------- | :--------: | :----: | :------: | :------------------------------------------ |
 | id                   |                  |    int     |   8    |   TRUE   | Jedinečné ID záznamu                        |
 | id_created_by        | Created By       |   lookup   |   8    |   TRUE   | Reference to user who created the record    |
-| created_datetime     | Created Datetime |  datetime  |   8    |   TRUE   | When the record was created                 |
+| create_datetime     | Created Datetime |  datetime  |   8    |   TRUE   | When the record was created                 |
 | id_updated_by        | Updated By       |   lookup   |   8    |   TRUE   | Reference to user who updated the record    |
-| updated_datetime     | Updated Datetime |  datetime  |   8    |   TRUE   | When the record was updated                 |
+| update_datetime     | Updated Datetime |  datetime  |   8    |   TRUE   | When the record was updated                 |
 | id_bkp_currency      | Currency         |   lookup   |   11   |   TRUE   | ID meny                                     |
 | id_bkp_currency_main | Main Currency    |   lookup   |   11   |   TRUE   | ID hlavnej meny, voči ktorej je kurz vedený |
 | rate                 | Exchange Rate    |  decimal   |  15,4  |   TRUE   | Prevodný kurz meny voči hlavnej mene        |
@@ -56,9 +56,9 @@ No additional ADIOS parameters needs to be defined.
 | :-------------------------- | :-----: | -----------------------: |
 | id                          | PRIMARY |                   id ASC |
 | id_created_by               |  INDEX  |        id_created_by ASC |
-| created_datetime            |  INDEX  |     created_datetime ASC |
+| create_datetime            |  INDEX  |     create_datetime ASC |
 | id_updated_by               |  INDEX  |        id_updated_by ASC |
-| updated_datetime            |  INDEX  |     updated_datetime ASC |
+| update_datetime            |  INDEX  |     update_datetime ASC |
 | id_bkp_currency             |  INDEX  |      id_bkp_currency ASC |
 | id_bkp_currency_main        |  INDEX  | id_bkp_currency_main ASC |
 | rate_date                   |  INDEX  |           rate_date DESC |

@@ -1,4 +1,4 @@
-# Liability
+# Model Bookkeeping/Liability/Liability
 
 ## Introduction
 
@@ -6,202 +6,97 @@ Tabuľka slúži na ukladanie základných údajov o záväzkoch.
 
 ## Constants
 
-| Constant | Value | Description |
-| -------- | ----- | ----------- |
-|          |       |             |
+No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                         |
-| :-------------------- | :---------------------------- |
-| sqlName               | bkp_liabilities               |
+| Property              | Value                             |
+| :-------------------- | :-------------------------------- |
+| sqlName               | bkp_liabilities                   |
 | urlBase               | bookkeeping/liability/liabilities |
-| lookupSqlValue        | {%TABLE%}.name                |
-| tableTitle            | Liabilities                   |
-| formTitleForInserting | New Liability                 |
-| formTitleForEditing   | Liability                     |
+| lookupSqlValue        | {%TABLE%}.name                    |
+| tableTitle            | Liabilities                       |
+| formTitleForInserting | New Liability                     |
+| formTitleForEditing   | Liability                         |
 
-## SQL Structure
+## Data Structure
 
-| Column                  | Description                                             |  Type   | Length |   NULL   | Default |
-| :---------------------- | :------------------------------------------------------ | :-----: | :----: | :------: | :-----: |
-| id                      | ID záznamu                                              |   INT   |   8    | NOT NULL |         |
-| id_com_address          | ID veriteľa                                             |   INT   |   8    | NOT NULL |         |
-| is_accounted            | Je záväzok zaúčtovaný                                   |  BOOL   |   1    |   NULL   |    0    |
-| is_long_term            | Príznak či je záväzok dlhodobý alebo krátkodobý         |  BOOL   |   1    | NOT NULL |    0    |
-| supplier                | Kópia údajov o predajcovi uložené v JSON formáte        |  JSON   |        | NOT NULL |         |
-| creditor                | Kópia údajov o veriteľovi uložené v JSON formáte        |  JSON   |        | NOT NULL |         |
-| id_com_numeric_sequence | ID číselného radu záväzkov                              |   INT   |   8    | NOT NULL |         |
-| sequence_code           | Sekvenčné označenie záväzku                             | VARCHAR |   20   |   NULL   |         |
-| issued_date             | Dátum vzniku                                            |  DATE   |   8    | NOT NULL |         |
-| maturity_date           | Dátum splatnosti                                        |  DATE   |   8    | NOT NULL |         |
-| auto_recurrency_days    | Počet dní pre automatické generovanie rovnakého záväzku |   INT   |   4    | NOT NULL |    0    |
-| auto_generate_stop_date | Dátum pre ukončenie automatického generovania           |  DATE   |   8    |   NULL   |         |
-| variable_symbol         | Variabilný symbol                                       | VARCHAR |   10   |   NULL   |   “”    |
-| specific_symbol         | Špecifický symbol                                       | VARCHAR |   10   |   NULL   |   “”    |
-| constant_symbol         | Konštantný symbol                                       | VARCHAR |   4    |   NULL   |   “”    |
-| id_bkp_currency         | ID meny v ktorej sú uvedené sumy                        |   INT   |   8    | NOT NULL |         |
-| exchange_rate           | Hodnota prevodného kurzu voči hlavnej mene              | DECIMAL |  15,2  |   NULL   |         |
-| price_total             | Celková hodnota záväzku                                 | DECIMAL |  15,2  | NOT NULL |         |
-| price_paid              | Uhradená hodnota záväzku                                | DECIMAL |  15,2  | NOT NULL |         |
-| comment                 | Poznámka k záväzku                                      |  TEXT   |        |   NULL   |         |
+| Column                                  | Title                            | ADIOS Type | Length | Required | Notes                                                   |
+| :-------------------------------------- | -------------------------------- | :--------: | :----: | :------: | :------------------------------------------------------ |
+| id                                      |                                  |    int     |   8    |   TRUE   | ID záznamu                                              |
+| id_created_by                           | Created By                       |   lookup   |   8    |   TRUE   | Reference to user who created the record                |
+| create_datetime                        | Created Datetime                 |  datetime  |   8    |   TRUE   | When the record was created                             |
+| id_updated_by                           | Updated By                       |   lookup   |   8    |   TRUE   | Reference to user who updated the record                |
+| update_datetime                        | Updated Datetime                 |  datetime  |   8    |   TRUE   | When the record was updated                             |
+| id_com_address                          | Customer                         |   lookup   |   8    |   TRUE   | ID veriteľa                                             |
+| is_accounted                            | Is Accounted                     |  boolean   |   1    |  FALSE   | Je záväzok zaúčtovaný                                   |
+| is_long_term                            | Is Long Term                     |  boolean   |   1    |   TRUE   | Príznak či je záväzok dlhodobý alebo krátkodobý         |
+| supplier                                | Supplier                         |    json    |        |   TRUE   | Kópia údajov o predajcovi uložené v JSON formáte        |
+| creditor                                | Creditor                         |    json    |        |   TRUE   | Kópia údajov o veriteľovi uložené v JSON formáte        |
+| id_com_numeric_sequence                 | Numeric Sequence                 |   lookup   |   8    |   TRUE   | ID číselného radu záväzkov                              |
+| id_com_numeric_sequence_variable_symbol | Variable Symbol Numeric Sequence |   lookup   |   8    |   TRUE   | ID číselného radu záväzkov                              |
+| sequence_code                           | Sequence Code                    |  varchar   |   20   |   NULL   | Sekvenčné označenie záväzku                             |
+| issue_date                              | Issue Date                       |    date    |   8    |   TRUE   | Dátum vzniku                                            |
+| due_date                                | Due Date                         |    date    |   8    |   TRUE   | Dátum splatnosti                                        |
+| auto_recurrency_days                    | Days To Auto-Generate            |    int     |   4    |   TRUE   | Počet dní pre automatické generovanie rovnakého záväzku |
+| auto_generate_stop_date                 | Date To Stop Auto-Generation     |    date    |   8    |  FALSE   | Dátum pre ukončenie automatického generovania           |
+| variable_symbol                         | Variable Symbol                  |  varchar   |   10   |  FALSE   | Variabilný symbol                                       |
+| specific_symbol                         | Specific Symbol                  |  varchar   |   10   |  FALSE   | Špecifický symbol                                       |
+| constant_symbol                         | Constant Symbol                  |  varchar   |   4    |  FALSE   | Konštantný symbol                                       |
+| id_bkp_currency                         | Currency                         |   lookup   |   8    |   TRUE   | ID meny v ktorej sú uvedené sumy                        |
+| exchange_rate                           | Exchange Rate Value              |  decimal   |  15,2  |  FALSE   | Hodnota prevodného kurzu voči hlavnej mene              |
+| price_total                             | Total Price                      |  decimal   |  15,2  |   TRUE   | Celková hodnota záväzku                                 |
+| price_paid                              | Paid Price                       |  decimal   |  15,2  |   TRUE   | Uhradená hodnota záväzku                                |
+| comment                                 | Description                      |    text    |        |  FALSE   | Poznámka k záväzku                                      |
 
-## Columns
+REVIEW DD: auto_recurrency_days ma iny nazov v ## Columns v Google Docs
+REVIEW DD: "Comment" alebo "Description" alebpo "Poznamka"?
 
-* id_com_address:
-    * required: true
-	* type: lookup
-	* title: Customer
-	* model: App/Widgets/Common/AddressBook/Models/???
-	* foreignKeyOnUpdate: CASCADE
-	* foreignKeyOnDelete: RESTRICT
-	* showColumn: true
-* is_accounted:
-	* required: true
-	* type: boolean
-	* title: Is Accounted
-	* showColumn: true
-* is_long_term:
-	* required: true
-	* type: boolean
-	* title: Is Long Term
-	* showColumn: true
-* supplier:
-	* required: true
-	* type: text
-	* title: Supplier
-	* showColumn: true
-* creditor:
-	* required: true
-	* type: text
-	* title: Creditor
-	* showColumn: true
-* id_com_numeric_sequence:
-	* required: true
-	* type: lookup
-	* title: Numeric Sequence
-	* model: App/Widgets/Common/NumericSequence/Models/NumericSequence
-	* foreignKeyOnUpdate: CASCADE
-	* foreignKeyOnDelete: RESTRICT
-	* showColumn: true
-* sequence_code:
-	* required: false
-	* type: varchar
-	* title: Sequence Code
-	* byte_size: 200
-	* showColumn: true
-	* readonly: true
-* issued_date:
-	* required: true
-	* type: date
-	* title: Issued Date
-	* showColumn: true
-* maturity_date:
-	* required: true
-	* type: date
-	* title: Maturity Date
-	* showColumn: true
-* id_com_numeric_sequence_variable_symbol:
-	* required: true
-	* type: lookup
-	* title: Variable Symbol Numeric Sequence
-	* model: App/Widgets/Common/NumericSequence/Models/NumericSequence
-	* foreignKeyOnUpdate: CASCADE
-	* foreignKeyOnDelete: RESTRICT
-	* showColumn: true
-* auto_generate_after_days:
-	* required: true
-	* type: int
-	* title: Days To Auto-Generate
-	* description: After a given amount of days (e.g. 90) counted from Maturity Date the same liability will be auto-generated.
-	* byte_size: 4
-	* showColumn: true
-* auto_generate_stop_date:
-	* required: no
-	* type: date
-	* title: Date To Stop Auto-Generation
-	* description: After this date the auto-generation will be stopped.
-	* byte_size: 4
-	* showColumn: true
-* variable_symbol:
-    * type: varchar
-	* title: Variable Symbol
-	* byte_size: 10
-	* required: false
-	* showColumn: true
-	* readonly: true
-* specific_symbol:
-       type: varchar
-	* title: Specific Symbol
-	* byte_size: 10
-	* required: false
-	* showColumn: true
-* constant_symbol:
-    * type: varchar
-	* title: Constant Symbol
-	* byte_size: 4
-	* required: false
-	* showColumn: true
-* id_bkp_currency:
-	* required: true
-	* type: lookup
-	* title: Currency
-	* model: App/Widgets/Bookkeeping/ExchangeRate/Models/Currency
-	* foreignKeyOnUpdate: CASCADE
-	* foreignKeyOnDelete: RESTRICT
-	* showColumn: true
-* exchange_rate:
-	* required: false
-	* type: float
-	* byte_size: 15
-	* decimals: 2
-	* title: Exchange Rate Value
-	* showColumn: true
-* price_total:
-	* required: true
-	* type: float
-	* byte_size: 15
-	* decimals: 2
-	* title: Total Price
-	* showColumn: true
-* price_paid:
-	* required: true
-	* type: float
-	* byte_size: 15
-	* decimals: 2
-	* title: Paid Price
-	* showColumn: true
-* comment:
-	* required: false
-	* type: text
-	* title: Description
-	* required: false
-	* showColumn: true
+### ADIOS Parameters
 
-## Foreign Keys
+| Column                   | Parameter   | Value                                                                                                        |
+| :----------------------- | :---------- | ------------------------------------------------------------------------------------------------------------ |
+| auto_generate_after_days | description | After a given amount of days (e.g. 90) counted from Maturity Date the same liability will be auto-generated. |
+| auto_generate_stop_date  | description | After this date the auto-generation will be stopped.                                                         |
+| variable_symbol          | readonly    | true                                                                                                         |
+|                          |             |                                                                                                              |
 
-| Column                                  | Parent table          | Relation | OnUpdate | OnDelete |
-| :-------------------------------------- | :-------------------- | :------: | :------: | :------: |
-| id_com_numeric_sequence                 | com_numeric_sequences |   1:N    | Cascade  | Restrict |
-| id_com_numeric_sequence_variable_symbol | com_numeric_sequences |   1:N    | Cascade  | Restrict |
-| id_com_address                          | com_addresses         |   1:N    | Cascade  | Restrict |
-| id_bkp_currency                         | bkp_currencies        |   1:N    | Cascade  | Restrict |
+### Foreign Keys
+
+| Column                                  | Model                                                     | Relation | OnUpdate | OnDelete |
+| :-------------------------------------- | :-------------------------------------------------------- | :------: | -------- | -------- |
+| id_created_by                           | ADIOS/Core/User                                           |   1:N    | Cascade  | Cascade  |
+| id_updated_by                           | ADIOS/Core/User                                           |   1:N    | Cascade  | Cascade  |
+| id_com_numeric_sequence                 | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
+| id_com_numeric_sequence_variable_symbol | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
+| id_com_address                          | App/Widgets/Common/AddressBook/Models/???                 |   1:N    | Cascade  | Restrict |
+| id_bkp_currency                         | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency      |   1:N    | Cascade  | Restrict |
 
 
-## Indexes
+### Indexes
 
-| Name            | Type    | Column + Order      |
-| :-------------- | :------ | :------------------ |
-| id              | PRIMARY | id ASC              |
-| issued_date     | INDEX   | issued_date ASC     |
-| sequence_code   | UNIQUE  | sequence_code DESC  |
-| variable_symbol | UNIQUE  | variable_symbol ASC |
+| Name                                    |  Type   |                              Column + Order |
+| :-------------------------------------- | :-----: | ------------------------------------------: |
+| id                                      | PRIMARY |                                      id ASC |
+| id_created_by                           |  INDEX  |                           id_created_by ASC |
+| create_datetime                        |  INDEX  |                        create_datetime ASC |
+| id_updated_by                           |  INDEX  |                           id_updated_by ASC |
+| update_datetime                        |  INDEX  |                        update_datetime ASC |
+| id_com_address                          |  INDEX  |                          id_com_address ASC |
+| is_accounted                            |  INDEX  |                           is_accounted DESC |
+| is_long_term                            |  INDEX  |                            is_long_term ASC |
+| id_com_numeric_sequence                 |  INDEX  |                 id_com_numeric_sequence ASC |
+| id_com_numeric_sequence_variable_symbol |  INDEX  | id_com_numeric_sequence_variable_symbol ASC |
+| issue_date                              |  INDEX  |                              issue_date ASC |
+| due_date                                |  INDEX  |                                due_date ASC |
+| variable_symbol                         |  INDEX  |                         variable_symbol ASC |
+| id_bkp_currency                         |  INDEX  |                         id_bkp_currency ASC |
 
 ## Callbacks
 
 ### onBeforeInsert
 
-* Nastaviť časový príznak (col: **is_long_term**) podľa dátumu splatnosti (col: **maturity_date**).
+* Nastaviť časový príznak (col: **is_long_term**) podľa dátumu splatnosti (col: **due_date**).
 * Pre dlhodobý záväzok  (col: **is_long_term = TRUE**) povoliť nastavenie iba nulovej hodnoty auto-generovania (col: **auto_generate_days = 0**), t.j. dlhodobé záväzky nemôžu byť generované automaticky.
 * Nutné nastaviť (v uvedenom poradí):
   1. hodnotu aktívneho číselného radu pre záväzky (col: **id_com_numeric_sequence**)
@@ -215,7 +110,7 @@ TODO: Na Google docs to ešte vyzerá byť rozrobené, tak zatiaľ nebudem preko
 
 ### onBeforeUpdate
 
-* Ak nastala zmena dátumu splatnosti (col: **maturity_date**), potom podľa neho aktualizovať aj časový príznak (col: **is_long_term**).
+* Ak nastala zmena dátumu splatnosti (col: **due_date**), potom podľa neho aktualizovať aj časový príznak (col: **is_long_term**).
 * Pre dlhodobý záväzok  (col: **is_long_term = TRUE**) povoliť nastavenie iba nulovej hodnoty auto-generovania (col: **auto_generate_days = 0**), t.j. dlhodobé záväzky nemôžu byť generované automaticky.
 
 ### onAfterUpdate
@@ -234,7 +129,7 @@ Potrebné aktualizovať hodnoty zo záväzku v účtovnej osnove (tab: **bkp_lia
 
 ## Formatters
 
-* Červeným pozadím zvýrazniť riadky so záväzkami, ktoré sú po dátume splatnosti (stĺpec **maturity_date**). 
+* Červeným pozadím zvýrazniť riadky so záväzkami, ktoré sú po dátume splatnosti (stĺpec **due_date**). 
 * Zeleným pozadím zvýrazniť riadky so záväzkami, ktoré sú kompletne zaplatené (stĺpce **price_total** a **price_paid**).
 
 ### tableCellHTMLFormatter

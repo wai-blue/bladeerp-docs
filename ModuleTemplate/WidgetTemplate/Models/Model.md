@@ -34,9 +34,9 @@
 | :----------------------- | -------------------------- | :--------: | :----: | :------: | :--------------------------------------- |
 | id                       |                            |    int     |   8    |   TRUE   | Unique record ID                         |
 | id_created_by            | Created By                 |   lookup   |   8    |   TRUE   | Reference to user who created the record |
-| created_datetime         | Created Datetime           |  datetime  |   8    |   TRUE   | When the record was created              |
+| create_datetime          | Created Datetime           |  datetime  |   8    |   TRUE   | When the record was created              |
 | id_updated_by            | Updated By                 |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
-| updated_datetime         | Updated Datetime           |  datetime  |   8    |   TRUE   | When the record was updated              |
+| update_datetime          | Updated Datetime           |  datetime  |   8    |   TRUE   | When the record was updated              |
 | name                     | Name                       |  varchar   |  100   |   TRUE   | Krátky text                              |
 | description              | Description                |    text    |        |  FALSE   | Dlhý text                                |
 | due_date                 | Due Date                   |    date    |   8    |   TRUE   | Dátum splatnosti                         |
@@ -88,10 +88,10 @@ TODO: Zdalo sa nam, ze tu je to najlepsie miesto, kedze je prakticke mat tieto i
 
 [Model does not contain foreign keys.]
 
-| Column                   | Model                                                                                                        | Relation | OnUpdate | OnDelete |
-| :----------------------- | :----------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_created_by            | ADIOS/Core/User                                                                                              |   1:N    | Cascade  | Cascade  |
-| id_updated_by            | ADIOS/Core/User                                                                                              |   1:N    | Cascade  | Cascade  |
+| Column                   | Model                                                                                                                | Relation | OnUpdate | OnDelete |
+| :----------------------- | :------------------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_created_by            | ADIOS/Core/User                                                                                                      |   1:N    | Cascade  | Cascade  |
+| id_updated_by            | ADIOS/Core/User                                                                                                      |   1:N    | Cascade  | Cascade  |
 | id_bkp_accounting_period | [App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod](../../../Bookkeeping/MainBook/Models/AccountingPeriod.md) |   1:N    | Cascade  | Cascade  |
 | id_bkp_book_account_type | [App/Widgets/Bookkeeping/MainBook/Models/BookAccountType](../../../Bookkeeping/MainBook/Models/BookAccountType.md)   |   1:N    | Cascade  | Restrict |
 
@@ -99,17 +99,17 @@ TODO: Zdalo sa nam, ze tu je to najlepsie miesto, kedze je prakticke mat tieto i
 
 [Model does not contain indexes.]
 
-| Name                 |  Type   |       Column + Order |
-| :------------------- | :-----: | -------------------: |
-| id                   | PRIMARY |               id ASC |
-| id_created_by        |  INDEX  |    id_created_by ASC |
-| created_datetime     |  INDEX  | created_datetime ASC |
-| id_updated_by        |  INDEX  |    id_updated_by ASC |
-| updated_datetime     |  INDEX  | updated_datetime ASC |
-| simple_index         |  INDEX  |             name ASC |
-| unique_index         | UNIQUE  |       start_date ASC |
-| is_open___start_date |  INDEX  |          is_open ASC |
-|                      |         |       start_date ASC |
+| Name                 |  Type   |      Column + Order |
+| :------------------- | :-----: | ------------------: |
+| id                   | PRIMARY |              id ASC |
+| id_created_by        |  INDEX  |   id_created_by ASC |
+| create_datetime      |  INDEX  | create_datetime ASC |
+| id_updated_by        |  INDEX  |   id_updated_by ASC |
+| update_datetime      |  INDEX  | update_datetime ASC |
+| simple_index         |  INDEX  |            name ASC |
+| unique_index         | UNIQUE  |      start_date ASC |
+| is_open___start_date |  INDEX  |         is_open ASC |
+|                      |         |      start_date ASC |
 
 REVIEW DD: Vo viacstlpcovych indexoch nazvy vyskladavat z jednotlivych stlpcov a spajat cez "___"
 
