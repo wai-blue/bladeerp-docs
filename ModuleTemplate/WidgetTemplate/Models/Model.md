@@ -30,19 +30,23 @@
 
 ## Data Structure
 
-| Column                   | Title                      | ADIOS Type | Length | Required | Notes                          |
-| :----------------------- | -------------------------- | :--------: | :----: | :------: | :----------------------------- |
-| id                       |                            |    int     |   8    |   TRUE   | ID záznamu                     |
-| name                     | Name                       |  varchar   |  100   |   TRUE   | Krátky text                    |
-| description              | Description                |    text    |        |  FALSE   | Dlhý text                      |
-| due_date                 | Due Date                   |    date    |   8    |   TRUE   | Dátum splatnosti               |
-| is_open                  | Is Open                    |  boolean   |   1    |   TRUE   | Logická hodnota                |
-| state_sequence           | State Sequence             |    int     |   6    |   TRUE   | Poradové číslo v select boxoch |
-| id_fin_accounting_period | Previous Accounting Period |   lookup   |   8    |   TRUE   | Previous Accounting Period     |
-| side                     | Account Side               |    int     |   8    |   TRUE   | Účtovná strana                 |
-| price                    | Total Price                |   float    |  15,2  |  FALSE   | Cena                           |
-| attached_file            | Path to Attached File      |    file    |  255   |  FALSE   | Relatívna cesta k súboru       |
-| profile_image            | Path to Profile Image      |    file    |  255   |  FALSE   | Relatívna cesta k obrázku      |
+| Column                   | Title                      | ADIOS Type | Length | Required | Notes                                    |
+| :----------------------- | -------------------------- | :--------: | :----: | :------: | :--------------------------------------- |
+| id                       |                            |    int     |   8    |   TRUE   | Unique record ID                         |
+| id_created_by            | Created By                 |   lookup   |   8    |   TRUE   | Reference to user who created the record |
+| created_datetime         | Created Datetime           |  datetime  |   8    |   TRUE   | When the record was created              |
+| id_updated_by            | Updated By                 |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
+| updated_datetime         | Updated Datetime           |  datetime  |   8    |   TRUE   | When the record was updated              |
+| name                     | Name                       |  varchar   |  100   |   TRUE   | Krátky text                              |
+| description              | Description                |    text    |        |  FALSE   | Dlhý text                                |
+| due_date                 | Due Date                   |    date    |   8    |   TRUE   | Dátum splatnosti                         |
+| is_open                  | Is Open                    |  boolean   |   1    |   TRUE   | Logická hodnota                          |
+| state_sequence           | State Sequence             |    int     |   6    |   TRUE   | Poradové číslo v select boxoch           |
+| id_fin_accounting_period | Previous Accounting Period |   lookup   |   8    |   TRUE   | Previous Accounting Period               |
+| side                     | Account Side               |    int     |   8    |   TRUE   | Účtovná strana                           |
+| price                    | Total Price                |   float    |  15,2  |  FALSE   | Cena                                     |
+| attached_file            | Path to Attached File      |    file    |  255   |  FALSE   | Relatívna cesta k súboru                 |
+| profile_image            | Path to Profile Image      |    file    |  255   |  FALSE   | Relatívna cesta k obrázku                |
 
 ### ADIOS Parameters
 
@@ -86,6 +90,8 @@ TODO: Zdalo sa nam, ze tu je to najlepsie miesto, kedze je prakticke mat tieto i
 
 | Column                   | Model                                                                                                        | Relation | OnUpdate | OnDelete |
 | :----------------------- | :----------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_created_by            | ADIOS/Core/User                                                                                              |   1:N    | Cascade  | Cascade  |
+| id_updated_by            | ADIOS/Core/User                                                                                              |   1:N    | Cascade  | Cascade  |
 | id_fin_accounting_period | [App/Widgets/Finance/MainBook/Models/AccountingPeriod](../../../Finance/MainBook/Models/AccountingPeriod.md) |   1:N    | Cascade  | Cascade  |
 | id_fin_book_account_type | [App/Widgets/Finance/MainBook/Models/BookAccountType](../../../Finance/MainBook/Models/BookAccountType.md)   |   1:N    | Cascade  | Restrict |
 
@@ -93,13 +99,17 @@ TODO: Zdalo sa nam, ze tu je to najlepsie miesto, kedze je prakticke mat tieto i
 
 [Model does not contain indexes.]
 
-| Name                 |  Type   | Column + Order |
-| :------------------- | :-----: | -------------: |
-| id                   | PRIMARY |         id ASC |
-| simple_index         |  INDEX  |       name ASC |
-| unique_index         | UNIQUE  | start_date ASC |
-| is_open___start_date |  INDEX  |    is_open ASC |
-|                      |         | start_date ASC |
+| Name                 |  Type   |       Column + Order |
+| :------------------- | :-----: | -------------------: |
+| id                   | PRIMARY |               id ASC |
+| id_created_by        |  INDEX  |    id_created_by ASC |
+| created_datetime     |  INDEX  | created_datetime ASC |
+| id_updated_by        |  INDEX  |    id_updated_by ASC |
+| updated_datetime     |  INDEX  | updated_datetime ASC |
+| simple_index         |  INDEX  |             name ASC |
+| unique_index         | UNIQUE  |       start_date ASC |
+| is_open___start_date |  INDEX  |          is_open ASC |
+|                      |         |       start_date ASC |
 
 REVIEW DD: Vo viacstlpcovych indexoch nazvy vyskladavat z jednotlivych stlpcov a spajat cez "___"
 

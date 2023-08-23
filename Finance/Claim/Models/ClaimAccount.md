@@ -3,8 +3,6 @@
 NOTE: DD pretukal.
 TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
 
-REVIEW DD: Povodne sa model volal ClaimAccounts. Premenoval som na ClaimAccount.
-
 ## Introduction
 
 Tabuľka bude slúžiť na prepojenie pohľadávky s účtovnou osnovou.

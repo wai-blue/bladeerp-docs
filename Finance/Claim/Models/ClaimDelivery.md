@@ -24,15 +24,14 @@ No constants are defined for this model.
 
 ## Data Structure
 
-| Column          | Title          | ADIOS Type | Length | Required | Notes                |
-| :-------------- | -------------- | :--------: | :----: | :------: | :------------------- |
-| id              |                |    int     |   8    |   TRUE   | Jedinečné ID záznamu |
-| id_fin_claim    | Claim          |   lookup   |   8    |   TRUE   | ID pohľadávky        |
-| id_log_delivery | Delivery       |   lookup   |   8    |   TRUE   | ID dopravy           |
-| price           | Delivery Price |  decimal   |  15,2  |   TRUE   | Cena za dopravu      |
-| cash_fee        | Cash Fee       |  decimal   |  15,2  |  FALSE   | Poplatok za dobierku |
+| Column          | Title          | ADIOS Type | Length | Required | Notes                                |
+| :-------------- | -------------- | :--------: | :----: | :------: | :----------------------------------- |
+| id              |                |    int     |   8    |   TRUE   | Jedinečné ID záznamu                 |
+| id_fin_claim    | Claim          |   lookup   |   8    |   TRUE   | ID pohľadávky                        |
+| id_log_delivery | Delivery       |   lookup   |   8    |   TRUE   | ID dopravy                           |
+| delivery_price  | Delivery Price |  decimal   |  15,2  |   TRUE   | Cena za dopravu                      |
+| cash_fee        | Cash Fee       |  decimal   |  15,2  |  FALSE   | Poplatok za manipulaciu s hotovostou |
 
-REVIEW DD: cash_fee - nie je lepsi nazov delivery_fee?
 REVIEW DD: preco id_log_delivery a nie iba id_delivery?
 
 ### ADIOS Parameters

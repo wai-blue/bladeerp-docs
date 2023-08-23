@@ -15,7 +15,7 @@ No constants are defined for this model.
 
 ## Properties
 
-TODO: Je tableTitle spravne? Poznámka: Chýbali tu taktiež posledné dva riadky, ale ešte poprípade to odkontrolovať, ak by sa jednalo o úmyselnú úpravu
+REVIEW JB: Je tableTitle spravne? Poznámka: Chýbali tu taktiež posledné dva riadky, ale ešte poprípade to odkontrolovať, ak by sa jednalo o úmyselnú úpravu
 
 | Property              | Value                               |
 | --------------------- | ----------------------------------- |
@@ -30,7 +30,7 @@ TODO: Je tableTitle spravne? Poznámka: Chýbali tu taktiež posledné dva riadk
 
 ## Data Structure
 
-TODO: Tabuľka je v nesúlade s tou na Google Docs, odkontrolovať prosím.
+REVIEW JB: Tabuľka je v nesúlade s tou na Google Docs, odkontrolovať prosím.
 
 | Column                     | Title               | ADIOS Type | Length | Required | Notes               |
 | :------------------------- | ------------------- | :--------: | :----: | :------: | :------------------ |

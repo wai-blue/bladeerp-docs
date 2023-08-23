@@ -45,8 +45,6 @@ No constants are defined for this model.
 | price_paid                              | Paid Price                       |  decimal   |  15,2  | NOT NULL | Uhradená hodnota dobropisu                        |
 | comment                                 | Description                      |    text    |        |   NULL   | Poznámka k dobropisu                              |
 
-REVIEW DD: issued_date premenovane na issue_date
-REVIEW DD: maturity_date premenovane na due_date
 REVIEW DD: Stlpec comment ma preco title Description? Navrhujem zjednotit - bud comment alebo description.
 
 ### ADIOS Parameters
@@ -121,7 +119,7 @@ Potrebné aktualizovať hodnoty z dobropisu v účtovnej osnove (tab: **fin_cred
 
 ## Formatters
 
-* Červeným pozadím zvýrazniť riadky s dobropismi, ktoré sú po dátume splatnosti (stĺpec **maturity_date**). 
+* Červeným pozadím zvýrazniť riadky s dobropismi, ktoré sú po dátume splatnosti (stĺpec **due_date**). 
 * Zeleným pozadím zvýrazniť riadky s dobropismi, ktoré sú kompletne zaplatené (stĺpce **price_total**  a **price_paid**).
 
 ### tableCellHTMLFormatter

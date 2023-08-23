@@ -35,7 +35,7 @@ No constants are defined for this model.
 | customer                                | Customer                         |    json    |        |   TRUE   | Kópia údajov o zákazníkovi uložené v JSON formáte |
 | id_com_numeric_sequence                 | Numeric Sequence                 |   lookup   |   8    |   TRUE   | ID číselného radu pohľadávok                      |
 | sequence_code                           | Sequence Code                    |  varchar   |  200   |  FALSE   | Sekvenčné označenie                               |
-| issue_date                              | Issued Date                      |    date    |   8    |   TRUE   | Dátum vystavenia                                  |
+| issue_date                              | Issue Date                       |    date    |   8    |   TRUE   | Dátum vystavenia                                  |
 | delivery_date                           | Delivery Date                    |    date    |   8    |   TRUE   | Dátum dodania                                     |
 | due_date                                | Due Date                         |    date    |   8    |   TRUE   | Dátum splatnosti                                  |
 | id_com_numeric_sequence_variable_symbol | Variable Symbol Numeric Sequence |   lookup   |   8    |   TRUE   | ID číselného radu Variabilných symbolov           |
@@ -47,9 +47,6 @@ No constants are defined for this model.
 | price_total                             | Total Price                      |  decimal   |  15,2  |   TRUE   | Celková hodnota pohľadávky                        |
 | price_paid                              | Paid Price                       |  decimal   |  15,2  |   TRUE   | Uhradená hodnota pohľadávky                       |
 | comment                                 | Description                      |    text    |        |  FALSE   | Poznámka k pohľadávke                             |
-
-REVIEW DD: maturity_date premenovane na due_date. Treba premenovat aj inde.
-REVIEW DD: issued_date premenovane na issue_date (ani v ostatnych datumovych stlpcoch nie je pouzity minuly cas).
 
 ### ADIOS Parameters
 
@@ -122,7 +119,7 @@ TODO: Je potrebné dorobiť, na Google docs stále rozpísané
 
 ## Formatters
 
-* Červeným pozadím zvýrazniť riadky s pohľadávkami, ktoré sú po dátume splatnosti (stĺpec **maturity_date**). 
+* Červeným pozadím zvýrazniť riadky s pohľadávkami, ktoré sú po dátume splatnosti (stĺpec **due_date**). 
 * Zeleným pozadím zvýrazniť riadky s pohľadávkami, ktoré sú kompletne zaplatené (stĺpce **price_total**  a **price_paid**).
 
 ### tableCellHTMLFormatter
