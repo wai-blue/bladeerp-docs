@@ -36,7 +36,7 @@ $widgetToCheck = $argv[2] ?? "";
 $modelToCheck = $argv[3] ?? "";
 
 $modules = [
-  'Finance',
+  'Bookkeeping',
 ];
 
 $errors = [];
@@ -243,32 +243,32 @@ foreach ($modules as $module) {
         ) {
           $warnings[] = "[{$modelRef}] Model is a cross-table but does not contain 'Has' in it's name.";
         }
-var_dump($properties);
+
         if ($properties['isCrossTable'] ?? '' !== 'TRUE') {
           if (
-            isset($columns['id_created_by'])
-            && $columns['id_created_by']['type'] == 'lookup'
+            !isset($columns['id_created_by'])
+            || $columns['id_created_by']['type'] != 'lookup'
           ) {
             $errors[] = "[{$modelRef}] `id_created_by` is not defined or is not a lookup.";
           }
 
           if (
-            isset($columns['created_datetime'])
-            && $columns['created_datetime']['type'] == 'datetime'
+            !isset($columns['created_datetime'])
+            || $columns['created_datetime']['type'] != 'datetime'
           ) {
             $errors[] = "[{$modelRef}] `created_datetime` is not defined or is not a datetime.";
           }
 
           if (
-            isset($columns['id_updated_by'])
-            && $columns['id_updated_by']['type'] == 'lookup'
+            !isset($columns['id_updated_by'])
+            || $columns['id_updated_by']['type'] != 'lookup'
           ) {
             $errors[] = "[{$modelRef}] `id_updated_by` is not defined or is not a lookup.";
           }
 
           if (
-            isset($columns['updated_datetime'])
-            && $columns['id_updated_by']['type'] == 'datetime'
+            !isset($columns['updated_datetime'])
+            || $columns['updated_datetime']['type'] != 'datetime'
           ) {
             $errors[] = "[{$modelRef}] `updated_datetime` is not defined or is not a datetime.";
           }
