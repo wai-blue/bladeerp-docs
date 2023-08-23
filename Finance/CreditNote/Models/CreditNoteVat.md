@@ -1,4 +1,4 @@
-# CreditNoteVat
+# Model Finance/CreditNote/CreditNoteVat
 
 ## Introduction
 
@@ -6,9 +6,7 @@ Tabuľka bude slúžiť na ukladanie DPH k dobropisu.
 
 ## Constants
 
-| Constant | Value | Description |
-| -------- | ----- | ----------- |
-|          |       |             |
+No constants are defined for this model.
 
 ## Properties
 
@@ -19,70 +17,43 @@ Tabuľka bude slúžiť na ukladanie DPH k dobropisu.
 | lookupSqlValue | {%TABLE%}.name                                |
 | tableTitle     | VATs                                          |
 
-## SQL Structure
+## Data Structure
 
-| Column             | Description          |  Type   | Length |   NULL   | Default |
-| :----------------- | :------------------- | :-----: | :----: | :------: | :------ |
-| id                 | Jedinečné ID záznamu |   INT   |   8    | NOT NULL |         |
-| id_fin_credit_note | ID dobropisu         |   INT   |   8    | NOT NULL |         |
-| id_fin_vat         | ID sadzby DPH        |   INT   |   8    | NOT NULL |         |
-| price_excl_vat     | Suma bez DPH         | DECIMAL |  15,2  | NOT NULL |         |
-| price_vat          | Suma DPH             | DECIMAL |  15,2  | NOT NULL |         |
-| price_incl_vat     | Suma s DPH           | DECIMAL |  15,2  | NOT NULL |         |
+| Column             | Title          | ADIOS Type | Length | Required | Notes                |
+| :----------------- | -------------- | :--------: | :----: | :------: | :------------------- |
+| id                 |                |    int     |   8    | NOT NULL | Jedinečné ID záznamu |
+| id_fin_credit_note | CreditNote     |   lookup   |   8    | NOT NULL | ID dobropisu         |
+| id_fin_vat         | VAT Rate       |   lookup   |   8    | NOT NULL | ID sadzby DPH        |
+| price_excl_vat     | Price Excl VAT |  decimal   |  15,2  | NOT NULL | Suma bez DPH         |
+| price_vat          | Price VAT      |  decimal   |  15,2  | NOT NULL | Suma DPH             |
+| price_incl_vat     | Price Incl VAT |  decimal   |  15,2  | NOT NULL | Suma s DPH           |
 
-## Columns
+REVIEW DD: Nie je lepsie VAT sadzbu ukladat ako decimal? Ak to dame ako Decimal, moze sa nastavit parameter unit = "%".
 
-* id_fin_credit_note:
-    * required: true
-    * type: lookup
-    * title: CreditNote
-    * model: App/Widgets/Finance/CreditNote/Models/CreditNote
-    * foreignKeyOnUpdate: CASCADE
-    * foreignKeyOnDelete: RESTRICT
-    * showColumn: true
-* id_fin_vat:
-    * required: true
-    * type: lookup
-    * title: VAT Rate
-    * model: App/Widgets/Finance/MainBook/Models/Vat
-    * foreignKeyOnUpdate: CASCADE
-    * foreignKeyOnDelete: CASCADE
-    * showColumn: true
-* price_excl_vat:
-    * required: true
-    * type: float
-    * byte_size: 15
-    * decimals: 2
-    * title: Price Excl VAT
-    * showColumn: true
-* price_vat:
-    * required: true
-    * type: float
-    * byte_size: 15
-    * decimals: 2
-    * title: Price VAT
-    * showColumn: true
-* price_incl_vat:
-    * required: true
-    * type: float
-    * byte_size: 15
-    * decimals: 2
-    * title: Price Incl VAT
-    * showColumn: true
+### ADIOS Parameters
 
-## Foreign Keys
+| Column              | Parameter   | Value                                     |
+| :------------------ | :---------- | ----------------------------------------- |
+| price_excl_vat      | unit        | €                                         |
+| price_vat           | unit        | €                                         |
+| price_incl_vat      | unit        | €                                         |
 
-| Column             | Parent table     | Relation | OnUpdate | OnDelete |
-| :----------------- | :--------------- | :------: | :------: | :------: |
-| id_fin_credit_note | fin_credit_notes | 1:N      | Cascade  | Cascade  |
-| id_fin_vat         | fin_vats         | 1:N      | Cascade  | Restrict |
+### Foreign Keys
 
-## Indexes
+| Column             | Model                                            | Relation | OnUpdate | OnDelete |
+| :----------------- | :----------------------------------------------- | :------: | -------- | -------- |
+| id_fin_credit_note | App/Widgets/Finance/CreditNote/Models/CreditNote |   1:N    | Cascade  | Cascade  |
+| id_fin_vat         | App/Widgets/Finance/MainBook/Models/Vat          |   1:N    | Cascade  | Restrict |
 
-| Name                          | Type    | Column + Order                         |
-| :---------------------------- | :-----: | :------------------------------------- |
-| id                            | PRIMARY | id ASC                                 |
-| id_fin_credit_note_id_fin_vat | UNIQUE  | id_fin_credit_note ASC, id_fin_vat ASC |
+### Indexes
+
+| Name                            | Type    | Column + Order         |
+| :------------------------------ | :------ | :--------------------- |
+| id                              | PRIMARY | id ASC                 |
+| id_fin_credit_note              | INDEX   | id_fin_credit_note ASC |
+| id_fin_vat                      | INDEX   | id_fin_vat ASC         |
+| id_fin_credit_note___id_fin_vat | UNIQUE  | id_fin_credit_note ASC |
+|                                 |         | id_fin_vat ASC         |
 
 ## Callbacks
 
