@@ -10,9 +10,9 @@
 
 | Constant                   | Value | Description                    |
 | :------------------------- | :---: | :----------------------------- |
-| FIN_BOOK_ACCOUNT_SIDE_BOTH |   1   | Je možné účtovať na obe strany |
-| FIN_BOOK_ACCOUNT_SIDE_GET  |   2   | Účet na strane Má dať          |
-| FIN_BOOK_ACCOUNT_SIDE_PUT  |   3   | Účet na strane Dal             |
+| BKP_BOOK_ACCOUNT_SIDE_BOTH |   1   | Je možné účtovať na obe strany |
+| BKP_BOOK_ACCOUNT_SIDE_GET  |   2   | Účet na strane Má dať          |
+| BKP_BOOK_ACCOUNT_SIDE_PUT  |   3   | Účet na strane Dal             |
 
 ## Properties
 
@@ -42,7 +42,7 @@
 | due_date                 | Due Date                   |    date    |   8    |   TRUE   | Dátum splatnosti                         |
 | is_open                  | Is Open                    |  boolean   |   1    |   TRUE   | Logická hodnota                          |
 | state_sequence           | State Sequence             |    int     |   6    |   TRUE   | Poradové číslo v select boxoch           |
-| id_fin_accounting_period | Previous Accounting Period |   lookup   |   8    |   TRUE   | Previous Accounting Period               |
+| id_bkp_accounting_period | Previous Accounting Period |   lookup   |   8    |   TRUE   | Previous Accounting Period               |
 | side                     | Account Side               |    int     |   8    |   TRUE   | Účtovná strana                           |
 | price                    | Total Price                |   float    |  15,2  |  FALSE   | Cena                                     |
 | attached_file            | Path to Attached File      |    file    |  255   |  FALSE   | Relatívna cesta k súboru                 |
@@ -58,7 +58,7 @@
 |                | default     | 1                                 |
 | state_sequence | description | Order of the item in input lists. |
 | side           | enum_values | [Enum values](#side)              |
-| side           | enum_values | FIN_BOOK_ACCOUNT_SIDE_*           | <- Navrh DD
+| side           | enum_values | BKP_BOOK_ACCOUNT_SIDE_*           | <- Navrh DD
 
 REVIEW DD: Definicii enum_values nerozumiem. Nikam to neodkazuje. Dal som iny navrh.
 
@@ -92,8 +92,8 @@ TODO: Zdalo sa nam, ze tu je to najlepsie miesto, kedze je prakticke mat tieto i
 | :----------------------- | :----------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
 | id_created_by            | ADIOS/Core/User                                                                                              |   1:N    | Cascade  | Cascade  |
 | id_updated_by            | ADIOS/Core/User                                                                                              |   1:N    | Cascade  | Cascade  |
-| id_fin_accounting_period | [App/Widgets/Finance/MainBook/Models/AccountingPeriod](../../../Finance/MainBook/Models/AccountingPeriod.md) |   1:N    | Cascade  | Cascade  |
-| id_fin_book_account_type | [App/Widgets/Finance/MainBook/Models/BookAccountType](../../../Finance/MainBook/Models/BookAccountType.md)   |   1:N    | Cascade  | Restrict |
+| id_bkp_accounting_period | [App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod](../../../Bookkeeping/MainBook/Models/AccountingPeriod.md) |   1:N    | Cascade  | Cascade  |
+| id_bkp_book_account_type | [App/Widgets/Bookkeeping/MainBook/Models/BookAccountType](../../../Bookkeeping/MainBook/Models/BookAccountType.md)   |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

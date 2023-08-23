@@ -12,10 +12,10 @@ Table
 
 (vid ADIOS.repo/src/Core/View/Table.php)
 
-* model: App/Widgets/Finance/MainBook/Models/AccountingPeriod
+* model: App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod
 * columns:
   * name
   * start_date
   * end_date
-  * id_fin_accounting_period
+  * id_bkp_accounting_period
 * orderBy: name ASC

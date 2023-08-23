@@ -25,7 +25,7 @@ V modeli nie sú použité konštanty.
 | id_com_contact_company | ID spoločnosti       |   INT   |   8    | NULL     |         |
 | id_com_contact_person  | ID fyzickej osoby    |   INT   |   8    | NOT NULL |         |
 | id_com_contact_address | ID primárnej adresy  |   INT   |   8    | NULL     |         |
-| id_fin_currency        | ID používanej meny   |   INT   |   8    | NULL     |         |
+| id_bkp_currency        | ID používanej meny   |   INT   |   8    | NULL     |         |
 | language_code          | Preferovaný jazyk    | VARCHAR |   10   | NULL     |         |
 | website                | WEB stránka          | VARCHAR |  255   | NULL     |         |
 | description            | Poznámka ku kontaktu |  TEXT   |        | NULL     |         |
@@ -36,7 +36,7 @@ V modeli nie sú použité konštanty.
 | id_com_contact_company | com_contact_companies |   1:1    | Cascade  | Restrict |
 | id_com_contact_person  | com_contact_persons   |   1:1    | Cascade  | Restrict |
 | id_com_contact_address | com_contact_addresses |   1:1    | Cascade  | Restrict |
-| id_fin_currency        | fin_currencies        |   1:1    | Cascade  | Restrict |
+| id_bkp_currency        | bkp_currencies        |   1:1    | Cascade  | Restrict |
 
 ## Indexes
 | Name      |  Type   | Column + Order |
@@ -78,11 +78,11 @@ V modeli nie sú použité konštanty.
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE
   * foreignKeyOnDelete: RESTRICT
-* id_fin_currency:
+* id_bkp_currency:
   * required: false
   * type: lookup
   * title: Primary Currency
-  * model: App/Widgets/Finance/ExchangeRate/Models/Currency
+  * model: App/Widgets/Bookkeeping/ExchangeRate/Models/Currency
   * inputStyle:”select”
   * showColumn: true
   * foreignKeyOnUpdate: CASCADE

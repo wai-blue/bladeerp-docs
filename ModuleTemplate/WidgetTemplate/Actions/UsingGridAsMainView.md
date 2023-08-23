@@ -23,11 +23,11 @@ Grid
   * A:
     * view: Form
     * template:
-      * id_fin_accounting_period (readonly)
+      * id_bkp_accounting_period (readonly)
       * name (readonly)
       * closing_date (readonly)
   * B:
-    * action: Widgets/Finance/MainBook/FinancialStatementsEntries
+    * action: Widgets/Bookkeeping/MainBook/FinancialStatementsEntries
     * parameters:
       * idFinancialStatement = $data[‘id’]
   * C:

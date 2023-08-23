@@ -15,7 +15,7 @@ Table
   * id_com_contact_company
   * id_com_contact_person
   * id_com_contact_address
-  * id_fin_currency
+  * id_bkp_currency
   * language_code
 * orderBy: 
   * com_contacts.is_active DESC
