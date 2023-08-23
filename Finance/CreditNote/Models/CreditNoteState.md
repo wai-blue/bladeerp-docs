@@ -1,4 +1,4 @@
-# CreditNoteState
+# Model Finance/CreditNote/CreditNoteState
 
 ## Introduction
 
@@ -8,9 +8,7 @@ Jeden stav musí byť vždy označený ako predvolený.
 
 ## Constants
 
-| Constant | Value | Description |
-| -------- | ----- | ----------- |
-|          |       |             |
+No constants are defined for this model.
 
 ## Properties
 
@@ -23,104 +21,65 @@ Jeden stav musí byť vždy označený ako predvolený.
 | formTitleForInserting | New State                  |
 | formTitleForEditing   | State                      |
 
-## SQL Structure
+## Data Structure
 
 TODO: Naozaj model neobsahuje MySQL štruktúru? Skontrolovať prosím
 
-| Column | Description      | Type | Length | NULL     | Default |
-| ------ | ---------------- | ---- | ------ | -------- | ------- |
-| id     | Unique record ID | INT  | 8      | NOT NULL | 0       |
+| Column                    | Title                 | ADIOS Type | Length | Required | Notes                                |
+| :------------------------ | --------------------- | :--------: | :----: | :------: | :----------------------------------- |
+| id                        |                       |    int     |   8    |   TRUE   | Unique record ID                     |
+| name                      | Name                  |  varchar   |   50   |   TRUE   |                                      |
+| is_available              | Is Available          |  boolean   |        |   TRUE   |                                      |
+| is_default                | Is Default            |  boolean   |        |   TRUE   |                                      |
+| state_sequence            | Order In Select       |    int     |   6    |  FALSE   | Poradové číslo stavu v select boxoch |
+| is_sequence_code_assigned | Assign Sequence Code? |  boolean   |        |   TRUE   |                                      |
+| is_send_mail              | Send Mail?            |  boolean   |   1    |  FALSE   | Má sa poslať mail o zmene stavu?     |
+| id_com_mail_template      | Email Template        |   lookup   |   8    |  FALSE   | ID šablóny mailu                     |
+| is_send_credit_note       | Send CreditNote?      |  boolean   |        |  FALSE   |                                      |
+| is_send_claim             | Send Claim?           |  boolean   |        |  FALSE   |                                      |
+| is_revert_stock           | Revert Stock?         |  boolean   |        |  FALSE   |                                      |
+| is_allowed_update         | Can Update?           |  boolean   |        |   TRUE   |                                      |
+| is_allowed_delete         | Can Delete?           |  boolean   |        |   TRUE   |                                      |
 
-## Columns
+REVIEW DD: is_sequence_code_assigned - Title celkom nekoresponduje s nazvom stlpca a s popisom.
 
-* name:
-    * required: true
-    * type: varchar
-    * title: Name
-    * byte_size: 50
-    * showColumn: true
-* is_available:
-    * required: true
-    * type: boolean
-    * title: Is Available
-    * showColumn: true
-* is_default:
-    * required: true
-    * type: boolean
-    * title: Is Default
-    * description: Is this the default state or not?
-    * showColumn: true
-* state_sequence:
-    * required: false
-    * type: int
-    * title: Order In Select
-    * description: Order of the state in input lists.
-    * byte_size: 6
-    * showColumn: true
-* is_sequence_code_assigned:
-    * required: true
-    * type: boolean
-    * title: Assign Sequence Code?
-    * description: Should a sequence code and a variable symbol be assigned in this state?
-    * showColumn: true
-* is_send_mail:
-    * required: false
-    * type: boolean
-    * title: Send Mail?
-    * description: Send email in this state?
-    * showColumn: true
-* id_com_mail_template:
-    * required: false
-    * type: lookup
-    * title: Email Template
-    * model: App/Widgets/Common/Email/Models/Template
-    * foreignKeyOnUpdate: CASCADE
-    * foreignKeyOnDelete: RESTRICT
-    * showColumn: true
-* is_send_credit_note:
-    * required: false
-    * type: boolean
-    * title: Send CreditNote?
-    * description: Attach the credit note to email?
-    * showColumn: true
-* is_send_claim:
-    * required: false
-    * type: boolean
-    * title: Send Claim?
-    * description: Attach related claim to email?
-    * showColumn: true
-* is_revert_stock:
-    * required: false
-    * type: boolean
-    * title: Revert Stock?
-    * description: Revert stock in this state?
-    * showColumn: true
-* is_allowed_update:
-    * required: true
-    * type: boolean
-    * title: Can Update?
-    * description: Is update allowed in this state?
-    * showColumn: true
-* is_allowed_delete:
-    * required: true
-    * type: boolean
-    * title: Can Delete?
-    * description: Is it allowed to delete in this state?
-    * showColumn: true
+### ADIOS Parameters
 
-## Foreign Keys
+| Column                    | Parameter   | Value                                                                   |
+| :------------------------ | :---------- | ----------------------------------------------------------------------- |
+| is_default                | description | Is this the default state or not?                                       |
+| state_sequence            | description | Order of the state in input lists.                                      |
+| is_sequence_code_assigned | description | Should a sequence code and a variable symbol be assigned in this state? |
+| is_send_mail              | description | Send email in this state?                                               |
+| is_send_credit_note       | description | Attach the credit note to email?                                        |
+| is_send_claim             | description | Attach related claim to email?                                          |
+| is_revert_stock           | description | Revert stock in this state?                                             |
+| is_allowed_update         | description | Is update allowed in this state?                                        |
+| is_allowed_delete         | description | Is it allowed to delete in this state?                                  |
 
-| Column               | Parent table       | Relation | OnUpdate | OnDelete |
-| :------------------- | :----------------- | :------: | :------: | :------: |
-| id_com_mail_template | com_mail_templates | 1:N      | Cascade  | Restrict |
+### Foreign Keys
 
-## Indexes
+| Column               | Model                                    | Relation | OnUpdate | OnDelete |
+| :------------------- | :--------------------------------------- | :------: | -------- | -------- |
+| id_com_mail_template | App/Widgets/Common/Email/Models/Template |   1:N    | Cascade  | Restrict |
 
-| Name         | Type    | Column + Order    |
-| :----------- | :-----: | :---------------- |
-| id           | PRIMARY | id ASC            |
-| name         | INDEX   | name ASC          |
-| is_available | index   | is_available DESC |
+### Indexes
+
+| Name                      | Type    | Column + Order                 |
+| :------------------------ | :------ | :----------------------------- |
+| id                        | PRIMARY | id ASC                         |
+| name                      | INDEX   | name ASC                       |
+| state_sequence            | INDEX   | state_sequence ASC             |
+| id_com_mail_template      | INDEX   | id_com_mail_template DESC      |
+| is_available              | INDEX   | is_available DESC              |
+| is_default                | INDEX   | is_default DESC                |
+| is_sequence_code_assigned | INDEX   | is_sequence_code_assigned DESC |
+| is_send_mail              | INDEX   | is_send_mail DESC              |
+| is_send_credit_note       | INDEX   | is_send_credit_note DESC       |
+| is_send_claim             | INDEX   | is_send_claim DESC             |
+| is_revert_stock           | INDEX   | is_revert_stock DESC           |
+| is_allowed_update         | INDEX   | is_allowed_update DESC         |
+| is_allowed_delete         | INDEX   | is_allowed_delete DESC         |
 
 ## Callbacks
 
