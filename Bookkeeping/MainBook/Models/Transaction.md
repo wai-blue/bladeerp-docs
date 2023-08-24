@@ -1,4 +1,4 @@
-# Transaction
+# Model Bookkeeping/MainBook/Transaction
 
 ## Introduction
 
@@ -6,107 +6,70 @@ Tabuľka bude obsahovať jednotlivé doklady podvojného účtovníctva. Každý
 
 ## Constants
 
-| Constant | Value | Description |
-| -------- | ----- | ----------- |
-|          |       |             |
+No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                          |
-| :-------------------- | :----------------------------- |
-| sqlName               | bkp_transactions               |
+| Property              | Value                              |
+| :-------------------- | :--------------------------------- |
+| sqlName               | bkp_transactions                   |
 | urlBase               | bookkeeping/main-book/transactions |
-| lookupSqlValue        | -                              |
-| tableTitle            | Transactions                   |
-| formTitleForInserting | New Transaction                |
-| formTitleForEditing   | Transaction                    |
+| lookupSqlValue        | -                                  |
+| tableTitle            | Transactions                       |
+| formTitleForInserting | New Transaction                    |
+| formTitleForEditing   | Transaction                        |
 
-## SQL Structure
+## Data Structure
 
-| Column                   | Description                                   | Type    | Length | NULL     | Default |
-| :----------------------- | :-------------------------------------------- | :-----: | :----: | :------: | :-----: |
-| id                       | Unique record ID                              | INT     | 8      | NOT NULL | 0       |
-| date_transaction         | Dátum transakcie                              | DATE    | 8      | NOT NULL |         |
-| description              | Popis transakcie                              | TEXT    |        | NULL     | ""      |
-| amount                   | Celková suma transakcie v hlavnej mene        | DECIMAL | 15,2   | NOT NULL | 0       |
-| number                   | Poradové číslo v rámci účtovného obdobia      | INT     | 11     | NOT NULL | 1       |
-| is_accounted             | Je doklad zaúčtovaný                          | BOOL    | 1      | NULL     | 0       |
-| amount_currency          | Celková suma transakcie v inej mene           | DECIMAL | 15,2   | NOT NULL | 0       |
-| exchange_rate            | Kurz meny voči hlavnej mene účtovného obdobia | DECIMAL | 15,4   | NOT NULL | 0       |
-| id_bkp_currency          | ID meny                                       | INT     | 8      | NOT NULL | 0       |
-| id_bkp_accounting_period | ID účtovného obdobia                          | INT     | 8      | NOT NULL | 0       |
+| Column                   | Title             | ADIOS Type | Length | Required | Notes                                         |
+| :----------------------- | ----------------- | :--------: | :----: | :------: | :-------------------------------------------- |
+| id                       |                   |    int     |   8    |   TRUE   | Unique record ID                              |
+| id_created_by            | Created By        |   lookup   |   8    |   TRUE   | Reference to user who created the record      |
+| create_datetime          | Created Datetime  |  datetime  |   8    |   TRUE   | When the record was created                   |
+| id_updated_by            | Updated By        |   lookup   |   8    |   TRUE   | Reference to user who updated the record      |
+| update_datetime          | Updated Datetime  |  datetime  |   8    |   TRUE   | When the record was updated                   |
+| transaction_date         | Transaction Date  |    date    |   8    |   TRUE   | Dátum transakcie                              |
+| description              | Description       |    text    |        |  FALSE   | Popis transakcie                              |
+| amount                   | Amount            |  decimal   |  15,2  |   TRUE   | Celková suma transakcie v hlavnej mene        |
+| number                   | Number            |    int     |   11   |   TRUE   | Poradové číslo v rámci účtovného obdobia      |
+| is_accounted             | Is Accounted      |  boolean   |   1    |  FALSE   | Je doklad zaúčtovaný                          |
+| amount_currency          | Amount Currency   |  decimal   |  15,2  |   TRUE   | Celková suma transakcie v inej mene           |
+| exchange_rate            | Exchange Rate     |  decimal   |  15,4  |   TRUE   | Kurz meny voči hlavnej mene účtovného obdobia |
+| id_bkp_currency          | Currency          |   lookup   |   8    |   TRUE   | ID meny                                       |
+| id_bkp_accounting_period | Accounting Period |   lookup   |   8    |   TRUE   | ID účtovného obdobia                          |
 
-## Columns
+REVIEW DD: `date_transaction` premenovane na `transaction_date`
 
-* date_transaction:
-  * type: date
-  * title: Date
-  * required: true
-  * showColumn: true
-* description:
-  * type: text
-  * title: Description
-  * showColumn: true
-* amount:
-  * type: float
-  * title: Total Amount
-  * byte_size: 15
-  * decimals: 2
-  * showColumn: true
-* number:
-  * type: int
-  * title: Serial Number
-  * byte_size: 11
-  * showColumn: true
-  * required: true
-* is_accounted:
-  * type: boolean
-  * title: Is Accounted
-  * byte_size: 1
-  * showColumn: true
-* amount_currency:
-  * type: float
-  * title: Amount Currency
-  * byte_size: 15
-  * decimals: 2
-  * required: true
-* exchange_rate:
-  * type: float
-  * title: Exchange Rate
-  * byte_size: 15
-  * decimals: 4
-  * required: true
-* id_bkp_currency:
-  * type: lookup
-  * title: Currency
-  * model: App/Widgets/Bookkeeping/ExchangeRate/Models/Currency
-  * required: true
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: RESTRICT
-* id_bkp_accounting_period:
-  * type: lookup
-  * title: Accounting Period
-  * model: App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod
-  * required: true
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: RESTRICT
+### ADIOS Parameters
 
-## Foreign Keys
+No additional ADIOS parameters needs to be defined.
 
-| Column                   | Parent table           | Relation | OnUpdate | OnDelete |
-| :----------------------- | :--------------------- | :------: | :------: | :------: |
-| id_bkp_accounting_period | bkp_accounting_periods | 1:N      | Cascade  | Restrict |
-| id_bkp_currency          | bkp_currencies         | 1:N      | Cascade  | Restrict |
+### Foreign Keys
 
-## Indexes
+| Column                   | Model                                                    | Relation | OnUpdate | OnDelete |
+| :----------------------- | :------------------------------------------------------- | :------: | -------- | -------- |
+| id_created_by            | ADIOS/Core/User                                          |   1:N    | Cascade  | Cascade  |
+| id_updated_by            | ADIOS/Core/User                                          |   1:N    | Cascade  | Cascade  |
+| id_bkp_accounting_period | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod |   1:N    | Cascade  | Cascade  |
+| id_bkp_accounting_period | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod |   1:N    | Cascade  | Cascade  |
+| id_bkp_currency          | App/Widgets/Bookkeeping/ExchangeRate/Currency            |   1:N    | Cascade  | Restrict |
 
-| Name                            | Type    | Column + Order                           |
-| :------------------------------ | :-----: | :--------------------------------------- |
-| id                              | PRIMARY | id ASC                                   |
-| date_transaction                | INDEX   | date_transaction ASC                     |
-| id_bkp_accounting_period_number | UNIQUE  | id_bkp_accounting_period ASC, number ASC |
+### Indexes
+
+| Name                              |  Type   |               Column + Order |
+| :-------------------------------- | :-----: | ---------------------------: |
+| id                                | PRIMARY |                       id ASC |
+| id_created_by                     |  INDEX  |            id_created_by ASC |
+| create_datetime                   |  INDEX  |          create_datetime ASC |
+| id_updated_by                     |  INDEX  |            id_updated_by ASC |
+| update_datetime                   |  INDEX  |          update_datetime ASC |
+| transaction_date                  |  INDEX  |         transaction_date ASC |
+| number                            |  INDEX  |                   number ASC |
+| is_accounted                      |  INDEX  |             is_accounted ASC |
+| id_bkp_currency                   |  INDEX  |          id_bkp_currency ASC |
+| id_bkp_accounting_period          |  INDEX  | id_bkp_accounting_period ASC |
+| id_bkp_accounting___period_number | UNIQUE  | id_bkp_accounting_period ASC |
+|                                   |         |                   number ASC |
 
 ## Callbacks
 

@@ -12,7 +12,7 @@ Form
 
 * columns:
   * number
-  * date_transaction
+  * transaction_date
   * amount
   * id_bkp_currency
   * is_accounted

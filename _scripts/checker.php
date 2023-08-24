@@ -233,7 +233,7 @@ foreach ($modules as $module) {
           }
         }
 
-        if ($properties['isCrossTable'] ?? '' === 'TRUE') {
+        if (($properties['isCrossTable'] ?? '') === 'TRUE') {
           if (isset($columns['id'])) {
             $errors[] = "[{$modelRef}] Cross-tables cannot contain `id`.";
           }
@@ -245,13 +245,14 @@ foreach ($modules as $module) {
 
         // Miscelaneous
         if (
-          $properties['isCrossTable'] ?? '' === 'TRUE'
+          ($properties['isCrossTable'] ?? '') === 'TRUE'
           && strpos($model, 'Has') === FALSE
         ) {
           $warnings[] = "[{$modelRef}] Model is a cross-table but does not contain 'Has' in it's name.";
         }
 
-        if ($properties['isCrossTable'] ?? '' !== 'TRUE') {
+        if (($properties['isCrossTable'] ?? '') !== 'TRUE') {
+
           if (
             !isset($columns['id_created_by'])
             || $columns['id_created_by']['type'] != 'lookup'

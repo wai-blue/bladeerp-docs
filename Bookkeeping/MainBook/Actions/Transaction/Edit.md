@@ -21,7 +21,7 @@ Grid
     * cssClass: inline
     * template:
       * id_bkp_accounting_period
-      * date_transaction
+      * transaction_date
       * amount (readonly)
       * is_accounted
   * B:

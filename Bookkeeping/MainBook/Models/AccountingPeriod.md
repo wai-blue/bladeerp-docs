@@ -1,4 +1,4 @@
-# AccountingPeriod
+# Model BookKeeping/MainBook/AccountingPeriod
 
 ## Introduction
 
@@ -10,88 +10,65 @@ Práca s účtovnými obdobiami musí byť výlučne v kompetencii Hlavného ú�
 
 ## Constants
 
-V modeli nie sú použité konštanty.
+No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                |
-| :-------------------- | :----------------------------------- |
-| sqlName               | bkp_accounting_periods               |
+| Property              | Value                                    |
+| :-------------------- | :--------------------------------------- |
+| sqlName               | bkp_accounting_periods                   |
 | urlBase               | bookkeeping/main-book/accounting-periods |
-| lookupSqlValue        | {%TABLE%}.name                       |
-| tableTitle            | Accounting periods                   |
-| formTitleForInserting | New Accounting Period                |
-| formTitleForEditing   | Accounting Period                    |
+| lookupSqlValue        | {%TABLE%}.name                           |
+| tableTitle            | Accounting periods                       |
+| formTitleForInserting | New Accounting Period                    |
+| formTitleForEditing   | Accounting Period                        |
 
-## SQL Structure
+## Data Structure
 
-| Názov                    | Popis                                                                                     | Typ     | Dĺžka | NULL     | Default |
-| :----------------------- | :---------------------------------------------------------------------------------------- | :-----: | :---: | :------: | :-----: |
-| id                       | Unique record ID                                                                          | INT     | 8     | NOT NULL | 0       |
-| name                     | Názov účtovného obdobia                                                                   | VARCHAR | 100   | NOT NULL | ""      |
-| start_date               | Začiatok účtovného obdobia                                                                | DATE    | 8     | NOT NULL |         |
-| end_date                 | Koniec účtovného obdobia                                                                  | DATE    | 8     | NOT NULL |         |
-| is_open                  | Príznak, či je účtovné obdobie otvorené a je možné v rámci tohto obdobia pridávať doklady | BOOLEAN | 1     | NOT NULL | 1       |
-| id_bkp_accounting_period | ID predchádzajúceho účtovného obdobia                                                     | INT     | 8     | NULL     |         |
-| id_bkp_currency          | Hlavná mena účtovného obdobia                                                             | INT     | 8     | NOT NULL |         |
+| Column                   | Title                      | ADIOS Type | Length | Required | Notes                                                                                     |
+| :----------------------- | -------------------------- | :--------: | :----: | :------: | :---------------------------------------------------------------------------------------- |
+| id                       |                            |    int     |   8    |   TRUE   | Unique record ID                                                                          |
+| id_created_by            | Created By                 |   lookup   |   8    |   TRUE   | Reference to user who created the record                                                  |
+| create_datetime          | Created Datetime           |  datetime  |   8    |   TRUE   | When the record was created                                                               |
+| id_updated_by            | Updated By                 |   lookup   |   8    |   TRUE   | Reference to user who updated the record                                                  |
+| update_datetime          | Updated Datetime           |  datetime  |   8    |   TRUE   | When the record was updated                                                               |
+| name                     | Name                       |  varchar   |  100   |   TRUE   | Názov účtovného obdobia                                                                   |
+| start_date               | Start Date                 |    date    |   8    |   TRUE   | Začiatok účtovného obdobia                                                                |
+| end_date                 | End Date                   |    date    |   8    |   TRUE   | Koniec účtovného obdobia                                                                  |
+| is_open                  | Is Open                    |  boolean   |   1    |   TRUE   | Príznak, či je účtovné obdobie otvorené a je možné v rámci tohto obdobia pridávať doklady |
+| id_bkp_accounting_period | Previous Accounting Period |    lookup     |   8    |  FALSE   | ID predchádzajúceho účtovného obdobia                                                     |
+| id_bkp_currency          | Main Currency              |    lookup     |   8    |   TRUE   | Hlavná mena účtovného obdobia                                                             |
 
-## Columns
+### ADIOS Parameters
 
-* name:
-  * type: varchar
-  * title: Name
-  * byte_size: 100
-  * required: true
-  * showColumn: true
-* start_date:
-  * type: date
-  * title: Start date
-  * byte_size: 8
-  * required: true
-  * showColumn: true
-* end_date:
-  * type: date
-  * title: End date
-  * byte_size: 8
-  * required: true
-  * showColumn: true
-* is_open:
-  * type: boolean
-  * title: Is Open
-  * byte_size: 1
-  * showColumn: true
-  * default_value: true
-* id_bkp_accounting_period:
-  * type: lookup
-  * title: Previous Accounting Period
-  * model: App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: RESTRICT
-  * showColumn: true
-* id_bkp_currency:
-  * type: lookup
-  * title: Main Currency
-  * model: App/Widgets/Bookkeeping/ExchangeRate/Models/Currency
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: RESTRICT
-  * showColumn: true
-  * required: true
+No additional ADIOS parameters needs to be defined.
 
-## Foreign Keys
+### Foreign Keys
 
-| Stĺpec                   | Parent tabuľka         | Väzba | OnUpdate | OnDelete |
-| :----------------------- | :--------------------- | :---: | :------: | :------: |
-| id_bkp_accounting_period | bkp_accounting_periods | 1:N   | Cascade  | Cascade  |
-| id_bkp_currency          | bkp_currencies         | 1:N   | Cascade  | Restrict |
+| Column                   | Model                  | Relation | OnUpdate | OnDelete |
+| :----------------------- | :--------------------- | :------: | -------- | -------- |
+| id_created_by            | ADIOS/Core/User        |   1:N    | Cascade  | Cascade  |
+| id_updated_by            | ADIOS/Core/User        |   1:N    | Cascade  | Cascade  |
+| id_bkp_accounting_period | bkp_accounting_periods |   1:N    | Cascade  | Cascade  |
+| id_bkp_currency          | bkp_currencies         |   1:N    | Cascade  | Restrict |
 
-## Indexes
+### Indexes
 
-| Name               | Type    | Column + Order              |
-| :----------------- | :-----: | :-------------------------- |
-| id                 | PRIMARY | id ASC                      |
-| name               | UNIQUE  | name ASC                    |
-| start_date_u       | UNIQUE  | start_date ASC              |
-| is_open_start_date | INDEX   | is_open ASC, start_date ASC |
+| Name                     |  Type   |               Column + Order |
+| :----------------------- | :-----: | ---------------------------: |
+| id                       | PRIMARY |                       id ASC |
+| id_created_by            |  INDEX  |            id_created_by ASC |
+| create_datetime          |  INDEX  |          create_datetime ASC |
+| id_updated_by            |  INDEX  |            id_updated_by ASC |
+| update_datetime          |  INDEX  |          update_datetime ASC |
+| name                     | UNIQUE  |                     name ASC |
+| start_date               | UNIQUE  |               start_date ASC |
+| end_date                 | UNIQUE  |                 end_date ASC |
+| is_open                  |  INDEX  |                  is_open ASC |
+| id_bkp_accounting_period |  INDEX  | id_bkp_accounting_period ASC |
+| id_bkp_currency          |  INDEX  |          id_bkp_currency ASC |
+| is_open___start_date     |  INDEX  |                  is_open ASC |
+|                          |         |               start_date ASC |
 
 ## Callbacks
 

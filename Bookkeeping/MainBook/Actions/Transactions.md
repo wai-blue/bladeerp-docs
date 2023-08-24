@@ -12,7 +12,7 @@ Table
 
 * columns
   * name
-  * date_transaction
+  * transaction_date
   * amount
   * id_bkp_currencies
   * is_accounted

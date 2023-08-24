@@ -8,7 +8,7 @@
   * resp. asi by bolo presnejsie volat to BankAccountTransaction
 * Modul Financie nie je vlastne Uctovnictvo? Nemali by sme ho premenovat na BookKeeping?
 * https://www.deskera.com/bookkeeping-software
-* MainBook/TransactionEntry - ako sa bude rozlisovat, ci ide o kredit alebo debet? Iba podla toho, ci je amount < 0?
+* MainBook/TransactionItem - ako sa bude rozlisovat, ci ide o kredit alebo debet? Iba podla toho, ci je amount < 0?
 * Hypoteticka uvaha: Ak by sme chceli spravit import pohybov na bankovo ucte, islo by to do BankAccountTransaction modelu?
 
 

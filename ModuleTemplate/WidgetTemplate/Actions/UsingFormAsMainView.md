@@ -22,4 +22,4 @@ Form
   * closing_date
     * Dátum musí byť väčší alebo rovný dátumu posledného dokladu z vybraného účtovného obdobia
 * defaultValues:
-  * date_transaction = Predvolený je posledný dátum z účtovného obdobia
+  * transaction_date = Predvolený je posledný dátum z účtovného obdobia

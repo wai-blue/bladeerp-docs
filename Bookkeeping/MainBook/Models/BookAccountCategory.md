@@ -1,4 +1,4 @@
-# BookAccountCategory
+# Model Bookkeeping/MainBook/BookAccountCategory
 
 ## Introduction
 
@@ -6,50 +6,51 @@ Táto tabuľka bude slúžiť na definíciu druhov účtov.
 
 ## Constants
 
-| Constant | Value | Description |
-| -------- | ----- | ----------- |
-|          |       |             |
+No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                     |
-| :-------------------- | :---------------------------------------- |
-| sqlName               | bkp_book_account_categories               |
+| Property              | Value                                         |
+| :-------------------- | :-------------------------------------------- |
+| sqlName               | bkp_book_account_categories                   |
 | urlBase               | bookkeeping/main-book/book-account-categories |
-| lookupSqlValue        | {%TABLE%}.name                            |
-| tableTitle            | Book Account Categories                   |
-| formTitleForInserting | New Category                              |
-| formTitleForEditing   | Account Category                          |
+| lookupSqlValue        | {%TABLE%}.name                                |
+| tableTitle            | Book Account Categories                       |
+| formTitleForInserting | New Category                                  |
+| formTitleForEditing   | Account Category                              |
 
-## SQL Structure
+## Data Structure
 
-| Column | Description      | Type    | Length | NULL     | Default |
-| :----- | :--------------- | :-----: | :----: | :------: | :-----: |
-| id     | Unique record ID | INT     | 8      | NOT NULL | 0       |
-| name   | Názov druhu      | VARCHAR | 100    | NOT NULL | ""      |
+| Column          | Title            | ADIOS Type | Length | Required | Notes                                    |
+| :-------------- | ---------------- | :--------: | :----: | :------: | :--------------------------------------- |
+| id              |                  |    int     |   8    |   TRUE   | Unique record ID                         |
+| id_created_by   | Created By       |   lookup   |   8    |   TRUE   | Reference to user who created the record |
+| create_datetime | Created Datetime |  datetime  |   8    |   TRUE   | When the record was created              |
+| id_updated_by   | Updated By       |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
+| update_datetime | Updated Datetime |  datetime  |   8    |   TRUE   | When the record was updated              |
+| name            | Name             |  varchar   |  100   |   TRIE   | Názov druhu                              |
 
-## Columns
+### ADIOS Parameters
 
-* name:
-  * type: varchar
-  * title: Name
-  * byte_size: 100
-  * required: true
-  * showColumn: true
+No additional ADIOS parameters needs to be defined.
 
+### Foreign Keys
 
-## Foreign Keys
+| Column        | Model           | Relation | OnUpdate | OnDelete |
+| :------------ | :-------------- | :------: | -------- | -------- |
+| id_created_by | ADIOS/Core/User |   1:N    | Cascade  | Cascade  |
+| id_updated_by | ADIOS/Core/User |   1:N    | Cascade  | Cascade  |
 
-| Column | Parent table | Relation | OnUpdate | OnDelete |
-| ------ | ------------ | -------- | -------- | -------- |
-|        |              |          |          |          |
+### Indexes
 
-## Indexes
-
-| Name | Type    | Column + Order |
-| :--- | :-----: | :------------: |
-| id   | PRIMARY | id ASC         |
-| name | UNIQUE  | name ASC       |
+| Name            |  Type   |      Column + Order |
+| :-------------- | :-----: | ------------------: |
+| id              | PRIMARY |              id ASC |
+| id_created_by   |  INDEX  |   id_created_by ASC |
+| create_datetime |  INDEX  | create_datetime ASC |
+| id_updated_by   |  INDEX  |   id_updated_by ASC |
+| update_datetime |  INDEX  | update_datetime ASC |
+| name            | UNIQUE  |            name ASC |
 
 ## Callbacks
 

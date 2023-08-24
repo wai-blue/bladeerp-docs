@@ -12,10 +12,10 @@ Form
 
 * template:
   * id_bkp_accounting_period
-  * date_transaction
+  * transaction_date
   * description
 * defaultValues:
-  * date_transaction = Predvolený je posledný dátum z účtovného obdobia
+  * transaction_date = Predvolený je posledný dátum z účtovného obdobia
 
 ## Columns
 
