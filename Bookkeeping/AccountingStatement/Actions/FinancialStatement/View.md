@@ -1,14 +1,14 @@
-# Bookkeeping/AccountingStatement/FinancialStatement/View
+# Action Bookkeeping/AccountingStatement/FinancialStatement/View
 
 ## Description
 
 Detail účtovnej závierky. Dáta v uzávierke nie je možné meniť.
 
-## Main View
+## View
 
 Grid
 
-## Parameters
+## Default View Parameters
 
 * layout:
   ```
@@ -26,3 +26,7 @@ Grid
     * action: Widgets/Bookkeeping/MainBook/FinancialStatementsEntries
     * parameters:
       * idFinancialStatement = $data[‘id’]
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

@@ -19,8 +19,20 @@
     Checks everything inside the <MODULE> module and <WIDGET> widget.
 
   EXAMPLE 4:
-    php checker.php <MODULE> <WIDGET> <MODEL>
-    Checks everything inside the <MODULE> module, <WIDGET> widget and <MODEL> model.
+    php checker.php <MODULE> <WIDGET> <ACTION>
+    Checks everything inside the <MODULE> module, <WIDGET> widget, <ACTION> actions and all models.
+
+  EXAMPLE 5:
+    php checker.php <MODULE> <WIDGET> <ACTION> -
+    Checks everything inside the <MODULE> module, <WIDGET> widget, <ACTION> actions. No model will be checked.
+
+  EXAMPLE 6:
+    php checker.php <MODULE> <WIDGET> <ACTION> <MODEL>
+    Checks everything inside the <MODULE> module, <WIDGET> widget, <ACTION> actions and <MODEL> models.
+
+  EXAMPLE 7:
+    php checker.php <MODULE> <WIDGET> - <MODEL>
+    Checks everything inside the <MODULE> module, <WIDGET> widget and <MODEL> models. No action will be checked.
 */
 
 
@@ -33,7 +45,8 @@ spl_autoload_register(function($className) {
 
 $moduleToCheck = $argv[1] ?? "";
 $widgetToCheck = $argv[2] ?? "";
-$modelToCheck = $argv[3] ?? "";
+$actionToCheck = $argv[3] ?? "";
+$modelToCheck = $argv[4] ?? "";
 
 $modules = [
   'Bookkeeping',
@@ -73,10 +86,41 @@ foreach ($modules as $module) {
     // $md = new \Markdown($widgetDir . '/Settings.md');
     // $md->findTableByColumns(['Setting', 'Data type', 'Default value', 'Description']);
 
+    // Actions
+    if (!is_dir($widgetDir . '/Actions')) {
+      $warnings[] = "[{$widget}] Actions are not specified.";
+    } else if ($actionToCheck != '-') {
+      $actions = \HelperFunctions::scanDirRecursively($widgetDir . '/Actions');
+      foreach ($actions as $action) {
+
+        if (in_array($action, ['.', '..'])) continue;
+
+        $actionRef = str_replace('\\', '/', realpath($widgetDir . '/Actions/' . $action));
+
+        if (!empty($actionToCheck) && strpos($actionRef, $actionToCheck) === FALSE) continue;
+
+        echo "    Checking action {$action}...\n";
+
+        $md = new \Markdown($widgetDir . '/Actions/' . $action);
+
+        // Document outline
+        if (
+          $md->hasH1('Action') === FALSE
+          || $md->hasH2('Description') === FALSE
+          || $md->hasH2('View') === FALSE
+          || $md->hasH2('Default View Parameters') === FALSE
+          || $md->hasH2('Parameters Post-processing') === FALSE
+        ) {
+          $errors[] = "[{$actionRef}] Document outline is invalid.";
+        }
+
+      }
+    }
+
     // Models
     if (!is_dir($widgetDir . '/Models')) {
       $warnings[] = "[{$widget}] Models are not specified.";
-    } else {
+    } else if ($modelToCheck != '-') {
       $models = scandir($widgetDir . '/Models');
       foreach ($models as $model) {
 

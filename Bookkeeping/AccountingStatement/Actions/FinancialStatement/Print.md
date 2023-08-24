@@ -1,11 +1,17 @@
-# Print
+# Action Bookkeeping/AccountingStatement/FinancialStatement/Print
+
+## Description
 
 Každú závierku bude možné vytlačiť. Výstupný formát bude HTML. V hlavičke tlače bude názov závierky a účtovného obdobia. Telo tlačovej zostavy budú tvoriť záznamy z tabuľky **bkp_financial_statement_entries** patriace danej závierke.
 
-## Main View
+## View
 
 TODO: Dorobiť Main view, ak sú
 
-## Parameters
+## Default View Parameters
 
 TODO: Dorobiť parameters, ak sú
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

@@ -1,14 +1,15 @@
-# UsingGridAsMainView
+# Action [Module]/[Widget]/UsingGridAsMainView
 
 ## Description
 
 Sample definition of action using a Grid.
 
-## Main View
+## View
 
 Grid
 
-## Parameters
+## Default View Parameters
+
 (vid ADIOS.repo/src/Core/View/Grid.php)
 
 *Note: "view" is rendered immediately, "action" is rendered via AJAX request*
@@ -34,3 +35,11 @@ Grid
     * (view|action): App/Core/Views/MyCustomView
     * parameters:
       * ... any parameters that the custom view can accept
+
+## Parameters Post-processing
+
+[No post-processing of default parameters is necessary.]
+
+  1. Post-processing functionality #1
+  2. Post-processing functionality #2
+  3. Post-processing functionality #3

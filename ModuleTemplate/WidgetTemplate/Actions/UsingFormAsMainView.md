@@ -1,14 +1,14 @@
-# UsingFormAsMainView
+# Action [Module]/[Widget]/UsingFormAsMainView
 
 ## Description
 
 Vytvorenie novej uzávierky.
 
-## Main View
+## View
 
 Form
 
-## Parameters
+## Default View Parameters
 
 (vid ADIOS.repo/src/Core/View/Form.php)
 
@@ -17,9 +17,14 @@ Form
 * displayMode: (inline|window|desktop)
 * template:
   * name
-  * id_bkp_accounting_period (readonly)
-    * Účtovné obdobie sa bude ponúkať iba z otvorených účtovných období podľa stĺpca is_open v tabuľke bkp_accounting_periods
   * closing_date
-    * Dátum musí byť väčší alebo rovný dátumu posledného dokladu z vybraného účtovného obdobia
 * defaultValues:
   * transaction_date = Predvolený je posledný dátum z účtovného obdobia
+
+## Parameters Post-processing
+
+[No post-processing of default parameters is necessary.]
+
+  1. Input for `id_bkp_accounting_period` will be readonly.
+  2. Účtovné obdobie sa bude ponúkať iba z otvorených účtovných období podľa stĺpca is_open v tabuľke bkp_accounting_periods.
+  3. Dátum `closing_date` musí byť väčší alebo rovný dátumu posledného dokladu z vybraného účtovného obdobia.

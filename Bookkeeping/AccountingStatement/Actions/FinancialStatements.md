@@ -1,14 +1,14 @@
-# Bookkeeping/AccountingStatement/FinancialStatements
+# Action Bookkeeping/AccountingStatement/FinancialStatements
 
-# Description
+## Description
 
 Zoznam všetkých účtovných závierok.
 
-## Main View
+## View
 
 Table
 
-## Parameters
+## Default View Parameters
 
 * columns
   * name
@@ -16,3 +16,7 @@ Table
   * id_bkp_accounting_period
 * orderBy: closing_date DESC
 * filter: Posledné otvorené účtovné obdobie
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.
