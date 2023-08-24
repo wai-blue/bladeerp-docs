@@ -16,7 +16,7 @@ Form
 | ------------- | ------------------------------------------------------------------- |
 | model         | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod            |
 | cssClass      | inline                                                              |
-| displayMode   | window                                                              |
+| displayMode   | (inline\|window\|desktop)                                           |
 | template      | name, closing_date                                                  |
 | defaultValues | id_user = Predvolený je aktuálny používateľ                         |
 |               | transaction_date = Predvolený je posledný dátum z účtovného obdobia |
