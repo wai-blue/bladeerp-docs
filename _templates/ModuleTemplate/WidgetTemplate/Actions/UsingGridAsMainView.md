@@ -13,28 +13,27 @@ Grid
 (vid ADIOS.repo/src/Core/View/Grid.php)
 
 *Note: "view" is rendered immediately, "action" is rendered via AJAX request*
+| Parameter | Values            |
+| --------- | ----------------- |
+| layout    | A A<br>B C<br>B C |
 
-* layout:
-  ```
-    A A
-    B C
-    B C
-  ```
-* areas:
-  * A:
-    * view: Form
-    * template:
-      * id_bkp_accounting_period (readonly)
-      * name (readonly)
-      * closing_date (readonly)
-  * B:
-    * action: Widgets/Bookkeeping/MainBook/FinancialStatementsEntries
-    * parameters:
-      * idFinancialStatement = $data[‘id’]
-  * C:
-    * (view|action): App/Core/Views/MyCustomView
-    * parameters:
-      * ... any parameters that the custom view can accept
+### Area A
+| Parameter | Values                                                                            |
+| --------- | --------------------------------------------------------------------------------- |
+| view      | Form                                                                              |
+| template  | id_bkp_accounting_period (readonly)<br>name (readonly)<br>closing_date (readonly) |
+
+### Area B
+| Parameter  | Values                                                  |
+| ---------- | ------------------------------------------------------- |
+| action     | Widgets/Bookkeeping/MainBook/FinancialStatementsEntries |
+| parameters | idFinancialStatement = $data[‘id’]                      |
+
+### Area C
+| Parameter       | Values                                         |
+| --------------- | ---------------------------------------------- |
+| (view\| action) | App/Core/Views/MyCustomView                    |
+| parameters      | any parameters that the custom view can accept |
 
 ## Parameters Post-processing
 
