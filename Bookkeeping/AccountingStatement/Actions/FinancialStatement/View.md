@@ -12,8 +12,8 @@ Grid
 
 * layout:
   ```
-    Area A - Closing Period
-    Area B - Account Balances
+    A - Closing Period
+    B - Account Balances
   ```
 * areas:
   * A:
