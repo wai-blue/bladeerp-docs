@@ -21,6 +21,16 @@ Form
 * defaultValues:
   * transaction_date = Predvolený je posledný dátum z účtovného obdobia
 
+
+## Default View Parameters - Návrh
+| Parameter     | Values                                                              |
+| ------------- | ------------------------------------------------------------------- |
+| model         | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod            |
+| cssClass      | inline                                                              |
+| displayMode   | (inline, window, desktop)                                           |
+| template      | name<br>closing_date                                                |
+| defaultValues | transaction_date = Predvolený je posledný dátum z účtovného obdobia |
+
 ## Parameters Post-processing
 
 [No post-processing of default parameters is necessary.]
