@@ -57,7 +57,7 @@ $warnings = [];
 $notices = [];
 
 foreach ($modules as $module) {
-  $moduleDir = __DIR__ . '/../' . $module;
+  $moduleDir = __DIR__ . '/../Modules/' . $module;
   $widgets = scandir($moduleDir);
 
   if (!empty($moduleToCheck) && $module !== $moduleToCheck) continue;
