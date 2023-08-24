@@ -53,32 +53,12 @@
 
 [No additional ADIOS parameters needs to be defined.]
 
-| Column         | Parameter   | Value                               |
-| :------------- | :---------- | ----------------------------------- |
-| is_open        | description | Is the document open or not?        |
-|                | default     | 1                                   |
-| state_sequence | description | Order of the item in input lists.   |
-| side           | enum_values | [see Constants - Side](#side-enums) |
-
-### ADIOS DataTypes
-TODO: Doplnit linky na dokumentaciu, ked uz bude nahodena
-[Kapitola sa pouziva iba na prelinkovanie s dokumentaciou. Po dopisani je potrebne kapitolu vymazat.]
-* [boolean]
-* [color]
-* [date]
-* [datetime]
-* [file]
-* [float]
-* [image]
-* [int](https://github.com/wai-blue/adios-docs/blob/main/Documentation/6.Database/Data%20Types/Integer.md)
-* [lookup] 
-* [password]
-* [table]
-* [text]
-* [time]
-* [timestamp] 
-* [varchar]
-* [year]
+| Column         | Parameter   | Value                             |
+| :------------- | :---------- | --------------------------------- |
+| is_open        | description | Is the document open or not?      |
+|                | default     | 1                                 |
+| state_sequence | description | Order of the item in input lists. |
+| side           | enum_values | BKP_BOOK_ACCOUNT_SIDE_*           |
 
 ### Foreign Keys
 
