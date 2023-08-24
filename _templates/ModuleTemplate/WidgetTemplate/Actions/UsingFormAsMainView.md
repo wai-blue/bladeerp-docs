@@ -12,24 +12,14 @@ Form
 
 (vid ADIOS.repo/src/Core/View/Form.php)
 
-* model: App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod
-* cssClass: inline
-* displayMode: (inline|window|desktop)
-* template:
-  * name
-  * closing_date
-* defaultValues:
-  * transaction_date = Predvolený je posledný dátum z účtovného obdobia
-
-
-## Default View Parameters - Návrh
 | Parameter     | Values                                                              |
 | ------------- | ------------------------------------------------------------------- |
 | model         | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod            |
 | cssClass      | inline                                                              |
-| displayMode   | (inline, window, desktop)                                           |
-| template      | name<br>closing_date                                                |
-| defaultValues | transaction_date = Predvolený je posledný dátum z účtovného obdobia |
+| displayMode   | window                                                              |
+| template      | name, closing_date                                                  |
+| defaultValues | id_user = Predvolený je aktuálny používateľ                         |
+|               | transaction_date = Predvolený je posledný dátum z účtovného obdobia |
 
 ## Parameters Post-processing
 
