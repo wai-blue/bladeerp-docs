@@ -14,16 +14,16 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                        |
-| :-------------------- | :--------------------------- |
-| sqlName               | bkp_financial_statements     |
+| Property              | Value                            |
+| :-------------------- | :------------------------------- |
+| sqlName               | bkp_financial_statements         |
 | urlBase               | bookkeeping/financial-statements |
-| lookupSqlValue        | {%TABLE%}.name               |
-| tableTitle            | Financial Statements         |
-| formTitleForInserting | New Statement                |
-| formTitleForEditing   | Financial Statement          |
-| formAddButtonText     | Add Statement                |
-| formSaveButtonText    | -                            |
+| lookupSqlValue        | {%TABLE%}.name                   |
+| tableTitle            | Financial Statements             |
+| formTitleForInserting | New Statement                    |
+| formTitleForEditing   | Financial Statement              |
+| formAddButtonText     | Add Statement                    |
+| formSaveButtonText    | -                                |
 
 ## Data Structure
 
@@ -40,8 +40,8 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column                   | Model                                                                                                        | Relation | OnUpdate | OnDelete |
-| :----------------------- | :----------------------------------------------------------------------------------------------------------- | :------: | :------: | :------: |
+| Column                   | Model                                                                                                                | Relation | OnUpdate | OnDelete |
+| :----------------------- | :------------------------------------------------------------------------------------------------------------------- | :------: | :------: | :------: |
 | id_bkp_accounting_period | [App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod](../../../Bookkeeping/MainBook/Models/AccountingPeriod.md) |   1:N    | Cascade  | Restrict |
 
 ### Indexes

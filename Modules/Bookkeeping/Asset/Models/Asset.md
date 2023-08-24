@@ -21,7 +21,7 @@ Tabuľka slúži na evidenciu majetku.
 | Property              | Value                                       |
 | :-------------------- | :------------------------------------------ |
 | sqlName               | bkp_assets                                  |
-| urlBase               | bookkeeping/assets                              |
+| urlBase               | bookkeeping/assets                          |
 | lookupSqlValue        | {%TABLE%}.inventory_number + {%TABLE%}.name |
 | tableTitle            | Assets                                      |
 | formTitleForInserting | New Asset                                   |
@@ -57,13 +57,13 @@ Tabuľka slúži na evidenciu majetku.
 
 | Column | Parameter   | Value               |
 | :----- | :---------- | ------------------- |
-| type   | enum_values | BKP_ASSETS_*        |
+| type   | enum_values | BKP_ASSETS_TYPE_*   |
 | method | enum_values | BKP_ASSETS_METHOD_* |
 
 ### Foreign Keys
 
-| Column                    | Model                                                                                                              | Relation | OnUpdate | OnDelete |
-| :------------------------ | :----------------------------------------------------------------------------------------------------------------- | :------: | :------: | :------: |
+| Column                    | Model                                                                                                                      | Relation | OnUpdate | OnDelete |
+| :------------------------ | :------------------------------------------------------------------------------------------------------------------------- | :------: | :------: | :------: |
 | id_bkp_currency           | [App/Widgets/Bookkeeping/ExchangeRate/Models/Currency](../../../Bookkeeping/ExchangeRate/Models/Currency.md)               |   1:N    | Cascade  | Restrict |
 | id_bkp_depreciation_group | [App/Widgets/Bookkeeping/Asset/Models/AssetDepreciationGroup](../../../Bookkeeping/Asset/Models/AssetDepreciationGroup.md) |   1:N    | Cascade  | Restrict |
 
