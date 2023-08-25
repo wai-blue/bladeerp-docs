@@ -1,4 +1,4 @@
-# Action Bookkeeping/AccountingStatement/FinancialStatement/Print
+# Action Bookkeeping/FinancialStatement/FinancialStatement/Print
 
 ## Description
 
@@ -6,11 +6,13 @@ Každú závierku bude možné vytlačiť. Výstupný formát bude HTML. V hlavi
 
 ## View
 
-TODO: Dorobiť Main view, ak sú
+Bookkeeping/FinancialStatement/Views/FinancialStatement
 
 ## Default View Parameters
 
-TODO: Dorobiť parameters, ak sú
+| Parameter | Values       |
+| --------- | ------------ |
+| id        | ID uzávierky |
 
 ## Parameters Post-processing
 

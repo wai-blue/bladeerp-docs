@@ -1,11 +1,11 @@
 # Model Bookkeeping/Asset/Asset
 
 NOTE: DD pretukal.
-TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
+NOTE: PA skontroloval - chyby opravené
 
 ## Introduction
 
-Tabuľka slúži na evidenciu majetku. 
+Tabuľka slúži na evidenciu majetku.
 
 ## Constants
 
@@ -31,27 +31,27 @@ Tabuľka slúži na evidenciu majetku.
 
 ## Data Structure
 
-| Column                     | Title                                           | ADIOS Type | Length | Required | Notes                                  |
-| :------------------------- | ----------------------------------------------- | :--------: | :----: | :------: | :------------------------------------- |
-| id                         | ID                                              |    int     |   11   |   TRUE   | Jedinečné ID záznamu                   |
-| inventory_number           | Inventory Number                                |  varchar   |   50   |   TRUE   | Inventárne číslo                       |
-| name                       | Name                                            |  varchar   |   50   |   TRUE   | Názov                                  |
-| description                | Description                                     |    text    |        |  FALSE   | Popis                                  |
-| id_bkp_currency            | Currency                                        |   lookup   |   11   |   TRUE   | ID meny v uvedená vstupná cena         |
-| entry_price                | Entry Price                                     |  decimal   |  15,2  |   TRUE   | Vstupná cena                           |
-| entry_date                 | Entry Date                                      |    date    |   8    |   TRUE   | Dátum obstarania                       |
-| procurement_method         | Procurement Method                              |  varchar   |  100   |  FALSE   | Spôsob obstarania                      |
-| commissioning_date         | Commissioning Date                              |    date    |   8    |   TRUE   | Dátum zaradenia do užívania            |
-| notes                      | Notes                                           |    text    |        |  FALSE   | Poznámky                               |
-| id_bkp_depreciation_group  | Depreciation Group                              |   lookup   |   11   |   TRUE   | Odpisová skupina                       |
-| type                       | Property Type                                   |    int     |   1    |   TRUE   | Typ majetku                            |
-| method                     | Depreciation Method                             |    int     |   1    |   TRUE   | Metóda odpisovania                     |
-| is_automat                 | Automatically calculate accounting depreciation |  boolean   |   1    |  FALSE   | Automaticky vypočítavať účtovné odpisy |
-| amount_accounting_residual | Residual Book Value                             |  decimal   |  15,2  |  FALSE   | Zostatková účtovná hodnota             |
-| amount_tax_residual        | Residual Tax Value                              |  decimal   |  15,2  |  FALSE   | Zostatková daňová hodnota              |
-| retirement_date            | Retirement Date                                 |    date    |   8    |  FALSE   | Dátum vyradenia                        |
-| retirement_reason          | Reason for Retirement                           |  varchar   |  100   |  FALSE   | Dôvod vyradenia                        |
-| retirement_method          | Retirement Method                               |  varchar   |  100   |  FALSE   | Spôsob vyradenia                       |
+| Column                     | Title                                           | ADIOS Type | Length | Required | Notes                                    |
+| :------------------------- | ----------------------------------------------- | :--------: | :----: | :------: | :--------------------------------------- |
+| id                         | ID                                              |    int     |   8    |   TRUE   | Jedinečné ID záznamu                     |
+| inventory_number           | Inventory Number                                |  varchar   |   50   |   TRUE   | Inventárne číslo                         |
+| name                       | Name                                            |  varchar   |  100   |   TRUE   | Názov                                    |
+| description                | Description                                     |    text    |        |  FALSE   | Popis                                    |
+| id_bkp_currency            | Currency                                        |   lookup   |   8    |   TRUE   | ID meny v ktorej je uvedená vstupná cena |
+| entry_price                | Entry Price                                     |  decimal   |  15,2  |   TRUE   | Vstupná cena                             |
+| entry_date                 | Entry Date                                      |    date    |   8    |   TRUE   | Dátum obstarania                         |
+| procurement_method         | Procurement Method                              |  varchar   |  100   |  FALSE   | Spôsob obstarania                        |
+| commissioning_date         | Commissioning Date                              |    date    |   8    |   TRUE   | Dátum zaradenia do užívania              |
+| notes                      | Notes                                           |    text    |        |  FALSE   | Poznámky                                 |
+| id_bkp_depreciation_group  | Depreciation Group                              |   lookup   |   8    |   TRUE   | Odpisová skupina                         |
+| type                       | Property Type                                   |    int     |   1    |   TRUE   | Typ majetku                              |
+| method                     | Depreciation Method                             |    int     |   1    |   TRUE   | Metóda odpisovania                       |
+| is_automat                 | Automatically calculate accounting depreciation |  boolean   |   1    |  FALSE   | Automaticky vypočítavať účtovné odpisy   |
+| amount_accounting_residual | Residual Accounting Value                       |  decimal   |  15,2  |  FALSE   | Zostatková účtovná hodnota               |
+| amount_tax_residual        | Residual Tax Value                              |  decimal   |  15,2  |  FALSE   | Zostatková daňová hodnota                |
+| retirement_date            | Retirement Date                                 |    date    |   8    |  FALSE   | Dátum vyradenia                          |
+| retirement_reason          | Reason for Retirement                           |  varchar   |  100   |  FALSE   | Dôvod vyradenia                          |
+| retirement_method          | Retirement Method                               |  varchar   |  100   |  FALSE   | Spôsob vyradenia                         |
 
 ### ADIOS Parameters
 
@@ -103,7 +103,7 @@ Not used.
 
 ### onBeforeDelete
 
-Not used.
+Majetok, ktorý už bol odpisovaný, nie je možné vymazať.
 
 ### onAfterDelete
 

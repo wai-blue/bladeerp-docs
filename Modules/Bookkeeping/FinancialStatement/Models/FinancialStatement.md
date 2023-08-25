@@ -1,7 +1,7 @@
-# Model Bookkeeping/AccountingStatement/FinancialStatement
+# Model Bookkeeping/FinancialStatement/FinancialStatement
 
 NOTE: DD pretukal.
-TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
+NOTE: PA skontroloval - chyby opravene
 
 ## Introduction
 
@@ -27,12 +27,12 @@ No constants are defined for this model.
 
 ## Data Structure
 
-| Column                   | Title            | ADIOS Type | Length | Required | Notes                                   |
-| :----------------------- | ---------------- | :--------: | :----: | :------: | :-------------------------------------- |
-| id                       |                  |    int     |   8    |   TRUE   | Unique record ID                        |
-| name                     | Name             |  varchar   |  100   |  FALSE   | Názov závierky                          |
-| closing_date             | Closing Date     |    date    |   8    |  FALSE   | Dátum, ku ktorému je závierka vystavená |
-| id_bkp_accounting_period | Financial Period |   lookup   |   11   |  FALSE   | ID účtovného obdobia                    |
+| Column                   | Title             | ADIOS Type | Length | Required | Notes                                   |
+| :----------------------- | ----------------- | :--------: | :----: | :------: | :-------------------------------------- |
+| id                       |                   |    int     |   8    |   TRUE   | Unique record ID                        |
+| name                     | Name              |  varchar   |  100   |   TRUE   | Názov závierky                          |
+| closing_date             | Closing Date      |    date    |   8    |   TRUE   | Dátum, ku ktorému je závierka vystavená |
+| id_bkp_accounting_period | Accounting Period |   lookup   |   8    |   TRUE   | ID účtovného obdobia                    |
 
 ### ADIOS Parameters
 
@@ -61,7 +61,7 @@ Pred vytvorením treba skontrolovať, či všetky záznamy z tabuľky **bkp_tran
 
 ### onAfterInsert
 
-Pri vytvorení závierky sa poznačia aktuálne stavy na jednotlivých účtoch účtovnej osnovy z tabuľky **bkp_book_accounts** zo stĺpca **current_balance** do tabuľky **bkp_financial_statement_entries** do stĺpca **balance** za vybrané účtovné obdobie. 
+Pri vytvorení závierky sa poznačia aktuálne stavy na jednotlivých účtoch účtovnej osnovy z tabuľky **bkp_book_accounts** zo stĺpca **current_balance** do tabuľky **bkp_financial_statement_entries** do stĺpca **balance** za vybrané účtovné obdobie.
 
 ### onBeforeUpdate
 

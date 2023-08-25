@@ -1,4 +1,4 @@
-# Action Bookkeeping/AccountingStatement/FinancialStatementEntries
+# Action Bookkeeping/FinancialStatement/FinancialStatementEntries
 
 ## Description
 
@@ -7,8 +7,6 @@ Tabuľka sa bude zobrazovať iba v detaili účtovnej závierky. Záznamy sa bud
 ## View
 
 UI/Tree
-
-TODO: UI/Tree alebo tabulka?
 
 ## Default View Parameters
 

@@ -1,4 +1,4 @@
-# Action Bookkeeping/AccountingStatement/FinancialStatement/View
+# Action Bookkeeping/FinancialStatement/FinancialStatement/View
 
 ## Description
 

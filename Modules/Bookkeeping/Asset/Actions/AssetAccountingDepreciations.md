@@ -2,7 +2,7 @@
 
 ## Description
 
-Daňové odpisy majetku.
+Účtovných odpisy majetku.
 
 ## Main View
 
@@ -17,5 +17,4 @@ Table
   * accounting_depreciation_amount
   * amount_accounting_residual
   * posting_date
-
 * orderBy: year ASC, month ASC

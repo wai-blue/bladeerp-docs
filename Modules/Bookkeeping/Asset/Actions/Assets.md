@@ -1,4 +1,4 @@
-# Bookkeeping/AccountingStatement/FinancialStatementEntries
+# Bookkeeping/FinancialStatement/FinancialStatementEntries
 
 ## Description
 
@@ -17,4 +17,7 @@ Table
   * entry_date
   * type
   * method
+  * amount_accounting_residual
+  * amount_tax_residual
+  * retirement_date
 * orderBy: inventory_number ASC

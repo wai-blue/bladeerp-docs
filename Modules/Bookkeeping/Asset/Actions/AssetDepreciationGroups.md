@@ -1,4 +1,4 @@
-# Bookkeeping/AccountingStatement/FinancialStatementEntries
+# Bookkeeping/FinancialStatement/FinancialStatementEntries
 
 ## Description
 
@@ -7,8 +7,6 @@ Zoznam odpisových skupín.
 ## Main View
 
 Table
-
-TODO: UI/Tree alebo tabulka?
 
 ## Parameters
 

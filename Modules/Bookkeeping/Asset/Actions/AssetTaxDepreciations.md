@@ -21,5 +21,4 @@ Table
   * amount_accounting_residual
   * amount_tax_residual
   * posting_date
-
 * orderBy: number ASC

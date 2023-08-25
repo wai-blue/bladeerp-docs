@@ -2,4 +2,4 @@
 
 ## Description
 
-Raz za rok sa spúšťa výpočet daňových odpisov, ktoré sa potom prenesú do denníka.
+Raz za mesiac sa spúšťa výpočet účtovných odpisov, ktoré sa potom prenesú do denníka.
