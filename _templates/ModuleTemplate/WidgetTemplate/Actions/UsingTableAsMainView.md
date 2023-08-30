@@ -24,6 +24,6 @@ Table
 
 [No post-processing of default parameters is necessary.]
 
-  1. Post-processing functionality #1
-  2. Post-processing functionality #2
-  3. Post-processing functionality #3
+  1. Post-processing functionality
+  2. Post-processing functionality
+  3. Post-processing functionality
