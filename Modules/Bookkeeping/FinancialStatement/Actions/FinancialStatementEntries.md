@@ -8,6 +8,8 @@ Tabuľka sa bude zobrazovať iba v detaili účtovnej závierky. Záznamy sa bud
 
 UI/Tree
 
+REVIEW DD: Po novom sa uz "UI" nepouziva. Malo by to byt iba "Tree" s tym, ze treba skontrolovat, ci take view vobec existuje.
+
 ## Default View Parameters
 
 * columns:
