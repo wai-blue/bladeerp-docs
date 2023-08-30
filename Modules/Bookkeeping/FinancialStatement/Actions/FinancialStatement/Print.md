@@ -10,6 +10,8 @@ Bookkeeping/FinancialStatement/Views/FinancialStatement
 
 ## Default View Parameters
 
+REVIEW DD: Nekonzistencia v zapise parametrov, ked porovnam napr. Action Bookkeeping/AccountingStatement/FinancialStatement/Add
+
 | Parameter | Values       |
 | --------- | ------------ |
 | id        | ID uzávierky |
