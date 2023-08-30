@@ -7,7 +7,7 @@ TODO: Doplnit linky na dokumentaciu, ked uz bude nahodena
 * [file]
 * [float]
 * [image]
-* [int](https://github.com/wai-blue/adios-docs/blob/main/Documentation/Database/Data%20Types/Integer.md)
+* [int](https://github.com/wai-blue/adios-docs/blob/main/Documentation/6.%20Database/Data%20Types/Integer.md)
 * [lookup] 
 * [password]
 * [table]
