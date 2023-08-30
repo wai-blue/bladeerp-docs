@@ -1,4 +1,4 @@
-# ContactAddress
+# Model Common/AddressBook/ContactAddress
 
 ## Introduction
 Model slúži na evidenciu adries. Všetky adresy môžu slúžiť ako doručovacie. Ako fakturačná slúži primárna adresa (tab: **com_contacts**, col: **id_com_contact_address**)
@@ -18,101 +18,47 @@ V modeli nie sú použité konštanty.
 | formTitleForEditing   | Contact Address                                                              |
 TODO: DD vyriešiť ako v ADIOSe urobiť lookupSqlValue v tomto prípade (viď. tabuľka Properties)
 
-## SQL Structure
-| Column         | Description       |  Type   | Length | NULL     | Default |
-| :------------- | :---------------- | :-----: | :----: | :------- | :-----: |
-| id             | ID záznamu        |   INT   |   8    | NOT NULL |         |
-| id_com_contact | ID kontaktu       |   INT   |   8    | NOT NULL |         |
-| is_active      | Aktívny kontakt?  | BOOLEAN |   1    | NOT NULL |    1    |
-| street_1       | Ulica - 1. riadok | VARCHAR |  200   | NULL     |         |
-| street_2       | Ulica - 2. riadok | VARCHAR |  200   | NULL     |         |
-| city           | Mesto             | VARCHAR |  200   | NULL     |         |
-| postal_code    | PSČ               | VARCHAR |   20   | NULL     |         |
-| id_com_country | ID krajiny        |   INT   |   8    | NULL     |         |
-| email          | Kontaktný Email   | VARCHAR |  100   | NULL     |         |
-| phone          | Kontaktný Telefón | VARCHAR |   20   | NULL     |         |
-| description    | Poznámka k adrese |  TEXT   |        | NULL     |         |
-| gps_longitude  | GPS dĺžka         | VARCHAR |  300   | NULL     |         |
-| gps_latitude   | GPS šírka         | VARCHAR |  300   | NULL     |         |
+## Data Structure
+| Column          | Title            | ADIOS Type | Length | Required | Notes                                    |
+| :-------------- | :--------------- | :--------: | :----: | :------: | :--------------------------------------- |
+| id              |                  |    int     |   8    |   TRUE   | ID záznamu                               |
+| id_created_by   | Created By       |   lookup   |   8    |   TRUE   | Reference to user who created the record |
+| create_datetime | Created Datetime |  datetime  |   8    |   TRUE   | When the record was created              |
+| id_updated_by   | Updated By       |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
+| update_datetime | Updated Datetime |  datetime  |   8    |   TRUE   | When the record was updated              |
+| id_com_contact  | Contact          |    int     |   8    |   TRUE   | ID kontaktu                              |
+| is_active       | Is Active?       |  boolean   |   1    |   TRUE   | Aktívny kontakt?                         |
+| street_1        | Street - 1. line |  varchar   |  200   |  FALSE   | Ulica - 1. riadok                        |
+| street_2        | Street - 2. line |  varchar   |  200   |  FALSE   | Ulica - 2. riadok                        |
+| city            | City             |  varchar   |  200   |  FALSE   | Mesto                                    |
+| postal_code     | ZIP              |  varchar   |   20   |  FALSE   | PSČ                                      |
+| id_com_country  | Country          |    int     |   8    |  FALSE   | ID krajiny                               |
+| email           | Contact Email    |  varchar   |  100   |  FALSE   | Kontaktný Email                          |
+| phone           | Contact Phone    |  varchar   |   20   |  FALSE   | Kontaktný Telefón                        |
+| description     | Comment          |    text    |        |  FALSE   | Poznámka k adrese                        |
+| gps_longitude   | GPS Longitude    |  varchar   |  300   |  FALSE   | GPS dĺžka                                |
+| gps_latitude    | GPS Latitude     |  varchar   |  300   |  FALSE   | GPS šírka                                |
+
+### ADIOS Parameters
+| Column    | Parameter   | Value                          |
+| :-------- | :---------- | ------------------------------ |
+| is_active | description | Is this address active or not? |
+|           | default     | 1                              |
+| street_1  | description | 1st row for a address data     |
+| street_2  | description | 2nd row for a address data     |
+
 ## Foreign Keys
-| Column         | Parent table  | Relation | OnUpdate | OnDelete |
-| :------------- | :------------ | :------: | -------- | -------- |
-| id_com_contact | com_contacts  |   1:N    | Cascade  | Restrict |
-| id_com_country | com_countries |   1:N    | Cascade  | Restrict |
+| Column         | Model                                                                                          | Relation | OnUpdate | OnDelete |
+| :------------- | :--------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_created_by  | ADIOS/Core/User                                                                                |   1:N    | Cascade  | Cascade  |
+| id_updated_by  | ADIOS/Core/User                                                                                |   1:N    | Cascade  | Cascade  |
+| id_com_contact | [App/Widgets/Common/AddressBook/Models/Contact](../../../Common/AddressBook/Models/Contact.md) |   1:N    | Cascade  | Restrict |
+| id_com_country | [App/Widgets/Common/AddressBook/Models/Country](../../../Common/AddressBook/Models/Country.md) |   1:N    | Cascade  | Restrict |
 ## Indexes
 | Name      |  Type   | Column + Order |
 | :-------- | :-----: | -------------: |
 | id        | PRIMARY |         id ASC |
 | is_active |  INDEX  | is_active DESC |
-
-## Columns
-* id_com_contact:
-  * required: true
-  * type: lookup
-  * title: Contact
-  * model: App/Widgets/Common/AddressBook/Models/Contact
-  * inputStyle:”select”
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: RESTRICT
-* is_active:
-  * required: true
-  * type: boolean
-  * title: Is active
-  * description: Is this address active or not?
-  * showColumn: true
-* street_1:
-  * required: false
-  * type: varchar
-  * title: Street 1st Row
-  * description: 1st row for a address data.
-  * byte_size: 200
-  * showColumn: true
-* street_2:
-  * required: true
-  * type: varchar
-  * title: Street 2nd Row
-  * description: 2ndrow for a address data.
-  * byte_size: 200
-  * showColumn: true
-* city:
-  * required: false
-  * type: varchar
-  * title: City
-  * byte_size: 200
-  * showColumn: true
-* postal_code:
-  * required: false
-  * type: varchar
-  * title: Postal Code
-  * byte_size: 20
-  * showColumn: true
-* id_com_country:
-  * required: false
-  * type: lookup
-  * title: Contry
-  * model: App/Widgets/Common/AddressBook/Models/Country
-  * inputStyle:”select”
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: RESTRICT
-* description:
-  * required: false
-  * type: text
-  * title: Description
-  * showColumn: false
-* gps_longitude:
-  * required: false
-  * type: varchar
-  * title: GPS Longitude
-  * byte_size: 300
-  * showColumn: false
-* gps_latitude:
-  * required: false
-  * type: varchar
-  * title: GPS Latitude
-  * byte_size: 300
-  * showColumn: false
 
 ## Callbacks
 

@@ -1,10 +1,10 @@
-# Contact
+# Model Common/AddressBook/Contact
 
 ## Introduction
 Model slúži na evidenciu a správu kontaktov. Ak v kontakte neexistuje referencia na spoločnosť (col: **id_com_contact_company** je NULL), v tom prípade sa jedná o kontakt na fyzickú osobu. Fyzická osoba (col: **id_com_contact_person**) slúži na evidenciu fyzickej osoby (nie spoločnosť) alebo primárnej kontaktnej osoby pre spoločnosť (napr. konateľ, obchodník a pod.). Primárna adresa kontaktu (cod: id_com_contact_address) slúži ako fakturačná adresa a všetky prepojené adresy (tab:com_contact_addresses, col: id_com_contact) môžu slúžiť ako doručovacie (aj vrátane fakturačnej). Všetky fyzické osoby (tab: **com_contact_persons**) a adresy (tab: **com_contact_addresses**), tie sú s kontaktom prepojené cez referenciu (viď. modely **ContactPerson** a **ContactAddress**).
 
 ## Constants
-V modeli nie sú použité konštanty.
+No constants are defined for this model.
 
 ## Properties
 | Property              | Value                        |
@@ -17,94 +17,45 @@ V modeli nie sú použité konštanty.
 | formTitleForInserting | New Contact                  |
 | formTitleForEditing   | Contact                      |
 
-## SQL Structure
-| Column                 | Description          |  Type   | Length | NULL     | Default |
-| :--------------------- | :------------------- | :-----: | :----: | :------- | :-----: |
-| id                     | ID záznamu           |   INT   |   8    | NOT NULL |         |
-| is_active              | Aktívny kontakt?     | BOOLEAN |   1    | NOT NULL |    1    |
-| id_com_contact_company | ID spoločnosti       |   INT   |   8    | NULL     |         |
-| id_com_contact_person  | ID fyzickej osoby    |   INT   |   8    | NOT NULL |         |
-| id_com_contact_address | ID primárnej adresy  |   INT   |   8    | NULL     |         |
-| id_bkp_currency        | ID používanej meny   |   INT   |   8    | NULL     |         |
-| language_code          | Preferovaný jazyk    | VARCHAR |   10   | NULL     |         |
-| website                | WEB stránka          | VARCHAR |  255   | NULL     |         |
-| description            | Poznámka ku kontaktu |  TEXT   |        | NULL     |         |
+## Data Structure
+| Column                 | Title            | ADIOS Type | Length | Required | Notes                                    |
+| :--------------------- | :--------------- | :--------: | :----: | :------: | :--------------------------------------- |
+| id                     |                  |    int     |   8    |   TRUE   | ID záznamu                               |
+| id_created_by          | Created By       |   lookup   |   8    |   TRUE   | Reference to user who created the record |
+| create_datetime        | Created Datetime |  datetime  |   8    |   TRUE   | When the record was created              |
+| id_updated_by          | Updated By       |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
+| update_datetime        | Updated Datetime |  datetime  |   8    |   TRUE   | When the record was updated              |
+| is_active              | Is Active        |  boolean   |   1    |   TRUE   | Aktívny kontakt?                         |
+| id_com_contact_company | Company          |    int     |   8    |  FALSE   | ID spoločnosti                           |
+| id_com_contact_person  | Person           |    int     |   8    |   TRUE   | ID fyzickej osoby                        |
+| id_com_contact_address | Primary Address  |    int     |   8    |  FALSE   | ID primárnej adresy                      |
+| id_bkp_currency        | Currency         |    int     |   8    |  FALSE   | ID používanej meny                       |
+| language_code          | Primary Language |  varchar   |   10   |  FALSE   | Preferovaný jazyk                        |
+| website                | WEB page         |  varchar   |  255   |  FALSE   | WEB stránka                              |
+| description            | Comment          |    TEXT    |        |  FALSE   | Poznámka ku kontaktu                     |
+
+### ADIOS Parameters
+| Column    | Parameter   | Value                          |
+| :-------- | :---------- | ------------------------------ |
+| is_active | description | Is this contact active or not? |
+|           | default     | 1                              |
+| website   | description | URL address of contact         |
 
 ## Foreign Keys
-| Column                 | Parent table          | Relation | OnUpdate | OnDelete |
-| :--------------------- | :-------------------- | :------: | -------- | -------- |
-| id_com_contact_company | com_contact_companies |   1:1    | Cascade  | Restrict |
-| id_com_contact_person  | com_contact_persons   |   1:1    | Cascade  | Restrict |
-| id_com_contact_address | com_contact_addresses |   1:1    | Cascade  | Restrict |
-| id_bkp_currency        | bkp_currencies        |   1:1    | Cascade  | Restrict |
+| Column                 | Model                                                                                                        | Relation | OnUpdate | OnDelete |
+| :--------------------- | :----------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_created_by          | ADIOS/Core/User                                                                                              |   1:N    | Cascade  | Cascade  |
+| id_updated_by          | ADIOS/Core/User                                                                                              |   1:N    | Cascade  | Cascade  |
+| id_com_contact_company | [App/Widgets/Common/AddressBook/Models/ContactCompany](../../../Common/AddressBook/Models/ContactCompany.md) |   1:1    | Cascade  | Restrict |
+| id_com_contact_person  | [App/Widgets/Common/AddressBook/Models/ContactPerson](../../../Common/AddressBook/Models/ContactPerson.md)   |   1:1    | Cascade  | Restrict |
+| id_com_contact_address | [App/Widgets/Common/AddressBook/Models/ContactAddress](../../../Common/AddressBook/Models/ContactAddress.md) |   1:1    | Cascade  | Restrict |
+| id_bkp_currency        | [App/Widgets/Bookkeeping/ExchangeRate/Models/Currency](../../../Bookkeeping/ExchangeRate/Models/Currency.md) |   1:1    | Cascade  | Restrict |
 
 ## Indexes
 | Name      |  Type   | Column + Order |
 | :-------- | :-----: | -------------: |
 | id        | PRIMARY |         id ASC |
 | is_active |  INDEX  | is_active DESC |
-
-## Columns
-* is_active:
-  * required: true
-  * type: boolean
-  * title: Is active
-  * description: Is contact active or not?
-  * showColumn: true
-* id_com_contact_person:
-  * required: false
-  * type: lookup
-  * title: Person
-  * model: App/Widgets/Common/AddressBook/Models/ContactCompany
-  * inputStyle:”select”
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: RESTRICT
-* id_com_contact_company:
-  * required: false
-  * type: lookup
-  * title: Company
-  * model: App/Widgets/Common/AddressBook/Models/ContactCompany
-  * inputStyle:”select”
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: RESTRICT
-* id_com_contact_address:
-  * required: false
-  * type: lookup
-  * title: Primary Address
-  * model: App/Widgets/Common/AddressBook/Models/ContactAddress
-  * inputStyle:”select”
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: RESTRICT
-* id_bkp_currency:
-  * required: false
-  * type: lookup
-  * title: Primary Currency
-  * model: App/Widgets/Bookkeeping/ExchangeRate/Models/Currency
-  * inputStyle:”select”
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: RESTRICT
-* language_code:
-  * required: true
-  * type: varchar
-  * title: Primary Language
-  * byte_size: 20
-  * showColumn: true
-* website:
-  * required: false
-  * type: varchar
-  * title: Website
-  * description: URL address of contact.
-  * byte_size: 255
-  * showColumn: false
-* description:
-  * required: false
-  * type: text
-  * title: Description
-  * showColumn: false
 
 ## Callbacks
 

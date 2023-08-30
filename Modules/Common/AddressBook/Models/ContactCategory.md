@@ -1,4 +1,4 @@
-# ContactCategory
+# Model Common/AddressBook/ContactCategory
 
 ## Introduction
 Model slúži na správu kategórií kontaktov.
@@ -19,16 +19,29 @@ V modeli nie sú použité konštanty.
 | formTitleForEditing   | Contact Category                       |
 
 
-## SQL Structure
-| Column      | Description |  Type   | Length | NULL     | Default |
-| :---------- | :---------- | :-----: | :----: | :------- | :-----: |
-| id          | ID záznamu  |   INT   |   8    | NOT NULL |         |
-| is_active   | Je aktívna? | BOOLEAN |   1    | NOT NULL |    1    |
-| name        | Názov       | VARCHAR |  100   | NOT NULL |         |
-| description | Poznámka    |  TEXT   |        | NULL     |         |
+## Data Structure
+| Column          | Title            | ADIOS Type | Length | Required | Notes                                    |
+| :-------------- | :--------------- | :--------: | :----: | :------: | :--------------------------------------- |
+| id              |                  |    int     |   8    |   TRUE   | ID záznamu                               |
+| id_created_by   | Created By       |   lookup   |   8    |   TRUE   | Reference to user who created the record |
+| create_datetime | Created Datetime |  datetime  |   8    |   TRUE   | When the record was created              |
+| id_updated_by   | Updated By       |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
+| update_datetime | Updated Datetime |  datetime  |   8    |   TRUE   | When the record was updated              |
+| is_active       | Is Active?       |  boolean   |   1    |   TRUE   | Je aktívna?                              |
+| name            | Name             |  varchar   |  100   |   TRUE   | Názov                                    |
+| description     | Description      |    text    |        |  FALSE   | Poznámka                                 |
+
+### ADIOS Parameters
+| Column    | Parameter   | Value                           |
+| :-------- | :---------- | ------------------------------- |
+| is_active | description | Is this category active or not? |
+|           | default     | 1                               |
 
 ## Foreign Keys
-Tabuľka neobsahuje cudzie kľúče.
+| Column        | Model           | Relation | OnUpdate | OnDelete |
+| :------------ | :-------------- | :------: | -------- | -------- |
+| id_created_by | ADIOS/Core/User |   1:N    | Cascade  | Cascade  |
+| id_updated_by | ADIOS/Core/User |   1:N    | Cascade  | Cascade  |
 
 ## Indexes
 | Name      |  Type   | Column + Order |
@@ -36,25 +49,6 @@ Tabuľka neobsahuje cudzie kľúče.
 | id        | PRIMARY |         id ASC |
 | is_active |  INDEX  | is_active DESC |
 | name      | UNIQUE  |       name ASC |
-
-## Columns
-* name:
-  * required: true
-  * type: varchar
-  * title: Category Name
-  * byte_size: 100
-  * showColumn: true
-* description:
-  * required: false
-  * type: text
-  * title: Description
-  * showColumn: true
-* is_active:
-  * required: true
-  * type: boolean
-  * title: Is Active
-  * description: Is the category active or not?
-  * showColumn: true
 
 ## Callbacks
 ### onBeforeInsert

@@ -1,4 +1,4 @@
-# ContactPerson
+# Model Common/AddressBook/ContactPerson
 
 ## Introduction
 Model slúži na evidenciu fyzických osôb a ich údajov
@@ -17,23 +17,32 @@ V modeli nie sú použité konštanty.
 | formTitleForInserting | New Person                                  |
 | formTitleForEditing   | Person                                      |
 
-## SQL Structure
-| Column         | Description      |  Type   | Length | NULL     | Default |
-| :------------- | :--------------- | :-----: | :----: | :------- | :-----: |
-| id             | ID záznamu       |   INT   |   8    | NOT NULL |         |
-| id_com_contact | ID kontaktu      |   INT   |   8    | NOT NULL |         |
-| first_name     | Krstné meno      | VARCHAR |  200   | NOT NULL |         |
-| last_name      | Priezvisko       | VARCHAR |  200   | NOT NULL |         |
-| middle_name    | Stretné meno     | VARCHAR |  200   | NULL     |         |
-| title_before   | Titul pred menom | VARCHAR |   50   | NULL     |         |
-| title_after    | Titul za menom   | VARCHAR |   50   | NULL     |         |
-| email          | Email            | VARCHAR |  100   | NOT NULL |         |
-| phone          | Telefón          | VARCHAR |   20   | NULL     |         |
+## Data Structure
+| Column          | Title            | ADIOS Type | Length | Required | Notes                                    |
+| :-------------- | :--------------- | :--------: | :----: | :------: | :--------------------------------------- |
+| id              |                  |    int     |   8    |   TRUE   | ID záznamu                               |
+| id_created_by   | Created By       |   lookup   |   8    |   TRUE   | Reference to user who created the record |
+| create_datetime | Created Datetime |  datetime  |   8    |   TRUE   | When the record was created              |
+| id_updated_by   | Updated By       |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
+| update_datetime | Updated Datetime |  datetime  |   8    |   TRUE   | When the record was updated              |
+| id_com_contact  | Contact          |    int     |   8    |   TRUE   | ID kontaktu                              |
+| first_name      | First Name       |  varchar   |  200   |   TRUE   | Krstné meno                              |
+| last_name       | Last Name        |  varchar   |  200   |   TRUE   | Priezvisko                               |
+| middle_name     | Middle Name      |  varchar   |  200   |  FALSE   | Stretné meno                             |
+| title_before    | Title Before     |  varchar   |   50   |  FALSE   | Titul pred menom                         |
+| title_after     | Title After      |  varchar   |   50   |  FALSE   | Titul za menom                           |
+| email           | Email            |  varchar   |  100   |   TRUE   | Email                                    |
+| phone           | Phone Number     |  varchar   |   20   |  FALSE   | Telefón                                  |
+
+### ADIOS Parameters
+No additional ADIOS parameters needs to be defined
 
 ## Foreign Keys
-| Column              | Parent table      | Relation | OnUpdate | OnDelete |
-| :------------------ | :---------------- | :------: | -------- | -------- |
-| id_com_contact      | com_contacts      |   1:N    | Cascade  | Cascade  |
+| Column         | Model                                                                                          | Relation | OnUpdate | OnDelete |
+| :------------- | :--------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_created_by  | ADIOS/Core/User                                                                                |   1:N    | Cascade  | Cascade  |
+| id_updated_by  | ADIOS/Core/User                                                                                |   1:N    | Cascade  | Cascade  |
+| id_com_contact | [App/Widgets/Common/AddressBook/Models/Contact](../../../Common/AddressBook/Models/Contact.md) |   1:N    | Cascade  | Cascade  |
 
 ## Indexes
 | Name        |  Type   |  Column + Order |
@@ -44,59 +53,6 @@ V modeli nie sú použité konštanty.
 | last_name   |  INDEX  |   last_name ASC |
 | email       | UNIQUE  |       email ASC |
 | phone       |  INDEX  |       phone ASC |
-
-## Columns
-* id_com_contact:
-  * required: true
-  * type: lookup
-  * title: Contact
-  * model: App/Widgets/Common/AddressBook/Models/Contact
-  * inputStyle:”select”
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: RESTRICT
-* first_name:
-  * required: true
-  * type: varchar
-  * title: Name
-  * byte_size: 200
-  * showColumn: true
-* last_name:
-  * required: true
-  * type: varchar
-  * title: Name
-  * byte_size: 200
-  * showColumn: true
-* middle_name:
-  * required: false
-  * type: varchar
-  * title: Name
-  * byte_size: 200
-  * showColumn: true
-* title_before:
-  * required: false
-  * type: varchar
-  * title: Name
-  * byte_size: 50
-  * showColumn: true
-* title_after:
-  * required: false
-  * type: varchar
-  * title: Name
-  * byte_size: 50
-  * showColumn: true
-* email:
-  * required: true
-  * type: varchar
-  * title: Name
-  * byte_size: 100
-  * showColumn: true
-* phone:
-  * required: false
-  * type: varchar
-  * title: Name
-  * byte_size: 20
-  * showColumn: true
 
 ## Callbacks
 

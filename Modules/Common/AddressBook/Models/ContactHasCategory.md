@@ -1,4 +1,4 @@
-# ContactHasCategory
+# Model Common/AddressBook/ContactHasCategory
 
 ## Introduction
 Model slúži na prepojenie kontaktov s kategóriami M:N.
@@ -17,40 +17,23 @@ V modeli nie sú použité konštanty.
 | formTitleForInserting | -                        |
 | formTitleForEditing   | -                        |
 
-## SQL Structure
-| Column                  | Description  | Type | Length | NULL     | Default |
-| :---------------------- | :----------- | :--: | :----: | -------- | :-----: |
-| id_com_contact          | ID kontaktu  | INT  |   8    | NOT NULL |         |
-| id_com_contact_category | ID kategórie | INT  |   8    | NOT NULL |         |
+## Data Structure
+| Column                  | Title    | ADIOS Type | Length | Required | Notes        |
+| :---------------------- | :------- | :--------: | :----: | :------: | :----------- |
+| id_com_contact          | Contact  |    int     |   8    |   TRUE   | ID kontaktu  |
+| id_com_contact_category | Category |    int     |   8    |   TRUE   | ID kategórie |
+
+### ADIOS Parameters
+No additional ADIOS parameters needs to be defined
 
 ## Foreign Keys
-| Column                  | Parent table         | Relation | OnUpdate | OnDelete |
-| :---------------------- | :------------------- | :------: | -------- | -------- |
-| id_com_contact          | com_contacts         |   1:N    | Cascade  | Cascade  |
-| id_com_contact_category | com_contact_category |   1:N    | Cascade  | Restrict |
+| Column                  | Model                                                                                          | Relation | OnUpdate | OnDelete |
+| :---------------------- | :--------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_com_contact          | [App/Widgets/Common/AddressBook/Models/Contact](../../../Common/AddressBook/Models/Contact.md) |   1:N    | Cascade  | Cascade  |
+| id_com_contact_category | com_contact_category                                                                           |   1:N    | Cascade  | Restrict |
 
 ## Indexes
-Pre túto tabuľku nie sú definované indexy.
-
-## Columns
-* id_com_contact:
-  * required: true
-  * type: lookup
-  * title: Contact
-  * model: App/Widgets/AddressBook/Models/Contact
-  * inputStyle:”select”
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: CASCADE
-* id_com_contact_category:
-  * required: true
-  * type: lookup
-  * title: Contact Category
-  * model: App/Widgets/AddressBook/Models/ContactCategory
-  * inputStyle:”select”
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: RESTRICT
+Model does not contain indexes.
 
 ## Callbacks
 

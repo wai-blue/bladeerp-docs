@@ -1,4 +1,4 @@
-# ContactCompany
+# Model Common/AddressBook/ContactCompany
 
 ## Introduction
 Model slúži na evidenciu firemných údajov pre kotakty z adresára.
@@ -17,18 +17,28 @@ V modeli nie sú použité konštanty.
 | formTitleForInserting | New Contact Company                               |
 | formTitleForEditing   | Contact Company                                   |
 
-## SQL Structure
-| Column          | Description          |  Type   | Length | NULL     | Default |
-| :-------------- | :------------------- | :-----: | :----: | :------- | :-----: |
-| id              | ID záznamu           |   INT   |   8    | NOT NULL |         |
-| company_name    | Názov spoločnosti    | VARCHAR |  150   | NOT NULL |   “”    |
-| business_number | IČO                  | VARCHAR |   50   | NULL     |         |
-| tax_number      | DIČ                  | VARCHAR |   50   | NULL     |         |
-| vat_number      | DIČ DPH              | VARCHAR |   50   | NULL     |         |
-| description     | Poznámka spoločnosti |  TEXT   |        | NULL     |         |
+## Data Structure
+| Column          | Title            | ADIOS Type | Length | Required | Notes                                    |
+| :-------------- | :--------------- | :--------: | :----: | :------: | :--------------------------------------- |
+| id              |                  |    int     |   8    |   TRUE   | ID záznamu                               |
+| id_created_by   | Created By       |   lookup   |   8    |   TRUE   | Reference to user who created the record |
+| create_datetime | Created Datetime |  datetime  |   8    |   TRUE   | When the record was created              |
+| id_updated_by   | Updated By       |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
+| update_datetime | Updated Datetime |  datetime  |   8    |   TRUE   | When the record was updated              |
+| company_name    | Company Name     |  varchar   |  150   |   TRUE   | Názov spoločnosti                        |
+| business_number | Business Number  |  varchar   |   50   |  FALSE   | IČO                                      |
+| tax_number      | Tax Number       |  varchar   |   50   |  FALSE   | DIČ                                      |
+| vat_number      | VAT Bumber       |  varchar   |   50   |  FALSE   | DIČ DPH                                  |
+| description     | Description      |    text    |        |  FALSE   | Poznámka spoločnosti                     |
+
+### ADIOS Parameters
+No additional ADIOS parameters needs to be defined.
 
 ## Foreign Keys
-Model neobsahuje cudzie kľúče.
+| Column        | Model           | Relation | OnUpdate | OnDelete |
+| :------------ | :-------------- | :------: | -------- | -------- |
+| id_created_by | ADIOS/Core/User |   1:N    | Cascade  | Cascade  |
+| id_updated_by | ADIOS/Core/User |   1:N    | Cascade  | Cascade  |
 
 ## Indexes
 | Name            |  Type   |      Column + Order |
@@ -37,37 +47,6 @@ Model neobsahuje cudzie kľúče.
 | company_name    | UNIQUE  |    company_name ASC |
 | business_number | UNIQUE  | business_number ASC |
 | tax_number      | UNIQUE  |      tax_number ASC |
-
-## Columns
-* company_name:
-  * required: true
-  * type: varchar
-  * title: Company Name
-  * byte_size: 150
-  * showColumn: true
-* business_number:
-  * required: false
-  * type: varchar
-  * title: Business Number
-  * byte_size: 50
-  * showColumn: true
-* tax_number:
-  * required: false
-  * type: varchar
-  * title: Tax Number
-  * byte_size: 50
-  * showColumn: true
-* vat_number:
-  * required: false
-  * type: varchar
-  * title: VAT Number
-  * byte_size: 50
-  * showColumn: true
-* description:
-  * required: false
-  * type: text
-  * title: Description
-  * showColumn: true
 
 ## Callbacks
 ### onBeforeInsert
