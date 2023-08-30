@@ -1,19 +1,23 @@
-# Common/AddressBook/Contact/AddPerson
+# Common/AddressBook/Contact/AddContactAsCompany
 
 ## Description
 
-Vytvorenie nového kontaktu - fyzická osoba.
+Create new contact - company. Natural person data are related to primary contact person from the company.
 
-## Main View
+## View
 
 Form
 
 ## Default View Parameters
 
 * model: App/Widgets/Common/AddressBook/Models/Contact
-* cssClass: -
 * displayMode: window
 * template:
+  * com_contact_companies.company_name
+  * com_contact_companies.business_number
+  * com_contact_companies.tax_number
+  * com_contact_companies.vat_number
+  * com_contact_companies.description
   * com_contact_persons.title_before
   * com_contact_persons.first_name
   * com_contact_persons.middle_name
@@ -26,16 +30,13 @@ Form
   * com_contact_addresses.city
   * com_contact_addresses.postal_code
   * com_contact_addresses.id_com_country
-    * select
-    * zoznam krajín (tab: **com_countries**)
   * com_contact_addresses.gps_longitude
   * com_contact_addresses.gps_latitude
-  * com_contact_addresses.description
-  
 * defaultValues:
   * is_active = TRUE
   * com_contact_addresses.is_active = TRUE
 
 ## Parameters Post-processing
 
-[No post-processing of default parameters is necessary.]
+  1. Create new contact and its related new company (`id_com_contact_company`), new person (`id_com_contact_person`) and new address (`id_com_contact_address`) all togeher (= in one transaction).
+  2. Search all available company data on FINSTAT WEB via API onChange of `com_contact_companies.business_number`

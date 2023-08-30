@@ -1,24 +1,18 @@
-# Common/AddressBook/Contact/AddCompany
+# Common/AddressBook/Contact/AddContactAsPerson
 
 ## Description
 
-Vytvorenie nového kontaktu - spoločnosť.
+Create new contact - natural person.
 
-## View
+## Main View
 
 Form
 
 ## Default View Parameters
 
 * model: App/Widgets/Common/AddressBook/Models/Contact
-* cssClass: -
 * displayMode: window
 * template:
-  * com_contact_companies.company_name
-  * com_contact_companies.business_number
-  * com_contact_companies.tax_number
-  * com_contact_companies.vat_number
-  * com_contact_companies.description
   * com_contact_persons.title_before
   * com_contact_persons.first_name
   * com_contact_persons.middle_name
@@ -31,16 +25,14 @@ Form
   * com_contact_addresses.city
   * com_contact_addresses.postal_code
   * com_contact_addresses.id_com_country
-    * select
-    * zoznam krajín (tab: **com_countries**)
   * com_contact_addresses.gps_longitude
   * com_contact_addresses.gps_latitude
-  * com_contact_addresses.description
-  
+  * com_contact_addresses.description  
 * defaultValues:
+  * id_com_contact_company = NULL
   * is_active = TRUE
   * com_contact_addresses.is_active = TRUE
 
 ## Parameters Post-processing
 
-[No post-processing of default parameters is necessary.]
+  1. Create new contact and its related new person (`id_com_contact_person`) and new address (`id_com_contact_address`) all togeher (= in one transaction).
