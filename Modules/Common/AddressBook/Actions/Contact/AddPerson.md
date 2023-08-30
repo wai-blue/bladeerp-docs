@@ -8,9 +8,10 @@ Vytvorenie nového kontaktu - fyzická osoba.
 
 Form
 
-## Parameters
+## Default View Parameters
 
-* cssClass: 
+* model: App/Widgets/Common/AddressBook/Models/Contact
+* cssClass: -
 * displayMode: window
 * template:
   * com_contact_persons.title_before
@@ -20,9 +21,6 @@ Form
   * com_contact_persons.title_after
   * com_contact_persons.email
   * com_contact_persons.phone
-  * com_contact_addresses.recepient
-    * hidden
-    * vložiť hodnotu CONCAT(com_contact_persons.first_name, ' ', com_contact_persons.middle_name, ' ' com_contact_persons.last_name)
   * com_contact_addresses.street_1
   * com_contact_addresses.street_2
   * com_contact_addresses.city
@@ -37,3 +35,7 @@ Form
 * defaultValues:
   * is_active = TRUE
   * com_contact_addresses.is_active = TRUE
+
+## Parameters Post-processing
+
+[No post-processing of default parameters is necessary.]

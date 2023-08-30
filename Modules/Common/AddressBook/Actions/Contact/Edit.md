@@ -6,14 +6,13 @@ Detail kontaktu.
 
 ## Main View
 
-Tabs
+Form
 
 ## Parameters
 
 * tabs:
-  * A:
+  * Contact Detail:
     * view: Form
-    * name: Contact Detail
     * template:
       * com_contact_companies.company_name
         * hidden IF person
@@ -32,10 +31,7 @@ Tabs
       * com_contact_persons.title_after
       * com_contact_persons.email
       * com_contact_persons.phone
-      * com_contact_addresses.recepient
-        * hidden
-        * vložiť hodnotu CONCAT(com_contact_persons.first_name, ' ', com_contact_persons.middle_name, ' ' com_contact_persons.last_name)
-      * com_contact_addresses.street_1
+      * com_contact_addresses.street
       * com_contact_addresses.street_2
       * com_contact_addresses.city
       * com_contact_addresses.postal_code
@@ -45,15 +41,15 @@ Tabs
       * com_contact_addresses.gps_longitude
       * com_contact_addresses.gps_latitude
       * com_contact_addresses.description
-  * B:
+  * Persons:
     * action: Widgets/Common/AddressBook/ContactPersons
     * parameters:
       * idContact = $data[‘id’]
-  * C:
+  * Addresses:
     * action: Widgets/Common/AddressBook/ContactAddresses
     * parameters:
       * idContact = $data[‘id’]
-  * D:
+  * Categories:
     * action: Widgets/Common/AddressBook/ContactCategories
     * parameters:
       * idContact = $data[‘id’]

@@ -16,7 +16,7 @@ V modeli nie sú použité konštanty.
 | tableTitle            | Contact Addresses                                                            |
 | formTitleForInserting | New Contact Address                                                          |
 | formTitleForEditing   | Contact Address                                                              |
-TODO: Ako riešiť lookupSqlValue v tomto prípade
+TODO: DD vyriešiť ako v ADIOSe urobiť lookupSqlValue v tomto prípade (viď. tabuľka Properties)
 
 ## SQL Structure
 | Column         | Description       |  Type   | Length | NULL     | Default |
@@ -24,14 +24,13 @@ TODO: Ako riešiť lookupSqlValue v tomto prípade
 | id             | ID záznamu        |   INT   |   8    | NOT NULL |         |
 | id_com_contact | ID kontaktu       |   INT   |   8    | NOT NULL |         |
 | is_active      | Aktívny kontakt?  | BOOLEAN |   1    | NOT NULL |    1    |
-| email          | Kontaktný Email   | VARCHAR |  100   | NULL     |         |
-| phone          | Kontaktný Telefón | VARCHAR |   20   | NULL     |         |
-| recepient      | Adresát           | VARCHAR |  400   | NOT NULL |         |
 | street_1       | Ulica - 1. riadok | VARCHAR |  200   | NULL     |         |
 | street_2       | Ulica - 2. riadok | VARCHAR |  200   | NULL     |         |
 | city           | Mesto             | VARCHAR |  200   | NULL     |         |
 | postal_code    | PSČ               | VARCHAR |   20   | NULL     |         |
 | id_com_country | ID krajiny        |   INT   |   8    | NULL     |         |
+| email          | Kontaktný Email   | VARCHAR |  100   | NULL     |         |
+| phone          | Kontaktný Telefón | VARCHAR |   20   | NULL     |         |
 | description    | Poznámka k adrese |  TEXT   |        | NULL     |         |
 | gps_longitude  | GPS dĺžka         | VARCHAR |  300   | NULL     |         |
 | gps_latitude   | GPS šírka         | VARCHAR |  300   | NULL     |         |
@@ -45,7 +44,6 @@ TODO: Ako riešiť lookupSqlValue v tomto prípade
 | :-------- | :-----: | -------------: |
 | id        | PRIMARY |         id ASC |
 | is_active |  INDEX  | is_active DESC |
-| recepient |  INDEX  |  recepient ASC |
 
 ## Columns
 * id_com_contact:
@@ -62,13 +60,6 @@ TODO: Ako riešiť lookupSqlValue v tomto prípade
   * type: boolean
   * title: Is active
   * description: Is this address active or not?
-  * showColumn: true
-* recepient:
-  * required: true
-  * type: varchar
-  * title: Recepient
-  * description: Full name of recepient.
-  * byte_size: 400
   * showColumn: true
 * street_1:
   * required: false
