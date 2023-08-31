@@ -47,15 +47,18 @@ REVIEW DD: upravene pocas telefonatu, treba skontrolovat
           * model: Widgets/Products/Models/ProductDomainAssignment",
           * initialTags: ...
     * Persons
-      * action: Widgets/Common/AddressBook/Models/ContactPerson
+      * action: Widgets/Common/AddressBook/Actions/ContactPersons
+TODO: JG doplniť neexistujúcu akciu
       * parameters:
         * idContact = $data[‘id’]
     * Addresses
-      * action: Widgets/Common/AddressBook/Models/ContactAddress
+      * action: Widgets/Common/AddressBook/Actions/ContactAddresses
+TODO: JG doplniť neexistujúcu akciu
       * parameters:
         * idContact = $data[‘id’]
     * Categories
-      * action: Widgets/Common/AddressBook/Models/ContactCategory
+      * action: Widgets/Common/AddressBook/Actions/ContactCategories
+TODO: JG doplniť neexistujúcu akciu
       * parameters:
         * idContact = $data[‘id’]
 
