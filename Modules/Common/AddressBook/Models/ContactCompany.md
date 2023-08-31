@@ -7,15 +7,15 @@ Model slúži na evidenciu firemných údajov pre kotakty z adresára.
 V modeli nie sú použité konštanty.
 
 ## Properties
-| Property              | Value                                             |
-| :-------------------- | :------------------------------------------------ |
-| isCrossTable          | FALSE                                             |
-| sqlName               | com_contact_companies                             |
-| urlBase               | common/address-book/contact-companies             |
-| lookupSqlValue        | concat(company_name, business_number, tax_number) |
-| tableTitle            | Contact Companies                                 |
-| formTitleForInserting | New Contact Company                               |
-| formTitleForEditing   | Contact Company                                   |
+| Property              | Value                                                         |
+| :-------------------- | :------------------------------------------------------------ |
+| isCrossTable          | FALSE                                                         |
+| sqlName               | com_contact_companies                                         |
+| urlBase               | common/address-book/contact-companies                         |
+| lookupSqlValue        | concat(company_name, ', ', business_number, ', ', tax_number) |
+| tableTitle            | Contact Companies                                             |
+| formTitleForInserting | New Contact Company                                           |
+| formTitleForEditing   | Contact Company                                               |
 
 ## Data Structure
 | Column          | Title            | ADIOS Type | Length | Required | Notes                                    |
