@@ -22,3 +22,9 @@ Table
   * `id_com_contact_company:LOOKUP`.company_name ASC
   * `id_com_contact_person:LOOKUP`.last_name ASC
   * `id_com_contact_person:LOOKUP`.first_name ASC
+* rowButtons:
+  * deactivate
+
+### rowButtons.deactivate
+
+Po stlaceni tlacitka sa nastavi `is_active` daneho kontaktu na false.

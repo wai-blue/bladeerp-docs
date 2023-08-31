@@ -20,24 +20,28 @@ No constants are defined for this model.
 REVIEW DD: Po novom bude potrebne definovat aj properties `crud/brows/action`, `crud/add/action` a `crud/edit/action`.
 
 ## Data Structure
-| Column                 | Title            | ADIOS Type | Length | Required | Notes                                    |
-| :--------------------- | :--------------- | :--------: | :----: | :------: | :--------------------------------------- |
-| id                     |                  |    int     |   8    |   TRUE   | ID záznamu                               |
-| id_created_by          | Created By       |   lookup   |   8    |   TRUE   | Reference to user who created the record |
-| create_datetime        | Created Datetime |  datetime  |   8    |   TRUE   | When the record was created              |
-| id_updated_by          | Updated By       |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
-| update_datetime        | Updated Datetime |  datetime  |   8    |   TRUE   | When the record was updated              |
-| is_active              | Is Active        |  boolean   |   1    |   TRUE   | Aktívny kontakt?                         |
-| id_com_contact_company | Company          |    int     |   8    |  FALSE   | ID spoločnosti                           |
-| id_com_contact_person  | Person           |    int     |   8    |   TRUE   | ID fyzickej osoby                        |
-| id_com_contact_address | Primary Address  |    int     |   8    |  FALSE   | ID primárnej adresy                      |
-| id_bkp_currency        | Currency         |    int     |   8    |  FALSE   | ID používanej meny                       |
-| language_code          | Primary Language |  varchar   |   10   |  FALSE   | Preferovaný jazyk                        |
-| website                | WEB page         |  varchar   |  255   |  FALSE   | WEB stránka                              |
-| description            | Comment          |    TEXT    |        |  FALSE   | Poznámka ku kontaktu                     |
+| Column                  | Title                   | ADIOS Type | Length | Required | Notes                                    |
+| :---------------------- | :---------------------- | :--------: | :----: | :------: | :--------------------------------------- |
+| id                      |                         |    int     |   8    |   TRUE   | ID záznamu                               |
+| id_created_by           | Created By              |   lookup   |   8    |   TRUE   | Reference to user who created the record |
+| create_datetime         | Created Datetime        |  datetime  |   8    |   TRUE   | When the record was created              |
+| id_updated_by           | Updated By              |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
+| update_datetime         | Updated Datetime        |  datetime  |   8    |   TRUE   | When the record was updated              |
+| is_active               | Is Active               |  boolean   |   1    |   TRUE   | Aktívny kontakt?                         |
+| id_com_contact_company  | Company                 |    int     |   8    |  FALSE   | ID spoločnosti                           |
+| id_com_contact_person   | Person                  |    int     |   8    |   TRUE   | ID fyzickej osoby                        |
+| id_com_contact_address  | Primary Address         |    int     |   8    |  FALSE   | ID primárnej adresy                      |
+| id_bkp_currency         | Currency                |    int     |   8    |  FALSE   | ID používanej meny                       |
+| language_code           | Primary Language        |  varchar   |   10   |  FALSE   | Preferovaný jazyk                        |
+| website                 | WEB page                |  varchar   |  255   |  FALSE   | WEB stránka                              |
+| notes                   | Notes                   |    text    |        |  FALSE   | Poznámka ku kontaktu                     |
+| is_company              | Is the contact company? |  boolean   |   1    |  FALSE   |                                          |
+| company_name            | Company Name            |  varchar   |  150   |   TRUE   | Názov spoločnosti                        |
+| company_business_number | Business Number         |  varchar   |   50   |  FALSE   | IČO                                      |
+| company_tax_number      | Tax Number              |  varchar   |   50   |  FALSE   | DIČ                                      |
+| company_vat_number      | VAT Bumber              |  varchar   |   50   |  FALSE   | DIČ DPH                                  |
 
 REVIEW DD: id_created_by a podobne - bude sa pouzivad json 'record_info'
-REVIEW DD: Description, Comment alebo Poznamka? Zjednotit pls, uz som sa s tymto stretol viackrat.
 
 ### ADIOS Parameters
 | Column    | Parameter   | Value                          |

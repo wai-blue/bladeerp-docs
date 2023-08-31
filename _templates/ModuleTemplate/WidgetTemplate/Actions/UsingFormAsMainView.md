@@ -16,8 +16,19 @@ Form
 * cssClass: inline
 * displayMode: (inline|window|desktop)
 * template:
-  * name
-  * closing_date 
+  * full_name
+  * closing_date
+  * ADIOS/Core/Views/Inputs/Tags:
+    * title: Categories of the contact
+    * description: In what categories the contact is?
+    * inputParams:
+      * model: Widgets/Products/Models/ProductDomainAssignment
+  * App/Core/Views/Inputs/MyCustomInput:
+    * title: Some custom input
+    * description: This input is not a part of ADIOS, it's in the Blade's Core
+    * inputParams:
+      * param1: value1
+      * param2: value2
 * defaultValues:
   * id_user = Predvolený je aktuálny používateľ
   * transaction_date = Predvolený je posledný dátum z účtovného obdobia

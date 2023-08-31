@@ -28,6 +28,18 @@
 | tableTitle            | [Table Title]                             |
 | formTitleForInserting | [New …]                                   |
 | formTitleForEditing   | [Model Name]                              |
+| crossTableAssignments | ...                                       |
+
+Priklad crossTableAssignments:
+{
+  "contactHasCategory": {
+    "assignmentModel": "App/Widgets/AddressBook/ContactHasCategory",
+    "masterKeyColumn": "id_com_contact",
+    "optionKeyColumn": "id_com_contact_category",
+  }
+}
+
+TODO: dopracovat priklad pre crossTableAssignments
 
 ## Data Structure
 
