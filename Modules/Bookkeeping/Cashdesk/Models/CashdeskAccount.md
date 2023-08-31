@@ -1,8 +1,5 @@
 # Model Bookkeeping/Cashdesk/CashdeskAccount
 
-NOTE: DD pretukal.
-TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
-
 ## Introduction
 
 Zoznam pokladní. (pokladnicnych uctov)
@@ -13,23 +10,26 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                     |
-| :-------------------- | :------------------------ |
-| sqlName               | bkp_cashdesk_accounts     |
+| Property              | Value                         |
+| :-------------------- | :---------------------------- |
+| sqlName               | bkp_cashdesk_accounts         |
 | urlBase               | bookkeeping/cashdesk/accounts |
-| lookupSqlValue        | {%TABLE%}.name            |
-| tableTitle            | Cashdesk Accounts         |
-| formTitleForInserting | New Cashdesk Account      |
-| formTitleForEditing   | Cashdesk Account          |
-| formAddButtonText     | Add Account               |
-| formSaveButtonText    | Update Account            |
+| lookupSqlValue        | {%TABLE%}.name                |
+| tableTitle            | Cashdesk Accounts             |
+| formTitleForInserting | New Cashdesk Account          |
+| formTitleForEditing   | Cashdesk Account              |
+| formAddButtonText     | Add Account                   |
+| formSaveButtonText    | Update Account                |
+| crud/browse/action    | Cashdesk/Accounts             |
+| crud/add/action       | Cashdesk/Account/AddOrEdit    |
+| crud/edit/action      | Cashdesk/Account/AddOrEdit    |
 
 ## Data Structure
 | Column              | Title            | ADIOS Type | Length | Required | Notes                                                    |
 | :------------------ | ---------------- | :--------: | :----: | :------: | :------------------------------------------------------- |
 | id                  | ID               |    int     |   11   |   TRUE   | Jedinečné ID záznamu                                     |
-| name                | Name             |  varchar   |  100   |   TRUE   | Názov pokladne                                           |
-| acronym             | Acronym          |  varchar   |   5    |   TRUE   | Skratka pokladne                                         |
+| account_name        | Name             |  varchar   |  100   |   TRUE   | Názov pokladnicneho uctu                                 |
+| account_acronym     | Acronym          |  varchar   |   5    |   TRUE   | Skratka pre pokladnicny ucet                             |
 | id_bkp_currency     | Currency         |   lookup   |   11   |   TRUE   | ID meny v ktorej je pokladňa vedená                      |
 | id_bkp_book_account | Analytic Account |   lookup   |   11   |   TRUE   | ID analytického účtu na ktorom je pokladňa vedená        |
 | id_user             | Cashier          |   lookup   |   11   |   TRUE   | ID pokladníka, ktorý je za pokladňu zodpovedný           |
@@ -55,8 +55,9 @@ No additional ADIOS parameters needs to be defined.
 | id_bkp_currency     |  INDEX  | id_bkp_cashdesk_account ASC |
 | id_bkp_book_account |  INDEX  | id_bkp_cashdesk_account ASC |
 | id_user             |  INDEX  | id_bkp_cashdesk_account ASC |
-| name                |  INDEX  |                    name ASC |
 | is_open             |  INDEX  |                is_open DESC |
+| account_name        | UNIQUE  |            account_name ASC |
+| account_acronym     | UNIQUE  |         account_acronym ASC |
 
 ## Callbacks
 
@@ -78,7 +79,7 @@ Not used.
 
 ### onBeforeDelete
 
-Účet na ktorý obsahuje záznamy v tabuľke bkp_cashdesk_transactions nie je možné vymazať.
+Účet, ktorý obsahuje záznamy v tabuľke bkp_cashdesk_transactions, nie je možné vymazať.
 
 ### onAfterDelete
 

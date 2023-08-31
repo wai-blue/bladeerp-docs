@@ -1,8 +1,5 @@
 # Model Bookkeeping/Bank/BankAccountStatement
 
-NOTE: DD pretukal.
-TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
-
 ## Introduction
 
 Táto tabuľka slúži na ukladanie závierok na bankových účtoch.

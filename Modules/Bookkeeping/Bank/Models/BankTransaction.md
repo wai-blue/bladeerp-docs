@@ -60,7 +60,7 @@ No additional ADIOS parameters needs to be defined.
 | id_user                  | ADIOS/Core/User                                                                                               |   1:N    | Cascade  | Restrict |
 | id_bkp_transaction       | bkp_transaction                                                                                               |   1:N    | Cascade  | Restrict |
 
-TODO: dokoncit com_numeric_sequences a com_address
+REVIEW DD: dokoncit com_numeric_sequences a com_address
 REVIEW DD: bkp_transaction - z nazvu tabulky nie je presne jasny model
 
 ### Indexes

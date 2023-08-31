@@ -3,6 +3,7 @@
 ## Description
 
 Zoznam všetkých pokladničných účtov
+
 ## Main View
 
 Table
@@ -10,10 +11,10 @@ Table
 ## Parameters
 
 * columns:
-  * name
-  * acronym
-  * bkp_currency.name
-  * bkp_book_account.name
-  * adios_user
+  * account_name
+  * account_acronym
+  * id_bkp_currency
+  * id_bkp_book_account
+  * id_user
   * is_open
-* orderBy: name ASC
+* orderBy: account_name ASC

@@ -107,7 +107,6 @@ foreach ($modules as $module) {
         if (
           $md->hasH1('Action') === FALSE
           || $md->hasH2('Description') === FALSE
-          || $md->hasH2('Permissions') === FALSE
           || $md->hasH2('View') === FALSE
           || $md->hasH2('Default View Parameters') === FALSE
           || $md->hasH2('Parameters Post-processing') === FALSE

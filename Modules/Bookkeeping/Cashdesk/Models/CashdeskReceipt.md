@@ -1,8 +1,5 @@
 # Model Bookkeeping/Cashdesk/CashdeskReceipt
 
-NOTE: DD pretukal.
-TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
-
 ## Introduction
 
 Pohyby na pokladnicnych uctoch.

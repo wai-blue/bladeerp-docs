@@ -1,8 +1,5 @@
 # Model Bookkeeping/Cashdesk/CashdeskAccountStatement
 
-NOTE: DD pretukal.
-TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
-
 ## Introduction
 
 Závierky na pokladničných účtoch.
@@ -46,10 +43,10 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column                  | Model                                                                                                      | Relation | OnUpdate | OnDelete |
-| :---------------------- | :--------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_bkp_cashdesk_account | [App/Widgets/Bookkeeping/Cashdesk/Models/CashdeskAccount](../../../Bookkeeping/Cashdesk/Models/CashdeskAccount.md) |   1:N    | Cascade  | Restrict |
-| id_user                 | ADIOS/Core/User                                                                                            |   1:N    | Cascade  | Restrict |
+| Column                  | Model                                                   | Relation | OnUpdate | OnDelete |
+| :---------------------- | :------------------------------------------------------ | :------: | -------- | -------- |
+| id_bkp_cashdesk_account | App/Widgets/Bookkeeping/Cashdesk/Models/CashdeskAccount |   1:N    | Cascade  | Restrict |
+| id_user                 | ADIOS/Core/User                                         |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

@@ -2,9 +2,7 @@
 
 ## Description
 
-Zoznam bankových závierok
-
-REVIEW DD: Popis je copy&paste z Google Docs. Ale je to spravne?
+Zoznam pokladnicnych závierok
 
 ## Main View
 

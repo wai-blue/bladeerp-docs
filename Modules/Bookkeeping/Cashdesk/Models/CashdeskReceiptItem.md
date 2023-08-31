@@ -30,8 +30,6 @@ No constants are defined for this model.
 | id_bkp_book_account     | Book Account     |   lookup   |   11   |   TRUE   | ID účtu z účtovnej osnovy |
 | amount                  | Amount           |  decimal   |  15,2  |  FALSE   | Suma položky transakcie   |
 
-REVIEW DD: id_bkp_cashdesk_document premenovany na id_bkp_cashdesk_receipt
-
 ### ADIOS Parameters
 
 No additional ADIOS parameters needs to be defined.
