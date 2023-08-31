@@ -32,7 +32,7 @@ No constants are defined for this model.
 | id_bkp_cashdesk_account  | Cashdesk Account   |   lookup   |   11   |   TRUE   | ID pokladne                                   |
 | id_bkp_accounting_period | Account Period     |   lookup   |   11   |   TRUE   | ID účtovného obdobia                          |
 | id_com_numeric_sequence  | Document Type      |   lookup   |   11   |   TRUE   | ID typu dokumentu                             |
-| id_com_address           | Partner            |   lookup   |   11   |   TRUE   | ID adresára                                   |
+| id_com_contact           | Partner            |   lookup   |   11   |   TRUE   | ID adresára                                   |
 | id_user                  | User               |   lookup   |   11   |   TRUE   | ID užívateľa, ktorý doklad vystavil           |
 | issue_date               | Issue Date         |    date    |   8    |   TRUE   | Dátum vystavenia pokladničného dokladu        |
 | receipt_number           | Number             |    int     |   8    |   TRUE   | Poradové číslo dokladu                        |
@@ -56,7 +56,7 @@ No additional ADIOS parameters needs to be defined.
 | id_bkp_cashdesk_account  | App/Widgets/Bookkeeping/Cashdesk/Models/CashdeskAccount  |   1:N    | Cascade  | Restrict |
 | id_bkp_accounting_period | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod |   1:N    | Cascade  | Restrict |
 | id_com_numeric_sequence  | com_numeric_sequence                                     |   1:N    | Cascade  | Restrict |
-| id_com_address           | com_address                                              |   1:N    | Cascade  | Restrict |
+| id_com_contact           | com_contact                                              |   1:N    | Cascade  | Restrict |
 | id_user                  | ADIOS/Core/User                                          |   1:N    | Cascade  | Restrict |
 | id_bkp_currency          | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency     |   1:N    | Cascade  | Restrict |
 | id_bkp_receipt           | bkp_receipt                                              |   1:N    | Cascade  | Restrict |
@@ -74,7 +74,7 @@ REVIEW DD: Neviem, aky model pre id_bkp_receipt.
 | id_bkp_cashdesk_account                                              |  INDEX  |   id_bkp_cashdesk_account ASC |
 | id_bkp_accounting_period                                             |  INDEX  |  id_bkp_accounting_period ASC |
 | id_com_numeric_sequence                                              |  INDEX  |   id_com_numeric_sequence ASC |
-| id_com_address                                                       |  INDEX  |            id_com_address ASC |
+| id_com_contact                                                       |  INDEX  |            id_com_contact ASC |
 | id_user                                                              |  INDEX  |                   id_user ASC |
 | id_bkp_currency                                                      |  INDEX  |           id_bkp_currency ASC |
 | id_bkp_receipt                                                       |  INDEX  |            id_bkp_receipt ASC |

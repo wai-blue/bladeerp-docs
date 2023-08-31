@@ -14,7 +14,7 @@ Form
   * id_bkp_bank_account
   * id_bkp_accounting_period
   * id_bkp_document_type
-  * id_com_address
+  * id_com_contact
   * date
   * amount
   * description

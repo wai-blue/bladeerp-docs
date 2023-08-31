@@ -25,7 +25,7 @@ No constants are defined for this model.
 | :-------------------------------------- | -------------------------------- | :--------: | :----: | :------: | :------------------------------------------------ |
 | id                                      |                                  |    int     |   8    | NOT NULL | Jedinečné ID záznamu                              |
 | id_bkp_credit_note_state                | State                            |   lookup   |   8    | NOT NULL | ID stavu dobropisu                                |
-| id_com_address                          | Customer                         |   lookup   |   8    | NOT NULL | ID odberateľa                                     |
+| id_com_contact                          | Customer                         |   lookup   |   8    | NOT NULL | ID odberateľa                                     |
 | id_bkp_accounting_period                | Accounting Period                |   lookup   |   8    | NOT NULL | ID účtovného obdobia                              |
 | is_accounted                            | Is Accounted                     |  boolean   |   1    |   NULL   | Je dobropis zaúčtovaný                            |
 | supplier                                | Supplier                         |    json    |        | NOT NULL | Kópia údajov o predajcovi uložené v JSON formáte  |
@@ -59,7 +59,7 @@ REVIEW DD: Stlpec comment ma preco title Description? Navrhujem zjednotit - bud 
 | Column                                  | Model                                                     | Relation | OnUpdate | OnDelete |
 | :-------------------------------------- | :-------------------------------------------------------- | :------: | -------- | -------- |
 | id_bkp_credit_note_state                | App/Widgets/Bookkeeping/CreditNote/Models/CreditNoteState |   1:N    | Cascade  | Restrict |
-| id_com_address                          | App/Widgets/Common/AddressBook/???                        |   1:N    | Cascade  | Restrict |
+| id_com_contact                          | App/Widgets/Common/AddressBook/???                        |   1:N    | Cascade  | Restrict |
 | id_com_numeric_sequence                 | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
 | id_com_numeric_sequence_variable_symbol | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
 | id_bkp_accounting_period                | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod  |   1:N    | Cascade  | Restrict |
@@ -75,7 +75,7 @@ REVIEW DD: Stlpec comment ma preco title Description? Navrhujem zjednotit - bud 
 | delivery_date                           |  INDEX  |                           delivery_date ASC |
 | due_date                                |  INDEX  |                                due_date ASC |
 | id_bkp_credit_note_state                |  INDEX  |                id_bkp_credit_note_state ASC |
-| id_com_address                          |  INDEX  |                          id_com_address ASC |
+| id_com_contact                          |  INDEX  |                          id_com_contact ASC |
 | id_com_numeric_sequence                 |  INDEX  |                 id_com_numeric_sequence ASC |
 | id_com_numeric_sequence_variable_symbol |  INDEX  | id_com_numeric_sequence_variable_symbol ASC |
 | id_bkp_accounting_period                |  INDEX  |                id_bkp_accounting_period ASC |
@@ -87,7 +87,7 @@ REVIEW DD: Stlpec comment ma preco title Description? Navrhujem zjednotit - bud 
 
 ### onBeforeInsert
 
-Ak ešte nie je priradený sekvenčný kód (col: **sequence_code=NULL**) a aktuálny stav (col: **id_bkp_credit_note_state**) ho žiada priradiť (tab: **bkp_clame_states**, col: **is_sequence_code_assigned=1**), potom je nutné v uvedenom poradí nastaviť:
+Ak ešte nie je priradený sekvenčný kód (col: **sequence_code=NULL**) a aktuálny stav (col: **id_bkp_credit_note_state**) ho žiada priradiť (tab: **bkp_clame_states**, col: **is_set_sequence_code=1**), potom je nutné v uvedenom poradí nastaviť:
 
 1. hodnotu aktívneho číselného radu pre dobropisy (col: **id_com_numeric_sequence**)
 2. hodnotu pre sekvenčné označenie (col: **sequence_code**) zavolaním metódy **getNextSequenceNumber()** (model: **NumericSequences**) s ID zvoleného číselného radu (col: **id_com_numeric_sequence**).
@@ -100,7 +100,7 @@ TODO: Na Google docs sa na ňom ešte pracuje.
 
 ### onBeforeUpdate
 
-* Ak ešte nie je priradený sekvenčný kód (col: **sequence_code=NULL**) a aktuálny stav (col: **id_bkp_credit_note_state**) ho žiada priradiť (tab: **bkp_clame_states**, col: **is_sequence_code_assigned=1**), potom vykonať kroky popísané v **3.2.6.1. onBeforeInsert**.
+* Ak ešte nie je priradený sekvenčný kód (col: **sequence_code=NULL**) a aktuálny stav (col: **id_bkp_credit_note_state**) ho žiada priradiť (tab: **bkp_clame_states**, col: **is_set_sequence_code=1**), potom vykonať kroky popísané v **3.2.6.1. onBeforeInsert**.
 * Zakázať zmeny, ak ich daný stav nepovoľuje - tabuľka **bkp_credit_note_states** - col: **is_allowed_update**
 
 ### onAfterUpdate

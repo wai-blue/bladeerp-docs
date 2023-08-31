@@ -30,7 +30,7 @@ No constants are defined for this model.
 | id_bkp_bank_account      | Name            |   lookup   |   11   |   TRUE   | ID bankového účtu                             |
 | id_bkp_accounting_period | Account Period  |   lookup   |   11   |   TRUE   | ID účtovného obdobia                          |
 | id_com_numeric_sequence  | Document Type   |   lookup   |   11   |   TRUE   | ID číselnej rady                              |
-| id_com_address           | Partner         |   lookup   |   11   |   TRUE   | ID adresára                                   |
+| id_com_contact           | Partner         |   lookup   |   11   |   TRUE   | ID kontaktu                                   |
 | id_user                  | User            |   lookup   |   11   |   TRUE   | ID užívateľa, ktorý doklad vystavil           |
 | issue_date               | Issue Date      |    date    |   8    |   TRUE   | Dátum vystavenia dokladu                      |
 | transaction_number       | Number          |    int     |   8    |   TRUE   | Poradové číslo dokladu                        |
@@ -56,11 +56,11 @@ No additional ADIOS parameters needs to be defined.
 | id_bkp_bank_account      | [App/Widgets/Bookkeeping/Bank/Models/BankAccount](../../../Bookkeeping/Bank/Models/BankAccount.md)                    |   1:N    | Cascade  | Restrict |
 | id_bkp_accounting_period | [App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod](../../../Bookkeeping/MainBook/Models/AccountingPeriod.md)  |   1:N    | Cascade  | Restrict |
 | id_com_numeric_sequence  | com_numeric_sequences                                                                                         |   1:N    | Cascade  | Restrict |
-| id_com_address           | com_address                                                                                                   |   1:N    | Cascade  | Restrict |
+| id_com_contact           | com_contact                                                                                                   |   1:N    | Cascade  | Restrict |
 | id_user                  | ADIOS/Core/User                                                                                               |   1:N    | Cascade  | Restrict |
 | id_bkp_transaction       | bkp_transaction                                                                                               |   1:N    | Cascade  | Restrict |
 
-REVIEW DD: dokoncit com_numeric_sequences a com_address
+REVIEW DD: dokoncit com_numeric_sequences a com_contact
 REVIEW DD: bkp_transaction - z nazvu tabulky nie je presne jasny model
 
 ### Indexes
@@ -73,7 +73,7 @@ REVIEW DD: bkp_transaction - z nazvu tabulky nie je presne jasny model
 | id_bkp_bank_account                                                   |  INDEX  |      id_bkp_bank_account ASC |
 | id_bkp_accounting_period                                              |  INDEX  | id_bkp_accounting_period ASC |
 | id_com_numeric_sequence                                               |  INDEX  |  id_com_numeric_sequence ASC |
-| id_com_address                                                        |  INDEX  |           id_com_address ASC |
+| id_com_contact                                                        |  INDEX  |           id_com_contact ASC |
 | id_user                                                               |  INDEX  |                  id_user ASC |
 | id_bkp_currency                                                       |  INDEX  |          id_bkp_currency ASC |
 | id_bkp_transaction                                                    |  INDEX  |       id_bkp_transaction ASC |

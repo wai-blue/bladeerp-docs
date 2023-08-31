@@ -13,14 +13,14 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                |
-| --------------------- | -------------------- |
-| lookupSqlValue        | {%TABLE%}.name       |
-| formTitleForEditing   | Claim                |
-| tableTitle            | Claims               |
-| sqlName               | bkp_claims           |
+| Property              | Value                    |
+| --------------------- | ------------------------ |
+| lookupSqlValue        | {%TABLE%}.name           |
+| formTitleForEditing   | Claim                    |
+| tableTitle            | Claims                   |
+| sqlName               | bkp_claims               |
 | urlBase               | bookkeeping/claim/claims |
-| formTitleForInserting | New Claim            |
+| formTitleForInserting | New Claim                |
 
 ## Data Structure
 
@@ -28,7 +28,7 @@ No constants are defined for this model.
 | :-------------------------------------- | -------------------------------- | :--------: | :----: | :------: | :------------------------------------------------ |
 | id                                      |                                  |    int     |   8    |   TRUE   | Jedinečné ID záznamu                              |
 | id_bkp_claim_state                      | State                            |   lookup   |   8    |   TRUE   | ID stavu pohľadávky                               |
-| id_com_address                          | Customer                         |   lookup   |   8    |   TRUE   | ID odberateľa                                     |
+| id_com_contact                          | Customer                         |   lookup   |   8    |   TRUE   | ID odberateľa                                     |
 | id_bkp_accounting_period                | Accounting Period                |   lookup   |   8    |   TRUE   | ID účtovného obdobia                              |
 | is_accounted                            | Is Accounted                     |  boolean   |   1    |  FALSE   | Je pohľadávka zaúčtovaná                          |
 | supplier                                | Supplier                         |    json    |        |   TRUE   | Kópia údajov o predajcovi uložené v JSON formáte  |
@@ -58,13 +58,14 @@ No constants are defined for this model.
 
 | Column                                  | Model                                                     | Relation | OnUpdate | OnDelete |
 | :-------------------------------------- | :-------------------------------------------------------- | :------: | -------- | -------- |
-| id_bkp_claim_state                      | App/Widgets/Bookkeeping/Claim/Models/ClaimState               |   1:N    | Cascade  | Restrict |
-| id_com_address                          | App/Widgets/Common/AddressBook/???                        |   1:N    | Cascade  | Restrict |
-| id_bkp_accounting_period                | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod      |   1:N    | Cascade  | Restrict |
+| id_bkp_claim_state                      | App/Widgets/Bookkeeping/Claim/Models/ClaimState           |   1:N    | Cascade  | Restrict |
+| id_bkp_accounting_period                | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod  |   1:N    | Cascade  | Restrict |
 | id_com_numeric_sequence                 | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
 | id_com_numeric_sequence_variable_symbol | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
-| id_bkp_currency                         | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency          |   1:N    | Cascade  | Restrict |
+| id_bkp_currency                         | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency      |   1:N    | Cascade  | Restrict |
+| id_com_contact                          | App/Widgets/Common/AddressBook/Contact                    |   1:N    | Cascade  | Restrict |
 
+UNDEFINED: Model pre Email Template zatiaľ neexistuje. Doplniť, keď bude vytvorený.
 ### Indexes
 
 | Name                                    |  Type   |                              Column + Order |
@@ -74,7 +75,7 @@ No constants are defined for this model.
 | delivery_date                           |  INDEX  |                           delivery_date ASC |
 | due_date                                |  INDEX  |                                due_date ASC |
 | id_bkp_claim_state                      |  INDEX  |                      id_bkp_claim_state ASC |
-| id_com_address                          |  INDEX  |                          id_com_address ASC |
+| id_com_contact                          |  INDEX  |                          id_com_contact ASC |
 | id_bkp_accounting_period                |  INDEX  |                id_bkp_accounting_period ASC |
 | is_accounted                            |  INDEX  |                            is_accounted ASC |
 | id_com_numeric_sequence                 |  INDEX  |                 id_com_numeric_sequence ASC |
@@ -87,7 +88,7 @@ No constants are defined for this model.
 
 ### onBeforeInsert
 
-* Ak ešte nie je priradený sekvenčný kód (col: **sequence_code=NULL**) a aktuálny stav (col: **id_bkp_claim_state**) ho žiada priradiť (tab: **bkp_clame_states**, col:             **is_sequence_code_assigned=1**), potom je nutné v uvedenom poradí nastaviť:
+* Ak ešte nie je priradený sekvenčný kód (col: **sequence_code=NULL**) a aktuálny stav (col: **id_bkp_claim_state**) ho žiada priradiť (tab: **bkp_clame_states**, col:             **is_set_sequence_code=1**), potom je nutné v uvedenom poradí nastaviť:
   * hodnotu aktívneho číselného radu pre pohľadávky (col: **id_com_numeric_sequence**)
   * hodnotu pre sekvenčné označenie (col: **sequence_code**) zavolaním metódy **getNextSequenceNumber()** (model: **NumericSequences**) s ID zvoleného číselného radu (col: **id_com_numeric_sequence**).
   * hodnotu aktívneho číselného radu pre VS (col: **id_com_numeric_sequence_variable_symbol**) 
@@ -95,11 +96,16 @@ No constants are defined for this model.
 
 ### onAfterInsert
 
-TODO: Je potrebné dorobiť, na Google docs stále rozpísané
+* Potrebné skopírovať údaje o predajcovi (z profilu) a uložiť do stĺpca **supplier** v JSON formáte.
+  UNDEFINED: Doplniť prelink keď vznikne model.
+* Potrebné skopírovať údaje zo zákazníka a uložiť ich do stĺpca **customer** v JSON formáte.
+* Potrebné priradiť pohľadávku k účtu pre pohľadávky v účtovnej osnove (tab: **fin_claim_accounts**).
+
+UNDEFINED: Po vytvorení SKLADOV bude potrebné napojiť na zrušenie rezervácie (vyvolanej vytvorením Objednávky) a vytvorenie Výdajky.
 
 ### onBeforeUpdate
 
-* Ak ešte nie je priradený sekvenčný kód (col: **sequence_code=NULL**) a aktuálny stav (col: **id_bkp_claim_state**) ho žiada priradiť (tab: **bkp_clame_states**, col: **is_sequence_code_assigned=1**), potom vykonať kroky popísané v **3.2.6.1. onBeforeInsert**.
+* Ak ešte nie je priradený sekvenčný kód (col: **sequence_code=NULL**) a aktuálny stav (col: **id_bkp_claim_state**) ho žiada priradiť (tab: **bkp_clame_states**, col: **is_set_sequence_code=1**), potom vykonať kroky popísané v **3.2.6.1. onBeforeInsert**.
 * Zakázať zmeny, ak ich daný stav nepovoľuje - tabuľka **bkp_claim_states** - col: **is_allowed_update**
 
 ### onAfterUpdate

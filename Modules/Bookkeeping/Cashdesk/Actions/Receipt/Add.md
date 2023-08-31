@@ -14,7 +14,7 @@ Form
   * id_bkp_cashdesk_account
   * id_bkp_accounting_period
   * id_com_numeric_sequence
-  * id_com_address
+  * id_com_contact
   * date
   * description
   * id_bkp_currency

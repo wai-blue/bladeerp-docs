@@ -28,7 +28,7 @@ No constants are defined for this model.
 | create_datetime                        | Created Datetime                 |  datetime  |   8    |   TRUE   | When the record was created                             |
 | id_updated_by                           | Updated By                       |   lookup   |   8    |   TRUE   | Reference to user who updated the record                |
 | update_datetime                        | Updated Datetime                 |  datetime  |   8    |   TRUE   | When the record was updated                             |
-| id_com_address                          | Customer                         |   lookup   |   8    |   TRUE   | ID veriteľa                                             |
+| id_com_contact                          | Customer                         |   lookup   |   8    |   TRUE   | ID veriteľa                                             |
 | is_accounted                            | Is Accounted                     |  boolean   |   1    |  FALSE   | Je záväzok zaúčtovaný                                   |
 | is_long_term                            | Is Long Term                     |  boolean   |   1    |   TRUE   | Príznak či je záväzok dlhodobý alebo krátkodobý         |
 | supplier                                | Supplier                         |    json    |        |   TRUE   | Kópia údajov o predajcovi uložené v JSON formáte        |
@@ -69,7 +69,7 @@ REVIEW DD: "Comment" alebo "Description" alebpo "Poznamka"?
 | id_updated_by                           | ADIOS/Core/User                                           |   1:N    | Cascade  | Cascade  |
 | id_com_numeric_sequence                 | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
 | id_com_numeric_sequence_variable_symbol | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
-| id_com_address                          | App/Widgets/Common/AddressBook/Models/???                 |   1:N    | Cascade  | Restrict |
+| id_com_contact                          | App/Widgets/Common/AddressBook/Models/???                 |   1:N    | Cascade  | Restrict |
 | id_bkp_currency                         | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency      |   1:N    | Cascade  | Restrict |
 
 
@@ -82,7 +82,7 @@ REVIEW DD: "Comment" alebo "Description" alebpo "Poznamka"?
 | create_datetime                        |  INDEX  |                        create_datetime ASC |
 | id_updated_by                           |  INDEX  |                           id_updated_by ASC |
 | update_datetime                        |  INDEX  |                        update_datetime ASC |
-| id_com_address                          |  INDEX  |                          id_com_address ASC |
+| id_com_contact                          |  INDEX  |                          id_com_contact ASC |
 | is_accounted                            |  INDEX  |                           is_accounted DESC |
 | is_long_term                            |  INDEX  |                            is_long_term ASC |
 | id_com_numeric_sequence                 |  INDEX  |                 id_com_numeric_sequence ASC |

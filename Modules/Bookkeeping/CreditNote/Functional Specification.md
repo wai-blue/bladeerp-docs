@@ -12,11 +12,11 @@ Prednastavené stavy dobropisu:
 1. Rozpracovaná [DRAFT]
     * predvolený stav
     * zmeny aj mazanie sú povolené (col: **is_allowed_update=1** a **col:is_allowed_delete=1**)
-    * dobropisu sa tu ešte nepriradzuje sekvenčný kód (col: is_sequence_code_assigned=0)
+    * dobropisu sa tu ešte nepriradzuje sekvenčný kód (col: is_set_sequence_code=0)
     * môže sa použiť v prípade vystavenia predfaktúry
 2. Potvrdená [CONFIRMED]
     * zmeny aj mazanie už NIE sú povolené (col: **is_allowed_update** a **col:is_allowed_delete**)
-    * dobropisu sa tu ešte nepriradzuje sekvenčný kód (col: **is_sequence_code_assigned=1**)
+    * dobropisu sa tu ešte nepriradzuje sekvenčný kód (col: **is_set_sequence_code=1**)
     * vytvorí sa email pre zákazníka
     * do emailu pripojiť dobropis ak je nastavené (col: **is_send_credit_note**)
     * do emailu pripojiť pôvodné pohľadávky ak je nastavené (col: **is_send_claim**) a sú nejaké pripojená  (tab: **bkp_credit_note_claims**)

@@ -15,7 +15,7 @@ Table
   * id_bkp_accounting_period
   * com_numeric_sequence.name
     * REVIEW DD: je toto spravne?
-  * com_address.name
+  * com_contact.name
     * REVIEW DD: je toto spravne?
   * issue_date
   * receipt_number
