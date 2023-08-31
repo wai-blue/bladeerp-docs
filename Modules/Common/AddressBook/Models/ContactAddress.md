@@ -16,6 +16,7 @@ V modeli nie sú použité konštanty.
 | tableTitle            | Contact Addresses                                                            |
 | formTitleForInserting | New Contact Address                                                          |
 | formTitleForEditing   | Contact Address                                                              |
+
 TODO: DD vyriešiť ako v ADIOSe urobiť lookupSqlValue v tomto prípade (viď. tabuľka Properties)
 
 ## Data Structure
@@ -39,6 +40,8 @@ TODO: DD vyriešiť ako v ADIOSe urobiť lookupSqlValue v tomto prípade (viď. 
 | gps_longitude   | GPS Longitude    |  varchar   |  300   |  FALSE   | GPS dĺžka                                |
 | gps_latitude    | GPS Latitude     |  varchar   |  300   |  FALSE   | GPS šírka                                |
 
+TODO: Co keby sme v ADIOSe vytvorili DataTypeMapPoint? Bol by to varchar, obsahujuci lng/lat a jeho input by sa renderoval ako mapa.
+
 ### ADIOS Parameters
 | Column    | Parameter   | Value                          |
 | :-------- | :---------- | ------------------------------ |
@@ -54,6 +57,7 @@ TODO: DD vyriešiť ako v ADIOSe urobiť lookupSqlValue v tomto prípade (viď. 
 | id_updated_by  | ADIOS/Core/User                                                                                |   1:N    | Cascade  | Cascade  |
 | id_com_contact | [App/Widgets/Common/AddressBook/Models/Contact](../../../Common/AddressBook/Models/Contact.md) |   1:N    | Cascade  | Restrict |
 | id_com_country | [App/Widgets/Common/AddressBook/Models/Country](../../../Common/AddressBook/Models/Country.md) |   1:N    | Cascade  | Restrict |
+
 ## Indexes
 | Name      |  Type   | Column + Order |
 | :-------- | :-----: | -------------: |
@@ -75,7 +79,7 @@ Nepovoliť deaktivovanie adresy (col: **is_active**), ktorá je uvedená ako pri
 Not used.
 
 ### onBeforeDelete
-* Nepovoliť vymazanie adresy, ktorá je uvedená ako primárna (tab: **com_contact**, col: **id_com_address**).
+Nepovoliť vymazanie adresy, ktorá je uvedená ako primárna (tab: **com_contact**, col: **id_com_address**).
 
 ### onAfterDelete
 

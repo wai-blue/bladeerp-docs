@@ -17,6 +17,8 @@ No constants are defined for this model.
 | formTitleForInserting | New Contact                  |
 | formTitleForEditing   | Contact                      |
 
+REVIEW DD: Po novom bude potrebne definovat aj properties `crud/brows/action`, `crud/add/action` a `crud/edit/action`.
+
 ## Data Structure
 | Column                 | Title            | ADIOS Type | Length | Required | Notes                                    |
 | :--------------------- | :--------------- | :--------: | :----: | :------: | :--------------------------------------- |
@@ -34,12 +36,18 @@ No constants are defined for this model.
 | website                | WEB page         |  varchar   |  255   |  FALSE   | WEB stránka                              |
 | description            | Comment          |    TEXT    |        |  FALSE   | Poznámka ku kontaktu                     |
 
+REVIEW DD: id_created_by a podobne - bude sa pouzivad json 'record_info'
+REVIEW DD: Description, Comment alebo Poznamka? Zjednotit pls, uz som sa s tymto stretol viackrat.
+
 ### ADIOS Parameters
 | Column    | Parameter   | Value                          |
 | :-------- | :---------- | ------------------------------ |
 | is_active | description | Is this contact active or not? |
 |           | default     | 1                              |
 | website   | description | URL address of contact         |
+|           | default     | https://                       |
+
+REVIEW DD: vid navrh pre website.default
 
 ## Foreign Keys
 | Column                 | Model                                                                                                        | Relation | OnUpdate | OnDelete |

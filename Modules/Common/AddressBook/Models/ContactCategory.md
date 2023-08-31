@@ -51,20 +51,24 @@ V modeli nie sú použité konštanty.
 | name      | UNIQUE  |       name ASC |
 
 ## Callbacks
+
 ### onBeforeInsert
-Nepovoliť vloženie, ak hodnota **name** už tabuľke existuje.
+Nepovoliť vloženie, ak hodnota **name** už v tabuľke existuje.
+REVIEW DD: Toto je zabezpecene UNIQUE indexom - nie je potrebne definovat callback.
 
 ### onAfterInsert
 Not used.
 
 ### onBeforeUpdate
-Neuložiť zmenu, ak hodnota **name** už tabuľke existuje.
+Neuložiť zmenu, ak hodnota **name** už v tabuľke existuje.
+REVIEW DD: Toto je zabezpecene UNIQUE indexom - nie je potrebne definovat callback.
 
 ### onAfterUpdate
 Not used.
 
 ### onBeforeDelete
 Nepovoliť vymazanie, ak je kategória použitá na niektorom kontakte (tbl: **com_contact_has_category**)
+NOTE: Nemalo by toto byt zabezpecne vhodnou definiciou foreign keys?
 
 ### onAfterDelete
 Not used.

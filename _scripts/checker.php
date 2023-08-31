@@ -304,35 +304,11 @@ foreach ($modules as $module) {
           $warnings[] = "[{$modelRef}] Model is a cross-table but does not contain 'Has' in it's name.";
         }
 
-        if (($properties['isCrossTable'] ?? '') !== 'TRUE') {
-
-          if (
-            !isset($columns['id_created_by'])
-            || $columns['id_created_by']['type'] != 'lookup'
-          ) {
-            $errors[] = "[{$modelRef}] `id_created_by` is not defined or is not a lookup.";
-          }
-
-          if (
-            !isset($columns['create_datetime'])
-            || $columns['create_datetime']['type'] != 'datetime'
-          ) {
-            $errors[] = "[{$modelRef}] `create_datetime` is not defined or is not a datetime.";
-          }
-
-          if (
-            !isset($columns['id_updated_by'])
-            || $columns['id_updated_by']['type'] != 'lookup'
-          ) {
-            $errors[] = "[{$modelRef}] `id_updated_by` is not defined or is not a lookup.";
-          }
-
-          if (
-            !isset($columns['update_datetime'])
-            || $columns['update_datetime']['type'] != 'datetime'
-          ) {
-            $errors[] = "[{$modelRef}] `update_datetime` is not defined or is not a datetime.";
-          }
+        if (
+          !isset($columns['record_info'])
+          || $columns['record_info']['type'] != 'json'
+        ) {
+          $errors[] = "[{$modelRef}] `record_info` is not defined or is not a JSON.";
         }
 
       }

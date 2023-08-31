@@ -46,16 +46,20 @@ No additional ADIOS parameters needs to be defined
 | full_name |  INDEX  |  full_name ASC |
 | code      | UNIQUE  |       code ASC |
 
+REVIEW DD: full_name nie je lepsie unique?
+
 ## Callbacks
 
 ### onBeforeInsert
 Nepovoliť vloženie duplicitnej krajiny podlľa mena (col: **name**) a ani podľa skratky (col: **code**).
+REVIEW DD: Unique index...
 
 ### onAfterInsert
 Not used.
 
 ### onBeforeUpdate
 Nepovoliť uloženie duplicitnej krajiny podlľa mena (col: **name**) a ani podľa skratky (col: **code**).
+REVIEW DD: Unique index...
 
 ### onAfterUpdate
 Not used.

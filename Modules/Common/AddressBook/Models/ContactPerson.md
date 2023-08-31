@@ -34,6 +34,8 @@ V modeli nie sú použité konštanty.
 | email           | Email            |  varchar   |  100   |   TRUE   | Email                                    |
 | phone           | Phone Number     |  varchar   |   20   |  FALSE   | Telefón                                  |
 
+REVIEW DD: URL na LI profil?
+
 ### ADIOS Parameters
 No additional ADIOS parameters needs to be defined
 
@@ -54,16 +56,20 @@ No additional ADIOS parameters needs to be defined
 | email       | UNIQUE  |       email ASC |
 | phone       |  INDEX  |       phone ASC |
 
+REVIEW DD: email podla mna nemusi byt unique
+
 ## Callbacks
 
 ### onBeforeInsert
 Nie je možné pridať osobu s rovnakým emailom (col: **email**).
+REVIEW DD: Urcite? Co ked jednu schranku sleduje viac fyz. osob? Napr. nieco ako sales@wai.sk?
 
 ### onAfterInsert
 Not used.
 
 ### onBeforeUpdate
 Nie je možné nať osobu s rovnakým emailom (col: **email**).
+REVIEW DD: Urcite?
 
 ### onAfterUpdate
 Not used.

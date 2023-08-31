@@ -31,6 +31,8 @@ V modeli nie sú použité konštanty.
 | vat_number      | VAT Bumber       |  varchar   |   50   |  FALSE   | DIČ DPH                                  |
 | description     | Description      |    text    |        |  FALSE   | Poznámka spoločnosti                     |
 
+REVIEW DD: Description alebo poznamka? Pls zjednotit, alebo vytvorit dva samostatne stlpce.
+
 ### ADIOS Parameters
 No additional ADIOS parameters needs to be defined.
 
@@ -48,21 +50,27 @@ No additional ADIOS parameters needs to be defined.
 | business_number | UNIQUE  | business_number ASC |
 | tax_number      | UNIQUE  |      tax_number ASC |
 
+REVIEW DD: `vat_number` nemusi byt unique?
+
 ## Callbacks
+
 ### onBeforeInsert
 Nepovoliť vloženie, ak hodnota **company_name** alebo **business_number** alebo **tax_number** už tabuľke existuje.
+REVIEW DD: Na toto su UNIQUE indexy.
 
 ### onAfterInsert
 Not used.
 
 ### onBeforeUpdate
 Nepovoliť úpravu, ak hodnota **company_name** alebo **business_number** alebo **tax_number** už tabuľke existuje.
+REVIEW DD: Na toto su UNIQUE indexy.
 
 ### onAfterUpdate
 Not used.
 
 ### onBeforeDelete
 Nepovoliť vymazanie, ak je firma použitá na niektorom kontakte (tbl: com_contacts)
+REVIEW DD: Nevyriesi toto vhodne nastaveny foreign key?
 
 ### onAfterDelete
 Not used.
