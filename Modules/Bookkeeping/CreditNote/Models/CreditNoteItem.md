@@ -1,7 +1,5 @@
 # Model Bookkeeping/CreditNote/CreditNoteItem
 
-REVIEW DD: Model premenovany z CreditNoteLine na CreditNoteItem
-
 ## Introduction
 
 Tabuľka bude slúžiť na ukladanie položiek dobropisov.
@@ -12,14 +10,14 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                          |
-| :-------------------- | :--------------------------------------------- |
-| sqlName               | bkp_credit_note_items                          |
+| Property              | Value                                              |
+| :-------------------- | :------------------------------------------------- |
+| sqlName               | bkp_credit_note_items                              |
 | urlBase               | bookkeeping/credit-note/{id_bkp_credit_note}/items |
-| lookupSqlValue        | {%TABLE%}.item                                 |
-| tableTitle            | CreditNote Items                               |
-| formTitleForInserting | New CreditNote Item                            |
-| formTitleForEditing   | CreditNote Item                                |
+| lookupSqlValue        | {%TABLE%}.item                                     |
+| tableTitle            | CreditNote Items                                   |
+| formTitleForInserting | New CreditNote Item                                |
+| formTitleForEditing   | CreditNote Item                                    |
 
 ## Data Structure
 
@@ -30,7 +28,7 @@ No constants are defined for this model.
 | item                | Item                |  varchar   |  200   |   TRUE   | Položka                      |
 | item_sequence       | Item Sequence       |    int     |   6    |  FALSE   | Poradie položky na dobropise |
 | quantity            | Quantity            |  decimal   |  15,4  |   TRUE   | Množstvo                     |
-| id_war_unit         | Units               |   lookup   |   8    |   TRUE   | Merná jednotka               |
+| id_whs_unit         | Units               |   lookup   |   8    |   TRUE   | Merná jednotka               |
 | id_bkp_vat          | VAT Rate            |   lookup   |   8    |   TRUE   | ID Sadzby DPH                |
 | price_unit_excl_vat | Unit Price Excl VAT |  decimal   |  15,4  |   TRUE   | Jednotková cena bez DPH      |
 | price_unit_incl_vat | Unit Price Incl VAT |  decimal   |  15,4  |   TRUE   | Jednotková cena s DPH        |
@@ -38,7 +36,6 @@ No constants are defined for this model.
 | price_vat           | Price VAT           |  decimal   |  15,4  |   TRUE   | Suma DPH za položku          |
 | price_incl_vat      | Price Incl VAT      |  decimal   |  15,4  |   TRUE   | Suma za položku s DPH        |
 
-REVIEW DD: id_whs_unit?
 REVIEW DD: VAT Rate ukladat ako decimal v %?
 
 ### ADIOS Parameters
@@ -53,10 +50,10 @@ REVIEW DD: VAT Rate ukladat ako decimal v %?
 
 ### Foreign Keys
 
-| Column             | Model                                            | Relation | OnUpdate | OnDelete |
-| :----------------- | :----------------------------------------------- | :------: | -------- | -------- |
+| Column             | Model                                                | Relation | OnUpdate | OnDelete |
+| :----------------- | :--------------------------------------------------- | :------: | -------- | -------- |
 | id_bkp_credit_note | App/Widgets/Bookkeeping/CreditNote/Models/CreditNote |   1:N    | Cascade  | Cascade  |
-| id_war_unit        | App/Widgets/Warehouse/Models/Unit                |   1:N    | Cascade  | Restrict |
+| id_whs_unit        | App/Widgets/Warehouse/Models/Unit                    |   1:N    | Cascade  | Restrict |
 | id_bkp_vat         | App/Widgets/Bookkeeping/MainBook/Models/Vat          |   1:N    | Cascade  | Restrict |
 
 ### Indexes
@@ -65,7 +62,7 @@ REVIEW DD: VAT Rate ukladat ako decimal v %?
 | :----------------- | :------ | :--------------------- |
 | id                 | PRIMARY | id ASC                 |
 | id_bkp_credit_note | INDEX   | id_bkp_credit_note ASC |
-| id_war_unit        | INDEX   | id_war_unit ASC        |
+| id_whs_unit        | INDEX   | id_whs_unit ASC        |
 | id_bkp_vat         | INDEX   | id_bkp_vat ASC         |
 | item               | INDEX   | item ASC               |
 | item_sequence      | INDEX   | item_sequence ASC      |

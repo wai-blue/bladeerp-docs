@@ -21,15 +21,12 @@ No constants are defined for this model.
 
 ## Data Structure
 
-| Column             | Title         | ADIOS Type | Length | Required | Notes                |
-| :----------------- | ------------- | :--------: | :----: | :------: | :------------------- |
-| id                 |               |    int     |   8    |   TRUE   | Jedinečné ID záznamu |
-| id_bkp_credit_note | Credit Note   |   lookup   |   8    |   TRUE   | ID dobropisu         |
-| date               | Payment Date  |    date    |   8    |   TRUE   | Dátum úhrady         |
-| price              | Payment Price |  decimal   |  15,2  |   TRUE   | Uhradená suma        |
-
-REVIEW DD: `date` premenovat na `payment_date`
-REVIEW DD: `price` by lepsie bolo ako `amount`
+| Column             | Title          | ADIOS Type | Length | Required | Notes                |
+| :----------------- | -------------- | :--------: | :----: | :------: | :------------------- |
+| id                 |                |    int     |   8    |   TRUE   | Jedinečné ID záznamu |
+| id_bkp_credit_note | Credit Note    |   lookup   |   8    |   TRUE   | ID dobropisu         |
+| payment_date       | Payment Date   |    date    |   8    |   TRUE   | Dátum úhrady         |
+| payment_amount     | Payment Amount |  decimal   |  15,2  |   TRUE   | Uhradená suma        |
 
 ### ADIOS Parameters
 
@@ -37,8 +34,8 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column             | Model                                            | Relation | OnUpdate | OnDelete |
-| :----------------- | :----------------------------------------------- | :------: | -------- | -------- |
+| Column             | Model                                                | Relation | OnUpdate | OnDelete |
+| :----------------- | :--------------------------------------------------- | :------: | -------- | -------- |
 | id_bkp_credit_note | App/Widgets/Bookkeeping/CreditNote/Models/CreditNote |   1:N    | Cascade  | Restrict |
 
 ### Indexes
@@ -47,7 +44,8 @@ No additional ADIOS parameters needs to be defined.
 | :----------------- | :-----: | ---------------------: |
 | id                 | PRIMARY |                 id ASC |
 | id_bkp_credit_note |  INDEX  | id_bkp_credit_note ASC |
-| date               |  INDEX  |               date ASC |
+| payment_date       |  INDEX  |       payment_date ASC |
+|                    |         |                        |
 
 ## Callbacks
 

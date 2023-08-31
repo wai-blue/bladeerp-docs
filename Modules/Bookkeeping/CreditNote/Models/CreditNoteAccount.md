@@ -1,7 +1,5 @@
 # Model Bookkeeping/CreditNote/CreditNoteAccount
 
-REVIEW DD: Model premenovany z CreaditNoteAccounts na CreditNoteAccount
-
 ## Introduction
 
 Tabuľka bude slúžiť na prepojenie dobropisu s účtovnou osnovou.
@@ -12,14 +10,14 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                            |
-| :-------------------- | :----------------------------------------------- |
-| sqlName               | bkp_credit_note_accounts                         |
+| Property              | Value                                                |
+| :-------------------- | :--------------------------------------------------- |
+| sqlName               | bkp_credit_note_accounts                             |
 | urlBase               | bookkeeping/credit-note/{id_bkp_credit_note}/account |
-| lookupSqlValue        |                                                  |
-| tableTitle            | CreditNote Accounts                              |
-| formTitleForInserting | New CreditNote Account                           |
-| formTitleForEditing   | CreditNote Account                               |
+| lookupSqlValue        |                                                      |
+| tableTitle            | CreditNote Accounts                                  |
+| formTitleForInserting | New CreditNote Account                               |
+| formTitleForEditing   | CreditNote Account                                   |
 
 REVIEW DD: isCrossTable?
 

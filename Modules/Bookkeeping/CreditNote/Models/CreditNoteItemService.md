@@ -1,7 +1,5 @@
 # Model Bookkeeping/CreditNote/CreditNoteItemService
 
-REVIEW DD: Model premenovany z CreditNoteLineService na CreditNoteItemService
-
 ## Introduction
 
 Tabuľka bude slúžiť na prepojenie položiek dobropisov so službami.
@@ -21,8 +19,6 @@ No constants are defined for this model.
 | formTitleForInserting | New Item Service                                                                |
 | formTitleForEditing   | Item Service                                                                    |
 | isCrossTable          | TRUE                                                                            |
-
-REVIEW DD: pridane isCrossTable
 
 ## Data Structure
 

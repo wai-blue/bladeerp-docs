@@ -15,8 +15,8 @@ Table
   * id_bkp_bank_account
   * com_address.name
     * REVIEW DD: Toto asi nie je uplne spravne
-  * date
-  * number
+  * issue_date
+  * transaction_number
   * amount
 * orderBy: date DESC
 

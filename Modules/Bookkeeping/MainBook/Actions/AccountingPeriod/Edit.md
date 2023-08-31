@@ -22,6 +22,8 @@ C
 
 UI/InlineForm
 
+REVIEW DD: view "UI/InlineForm" neexistuje. Asi je myslene view "Form" a "cssClass" inline.
+
 ### Columns
 
 | Názov stĺpca             | Typ inputu | Poznámka                                                    |

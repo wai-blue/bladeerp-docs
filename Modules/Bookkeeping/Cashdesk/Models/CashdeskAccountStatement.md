@@ -13,16 +13,19 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                               |
-| :-------------------- | :---------------------------------- |
-| sqlName               | bkp_cashdesk_account_statements     |
+| Property              | Value                                   |
+| :-------------------- | :-------------------------------------- |
+| sqlName               | bkp_cashdesk_account_statements         |
 | urlBase               | bookkeeping/cashdesk/account-statements |
-| lookupSqlValue        |                                     |
-| tableTitle            | Cashdesk Account Statements         |
-| formTitleForInserting |                                     |
-| formTitleForEditing   |                                     |
-| formAddButtonText     | Create Statement                    |
-| formSaveButtonText    |                                     |
+| lookupSqlValue        |                                         |
+| tableTitle            | Cashdesk Account Statements             |
+| formTitleForInserting |                                         |
+| formTitleForEditing   |                                         |
+| formAddButtonText     | Create Statement                        |
+| formSaveButtonText    |                                         |
+| crud/browse/action    | Cashdesk/AccountStatements              |
+| crud/add/action       | Cashdesk/AccountStatement/AddOrEdit     |
+| crud/edit/action      | Cashdesk/AccountStatement/AddOrEdit     |
 
 ## Data Structure
 
@@ -30,14 +33,12 @@ No constants are defined for this model.
 | :---------------------- | -------------------------- | :--------: | :----: | :------: | :-------------------------------------- |
 | id                      | ID                         |    int     |   11   |   TRUE   | Jedinečné ID záznamu                    |
 | id_bkp_cashdesk_account | Cashdesk Account           |   lookup   |   11   |   TRUE   | ID pokladne                             |
-| datetime_statement      | Date and Time of Statement |  datetime  |        |   TRUE   | Dátum a čas závierky                    |
+| statement_datetime      | Date and Time of Statement |  datetime  |        |   TRUE   | Dátum a čas závierky                    |
 | amount_found            | Found Amount               |  decimal   |  15,2  |  FALSE   | Suma, ktorá bola pri závierke zistená   |
 | amount_expected         | Expected Amount            |  decimal   |  15,2  |  FALSE   | Suma, ktorá bola pri závierke očakávaná |
 | credit                  | Credit                     |  decimal   |  15,2  |  FALSE   | Prebytok                                |
 | debet                   | Debet                      |  decimal   |  15,2  |  FALSE   | Manko                                   |
 | id_user                 | User                       |   lookup   |   11   |   TRUE   | ID užívateľa, ktorý závierku vykonall   |
-
-REVIEW DD: id_adios_user zamenene za id_user
 
 ### ADIOS Parameters
 
@@ -57,9 +58,9 @@ No additional ADIOS parameters needs to be defined.
 | id                                            | PRIMARY |                       id ASC |
 | id_bkp_cashdesk_account                       |  INDEX  |  id_bkp_cashdesk_account ASC |
 | id_user                                       |  INDEX  |                  id_user ASC |
-| datetime_statement                            |  INDEX  |       datetime_statement ASC |
-| id_bkp_cashdesk_accounts___datetime_statement | UNIQUE  | id_bkp_cashdesk_accounts ASC |
-|                                               |         |       datetime_statement ASC |
+| statement_datetime                            |  INDEX  |       statement_datetime ASC |
+| id_bkp_cashdesk_accounts___statement_datetime | UNIQUE  | id_bkp_cashdesk_accounts ASC |
+|                                               |         |       statement_datetime ASC |
 
 ## Callbacks
 

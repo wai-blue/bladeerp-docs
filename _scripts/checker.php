@@ -107,6 +107,7 @@ foreach ($modules as $module) {
         if (
           $md->hasH1('Action') === FALSE
           || $md->hasH2('Description') === FALSE
+          || $md->hasH2('Permissions') === FALSE
           || $md->hasH2('View') === FALSE
           || $md->hasH2('Default View Parameters') === FALSE
           || $md->hasH2('Parameters Post-processing') === FALSE
@@ -288,6 +289,15 @@ foreach ($modules as $module) {
         }
 
         // Miscelaneous
+
+        if (
+          empty($properties['crud/browse/action'])
+          || empty($properties['crud/add/action'])
+          || empty($properties['crud/edit/action'])
+        ) {
+          $errors[] = "[{$modelRef}] Browse/Add/Edit CRUD actions are not fully specified.";
+        }
+
         if (
           ($properties['isCrossTable'] ?? '') === 'TRUE'
           && strpos($model, 'Has') === FALSE

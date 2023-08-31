@@ -1,5 +1,7 @@
 # Model Bookkeeping/Claim/ClaimItemService
 
+REVIEW DD: Tato tabulka by mala byt v module, ktory bude spravovat Sluzby.
+
 ## Introduction
 
 Tabuľka bude slúžiť na prepojenie položiek pohľadávok so službami.
@@ -10,17 +12,15 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                                         |
-| :-------------------- | :------------------------------------------------------------ |
-| sqlName               | bkp_claim_item_services                                       |
+| Property              | Value                                                             |
+| :-------------------- | :---------------------------------------------------------------- |
+| sqlName               | bkp_claim_item_services                                           |
 | urlBase               | bookkeeping/claim/{id_bkp_claim}/item/{id_bkp_claim_item}/service |
-| lookupSqlValue        | {%TABLE%}.name                                                |
-| tableTitle            | Claim Item Services                                           |
-| formTitleForInserting | New Claim Item Service                                        |
-| formTitleForEditing   | Claim Item Service                                            |
-| isCrossTable          | TRUE                                                          |
-
-REVIEW DD: Pridal som property isCrossTable = TRUE
+| lookupSqlValue        | {%TABLE%}.name                                                    |
+| tableTitle            | Claim Item Services                                               |
+| formTitleForInserting | New Claim Item Service                                            |
+| formTitleForEditing   | Claim Item Service                                                |
+| isCrossTable          | TRUE                                                              |
 
 ## Data Structure
 
@@ -35,10 +35,10 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column            | Model                                         | Relation | OnUpdate | OnDelete |
-| :---------------- | :-------------------------------------------- | :------: | -------- | -------- |
-| id_bkp_claim_item | App/Widgets/Bookkeeping/Claim/Models/ClaimItem    |   1:N    | Cascade  | Cascade  |
-| id_ser_service    | App/Widgets/Warehouse/Products/Models/Service |   1:N    | Cascade  | Restrict |
+| Column            | Model                                          | Relation | OnUpdate | OnDelete |
+| :---------------- | :--------------------------------------------- | :------: | -------- | -------- |
+| id_bkp_claim_item | App/Widgets/Bookkeeping/Claim/Models/ClaimItem |   1:N    | Cascade  | Cascade  |
+| id_ser_service    | App/Widgets/Warehouse/Products/Models/Service  |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

@@ -3,8 +3,6 @@
 NOTE: DD pretukal.
 TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
 
-REVIEW DD: Pri polozkach namiesto "Line" pouzivat "Item".
-REVIEW DD: premenoval som model z ClaimLine na ClaimItem.
 
 ## Introduction
 
@@ -16,14 +14,14 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                              |
-| --------------------- | ---------------------------------- |
-| sqlName               | bkp_claim_items                    |
+| Property              | Value                                  |
+| --------------------- | -------------------------------------- |
+| sqlName               | bkp_claim_items                        |
 | urlBase               | bookkeeping/claim/{id_bkp_claim}/items |
-| lookupSqlValue        | {%TABLE%}.name                     |
-| tableTitle            | Claim Items                        |
-| formTitleForInserting | New Claim Item                     |
-| formTitleForEditing   | Claim Item                         |
+| lookupSqlValue        | {%TABLE%}.name                         |
+| tableTitle            | Claim Items                            |
+| formTitleForInserting | New Claim Item                         |
+| formTitleForEditing   | Claim Item                             |
 
 ## Data Structure
 
@@ -34,7 +32,7 @@ No constants are defined for this model.
 | item                | Item                |  varchar   |  200   |   TRUE   | Položka                       |
 | item_sequence       | Item Sequence       |    int     |   6    |  FALSE   | Poradie položky na pohľadávke |
 | quantity            | Quantity            |  decimal   |  15,4  |   TRUE   | Množstvo                      |
-| id_war_unit         | Units               |   lookup   |   8    |   TRUE   | Merná jednotka                |
+| id_whs_unit         | Units               |   lookup   |   8    |   TRUE   | Merná jednotka                |
 | id_bkp_vat          | VAT Rate            |   lookup   |   8    |   TRUE   | ID Sadzby DPH                 |
 | price_unit_excl_vat | Unit Price Excl VAT |  decimal   |  15,4  |   TRUE   | Jednotková cena bez DPH       |
 | price_unit_incl_vat | Unit Price Incl VAT |  decimal   |  15,4  |   TRUE   | Jednotková cena s DPH         |
@@ -42,7 +40,6 @@ No constants are defined for this model.
 | price_vat           | Price VAT           |  decimal   |  15,4  |   TRUE   | Suma DPH za položku           |
 | price_incl_vat      | Price Incl VAT      |  decimal   |  15,4  |   TRUE   | Suma za položku s DPH         |
 
-REVIEW DD: id_war_unit? Co je "war"? Aha... Warehouse. V povodnom Google Docs ma warehouse skratku WHS.
 REVIEW DD: Nie je lepsie VAT sadzbu ukladat ako decimal? Ak to dame ako Decimal, moze sa nastavit parameter unit = "%".
 REVIEW DD: Quantity... Nepouzival sa pojem Amount v stlpcoch s podobnym urcenim?
 
@@ -58,11 +55,11 @@ REVIEW DD: Quantity... Nepouzival sa pojem Amount v stlpcoch s podobnym urcenim?
 
 ### Foreign Keys
 
-| Column       | Model                                      | Relation | OnUpdate | OnDelete |
-| :----------- | :----------------------------------------- | :------: | -------- | -------- |
-| id_bkp_claim | App/Widgets/Bookkeeping/Claim/Models/Claim     |   1:N    | Cascade  | Cascade  |
-| id_war_unit  | warApp/Widgets/Warehouse/Models/Unit_units |   1:N    | Cascade  | Restrict |
-| id_bkp_vat   | App/Widgets/Bookkeeping/MainBook/Models/Vat    |   1:N    | Cascade  | Restrict |
+| Column       | Model                                       | Relation | OnUpdate | OnDelete |
+| :----------- | :------------------------------------------ | :------: | -------- | -------- |
+| id_bkp_claim | App/Widgets/Bookkeeping/Claim/Models/Claim  |   1:N    | Cascade  | Cascade  |
+| id_whs_unit  | warApp/Widgets/Warehouse/Models/Unit_units  |   1:N    | Cascade  | Restrict |
+| id_bkp_vat   | App/Widgets/Bookkeeping/MainBook/Models/Vat |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 
@@ -70,7 +67,7 @@ REVIEW DD: Quantity... Nepouzival sa pojem Amount v stlpcoch s podobnym urcenim?
 | :------------ | :------ | :---------------- |
 | id            | PRIMARY | id ASC            |
 | id_bkp_claim  | INDEX   | id_bkp_claim ASC  |
-| id_war_unit   | INDEX   | id_war_unit ASC   |
+| id_whs_unit   | INDEX   | id_whs_unit ASC   |
 | id_bkp_vat    | INDEX   | id_bkp_vat ASC    |
 | item          | INDEX   | item ASC          |
 | item_sequence | INDEX   | item_sequence ASC |

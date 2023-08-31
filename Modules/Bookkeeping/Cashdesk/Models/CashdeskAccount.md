@@ -35,19 +35,17 @@ No constants are defined for this model.
 | id_user             | Cashier          |   lookup   |   11   |   TRUE   | ID pokladníka, ktorý je za pokladňu zodpovedný           |
 | is_open             | Is Open          |  boolean   |   1    |  FALSE   | Príznak, či je pokladňa otvorená a môže sa na ňu účtovať |
 
-REVIEW DD: id_adios_user premenovany na id_user
-
 ### ADIOS Parameters
 
 No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column              | Model                                                                                                | Relation | OnUpdate | OnDelete |
-| :------------------ | :--------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_bkp_currency     | [App/Widgets/Bookkeeping/ExchangeRate/Models/Currency](../../../Bookkeeping/ExchangeRate/Models/Currency.md) |   1:N    | Cascade  | Restrict |
-| id_bkp_book_account | [App/Widgets/Bookkeeping/MainBook/Models/BookAccount](../../../Bookkeeping/MainBook/Models/BookAccount.md)   |   1:N    | Cascade  | Restrict |
-| id_user             | ADIOS/Core/User                                                                                      |   1:N    | Cascade  | Restrict |
+| Column              | Model                                                | Relation | OnUpdate | OnDelete |
+| :------------------ | :--------------------------------------------------- | :------: | -------- | -------- |
+| id_bkp_currency     | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency |   1:N    | Cascade  | Restrict |
+| id_bkp_book_account | App/Widgets/Bookkeeping/MainBook/Models/BookAccount  |   1:N    | Cascade  | Restrict |
+| id_user             | ADIOS/Core/User                                      |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

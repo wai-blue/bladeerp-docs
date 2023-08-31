@@ -4,6 +4,10 @@
 
 vytvorenie alebo uprava bankového účtu.
 
+## Permissions
+
+[Permissions are granted for all user roles.]
+
 ## Main View
 
 Form

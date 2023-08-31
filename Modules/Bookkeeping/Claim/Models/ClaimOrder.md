@@ -1,5 +1,7 @@
 # Model Bookkeeping/Claim/ClaimOrder
 
+REVIEW DD: Tato tabulka by mala byt v module, ktory bude spravovat Objednavky.
+
 ## Introduction
 
 Tabuľka bude slúžiť na prepojenie pohľadávok s objednávkami.
@@ -10,17 +12,16 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                               |
-| :-------------------- | :---------------------------------- |
-| sqlName               | bkp_claim_orders                    |
+| Property              | Value                                   |
+| :-------------------- | :-------------------------------------- |
+| sqlName               | bkp_claim_orders                        |
 | urlBase               | bookkeeping/claim/{id_bkp_claim}/orders |
-| lookupSqlValue        | {%TABLE%}.name                      |
-| tableTitle            | Claim Orders                        |
-| formTitleForInserting | New Claim Order                     |
-| formTitleForEditing   | Claim Order                         |
-| isCrossTable          | TRUE                                                          |
+| lookupSqlValue        | {%TABLE%}.name                          |
+| tableTitle            | Claim Orders                            |
+| formTitleForInserting | New Claim Order                         |
+| formTitleForEditing   | Claim Order                             |
+| isCrossTable          | TRUE                                    |
 
-REVIEW DD: Pridal som property isCrossTable = TRUE
 
 ## Data Structure
 
@@ -35,10 +36,10 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column       | Model                                    | Relation | OnUpdate | OnDelete |
-| :----------- | :--------------------------------------- | :------: | -------- | -------- |
-| id_bkp_claim | App/Widgets/Bookkeeping/Claim/Models/Claim   |   1:N    | Cascade  | Cascade  |
-| id_crm_order | App/Widgets/Warehouse/Order/Models/Order |   1:N    | Cascade  | Restrict |
+| Column       | Model                                      | Relation | OnUpdate | OnDelete |
+| :----------- | :----------------------------------------- | :------: | -------- | -------- |
+| id_bkp_claim | App/Widgets/Bookkeeping/Claim/Models/Claim |   1:N    | Cascade  | Cascade  |
+| id_crm_order | App/Widgets/Warehouse/Order/Models/Order   |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

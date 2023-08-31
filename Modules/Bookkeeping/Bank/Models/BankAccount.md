@@ -1,8 +1,5 @@
 # Model Bookkeeping/Bank/BankAccount
 
-NOTE: DD pretukal.
-TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
-
 ## Introduction
 
 Zoznam bankových účtov, ktoré má klient zahrnuté v účtovníctve.
@@ -13,16 +10,19 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                 |
-| :-------------------- | :-------------------- |
-| sqlName               | bkp_bank_accounts     |
+| Property              | Value                     |
+| :-------------------- | :------------------------ |
+| sqlName               | bkp_bank_accounts         |
 | urlBase               | bookkeeping/bank/accounts |
-| lookupSqlValue        | {%TABLE%}.name        |
-| tableTitle            | Bank Accounts         |
-| formTitleForInserting | New Bank Account      |
-| formTitleForEditing   | Bank Account          |
-| formAddButtonText     | Add Account           |
-| formSaveButtonText    | Update Account        |
+| lookupSqlValue        | {%TABLE%}.name            |
+| tableTitle            | Bank Accounts             |
+| formTitleForInserting | New Bank Account          |
+| formTitleForEditing   | Bank Account              |
+| formAddButtonText     | Add Account               |
+| formSaveButtonText    | Update Account            |
+| crud/browse/action    | Bank/Accounts             |
+| crud/add/action       | Bank/Account/AddOrEdit    |
+| crud/edit/action      | Bank/Account/AddOrEdit    |
 
 ## Data Structure
 
@@ -44,10 +44,10 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column              | Model                                                                                                    | Relation | OnUpdate | OnDelete |
-| :------------------ | :------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_bkp_currency     | [App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod](../../../Bookkeeping/ExchangeRate/Models/Currency.md) |   1:N    | Cascade  | Restrict |
-| id_bkp_book_account | [App/Widgets/Bookkeeping/MainBook/Models/BookAccount](../../../Bookkeeping/MainBook/Models/BookAccount.md)       |   1:N    | Cascade  | Restrict |
+| Column              | Model                                                    | Relation | OnUpdate | OnDelete |
+| :------------------ | :------------------------------------------------------- | :------: | -------- | -------- |
+| id_bkp_currency     | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod |   1:N    | Cascade  | Restrict |
+| id_bkp_book_account | App/Widgets/Bookkeeping/MainBook/Models/BookAccount      |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 
@@ -75,7 +75,7 @@ Not used.
 Not used.
 
 ### onBeforeDelete
-Účet na ktorý obsahuje záznamy v tabuľke bkp_bank_documents nie je možné vymazať.
+Účet na ktorý obsahuje záznamy v tabuľke bkp_bank_transactions nie je možné vymazať.
 
 ### onAfterDelete
 Not used.

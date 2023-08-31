@@ -12,18 +12,16 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                      |
-| :-------------------- | :------------------------- |
-| sqlName               | bkp_credit_note_states     |
+| Property              | Value                          |
+| :-------------------- | :----------------------------- |
+| sqlName               | bkp_credit_note_states         |
 | urlBase               | bookkeeping/credit_note/states |
-| lookupSqlValue        | {%TABLE%}.name             |
-| tableTitle            | States                     |
-| formTitleForInserting | New State                  |
-| formTitleForEditing   | State                      |
+| lookupSqlValue        | {%TABLE%}.name                 |
+| tableTitle            | States                         |
+| formTitleForInserting | New State                      |
+| formTitleForEditing   | State                          |
 
 ## Data Structure
-
-TODO: Naozaj model neobsahuje MySQL štruktúru? Skontrolovať prosím
 
 | Column                    | Title                 | ADIOS Type | Length | Required | Notes                                |
 | :------------------------ | --------------------- | :--------: | :----: | :------: | :----------------------------------- |
@@ -65,21 +63,21 @@ REVIEW DD: is_sequence_code_assigned - Title celkom nekoresponduje s nazvom stlp
 
 ### Indexes
 
-| Name                      | Type    | Column + Order                 |
-| :------------------------ | :------ | :----------------------------- |
-| id                        | PRIMARY | id ASC                         |
-| name                      | INDEX   | name ASC                       |
-| state_sequence            | INDEX   | state_sequence ASC             |
-| id_com_mail_template      | INDEX   | id_com_mail_template DESC      |
-| is_available              | INDEX   | is_available DESC              |
-| is_default                | INDEX   | is_default DESC                |
-| is_sequence_code_assigned | INDEX   | is_sequence_code_assigned DESC |
-| is_send_mail              | INDEX   | is_send_mail DESC              |
-| is_send_credit_note       | INDEX   | is_send_credit_note DESC       |
-| is_send_claim             | INDEX   | is_send_claim DESC             |
-| is_revert_stock           | INDEX   | is_revert_stock DESC           |
-| is_allowed_update         | INDEX   | is_allowed_update DESC         |
-| is_allowed_delete         | INDEX   | is_allowed_delete DESC         |
+| Name                      |  Type   |                 Column + Order |
+| :------------------------ | :-----: | -----------------------------: |
+| id                        | PRIMARY |                         id ASC |
+| name                      |  INDEX  |                       name ASC |
+| state_sequence            |  INDEX  |             state_sequence ASC |
+| id_com_mail_template      |  INDEX  |      id_com_mail_template DESC |
+| is_available              |  INDEX  |              is_available DESC |
+| is_default                |  INDEX  |                is_default DESC |
+| is_sequence_code_assigned |  INDEX  | is_sequence_code_assigned DESC |
+| is_send_mail              |  INDEX  |              is_send_mail DESC |
+| is_send_credit_note       |  INDEX  |       is_send_credit_note DESC |
+| is_send_claim             |  INDEX  |             is_send_claim DESC |
+| is_revert_stock           |  INDEX  |           is_revert_stock DESC |
+| is_allowed_update         |  INDEX  |         is_allowed_update DESC |
+| is_allowed_delete         |  INDEX  |         is_allowed_delete DESC |
 
 ## Callbacks
 

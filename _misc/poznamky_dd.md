@@ -1,8 +1,5 @@
 * Model CashdeskDocument:
   * Tymto su podla dokumentacie myslene pohyby. Malo by sa to volat CashdeskTransactions (zamenit Document za Transaction vsade)
-* Model CashdeskDocumentLine:
-  * Tymto su podla dokumentacie myslene pohyby. Malo by sa to volat CashdeskTransactions (zamenit Document za Transaction vsade)
-  * Nema byt namiesto "lines" pouzite "items"?
 * Model BankDocument + BankDocumentLine(?):
   * rovnako, ako CashDeskDocument
   * resp. asi by bolo presnejsie volat to BankAccountTransaction

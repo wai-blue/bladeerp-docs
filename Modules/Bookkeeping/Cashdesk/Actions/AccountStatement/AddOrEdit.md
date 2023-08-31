@@ -1,12 +1,8 @@
 # Bookkeeping/Cashdesk/AccountStatement/AddOrEdit
 
-REVIEW DD: V Google Docs sa akcia vola "Statement/Add", ale mode je "CashdeskAccountStatement". Preco?
-
 ## Description
 
-Zápis nového pohybu na bankovom účte.
-
-REVIEW DD: Popis je copy&paste z Google Docs. Ale je to spravne? Bankovy ucet?
+Zápis nového pohybu na pokladnicnom účte.
 
 ## Main View
 
@@ -16,7 +12,11 @@ Form
 
 * template:
   * id_bkp_cashdesk_account
-  * datetime_statement
+  * statement_datetime
   * amount_expected
 
-REVIEW DD: V Google Docs chybala akcia pre Edit. Zabudnute?
+## Parameters Post-processing
+
+### Readonly editing
+
+Uprava uzavierky je nežiaduca. Preto formular pre upravu musi byt cely iba na citanie.

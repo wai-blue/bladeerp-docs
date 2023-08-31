@@ -10,26 +10,22 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                                         |
-| :-------------------- | :------------------------------------------------------------ |
-| sqlName               | bkp_claim_item_products                                       |
+| Property              | Value                                                             |
+| :-------------------- | :---------------------------------------------------------------- |
+| sqlName               | bkp_claim_item_products                                           |
 | urlBase               | bookkeeping/claim/{id_bkp_claim}/item/{id_bkp_claim_item}/product |
-| lookupSqlValue        | {%TABLE%}.name                                                |
-| tableTitle            | Claim Item Products                                           |
-| formTitleForInserting | New Claim Item Product                                        |
-| formTitleForEditing   | Claim Item Product                                            |
-| isCrossTable          | TRUE                                                          |
-
-REVIEW DD: Pridal som property isCrossTable = TRUE
+| lookupSqlValue        | {%TABLE%}.name                                                    |
+| tableTitle            | Claim Item Products                                               |
+| formTitleForInserting | New Claim Item Product                                            |
+| formTitleForEditing   | Claim Item Product                                                |
+| isCrossTable          | TRUE                                                              |
 
 ## Data Structure
 
 | Column            | Title         | ADIOS Type | Length | Required | Notes                 |
 | :---------------- | ------------- | :--------: | :----: | :------: | :-------------------- |
 | id_bkp_claim_item | ID Claim Item |   lookup   |   8    |   TRUE   | ID položky pohľadávky |
-| id_war_product    | Product       |   lookup   |   8    |   TRUE   | ID produktu           |
-
-REVIEW DD: id_whs_product?
+| id_whs_product    | Product       |   lookup   |   8    |   TRUE   | ID produktu           |
 
 ### ADIOS Parameters
 
@@ -37,17 +33,17 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column            | Model                                         | Relation | OnUpdate | OnDelete |
-| :---------------- | :-------------------------------------------- | :------: | -------- | -------- |
-| id_bkp_claim_item | App/Widgets/Bookkeeping/Claim/Models/ClaimItem    |   1:N    | Cascade  | Cascade  |
-| id_war_product    | App/Widgets/Warehouse/Products/Models/Product |   1:N    | Cascade  | Restrict |
+| Column            | Model                                          | Relation | OnUpdate | OnDelete |
+| :---------------- | :--------------------------------------------- | :------: | -------- | -------- |
+| id_bkp_claim_item | App/Widgets/Bookkeeping/Claim/Models/ClaimItem |   1:N    | Cascade  | Cascade  |
+| id_whs_product    | App/Widgets/Warehouse/Products/Models/Product  |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 
 | Name              | Type    |        Column + Order |
 | :---------------- | :------ | --------------------: |
 | id_bkp_claim_item | INDEX   | id_bkp_claim_item ASC |
-| id_war_product    | INDEX   |    id_war_product ASC |
+| id_whs_product    | INDEX   |    id_whs_product ASC |
 
 ## Callbacks
 

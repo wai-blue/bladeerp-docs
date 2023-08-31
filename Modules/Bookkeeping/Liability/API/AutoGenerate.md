@@ -1,5 +1,7 @@
 # AutoGenerate
 
+REVIEW DD: Zapis funkcnosti API este nie je ustaleny. Toto sa pravdepodobne bude prerabat.
+
 Automatické generovanie záväzkov na základe existujúcich.
 
 * **Url**: bookkeeping/liability/auto-generate/
@@ -13,7 +15,7 @@ Automatické generovanie záväzkov na základe existujúcich.
             * s novým sekvenčným označením (col: **sequence_code**)
             * s aktuálnym hodnotami pre dátum vzniku (col: **issue_date**), pre predajcu i veriteľa (cols: **supplier**, **creditor**)
             * s adekvátne posunutým dátumom splatnosti (col: due_date) ako mal originál.
-            * vytvoriť kópie zo všetkých riadkov záväzku (tab: bkp_liability_lines)
+            * vytvoriť kópie zo všetkých riadkov záväzku (tab: bkp_liability_items)
             * vytvoriť identický zoznam plánovaných platieb (tab: bkp_liability_payments) s ekvivalentne posunutými dátumami splatnosti (col: **due_date**) a prázdnymi dátumami vykonaných platieb (col: **executed_date**).
             * vytvoriť identické prepojenie na účtovnú osnovu (tab: **bkp_liability_accounts**)
         * Po úspešnom vytvorení kópie, je (v rámci rovnakej transakcie) nutné v každom **originále** nastaviť hodnotu počtu dní na nulu (col: **auto_generate_days** = 0), čo zabezpečí, že ďalšie auto-generovanie sa už bude robiť iba z aktuálnej kópie.

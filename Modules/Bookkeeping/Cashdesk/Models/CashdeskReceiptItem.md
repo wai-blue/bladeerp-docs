@@ -1,7 +1,5 @@
 # Model Bookkeeping/Cashdesk/CashdeskReceiptItem
 
-TODO: V yml prerobit z CashdeskDocumentEntry.
-
 ## Introduction
 
 Položky pohybu na pokladni.
@@ -12,16 +10,16 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                          |
-| :-------------------- | :----------------------------- |
-| sqlName               | bkp_cashdesk_receipt_items     |
+| Property              | Value                              |
+| :-------------------- | :--------------------------------- |
+| sqlName               | bkp_cashdesk_receipt_items         |
 | urlBase               | bookkeeping/cashdesk/receipt/items |
-| lookupSqlValue        |                                |
-| tableTitle            | Cashdesk Receipt Items         |
-| formTitleForInserting | New Cashdesk Receipt Item      |
-| formTitleForEditing   | Cashdesk Receipt Item          |
-| formAddButtonText     | Add Receipt Item               |
-| formSaveButtonText    | Update Receipt Item            |
+| lookupSqlValue        |                                    |
+| tableTitle            | Cashdesk Receipt Items             |
+| formTitleForInserting | New Cashdesk Receipt Item          |
+| formTitleForEditing   | Cashdesk Receipt Item              |
+| formAddButtonText     | Add Receipt Item                   |
+| formSaveButtonText    | Update Receipt Item                |
 
 ## Data Structure
 

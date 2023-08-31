@@ -27,6 +27,8 @@ Grid
     * parameters:
       * idFinancialStatement = $data[‘id’]
 
+REVIEW DD: view "UI/InlineForm" neexistuje. Asi je myslene view "Form" a "cssClass" inline.
+
 ## Parameters Post-processing
 
 No post-processing of default parameters is necessary.

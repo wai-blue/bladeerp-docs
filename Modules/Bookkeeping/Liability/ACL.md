@@ -6,10 +6,10 @@
 | Liability/Add                | X               |          | X         |
 | Liability/Edit               | X               |          | X         |
 | Liability/Delete             | X               |          | X         |
-| LiabilityLines               | X               | X        | X         |
-| LiabilityLine/Add            | X               |          | X         |
-| LiabilityLine/Edit           | X               |          | X         |
-| LiabilityLine/Delete         | X               |          | X         |
+| LiabilityItems               | X               | X        | X         |
+| LiabilityItem/Add            | X               |          | X         |
+| LiabilityItem/Edit           | X               |          | X         |
+| LiabilityItem/Delete         | X               |          | X         |
 | LiabilityVats                | X               | X        | X         |
 | LiabilityPayments            | X               | X        | X         |
 | LiabilityPayment/Add         | X               |          | X         |

@@ -48,11 +48,10 @@ No additional ADIOS parameters needs to be defined.
 
 ### Indexes
 
-REVIEW DD: Nechyba tu id_bkp_account?
-
 | Name                       |  Type   |                 Column + Order |
 | :------------------------- | :-----: | -----------------------------: |
 | id                         | PRIMARY |                         id ASC |
+| id_bkp_book_account        |  INDEX  |        id_bkp_book_account ASC |
 | id_bkp_financial_statement |  INDEX  | id_bkp_financial_statement ASC |
 
 ## Callbacks

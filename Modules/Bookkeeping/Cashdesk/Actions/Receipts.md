@@ -17,7 +17,7 @@ Table
     * REVIEW DD: je toto spravne?
   * com_address.name
     * REVIEW DD: je toto spravne?
-  * date
-  * number
+  * issue_date
+  * receipt_number
   * amount_total
 * orderBy: id_bkp_accounting_period ASC, id_bkp_cashdesk_account ASC

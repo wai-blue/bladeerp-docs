@@ -14,7 +14,7 @@ Table
 
 * columns:
   * id_bkp_cashdesk_account
-  * datetime_statement
+  * statement_datetime
   * amount_found
   * amount_expected
   * credit

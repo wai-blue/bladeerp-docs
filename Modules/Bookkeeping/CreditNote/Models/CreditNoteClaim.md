@@ -10,17 +10,15 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                           |
-| :-------------------- | :---------------------------------------------- |
-| sqlName               | bkp_credit_note_claims                          |
+| Property              | Value                                               |
+| :-------------------- | :-------------------------------------------------- |
+| sqlName               | bkp_credit_note_claims                              |
 | urlBase               | bookkeeping/credit-note/{id_bkp_credit_note}/claims |
-| lookupSqlValue        |                                                 |
-| tableTitle            | Credit Note Claims                              |
-| formTitleForInserting | New Credit Note Claim                           |
-| formTitleForEditing   | Credit Note Claim                               |
-| isCrossTable          | TRUE                                            |
-
-REVIEW DD: pridane isCrossTable
+| lookupSqlValue        |                                                     |
+| tableTitle            | Credit Note Claims                                  |
+| formTitleForInserting | New Credit Note Claim                               |
+| formTitleForEditing   | Credit Note Claim                                   |
+| isCrossTable          | TRUE                                                |
 
 ## Data Structure
 
@@ -35,8 +33,8 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column             | Model                                            | Relation | OnUpdate | OnDelete |
-| :----------------- | :----------------------------------------------- | :------: | -------- | -------- |
+| Column             | Model                                                | Relation | OnUpdate | OnDelete |
+| :----------------- | :--------------------------------------------------- | :------: | -------- | -------- |
 | id_bkp_credit_note | App/Widgets/Bookkeeping/CreditNote/Models/CreditNote |   1:N    | Cascade  | Cascade  |
 | id_bkp_claim       | App/Widgets/Bookkeeping/Claim/Models/Claim           |   1:N    | Cascade  | Restrict |
 

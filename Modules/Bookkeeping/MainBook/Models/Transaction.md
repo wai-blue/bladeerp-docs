@@ -38,8 +38,6 @@ No constants are defined for this model.
 | id_bkp_currency          | Currency          |   lookup   |   8    |   TRUE   | ID meny                                       |
 | id_bkp_accounting_period | Accounting Period |   lookup   |   8    |   TRUE   | ID účtovného obdobia                          |
 
-REVIEW DD: `date_transaction` premenovane na `transaction_date`
-
 ### ADIOS Parameters
 
 No additional ADIOS parameters needs to be defined.

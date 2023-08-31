@@ -4,6 +4,16 @@
 
 Vytvorenie novej uzávierky.
 
+## Permissions
+
+[Permissions are granted to all user roles.]
+
+Permissions are granted to the following user roles:
+  * Main Accountant
+  * Sales Representative
+  * ...
+
+
 ## View
 
 Form

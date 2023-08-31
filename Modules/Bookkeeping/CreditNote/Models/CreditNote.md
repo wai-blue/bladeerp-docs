@@ -10,14 +10,14 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                            |
-| :-------------------- | :------------------------------- |
-| sqlName               | bkp_credit_notes                 |
+| Property              | Value                                |
+| :-------------------- | :----------------------------------- |
+| sqlName               | bkp_credit_notes                     |
 | urlBase               | bookkeeping/credit-note/credit-notes |
-| lookupSqlValue        | {%TABLE%}.sequence_code          |
-| tableTitle            | CreditNotes                      |
-| formTitleForInserting | New CreditNote                   |
-| formTitleForEditing   | Credit Note                      |
+| lookupSqlValue        | {%TABLE%}.sequence_code              |
+| tableTitle            | CreditNotes                          |
+| formTitleForInserting | New CreditNote                       |
+| formTitleForEditing   | Credit Note                          |
 
 ## Data Structure
 
@@ -58,12 +58,12 @@ REVIEW DD: Stlpec comment ma preco title Description? Navrhujem zjednotit - bud 
 
 | Column                                  | Model                                                     | Relation | OnUpdate | OnDelete |
 | :-------------------------------------- | :-------------------------------------------------------- | :------: | -------- | -------- |
-| id_bkp_credit_note_state                | App/Widgets/Bookkeeping/CreditNote/Models/CreditNoteState     |   1:N    | Cascade  | Restrict |
+| id_bkp_credit_note_state                | App/Widgets/Bookkeeping/CreditNote/Models/CreditNoteState |   1:N    | Cascade  | Restrict |
 | id_com_address                          | App/Widgets/Common/AddressBook/???                        |   1:N    | Cascade  | Restrict |
 | id_com_numeric_sequence                 | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
 | id_com_numeric_sequence_variable_symbol | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
-| id_bkp_accounting_period                | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod      |   1:N    | Cascade  | Restrict |
-| id_bkp_currency                         | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency          |   1:N    | Cascade  | Restrict |
+| id_bkp_accounting_period                | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod  |   1:N    | Cascade  | Restrict |
+| id_bkp_currency                         | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency      |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 
