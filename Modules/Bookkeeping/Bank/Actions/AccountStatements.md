@@ -10,7 +10,7 @@ Table
 
 ## Parameters
 
-* columns:
+* showColumns:
   * id_bkp_bank_account
   * statement_datetime
   * amount_found

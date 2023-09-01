@@ -10,7 +10,7 @@ Table
 
 ## Parameters
 
-* columns:
+* showColumns:
   * account_name
   * account_acronym
   * id_bkp_currency

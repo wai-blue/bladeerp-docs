@@ -10,7 +10,7 @@ Table
 
 ## Parameters
 
-* columns:
+* showColumns:
   * id_bkp_book_accounts.name
   * amount
 * orderBy: id_bkp_book_accounts ASC

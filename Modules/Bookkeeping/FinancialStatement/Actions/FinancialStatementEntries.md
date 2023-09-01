@@ -12,7 +12,7 @@ REVIEW DD: Po novom sa uz "UI" nepouziva. Malo by to byt iba "Tree" s tym, ze tr
 
 ## Default View Parameters
 
-* columns:
+* showColumns:
   * bkp_book_accounts.account
   * bkp_book_accounts.name
   * balance

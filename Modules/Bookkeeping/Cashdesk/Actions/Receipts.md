@@ -10,7 +10,7 @@ Table
 
 ## Parameters
 
-* columns:
+* showColumns:
   * id_bkp_cashdesk_account
   * id_bkp_accounting_period
   * com_numeric_sequence.name

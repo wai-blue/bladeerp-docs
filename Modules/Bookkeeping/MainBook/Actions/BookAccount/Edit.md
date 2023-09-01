@@ -10,7 +10,7 @@ Form
 
 ## Parameters
 
-* columns:
+* showColumns:
   * number
   * transaction_date
   * amount

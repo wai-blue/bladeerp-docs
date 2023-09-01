@@ -1,5 +1,7 @@
 # Model Common/AddressBook/ContactCompany
 
+REVIEW DD: Po telefonate 31.8. tento model straca vyznam. Company udaje su ulozene priamo v Contact.
+
 ## Introduction
 Model slúži na evidenciu firemných údajov pre kotakty z adresára.
 
@@ -18,29 +20,21 @@ V modeli nie sú použité konštanty.
 | formTitleForEditing   | Contact Company                                               |
 
 ## Data Structure
-| Column          | Title            | ADIOS Type | Length | Required | Notes                                    |
-| :-------------- | :--------------- | :--------: | :----: | :------: | :--------------------------------------- |
-| id              |                  |    int     |   8    |   TRUE   | ID záznamu                               |
-| id_created_by   | Created By       |   lookup   |   8    |   TRUE   | Reference to user who created the record |
-| create_datetime | Created Datetime |  datetime  |   8    |   TRUE   | When the record was created              |
-| id_updated_by   | Updated By       |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
-| update_datetime | Updated Datetime |  datetime  |   8    |   TRUE   | When the record was updated              |
-| company_name    | Company Name     |  varchar   |  150   |   TRUE   | Názov spoločnosti                        |
-| business_number | Business Number  |  varchar   |   50   |  FALSE   | IČO                                      |
-| tax_number      | Tax Number       |  varchar   |   50   |  FALSE   | DIČ                                      |
-| vat_number      | VAT Bumber       |  varchar   |   50   |  FALSE   | DIČ DPH                                  |
-| description     | Description      |    text    |        |  FALSE   | Poznámka spoločnosti                     |
-
-REVIEW DD: Description alebo poznamka? Pls zjednotit, alebo vytvorit dva samostatne stlpce.
+| Column          | Title           | ADIOS Type | Length | Required | Notes                |
+| :-------------- | :-------------- | :--------: | :----: | :------: | :------------------- |
+| id              |                 |    int     |   8    |   TRUE   | ID záznamu           |
+| record_info     | Record Info     |    json    |        |   TRUE   |                      |
+| company_name    | Company Name    |  varchar   |  150   |   TRUE   | Názov spoločnosti    |
+| business_number | Business Number |  varchar   |   50   |  FALSE   | IČO                  |
+| tax_number      | Tax Number      |  varchar   |   50   |  FALSE   | DIČ                  |
+| vat_number      | VAT Bumber      |  varchar   |   50   |  FALSE   | DIČ DPH              |
+| notes           | Notes           |    text    |        |  FALSE   | Poznámka spoločnosti |
 
 ### ADIOS Parameters
 No additional ADIOS parameters needs to be defined.
 
 ## Foreign Keys
-| Column        | Model           | Relation | OnUpdate | OnDelete |
-| :------------ | :-------------- | :------: | -------- | -------- |
-| id_created_by | ADIOS/Core/User |   1:N    | Cascade  | Cascade  |
-| id_updated_by | ADIOS/Core/User |   1:N    | Cascade  | Cascade  |
+Model does not contain foreign keys.
 
 ## Indexes
 | Name            |  Type   |      Column + Order |
@@ -49,8 +43,7 @@ No additional ADIOS parameters needs to be defined.
 | company_name    | UNIQUE  |    company_name ASC |
 | business_number | UNIQUE  | business_number ASC |
 | tax_number      | UNIQUE  |      tax_number ASC |
-
-REVIEW DD: `vat_number` nemusi byt unique?
+| vat_number      | UNIQUE  |      vat_number ASC |
 
 ## Callbacks
 

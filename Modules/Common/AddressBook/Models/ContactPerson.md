@@ -18,21 +18,18 @@ V modeli nie sú použité konštanty.
 | formTitleForEditing   | Person                                      |
 
 ## Data Structure
-| Column          | Title            | ADIOS Type | Length | Required | Notes                                    |
-| :-------------- | :--------------- | :--------: | :----: | :------: | :--------------------------------------- |
-| id              |                  |    int     |   8    |   TRUE   | ID záznamu                               |
-| id_created_by   | Created By       |   lookup   |   8    |   TRUE   | Reference to user who created the record |
-| create_datetime | Created Datetime |  datetime  |   8    |   TRUE   | When the record was created              |
-| id_updated_by   | Updated By       |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
-| update_datetime | Updated Datetime |  datetime  |   8    |   TRUE   | When the record was updated              |
-| id_com_contact  | Contact          |    int     |   8    |   TRUE   | ID kontaktu                              |
-| first_name      | First Name       |  varchar   |  200   |   TRUE   | Krstné meno                              |
-| last_name       | Last Name        |  varchar   |  200   |   TRUE   | Priezvisko                               |
-| middle_name     | Middle Name      |  varchar   |  200   |  FALSE   | Stretné meno                             |
-| title_before    | Title Before     |  varchar   |   50   |  FALSE   | Titul pred menom                         |
-| title_after     | Title After      |  varchar   |   50   |  FALSE   | Titul za menom                           |
-| email           | Email            |  varchar   |  100   |   TRUE   | Email                                    |
-| phone           | Phone Number     |  varchar   |   20   |  FALSE   | Telefón                                  |
+| Column         | Title        | ADIOS Type | Length | Required | Notes            |
+| :------------- | :----------- | :--------: | :----: | :------: | :--------------- |
+| id             |              |    int     |   8    |   TRUE   | ID záznamu       |
+| record_info    | Record Info  |    json    |        |   TRUE   |                  |
+| id_com_contact | Contact      |    int     |   8    |   TRUE   | ID kontaktu      |
+| first_name     | First Name   |  varchar   |  200   |   TRUE   | Krstné meno      |
+| last_name      | Last Name    |  varchar   |  200   |  FALSE   | Priezvisko       |
+| middle_name    | Middle Name  |  varchar   |  200   |  FALSE   | Stretné meno     |
+| title_before   | Title Before |  varchar   |   50   |  FALSE   | Titul pred menom |
+| title_after    | Title After  |  varchar   |   50   |  FALSE   | Titul za menom   |
+| email          | Email        |  varchar   |  100   |   TRUE   | Email            |
+| phone          | Phone Number |  varchar   |   50   |  FALSE   | Telefón          |
 
 REVIEW DD: URL na LI profil?
 

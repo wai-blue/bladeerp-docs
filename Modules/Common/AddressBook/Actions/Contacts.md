@@ -11,12 +11,13 @@ Table
 ## Parameters
 
 * model: App/Widgets/Common/AddressBook/Models/Contacts
-* columns:
+* showColumns:
   * id_com_contact_company
   * id_com_contact_person
   * id_com_contact_address
   * id_bkp_currency
   * language_code
+  * is_active
 * orderBy: 
   * com_contacts.is_active DESC
   * `id_com_contact_company:LOOKUP`.company_name ASC

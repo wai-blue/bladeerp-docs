@@ -10,7 +10,7 @@ Table
 
 ## Parameters
 
-* columns:
+* showColumns:
   * id_bkp_accounting_period
   * id_bkp_bank_account
   * com_contact.name

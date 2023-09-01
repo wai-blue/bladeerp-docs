@@ -9,7 +9,7 @@ Zoznam všetkých bankových účtov
 Table
 ## Parameters
 
-* columns:
+* showColumns:
   * name
   * acronym
   * bank

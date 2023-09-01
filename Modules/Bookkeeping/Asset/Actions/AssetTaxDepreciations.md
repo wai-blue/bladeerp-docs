@@ -10,7 +10,7 @@ Table
 
 ## Parameters
 
-* columns:
+* showColumns:
   * number
   * year
   * accounting_depreciation_coefficient

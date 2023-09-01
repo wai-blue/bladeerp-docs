@@ -13,7 +13,7 @@ Table
 (vid ADIOS.repo/src/Core/View/Table.php)
 
 * model: App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod
-* columns:
+* showColumns:
   * name
   * start_date
   * end_date
