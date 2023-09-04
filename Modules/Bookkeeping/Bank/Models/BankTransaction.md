@@ -50,15 +50,15 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column                   | Model                                                                                                         | Relation | OnUpdate | OnDelete |
-| :----------------------- | :------------------------------------------------------------------------------------------------------------ | :------: | -------- | -------- |
+| Column                   | Model                                                                                                                 | Relation | OnUpdate | OnDelete |
+| :----------------------- | :-------------------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
 | id_bkp_currency          | [App/Widgets/Bookkeeping/ExchangeRate/Models/Currency](../../../Bookkeeping/Bank/Models/BankAccount.md)bkp_currencies |   1:N    | Cascade  | Restrict |
 | id_bkp_bank_account      | [App/Widgets/Bookkeeping/Bank/Models/BankAccount](../../../Bookkeeping/Bank/Models/BankAccount.md)                    |   1:N    | Cascade  | Restrict |
 | id_bkp_accounting_period | [App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod](../../../Bookkeeping/MainBook/Models/AccountingPeriod.md)  |   1:N    | Cascade  | Restrict |
-| id_com_numeric_sequence  | com_numeric_sequences                                                                                         |   1:N    | Cascade  | Restrict |
-| id_com_contact           | com_contact                                                                                                   |   1:N    | Cascade  | Restrict |
-| id_user                  | ADIOS/Core/User                                                                                               |   1:N    | Cascade  | Restrict |
-| id_bkp_transaction       | bkp_transaction                                                                                               |   1:N    | Cascade  | Restrict |
+| id_com_numeric_sequence  | com_numeric_sequences                                                                                                 |   1:N    | Cascade  | Restrict |
+| id_com_contact           | com_contact                                                                                                           |   1:N    | Cascade  | Restrict |
+| id_user                  | ADIOS/Core/Models/User                                                                                                |   1:N    | Cascade  | Restrict |
+| id_bkp_transaction       | bkp_transaction                                                                                                       |   1:N    | Cascade  | Restrict |
 
 REVIEW DD: dokoncit com_numeric_sequences a com_contact
 REVIEW DD: bkp_transaction - z nazvu tabulky nie je presne jasny model

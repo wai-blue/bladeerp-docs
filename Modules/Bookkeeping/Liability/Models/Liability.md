@@ -63,14 +63,14 @@ REVIEW DD: "Comment" alebo "Description" alebpo "Poznamka"?
 
 ### Foreign Keys
 
-| Column                                  | Model                                                     | Relation | OnUpdate | OnDelete |
-| :-------------------------------------- | :-------------------------------------------------------- | :------: | -------- | -------- |
-| id_created_by                           | ADIOS/Core/User                                           |   1:N    | Cascade  | Cascade  |
-| id_updated_by                           | ADIOS/Core/User                                           |   1:N    | Cascade  | Cascade  |
-| id_com_numeric_sequence                 | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
-| id_com_numeric_sequence_variable_symbol | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
-| id_com_contact                          | App/Widgets/Common/AddressBook/Models/???                 |   1:N    | Cascade  | Restrict |
-| id_bkp_currency                         | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency      |   1:N    | Cascade  | Restrict |
+| Column                                  | Model                                                                                          | Relation | OnUpdate | OnDelete |
+| :-------------------------------------- | :--------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_created_by                           | ADIOS/Core/Models/User                                                                         |   1:N    | Cascade  | Cascade  |
+| id_updated_by                           | ADIOS/Core/Models/User                                                                         |   1:N    | Cascade  | Cascade  |
+| id_com_numeric_sequence                 | App/Widgets/Common/NumericSequence/Models/NumericSequence                                      |   1:N    | Cascade  | Restrict |
+| id_com_numeric_sequence_variable_symbol | App/Widgets/Common/NumericSequence/Models/NumericSequence                                      |   1:N    | Cascade  | Restrict |
+| id_com_contact                          | [App/Widgets/Common/AddressBook/Models/Contact](../../../Common/AddressBook/Models/Contact.md) |   1:N    | Cascade  | Restrict |
+| id_bkp_currency                         | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency                                           |   1:N    | Cascade  | Restrict |
 
 
 ### Indexes
@@ -79,9 +79,9 @@ REVIEW DD: "Comment" alebo "Description" alebpo "Poznamka"?
 | :-------------------------------------- | :-----: | ------------------------------------------: |
 | id                                      | PRIMARY |                                      id ASC |
 | id_created_by                           |  INDEX  |                           id_created_by ASC |
-| create_datetime                        |  INDEX  |                        create_datetime ASC |
+| create_datetime                         |  INDEX  |                         create_datetime ASC |
 | id_updated_by                           |  INDEX  |                           id_updated_by ASC |
-| update_datetime                        |  INDEX  |                        update_datetime ASC |
+| update_datetime                         |  INDEX  |                         update_datetime ASC |
 | id_com_contact                          |  INDEX  |                          id_com_contact ASC |
 | is_accounted                            |  INDEX  |                           is_accounted DESC |
 | is_long_term                            |  INDEX  |                            is_long_term ASC |

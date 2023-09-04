@@ -53,8 +53,8 @@ TODO: Co keby sme v ADIOSe vytvorili DataTypeMapPoint? Bol by to varchar, obsahu
 ## Foreign Keys
 | Column         | Model                                                                                          | Relation | OnUpdate | OnDelete |
 | :------------- | :--------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_created_by  | ADIOS/Core/User                                                                                |   1:N    | Cascade  | Cascade  |
-| id_updated_by  | ADIOS/Core/User                                                                                |   1:N    | Cascade  | Cascade  |
+| id_created_by  | ADIOS/Core/Models/User                                                                         |   1:N    | Cascade  | Cascade  |
+| id_updated_by  | ADIOS/Core/Models/User                                                                         |   1:N    | Cascade  | Cascade  |
 | id_com_contact | [App/Widgets/Common/AddressBook/Models/Contact](../../../Common/AddressBook/Models/Contact.md) |   1:N    | Cascade  | Restrict |
 | id_com_country | [App/Widgets/Common/AddressBook/Models/Country](../../../Common/AddressBook/Models/Country.md) |   1:N    | Cascade  | Restrict |
 

@@ -53,8 +53,8 @@ REVIEW DD: id_bkp_vat - neukladat radsej priamo hodnotu VAT v %?
 
 | Column           | Model                                              | Relation | OnUpdate | OnDelete |
 | :--------------- | :------------------------------------------------- | :------: | -------- | -------- |
-| id_created_by    | ADIOS/Core/User                                    |   1:N    | Cascade  | Cascade  |
-| id_updated_by    | ADIOS/Core/User                                    |   1:N    | Cascade  | Cascade  |
+| id_created_by    | ADIOS/Core/Models/User                             |   1:N    | Cascade  | Cascade  |
+| id_updated_by    | ADIOS/Core/Models/User                             |   1:N    | Cascade  | Cascade  |
 | id_bkp_liability | App/Widgets/Bookkeeping/Liability/Models/Liability |   1:N    | Cascade  | Cascade  |
 | id_war_unit      | App/Widgets/Warehouse/Models/Unit                  |   1:N    | Cascade  | Restrict |
 | id_bkp_vat       | App/Widgets/Bookkeeping/MainBook/Models/Vat        |   1:N    | Cascade  | Restrict |

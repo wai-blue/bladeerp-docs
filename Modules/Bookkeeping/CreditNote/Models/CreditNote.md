@@ -56,14 +56,14 @@ REVIEW DD: Stlpec comment ma preco title Description? Navrhujem zjednotit - bud 
 
 ### Foreign Keys
 
-| Column                                  | Model                                                     | Relation | OnUpdate | OnDelete |
-| :-------------------------------------- | :-------------------------------------------------------- | :------: | -------- | -------- |
-| id_bkp_credit_note_state                | App/Widgets/Bookkeeping/CreditNote/Models/CreditNoteState |   1:N    | Cascade  | Restrict |
-| id_com_contact                          | App/Widgets/Common/AddressBook/???                        |   1:N    | Cascade  | Restrict |
-| id_com_numeric_sequence                 | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
-| id_com_numeric_sequence_variable_symbol | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
-| id_bkp_accounting_period                | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod  |   1:N    | Cascade  | Restrict |
-| id_bkp_currency                         | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency      |   1:N    | Cascade  | Restrict |
+| Column                                  | Model                                                                                          | Relation | OnUpdate | OnDelete |
+| :-------------------------------------- | :--------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_bkp_credit_note_state                | App/Widgets/Bookkeeping/CreditNote/Models/CreditNoteState                                      |   1:N    | Cascade  | Restrict |
+| id_com_contact                          | [App/Widgets/Common/AddressBook/Models/Contact](../../../Common/AddressBook/Models/Contact.md) |   1:N    | Cascade  | Restrict |
+| id_com_numeric_sequence                 | App/Widgets/Common/NumericSequence/Models/NumericSequence                                      |   1:N    | Cascade  | Restrict |
+| id_com_numeric_sequence_variable_symbol | App/Widgets/Common/NumericSequence/Models/NumericSequence                                      |   1:N    | Cascade  | Restrict |
+| id_bkp_accounting_period                | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod                                       |   1:N    | Cascade  | Restrict |
+| id_bkp_currency                         | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency                                           |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

@@ -57,7 +57,7 @@ No additional ADIOS parameters needs to be defined.
 | id_bkp_accounting_period | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod |   1:N    | Cascade  | Restrict |
 | id_com_numeric_sequence  | com_numeric_sequence                                     |   1:N    | Cascade  | Restrict |
 | id_com_contact           | com_contact                                              |   1:N    | Cascade  | Restrict |
-| id_user                  | ADIOS/Core/User                                          |   1:N    | Cascade  | Restrict |
+| id_user                  | ADIOS/Core/Models/User                                   |   1:N    | Cascade  | Restrict |
 | id_bkp_currency          | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency     |   1:N    | Cascade  | Restrict |
 | id_bkp_receipt           | bkp_receipt                                              |   1:N    | Cascade  | Restrict |
 

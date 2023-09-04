@@ -50,10 +50,10 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column              | Model                                                                                      | Relation | OnUpdate | OnDelete |
-| :------------------ | :----------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| Column              | Model                                                                                              | Relation | OnUpdate | OnDelete |
+| :------------------ | :------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
 | id_bkp_bank_account | [App/Widgets/Bookkeeping/Bank/Models/BankAccount](../../../Bookkeeping/Bank/Models/BankAccount.md) |   1:N    | Cascade  | Cascade  |
-| id_user             | ADIOS/Core/User                                                                            |   1:N    | Cascade  | Restrict |
+| id_user             | ADIOS/Core/Models/User                                                                             |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

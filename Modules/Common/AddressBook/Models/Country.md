@@ -33,10 +33,10 @@ V modeli nie sú použité konštanty.
 No additional ADIOS parameters needs to be defined
 
 ## Foreign Keys
-| Column        | Model           | Relation | OnUpdate | OnDelete |
-| :------------ | :-------------- | :------: | -------- | -------- |
-| id_created_by | ADIOS/Core/User |   1:N    | Cascade  | Cascade  |
-| id_updated_by | ADIOS/Core/User |   1:N    | Cascade  | Cascade  |
+| Column        | Model                  | Relation | OnUpdate | OnDelete |
+| :------------ | :--------------------- | :------: | -------- | -------- |
+| id_created_by | ADIOS/Core/Models/User |   1:N    | Cascade  | Cascade  |
+| id_updated_by | ADIOS/Core/Models/User |   1:N    | Cascade  | Cascade  |
 
 ## Indexes
 | Name      |  Type   | Column + Order |

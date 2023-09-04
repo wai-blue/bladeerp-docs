@@ -56,14 +56,14 @@ No constants are defined for this model.
 
 ### Foreign Keys
 
-| Column                                  | Model                                                     | Relation | OnUpdate | OnDelete |
-| :-------------------------------------- | :-------------------------------------------------------- | :------: | -------- | -------- |
-| id_bkp_claim_state                      | App/Widgets/Bookkeeping/Claim/Models/ClaimState           |   1:N    | Cascade  | Restrict |
-| id_bkp_accounting_period                | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod  |   1:N    | Cascade  | Restrict |
-| id_com_numeric_sequence                 | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
-| id_com_numeric_sequence_variable_symbol | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
-| id_bkp_currency                         | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency      |   1:N    | Cascade  | Restrict |
-| id_com_contact                          | App/Widgets/Common/AddressBook/Contact                    |   1:N    | Cascade  | Restrict |
+| Column                                  | Model                                                                                          | Relation | OnUpdate | OnDelete |
+| :-------------------------------------- | :--------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_bkp_claim_state                      | App/Widgets/Bookkeeping/Claim/Models/ClaimState                                                |   1:N    | Cascade  | Restrict |
+| id_bkp_accounting_period                | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod                                       |   1:N    | Cascade  | Restrict |
+| id_com_numeric_sequence                 | App/Widgets/Common/NumericSequence/Models/NumericSequence                                      |   1:N    | Cascade  | Restrict |
+| id_com_numeric_sequence_variable_symbol | App/Widgets/Common/NumericSequence/Models/NumericSequence                                      |   1:N    | Cascade  | Restrict |
+| id_bkp_currency                         | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency                                           |   1:N    | Cascade  | Restrict |
+| id_com_contact                          | [App/Widgets/Common/AddressBook/Models/Contact](../../../Common/AddressBook/Models/Contact.md) |   1:N    | Cascade  | Restrict |
 
 UNDEFINED: Model pre Email Template zatiaľ neexistuje. Doplniť, keď bude vytvorený.
 ### Indexes

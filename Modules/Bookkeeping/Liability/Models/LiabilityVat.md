@@ -38,12 +38,12 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column           | Model           | Relation | OnUpdate | OnDelete |
-| :--------------- | :-------------- | :------: | -------- | -------- |
-| id_created_by    | ADIOS/Core/User |   1:N    | Cascade  | Cascade  |
-| id_updated_by    | ADIOS/Core/User |   1:N    | Cascade  | Cascade  |
-| id_bkp_liability | bkp_liabilities |   1:N    | Cascade  | Cascade  |
-| id_bkp_vat       | bkp_vats        |   1:N    | Cascade  | Restrict |
+| Column           | Model                  | Relation | OnUpdate | OnDelete |
+| :--------------- | :--------------------- | :------: | -------- | -------- |
+| id_created_by    | ADIOS/Core/Models/User |   1:N    | Cascade  | Cascade  |
+| id_updated_by    | ADIOS/Core/Models/User |   1:N    | Cascade  | Cascade  |
+| id_bkp_liability | bkp_liabilities        |   1:N    | Cascade  | Cascade  |
+| id_bkp_vat       | bkp_vats               |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

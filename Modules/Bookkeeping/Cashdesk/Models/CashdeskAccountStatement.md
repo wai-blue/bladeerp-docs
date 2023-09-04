@@ -46,7 +46,7 @@ No additional ADIOS parameters needs to be defined.
 | Column                  | Model                                                   | Relation | OnUpdate | OnDelete |
 | :---------------------- | :------------------------------------------------------ | :------: | -------- | -------- |
 | id_bkp_cashdesk_account | App/Widgets/Bookkeeping/Cashdesk/Models/CashdeskAccount |   1:N    | Cascade  | Restrict |
-| id_user                 | ADIOS/Core/User                                         |   1:N    | Cascade  | Restrict |
+| id_user                 | ADIOS/Core/Models/User                                  |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 
