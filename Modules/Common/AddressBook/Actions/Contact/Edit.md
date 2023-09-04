@@ -56,18 +56,18 @@ REVIEW DD: upravene pocas telefonatu, treba skontrolovat
       * Persons
         * action: Widgets/Common/AddressBook/Actions/ContactPersons/Browse
 TODO: JG doplniť neexistujúcu akciu
-        * parameters:
-          * idContact = $data[‘id’]
+        * params:
+          * idContact = $params[‘id’]
       * Addresses
         * action: Widgets/Common/AddressBook/Actions/ContactAddresses
 TODO: JG doplniť neexistujúcu akciu
-        * parameters:
-          * idContact = $data[‘id’]
+        * params:
+          * idContact = $params[‘id’]
       * Categories
         * action: Widgets/Common/AddressBook/Actions/ContactCategories
 TODO: JG doplniť neexistujúcu akciu
-        * parameters:
-          * idContact = $data[‘id’]
+        * params:
+          * idContact = $params[‘id’]
 
 ## Parameters Post-processing
   1. Hide all company columns (`com_contact_companies.*`) when contact is person (`id_com_contact_company = NULL`).

@@ -35,5 +35,5 @@ Grid
       * exchange_rate
   * B:
     * action: Widgets/Bookkeeping/Cashdesk/ReceiptItems
-    * parameters:
-      * idReceipt = $data[‘id’]
+    * params:
+      * idReceipt = $params[‘id’]

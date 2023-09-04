@@ -49,12 +49,12 @@ Grid
 
   * B:
     * view: Table
-    * parameters:
+    * params:
       * model = App/Bookkeeping/Asset/Models/AssetTaxDepreciation
-      * idBkpAsset = $data[‘id’]
+      * idBkpAsset = $params[‘id’]
 
   * C:
     * view: Table
-    * parameters:
+    * params:
       * model = App/Bookkeeping/Asset/Models/AssetAccountingDepreciation
-      * idBkpAsset = $data[‘id’]
+      * idBkpAsset = $params[‘id’]

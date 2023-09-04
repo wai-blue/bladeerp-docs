@@ -24,8 +24,8 @@ Grid
       * closing_date (readonly)
   * B:
     * action: Widgets/Bookkeeping/MainBook/FinancialStatementsEntries
-    * parameters:
-      * idFinancialStatement = $data[‘id’]
+    * params:
+      * idFinancialStatement = $params[‘id’]
 
 REVIEW DD: view "UI/InlineForm" neexistuje. Asi je myslene view "Form" a "cssClass" inline.
 

@@ -40,14 +40,14 @@ REVIEW DD: view "UI/InlineForm" neexistuje. Asi je myslene view "Form" a "cssCla
 | Parameter                | Value                                |
 | :----------------------- | :----------------------------------- |
 | Action                   | Widgets/Bookkeeping/MainBook/BookAccount |
-| id_bkp_accounting_period | $data[‘id’]                          |
+| id_bkp_accounting_period | $params[‘id’]                          |
 
 ## Area C
 
 | Parameter                | Value                        |
 | :----------------------- | :--------------------------- |
 | Action                   | Widgets/Bookkeeping/MainBook/Vat |
-| id_bkp_accounting_period | $data[‘id’]                  |
+| id_bkp_accounting_period | $params[‘id’]                  |
 
 Ak je účtovné obdobie otvorené, bude sa zobrazovať button na **uzatvorenie účtovného obdobia**. Uzavreté účtovné obdobie sa už nesmie meniť. Účtovné obdobie sa nesmie dátumami prekrývať s iným účtovným obdobím. Ak má účtované doklady v tabuľke **bkp_transactions**, je potrebné skontrolovať v akom rozsahu sú zaúčtované a neumožniť nastavenie **start_date** a **end_date** mimo tohoto rozsahu.
 

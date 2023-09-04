@@ -26,5 +26,5 @@ Grid
       * is_accounted
   * B:
     * action: Widgets/Bookkeeping/MainBook/TransactionEntries
-    * parameters:
-      * idTransaction = $data[‘id’]
+    * params:
+      * idTransaction = $params[‘id’]

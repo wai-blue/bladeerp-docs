@@ -29,11 +29,11 @@ Grid
       * closing_date (readonly)
   * B:
     * action: Widgets/Bookkeeping/MainBook/FinancialStatementsEntries
-    * parameters:
-      * idFinancialStatement = $data[‘id’]
+    * params:
+      * idFinancialStatement = $params[‘id’]
   * C:
     * (view|action): App/Core/Views/MyCustomView
-    * parameters:
+    * params:
       * ... any parameters that the custom view can accept
 
 ## Parameters Post-processing
