@@ -19,18 +19,15 @@ No constants are defined for this model.
 
 ## Data Structure
 
-| Column           | Title            | ADIOS Type | Length | Required | Notes                                    |
-| :--------------- | ---------------- | :--------: | :----: | :------: | :--------------------------------------- |
-| id               |                  |    int     |   8    |   TRUE   | Unique record ID                         |
-| id_created_by    | Created By       |   lookup   |   8    |   TRUE   | Reference to user who created the record |
-| create_datetime  | Created Datetime |  datetime  |   8    |   TRUE   | When the record was created              |
-| id_updated_by    | Updated By       |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
-| update_datetime  | Updated Datetime |  datetime  |   8    |   TRUE   | When the record was updated              |
-| id_bkp_liability | Liability        |   lookup   |   8    |   TRUE   | ID záväzku                               |
-| id_bkp_vat       | VAT Rate         |   lookup   |   8    |   TRUE   | ID sadzby DPH                            |
-| price_excl_vat   | Price Excl VAT   |  decimal   |  15,2  |   TRUE   | Suma bez DPH                             |
-| price_vat        | Price VAT        |  decimal   |  15,2  |   TRUE   | Suma DPH                                 |
-| price_incl_vat   | Price Incl VAT   |  decimal   |  15,2  |   TRUE   | Suma s DPH                               |
+| Column           | Title          | ADIOS Type | Length | Required | Notes                                      |
+| :--------------- | -------------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id               |                |    int     |   8    |   TRUE   | Unique record ID                           |
+| record_info      | Record Info    |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
+| id_bkp_liability | Liability      |   lookup   |   8    |   TRUE   | ID záväzku                                 |
+| id_bkp_vat       | VAT Rate       |   lookup   |   8    |   TRUE   | ID sadzby DPH                              |
+| price_excl_vat   | Price Excl VAT |  decimal   |  15,2  |   TRUE   | Suma bez DPH                               |
+| price_vat        | Price VAT      |  decimal   |  15,2  |   TRUE   | Suma DPH                                   |
+| price_incl_vat   | Price Incl VAT |  decimal   |  15,2  |   TRUE   | Suma s DPH                                 |
 
 ### ADIOS Parameters
 
@@ -40,8 +37,6 @@ No additional ADIOS parameters needs to be defined.
 
 | Column           | Model                  | Relation | OnUpdate | OnDelete |
 | :--------------- | :--------------------- | :------: | -------- | -------- |
-| id_created_by    | ADIOS/Core/Models/User |   1:N    | Cascade  | Cascade  |
-| id_updated_by    | ADIOS/Core/Models/User |   1:N    | Cascade  | Cascade  |
 | id_bkp_liability | bkp_liabilities        |   1:N    | Cascade  | Cascade  |
 | id_bkp_vat       | bkp_vats               |   1:N    | Cascade  | Restrict |
 
@@ -50,10 +45,6 @@ No additional ADIOS parameters needs to be defined.
 | Name                          |  Type   |       Column + Order |
 | :---------------------------- | :-----: | -------------------: |
 | id                            | PRIMARY |               id ASC |
-| id_created_by                 |  INDEX  |    id_created_by ASC |
-| create_datetime               |  INDEX  |  create_datetime ASC |
-| id_updated_by                 |  INDEX  |    id_updated_by ASC |
-| update_datetime               |  INDEX  |  update_datetime ASC |
 | id_bkp_liability              |  INDEX  | id_bkp_liability ASC |
 | id_bkp_vat                    |  INDEX  |       id_bkp_vat ASC |
 | id_bkp_liability___id_bkp_vat | UNIQUE  | id_bkp_liability ASC |

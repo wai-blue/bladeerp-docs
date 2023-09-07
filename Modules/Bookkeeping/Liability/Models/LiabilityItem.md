@@ -21,24 +21,21 @@ No constants are defined for this model.
 
 ## Data Structure
 
-| Column              | Title               | ADIOS Type | Length | Required | Notes                                    |
-| :------------------ | ------------------- | :--------: | :----: | :------: | :--------------------------------------- |
-| id                  |                     |    int     |   8    |   TRUE   | Jedinečné ID záznamu                     |
-| id_created_by       | Created By          |   lookup   |   8    |   TRUE   | Reference to user who created the record |
-| create_datetime    | Created Datetime    |  datetime  |   8    |   TRUE   | When the record was created              |
-| id_updated_by       | Updated By          |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
-| update_datetime    | Updated Datetime    |  datetime  |   8    |   TRUE   | When the record was updated              |
-| id_bkp_liability    | Liability           |   lookup   |   8    |   TRUE   | ID záväzku                               |
-| item                | Item                |  varchar   |  200   |   TRUE   | Položka                                  |
-| item_sequence       | Item Sequence       |    int     |   6    |  FALSE   | Poradie položky v záväzku                |
-| quantity            | Quantity            |  decimal   |  15,4  |   TRUE   | Množstvo                                 |
-| id_war_unit         | Units               |   lookup   |   8    |   TRUE   | Merná jednotka                           |
-| id_bkp_vat          | VAT Rate            |   lookup   |   8    |   TRUE   | ID Sadzby DPH                            |
-| price_unit_excl_vat | Unit Price Excl VAT |  decimal   |  15,4  |   TRUE   | Jednotková cena bez DPH                  |
-| price_unit_incl_vat | Unit Price Incl VAT |  decimal   |  15,4  |   TRUE   | Jednotková cena s DPH                    |
-| price_excl_vat      | Price Excl VAT      |  decimal   |  15,4  |   TRUE   | Suma za položku bez DPH                  |
-| price_vat           | Price VAT           |  decimal   |  15,4  |   TRUE   | Suma DPH za položku                      |
-| price_incl_vat      | Price Incl VAT      |  decimal   |  15,4  |   TRUE   | Suma za položku s DPH                    |
+| Column              | Title               | ADIOS Type | Length | Required | Notes                                      |
+| :------------------ | ------------------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id                  |                     |    int     |   8    |   TRUE   | Jedinečné ID záznamu                       |
+| record_info         | Record Info         |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
+| id_bkp_liability    | Liability           |   lookup   |   8    |   TRUE   | ID záväzku                                 |
+| item                | Item                |  varchar   |  200   |   TRUE   | Položka                                    |
+| item_sequence       | Item Sequence       |    int     |   6    |  FALSE   | Poradie položky v záväzku                  |
+| quantity            | Quantity            |  decimal   |  15,4  |   TRUE   | Množstvo                                   |
+| id_war_unit         | Units               |   lookup   |   8    |   TRUE   | Merná jednotka                             |
+| id_bkp_vat          | VAT Rate            |   lookup   |   8    |   TRUE   | ID Sadzby DPH                              |
+| price_unit_excl_vat | Unit Price Excl VAT |  decimal   |  15,4  |   TRUE   | Jednotková cena bez DPH                    |
+| price_unit_incl_vat | Unit Price Incl VAT |  decimal   |  15,4  |   TRUE   | Jednotková cena s DPH                      |
+| price_excl_vat      | Price Excl VAT      |  decimal   |  15,4  |   TRUE   | Suma za položku bez DPH                    |
+| price_vat           | Price VAT           |  decimal   |  15,4  |   TRUE   | Suma DPH za položku                        |
+| price_incl_vat      | Price Incl VAT      |  decimal   |  15,4  |   TRUE   | Suma za položku s DPH                      |
 
 REVIEW DD: id_war_unit - podla meetingu z 23.8. (Juraj+Dusan) sa taketo prepojenia maju robit az, ked sa bude analyzovat warehouse.
 REVIEW DD: id_bkp_vat - neukladat radsej priamo hodnotu VAT v %?
@@ -53,8 +50,6 @@ REVIEW DD: id_bkp_vat - neukladat radsej priamo hodnotu VAT v %?
 
 | Column           | Model                                              | Relation | OnUpdate | OnDelete |
 | :--------------- | :------------------------------------------------- | :------: | -------- | -------- |
-| id_created_by    | ADIOS/Core/Models/User                             |   1:N    | Cascade  | Cascade  |
-| id_updated_by    | ADIOS/Core/Models/User                             |   1:N    | Cascade  | Cascade  |
 | id_bkp_liability | App/Widgets/Bookkeeping/Liability/Models/Liability |   1:N    | Cascade  | Cascade  |
 | id_war_unit      | App/Widgets/Warehouse/Models/Unit                  |   1:N    | Cascade  | Restrict |
 | id_bkp_vat       | App/Widgets/Bookkeeping/MainBook/Models/Vat        |   1:N    | Cascade  | Restrict |
@@ -64,8 +59,6 @@ REVIEW DD: id_bkp_vat - neukladat radsej priamo hodnotu VAT v %?
 | Name             | Type    | Column + Order       |
 | :--------------- | :------ | :------------------- |
 | id               | PRIMARY | id ASC               |
-| id_created_by    | INDEX   | id_created_by ASC    |
-| id_updated_by    | INDEX   | id_updated_by ASC    |
 | id_bkp_liability | INDEX   | id_bkp_liability ASC |
 | id_war_unit      | INDEX   | id_war_unit ASC      |
 | id_bkp_vat       | INDEX   | id_bkp_vat ASC       |
