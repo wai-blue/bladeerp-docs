@@ -3,8 +3,8 @@
 ## Introduction
 
 Tabuľka obsahuje definíciu stavov dobropisov a procesy, ktoré sa majú automaticky stať.
-
 Jeden stav musí byť vždy označený ako predvolený.
+TODO: id_com_mail_template - Model pre Email Template zatiaľ neexistuje. Doplniť, keď bude vytvorený.
 
 ## Constants
 
@@ -32,12 +32,12 @@ No constants are defined for this model.
 | state_sequence       | Order In Select    |    int     |   6    |  FALSE   | Poradové číslo stavu v select boxoch                      |
 | is_set_sequence_code | Set Sequence Code? |  boolean   |        |   TRUE   | Má sa v danom stave priradiť sekvenčný kód alebo ešte nie |
 | is_send_mail         | Send Mail?         |  boolean   |   1    |  FALSE   | Má sa poslať mail o zmene stavu?                          |
-| id_com_mail_template | Email Template     |   lookup   |   8    |  FALSE   | ID šablóny mailu                                          |
 | is_send_credit_note  | Send CreditNote?   |  boolean   |        |  FALSE   |                                                           |
 | is_send_claim        | Send Claim?        |  boolean   |        |  FALSE   |                                                           |
 | is_revert_stock      | Revert Stock?      |  boolean   |        |  FALSE   |                                                           |
 | is_allowed_update    | Can Update?        |  boolean   |        |   TRUE   |                                                           |
 | is_allowed_delete    | Can Delete?        |  boolean   |        |   TRUE   |                                                           |
+TODO: | id_com_mail_template | Email Template     |   lookup   |   8    |  FALSE   | ID šablóny mailu                                          |
 
 ### ADIOS Parameters
 
@@ -57,9 +57,8 @@ No constants are defined for this model.
 
 | Column               | Model                                    | Relation | OnUpdate | OnDelete |
 | :------------------- | :--------------------------------------- | :------: | -------- | -------- |
-| id_com_mail_template | App/Widgets/Common/Email/Models/Template |   1:N    | Cascade  | Restrict |
+TODO: | id_com_mail_template | App/Widgets/Common/Email/Models/Template |   1:N    | Cascade  | Restrict |
 
-TODO: Model pre Email Template zatiaľ neexistuje. Doplniť, keď bude vytvorený.
 ### Indexes
 
 | Name                 |  Type   |            Column + Order |
@@ -67,7 +66,6 @@ TODO: Model pre Email Template zatiaľ neexistuje. Doplniť, keď bude vytvoren�
 | id                   | PRIMARY |                    id ASC |
 | name                 |  INDEX  |                  name ASC |
 | state_sequence       |  INDEX  |        state_sequence ASC |
-| id_com_mail_template |  INDEX  | id_com_mail_template DESC |
 | is_available         |  INDEX  |         is_available DESC |
 | is_default           |  INDEX  |           is_default DESC |
 | is_set_sequence_code |  INDEX  | is_set_sequence_code DESC |
@@ -77,6 +75,7 @@ TODO: Model pre Email Template zatiaľ neexistuje. Doplniť, keď bude vytvoren�
 | is_revert_stock      |  INDEX  |      is_revert_stock DESC |
 | is_allowed_update    |  INDEX  |    is_allowed_update DESC |
 | is_allowed_delete    |  INDEX  |    is_allowed_delete DESC |
+TODO: | id_com_mail_template |  INDEX  | id_com_mail_template DESC |
 
 ## Callbacks
 
@@ -102,8 +101,6 @@ Not used.
 Nie je možné vymazať stav, ktorý je použitý v niektorom dobropise - tabuľka **bkp_credit_note**.
 
 ### onAfterDelete
-
-TODO: V Google docs chýba poznámka ,,nepoužíva sa,,. Naozaj je tomu tak, alebo bol popis omylom zmazaný?
 
 Not used.
 

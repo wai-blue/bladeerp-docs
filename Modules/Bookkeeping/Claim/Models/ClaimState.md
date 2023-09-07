@@ -3,8 +3,8 @@
 ## Introduction
 
 Tabuľka obsahuje definíciu stavov pohľadávok a procesy, ktoré sa majú automaticky stať.
-
 Jeden stav musí byť vždy označený ako predvolený.
+TODO: id_com_mail_template - Model pre Email Template zatiaľ neexistuje. Doplniť, keď bude vytvorený.
 
 ## Constants
 
@@ -31,14 +31,10 @@ No constants are defined for this model.
 | state_sequence              | Order In Select     |    int     |   6    |  FALSE   | Poradové číslo stavu v select boxoch                      |
 | is_set_sequence_code        | Set Sequence Code?  |  boolean   |   1    |   TRUE   | Má sa v danom stave priradiť sekvenčný kód alebo ešte nie |
 | is_send_mail                | Send Mail?          |  boolean   |   1    |  FALSE   | Má sa poslať mail o zmene stavu?                          |
-| id_com_mail_template        | Email Template      |   lookup   |   8    |  FALSE   | ID šablóny mailu                                          |
 | is_send_claim               | Send Claim?         |  boolean   |   1    |  FALSE   | Má sa k mailu pripojiť pohľadávka?                        |
-| is_send_order               | Send Order?         |  boolean   |   1    |  FALSE   | Má sa k mailu pripojiť objednávka?                        |
-| is_cancel_reservation       | Cancel Reservation? |  boolean   |   1    |  FALSE   | Má sa zrušiť rezervácia tovaru na sklade?                 |
-| is_remove_stock             | Remove Stock?       |  boolean   |   1    |  FALSE   | Má sa odpočítať fakturované množstvo zo skladu?           |
-| is_send_to_delivery_service | Create Package?     |  boolean   |   1    |  FALSE   | Má sa vytvoriť balík u dopravcu?                          |
 | is_allowed_update           | Can Update?         |  boolean   |   1    |   TRUE   | Môže sa meniť obsah?                                      |
 | is_allowed_delete           | Can Delete?         |  boolean   |   1    |   TRUE   | Môže sa zmazať?                                           |
+TODO: | id_com_mail_template        | Email Template      |   lookup   |   8    |  FALSE   | ID šablóny mailu                                          |
 
 ### ADIOS Parameters
 | Column                      | Parameter   | Value                                                                   |
@@ -47,19 +43,14 @@ No constants are defined for this model.
 | state_sequence              | description | Order of the state in input lists.                                      |
 | is_send_mail                | description | Should a sequence code and a variable symbol be assigned in this state? |
 | is_send_claim               | description | Attach the claim to email?                                              |
-| is_send_order               | description | Attach related order to email?                                          |
-| is_cancel_reservation       | description | Should the reservation be canceled in this state?                       |
-| is_remove_stock             | description | Remove stock in this state?                                             |
-| is_send_to_delivery_service | description | Create a package in this state?                                         |
 | is_allowed_update           | description | Is update allowed in this state?                                        |
 | is_allowed_delete           | description | Is it allowed to delete in this state?                                  |
 
 ### Foreign Keys
-| Column               | Model                                    | Relation | OnUpdate | OnDelete |
-| :------------------- | :--------------------------------------- | :------: | -------- | -------- |
-| id_com_mail_template | App/Widgets/Common/Email/Models/Template |   1:N    | Cascade  | Restrict |
+| Column               | Model                                        | Relation | OnUpdate | OnDelete |
+| :------------------- | :------------------------------------------- | :------: | -------- | -------- |
+TODO: | id_com_mail_template | App/Widgets/Common/Email/Models/Template/??? |   1:N    | Cascade  | Restrict |
 
-TODO: Model pre Email Template zatiaľ neexistuje. Doplniť, keď bude vytvorený.
 ### Indexes
 
 | Name                        | Type    |                   Column + Order |
@@ -71,15 +62,10 @@ TODO: Model pre Email Template zatiaľ neexistuje. Doplniť, keď bude vytvoren�
 | state_sequence              | INDEX   |              state_sequence DESC |
 | is_set_sequence_code        | INDEX   |        is_set_sequence_code DESC |
 | is_send_mail                | INDEX   |                is_send_mail DESC |
-| id_com_mail_template        | INDEX   |        id_com_mail_template DESC |
 | is_send_claim               | INDEX   |               is_send_claim DESC |
-| is_send_order               | INDEX   |               is_send_order DESC |
-| is_cancel_reservation       | INDEX   |       is_cancel_reservation DESC |
-| is_remove_stock             | INDEX   |             is_remove_stock DESC |
-| is_send_to_delivery_service | INDEX   | is_send_to_delivery_service DESC |
 | is_allowed_update           | INDEX   |           is_allowed_update DESC |
 | is_allowed_delete           | INDEX   |           is_allowed_delete DESC |
-
+TODO: | id_com_mail_template        | INDEX   |        id_com_mail_template DESC |
 ## Callbacks
 
 ### onBeforeInsert

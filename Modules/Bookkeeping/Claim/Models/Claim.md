@@ -1,8 +1,4 @@
 # Model Bookkeeping/Claim/Claim
-
-NOTE: DD pretukal.
-TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
-
 ## Introduction
 
 Tabuľka slúži na ukladanie základných údajov o pohľadávke.
@@ -65,7 +61,7 @@ No constants are defined for this model.
 | id_bkp_currency                         | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency                                           |   1:N    | Cascade  | Restrict |
 | id_com_contact                          | [App/Widgets/Common/AddressBook/Models/Contact](../../../Common/AddressBook/Models/Contact.md) |   1:N    | Cascade  | Restrict |
 
-UNDEFINED: Model pre Email Template zatiaľ neexistuje. Doplniť, keď bude vytvorený.
+TODO: Model pre Email Template zatiaľ neexistuje. Doplniť, keď bude vytvorený.
 ### Indexes
 
 | Name                                    |  Type   |                              Column + Order |
@@ -97,11 +93,9 @@ UNDEFINED: Model pre Email Template zatiaľ neexistuje. Doplniť, keď bude vytv
 ### onAfterInsert
 
 * Potrebné skopírovať údaje o predajcovi (z profilu) a uložiť do stĺpca **supplier** v JSON formáte.
-  UNDEFINED: Doplniť prelink keď vznikne model.
+  TODO: Doplniť prelink keď vznikne COM model pre Profil.
 * Potrebné skopírovať údaje zo zákazníka a uložiť ich do stĺpca **customer** v JSON formáte.
 * Potrebné priradiť pohľadávku k účtu pre pohľadávky v účtovnej osnove (tab: **fin_claim_accounts**).
-
-UNDEFINED: Po vytvorení SKLADOV bude potrebné napojiť na zrušenie rezervácie (vyvolanej vytvorením Objednávky) a vytvorenie Výdajky.
 
 ### onBeforeUpdate
 
