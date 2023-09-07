@@ -7,43 +7,45 @@ Model slúži na evidenciu a správu kontaktov. Ak v kontakte neexistuje referen
 No constants are defined for this model.
 
 ## Properties
-| Property              | Value                                               |
-| :-------------------- | :-------------------------------------------------- |
-| isCrossTable          | FALSE                                               |
-| sqlName               | com_contacts                                        |
-| urlBase               | common/address-book/contacts                        |
-| lookupSqlValue        | concat(company_name, ', ', company_business_number) |
-| tableTitle            | Contacts                                            |
-| formTitleForInserting | New Contact                                         |
-| formTitleForEditing   | Contact                                             |
+| Property              | Value                                                                                     |
+| :-------------------- | :---------------------------------------------------------------------------------------- |
+| isCrossTable          | FALSE                                                                                     |
+| sqlName               | com_contacts                                                                              |
+| urlBase               | common/address-book/contacts                                                              |
+| lookupSqlValue        | concat(company_name, ', ', company_business_number), id_com_contact_person.lookupSqlValue |
+| tableTitle            | Contacts                                                                                  |
+| formTitleForInserting | New Contact                                                                               |
+| formTitleForEditing   | Contact                                                                                   |
 
+TODO: JG k lookupSqlValue - podobne ako v modeli ContactAddress, aj tu je potrebné vyriešiť použitie "externej" LOOKUP hodnoty z foreign table v ADIOSe
 REVIEW DD: Po novom bude potrebne definovat aj properties `crud/brows/action`, `crud/add/action` a `crud/edit/action`.
 
 ## Data Structure
-| Column                  | Title                   | ADIOS Type | Length | Required | Notes                |
-| :---------------------- | :---------------------- | :--------: | :----: | :------: | :------------------- |
-| id                      |                         |    int     |   8    |   TRUE   |                      |
-| record_info             | Record Info             |    json    |        |   TRUE   |                      |
-| is_active               | Is Active               |  boolean   |   1    |   TRUE   | Aktívny kontakt?     |
-| company_name            | Company Name            |  varchar   |  150   |   TRUE   | Názov spoločnosti    |
-| company_business_number | Business Number         |  varchar   |   50   |  FALSE   | IČO                  |
-| company_tax_number      | Tax Number              |  varchar   |   50   |  FALSE   | DIČ                  |
-| company_vat_number      | VAT Bumber              |  varchar   |   50   |  FALSE   | DIČ DPH              |
-| id_com_contact_person   | Primary Contact Person  |    int     |   8    |   TRUE   | ID fyzickej osoby    |
-| id_com_contact_address  | Primary Address         |    int     |   8    |  FALSE   | ID primárnej adresy  |
-| id_bkp_currency         | Primary Currency        |    int     |   8    |  FALSE   | ID používanej meny   |
-| language_code           | Primary Language        |  varchar   |   10   |  FALSE   | Preferovaný jazyk    |
-| website                 | WEB page                |  varchar   |  255   |  FALSE   | WEB stránka          |
-| notes                   | Notes                   |    text    |        |  FALSE   | Poznámka ku kontaktu |
-| is_company              | Is the contact company? |  boolean   |   1    |  FALSE   |                      |
+| Column                  | Title                   | ADIOS Type | Length | Required | Notes                                 |
+| :---------------------- | :---------------------- | :--------: | :----: | :------: | :------------------------------------ |
+| id                      |                         |    int     |   8    |   TRUE   |                                       |
+| record_info             | Record Info             |    json    |        |   TRUE   |                                       |
+| is_active               | Is Active               |  boolean   |   1    |   TRUE   | Aktívny kontakt?                      |
+| is_company              | Is the contact company? |  boolean   |   1    |  FALSE   | Ide o spoločnosť alebo fyzickú osobu? |
+| company_name            | Company Name            |  varchar   |  150   |   TRUE   | Názov spoločnosti                     |
+| company_business_number | Business Number         |  varchar   |   50   |  FALSE   | IČO                                   |
+| company_tax_number      | Tax Number              |  varchar   |   50   |  FALSE   | DIČ                                   |
+| company_vat_number      | VAT Bumber              |  varchar   |   50   |  FALSE   | DIČ DPH                               |
+| id_com_contact_person   | Primary Contact Person  |    int     |   8    |   TRUE   | ID fyzickej osoby                     |
+| id_com_contact_address  | Primary Address         |    int     |   8    |  FALSE   | ID primárnej adresy                   |
+| id_bkp_currency         | Primary Currency        |    int     |   8    |  FALSE   | ID používanej meny                    |
+| language_code           | Primary Language        |  varchar   |   10   |  FALSE   | Preferovaný jazyk                     |
+| website                 | WEB page                |  varchar   |  255   |  FALSE   | WEB stránka                           |
+| notes                   | Notes                   |    text    |        |  FALSE   | Poznámka ku kontaktu                  |
 
 ### ADIOS Parameters
-| Column    | Parameter   | Value                          |
-| :-------- | :---------- | ------------------------------ |
-| is_active | description | Is this contact active or not? |
-|           | default     | 1                              |
-| website   | description | URL address of contact         |
-|           | default     | https://                       |
+| Column     | Parameter   | Value                               |
+| :--------- | :---------- | ----------------------------------- |
+| is_active  | description | Is this contact active or not?      |
+|            | default     | 1                                   |
+| is_company | description | Is this contact for company or not? |
+| website    | description | URL address of contact              |
+|            | default     | https://                            |
 
 REVIEW DD: vid navrh pre website.default
 
@@ -55,10 +57,15 @@ REVIEW DD: vid navrh pre website.default
 | id_bkp_currency        | [App/Widgets/Bookkeeping/ExchangeRate/Models/Currency](../../../Bookkeeping/ExchangeRate/Models/Currency.md) |   1:1    | Cascade  | Restrict |
 
 ## Indexes
-| Name      |  Type   | Column + Order |
-| :-------- | :-----: | -------------: |
-| id        | PRIMARY |         id ASC |
-| is_active |  INDEX  | is_active DESC |
+| Name                    |  Type   |              Column + Order |
+| :---------------------- | :-----: | --------------------------: |
+| id                      | PRIMARY |                      id ASC |
+| is_active               |  INDEX  |              is_active DESC |
+| is_company              |  INDEX  |             is_company DESC |
+| company_name            | UNIQUE  |            company_name ASC |
+| company_business_number | UNIQUE  | company_business_number ASC |
+| company_tax_number      | UNIQUE  |      company_tax_number ASC |
+| company_vat_number      | UNIQUE  |      company_vat_number ASC |
 
 ## Callbacks
 

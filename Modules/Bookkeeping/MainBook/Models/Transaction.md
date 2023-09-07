@@ -24,10 +24,7 @@ No constants are defined for this model.
 | Column                   | Title             | ADIOS Type | Length | Required | Notes                                         |
 | :----------------------- | ----------------- | :--------: | :----: | :------: | :-------------------------------------------- |
 | id                       |                   |    int     |   8    |   TRUE   | Unique record ID                              |
-| id_created_by            | Created By        |   lookup   |   8    |   TRUE   | Reference to user who created the record      |
-| create_datetime          | Created Datetime  |  datetime  |   8    |   TRUE   | When the record was created                   |
-| id_updated_by            | Updated By        |   lookup   |   8    |   TRUE   | Reference to user who updated the record      |
-| update_datetime          | Updated Datetime  |  datetime  |   8    |   TRUE   | When the record was updated                   |
+| record_info              | Record Info       |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author    |
 | transaction_date         | Transaction Date  |    date    |   8    |   TRUE   | Dátum transakcie                              |
 | description              | Description       |    text    |        |  FALSE   | Popis transakcie                              |
 | amount                   | Amount            |  decimal   |  15,2  |   TRUE   | Celková suma transakcie v hlavnej mene        |
@@ -46,8 +43,6 @@ No additional ADIOS parameters needs to be defined.
 
 | Column                   | Model                                                    | Relation | OnUpdate | OnDelete |
 | :----------------------- | :------------------------------------------------------- | :------: | -------- | -------- |
-| id_created_by            | ADIOS/Core/Models/User                                   |   1:N    | Cascade  | Cascade  |
-| id_updated_by            | ADIOS/Core/Models/User                                   |   1:N    | Cascade  | Cascade  |
 | id_bkp_accounting_period | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod |   1:N    | Cascade  | Cascade  |
 | id_bkp_accounting_period | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod |   1:N    | Cascade  | Cascade  |
 | id_bkp_currency          | App/Widgets/Bookkeeping/ExchangeRate/Currency            |   1:N    | Cascade  | Restrict |
@@ -57,10 +52,6 @@ No additional ADIOS parameters needs to be defined.
 | Name                              |  Type   |               Column + Order |
 | :-------------------------------- | :-----: | ---------------------------: |
 | id                                | PRIMARY |                       id ASC |
-| id_created_by                     |  INDEX  |            id_created_by ASC |
-| create_datetime                   |  INDEX  |          create_datetime ASC |
-| id_updated_by                     |  INDEX  |            id_updated_by ASC |
-| update_datetime                   |  INDEX  |          update_datetime ASC |
 | transaction_date                  |  INDEX  |         transaction_date ASC |
 | number                            |  INDEX  |                   number ASC |
 | is_accounted                      |  INDEX  |             is_accounted ASC |

@@ -18,29 +18,29 @@ V modeli nie sú použité konštanty.
 | formTitleForEditing   | Person                                      |
 
 ## Data Structure
-| Column         | Title        | ADIOS Type | Length | Required | Notes            |
-| :------------- | :----------- | :--------: | :----: | :------: | :--------------- |
-| id             |              |    int     |   8    |   TRUE   | ID záznamu       |
-| record_info    | Record Info  |    json    |        |   TRUE   |                  |
-| id_com_contact | Contact      |    int     |   8    |   TRUE   | ID kontaktu      |
-| first_name     | First Name   |  varchar   |  200   |   TRUE   | Krstné meno      |
-| last_name      | Last Name    |  varchar   |  200   |  FALSE   | Priezvisko       |
-| middle_name    | Middle Name  |  varchar   |  200   |  FALSE   | Stretné meno     |
-| title_before   | Title Before |  varchar   |   50   |  FALSE   | Titul pred menom |
-| title_after    | Title After  |  varchar   |   50   |  FALSE   | Titul za menom   |
-| email          | Email        |  varchar   |  100   |   TRUE   | Email            |
-| phone          | Phone Number |  varchar   |   50   |  FALSE   | Telefón          |
-
-REVIEW DD: URL na LI profil?
+| Column         | Title        | ADIOS Type | Length | Required | Notes                          |
+| :------------- | :----------- | :--------: | :----: | :------: | :----------------------------- |
+| id             |              |    int     |   8    |   TRUE   | ID záznamu                     |
+| record_info    | Record Info  |    json    |        |   TRUE   |                                |
+| id_com_contact | Contact      |    int     |   8    |   TRUE   | ID kontaktu                    |
+| first_name     | First Name   |  varchar   |  200   |   TRUE   | Krstné meno                    |
+| last_name      | Last Name    |  varchar   |  200   |  FALSE   | Priezvisko                     |
+| middle_name    | Middle Name  |  varchar   |  200   |  FALSE   | Stretné meno                   |
+| title_before   | Title Before |  varchar   |   50   |  FALSE   | Titul pred menom               |
+| title_after    | Title After  |  varchar   |   50   |  FALSE   | Titul za menom                 |
+| email          | Email        |  varchar   |  100   |   TRUE   | Email                          |
+| phone          | Phone Number |  varchar   |   50   |  FALSE   | Telefón                        |
+| url_linkedin   | LinkedIn URL |  varchar   |  255   |  FALSE   | URL adresa profilu na LinkedIn |
 
 ### ADIOS Parameters
-No additional ADIOS parameters needs to be defined
+| Column       | Parameter   | Value                          |
+| :----------- | :---------- | ------------------------------ |
+| url_linkedin | description | URL address to LinkeIn profile |
+|              | default     | https://                       |
 
 ## Foreign Keys
 | Column         | Model                                                                                          | Relation | OnUpdate | OnDelete |
 | :------------- | :--------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_created_by  | ADIOS/Core/Models/User                                                                         |   1:N    | Cascade  | Cascade  |
-| id_updated_by  | ADIOS/Core/Models/User                                                                         |   1:N    | Cascade  | Cascade  |
 | id_com_contact | [App/Widgets/Common/AddressBook/Models/Contact](../../../Common/AddressBook/Models/Contact.md) |   1:N    | Cascade  | Cascade  |
 
 ## Indexes
@@ -50,24 +50,18 @@ No additional ADIOS parameters needs to be defined
 | first_name  |  INDEX  |  first_name ASC |
 | middle_name |  INDEX  | middle_name ASC |
 | last_name   |  INDEX  |   last_name ASC |
-| email       | UNIQUE  |       email ASC |
+| email       |  INDEX  |       email ASC |
 | phone       |  INDEX  |       phone ASC |
-
-REVIEW DD: email podla mna nemusi byt unique
 
 ## Callbacks
 
 ### onBeforeInsert
-Nie je možné pridať osobu s rovnakým emailom (col: **email**).
-REVIEW DD: Urcite? Co ked jednu schranku sleduje viac fyz. osob? Napr. nieco ako sales@wai.sk?
-
+Not used.
 ### onAfterInsert
 Not used.
 
 ### onBeforeUpdate
-Nie je možné nať osobu s rovnakým emailom (col: **email**).
-REVIEW DD: Urcite?
-
+Not used.
 ### onAfterUpdate
 Not used.
 
