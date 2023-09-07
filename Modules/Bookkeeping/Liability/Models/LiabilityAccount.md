@@ -24,13 +24,13 @@ No constants are defined for this model.
 
 ## Data Structure
 
-| Column              | Title       | ADIOS Type | Length | Required | Notes                     |
-| :------------------ | ----------- | :--------: | :----: | :------: | :------------------------ |
-| id                  |             |    int     |   8    |   TRUE   | Jedinečné ID záznamu      |
-| record_info         | Record Info |    json    |        |   TRUE   |                           |
-| id_bkp_liability    | Liability   |   lookup   |   8    |   TRUE   | ID záväzku                |
-| id_bkp_book_account | Account     |   lookup   |   8    |   TRUE   | ID účtu z účtovnej osnovy |
-| amount              | Amount      |  decimal   |  15,2  |   TRUE   | Hodnota                   |
+| Column              | Title       | ADIOS Type | Length | Required | Notes                                      |
+| :------------------ | ----------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id                  |             |    int     |   8    |   TRUE   | Jedinečné ID záznamu                       |
+| record_info         | Record Info |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
+| id_bkp_liability    | Liability   |   lookup   |   8    |   TRUE   | ID záväzku                                 |
+| id_bkp_book_account | Account     |   lookup   |   8    |   TRUE   | ID účtu z účtovnej osnovy                  |
+| amount              | Amount      |  decimal   |  15,2  |   TRUE   | Hodnota                                    |
 
 ### ADIOS Parameters
 

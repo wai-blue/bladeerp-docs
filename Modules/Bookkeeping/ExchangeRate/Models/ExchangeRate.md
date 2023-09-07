@@ -29,7 +29,7 @@ No constants are defined for this model.
 | Column               | Title         | ADIOS Type | Length | Required | Notes                                       |
 | :------------------- | ------------- | :--------: | :----: | :------: | :------------------------------------------ |
 | id                   |               |    int     |   8    |   TRUE   | Jedinečné ID záznamu                        |
-| record_info          | Record Info   |    json    |        |   TRUE   |                                             |
+| record_info          | Record Info   |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author  |
 | id_bkp_currency      | Currency      |   lookup   |   11   |   TRUE   | ID meny                                     |
 | id_bkp_currency_main | Main Currency |   lookup   |   11   |   TRUE   | ID hlavnej meny, voči ktorej je kurz vedený |
 | rate                 | Exchange Rate |  decimal   |  15,4  |   TRUE   | Prevodný kurz meny voči hlavnej mene        |

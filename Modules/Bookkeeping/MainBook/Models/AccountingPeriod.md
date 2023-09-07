@@ -28,7 +28,7 @@ No constants are defined for this model.
 | Column                   | Title                      | ADIOS Type | Length | Required | Notes                                                                                     |
 | :----------------------- | -------------------------- | :--------: | :----: | :------: | :---------------------------------------------------------------------------------------- |
 | id                       |                            |    int     |   8    |   TRUE   | Unique record ID                                                                          |
-| record_info              | Record Info                |    json    |        |   TRUE   |                                                                                           |
+| record_info              | Record Info                |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author                                                |
 | name                     | Name                       |  varchar   |  100   |   TRUE   | Názov účtovného obdobia                                                                   |
 | start_date               | Start Date                 |    date    |   8    |   TRUE   | Začiatok účtovného obdobia                                                                |
 | end_date                 | End Date                   |    date    |   8    |   TRUE   | Koniec účtovného obdobia                                                                  |

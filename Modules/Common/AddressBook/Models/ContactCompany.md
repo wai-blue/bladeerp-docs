@@ -48,22 +48,19 @@ Model does not contain foreign keys.
 ## Callbacks
 
 ### onBeforeInsert
-Nepovoliť vloženie, ak hodnota **company_name** alebo **business_number** alebo **tax_number** už tabuľke existuje.
-REVIEW DD: Na toto su UNIQUE indexy.
+Not used.
 
 ### onAfterInsert
 Not used.
 
 ### onBeforeUpdate
-Nepovoliť úpravu, ak hodnota **company_name** alebo **business_number** alebo **tax_number** už tabuľke existuje.
-REVIEW DD: Na toto su UNIQUE indexy.
+Not used.
 
 ### onAfterUpdate
 Not used.
 
 ### onBeforeDelete
-Nepovoliť vymazanie, ak je firma použitá na niektorom kontakte (tbl: com_contacts)
-REVIEW DD: Nevyriesi toto vhodne nastaveny foreign key?
+Not used.
 
 ### onAfterDelete
 Not used.

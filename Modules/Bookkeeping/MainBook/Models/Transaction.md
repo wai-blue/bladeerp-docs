@@ -27,7 +27,7 @@ No constants are defined for this model.
 | Column                   | Title             | ADIOS Type | Length | Required | Notes                                         |
 | :----------------------- | ----------------- | :--------: | :----: | :------: | :-------------------------------------------- |
 | id                       |                   |    int     |   8    |   TRUE   | Unique record ID                              |
-| record_info              | Record Info       |    json    |        |   TRUE   |                                               |
+| record_info              | Record Info       |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author    |
 | transaction_date         | Transaction Date  |    date    |   8    |   TRUE   | Dátum transakcie                              |
 | description              | Description       |    text    |        |  FALSE   | Popis transakcie                              |
 | amount                   | Amount            |  decimal   |  15,2  |   TRUE   | Celková suma transakcie v hlavnej mene        |

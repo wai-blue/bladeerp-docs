@@ -22,15 +22,15 @@ No constants are defined for this model.
 
 ## Data Structure
 
-| Column           | Title          | ADIOS Type | Length | Required | Notes            |
-| :--------------- | -------------- | :--------: | :----: | :------: | :--------------- |
-| id               |                |    int     |   8    |   TRUE   | Unique record ID |
-| record_info      | Record Info    |    json    |        |   TRUE   |                  |
-| id_bkp_liability | Liability      |   lookup   |   8    |   TRUE   | ID záväzku       |
-| id_bkp_vat       | VAT Rate       |   lookup   |   8    |   TRUE   | ID sadzby DPH    |
-| price_excl_vat   | Price Excl VAT |  decimal   |  15,2  |   TRUE   | Suma bez DPH     |
-| price_vat        | Price VAT      |  decimal   |  15,2  |   TRUE   | Suma DPH         |
-| price_incl_vat   | Price Incl VAT |  decimal   |  15,2  |   TRUE   | Suma s DPH       |
+| Column           | Title          | ADIOS Type | Length | Required | Notes                                      |
+| :--------------- | -------------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id               |                |    int     |   8    |   TRUE   | Unique record ID                           |
+| record_info      | Record Info    |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
+| id_bkp_liability | Liability      |   lookup   |   8    |   TRUE   | ID záväzku                                 |
+| id_bkp_vat       | VAT Rate       |   lookup   |   8    |   TRUE   | ID sadzby DPH                              |
+| price_excl_vat   | Price Excl VAT |  decimal   |  15,2  |   TRUE   | Suma bez DPH                               |
+| price_vat        | Price VAT      |  decimal   |  15,2  |   TRUE   | Suma DPH                                   |
+| price_incl_vat   | Price Incl VAT |  decimal   |  15,2  |   TRUE   | Suma s DPH                                 |
 
 ### ADIOS Parameters
 

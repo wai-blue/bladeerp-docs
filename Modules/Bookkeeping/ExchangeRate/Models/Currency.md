@@ -24,31 +24,29 @@ No constants are defined for this model.
 
 ## Data Structure
 
-| Column      | Title       | ADIOS Type | Length | Required | Notes                                |
-| :---------- | ----------- | :--------: | :----: | :------: | :----------------------------------- |
-| id          |             |    int     |   8    |   TRUE   | Jedinečné ID záznamu                 |
-| record_info | Record Info |    json    |        |   TRUE   |                                      |
-| name        | Name        |  varchar   |  100   |   TRUE   | Názov meny                           |
-| acronym     | Acronym     |  varchar   |   3    |   TRUE   | Skratka meny                         |
-| symbol      | Symbol      |  varchar   |   1    |   TRUE   | Symbol meny                          |
-| is_active   | Is Active?  |  boolean   |        |   TRUE   | Príznak, či sa mena aktuálne používa |
+| Column      | Title       | ADIOS Type | Length | Required | Notes                                      |
+| :---------- | ----------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id          |             |    int     |   8    |   TRUE   | Jedinečné ID záznamu                       |
+| record_info | Record Info |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
+| name        | Name        |  varchar   |  100   |   TRUE   | Názov meny                                 |
+| acronym     | Acronym     |  varchar   |   3    |   TRUE   | Skratka meny                               |
+| symbol      | Symbol      |  varchar   |   1    |   TRUE   | Symbol meny                                |
+| is_active   | Is Active?  |  boolean   |        |   TRUE   | Príznak, či sa mena aktuálne používa       |
 
 ### ADIOS Parameters
-
 No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
-
 Model does not contain foreign keys.
 
 ### Indexes
 
-| Name            |  Type   |      Column + Order |
-| :-------------- | :-----: | ------------------: |
-| id              | PRIMARY |              id ASC |
-| name            | UNIQUE  |            name ASC |
-| acronym         | UNIQUE  |         acronym ASC |
-| is_active       |  INDEX  |       is_active ASC |
+| Name      |  Type   | Column + Order |
+| :-------- | :-----: | -------------: |
+| acronym   | UNIQUE  |    acronym ASC |
+| id        | PRIMARY |         id ASC |
+| is_active |  INDEX  |  is_active ASC |
+| name      | UNIQUE  |       name ASC |
 
 ## Callbacks
 

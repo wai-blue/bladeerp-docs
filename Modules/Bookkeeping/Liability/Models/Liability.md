@@ -27,7 +27,7 @@ No constants are defined for this model.
 | Column                                  | Title                            | ADIOS Type | Length | Required | Notes                                                   |
 | :-------------------------------------- | -------------------------------- | :--------: | :----: | :------: | :------------------------------------------------------ |
 | id                                      |                                  |    int     |   8    |   TRUE   | ID záznamu                                              |
-| record_info                             | Record Info                      |    json    |        |   TRUE   |                                                         |
+| record_info                             | Record Info                      |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author              |
 | id_com_contact                          | Customer                         |   lookup   |   8    |   TRUE   | ID veriteľa                                             |
 | is_accounted                            | Is Accounted                     |  boolean   |   1    |  FALSE   | Je záväzok zaúčtovaný                                   |
 | is_long_term                            | Is Long Term                     |  boolean   |   1    |   TRUE   | Príznak či je záväzok dlhodobý alebo krátkodobý         |

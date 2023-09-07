@@ -46,20 +46,20 @@ TODO: dopracovat priklad pre crossTableAssignments
 
 ## Data Structure
 
-| Column                   | Title                      | ADIOS Type | Length | Required | Notes                          |
-| :----------------------- | -------------------------- | :--------: | :----: | :------: | :----------------------------- |
-| id                       |                            |    int     |   8    |   TRUE   | Unique record ID               |
-| record_info              | Record Info                |    json    |        |   TRUE   |                                |
-| name                     | Name                       |  varchar   |  100   |   TRUE   | Krátky text                    |
-| description              | Description                |    text    |        |  FALSE   | Dlhý text                      |
-| due_date                 | Due Date                   |    date    |   8    |   TRUE   | Dátum splatnosti               |
-| is_open                  | Is Open                    |  boolean   |   1    |   TRUE   | Logická hodnota                |
-| state_sequence           | State Sequence             |    int     |   6    |   TRUE   | Poradové číslo v select boxoch |
-| id_bkp_accounting_period | Previous Accounting Period |   lookup   |   8    |   TRUE   | Previous Accounting Period     |
-| side                     | Account Side               |    int     |   8    |   TRUE   | Účtovná strana                 |
-| price                    | Total Price                |   float    |  15,2  |  FALSE   | Cena                           |
-| attached_file            | Path to Attached File      |    file    |  255   |  FALSE   | Relatívna cesta k súboru       |
-| profile_image            | Path to Profile Image      |    file    |  255   |  FALSE   | Relatívna cesta k obrázku      |
+| Column                   | Title                      | ADIOS Type | Length | Required | Notes                                      |
+| :----------------------- | -------------------------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id                       |                            |    int     |   8    |   TRUE   | Unique record ID                           |
+| record_info              | Record Info                |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
+| name                     | Name                       |  varchar   |  100   |   TRUE   | Krátky text                                |
+| description              | Description                |    text    |        |  FALSE   | Dlhý text                                  |
+| due_date                 | Due Date                   |    date    |   8    |   TRUE   | Dátum splatnosti                           |
+| is_open                  | Is Open                    |  boolean   |   1    |   TRUE   | Logická hodnota                            |
+| state_sequence           | State Sequence             |    int     |   6    |   TRUE   | Poradové číslo v select boxoch             |
+| id_bkp_accounting_period | Previous Accounting Period |   lookup   |   8    |   TRUE   | Previous Accounting Period                 |
+| side                     | Account Side               |    int     |   8    |   TRUE   | Účtovná strana                             |
+| price                    | Total Price                |   float    |  15,2  |  FALSE   | Cena                                       |
+| attached_file            | Path to Attached File      |    file    |  255   |  FALSE   | Relatívna cesta k súboru                   |
+| profile_image            | Path to Profile Image      |    file    |  255   |  FALSE   | Relatívna cesta k obrázku                  |
 
 ### ADIOS Parameters
 

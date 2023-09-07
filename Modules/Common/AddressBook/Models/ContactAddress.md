@@ -17,28 +17,25 @@ V modeli nie sú použité konštanty.
 | formTitleForInserting | New Contact Address                                                          |
 | formTitleForEditing   | Contact Address                                                              |
 
-TODO: DD vyriešiť ako v ADIOSe urobiť lookupSqlValue v tomto prípade (viď. tabuľka Properties)
+TODO: JG k lookupSqlValue - potrebné vyriešiť ako v ADIOSe vyriešiť použitie "externej" lookup hodnoty
 
 ## Data Structure
-| Column          | Title            | ADIOS Type | Length | Required | Notes                                    |
-| :-------------- | :--------------- | :--------: | :----: | :------: | :--------------------------------------- |
-| id              |                  |    int     |   8    |   TRUE   | ID záznamu                               |
-| id_created_by   | Created By       |   lookup   |   8    |   TRUE   | Reference to user who created the record |
-| create_datetime | Created Datetime |  datetime  |   8    |   TRUE   | When the record was created              |
-| id_updated_by   | Updated By       |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
-| update_datetime | Updated Datetime |  datetime  |   8    |   TRUE   | When the record was updated              |
-| id_com_contact  | Contact          |    int     |   8    |   TRUE   | ID kontaktu                              |
-| is_active       | Is Active?       |  boolean   |   1    |   TRUE   | Aktívny kontakt?                         |
-| street_1        | Street - 1. line |  varchar   |  200   |  FALSE   | Ulica - 1. riadok                        |
-| street_2        | Street - 2. line |  varchar   |  200   |  FALSE   | Ulica - 2. riadok                        |
-| city            | City             |  varchar   |  200   |  FALSE   | Mesto                                    |
-| postal_code     | ZIP              |  varchar   |   20   |  FALSE   | PSČ                                      |
-| id_com_country  | Country          |    int     |   8    |  FALSE   | ID krajiny                               |
-| email           | Contact Email    |  varchar   |  100   |  FALSE   | Kontaktný Email                          |
-| phone           | Contact Phone    |  varchar   |   20   |  FALSE   | Kontaktný Telefón                        |
-| description     | Comment          |    text    |        |  FALSE   | Poznámka k adrese                        |
-| gps_longitude   | GPS Longitude    |  varchar   |  300   |  FALSE   | GPS dĺžka                                |
-| gps_latitude    | GPS Latitude     |  varchar   |  300   |  FALSE   | GPS šírka                                |
+| Column         | Title            | ADIOS Type | Length | Required | Notes                                      |
+| :------------- | :--------------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id             |                  |    int     |   8    |   TRUE   | ID záznamu                                 |
+| record_info    | Record Info      |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
+| id_com_contact | Contact          |    int     |   8    |   TRUE   | ID kontaktu                                |
+| is_active      | Is Active?       |  boolean   |   1    |   TRUE   | Aktívny kontakt?                           |
+| street_1       | Street - 1. line |  varchar   |  200   |  FALSE   | Ulica - 1. riadok                          |
+| street_2       | Street - 2. line |  varchar   |  200   |  FALSE   | Ulica - 2. riadok                          |
+| city           | City             |  varchar   |  200   |  FALSE   | Mesto                                      |
+| postal_code    | ZIP              |  varchar   |   20   |  FALSE   | PSČ                                        |
+| id_com_country | Country          |    int     |   8    |  FALSE   | ID krajiny                                 |
+| email          | Contact Email    |  varchar   |  100   |  FALSE   | Kontaktný Email                            |
+| phone          | Contact Phone    |  varchar   |   20   |  FALSE   | Kontaktný Telefón                          |
+| description    | Comment          |    text    |        |  FALSE   | Poznámka k adrese                          |
+| gps_longitude  | GPS Longitude    |  varchar   |  300   |  FALSE   | GPS dĺžka                                  |
+| gps_latitude   | GPS Latitude     |  varchar   |  300   |  FALSE   | GPS šírka                                  |
 
 TODO: Co keby sme v ADIOSe vytvorili DataTypeMapPoint? Bol by to varchar, obsahujuci lng/lat a jeho input by sa renderoval ako mapa.
 
@@ -53,8 +50,6 @@ TODO: Co keby sme v ADIOSe vytvorili DataTypeMapPoint? Bol by to varchar, obsahu
 ## Foreign Keys
 | Column         | Model                                                                                          | Relation | OnUpdate | OnDelete |
 | :------------- | :--------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_created_by  | ADIOS/Core/Models/User                                                                         |   1:N    | Cascade  | Cascade  |
-| id_updated_by  | ADIOS/Core/Models/User                                                                         |   1:N    | Cascade  | Cascade  |
 | id_com_contact | [App/Widgets/Common/AddressBook/Models/Contact](../../../Common/AddressBook/Models/Contact.md) |   1:N    | Cascade  | Restrict |
 | id_com_country | [App/Widgets/Common/AddressBook/Models/Country](../../../Common/AddressBook/Models/Country.md) |   1:N    | Cascade  | Restrict |
 

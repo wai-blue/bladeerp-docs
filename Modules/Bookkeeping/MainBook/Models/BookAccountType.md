@@ -21,11 +21,11 @@ No constants are defined for this model.
 
 ## Data Structure
 
-| Column      | Title       | ADIOS Type | Length | Required | Notes            |
-| :---------- | ----------- | :--------: | :----: | :------: | :--------------- |
-| id          |             |    int     |   8    |   TRUE   | Unique record ID |
-| record_info | Record Info |    json    |        |   TRUE   |                  |
-| name        | Name        |  varchar   |  100   | NOT NULL | Názov typu       |
+| Column      | Title       | ADIOS Type | Length | Required | Notes                                      |
+| :---------- | ----------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id          |             |    int     |   8    |   TRUE   | Unique record ID                           |
+| record_info | Record Info |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
+| name        | Name        |  varchar   |  100   | NOT NULL | Názov typu                                 |
 
 ### ADIOS Parameters
 

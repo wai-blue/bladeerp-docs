@@ -20,16 +20,13 @@ V modeli nie sú použité konštanty.
 
 
 ## Data Structure
-| Column          | Title            | ADIOS Type | Length | Required | Notes                                    |
-| :-------------- | :--------------- | :--------: | :----: | :------: | :--------------------------------------- |
-| id              |                  |    int     |   8    |   TRUE   | ID záznamu                               |
-| id_created_by   | Created By       |   lookup   |   8    |   TRUE   | Reference to user who created the record |
-| create_datetime | Created Datetime |  datetime  |   8    |   TRUE   | When the record was created              |
-| id_updated_by   | Updated By       |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
-| update_datetime | Updated Datetime |  datetime  |   8    |   TRUE   | When the record was updated              |
-| is_active       | Is Active?       |  boolean   |   1    |   TRUE   | Je aktívna?                              |
-| name            | Name             |  varchar   |  100   |   TRUE   | Názov                                    |
-| description     | Description      |    text    |        |  FALSE   | Poznámka                                 |
+| Column      | Title       | ADIOS Type | Length | Required | Notes       |
+| :---------- | :---------- | :--------: | :----: | :------: | :---------- |
+| id          |             |    int     |   8    |   TRUE   | ID záznamu  |
+| record_info | Record Info |    json    |        |   TRUE   |             |
+| is_active   | Is Active?  |  boolean   |   1    |   TRUE   | Je aktívna? |
+| name        | Name        |  varchar   |  100   |   TRUE   | Názov       |
+| description | Description |    text    |        |  FALSE   | Poznámka    |
 
 ### ADIOS Parameters
 | Column    | Parameter   | Value                           |
@@ -38,10 +35,7 @@ V modeli nie sú použité konštanty.
 |           | default     | 1                               |
 
 ## Foreign Keys
-| Column        | Model                  | Relation | OnUpdate | OnDelete |
-| :------------ | :--------------------- | :------: | -------- | -------- |
-| id_created_by | ADIOS/Core/Models/User |   1:N    | Cascade  | Cascade  |
-| id_updated_by | ADIOS/Core/Models/User |   1:N    | Cascade  | Cascade  |
+Model does not contain foreign keys.
 
 ## Indexes
 | Name      |  Type   | Column + Order |
@@ -53,22 +47,20 @@ V modeli nie sú použité konštanty.
 ## Callbacks
 
 ### onBeforeInsert
-Nepovoliť vloženie, ak hodnota **name** už v tabuľke existuje.
-REVIEW DD: Toto je zabezpecene UNIQUE indexom - nie je potrebne definovat callback.
+Not used.
 
 ### onAfterInsert
 Not used.
 
 ### onBeforeUpdate
-Neuložiť zmenu, ak hodnota **name** už v tabuľke existuje.
-REVIEW DD: Toto je zabezpecene UNIQUE indexom - nie je potrebne definovat callback.
+Not used.
 
 ### onAfterUpdate
 Not used.
 
 ### onBeforeDelete
 Nepovoliť vymazanie, ak je kategória použitá na niektorom kontakte (tbl: **com_contact_has_category**)
-NOTE: Nemalo by toto byt zabezpecne vhodnou definiciou foreign keys?
+REVIEW: Nemalo by toto byt zabezpecne vhodnou definiciou foreign keys?
 
 ### onAfterDelete
 Not used.

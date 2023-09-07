@@ -26,14 +26,14 @@ No constants are defined for this model.
 
 ## Data Structure
 
-| Column              | Title           | ADIOS Type | Length | Required | Notes                                  |
-| :------------------ | --------------- | :--------: | :----: | :------: | :------------------------------------- |
-| id                  |                 |    int     |   8    |   TRUE   | Unique record ID                       |
-| record_info         | Record Info     |    json    |        |   TRUE   |                                        |
-| amount              | Amount          |  decimal   |  15,2  |   TRUE   | Suma položky transakcie v hlavnej mene |
-| amount_currency     | Amount Currency |  decimal   |  15,2  |   TRUE   | Suma položky transakcie v inej mene    |
-| id_bkp_transaction  | Transaction     |   lookup   |   8    |   TRUE   | ID dokladu                             |
-| id_bkp_book_account | Book Account    |   lookup   |   8    |   TRUE   | ID účtu z účtovnej osnovy              |
+| Column              | Title           | ADIOS Type | Length | Required | Notes                                      |
+| :------------------ | --------------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id                  |                 |    int     |   8    |   TRUE   | Unique record ID                           |
+| record_info         | Record Info     |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
+| amount              | Amount          |  decimal   |  15,2  |   TRUE   | Suma položky transakcie v hlavnej mene     |
+| amount_currency     | Amount Currency |  decimal   |  15,2  |   TRUE   | Suma položky transakcie v inej mene        |
+| id_bkp_transaction  | Transaction     |   lookup   |   8    |   TRUE   | ID dokladu                                 |
+| id_bkp_book_account | Book Account    |   lookup   |   8    |   TRUE   | ID účtu z účtovnej osnovy                  |
 
 ### ADIOS Parameters
 
