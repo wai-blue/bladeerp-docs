@@ -1,14 +1,14 @@
-# Bookkeeping/Cashdesk/Receipts
+# Action Bookkeeping/Cashdesk/Receipts
 
 ## Description
 
 Zoznam všetkých pokladničných dokladov
 
-## Main View
+## View
 
 Table
 
-## Parameters
+## Default View Parameters
 
 * showColumns:
   * id_bkp_cashdesk_account
@@ -21,3 +21,7 @@ Table
   * receipt_number
   * amount_total
 * orderBy: id_bkp_accounting_period ASC, id_bkp_cashdesk_account ASC
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

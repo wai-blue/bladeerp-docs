@@ -1,14 +1,14 @@
-# Bookkeeping/MainBook/BookAccount/Add
+# Action Bookkeeping/MainBook/BookAccount/Add
 
 ## Description
 
 Vytvorenie nového účtu.
 
-## Main View
+## View
 
 Form
 
-## Parameters
+## Default View Parameters
 
 * template:
   * id_bkp_accounting_period
@@ -20,6 +20,6 @@ Form
   * id_bkp_book_account_category
   * side
 
-## Columns
+## Parameters Post-processing
 
-TODO: Tabuľka a celkovo Columns chýba zámerne, alebo je to potrebné nahodiť?
+No post-processing of default parameters is necessary.

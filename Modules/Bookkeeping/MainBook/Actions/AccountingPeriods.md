@@ -1,14 +1,14 @@
-# Bookkeeping/MainBook/AccountingPeriods
+# Action Bookkeeping/MainBook/AccountingPeriods
 
-# Description
+## Description
 
 Zoznam účtovných období.
 
-## Main View
+## View
 
 Table
 
-## Columns
+## Default View Parameters
 
 | Názov stĺpca                | Formát zobrazenia | Zoradenie | Filter                                |
 | :-------------------------- | :---------------: | :-------: | :------------------------------------ |
@@ -18,3 +18,7 @@ Table
 | is_open                     | BOOL              |           |                                       |
 | bkp_accounting_periods.name | LOOKUP            |           | Podľa stĺpca id_bkp_accounting_period |
 | bkp_currency.name           | LOOKUP            |           | Podľa stĺpca id_bkp_currency          |
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

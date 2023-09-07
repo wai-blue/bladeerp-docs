@@ -1,4 +1,4 @@
-# Model Bookkeeping/FinancialStatement/FinancialStatementEntry
+# Model Bookkeeping/FinancialStatement/FinancialStatementItems
 
 NOTE: DD pretukal.
 NOTE: PA skontroloval - chyby opravene
@@ -15,22 +15,26 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                   |
-| --------------------- | --------------------------------------- |
-| sqlName               | bkp_financial_statement_entries         |
-| urlBase               | bookkeeping/financial-statement-entries |
-| lookupSqlValue        |                                         |
-| tableTitle            | Account Balances                        |
-| formTitleForInserting |                                         |
-| formTitleForEditing   |                                         |
-| formAddButtonText     |                                         |
-| formSaveButtonText    |                                         |
+| Property              | Value                                                      |
+| --------------------- | ---------------------------------------------------------- |
+| sqlName               | bkp_financial_statement_items                              |
+| urlBase               | bookkeeping/financial-statement-items                      |
+| lookupSqlValue        |                                                            |
+| tableTitle            | Account Balances                                           |
+| formTitleForInserting |                                                            |
+| formTitleForEditing   |                                                            |
+| formAddButtonText     |                                                            |
+| formSaveButtonText    |                                                            |
+| crud/browse/action    | Bookkeeping/FinancialStatement/FinancialStatementItems     |
+| crud/add/action       | Bookkeeping/FinancialStatement/FinancialStatementItem/Add  |
+| crud/edit/action      | Bookkeeping/FinancialStatement/FinancialStatementItem/Edit |
 
 ## Data Structure
 
 | Column                     | Title               | ADIOS Type | Length | Required | Notes               |
 | :------------------------- | ------------------- | :--------: | :----: | :------: | :------------------ |
 | id                         |                     |    int     |   8    |   TRUE   | Unique record ID    |
+| record_info                | Record Info         |    json    |        |   TRUE   |                     |
 | balance                    | Balance             |  decimal   |  15,2  |  FALSE   | Balance             |
 | id_bkp_book_account        | Book Account        |   lookup   |   8    |   TRUE   | Book Account        |
 | id_bkp_financial_statement | Financial Statement |   lookup   |   8    |   TRUE   | Financial Statement |
@@ -43,8 +47,8 @@ No additional ADIOS parameters needs to be defined.
 
 | Column                     | Model                                                                                                                                        | Relation | OnUpdate | OnDelete |
 | :------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------- | :------: | :------: | :------: |
-| id_bkp_book_account        | [App/Widgets/Bookkeeping/MainBook/Models/BookAccount](../../../Bookkeeping/MainBook/Models/BookAccount.md)                                   |   1:N    | Cascade  | Restrict |
-| id_bkp_financial_statement | [App/Widgets/Bookkeeping/FinancialStatement/Models/FinancialStatement](../../../Bookkeeping/FinancialStatement/Models/FinancialStatement.md) |   1:N    | Cascade  | Restrict |
+| id_bkp_book_account        | [App/Widgets/Bookkeeping/MainBook/Models/BookAccount](../../MainBook/Models/BookAccount.md)                                   |   1:N    | Cascade  | Restrict |
+| id_bkp_financial_statement | [App/Widgets/Bookkeeping/FinancialStatement/Models/FinancialStatement](./FinancialStatement.md) |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

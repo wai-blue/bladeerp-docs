@@ -13,21 +13,25 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                               |
-| :-------------------- | :---------------------------------- |
-| sqlName               | bkp_asset_tax_depreciations         |
-| urlBase               | bookkeeping/asset/tax-depreciations |
-| lookupSqlValue        |                                     |
-| tableTitle            | Asset Tax Depreciations             |
-| formTitleForInserting |                                     |
-| formTitleForEditing   | Detail Depreciation                 |
-| formAddButtonText     |                                     |
-| formSaveButtonText    |                                     |
+| Property              | Value                                       |
+| :-------------------- | :------------------------------------------ |
+| sqlName               | bkp_asset_tax_depreciations                 |
+| urlBase               | bookkeeping/asset/tax-depreciations         |
+| lookupSqlValue        |                                             |
+| tableTitle            | Asset Tax Depreciations                     |
+| formTitleForInserting |                                             |
+| formTitleForEditing   | Detail Depreciation                         |
+| formAddButtonText     |                                             |
+| formSaveButtonText    |                                             |
+| crud/browse/action    | Bookkeeping/AssetTaxDepreciation/Assets     |
+| crud/add/action       | Bookkeeping/AssetTaxDepreciation/Asset/Add  |
+| crud/edit/action      | Bookkeeping/AssetTaxDepreciation/Asset/Edit |
 
 ## Data Structure
 
 | Column                              | Title                                                                             | ADIOS Type | Length | Required | Notes                        |
 | :---------------------------------- | --------------------------------------------------------------------------------- | :--------: | :----: | :------: | :--------------------------- |
+| record_info                         | Record Info                                                                       |    json    |        |   TRUE   |                              |
 | id                                  | ID                                                                                |    int     |   8    |   TRUE   | Jedinečné ID záznamu         |
 | id_bkp_asset                        | Property                                                                          |   lookup   |   8    |   TRUE   | Odpisovaný majetok           |
 | id_bkp_accounting_period            | Accounting period                                                                 |   lookup   |   8    |   TRUE   | Účtovné obdobie              |
@@ -58,6 +62,7 @@ No additional ADIOS parameters needs to be defined.
 | Name                     |  Type   |               Column + Order |
 | :----------------------- | :-----: | ---------------------------: |
 | id                       | PRIMARY |                       id ASC |
+| number                   |  INDEX  |                   number ASC |
 | year                     |  INDEX  |                     year ASC |
 | posting_date             |  INDEX  |             posting_date ASC |
 | id_bkp_asset             |  INDEX  |             id_bkp_asset ASC |

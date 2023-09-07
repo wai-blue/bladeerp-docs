@@ -1,4 +1,4 @@
-# Model Bookkeeping/Claim/ClaimItemProduct
+# Model Bookkeeping/Claim/ClaimItemHasProduct
 
 ## Introduction
 
@@ -12,7 +12,7 @@ No constants are defined for this model.
 
 | Property              | Value                                                             |
 | :-------------------- | :---------------------------------------------------------------- |
-| sqlName               | bkp_claim_item_products                                           |
+| sqlName               | bkp_claim_item_has_products                                       |
 | urlBase               | bookkeeping/claim/{id_bkp_claim}/item/{id_bkp_claim_item}/product |
 | lookupSqlValue        | {%TABLE%}.name                                                    |
 | tableTitle            | Claim Item Products                                               |
@@ -24,6 +24,7 @@ No constants are defined for this model.
 
 | Column            | Title         | ADIOS Type | Length | Required | Notes                 |
 | :---------------- | ------------- | :--------: | :----: | :------: | :-------------------- |
+| record_info       | Record Info   |    json    |        |   TRUE   |                       |
 | id_bkp_claim_item | ID Claim Item |   lookup   |   8    |   TRUE   | ID položky pohľadávky |
 | id_whs_product    | Product       |   lookup   |   8    |   TRUE   | ID produktu           |
 

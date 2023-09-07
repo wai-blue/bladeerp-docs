@@ -13,20 +13,24 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                |
-| :-------------------- | :----------------------------------- |
-| sqlName               | bkp_claim_accounts                   |
+| Property              | Value                                    |
+| :-------------------- | :--------------------------------------- |
+| sqlName               | bkp_claim_accounts                       |
 | urlBase               | bookkeeping/claim/{id_bkp_claim}/account |
-| lookupSqlValue        | {%TABLE%}.name                       |
-| tableTitle            | Claim Accounts                       |
-| formTitleForInserting | New Claim Account                    |
-| formTitleForEditing   | Claim Account                        |
+| lookupSqlValue        | {%TABLE%}.name                           |
+| tableTitle            | Claim Accounts                           |
+| formTitleForInserting | New Claim Account                        |
+| formTitleForEditing   | Claim Account                            |
+| crud/browse/action    | Bookkeeping/Claim/ClaimAccounts          |
+| crud/add/action       | Bookkeeping/Claim/ClaimAccount/Add       |
+| crud/edit/action      | Bookkeeping/Claim/ClaimAccount/Edit      |
 
 ## Data Structure
 
 | Column              | Title        | ADIOS Type | Length | Required | Notes                     |
 | :------------------ | ------------ | :--------: | :----: | :------: | :------------------------ |
 | id                  |              |    int     |   8    |   TRUE   | Jedinečné ID záznamu      |
+| record_info         | Record Info  |    json    |        |   TRUE   |                           |
 | id_bkp_claim        | Claim        |   lookup   |   8    |   TRUE   | ID pohľadávky             |
 | id_bkp_book_account | Book Account |   lookup   |   8    |   TRUE   | ID účtu z účtovnej osnovy |
 | amount              | Amount       |  decimal   |  15,2  |   TRUE   | Hodnota                   |
@@ -37,8 +41,8 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column              | Model                                           | Relation | OnUpdate | OnDelete |
-| :------------------ | :---------------------------------------------- | :------: | -------- | -------- |
+| Column              | Model                                               | Relation | OnUpdate | OnDelete |
+| :------------------ | :-------------------------------------------------- | :------: | -------- | -------- |
 | id_bkp_claim        | App/Widgets/Bookkeeping/Claim/Models/Claim          |   1:N    | Cascade  | Restrict |
 | id_bkp_book_account | App/Widgets/Bookkeeping/MainBook/Models/BookAccount |   1:N    | Cascade  | Restrict |
 

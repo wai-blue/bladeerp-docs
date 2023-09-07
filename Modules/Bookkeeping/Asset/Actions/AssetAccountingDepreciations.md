@@ -1,14 +1,14 @@
-# Bookkeeping/Asset/AssetAccountingDepreciations
+# Action Bookkeeping/Asset/AssetAccountingDepreciations
 
 ## Description
 
 Účtovných odpisy majetku.
 
-## Main View
+## View
 
 Table
 
-## Parameters
+## Default View Parameters
 
 * showColumns:
   * year
@@ -18,3 +18,7 @@ Table
   * amount_accounting_residual
   * posting_date
 * orderBy: year ASC, month ASC
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

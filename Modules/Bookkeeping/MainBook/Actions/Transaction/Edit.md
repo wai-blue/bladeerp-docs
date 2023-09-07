@@ -1,14 +1,14 @@
-# Bookkeeping/MainBook/Transaction/Edit
+# Action Bookkeeping/MainBook/Transaction/Edit
 
 ## Description
 
 Detail dokladu. Ak je doklad uzavretý, zobrazuje sa iba na čítanie a nie je ho možné meniť.
 
-## Main View
+## View
 
 Grid
 
-## Parameters
+## Default View Parameters
 
 * layout:
     ```
@@ -28,3 +28,7 @@ Grid
     * action: Widgets/Bookkeeping/MainBook/TransactionEntries
     * params:
       * idTransaction = $params[‘id’]
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

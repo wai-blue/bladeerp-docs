@@ -9,20 +9,24 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                    |
-| --------------------- | ------------------------ |
-| lookupSqlValue        | {%TABLE%}.name           |
-| formTitleForEditing   | Claim                    |
-| tableTitle            | Claims                   |
-| sqlName               | bkp_claims               |
-| urlBase               | bookkeeping/claim/claims |
-| formTitleForInserting | New Claim                |
+| Property              | Value                        |
+| --------------------- | ---------------------------- |
+| lookupSqlValue        | {%TABLE%}.name               |
+| formTitleForEditing   | Claim                        |
+| tableTitle            | Claims                       |
+| sqlName               | bkp_claims                   |
+| urlBase               | bookkeeping/claim/claims     |
+| formTitleForInserting | New Claim                    |
+| crud/browse/action    | Bookkeeping/Claim/Claims     |
+| crud/add/action       | Bookkeeping/Claim/Claim/Add  |
+| crud/edit/action      | Bookkeeping/Claim/Claim/Edit |
 
 ## Data Structure
 
 | Column                                  | Title                            | ADIOS Type | Length | Required | Notes                                             |
 | :-------------------------------------- | -------------------------------- | :--------: | :----: | :------: | :------------------------------------------------ |
 | id                                      |                                  |    int     |   8    |   TRUE   | Jedinečné ID záznamu                              |
+| record_info                             | Record Info                      |    json    |        |   TRUE   |                                                   |
 | id_bkp_claim_state                      | State                            |   lookup   |   8    |   TRUE   | ID stavu pohľadávky                               |
 | id_com_contact                          | Customer                         |   lookup   |   8    |   TRUE   | ID odberateľa                                     |
 | id_bkp_accounting_period                | Accounting Period                |   lookup   |   8    |   TRUE   | ID účtovného obdobia                              |

@@ -10,25 +10,26 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                   |
-| :-------------------- | :-------------------------------------- |
-| sqlName               | bkp_cashdesk_account_statements         |
-| urlBase               | bookkeeping/cashdesk/account-statements |
-| lookupSqlValue        |                                         |
-| tableTitle            | Cashdesk Account Statements             |
-| formTitleForInserting |                                         |
-| formTitleForEditing   |                                         |
-| formAddButtonText     | Create Statement                        |
-| formSaveButtonText    |                                         |
-| crud/browse/action    | Cashdesk/AccountStatements              |
-| crud/add/action       | Cashdesk/AccountStatement/AddOrEdit     |
-| crud/edit/action      | Cashdesk/AccountStatement/AddOrEdit     |
+| Property              | Value                                           |
+| :-------------------- | :---------------------------------------------- |
+| sqlName               | bkp_cashdesk_account_statements                 |
+| urlBase               | bookkeeping/cashdesk/account-statements         |
+| lookupSqlValue        |                                                 |
+| tableTitle            | Cashdesk Account Statements                     |
+| formTitleForInserting |                                                 |
+| formTitleForEditing   |                                                 |
+| formAddButtonText     | Create Statement                                |
+| formSaveButtonText    |                                                 |
+| crud/browse/action    | Bookkeeping/Cashdesk/AccountStatements          |
+| crud/add/action       | Bookkeeping/Cashdesk/AccountStatement/AddOrEdit |
+| crud/edit/action      | Bookkeeping/Cashdesk/AccountStatement/AddOrEdit |
 
 ## Data Structure
 
 | Column                  | Title                      | ADIOS Type | Length | Required | Notes                                   |
 | :---------------------- | -------------------------- | :--------: | :----: | :------: | :-------------------------------------- |
 | id                      | ID                         |    int     |   11   |   TRUE   | Jedinečné ID záznamu                    |
+| record_info             | Record Info                |    json    |        |   TRUE   |                                         |
 | id_bkp_cashdesk_account | Cashdesk Account           |   lookup   |   11   |   TRUE   | ID pokladne                             |
 | statement_datetime      | Date and Time of Statement |  datetime  |        |   TRUE   | Dátum a čas závierky                    |
 | amount_found            | Found Amount               |  decimal   |  15,2  |  FALSE   | Suma, ktorá bola pri závierke zistená   |

@@ -4,7 +4,7 @@
 
 Some custom action rendering some custom view.
 
-## Main View
+## View
 
 App/Core/Views/MyCustomView
 

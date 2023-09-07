@@ -10,24 +10,25 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                         |
-| :-------------------- | :---------------------------- |
-| sqlName               | bkp_cashdesk_accounts         |
-| urlBase               | bookkeeping/cashdesk/accounts |
-| lookupSqlValue        | {%TABLE%}.name                |
-| tableTitle            | Cashdesk Accounts             |
-| formTitleForInserting | New Cashdesk Account          |
-| formTitleForEditing   | Cashdesk Account              |
-| formAddButtonText     | Add Account                   |
-| formSaveButtonText    | Update Account                |
-| crud/browse/action    | Cashdesk/Accounts             |
-| crud/add/action       | Cashdesk/Account/AddOrEdit    |
-| crud/edit/action      | Cashdesk/Account/AddOrEdit    |
+| Property              | Value                                  |
+| :-------------------- | :------------------------------------- |
+| sqlName               | bkp_cashdesk_accounts                  |
+| urlBase               | bookkeeping/cashdesk/accounts          |
+| lookupSqlValue        | {%TABLE%}.name                         |
+| tableTitle            | Cashdesk Accounts                      |
+| formTitleForInserting | New Cashdesk Account                   |
+| formTitleForEditing   | Cashdesk Account                       |
+| formAddButtonText     | Add Account                            |
+| formSaveButtonText    | Update Account                         |
+| crud/browse/action    | Bookkeeping/Cashdesk/Accounts          |
+| crud/add/action       | Bookkeeping/Cashdesk/Account/AddOrEdit |
+| crud/edit/action      | Bookkeeping/Cashdesk/Account/AddOrEdit |
 
 ## Data Structure
 | Column              | Title            | ADIOS Type | Length | Required | Notes                                                    |
 | :------------------ | ---------------- | :--------: | :----: | :------: | :------------------------------------------------------- |
 | id                  | ID               |    int     |   11   |   TRUE   | Jedinečné ID záznamu                                     |
+| record_info         | Record Info      |    json    |        |   TRUE   |                                                          |
 | account_name        | Name             |  varchar   |  100   |   TRUE   | Názov pokladnicneho uctu                                 |
 | account_acronym     | Acronym          |  varchar   |   5    |   TRUE   | Skratka pre pokladnicny ucet                             |
 | id_bkp_currency     | Currency         |   lookup   |   11   |   TRUE   | ID meny v ktorej je pokladňa vedená                      |

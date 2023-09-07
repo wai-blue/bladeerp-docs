@@ -1,14 +1,14 @@
-# Bookkeeping/FinancialStatement/FinancialStatementEntries
+# Action Bookkeeping/FinancialStatement/FinancialStatementEntries
 
 ## Description
 
 Zoznam odpisových skupín.
 
-## Main View
+## View
 
 Table
 
-## Parameters
+## Default View Parameters
 
 * showColumns:
   * number
@@ -18,3 +18,7 @@ Table
   * coef_next_year_inc
   * id_bkp_accounting_period
 * orderBy: number ASC
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

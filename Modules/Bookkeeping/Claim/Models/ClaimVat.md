@@ -10,18 +10,22 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property       | Value                             |
-| -------------- | --------------------------------- |
-| sqlName        | bkp_claim_vats                    |
-| urlBase        | bookkeeping/claim/{id_bkp_claim}/vats |
-| lookupSqlValue | {%TABLE%}.name                    |
-| tableTitle     | VATs                              |
+| Property           | Value                                 |
+| ------------------ | ------------------------------------- |
+| sqlName            | bkp_claim_vats                        |
+| urlBase            | bookkeeping/claim/{id_bkp_claim}/vats |
+| lookupSqlValue     | {%TABLE%}.name                        |
+| tableTitle         | VATs                                  |
+| crud/browse/action | Bookkeeping/Claim/ClaimVats           |
+| crud/add/action    | Bookkeeping/Claim/ClaimVat/Add        |
+| crud/edit/action   | Bookkeeping/Claim/ClaimVat/Edit       |
 
 ## Data Structure
 
 | Column         | Title          | ADIOS Type | Length | Required | Notes                |
 | :------------- | -------------- | :--------: | :----: | :------: | :------------------- |
 | id             |                |    int     |   8    |   TRUE   | Jedinečné ID záznamu |
+| record_info    | Record Info    |    json    |        |   TRUE   |                      |
 | id_bkp_claim   | Claim          |   lookup   |   8    |   TRUE   | ID pohľadávky        |
 | id_bkp_vat     | VAT Rate       |   lookup   |   8    |   TRUE   | ID sadzby DPH        |
 | price_excl_vat | Price Excl VAT |  decimal   |  15,2  |   TRUE   | Suma bez DPH         |

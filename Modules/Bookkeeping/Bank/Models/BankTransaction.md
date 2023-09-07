@@ -10,23 +10,24 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                             |
-| :-------------------- | :-------------------------------- |
-| sqlName               | bkp_bank_transactions             |
-| urlBase               | bookkeeping/bank/transactions     |
-| lookupSqlValue        |                                   |
-| tableTitle            | Bank Transaction                  |
-| formTitleForInserting | New Transaction                   |
-| formTitleForEditing   | Bank Transaction                  |
-| crud/browse/action    | Bank/Actions/Transations          |
-| crud/add/action       | Bank/Actions/Transation/AddOrEdit |
-| crud/edit/action      | Bank/Actions/Transation/AddOrEdit |
+| Property              | Value                                         |
+| :-------------------- | :-------------------------------------------- |
+| sqlName               | bkp_bank_transactions                         |
+| urlBase               | bookkeeping/bank/transactions                 |
+| lookupSqlValue        |                                               |
+| tableTitle            | Bank Transaction                              |
+| formTitleForInserting | New Transaction                               |
+| formTitleForEditing   | Bank Transaction                              |
+| crud/browse/action    | Bookkeeping/Bank/Actions/Transations          |
+| crud/add/action       | Bookkeeping/Bank/Actions/Transation/AddOrEdit |
+| crud/edit/action      | Bookkeeping/Bank/Actions/Transation/AddOrEdit |
 
 ## Data Structure
 
 | Column                   | Title           | ADIOS Type | Length | Required | Notes                                         |
 | :----------------------- | --------------- | :--------: | :----: | :------: | :-------------------------------------------- |
 | id                       | ID              |    int     |   11   |   TRUE   | Jedinečné ID záznamu                          |
+| record_info              | Record Info     |    json    |        |   TRUE   |                                               |
 | id_bkp_bank_account      | Name            |   lookup   |   11   |   TRUE   | ID bankového účtu                             |
 | id_bkp_accounting_period | Account Period  |   lookup   |   11   |   TRUE   | ID účtovného obdobia                          |
 | id_com_numeric_sequence  | Document Type   |   lookup   |   11   |   TRUE   | ID číselnej rady                              |
@@ -68,7 +69,7 @@ REVIEW DD: bkp_transaction - z nazvu tabulky nie je presne jasny model
 | Name                                                                  |  Type   |               Column + Order |
 | :-------------------------------------------------------------------- | :-----: | ---------------------------: |
 | id                                                                    | PRIMARY |                       id ASC |
-| transasction_number                                                   |  INDEX  |      transasction_number ASC |
+| transaction_number                                                    |  INDEX  |       transaction_number ASC |
 | issue_date                                                            |  INDEX  |               issue_date ASC |
 | id_bkp_bank_account                                                   |  INDEX  |      id_bkp_bank_account ASC |
 | id_bkp_accounting_period                                              |  INDEX  | id_bkp_accounting_period ASC |

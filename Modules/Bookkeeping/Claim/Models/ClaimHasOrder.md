@@ -1,4 +1,4 @@
-# Model Bookkeeping/Claim/ClaimOrder
+# Model Bookkeeping/Claim/ClaimHasOrder
 
 REVIEW DD: Tato tabulka by mala byt v module, ktory bude spravovat Objednavky.
 
@@ -14,7 +14,7 @@ No constants are defined for this model.
 
 | Property              | Value                                   |
 | :-------------------- | :-------------------------------------- |
-| sqlName               | bkp_claim_orders                        |
+| sqlName               | bkp_claim_has_orders                    |
 | urlBase               | bookkeeping/claim/{id_bkp_claim}/orders |
 | lookupSqlValue        | {%TABLE%}.name                          |
 | tableTitle            | Claim Orders                            |
@@ -22,13 +22,13 @@ No constants are defined for this model.
 | formTitleForEditing   | Claim Order                             |
 | isCrossTable          | TRUE                                    |
 
-
 ## Data Structure
 
-| Column       | Title | ADIOS Type | Length | Required | Notes         |
-| :----------- | ----- | :--------: | :----: | :------: | :------------ |
-| id_bkp_claim | Claim |   lookup   |   8    |   TRUE   | ID pohľadávky |
-| id_crm_order | Order |   lookup   |   8    |   TRUE   | ID objednávky |
+| Column       | Title       | ADIOS Type | Length | Required | Notes         |
+| :----------- | ----------- | :--------: | :----: | :------: | :------------ |
+| record_info  | Record Info |    json    |        |   TRUE   |               |
+| id_bkp_claim | Claim       |   lookup   |   8    |   TRUE   | ID pohľadávky |
+| id_crm_order | Order       |   lookup   |   8    |   TRUE   | ID objednávky |
 
 ### ADIOS Parameters
 

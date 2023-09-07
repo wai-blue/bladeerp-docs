@@ -1,14 +1,14 @@
-# Bookkeeping/Cashdesk/Accounts
+# Action Bookkeeping/Cashdesk/Accounts
 
 ## Description
 
 Zoznam všetkých pokladničných účtov
 
-## Main View
+## View
 
 Table
 
-## Parameters
+## Default View Parameters
 
 * showColumns:
   * account_name
@@ -18,3 +18,7 @@ Table
   * id_user
   * is_open
 * orderBy: account_name ASC
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

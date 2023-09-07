@@ -1,14 +1,14 @@
-# Bookkeeping/Bank/AccountStatements
+# Action Bookkeeping/Bank/AccountStatements
 
 ## Description
 
 Zoznam bankových závierok.
 
-## Main View
+## View
 
 Table
 
-## Parameters
+## Default View Parameters
 
 * showColumns:
   * id_bkp_bank_account
@@ -18,3 +18,6 @@ Table
   * credit
   * debet
 
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

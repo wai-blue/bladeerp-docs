@@ -28,12 +28,16 @@ Tabuľka slúži na evidenciu majetku.
 | formTitleForEditing   | Detail Asset                                |
 | formAddButtonText     | Add Asset                                   |
 | formSaveButtonText    | Update Asset                                |
+| crud/browse/action    | Bookkeeping/Asset/Assets                    |
+| crud/add/action       | Bookkeeping/Asset/Asset/Add                 |
+| crud/edit/action      | Bookkeeping/Asset/Asset/Edit                |
 
 ## Data Structure
 
 | Column                     | Title                                           | ADIOS Type | Length | Required | Notes                                    |
 | :------------------------- | ----------------------------------------------- | :--------: | :----: | :------: | :--------------------------------------- |
 | id                         | ID                                              |    int     |   8    |   TRUE   | Jedinečné ID záznamu                     |
+| record_info                | Record Info                                     |    json    |        |   TRUE   |                                          |
 | inventory_number           | Inventory Number                                |  varchar   |   50   |   TRUE   | Inventárne číslo                         |
 | name                       | Name                                            |  varchar   |  100   |   TRUE   | Názov                                    |
 | description                | Description                                     |    text    |        |  FALSE   | Popis                                    |

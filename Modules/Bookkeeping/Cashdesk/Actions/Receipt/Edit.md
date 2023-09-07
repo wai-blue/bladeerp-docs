@@ -1,14 +1,14 @@
-# Bookkeeping/Cashdesk/Receipt/Edit
+# Action Bookkeeping/Cashdesk/Receipt/Edit
 
 ## Description
 
 Detail pohybu (blocku, uctenky) na pokladničnom účte
 
-## Main View
+## View
 
 Grid
 
-## Parameters
+## Default View Parameters
 
 * layout:
   ```
@@ -37,3 +37,7 @@ Grid
     * action: Widgets/Bookkeeping/Cashdesk/ReceiptItems
     * params:
       * idReceipt = $params[‘id’]
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

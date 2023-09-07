@@ -1,14 +1,14 @@
-# Bookkeeping/Cashdesk/Receipt/Add
+# Action Bookkeeping/Cashdesk/Receipt/Add
 
 ## Description
 
 Zápis nového pohybu (blocku, uctenky) na pokladničnom účte.
 
-## Main View
+## View
 
 Form
 
-## Parameters
+## Default View Parameters
 
 * template:
   * id_bkp_cashdesk_account
@@ -19,3 +19,7 @@ Form
   * description
   * id_bkp_currency
   * exchange_rate
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

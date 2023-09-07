@@ -1,14 +1,14 @@
-# Bookkeeping/FinancialStatement/FinancialStatementEntries
+# Action Bookkeeping/FinancialStatement/FinancialStatementEntries
 
 ## Description
 
 Zoznam majetku.
 
-## Main View
+## View
 
 Table
 
-## Parameters
+## Default View Parameters
 
 * showColumns:
   * inventory_number
@@ -21,3 +21,7 @@ Table
   * amount_tax_residual
   * retirement_date
 * orderBy: inventory_number ASC
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

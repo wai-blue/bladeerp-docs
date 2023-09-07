@@ -19,16 +19,16 @@ Vzor účtovnej osnovy https://www.ako-uctovat.sk/uctovna-osnova.php.
 
 ## Properties
 
-| Property              | Value                            |
-| :-------------------- | :------------------------------- |
-| sqlName               | bkp_book_accounts                |
+| Property              | Value                                |
+| :-------------------- | :----------------------------------- |
+| sqlName               | bkp_book_accounts                    |
 | urlBase               | bookkeeping/main-book/book-accounts/ |
-| lookupSqlValue        | {%TABLE%}.name                   |
-| tableTitle            | Book Accounts                    |
-| formTitleForInserting | New Account                      |
-| formTitleForEditing   | Book Account                     |
+| lookupSqlValue        | {%TABLE%}.name                       |
+| tableTitle            | Book Accounts                        |
+| formTitleForInserting | New Account                          |
+| formTitleForEditing   | Book Account                         |
 
-## SQL Structure
+## Data Structure
 
 | Column                       | Description                           | Type    | Length | NULL     | Default |
 | :--------------------------- | :------------------------------------ | :-----: | :----: | :------: | :-----: |

@@ -18,22 +18,21 @@ No constants are defined for this model.
 | tableTitle            | Payments                                          |
 | formTitleForInserting | New Payment                                       |
 | formTitleForEditing   | Payment                                           |
-
+| crud/browse/action    | Bookkeeping/Liability/LiabilitPayments            |
+| crud/add/action       | Bookkeeping/Liability/LiabilitPayment/Add         |
+| crud/edit/action      | Bookkeeping/Liability/LiabilitPayment/Edit        |
 
 ## Data Structure
 
-| Column           | Title            | ADIOS Type | Length | Required | Notes                                    |
-| :--------------- | ---------------- | :--------: | :----: | :------: | :--------------------------------------- |
-| id               |                  |    int     |   8    |   TRUE   | Unique record ID                         |
-| id_created_by    | Created By       |   lookup   |   8    |   TRUE   | Reference to user who created the record |
-| create_datetime  | Created Datetime |  datetime  |   8    |   TRUE   | When the record was created              |
-| id_updated_by    | Updated By       |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
-| update_datetime  | Updated Datetime |  datetime  |   8    |   TRUE   | When the record was updated              |
-| id_bkp_liability | Liability        |   lookup   |   8    |   TRUE   | ID záväzku                               |
-| due_date         | Due Date         |    date    |   8    |   TRUE   | Plánovaný dátum úhrady                   |
-| payment_date     | Payment Date     |    date    |   8    |  FALSE   | Dátum úhrady                             |
-| price            | Payment Price    |  decimal   |  15,2  |   TRUE   | Uhradená suma                            |
-| comment          | Description      |    text    |        |  FALSE   | Poznámka k úhrade                        |
+| Column           | Title         | ADIOS Type | Length | Required | Notes                  |
+| :--------------- | ------------- | :--------: | :----: | :------: | :--------------------- |
+| id               |               |    int     |   8    |   TRUE   | Unique record ID       |
+| record_info      | Record Info   |    json    |        |   TRUE   |                        |
+| id_bkp_liability | Liability     |   lookup   |   8    |   TRUE   | ID záväzku             |
+| due_date         | Due Date      |    date    |   8    |   TRUE   | Plánovaný dátum úhrady |
+| payment_date     | Payment Date  |    date    |   8    |  FALSE   | Dátum úhrady           |
+| price            | Payment Price |  decimal   |  15,2  |   TRUE   | Uhradená suma          |
+| comment          | Description   |    text    |        |  FALSE   | Poznámka k úhrade      |
 
 REVIEW DD: Comment, Description, alebo Poznamka?
 
@@ -45,8 +44,6 @@ No additional ADIOS parameters needs to be defined.
 
 | Column           | Model                                              | Relation | OnUpdate | OnDelete |
 | :--------------- | :------------------------------------------------- | :------: | -------- | -------- |
-| id_created_by    | ADIOS/Core/Models/User                             |   1:N    | Cascade  | Cascade  |
-| id_updated_by    | ADIOS/Core/Models/User                             |   1:N    | Cascade  | Cascade  |
 | id_bkp_liability | App/Widgets/Bookkeeping/Liability/Models/Liability |   1:N    | Cascade  | Cascade  |
 
 ### Indexes
@@ -54,10 +51,6 @@ No additional ADIOS parameters needs to be defined.
 | Name             |  Type   |       Column + Order |
 | :--------------- | :-----: | -------------------: |
 | id               | PRIMARY |               id ASC |
-| id_created_by    |  INDEX  |    id_created_by ASC |
-| create_datetime  |  INDEX  |  create_datetime ASC |
-| id_updated_by    |  INDEX  |    id_updated_by ASC |
-| update_datetime  |  INDEX  |  update_datetime ASC |
 | id_bkp_liability |  INDEX  | id_bkp_liability ASC |
 | due_date         |  INDEX  |         due_date ASC |
 | payment_date     |  INDEX  |     payment_date ASC |

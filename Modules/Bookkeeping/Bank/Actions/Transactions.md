@@ -1,14 +1,14 @@
-# Bookkeeping/Bank/Transactions
+# Action Bookkeeping/Bank/Transactions
 
 ## Description
 
 Zoznam všetkých bankových transakcii.
 
-## Main View
+## View
 
 Table
 
-## Parameters
+## Default View Parameters
 
 * showColumns:
   * id_bkp_accounting_period
@@ -20,3 +20,6 @@ Table
   * amount
 * orderBy: date DESC
 
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

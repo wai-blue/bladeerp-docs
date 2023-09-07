@@ -1,14 +1,14 @@
-# Bookkeeping/MainBook/Transactions
+# Action Bookkeeping/MainBook/Transactions
 
-# Description
+## Description
 
 Všetky doklady z denníka. 
 
-## Main View
+## View
 
 Table
 
-## Parameters
+## Default View Parameters
 
 * columns
   * name
@@ -19,6 +19,6 @@ Table
   * id_bkp_accounting_period
 * orderBy: number DESC
 
-## Columns
+## Parameters Post-processing
 
-TODO: Tabuľka a celkovo Columns chýba zámerne, alebo je to potrebné nahodiť?
+No post-processing of default parameters is necessary.

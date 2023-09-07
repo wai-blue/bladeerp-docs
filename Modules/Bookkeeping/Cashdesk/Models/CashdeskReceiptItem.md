@@ -10,22 +10,26 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                              |
-| :-------------------- | :--------------------------------- |
-| sqlName               | bkp_cashdesk_receipt_items         |
-| urlBase               | bookkeeping/cashdesk/receipt/items |
-| lookupSqlValue        |                                    |
-| tableTitle            | Cashdesk Receipt Items             |
-| formTitleForInserting | New Cashdesk Receipt Item          |
-| formTitleForEditing   | Cashdesk Receipt Item              |
-| formAddButtonText     | Add Receipt Item                   |
-| formSaveButtonText    | Update Receipt Item                |
+| Property              | Value                                              |
+| :-------------------- | :------------------------------------------------- |
+| sqlName               | bkp_cashdesk_receipt_items                         |
+| urlBase               | bookkeeping/cashdesk/receipt/items                 |
+| lookupSqlValue        |                                                    |
+| tableTitle            | Cashdesk Receipt Items                             |
+| formTitleForInserting | New Cashdesk Receipt Item                          |
+| formTitleForEditing   | Cashdesk Receipt Item                              |
+| formAddButtonText     | Add Receipt Item                                   |
+| formSaveButtonText    | Update Receipt Item                                |
+| crud/browse/action    | Bookkeeping/Cashdesk/CashdeskReceiptItems          |
+| crud/add/action       | Bookkeeping/Cashdesk/CashdeskReceiptItem/AddOrEdit |
+| crud/edit/action      | Bookkeeping/Cashdesk/CashdeskReceiptItem/AddOrEdit |
 
 ## Data Structure
 
 | Column                  | Title            | ADIOS Type | Length | Required | Notes                     |
 | :---------------------- | ---------------- | :--------: | :----: | :------: | :------------------------ |
 | id                      | ID               |    int     |   11   |   TRUE   | Jedinečné ID záznamu      |
+| record_info             | Record Info      |    json    |        |   TRUE   |                           |
 | id_bkp_cashdesk_receipt | Cashdesk Receipt |   lookup   |   11   |   TRUE   | ID pokladničného dokladu  |
 | id_bkp_book_account     | Book Account     |   lookup   |   11   |   TRUE   | ID účtu z účtovnej osnovy |
 | amount                  | Amount           |  decimal   |  15,2  |  FALSE   | Suma položky transakcie   |
@@ -52,36 +56,47 @@ No additional ADIOS parameters needs to be defined.
 ## Callbacks
 
 ### onBeforeInsert
+
 Not used.
 
 ### onAfterInsert
+
 Not used.
 
 ### onBeforeUpdate
+
 Not used.
 
 ### onAfterUpdate
+
 Not used.
 
 ### onBeforeDelete
+
 Not used.
 
 ### onAfterDelete
+
 Not used.
 
 ## Formatters
 
 ### tableCellHTMLFormatter
+
 Not used.
 
 ### tableCellCSVFormatter
+
 Not used.
 
 ### tableCellCSSFormatter
+
 Not used.
 
 ### tableRowCSSFormatter
+
 Not used.
 
 ### cardsCardHtmlFormatter
+
 Not used.

@@ -1,4 +1,4 @@
-# Bookkeeping/Asset/Asset/Print
+# Action Bookkeeping/Asset/Asset/Print
 
 REVIEW DD: Definicia vzhladu tlacovych reportov je este pole neorane. Kazdy report moze vyzerat uplne inac, co nie je pripad formularov v appke, pretoze tie vykazuju vela prvkov "standardizacie". Takze tento zapis zatial neriesim / nekontrolujem.
 
@@ -6,7 +6,7 @@ REVIEW DD: Definicia vzhladu tlacovych reportov je este pole neorane. Kazdy repo
 
 Tlač karty majetku. Výstup bude vo formáte HTML. Obsah bude identický s detailom majetku.
 
-## Main View
+## View
 
 Bookkeeping/Asset/Views/Asset/Print
 

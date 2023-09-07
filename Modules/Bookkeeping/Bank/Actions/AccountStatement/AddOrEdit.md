@@ -1,4 +1,4 @@
-# Bookkeeping/Bank/AccountStatement/AddOrEdit
+# Action Bookkeeping/Bank/AccountStatement/AddOrEdit
 
 ## Description
 
@@ -6,7 +6,7 @@ Zápis novéj uzávierky na bankovom účte.
 
 Uprava uzavierky je nežiaduca. Pri uzavierke sa počíta manko a prebytok a vyvodzuje sa z toho hmotná zodpovednosť. Ak dáme možnosť to opraviť, nebudú nikde rozdiely, lebo si to opravia ako potrebuju aby to vyšlo.
 
-## Main View
+## View
 
 Form
 

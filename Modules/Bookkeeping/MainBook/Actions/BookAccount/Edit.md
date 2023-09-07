@@ -1,14 +1,14 @@
-# Bookkeeping/MainBook/BookAccount/Edit
+# Action Bookkeeping/MainBook/BookAccount/Edit
 
 ## Description
 
 Detail účtu.
 
-## Main View
+## View
 
 Form
 
-## Parameters
+## Default View Parameters
 
 * showColumns:
   * number
@@ -18,7 +18,6 @@ Form
   * is_accounted
   * id_bkp_accounting_period
 
-## Columns
+## Parameters Post-processing
 
-TODO: Tabuľka a celkovo Columns chýba zámerne, alebo je to potrebné nahodiť?
-
+No post-processing of default parameters is necessary.

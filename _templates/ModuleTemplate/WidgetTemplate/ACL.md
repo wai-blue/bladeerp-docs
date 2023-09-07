@@ -1,9 +1,9 @@
 # ACL
 
-| Action                  | Hlavný účtovník | Účtovník |
-| ----------------------- | --------------- | -------- |
-| AccountingPeriods       | X               |          |
-| AccountingPeriods/Add   | X               |          |
-| AccountingPeriods/Edit  | X               |          |
-| AccountingPeriod/Delete | X               | X        |
-| AccountingPeriod/Close  |                 | X        |
+| Action                  | Main accountant | Accountant |
+| :---------------------- | :-------------: | :--------: |
+| AccountingPeriods       |        X        |            |
+| AccountingPeriods/Add   |        X        |            |
+| AccountingPeriods/Edit  |        X        |            |
+| AccountingPeriod/Delete |        X        |     X      |
+| AccountingPeriod/Close  |                 |     X      |

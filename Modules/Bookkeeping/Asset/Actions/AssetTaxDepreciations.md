@@ -1,14 +1,14 @@
-# Bookkeeping/Asset/AssetTaxDepreciations
+# Action Bookkeeping/Asset/AssetTaxDepreciations
 
 ## Description
 
 Daňové odpisy majetku.
 
-## Main View
+## View
 
 Table
 
-## Parameters
+## Default View Parameters
 
 * showColumns:
   * number
@@ -22,3 +22,7 @@ Table
   * amount_tax_residual
   * posting_date
 * orderBy: number ASC
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

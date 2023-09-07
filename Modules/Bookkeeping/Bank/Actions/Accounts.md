@@ -1,13 +1,14 @@
-# Bookkeeping/Bank/Accounts
+# Action Bookkeeping/Bank/Accounts
 
 ## Description
 
 Zoznam všetkých bankových účtov
 
-## Main View
+## View
 
 Table
-## Parameters
+
+## Default View Parameters
 
 * showColumns:
   * name
@@ -18,3 +19,6 @@ Table
   * is_open
 * orderBy: name ASC
 
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

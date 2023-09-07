@@ -1,14 +1,14 @@
-# Bookkeeping/MainBook/Transaction/Add
+# Action Bookkeeping/MainBook/Transaction/Add
 
 ## Description
 
 Vytvorenie nového dokladu.
 
-## Main View
+## View
 
 Form
 
-## Parameters
+## Default View Parameters
 
 * template:
   * id_bkp_accounting_period
@@ -17,6 +17,6 @@ Form
 * defaultValues:
   * transaction_date = Predvolený je posledný dátum z účtovného obdobia
 
-## Columns
+## Parameters Post-processing
 
-TODO: Tabuľka a celkovo Columns chýba zámerne, alebo je to potrebné nahodiť?
+No post-processing of default parameters is necessary.

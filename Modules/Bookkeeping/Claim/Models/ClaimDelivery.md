@@ -13,20 +13,24 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                   |
-| :-------------------- | :-------------------------------------- |
-| sqlName               | bkp_claim_deliveries                    |
+| Property              | Value                                       |
+| :-------------------- | :------------------------------------------ |
+| sqlName               | bkp_claim_deliveries                        |
 | urlBase               | bookkeeping/claim/{id_bkp_claim}/deliveries |
-| lookupSqlValue        | {%TABLE%}.name                          |
-| tableTitle            | Claim Deliveries                        |
-| formTitleForInserting | New Claim Delivery                      |
-| formTitleForEditing   | Claim Delivery                          |
+| lookupSqlValue        | {%TABLE%}.name                              |
+| tableTitle            | Claim Deliveries                            |
+| formTitleForInserting | New Claim Delivery                          |
+| formTitleForEditing   | Claim Delivery                              |
+| crud/browse/action    | Bookkeeping/Claim/ClaimDeliveries           |
+| crud/add/action       | Bookkeeping/Claim/ClaimDelivery/Add         |
+| crud/edit/action      | Bookkeeping/Claim/ClaimDelivery/Edit        |
 
 ## Data Structure
 
 | Column          | Title          | ADIOS Type | Length | Required | Notes                                |
 | :-------------- | -------------- | :--------: | :----: | :------: | :----------------------------------- |
 | id              |                |    int     |   8    |   TRUE   | Jedinečné ID záznamu                 |
+| record_info     | Record Info    |    json    |        |   TRUE   |                                      |
 | id_bkp_claim    | Claim          |   lookup   |   8    |   TRUE   | ID pohľadávky                        |
 | id_log_delivery | Delivery       |   lookup   |   8    |   TRUE   | ID dopravy                           |
 | delivery_price  | Delivery Price |  decimal   |  15,2  |   TRUE   | Cena za dopravu                      |

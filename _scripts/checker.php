@@ -290,9 +290,12 @@ foreach ($modules as $module) {
         // Miscelaneous
 
         if (
-          empty($properties['crud/browse/action'])
-          || empty($properties['crud/add/action'])
-          || empty($properties['crud/edit/action'])
+          ($properties['isCrossTable'] ?? '') !== 'TRUE'
+          && (
+            empty($properties['crud/browse/action'])
+            || empty($properties['crud/add/action'])
+            || empty($properties['crud/edit/action'])
+          )
         ) {
           $errors[] = "[{$modelRef}] Browse/Add/Edit CRUD actions are not fully specified.";
         }

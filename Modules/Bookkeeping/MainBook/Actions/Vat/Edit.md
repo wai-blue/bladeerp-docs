@@ -1,16 +1,20 @@
-# Bookkeeping/MainBook/Vat/Edit
+# Action Bookkeeping/MainBook/Vat/Edit
 
 ## Description
 
 Detail položky dokladu. 
 
-## Main View
+## View
 
 Form
 
-## Parameters
+## Default View Parameters
 
 * template:
   * rate
   * id_bkp_accounting_period
   * id_bkp_book_account
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

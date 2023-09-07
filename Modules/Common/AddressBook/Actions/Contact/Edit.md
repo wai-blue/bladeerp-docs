@@ -4,7 +4,7 @@
 
 Detail kontaktu.
 
-## Main View
+## View
 
 Form
 

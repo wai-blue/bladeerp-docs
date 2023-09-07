@@ -1,14 +1,14 @@
-# Bookkeeping/Cashdesk/Statements
+# Action Bookkeeping/Cashdesk/Statements
 
 ## Description
 
 Zoznam pokladnicnych závierok
 
-## Main View
+## View
 
 Table
 
-## Parameters
+## Default View Parameters
 
 * showColumns:
   * id_bkp_cashdesk_account
@@ -18,3 +18,6 @@ Table
   * credit
   * debet
 
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

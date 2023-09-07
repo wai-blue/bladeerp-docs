@@ -1,16 +1,20 @@
-# Bookkeeping/MainBook/TransactionEntries
+# Action Bookkeeping/MainBook/TransactionEntries
 
-# Description
+## Description
 
 Zoznam položiek z dokladu. Zoznam sa bude zobrazovať iba v detaile dokladu.
 
-## Main View
+## View
 
 Table
 
-## Parameters
+## Default View Parameters
 
 * columns
   * amount
   * id_bkp_book_accounts
 * orderBy: id_bkp_book_accounts ASC
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

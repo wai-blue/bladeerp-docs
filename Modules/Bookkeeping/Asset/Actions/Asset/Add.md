@@ -1,14 +1,14 @@
-# Bookkeeping/Asset/Asset/Add
+# Action Bookkeeping/Asset/Asset/Add
 
 ## Description
 
 Vytvorenie nového majetku.
 
-## Main View
+## View
 
 Form
 
-## Parameters
+## Default View Parameters
 
 * template:
   * inventory_number
@@ -27,3 +27,7 @@ Form
   * retirement_date
   * retirement_reason
   * retirement_method
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

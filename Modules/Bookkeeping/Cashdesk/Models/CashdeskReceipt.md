@@ -10,25 +10,26 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                         |
-| :-------------------- | :---------------------------- |
-| sqlName               | bkp_cashdesk_receipts         |
-| urlBase               | bookkeeping/cashdesk/receipts |
-| lookupSqlValue        |                               |
-| tableTitle            | Cashdesk Receipt              |
-| formTitleForInserting | New Cashdesk Receipt          |
-| formTitleForEditing   | Cashdesk Receipt              |
-| formAddButtonText     | Add Receipt                   |
-| formSaveButtonText    | Update Receipt                |
-| crud/browse/action    | Cashdesk/Receipts             |
-| crud/add/action       | Cashdesk/Receipt/Add          |
-| crud/edit/action      | Cashdesk/Receipt/Edit         |
+| Property              | Value                             |
+| :-------------------- | :-------------------------------- |
+| sqlName               | bkp_cashdesk_receipts             |
+| urlBase               | bookkeeping/cashdesk/receipts     |
+| lookupSqlValue        |                                   |
+| tableTitle            | Cashdesk Receipt                  |
+| formTitleForInserting | New Cashdesk Receipt              |
+| formTitleForEditing   | Cashdesk Receipt                  |
+| formAddButtonText     | Add Receipt                       |
+| formSaveButtonText    | Update Receipt                    |
+| crud/browse/action    | Bookkeeping/Cashdesk/Receipts     |
+| crud/add/action       | Bookkeeping/Cashdesk/Receipt/Add  |
+| crud/edit/action      | Bookkeeping/Cashdesk/Receipt/Edit |
 
 ## Data Structure
 
 | Column                   | Title              | ADIOS Type | Length | Required | Notes                                         |
 | :----------------------- | ------------------ | :--------: | :----: | :------: | :-------------------------------------------- |
 | id                       | ID                 |    int     |   11   |   TRUE   | Jedinečné ID záznamu                          |
+| record_info              | Record Info        |    json    |        |   TRUE   |                                               |
 | id_bkp_cashdesk_account  | Cashdesk Account   |   lookup   |   11   |   TRUE   | ID pokladne                                   |
 | id_bkp_accounting_period | Account Period     |   lookup   |   11   |   TRUE   | ID účtovného obdobia                          |
 | id_com_numeric_sequence  | Document Type      |   lookup   |   11   |   TRUE   | ID typu dokumentu                             |

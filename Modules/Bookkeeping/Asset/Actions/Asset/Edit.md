@@ -1,14 +1,14 @@
-# Bookkeeping/Asset/Asset/Edit
+# Action Bookkeeping/Asset/Asset/Edit
 
 ## Description
 
 Detail majetku.
 
-## Main View
+## View
 
 Grid
 
-## Parameters
+## Default View Parameters
 
 * layout:
   ```
@@ -58,3 +58,7 @@ Grid
     * params:
       * model = App/Bookkeeping/Asset/Models/AssetAccountingDepreciation
       * idBkpAsset = $params[‘id’]
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

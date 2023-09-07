@@ -1,14 +1,14 @@
-# Bookkeeping/Asset/AssetDepreciationGroup/AddOrEdit
+# Action Bookkeeping/Asset/AssetDepreciationGroup/AddOrEdit
 
 ## Description
 
 Vytvorenie alebo uprava novej odpisovej skupiny.
 
-## Main View
+## View
 
 Form
 
-## Parameters
+## Default View Parameters
 
 * template:
   * id_bkp_accounting_period
@@ -19,3 +19,7 @@ Form
   * coef_first_year
   * coef_next_year
   * coef_next_year_inc
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

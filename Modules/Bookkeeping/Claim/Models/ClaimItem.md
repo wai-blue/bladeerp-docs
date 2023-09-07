@@ -22,12 +22,16 @@ No constants are defined for this model.
 | tableTitle            | Claim Items                            |
 | formTitleForInserting | New Claim Item                         |
 | formTitleForEditing   | Claim Item                             |
+| crud/browse/action    | Bookkeeping/Claim/ClaimItems           |
+| crud/add/action       | Bookkeeping/Claim/ClaimItem/Add        |
+| crud/edit/action      | Bookkeeping/Claim/ClaimItem/Edit       |
 
 ## Data Structure
 
 | Column              | Title               | ADIOS Type | Length | Required | Notes                         |
 | :------------------ | ------------------- | :--------: | :----: | :------: | :---------------------------- |
 | id                  |                     |    int     |   8    |   TRUE   | Jedinečné ID záznamu          |
+| record_info         | Record Info         |    json    |        |   TRUE   |                               |
 | id_bkp_claim        | Claim               |   lookup   |   8    |   TRUE   | ID pohľadávky                 |
 | item                | Item                |  varchar   |  200   |   TRUE   | Položka                       |
 | item_sequence       | Item Sequence       |    int     |   6    |  FALSE   | Poradie položky na pohľadávke |

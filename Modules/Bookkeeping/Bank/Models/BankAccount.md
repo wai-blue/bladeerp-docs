@@ -10,25 +10,26 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                     |
-| :-------------------- | :------------------------ |
-| sqlName               | bkp_bank_accounts         |
-| urlBase               | bookkeeping/bank/accounts |
-| lookupSqlValue        | {%TABLE%}.name            |
-| tableTitle            | Bank Accounts             |
-| formTitleForInserting | New Bank Account          |
-| formTitleForEditing   | Bank Account              |
-| formAddButtonText     | Add Account               |
-| formSaveButtonText    | Update Account            |
-| crud/browse/action    | Bank/Accounts             |
-| crud/add/action       | Bank/Account/AddOrEdit    |
-| crud/edit/action      | Bank/Account/AddOrEdit    |
+| Property              | Value                              |
+| :-------------------- | :--------------------------------- |
+| sqlName               | bkp_bank_accounts                  |
+| urlBase               | bookkeeping/bank/accounts          |
+| lookupSqlValue        | {%TABLE%}.name                     |
+| tableTitle            | Bank Accounts                      |
+| formTitleForInserting | New Bank Account                   |
+| formTitleForEditing   | Bank Account                       |
+| formAddButtonText     | Add Account                        |
+| formSaveButtonText    | Update Account                     |
+| crud/browse/action    | Bookkeeping/Bank/Accounts          |
+| crud/add/action       | Bookkeeping/Bank/Account/AddOrEdit |
+| crud/edit/action      | Bookkeeping/Bank/Account/AddOrEdit |
 
 ## Data Structure
 
 | Column              | Title            | ADIOS Type | Length | Required | Notes                                                      |
 | :------------------ | ---------------- | :--------: | :----: | :------: | :--------------------------------------------------------- |
 | id                  | ID               |    int     |   11   |   TRUE   | Jedinečné ID záznamu                                       |
+| record_info         | Record Info      |    json    |        |   TRUE   |                                                            |
 | name                | Name             |  varchar   |  100   |   TRUE   | Názov bankového účtu                                       |
 | acronym             | Acronym          |  varchar   |   5    |   TRUE   | Skratka  bankového účtu                                    |
 | bank                | Bank Name        |  varchar   |  100   |   TRUE   | Názov banky                                                |

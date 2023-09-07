@@ -4,11 +4,11 @@
 
 Zoznam všetkých aktívnych kontaktov adresára
 
-## Main View
+## View
 
 Table
 
-## Parameters
+## Default View Parameters
 
 * model: App/Widgets/Common/AddressBook/Models/Contacts
 * showColumns:

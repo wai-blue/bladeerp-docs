@@ -1,14 +1,14 @@
-# Bookkeeping/Cashdesk/AccountStatement/AddOrEdit
+# Action Bookkeeping/Cashdesk/AccountStatement/AddOrEdit
 
 ## Description
 
 Zápis nového pohybu na pokladnicnom účte.
 
-## Main View
+## View
 
 Form
 
-## Parameters
+## Default View Parameters
 
 * template:
   * id_bkp_cashdesk_account

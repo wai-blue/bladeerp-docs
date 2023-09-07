@@ -20,20 +20,20 @@ No constants are defined for this model.
 | formTitleForEditing   | Transaction Item                          |
 | formAddButtonText     | Add Transaction Item                      |
 | formAddButtonText     | Update Transaction Item                   |
+| crud/browse/action    | Bookkeeping/MainBook/TransactionItems     |
+| crud/add/action       | Bookkeeping/MainBook/TransactionItem/Add  |
+| crud/edit/action      | Bookkeeping/MainBook/TransactionItem/Edit |
 
 ## Data Structure
 
-| Column              | Title            | ADIOS Type | Length | Required | Notes                                    |
-| :------------------ | ---------------- | :--------: | :----: | :------: | :--------------------------------------- |
-| id                  |                  |    int     |   8    |   TRUE   | Unique record ID                         |
-| id_created_by       | Created By       |   lookup   |   8    |   TRUE   | Reference to user who created the record |
-| create_datetime     | Created Datetime |  datetime  |   8    |   TRUE   | When the record was created              |
-| id_updated_by       | Updated By       |   lookup   |   8    |   TRUE   | Reference to user who updated the record |
-| update_datetime     | Updated Datetime |  datetime  |   8    |   TRUE   | When the record was updated              |
-| amount              | Amount           |  decimal   |  15,2  |   TRUE   | Suma položky transakcie v hlavnej mene   |
-| amount_currency     | Amount Currency  |  decimal   |  15,2  |   TRUE   | Suma položky transakcie v inej mene      |
-| id_bkp_transaction  | Transaction      |   lookup   |   8    |   TRUE   | ID dokladu                               |
-| id_bkp_book_account | Book Account     |   lookup   |   8    |   TRUE   | ID účtu z účtovnej osnovy                |
+| Column              | Title           | ADIOS Type | Length | Required | Notes                                  |
+| :------------------ | --------------- | :--------: | :----: | :------: | :------------------------------------- |
+| id                  |                 |    int     |   8    |   TRUE   | Unique record ID                       |
+| record_info         | Record Info     |    json    |        |   TRUE   |                                        |
+| amount              | Amount          |  decimal   |  15,2  |   TRUE   | Suma položky transakcie v hlavnej mene |
+| amount_currency     | Amount Currency |  decimal   |  15,2  |   TRUE   | Suma položky transakcie v inej mene    |
+| id_bkp_transaction  | Transaction     |   lookup   |   8    |   TRUE   | ID dokladu                             |
+| id_bkp_book_account | Book Account    |   lookup   |   8    |   TRUE   | ID účtu z účtovnej osnovy              |
 
 ### ADIOS Parameters
 
@@ -43,8 +43,6 @@ No additional ADIOS parameters needs to be defined.
 
 | Column              | Model                                               | Relation | OnUpdate | OnDelete |
 | :------------------ | :-------------------------------------------------- | :------: | -------- | -------- |
-| id_created_by       | ADIOS/Core/Models/User                              |   1:N    | Cascade  | Cascade  |
-| id_updated_by       | ADIOS/Core/Models/User                              |   1:N    | Cascade  | Cascade  |
 | id_bkp_transaction  | App/Widgets/Bookkeeping/MainBook/Models/Transaction |   1:N    | Cascade  | Cascade  |
 | id_bkp_book_account | App/Widgets/Bookkeeping/MainBook/Models/BookAccount |   M:N    | Cascade  | Restrict |
 
@@ -53,10 +51,6 @@ No additional ADIOS parameters needs to be defined.
 | Name                |  Type   |          Column + Order |
 | :------------------ | :-----: | ----------------------: |
 | id                  | PRIMARY |                  id ASC |
-| id_created_by       |  INDEX  |       id_created_by ASC |
-| create_datetime     |  INDEX  |     create_datetime ASC |
-| id_updated_by       |  INDEX  |       id_updated_by ASC |
-| update_datetime     |  INDEX  |     update_datetime ASC |
 | id_bkp_transaction  |  INDEX  |  id_bkp_transaction ASC |
 | id_bkp_book_account |  INDEX  | id_bkp_book_account ASC |
 

@@ -13,22 +13,26 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                      |
-| :-------------------- | :----------------------------------------- |
-| sqlName               | bkp_asset_accounting_depreciations         |
-| urlBase               | bookkeeping/asset/accounting-depreciations |
-| lookupSqlValue        | -                                          |
-| tableTitle            | Asset Accounting Depreciations             |
-| formTitleForInserting |                                            |
-| formTitleForEditing   | Detail Depreciation                        |
-| formAddButtonText     |                                            |
-| formSaveButtonText    |                                            |
+| Property              | Value                                              |
+| :-------------------- | :------------------------------------------------- |
+| sqlName               | bkp_asset_accounting_depreciations                 |
+| urlBase               | bookkeeping/asset/accounting-depreciations         |
+| lookupSqlValue        | -                                                  |
+| tableTitle            | Asset Accounting Depreciations                     |
+| formTitleForInserting |                                                    |
+| formTitleForEditing   | Detail Depreciation                                |
+| formAddButtonText     |                                                    |
+| formSaveButtonText    |                                                    |
+| crud/browse/action    | Bookkeeping/AssetAccountingDepreciation/Assets     |
+| crud/add/action       | Bookkeeping/AssetAccountingDepreciation/Asset/Add  |
+| crud/edit/action      | Bookkeeping/AssetAccountingDepreciation/Asset/Edit |
 
 ## Data Structure
 
 | Column                              | Title                                  | ADIOS Type | Length | Required | Notes                        |
 | :---------------------------------- | -------------------------------------- | :--------: | :----: | :------: | :--------------------------- |
 | id                                  | ID                                     |    int     |   8    |   TRUE   | Jedinečné ID záznamu         |
+| record_info                         | Record Info                            |    json    |        |   TRUE   |                              |
 | id_bkp_asset                        | Property                               |   lookup   |   8    |   TRUE   | Odpisovaný majetok           |
 | id_bkp_accounting_period            | Accounting period                      |   lookup   |   8    |   TRUE   | Účtovné obdobie              |
 | year                                | Year                                   |    int     |   4    |   TRUE   | Rok odpisu                   |

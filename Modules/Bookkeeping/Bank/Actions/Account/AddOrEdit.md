@@ -1,14 +1,14 @@
-# Bookkeeping/Bank/Account/AddOrEdit
+# Action Bookkeeping/Bank/Account/AddOrEdit
 
 ## Description
 
 vytvorenie alebo uprava bankového účtu.
 
-## Main View
+## View
 
 Form
 
-## Parameters
+## Default View Parameters
 
 * template:
   * name
@@ -21,3 +21,6 @@ Form
   * id_bkp_book_account
     * Výber z účtov bkp_book_accounts
 
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

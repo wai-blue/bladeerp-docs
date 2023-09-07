@@ -1,14 +1,14 @@
-# Bookkeeping/Bank/Transaction/AddOrEdit
+# Action Bookkeeping/Bank/Transaction/AddOrEdit
 
 ## Description
 
 Vytvorenie alebo uprava bankovej transakcie.
 
-## Main View
+## View
 
 Form
 
-## Parameters
+## Default View Parameters
 
 * template:
   * id_bkp_bank_account
@@ -19,5 +19,6 @@ Form
   * amount
   * description
 
+## Parameters Post-processing
 
-
+No post-processing of default parameters is necessary.

@@ -1,15 +1,14 @@
-# Bookkeeping/Asset/Asset/Edit
+# Action Bookkeeping/Asset/Asset/Edit
 
 ## Description
 
 Vyradenie majetku. Iba celkom odpísaný majetok je možné vyradiť.
 
-
-## Main View
+## View
 
 Form
 
-## Parameters
+## Default View Parameters
 
 * template:
   * inventory_number
@@ -19,3 +18,7 @@ Form
   * retirement_date
   * retirement_reason
   * retirement_method
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

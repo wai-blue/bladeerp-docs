@@ -28,16 +28,13 @@ No constants are defined for this model.
 | Column                   | Title                      | ADIOS Type | Length | Required | Notes                                                                                     |
 | :----------------------- | -------------------------- | :--------: | :----: | :------: | :---------------------------------------------------------------------------------------- |
 | id                       |                            |    int     |   8    |   TRUE   | Unique record ID                                                                          |
-| id_created_by            | Created By                 |   lookup   |   8    |   TRUE   | Reference to user who created the record                                                  |
-| create_datetime          | Created Datetime           |  datetime  |   8    |   TRUE   | When the record was created                                                               |
-| id_updated_by            | Updated By                 |   lookup   |   8    |   TRUE   | Reference to user who updated the record                                                  |
-| update_datetime          | Updated Datetime           |  datetime  |   8    |   TRUE   | When the record was updated                                                               |
+| record_info              | Record Info                |    json    |        |   TRUE   |                                                                                           |
 | name                     | Name                       |  varchar   |  100   |   TRUE   | Názov účtovného obdobia                                                                   |
 | start_date               | Start Date                 |    date    |   8    |   TRUE   | Začiatok účtovného obdobia                                                                |
 | end_date                 | End Date                   |    date    |   8    |   TRUE   | Koniec účtovného obdobia                                                                  |
 | is_open                  | Is Open                    |  boolean   |   1    |   TRUE   | Príznak, či je účtovné obdobie otvorené a je možné v rámci tohto obdobia pridávať doklady |
-| id_bkp_accounting_period | Previous Accounting Period |    lookup     |   8    |  FALSE   | ID predchádzajúceho účtovného obdobia                                                     |
-| id_bkp_currency          | Main Currency              |    lookup     |   8    |   TRUE   | Hlavná mena účtovného obdobia                                                             |
+| id_bkp_accounting_period | Previous Accounting Period |   lookup   |   8    |  FALSE   | ID predchádzajúceho účtovného obdobia                                                     |
+| id_bkp_currency          | Main Currency              |   lookup   |   8    |   TRUE   | Hlavná mena účtovného obdobia                                                             |
 
 ### ADIOS Parameters
 
@@ -47,8 +44,6 @@ No additional ADIOS parameters needs to be defined.
 
 | Column                   | Model                  | Relation | OnUpdate | OnDelete |
 | :----------------------- | :--------------------- | :------: | -------- | -------- |
-| id_created_by            | ADIOS/Core/Models/User |   1:N    | Cascade  | Cascade  |
-| id_updated_by            | ADIOS/Core/Models/User |   1:N    | Cascade  | Cascade  |
 | id_bkp_accounting_period | bkp_accounting_periods |   1:N    | Cascade  | Cascade  |
 | id_bkp_currency          | bkp_currencies         |   1:N    | Cascade  | Restrict |
 
@@ -57,10 +52,6 @@ No additional ADIOS parameters needs to be defined.
 | Name                     |  Type   |               Column + Order |
 | :----------------------- | :-----: | ---------------------------: |
 | id                       | PRIMARY |                       id ASC |
-| id_created_by            |  INDEX  |            id_created_by ASC |
-| create_datetime          |  INDEX  |          create_datetime ASC |
-| id_updated_by            |  INDEX  |            id_updated_by ASC |
-| update_datetime          |  INDEX  |          update_datetime ASC |
 | name                     | UNIQUE  |                     name ASC |
 | start_date               | UNIQUE  |               start_date ASC |
 | end_date                 | UNIQUE  |                 end_date ASC |

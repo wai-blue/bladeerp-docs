@@ -14,22 +14,26 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                            |
-| :-------------------- | :------------------------------- |
-| sqlName               | bkp_financial_statements         |
-| urlBase               | bookkeeping/financial-statements |
-| lookupSqlValue        | {%TABLE%}.name                   |
-| tableTitle            | Financial Statements             |
-| formTitleForInserting | New Statement                    |
-| formTitleForEditing   | Financial Statement              |
-| formAddButtonText     | Add Statement                    |
-| formSaveButtonText    | -                                |
+| Property              | Value                                                  |
+| :-------------------- | :----------------------------------------------------- |
+| sqlName               | bkp_financial_statements                               |
+| urlBase               | bookkeeping/financial-statements                       |
+| lookupSqlValue        | {%TABLE%}.name                                         |
+| tableTitle            | Financial Statements                                   |
+| formTitleForInserting | New Statement                                          |
+| formTitleForEditing   | Financial Statement                                    |
+| formAddButtonText     | Add Statement                                          |
+| formSaveButtonText    | -                                                      |
+| crud/browse/action    | Bookkeeping/FinancialStatement/FinancialStatements     |
+| crud/add/action       | Bookkeeping/FinancialStatement/FinancialStatement/Add  |
+| crud/edit/action      | Bookkeeping/FinancialStatement/FinancialStatement/Edit |
 
 ## Data Structure
 
 | Column                   | Title             | ADIOS Type | Length | Required | Notes                                   |
 | :----------------------- | ----------------- | :--------: | :----: | :------: | :-------------------------------------- |
 | id                       |                   |    int     |   8    |   TRUE   | Unique record ID                        |
+| record_info              | Record Info       |    json    |        |   TRUE   |                                         |
 | name                     | Name              |  varchar   |  100   |   TRUE   | Názov závierky                          |
 | closing_date             | Closing Date      |    date    |   8    |   TRUE   | Dátum, ku ktorému je závierka vystavená |
 | id_bkp_accounting_period | Accounting Period |   lookup   |   8    |   TRUE   | ID účtovného obdobia                    |

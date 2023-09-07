@@ -1,14 +1,14 @@
-# Bookkeeping/MainBook/AccountingPeriods/Add
+# Action Bookkeeping/MainBook/AccountingPeriods/Add
 
 ## Description
 
 Vytvorenie nového účtovného obdobia.
 
-## Main View
+## View
 
 Form
 
-## Parameters
+## Default View Parameters
 
 * template:
   * start_date (Dátum musí byť väčší ako dátum posledného účtovného)
@@ -18,3 +18,7 @@ Form
   * is_open
 
 TODO: constraints na start_date a end_date musia byt kontrolovane cez onBeforeInsert alebo onBeforeUpdate callbacks
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

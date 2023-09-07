@@ -4,7 +4,7 @@
 
 Create new contact - natural person.
 
-## Main View
+## View
 
 Form
 

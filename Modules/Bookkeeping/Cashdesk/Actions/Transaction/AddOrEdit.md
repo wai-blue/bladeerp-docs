@@ -1,14 +1,14 @@
-# Bookkeeping/Cashdesk/Transaction/AddOrEdit
+# Action Bookkeeping/Cashdesk/Transaction/AddOrEdit
 
 ## Description
 
 Vytvorenie alebo uprava nového pokladničného účtu.
 
-## Main View
+## View
 
 Form
 
-## Parameters
+## Default View Parameters
 
 * template:
   * name
@@ -20,3 +20,6 @@ Form
   * id_user
   * is_open
 
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

@@ -16,25 +16,26 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                               |
-| :-------------------- | :---------------------------------- |
-| sqlName               | bkp_bank_account_statements         |
-| urlBase               | bookkeeping/bank/account-statements |
-| lookupSqlValue        |                                     |
-| tableTitle            | Bank Account Statements             |
-| formTitleForInserting |                                     |
-| formTitleForEditing   |                                     |
-| formAddButtonText     | Create Statement                    |
-| formSaveButtonText    |                                     |
-| crud/browse/action    | Bank/AccountStatements              |
-| crud/add/action       | Bank/AccountStatement/AddOrEdit     |
-| crud/edit/action      | Bank/AccountStatement/AddOrEdit     |
+| Property              | Value                                       |
+| :-------------------- | :------------------------------------------ |
+| sqlName               | bkp_bank_account_statements                 |
+| urlBase               | bookkeeping/bank/account-statements         |
+| lookupSqlValue        |                                             |
+| tableTitle            | Bank Account Statements                     |
+| formTitleForInserting |                                             |
+| formTitleForEditing   |                                             |
+| formAddButtonText     | Create Statement                            |
+| formSaveButtonText    |                                             |
+| crud/browse/action    | Bookkeeping/Bank/AccountStatements          |
+| crud/add/action       | Bookkeeping/Bank/AccountStatement/AddOrEdit |
+| crud/edit/action      | Bookkeeping/Bank/AccountStatement/AddOrEdit |
 
 ## Data Structure
 
 | Column              | Title                   | ADIOS Type | Length | Required | Notes                                   |
 | :------------------ | ----------------------- | :--------: | :----: | :------: | :-------------------------------------- |
 | id                  | ID                      |    int     |   11   |   TRUE   | Jedinečné ID záznamu                    |
+| record_info         | Record Info             |    json    |        |   TRUE   |                                         |
 | id_bkp_bank_account | Bank Account            |   lookup   |   11   |   TRUE   | ID bankového účtu                       |
 | statement_datetime  | Date and Time Statement |  datetime  |        |   TRUE   | Dátum a čas závierky                    |
 | amount_found        | Found Amount            |  decimal   |  15,2  |  FALSE   | Suma, ktorá bola pri závierke zistená   |
