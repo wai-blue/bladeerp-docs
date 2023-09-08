@@ -1,4 +1,4 @@
-# Model Bookkeeping/Claim/ClaimHasBookAccount
+# Model Bookkeeping/Claim/ClaimAccount
 
 ## Introduction
 
