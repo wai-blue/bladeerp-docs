@@ -1,7 +1,7 @@
 # Model Common/AddressBook/Contact
 
 ## Introduction
-Model slúži na evidenciu a správu kontaktov. Ak v kontakte neexistuje referencia na spoločnosť (col: **id_com_contact_company** je NULL), v tom prípade sa jedná o kontakt na fyzickú osobu. Fyzická osoba (col: **id_com_contact_person**) slúži na evidenciu fyzickej osoby (nie spoločnosť) alebo primárnej kontaktnej osoby pre spoločnosť (napr. konateľ, obchodník a pod.). Primárna adresa kontaktu (cod: id_com_contact_address) slúži ako fakturačná adresa a všetky prepojené adresy (tab:com_contact_addresses, col: id_com_contact) môžu slúžiť ako doručovacie (aj vrátane fakturačnej). Všetky fyzické osoby (tab: **com_contact_persons**) a adresy (tab: **com_contact_addresses**), tie sú s kontaktom prepojené cez referenciu (viď. modely **ContactPerson** a **ContactAddress**).
+Model slúži na evidenciu a správu kontaktov. Ak sa jedná o fyzickú osobu, potom `is_company=FALSE` a ak o právnickú osobu (spoločnosť), potom `is_company=TRUE`. Fyzická osoba (col: **id_com_contact_person**) slúži na evidenciu fyzickej osoby (`is_company=FALSE`) alebo primárnej kontaktnej osoby (napr. konateľ, obchodník a pod.) v prípade spoločnosti (`is_company=TRUE`). Primárna adresa kontaktu (cod: id_com_contact_address) slúži ako fakturačná adresa a všetky prepojené adresy (tab:com_contact_addresses, col: id_com_contact) môžu slúžiť ako doručovacie (aj vrátane fakturačnej). Všetky fyzické osoby (tab: **com_contact_persons**) a adresy (tab: **com_contact_addresses**), tie sú s kontaktom prepojené cez referenciu (viď. modely **ContactPerson** a **ContactAddress**).
 
 ## Constants
 No constants are defined for this model.
@@ -16,9 +16,11 @@ No constants are defined for this model.
 | tableTitle            | Contacts                                                                                  |
 | formTitleForInserting | New Contact                                                                               |
 | formTitleForEditing   | Contact                                                                                   |
+| crud/browse/action    | Common/AddressBook/Contacts                                                               |
+| crud/add/action       | Common/AddressBook/Contact/Add                                                             |
+| crud/edit/action      | Common/AddressBook/Contact/Edit                                                            |
 
 TODO: JG k lookupSqlValue - podobne ako v modeli ContactAddress, aj tu je potrebné vyriešiť použitie "externej" LOOKUP hodnoty z foreign table v ADIOSe
-REVIEW DD: Po novom bude potrebne definovat aj properties `crud/brows/action`, `crud/add/action` a `crud/edit/action`.
 
 ## Data Structure
 | Column                  | Title                   | ADIOS Type | Length | Required | Notes                                 |
@@ -27,7 +29,7 @@ REVIEW DD: Po novom bude potrebne definovat aj properties `crud/brows/action`, `
 | record_info             | Record Info             |    json    |        |   TRUE   |                                       |
 | is_active               | Is Active               |  boolean   |   1    |   TRUE   | Aktívny kontakt?                      |
 | is_company              | Is the contact company? |  boolean   |   1    |  FALSE   | Ide o spoločnosť alebo fyzickú osobu? |
-| company_name            | Company Name            |  varchar   |  150   |   TRUE   | Názov spoločnosti                     |
+| company_name            | Company Name            |  varchar   |  150   |  FALSE   | Názov spoločnosti                     |
 | company_business_number | Business Number         |  varchar   |   50   |  FALSE   | IČO                                   |
 | company_tax_number      | Tax Number              |  varchar   |   50   |  FALSE   | DIČ                                   |
 | company_vat_number      | VAT Bumber              |  varchar   |   50   |  FALSE   | DIČ DPH                               |
@@ -70,7 +72,7 @@ REVIEW DD: vid navrh pre website.default
 ## Callbacks
 
 ### onBeforeInsert
-Ak je kontakt spoločnosťou, musí mať vyplnené a previazané údaje o spoločnosti (col: id_com_contact_company)
+Ak je kontakt spoločnosťou (`is_company=TRUE`), musí mať vyplnené údaje o spoločnosti (cols: `company_*`)
 
 ### onAfterInsert
 Not used.
