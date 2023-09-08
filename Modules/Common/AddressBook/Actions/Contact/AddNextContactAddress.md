@@ -21,9 +21,8 @@ Form
   * id_com_country
   * email
   * phone
-  * description
-  * gps_longitude
-  * gps_latitude
+  * notes
+  * location
 * defaultValues:
   * is_active = TRUE
 

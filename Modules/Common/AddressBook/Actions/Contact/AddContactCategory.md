@@ -14,7 +14,7 @@ Form
 * displayMode: window
 * template:
   * name
-  * description
+  * notes
 * defaultValues:
   * is_active = TRUE
 

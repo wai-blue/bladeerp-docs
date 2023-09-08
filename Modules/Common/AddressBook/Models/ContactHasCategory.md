@@ -17,6 +17,10 @@ V modeli nie sú použité konštanty.
 | tableTitle            | -                        |
 | formTitleForInserting | -                        |
 | formTitleForEditing   | -                        |
+| crud/browse/action    | -                        |
+| crud/add/action       | -                        |
+| crud/edit/action      | -                        |
+
 
 ## Data Structure
 | Column                  | Title    | ADIOS Type | Length | Required | Notes        |

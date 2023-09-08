@@ -17,8 +17,11 @@ V modeli nie sú použité konštanty.
 | tableTitle            | Contact Addresses                                                            |
 | formTitleForInserting | New Contact Address                                                          |
 | formTitleForEditing   | Contact Address                                                              |
+| crud/browse/action    | Common/AddressBook/ContactAddresses                                          |
+| crud/add/action       | Common/AddressBook/ContactAddress/Add                                        |
+| crud/edit/action      | Common/AddressBook/ContactAddress/Edit                                       |
 
-TODO: JG k lookupSqlValue - potrebné vyriešiť ako v ADIOSe vyriešiť použitie "externej" lookup hodnoty
+REVIEW: JG k lookupSqlValue - potrebné vyriešiť ako v ADIOSe vyriešiť použitie "externej" lookup hodnoty
 
 ## Data Structure
 | Column         | Title            | ADIOS Type | Length | Required | Notes                                      |
@@ -34,11 +37,8 @@ TODO: JG k lookupSqlValue - potrebné vyriešiť ako v ADIOSe vyriešiť použit
 | id_com_country | Country          |    int     |   8    |  FALSE   | ID krajiny                                 |
 | email          | Contact Email    |  varchar   |  100   |  FALSE   | Kontaktný Email                            |
 | phone          | Contact Phone    |  varchar   |   20   |  FALSE   | Kontaktný Telefón                          |
-| description    | Comment          |    text    |        |  FALSE   | Poznámka k adrese                          |
-| gps_longitude  | GPS Longitude    |  varchar   |  300   |  FALSE   | GPS dĺžka                                  |
-| gps_latitude   | GPS Latitude     |  varchar   |  300   |  FALSE   | GPS šírka                                  |
-
-TODO: Co keby sme v ADIOSe vytvorili DataTypeMapPoint? Bol by to varchar, obsahujuci lng/lat a jeho input by sa renderoval ako mapa.
+| notes          | Notes            |    text    |        |  FALSE   | Poznámka k adrese                          |
+| location       | GPS Location     |  mapPoint  |        |  FALSE   | GPS location                               |
 
 ### ADIOS Parameters
 | Column    | Parameter   | Value                          |

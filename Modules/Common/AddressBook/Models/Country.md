@@ -7,16 +7,19 @@ Model slúži na evidenciu krajín.
 V modeli nie sú použité konštanty.
 
 ## Properties
-| Property              | Value                         |
-| :-------------------- | :---------------------------- |
-| isCrossTable          | FALSE                         |
-| storeRecordInfo       | TRUE                          |
-| sqlName               | com_countries                 |
-| urlBase               | common/address-book/countries |
-| lookupSqlValue        | concat(name, " (", code, ")") |
-| tableTitle            | Countries                     |
-| formTitleForInserting | New Country                   |
-| formTitleForEditing   | Country                       |
+| Property              | Value                           |
+| :-------------------- | :------------------------------ |
+| isCrossTable          | FALSE                           |
+| storeRecordInfo       | TRUE                            |
+| sqlName               | com_countries                   |
+| urlBase               | common/address-book/countries   |
+| lookupSqlValue        | concat(name, " (", code, ")")   |
+| tableTitle            | Countries                       |
+| formTitleForInserting | New Country                     |
+| formTitleForEditing   | Country                         |
+| crud/browse/action    | Common/AddressBook/Countries    |
+| crud/add/action       | Common/AddressBook/Country/Add  |
+| crud/edit/action      | Common/AddressBook/Country/Edit |
 
 ## Data Structure
 | Column      | Title                | ADIOS Type | Length | Required | Notes                                      |
