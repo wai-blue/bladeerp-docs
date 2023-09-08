@@ -21,9 +21,9 @@ No constants are defined for this model.
 | tableTitle            | States                            |
 | formTitleForInserting | New State                         |
 | formTitleForEditing   | State                             |
-| crud/browse/action    | Bookkeeping/Claim/ClaimStates     |
-| crud/add/action       | Bookkeeping/Claim/ClaimState/Add  |
-| crud/edit/action      | Bookkeeping/Claim/ClaimState/Edit |
+| crud/browse/action    | Bookkeeping/Claim/States          |
+| crud/add/action       | Bookkeeping/Claim/State/AddOrEdit |
+| crud/edit/action      | Bookkeeping/Claim/State/AddOrEdit |
 
 ## Data Structure
 

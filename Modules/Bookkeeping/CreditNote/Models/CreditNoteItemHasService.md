@@ -19,7 +19,7 @@ No constants are defined for this model.
 | tableTitle            | Item Services                                                                       |
 | formTitleForInserting | New Item Service                                                                    |
 | formTitleForEditing   | Item Service                                                                        |
-| isCrossTable          | TRUE                                                                                |
+| isJunctionTable          | TRUE                                                                                |
 
 ## Data Structure
 

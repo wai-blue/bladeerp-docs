@@ -21,7 +21,7 @@ No constants are defined for this model.
 | tableTitle            | Claim Orders                            |
 | formTitleForInserting | New Claim Order                         |
 | formTitleForEditing   | Claim Order                             |
-| isCrossTable          | TRUE                                    |
+| isJunctionTable          | TRUE                                    |
 
 ## Data Structure
 

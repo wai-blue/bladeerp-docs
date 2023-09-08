@@ -1,9 +1,5 @@
 # Model Bookkeeping/Claim/ClaimItem
 
-NOTE: DD pretukal.
-TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
-
-
 ## Introduction
 
 Tabuľka bude slúžiť na ukladanie položiek pohľadávok.
@@ -23,15 +19,15 @@ No constants are defined for this model.
 | tableTitle            | Claim Items                            |
 | formTitleForInserting | New Claim Item                         |
 | formTitleForEditing   | Claim Item                             |
-| crud/browse/action    | Bookkeeping/Claim/ClaimItems           |
-| crud/add/action       | Bookkeeping/Claim/ClaimItem/Add        |
-| crud/edit/action      | Bookkeeping/Claim/ClaimItem/Edit       |
+| crud/browse/action    | Bookkeeping/Claim/Items                |
+| crud/add/action       | Bookkeeping/Claim/Item/AddOrEdit       |
+| crud/edit/action      | Bookkeeping/Claim/Item/AddOrEdit       |
 
 ## Data Structure
 
 | Column              | Title               | ADIOS Type | Length | Required | Notes                         |
 | :------------------ | ------------------- | :--------: | :----: | :------: | :---------------------------- |
-| id                  |                     |    int     |   8    |   TRUE   | Unique record ID          |
+| id                  |                     |    int     |   8    |   TRUE   | Unique record ID              |
 | record_info         | Record Info         |    json    |        |   TRUE   |                               |
 | id_bkp_claim        | Claim               |   lookup   |   8    |   TRUE   | ID pohľadávky                 |
 | item                | Item                |  varchar   |  200   |   TRUE   | Položka                       |
@@ -46,7 +42,6 @@ No constants are defined for this model.
 | price_incl_vat      | Price Incl VAT      |  decimal   |  15,4  |   TRUE   | Suma za položku s DPH         |
 
 REVIEW DD: Nie je lepsie VAT sadzbu ukladat ako decimal? Ak to dame ako Decimal, moze sa nastavit parameter unit = "%".
-REVIEW DD: Quantity... Nepouzival sa pojem Amount v stlpcoch s podobnym urcenim?
 
 ### ADIOS Parameters
 

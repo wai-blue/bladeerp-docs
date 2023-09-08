@@ -9,7 +9,7 @@ No constants are defined for this model.
 ## Properties
 | Property              | Value                                                                                     |
 | :-------------------- | :---------------------------------------------------------------------------------------- |
-| isCrossTable          | FALSE                                                                                     |
+| isJunctionTable          | FALSE                                                                                     |
 | storeRecordInfo       | TRUE                                                                                      |
 | sqlName               | com_contacts                                                                              |
 | urlBase               | common/address-book/contacts                                                              |

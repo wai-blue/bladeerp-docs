@@ -23,7 +23,7 @@ No constants are defined for this model.
 | crud/add/action       | Bookkeeping/CreditNote/CreditNoteAccount/Add         |
 | crud/edit/action      | Bookkeeping/CreditNote/CreditNoteAccount/Edit        |
 
-REVIEW DD: isCrossTable?
+REVIEW DD: isJunctionTable?
 
 ## Data Structure
 

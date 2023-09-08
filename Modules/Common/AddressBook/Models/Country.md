@@ -9,7 +9,7 @@ V modeli nie sú použité konštanty.
 ## Properties
 | Property              | Value                           |
 | :-------------------- | :------------------------------ |
-| isCrossTable          | FALSE                           |
+| isJunctionTable          | FALSE                           |
 | storeRecordInfo       | TRUE                            |
 | sqlName               | com_countries                   |
 | urlBase               | common/address-book/countries   |

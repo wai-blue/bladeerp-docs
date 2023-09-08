@@ -19,7 +19,7 @@ No constants are defined for this model.
 | tableTitle            | Credit Note Claims                                  |
 | formTitleForInserting | New Credit Note Claim                               |
 | formTitleForEditing   | Credit Note Claim                                   |
-| isCrossTable          | TRUE                                                |
+| isJunctionTable          | TRUE                                                |
 
 ## Data Structure
 

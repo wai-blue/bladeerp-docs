@@ -21,7 +21,7 @@ No constants are defined for this model.
 | tableTitle            | Claim Item Services                                               |
 | formTitleForInserting | New Claim Item Service                                            |
 | formTitleForEditing   | Claim Item Service                                                |
-| isCrossTable          | TRUE                                                              |
+| isJunctionTable          | TRUE                                                              |
 
 ## Data Structure
 

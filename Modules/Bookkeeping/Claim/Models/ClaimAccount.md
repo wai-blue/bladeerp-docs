@@ -1,7 +1,4 @@
-# Model Bookkeeping/Claim/ClaimAccount
-
-NOTE: DD pretukal.
-TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
+# Model Bookkeeping/Claim/ClaimHasBookAccount
 
 ## Introduction
 
@@ -15,7 +12,8 @@ No constants are defined for this model.
 
 | Property              | Value                                    |
 | :-------------------- | :--------------------------------------- |
-| storeRecordInfo       | TRUE                                     |
+| isJunctionTable       | TRUE                                     |
+| storeRecordInfo       | FALSE                                    |
 | sqlName               | bkp_claim_accounts                       |
 | urlBase               | bookkeeping/claim/{id_bkp_claim}/account |
 | lookupSqlValue        | {%TABLE%}.name                           |
@@ -30,8 +28,6 @@ No constants are defined for this model.
 
 | Column              | Title        | ADIOS Type | Length | Required | Notes                     |
 | :------------------ | ------------ | :--------: | :----: | :------: | :------------------------ |
-| id                  |              |    int     |   8    |   TRUE   | Unique record ID      |
-| record_info         | Record Info  |    json    |        |   TRUE   |                           |
 | id_bkp_claim        | Claim        |   lookup   |   8    |   TRUE   | ID pohľadávky             |
 | id_bkp_book_account | Book Account |   lookup   |   8    |   TRUE   | ID účtu z účtovnej osnovy |
 | amount              | Amount       |  decimal   |  15,2  |   TRUE   | Hodnota                   |

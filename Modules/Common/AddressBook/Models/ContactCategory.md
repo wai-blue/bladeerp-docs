@@ -10,7 +10,7 @@ V modeli nie sú použité konštanty.
 
 | Property              | Value                                   |
 | :-------------------- | :-------------------------------------- |
-| isCrossTable          | FALSE                                   |
+| isJunctionTable          | FALSE                                   |
 | sqlName               | com_contact_categories                  |
 | urlBase               | common/address-book/contact-categories  |
 | lookupSqlValue        | {%TABLE%}.name                          |

@@ -14,7 +14,7 @@ No constants are defined for this model.
 | :-------------- | :------------------------------------ |
 | storeRecordInfo | FALSE                                 |
 | sqlName         | bkp_transaction_item_has_book_account |
-| isCrossTable    | TRUE                                  |
+| isJunctionTable    | TRUE                                  |
 | storeRecordInfo | FALSE                                 |
 
 ## Data Structure

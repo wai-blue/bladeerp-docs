@@ -56,6 +56,23 @@ $errors = [];
 $warnings = [];
 $notices = [];
 
+$allActions = [];
+foreach ($modules as $module) {
+  $moduleDir = __DIR__ . '/../Modules/' . $module;
+  if (!is_dir($moduleDir)) continue;
+
+  $widgets = scandir($moduleDir);
+  foreach ($widgets as $widget) {
+    $widgetDir = $moduleDir . '/' . $widget;
+    if (!is_dir($widgetDir . '/Actions')) continue;
+
+    $actions = \HelperFunctions::scanDirRecursively($widgetDir . '/Actions');
+    foreach ($actions as $action) {
+      $allActions[] = "{$module}/{$widget}/" . str_replace('.md', '', $action);
+    }
+  }
+}
+
 foreach ($modules as $module) {
   $moduleDir = __DIR__ . '/../Modules/' . $module;
   $widgets = scandir($moduleDir);
@@ -90,6 +107,7 @@ foreach ($modules as $module) {
     if (!is_dir($widgetDir . '/Actions')) {
       $warnings[] = "[{$widget}] Actions are not specified.";
     } else if ($actionToCheck != '-') {
+
       $actions = \HelperFunctions::scanDirRecursively($widgetDir . '/Actions');
       foreach ($actions as $action) {
 
@@ -284,7 +302,7 @@ foreach ($modules as $module) {
           }
         }
 
-        if (($properties['isCrossTable'] ?? '') === 'TRUE') {
+        if (($properties['isJunctionTable'] ?? '') === 'TRUE') {
           if (isset($columns['id'])) {
             $errors[] = "[{$modelRef}] Cross-tables cannot contain `id`.";
           }
@@ -297,7 +315,7 @@ foreach ($modules as $module) {
         // Miscelaneous
 
         if (
-          ($properties['isCrossTable'] ?? '') !== 'TRUE'
+          ($properties['isJunctionTable'] ?? '') !== 'TRUE'
           && (
             empty($properties['crud/browse/action'])
             || empty($properties['crud/add/action'])
@@ -308,7 +326,7 @@ foreach ($modules as $module) {
         }
 
         if (
-          ($properties['isCrossTable'] ?? '') === 'TRUE'
+          ($properties['isJunctionTable'] ?? '') === 'TRUE'
           && strpos($model, 'Has') === FALSE
         ) {
           $warnings[] = "[{$modelRef}] Model is a cross-table but does not contain 'Has' in it's name.";
@@ -329,6 +347,18 @@ foreach ($modules as $module) {
           && isset($columns['record_info'])
         ) {
           $errors[] = "[{$modelRef}] `storeRecordInfo` = FALSE and `record_info` is defined.";
+        }
+
+        if (!empty($properties['crud/browse/action']) && !in_array($properties['crud/browse/action'], $allActions)) {
+          $errors[] = "[{$modelRef}] crud/browse/action `{$properties['crud/browse/action']}` is not specified.";
+        }
+
+        if (!empty($properties['crud/add/action']) && !in_array($properties['crud/add/action'], $allActions)) {
+          $errors[] = "[{$modelRef}] crud/add/action `{$properties['crud/add/action']}` is not specified.";
+        }
+
+        if (!empty($properties['crud/edit/action']) && !in_array($properties['crud/edit/action'], $allActions)) {
+          $errors[] = "[{$modelRef}] crud/edit/action `{$properties['crud/edit/action']}` is not specified.";
         }
 
       }

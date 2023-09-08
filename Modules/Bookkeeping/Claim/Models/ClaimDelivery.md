@@ -1,8 +1,5 @@
 # Model Bookkeeping/Claim/ClaimDelivery
 
-NOTE: DD pretukal.
-TODO: JG skontrolovat (aj voci Google Docs). Po skontrolovani vlozit "NOTE: JG skontroloval - v poriadku."
-
 ## Introduction
 
 Tabuľka bude slúžiť na prepojenie pohľadávky s konkrétnou dopravou.

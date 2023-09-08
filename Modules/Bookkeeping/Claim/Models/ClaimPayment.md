@@ -19,21 +19,19 @@ No constants are defined for this model.
 | tableTitle            | Payments                                  |
 | formTitleForInserting | New Payment                               |
 | formTitleForEditing   | Payment                                   |
-| crud/browse/action    | Bookkeeping/Claim/ClaimPayments           |
-| crud/add/action       | Bookkeeping/Claim/ClaimPayment/Add        |
-| crud/edit/action      | Bookkeeping/Claim/ClaimPayment/Edit       |
+| crud/browse/action    | Bookkeeping/Claim/Payments                |
+| crud/add/action       | Bookkeeping/Claim/Payment/AddOrEdit       |
+| crud/edit/action      | Bookkeeping/Claim/Payment/AddOrEdit       |
 
 ## Data Structure
 
-| Column       | Title         | ADIOS Type | Length | Required | Notes                |
-| :----------- | ------------- | :--------: | :----: | :------: | :------------------- |
-| id           |               |    int     |   8    |   TRUE   | Unique record ID |
-| record_info  | Record Info   |    json    |        |   TRUE   |                      |
-| id_bkp_claim | Claim         |   lookup   |   8    |   TRUE   | ID pohľadávky        |
-| payment_date | Payment Date  |    date    |   8    |   TRUE   | Dátum úhrady         |
-| price        | Payment Price |  decimal   |  15,2  |   TRUE   | Uhradená suma        |
-
-REVIEW DD: Namiesto price navrhujem `amount` (Payment Amount)
+| Column         | Title          | ADIOS Type | Length | Required | Notes            |
+| :------------- | -------------- | :--------: | :----: | :------: | :--------------- |
+| id             |                |    int     |   8    |   TRUE   | Unique record ID |
+| record_info    | Record Info    |    json    |        |   TRUE   |                  |
+| id_bkp_claim   | Claim          |   lookup   |   8    |   TRUE   | ID pohľadávky    |
+| payment_date   | Payment Date   |    date    |   8    |   TRUE   | Dátum úhrady     |
+| payment_amount | Payment Amount |  decimal   |  15,2  |   TRUE   | Uhradená suma    |
 
 ### ADIOS Parameters
 
