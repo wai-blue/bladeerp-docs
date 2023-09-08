@@ -12,6 +12,7 @@ No constants are defined for this model.
 
 | Property              | Value                                  |
 | :-------------------- | :------------------------------------- |
+| storeRecordInfo       | TRUE                                   |
 | sqlName               | bkp_currencies                         |
 | urlBase               | bookkeeping/exchange/currencies        |
 | lookupSqlValue        | {%TABLE%}.name                         |

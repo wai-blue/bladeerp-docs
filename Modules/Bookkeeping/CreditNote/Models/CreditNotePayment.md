@@ -10,23 +10,28 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                             |
-| :-------------------- | :------------------------------------------------ |
-| sqlName               | bkp_credit_note_payments                          |
+| Property              | Value                                                 |
+| :-------------------- | :---------------------------------------------------- |
+| storeRecordInfo       | TRUE                                                  |
+| sqlName               | bkp_credit_note_payments                              |
 | urlBase               | bookkeeping/credit-note/{id_bkp_credit_note}/payments |
-| lookupSqlValue        |                                                   |
-| tableTitle            | Payments                                          |
-| formTitleForInserting | New Payment                                       |
-| formTitleForEditing   | Payment                                           |
+| lookupSqlValue        |                                                       |
+| tableTitle            | Payments                                              |
+| formTitleForInserting | New Payment                                           |
+| formTitleForEditing   | Payment                                               |
+| crud/browse/action    | Bookkeeping/CreditNote/CreditNotePayments             |
+| crud/add/action       | Bookkeeping/CreditNote/CreditNotePayment/Add          |
+| crud/edit/action      | Bookkeeping/CreditNote/CreditNotePayment/Edit         |
 
 ## Data Structure
 
-| Column             | Title          | ADIOS Type | Length | Required | Notes                |
-| :----------------- | -------------- | :--------: | :----: | :------: | :------------------- |
-| id                 |                |    int     |   8    |   TRUE   | Jedinečné ID záznamu |
-| id_bkp_credit_note | Credit Note    |   lookup   |   8    |   TRUE   | ID dobropisu         |
-| payment_date       | Payment Date   |    date    |   8    |   TRUE   | Dátum úhrady         |
-| payment_amount     | Payment Amount |  decimal   |  15,2  |   TRUE   | Uhradená suma        |
+| Column             | Title          | ADIOS Type | Length | Required | Notes                                      |
+| :----------------- | -------------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id                 |                |    int     |   8    |   TRUE   | Jedinečné ID záznamu                       |
+| record_info        | Record Info    |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
+| id_bkp_credit_note | Credit Note    |   lookup   |   8    |   TRUE   | ID dobropisu                               |
+| payment_date       | Payment Date   |    date    |   8    |   TRUE   | Dátum úhrady                               |
+| payment_amount     | Payment Amount |  decimal   |  15,2  |   TRUE   | Uhradená suma                              |
 
 ### ADIOS Parameters
 

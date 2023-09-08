@@ -15,6 +15,7 @@ No constants are defined for this model.
 
 | Property              | Value                                       |
 | :-------------------- | :------------------------------------------ |
+| storeRecordInfo       | TRUE                                        |
 | sqlName               | bkp_asset_tax_depreciations                 |
 | urlBase               | bookkeeping/asset/tax-depreciations         |
 | lookupSqlValue        |                                             |

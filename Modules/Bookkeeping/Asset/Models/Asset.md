@@ -20,6 +20,7 @@ Tabuľka slúži na evidenciu majetku.
 
 | Property              | Value                                       |
 | :-------------------- | :------------------------------------------ |
+| storeRecordInfo       | TRUE                                        |
 | sqlName               | bkp_assets                                  |
 | urlBase               | bookkeeping/assets                          |
 | lookupSqlValue        | {%TABLE%}.inventory_number + {%TABLE%}.name |

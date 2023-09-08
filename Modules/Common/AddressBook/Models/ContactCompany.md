@@ -12,6 +12,7 @@ V modeli nie sú použité konštanty.
 | Property              | Value                                                         |
 | :-------------------- | :------------------------------------------------------------ |
 | isCrossTable          | FALSE                                                         |
+| storeRecordInfo       | TRUE                                                          |
 | sqlName               | com_contact_companies                                         |
 | urlBase               | common/address-book/contact-companies                         |
 | lookupSqlValue        | concat(company_name, ', ', business_number, ', ', tax_number) |

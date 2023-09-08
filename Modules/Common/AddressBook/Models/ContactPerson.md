@@ -10,6 +10,7 @@ V modeli nie sú použité konštanty.
 | Property              | Value                                       |
 | --------------------- | ------------------------------------------- |
 | isCrossTable          | FALSE                                       |
+| storeRecordInfo       | TRUE                                        |
 | sqlName               | com_contact_persons                         |
 | urlBase               | common/address-book/persons                 |
 | lookupSqlValue        | concat(first_name, last_name, phone, email) |

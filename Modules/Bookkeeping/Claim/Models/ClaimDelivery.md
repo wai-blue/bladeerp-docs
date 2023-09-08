@@ -15,6 +15,7 @@ No constants are defined for this model.
 
 | Property              | Value                                       |
 | :-------------------- | :------------------------------------------ |
+| storeRecordInfo       | TRUE                                        |
 | sqlName               | bkp_claim_deliveries                        |
 | urlBase               | bookkeeping/claim/{id_bkp_claim}/deliveries |
 | lookupSqlValue        | {%TABLE%}.name                              |

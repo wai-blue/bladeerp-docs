@@ -10,20 +10,25 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                |
-| :-------------------- | :----------------------------------- |
-| sqlName               | bkp_credit_notes                     |
-| urlBase               | bookkeeping/credit-note/credit-notes |
-| lookupSqlValue        | {%TABLE%}.sequence_code              |
-| tableTitle            | CreditNotes                          |
-| formTitleForInserting | New CreditNote                       |
-| formTitleForEditing   | Credit Note                          |
+| Property              | Value                                  |
+| :-------------------- | :------------------------------------- |
+| storeRecordInfo       | TRUE                                   |
+| sqlName               | bkp_credit_notes                       |
+| urlBase               | bookkeeping/credit-note/credit-notes   |
+| lookupSqlValue        | {%TABLE%}.sequence_code                |
+| tableTitle            | CreditNotes                            |
+| formTitleForInserting | New CreditNote                         |
+| formTitleForEditing   | Credit Note                            |
+| crud/browse/action    | Bookkeeping/CreditNote/CreditNotes     |
+| crud/add/action       | Bookkeeping/CreditNote/CreditNote/Add  |
+| crud/edit/action      | Bookkeeping/CreditNote/CreditNote/Edit |
 
 ## Data Structure
 
 | Column                                  | Title                            | ADIOS Type | Length | Required | Notes                                             |
 | :-------------------------------------- | -------------------------------- | :--------: | :----: | :------: | :------------------------------------------------ |
 | id                                      |                                  |    int     |   8    | NOT NULL | Jedinečné ID záznamu                              |
+| record_info                             | Record Info                      |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author        |
 | id_bkp_credit_note_state                | State                            |   lookup   |   8    | NOT NULL | ID stavu dobropisu                                |
 | id_com_contact                          | Customer                         |   lookup   |   8    | NOT NULL | ID odberateľa                                     |
 | id_bkp_accounting_period                | Accounting Period                |   lookup   |   8    | NOT NULL | ID účtovného obdobia                              |
@@ -43,9 +48,7 @@ No constants are defined for this model.
 | exchange_rate                           | Exchange Rate Value              |  decimal   |  15,2  |   NULL   | Hodnota prevodného kurzu voči  hlavnej mene       |
 | price_total                             | Total Price                      |  decimal   |  15,2  | NOT NULL | Celková hodnota dobropisu                         |
 | price_paid                              | Paid Price                       |  decimal   |  15,2  | NOT NULL | Uhradená hodnota dobropisu                        |
-| comment                                 | Description                      |    text    |        |   NULL   | Poznámka k dobropisu                              |
-
-REVIEW DD: Stlpec comment ma preco title Description? Navrhujem zjednotit - bud comment alebo description.
+| notes                                   | Notes                            |    text    |        |   NULL   | Poznámka k dobropisu                              |
 
 ### ADIOS Parameters
 

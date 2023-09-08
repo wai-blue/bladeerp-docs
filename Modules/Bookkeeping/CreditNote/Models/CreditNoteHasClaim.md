@@ -1,4 +1,4 @@
-# Model Bookkeeping/CreditNot/CreditNoteClaim
+# Model Bookkeeping/CreditNot/CreditNoteHasClaim
 
 ## Introduction
 
@@ -12,7 +12,8 @@ No constants are defined for this model.
 
 | Property              | Value                                               |
 | :-------------------- | :-------------------------------------------------- |
-| sqlName               | bkp_credit_note_claims                              |
+| storeRecordInfo       | FALSE                                               |
+| sqlName               | bkp_credit_note_has_claims                          |
 | urlBase               | bookkeeping/credit-note/{id_bkp_credit_note}/claims |
 | lookupSqlValue        |                                                     |
 | tableTitle            | Credit Note Claims                                  |
@@ -22,10 +23,10 @@ No constants are defined for this model.
 
 ## Data Structure
 
-| Column             | Title       | ADIOS Type | Length | Required | Notes         |
-| :----------------- | ----------- | :--------: | :----: | :------: | :------------ |
-| id_bkp_credit_note | Credit Note |   lookup   |   8    |   TRUE   | ID dobropisu  |
-| id_bkp_claim       | Claim       |   lookup   |   8    |   TRUE   | ID pohľadávky |
+| Column             | Title       | ADIOS Type | Length | Required | Notes                                      |
+| :----------------- | ----------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id_bkp_credit_note | Credit Note |   lookup   |   8    |   TRUE   | ID dobropisu                               |
+| id_bkp_claim       | Claim       |   lookup   |   8    |   TRUE   | ID pohľadávky                              |
 
 ### ADIOS Parameters
 

@@ -11,6 +11,7 @@ V modeli nie sú použité konštanty.
 | Property              | Value                                  |
 | :-------------------- | :------------------------------------- |
 | isCrossTable          | FALSE                                  |
+| storeRecordInfo       | TRUE                                   |
 | sqlName               | com_contact_categories                 |
 | urlBase               | common/address-book/contact-categories |
 | lookupSqlValue        | {%TABLE%}.name                         |

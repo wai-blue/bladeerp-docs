@@ -10,10 +10,12 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property     | Value                                 |
-| :----------- | :------------------------------------ |
-| sqlName      | bkp_transaction_item_has_book_account |
-| isCrossTable | TRUE                                  |
+| Property        | Value                                 |
+| :-------------- | :------------------------------------ |
+| storeRecordInfo | FALSE                                 |
+| sqlName         | bkp_transaction_item_has_book_account |
+| isCrossTable    | TRUE                                  |
+| storeRecordInfo | FALSE                                 |
 
 ## Data Structure
 

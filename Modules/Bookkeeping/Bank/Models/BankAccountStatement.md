@@ -18,6 +18,7 @@ No constants are defined for this model.
 
 | Property              | Value                                       |
 | :-------------------- | :------------------------------------------ |
+| storeRecordInfo       | TRUE                                        |
 | sqlName               | bkp_bank_account_statements                 |
 | urlBase               | bookkeeping/bank/account-statements         |
 | lookupSqlValue        |                                             |

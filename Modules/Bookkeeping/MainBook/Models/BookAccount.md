@@ -1,4 +1,4 @@
-# BookAccount
+# Model Bookkeeping/MainBook/BookAccount
 
 ## Introduction
 
@@ -19,133 +19,70 @@ Vzor účtovnej osnovy https://www.ako-uctovat.sk/uctovna-osnova.php.
 
 ## Properties
 
-| Property              | Value                                |
-| :-------------------- | :----------------------------------- |
-| sqlName               | bkp_book_accounts                    |
-| urlBase               | bookkeeping/main-book/book-accounts/ |
-| lookupSqlValue        | {%TABLE%}.name                       |
-| tableTitle            | Book Accounts                        |
-| formTitleForInserting | New Account                          |
-| formTitleForEditing   | Book Account                         |
+| Property              | Value                                 |
+| :-------------------- | :------------------------------------ |
+| storeRecordInfo       | TRUE                                  |
+| sqlName               | bkp_book_accounts                     |
+| urlBase               | bookkeeping/main-book/book-accounts/  |
+| lookupSqlValue        | {%TABLE%}.name                        |
+| tableTitle            | Book Accounts                         |
+| formTitleForInserting | New Account                           |
+| formTitleForEditing   | Book Account                          |
+| crud/browse/action    | Bookkeeping/MainBook/BookAccounts     |
+| crud/add/action       | Bookkeeping/MainBook/BookAccount/Add  |
+| crud/edit/action      | Bookkeeping/MainBook/BookAccount/Edit |
 
 ## Data Structure
 
-| Column                       | Description                           | Type    | Length | NULL     | Default |
-| :--------------------------- | :------------------------------------ | :-----: | :----: | :------: | :-----: |
-| id                           | Unique record ID                      | INT     | 8      | NOT NULL | 0       |
-| name                         | Názov účtu                            | VARCHAR | 100    | NOT NULL | ""      |
-| description                  | Popis účtu                            | TEXT    |        | NULL     | ""      |
-| account                      | Číslo účtu                            | VARCHAR | 3      | NOT NULL | ""      |
-| state                        | Stav účtu                             | ENUM    | 1      | NOT NULL | 1       |
-| side                         | Strana, na ktorú sa účtuje            | ENUM    | 1      | NOT NULL | 1       |
-| opening_balance              | Počiatočný stav na účte               | DECIMAL | 15,2   | NOT NULL | 0       |
-| current_balance              | Aktuálny zostatok na účte             | DECIMAL | 15,2   | NOT NULL | 0       |
-| id_parent                    | Nadriadený účet v stromovej štruktúre | INT     | 8      | NULL     |         |
-| id_bkp_book_account_type     | Typ účtu                              | INT     | 8      | NOT NULL | 0       |
-| id_bkp_book_account_category | Druh účtu                             | INT     | 8      | NOT NULL | 0       |
-| id_bkp_accounting_period     | ID účtovného obdobia                  | INT     | 8      | NOT NULL | 0       |
+| Column                       | Title       | ADIOS Type | Length | Required | Notes                                      |
+| :--------------------------- | ----------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id                           |             |    int     |   8    |   TRUE   | Unique record ID                           |
+| record_info                  | Record Info |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
+| name                         |             |  varchar   |  100   |   TRUE   | Názov účtu                                 |
+| description                  |             |    text    |        |  FALSE   | Popis účtu                                 |
+| account                      |             |  varchar   |   3    |   TRUE   | Číslo účtu                                 |
+| state                        |             |    int     |   1    |   TRUE   | Stav účtu                                  |
+| side                         |             |    int     |   1    |   TRUE   | Strana, na ktorú sa účtuje                 |
+| opening_balance              |             |  decimal   |  15,2  |   TRUE   | Počiatočný stav na účte                    |
+| current_balance              |             |  decimal   |  15,2  |   TRUE   | Aktuálny zostatok na účte                  |
+| id_parent                    |             |   lookup   |   8    |  FALSE   | Nadriadený účet v stromovej štruktúre      |
+| id_bkp_book_account_type     |             |   lookup   |   8    |   TRUE   | Typ účtu                                   |
+| id_bkp_book_account_category |             |   lookup   |   8    |   TRUE   | Druh účtu                                  |
+| id_bkp_accounting_period     |             |   lookup   |   8    |   TRUE   | ID účtovného obdobia                       |
 
-## Columns
+### ADIOS Parameters
 
-* name:
-  * type: varchar
-  * title: Name
-  * byte_size: 100
-  * required: true
-  * showColumn: true
-* description:
-  * type: text
-  * title: Description
-  * showColumn: false
-* account:
-  * type: varchar
-  * title: Account
-  * byte_size: 3
-  * required: true
-  * showColumn: true
-* state:
-  * type: int
-  * title: Account State
-  * enum_values:
-    * “1”: Accounting default #BKP_BOOK_ACCCOUNT_STATE_DEFAULT
-    * “2”: Accounting enabled #BKP_BOOK_ACCCOUNT_STATE_SUMMARY
-    * “3”: Accounting disabled #BKP_BOOK_ACCCOUNT_STATE_ACCOUNTABLE
-  * required: true
-  * showColumn: true
-  * default_value: 1
-* side:
-  * type: int
-  * title: Account Side
-  * enum_values:
-    * “1”: Both #BKP_BOOK_ACCOUNT_SIDE_BOTH
-    * “2”: Get #BKP_BOOK_ACCOUNT_SIDE_GET
-    * “3”: Put #BKP_BOOK_ACCOUNT_SIDE_PUT
-  * required: true
-  * showColumn: true
-* opening_balance:
-  * type: float
-  * title: Opening Balance
-  * byte_size: 15
-  * decimals: 2
-  * showColumn: true
-* current_balance:
-  * type: float
-  * title: Current Balance
-  * byte_size: 15
-  * decimals: 2
-  * showColumn: true
-* id_parent:
-  * type: lookup
-  * title: Parent Account
-  * model: App/Widgets/Bookkeeping/MainBook/Models/BookAccount
-  * required: false
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: RESTRICT
-* id_bkp_book_account_type:
-  * type: lookup
-  * title: Book Account Type
-  * model: App/Widgets/Bookkeeping/MainBook/Models/BookAccountType
-  * required: true
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: RESTRICT
-* id_bkp_book_account_category:
-  * type: lookup
-  * title: Book Account Category
-  * model: App/Widgets/Bookkeeping/MainBook/Models/BookAccountCategory
-  * required: true
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: RESTRICT
-* id_bkp_accounting_period:
-  * type: lookup
-  * title: Accounting Period
-  * model: App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod
-  * required: true
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: CASCADE
+| Column | Parameter   | Value                    |
+| :----- | :---------- | ------------------------ |
+| state  | enum_values | BKP_BOOK_ACCOUNT_STATE_* |
+| side   | enum_values | BKP_BOOK_ACCOUNT_SIDE_*  |
 
-## Foreign Keys
+### Foreign Keys
 
-| Column                       | Parent table                | Relation | OnUpdate | OnDelete |
-| :--------------------------- | :-------------------------- | :------: | :------: | :------: |
-| id_parent                    | bkp_book_accounts           | 1:N      | Cascade  | Restrict |
-| id_bkp_accounting_period     | bkp_accounting_periods      | 1:N      | Cascade  | Cascade  |
-| id_bkp_book_account_type     | bkp_book_account_types      | 1:N      | Cascade  | Restrict |
-| id_bkp_book_account_category | bkp_book_account_categories | 1:N      | Cascade  | Restrict |
+| Column                       | Model                                                       | Relation | OnUpdate | OnDelete |
+| :--------------------------- | :---------------------------------------------------------- | :------: | -------- | -------- |
+| id_parent                    | App/Widgets/Bookkeeping/MainBook/Models/BookAccount         |   1:N    | Cascade  | Restrict |
+| id_bkp_accounting_period     | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod    |   1:N    | Cascade  | Cascade  |
+| id_bkp_book_account_type     | App/Widgets/Bookkeeping/MainBook/Models/BookAccountType     |   1:N    | Cascade  | Restrict |
+| id_bkp_book_account_category | App/Widgets/Bookkeeping/MainBook/Models/BookAccountCategory |   1:N    | Cascade  | Restrict |
 
-## Indexes
+### Indexes
 
-| Name                     | Type    | Column + Order                                           |
-| :----------------------- | :-----: | :------------------------------------------------------: |
-| id                       | PRIMARY | id ASC                                                   |
-| name                     | INDEX   | name ASC                                                 |
-| period_id_parent_account | UNIQUE  | id_bkp_accounting_period ASC, id_parent ASC, account ASC |
-| period                   | INDEX   | id_bkp_accounting_period ASC                             |
-| type                     | INDEX   | type ASC                                                 |
-| category                 | INDEX   | category ASC                                             |
+| Name                                           |  Type   |                   Column + Order |
+| :--------------------------------------------- | :-----: | -------------------------------: |
+| id                                             | PRIMARY |                           id ASC |
+| name                                           |  INDEX  |                         name ASC |
+| state                                          |  INDEX  |                        state ASC |
+| side                                           |  INDEX  |                         side ASC |
+| id_bkp_accounting_period___id_parent___account | UNIQUE  |     id_bkp_accounting_period ASC |
+|                                                | UNIQUE  |                    id_parent ASC |
+|                                                | UNIQUE  |                      account ASC |
+| id_parent                                      |  INDEX  |                    id_parent ASC |
+| id_bkp_book_account_type                       |  INDEX  |     id_bkp_book_account_type ASC |
+| id_bkp_book_account_category                   |  INDEX  | id_bkp_book_account_category ASC |
+| id_bkp_accounting_period                       |  INDEX  |     id_bkp_accounting_period ASC |
+| type                                           |  INDEX  |                         type ASC |
+| category                                       |  INDEX  |                     category ASC |
 
 ## Callbacks
 

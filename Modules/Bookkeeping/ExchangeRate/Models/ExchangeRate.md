@@ -14,6 +14,7 @@ No constants are defined for this model.
 
 | Property              | Value                                      |
 | :-------------------- | :----------------------------------------- |
+| storeRecordInfo       | TRUE                                       |
 | sqlName               | bkp_exchange_rates                         |
 | urlBase               | bookkeeping/exchange/rates                 |
 | lookupSqlValue        |                                            |

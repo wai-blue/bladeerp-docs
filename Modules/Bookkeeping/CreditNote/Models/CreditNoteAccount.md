@@ -12,23 +12,28 @@ No constants are defined for this model.
 
 | Property              | Value                                                |
 | :-------------------- | :--------------------------------------------------- |
+| storeRecordInfo       | TRUE                                                 |
 | sqlName               | bkp_credit_note_accounts                             |
 | urlBase               | bookkeeping/credit-note/{id_bkp_credit_note}/account |
 | lookupSqlValue        |                                                      |
 | tableTitle            | CreditNote Accounts                                  |
 | formTitleForInserting | New CreditNote Account                               |
 | formTitleForEditing   | CreditNote Account                                   |
+| crud/browse/action    | Bookkeeping/CreditNote/CreditNoteAccounts            |
+| crud/add/action       | Bookkeeping/CreditNote/CreditNoteAccount/Add         |
+| crud/edit/action      | Bookkeeping/CreditNote/CreditNoteAccount/Edit        |
 
 REVIEW DD: isCrossTable?
 
 ## Data Structure
 
-| Column              | Title        | ADIOS Type | Length | Required | Notes                     |
-| :------------------ | ------------ | :--------: | :----: | :------: | :------------------------ |
-| id                  |              |    int     |   8    |   TRUE   | Jedinečné ID záznamu      |
-| id_bkp_credit_note  | Credit Note  |   lookup   |   8    |   TRUE   | ID dobropisu              |
-| id_bkp_book_account | Book Account |   lookup   |   8    |   TRUE   | ID účtu z účtovnej osnovy |
-| amount              | Amount       |  decimal   |  15,2  |   TRUE   | Hodnota                   |
+| Column              | Title        | ADIOS Type | Length | Required | Notes                                      |
+| :------------------ | ------------ | :--------: | :----: | :------: | :----------------------------------------- |
+| id                  |              |    int     |   8    |   TRUE   | Jedinečné ID záznamu                       |
+| record_info         | Record Info  |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
+| id_bkp_credit_note  | Credit Note  |   lookup   |   8    |   TRUE   | ID dobropisu                               |
+| id_bkp_book_account | Book Account |   lookup   |   8    |   TRUE   | ID účtu z účtovnej osnovy                  |
+| amount              | Amount       |  decimal   |  15,2  |   TRUE   | Hodnota                                    |
 
 ### ADIOS Parameters
 

@@ -1,4 +1,4 @@
-# Vat
+# Model Bookkeeping/MainBook/Vat
 
 ## Introduction
 
@@ -6,72 +6,54 @@ Táto tabuľka slúži na ukladanie informácií o sadzbách DPH používaných 
 
 ## Constants
 
-| Constant | Value | Description |
-| -------- | ----- | ----------- |
-|          |       |             |
+No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                  |
-| --------------------- | ---------------------- |
-| sqlName               | bkp_vats               |
-| urlBase               | bookkeeping/main-book/vats |
-| lookupSqlValue        | -                      |
-| tableTitle            | Vats                   |
-| formTitleForInserting | New Vat                |
-| formTitleForEditing   | Vat                    |
+| Property              | Value                               |
+| --------------------- | ----------------------------------- |
+| storeRecordInfo       | TRUE                                |
+| sqlName               | bkp_vats                            |
+| urlBase               | bookkeeping/main-book/vats          |
+| lookupSqlValue        | -                                   |
+| tableTitle            | Vats                                |
+| formTitleForInserting | New Vat                             |
+| formTitleForEditing   | Vat                                 |
+| crud/browse/action    | Bookkeeping/MainBook/Vats (plural) |
+| crud/add/action       | Bookkeeping/MainBook/Vat/Add       |
+| crud/edit/action      | Bookkeeping/MainBook/Vat/Edit      |
 
-## SQL Structure
+## Data Structure
 
-| Column                   | Description               | Type    | Length | NULL     | Default |
-| :----------------------- | :------------------------ | :-----: | :----: | :------: | :-----: |
-| id                       | Unique record ID          | INT     | 8      | NOT NULL | 0       |
-| ratio                    | Percento DPH              | DECIMAL | 5,2    | NOT NULL | 0       |
-| id_bkp_accounting_period | ID účtovného obdobia      | INT     | 8      | NOT NULL | 0       |
-| id_bkp_book_account      | ID účtu z účtovnej osnovy | INT     | 8      | NOT NULL | 0       |
+| Column                   | Title             | ADIOS Type | Length | Required | Notes                                      |
+| :----------------------- | ----------------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id                       |                   |    int     |   8    |   TRUE   | Unique record ID                           |
+| record_info              | Record Info       |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
+| ratio                    | VAT ratio         |  decimal   |  5,2   |   TRUE   | Percento DPH                               |
+| id_bkp_accounting_period | Accounting period |   lookup   |   8    |   TRUE   | ID účtovného obdobia                       |
+| id_bkp_book_account      | Book account      |   lookup   |   8    |   TRUE   | ID účtu z účtovnej osnovy                  |
 
-## Columns
+### ADIOS Parameters
 
-* ratio:
-  * type: float
-  * title: Ratio
-  * byte_size: 5
-  * decimals: 2
-  * unit: "%"
-  * required: true
-  * showColumn: true
-  * minValue: 0 
-  * maxValue: 100
-* id_bkp_accounting_period:
-  * type: lookup
-  * title: Accounting Period
-  * model: App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod
-  * required: true
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: CASCADE
-* id_bkp_book_account:
-  * type: lookup
-  * title: Account
-  * model: App/Widgets/Bookkeeping/MainBook/Models/BookAccount
-  * required: true
-  * showColumn: true
-  * foreignKeyOnUpdate: CASCADE
-  * foreignKeyOnDelete: RESTRICT
+No additional ADIOS parameters needs to be defined.
 
-## Foreign Keys
+### Foreign Keys
 
-| Column                   | Parent table           | Relation | OnUpdate | OnDelete |
-| :----------------------- | :--------------------- | :------: | :------: | :------: |
-| id_bkp_accounting_period | bkp_accounting_periods | 1:N      | Cascade  | Cascade  |
-| id_bkp_book_account      | bkp_book_accounts      | M:N      | Cascade  | Restrict |
+| Column                   | Model                                                    | Relation | OnUpdate | OnDelete |
+| :----------------------- | :------------------------------------------------------- | :------: | -------- | -------- |
+| id_bkp_accounting_period | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod |   1:N    | Cascade  | Cascade  |
+| id_bkp_book_account      | App/Widgets/Bookkeeping/MainBook/Models/BookAccount      |   M:N    | Cascade  | Restrict |
 
-## Indexes
+### Indexes
 
-| Name                           | Type    | Column + Order                          |
-| :----------------------------- | :-----: | :-------------------------------------- |
-| id                             | PRIMARY | id ASC                                  |
-| id_bkp_accounting_period_ratio | UNIQUE  | id_bkp_accounting_period ASC, ratio ASC |
+| Name                             |  Type   |               Column + Order |
+| :------------------------------- | :-----: | ---------------------------: |
+| id                               | PRIMARY |                       id ASC |
+| ratio                            |  INDEX  |                    ratio ASC |
+| id_bkp_accounting_period         |  INDEX  | id_bkp_accounting_period ASC |
+| id_bkp_book_account              |  INDEX  |      id_bkp_book_account ASC |
+| id_bkp_accounting_period___ratio | UNIQUE  | id_bkp_accounting_period ASC |
+|                                  | UNIQUE  |                    ratio ASC |
 
 ## Callbacks
 

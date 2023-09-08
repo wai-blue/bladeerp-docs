@@ -164,6 +164,10 @@ foreach ($modules as $module) {
           }
         }
 
+        if (!isset($properties['storeRecordInfo'])) {
+          $errors[] = "[{$modelRef}] `storeRecordInfo` is not defined.";
+        }
+
         // Data Structure
         $dataStructure = $md->findTableByColumns(['Column', 'Title', 'ADIOS Type', 'Length', 'Required', 'Notes']);
         $columns = [];
@@ -217,8 +221,11 @@ foreach ($modules as $module) {
           'OnUpdate',
           'OnDelete',
         ]);
-        if ($foreignKeys === NULL || count($foreignKeys) === 0) {
-          $warnings[] = "[{$modelRef}] Foreign keys are not defined or table structure is invalid.";
+        if (
+          $modelContainsLookup
+          && ($foreignKeys === NULL || count($foreignKeys) === 0)
+        ) {
+          $warnings[] = "[{$modelRef}] Model contains lookups and foreign keys are not defined or table structure is invalid.";
         } else {
           foreach ($foreignKeys as $row) {
             if (isset($columns[$row[0]])) {
@@ -308,10 +315,20 @@ foreach ($modules as $module) {
         }
 
         if (
-          !isset($columns['record_info'])
-          || $columns['record_info']['type'] != 'json'
+          ($properties['storeRecordInfo'] ?? '') === 'TRUE'
+          && (
+            !isset($columns['record_info'])
+            || $columns['record_info']['type'] != 'json'
+          )
         ) {
           $errors[] = "[{$modelRef}] `record_info` is not defined or is not a JSON.";
+        }
+
+        if (
+          ($properties['storeRecordInfo'] ?? '') !== 'TRUE'
+          && isset($columns['record_info'])
+        ) {
+          $errors[] = "[{$modelRef}] `storeRecordInfo` = FALSE and `record_info` is defined.";
         }
 
       }

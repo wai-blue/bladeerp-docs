@@ -12,14 +12,15 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                              |
-| --------------------- | ---------------------------------- |
-| sqlName               | bkp_claim_states                   |
-| urlBase               | bookkeeping/claim/states           |
-| lookupSqlValue        | {%TABLE%}.name                     |
-| tableTitle            | States                             |
-| formTitleForInserting | New State                          |
-| formTitleForEditing   | State                              |
+| Property              | Value                             |
+| --------------------- | --------------------------------- |
+| storeRecordInfo       | TRUE                              |
+| sqlName               | bkp_claim_states                  |
+| urlBase               | bookkeeping/claim/states          |
+| lookupSqlValue        | {%TABLE%}.name                    |
+| tableTitle            | States                            |
+| formTitleForInserting | New State                         |
+| formTitleForEditing   | State                             |
 | crud/browse/action    | Bookkeeping/Claim/ClaimStates     |
 | crud/add/action       | Bookkeeping/Claim/ClaimState/Add  |
 | crud/edit/action      | Bookkeeping/Claim/ClaimState/Edit |

@@ -1,4 +1,4 @@
-# Model Bookkeeping/CreditNote/CreditNoteItemProduct
+# Model Bookkeeping/CreditNote/CreditNoteItemHasProduct
 
 ## Introduction
 
@@ -12,7 +12,8 @@ No constants are defined for this model.
 
 | Property              | Value                                                                               |
 | :-------------------- | :---------------------------------------------------------------------------------- |
-| sqlName               | bkp_credit_note_item_products                                                       |
+| storeRecordInfo       | FALSE                                                                               |
+| sqlName               | bkp_credit_note_item_has_products                                                   |
 | urlBase               | bookkeeping/credit-note/{id_bkp_credit_note}/item/{id_bkp_credit_note_item}/product |
 | lookupSqlValue        | {%TABLE%}.name                                                                      |
 | tableTitle            | Item Products                                                                       |
@@ -22,10 +23,10 @@ No constants are defined for this model.
 
 ## Data Structure
 
-| Column                  | Title            | ADIOS Type | Length | Required | Notes                |
-| :---------------------- | ---------------- | :--------: | :----: | :------: | :------------------- |
-| id_bkp_credit_note_item | Credit Note Item |   lookup   |   8    |   TRUE   | ID položky dobropisu |
-| id_whs_product          | Product          |   lookup   |   8    |   TRUE   | ID produktu          |
+| Column                  | Title            | ADIOS Type | Length | Required | Notes                                      |
+| :---------------------- | ---------------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id_bkp_credit_note_item | Credit Note Item |   lookup   |   8    |   TRUE   | ID položky dobropisu                       |
+| id_whs_product          | Product          |   lookup   |   8    |   TRUE   | ID produktu                                |
 
 ### ADIOS Parameters
 

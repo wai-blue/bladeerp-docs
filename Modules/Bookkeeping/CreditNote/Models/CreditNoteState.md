@@ -12,20 +12,25 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                          |
-| :-------------------- | :----------------------------- |
-| sqlName               | bkp_credit_note_states         |
-| urlBase               | bookkeeping/credit_note/states |
-| lookupSqlValue        | {%TABLE%}.name                 |
-| tableTitle            | States                         |
-| formTitleForInserting | New State                      |
-| formTitleForEditing   | State                          |
+| Property              | Value                                       |
+| :-------------------- | :------------------------------------------ |
+| storeRecordInfo       | TRUE                                        |
+| sqlName               | bkp_credit_note_states                      |
+| urlBase               | bookkeeping/credit_note/states              |
+| lookupSqlValue        | {%TABLE%}.name                              |
+| tableTitle            | States                                      |
+| formTitleForInserting | New State                                   |
+| formTitleForEditing   | State                                       |
+| crud/browse/action    | Bookkeeping/CreditNote/CreditNoteStates     |
+| crud/add/action       | Bookkeeping/CreditNote/CreditNoteState/Add  |
+| crud/edit/action      | Bookkeeping/CreditNote/CreditNoteState/Edit |
 
 ## Data Structure
 
 | Column               | Title              | ADIOS Type | Length | Required | Notes                                                     |
 | :------------------- | ------------------ | :--------: | :----: | :------: | :-------------------------------------------------------- |
 | id                   |                    |    int     |   8    |   TRUE   | Unique record ID                                          |
+| record_info          | Record Info        |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author                |
 | name                 | Name               |  varchar   |   50   |   TRUE   |                                                           |
 | is_available         | Is Available       |  boolean   |        |   TRUE   |                                                           |
 | is_default           | Is Default         |  boolean   |        |   TRUE   |                                                           |
@@ -37,6 +42,7 @@ No constants are defined for this model.
 | is_revert_stock      | Revert Stock?      |  boolean   |        |  FALSE   |                                                           |
 | is_allowed_update    | Can Update?        |  boolean   |        |   TRUE   |                                                           |
 | is_allowed_delete    | Can Delete?        |  boolean   |        |   TRUE   |                                                           |
+
 TODO: | id_com_mail_template | Email Template     |   lookup   |   8    |  FALSE   | ID šablóny mailu                                          |
 
 ### ADIOS Parameters
@@ -55,8 +61,8 @@ TODO: | id_com_mail_template | Email Template     |   lookup   |   8    |  FALSE
 
 ### Foreign Keys
 
-| Column               | Model                                    | Relation | OnUpdate | OnDelete |
-| :------------------- | :--------------------------------------- | :------: | -------- | -------- |
+Model does not contain foreign keys.
+
 TODO: | id_com_mail_template | App/Widgets/Common/Email/Models/Template |   1:N    | Cascade  | Restrict |
 
 ### Indexes

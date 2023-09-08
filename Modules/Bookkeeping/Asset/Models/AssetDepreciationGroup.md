@@ -15,6 +15,7 @@ No constants are defined for this model.
 
 | Property              | Value                                         |
 | :-------------------- | :-------------------------------------------- |
+| storeRecordInfo       | TRUE                                          |
 | sqlName               | bkp_asset_depreciation_groups                 |
 | urlBase               | bookkeeping/asset-depreciation-groups         |
 | lookupSqlValue        | {%TABLE%}.number + {%TABLE%}.period           |

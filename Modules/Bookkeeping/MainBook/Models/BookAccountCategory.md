@@ -12,12 +12,16 @@ No constants are defined for this model.
 
 | Property              | Value                                         |
 | :-------------------- | :-------------------------------------------- |
+| storeRecordInfo       | TRUE                                          |
 | sqlName               | bkp_book_account_categories                   |
 | urlBase               | bookkeeping/main-book/book-account-categories |
 | lookupSqlValue        | {%TABLE%}.name                                |
 | tableTitle            | Book Account Categories                       |
 | formTitleForInserting | New Category                                  |
 | formTitleForEditing   | Account Category                              |
+| crud/browse/action    | Bookkeeping/MainBook/BookAccountCategories    |
+| crud/add/action       | Bookkeeping/MainBook/BookAccountCategory/Add  |
+| crud/edit/action      | Bookkeeping/MainBook/BookAccountCategory/Edit |
 
 ## Data Structure
 

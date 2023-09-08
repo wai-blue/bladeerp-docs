@@ -12,29 +12,34 @@ No constants are defined for this model.
 
 | Property              | Value                                              |
 | :-------------------- | :------------------------------------------------- |
+| storeRecordInfo       | TRUE                                               |
 | sqlName               | bkp_credit_note_items                              |
 | urlBase               | bookkeeping/credit-note/{id_bkp_credit_note}/items |
 | lookupSqlValue        | {%TABLE%}.item                                     |
 | tableTitle            | CreditNote Items                                   |
 | formTitleForInserting | New CreditNote Item                                |
 | formTitleForEditing   | CreditNote Item                                    |
+| crud/browse/action    | Bookkeeping/CreditNote/CreditNoteItems             |
+| crud/add/action       | Bookkeeping/CreditNote/CreditNoteItem/Add          |
+| crud/edit/action      | Bookkeeping/CreditNote/CreditNoteItem/Edit         |
 
 ## Data Structure
 
-| Column              | Title               | ADIOS Type | Length | Required | Notes                        |
-| :------------------ | ------------------- | :--------: | :----: | :------: | :--------------------------- |
-| id                  |                     |    int     |   8    |   TRUE   | Jedinečné ID záznamu         |
-| id_bkp_credit_note  | Credit Note         |   lookup   |   8    |   TRUE   | ID dobropisu                 |
-| item                | Item                |  varchar   |  200   |   TRUE   | Položka                      |
-| item_sequence       | Item Sequence       |    int     |   6    |  FALSE   | Poradie položky na dobropise |
-| quantity            | Quantity            |  decimal   |  15,4  |   TRUE   | Množstvo                     |
-| id_whs_unit         | Units               |   lookup   |   8    |   TRUE   | Merná jednotka               |
-| id_bkp_vat          | VAT Rate            |   lookup   |   8    |   TRUE   | ID Sadzby DPH                |
-| price_unit_excl_vat | Unit Price Excl VAT |  decimal   |  15,4  |   TRUE   | Jednotková cena bez DPH      |
-| price_unit_incl_vat | Unit Price Incl VAT |  decimal   |  15,4  |   TRUE   | Jednotková cena s DPH        |
-| price_excl_vat      | Price Excl VAT      |  decimal   |  15,4  |   TRUE   | Suma za položku bez DPH      |
-| price_vat           | Price VAT           |  decimal   |  15,4  |   TRUE   | Suma DPH za položku          |
-| price_incl_vat      | Price Incl VAT      |  decimal   |  15,4  |   TRUE   | Suma za položku s DPH        |
+| Column              | Title               | ADIOS Type | Length | Required | Notes                                      |
+| :------------------ | ------------------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id                  |                     |    int     |   8    |   TRUE   | Jedinečné ID záznamu                       |
+| record_info         | Record Info         |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
+| id_bkp_credit_note  | Credit Note         |   lookup   |   8    |   TRUE   | ID dobropisu                               |
+| item                | Item                |  varchar   |  200   |   TRUE   | Položka                                    |
+| item_sequence       | Item Sequence       |    int     |   6    |  FALSE   | Poradie položky na dobropise               |
+| quantity            | Quantity            |  decimal   |  15,4  |   TRUE   | Množstvo                                   |
+| id_whs_unit         | Units               |   lookup   |   8    |   TRUE   | Merná jednotka                             |
+| id_bkp_vat          | VAT Rate            |   lookup   |   8    |   TRUE   | ID Sadzby DPH                              |
+| price_unit_excl_vat | Unit Price Excl VAT |  decimal   |  15,4  |   TRUE   | Jednotková cena bez DPH                    |
+| price_unit_incl_vat | Unit Price Incl VAT |  decimal   |  15,4  |   TRUE   | Jednotková cena s DPH                      |
+| price_excl_vat      | Price Excl VAT      |  decimal   |  15,4  |   TRUE   | Suma za položku bez DPH                    |
+| price_vat           | Price VAT           |  decimal   |  15,4  |   TRUE   | Suma DPH za položku                        |
+| price_incl_vat      | Price Incl VAT      |  decimal   |  15,4  |   TRUE   | Suma za položku s DPH                      |
 
 REVIEW DD: VAT Rate ukladat ako decimal v %?
 

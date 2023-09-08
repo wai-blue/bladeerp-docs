@@ -10,14 +10,18 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                    |
-| :-------------------- | :--------------------------------------- |
-| sqlName               | bkp_book_account_types                   |
-| urlBase               | bookkeeping/main-book/book-account-types |
-| lookupSqlValue        | {%TABLE%}.name                           |
-| tableTitle            | Book Account Types                       |
-| formTitleForInserting | New Type                                 |
-| formTitleForEditing   | Account Type                             |
+| Property              | Value                                     |
+| :-------------------- | :---------------------------------------- |
+| storeRecordInfo       | TRUE                                      |
+| sqlName               | bkp_book_account_types                    |
+| urlBase               | bookkeeping/main-book/book-account-types  |
+| lookupSqlValue        | {%TABLE%}.name                            |
+| tableTitle            | Book Account Types                        |
+| formTitleForInserting | New Type                                  |
+| formTitleForEditing   | Account Type                              |
+| crud/browse/action    | Bookkeeping/MainBook/BookAccountTypes     |
+| crud/add/action       | Bookkeeping/MainBook/BookAccountType/Add  |
+| crud/edit/action      | Bookkeeping/MainBook/BookAccountType/Edit |
 
 ## Data Structure
 

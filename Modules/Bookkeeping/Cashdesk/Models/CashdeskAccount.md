@@ -12,6 +12,7 @@ No constants are defined for this model.
 
 | Property              | Value                                  |
 | :-------------------- | :------------------------------------- |
+| storeRecordInfo       | TRUE                                   |
 | sqlName               | bkp_cashdesk_accounts                  |
 | urlBase               | bookkeeping/cashdesk/accounts          |
 | lookupSqlValue        | {%TABLE%}.name                         |

@@ -10,6 +10,7 @@ V modeli nie sú použité konštanty.
 | Property              | Value                    |
 | :-------------------- | :----------------------- |
 | isCrossTable          | TRUE                     |
+| storeRecordInfo       | FALSE                    |
 | sqlName               | com_contact_has_category |
 | urlBase               | -                        |
 | lookupSqlValue        | -                        |

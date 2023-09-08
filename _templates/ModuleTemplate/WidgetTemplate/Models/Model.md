@@ -22,6 +22,7 @@
 | Property              | Value                                     |
 | :-------------------- | :---------------------------------------- |
 | isCrossTable          | TRUE/FALSE                                |
+| storeRecordInfo       | TRUE/FALSE                                |
 | sqlName               | [modulprefix_model_name v množnom čísle]  |
 | urlBase               | [modul/widget/model-name v množnom čísle] |
 | lookupSqlValue        | {%TABLE%}.name                            |

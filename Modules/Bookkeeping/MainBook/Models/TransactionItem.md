@@ -12,6 +12,7 @@ No constants are defined for this model.
 
 | Property              | Value                                     |
 | :-------------------- | :---------------------------------------- |
+| storeRecordInfo       | TRUE                                      |
 | sqlName               | bkp_transaction_entries                   |
 | urlBase               | bookkeeping/main-book/transaction-entries |
 | lookupSqlValue        |                                           |

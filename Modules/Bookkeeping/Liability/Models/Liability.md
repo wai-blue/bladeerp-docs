@@ -12,6 +12,7 @@ No constants are defined for this model.
 
 | Property              | Value                                |
 | :-------------------- | :----------------------------------- |
+| storeRecordInfo       | TRUE                                 |
 | sqlName               | bkp_liabilities                      |
 | urlBase               | bookkeeping/liability/liabilities    |
 | lookupSqlValue        | {%TABLE%}.name                       |

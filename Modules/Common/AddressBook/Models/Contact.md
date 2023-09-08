@@ -10,6 +10,7 @@ No constants are defined for this model.
 | Property              | Value                                                                                     |
 | :-------------------- | :---------------------------------------------------------------------------------------- |
 | isCrossTable          | FALSE                                                                                     |
+| storeRecordInfo       | TRUE                                                                                      |
 | sqlName               | com_contacts                                                                              |
 | urlBase               | common/address-book/contacts                                                              |
 | lookupSqlValue        | concat(company_name, ', ', company_business_number), id_com_contact_person.lookupSqlValue |

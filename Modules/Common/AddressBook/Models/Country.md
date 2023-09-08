@@ -10,6 +10,7 @@ V modeli nie sú použité konštanty.
 | Property              | Value                         |
 | :-------------------- | :---------------------------- |
 | isCrossTable          | FALSE                         |
+| storeRecordInfo       | TRUE                          |
 | sqlName               | com_countries                 |
 | urlBase               | common/address-book/countries |
 | lookupSqlValue        | concat(name, " (", code, ")") |

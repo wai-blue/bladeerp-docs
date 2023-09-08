@@ -14,6 +14,7 @@ No constants are defined for this model.
 
 | Property              | Value                                   |
 | :-------------------- | :-------------------------------------- |
+| storeRecordInfo       | FALSE                                   |
 | sqlName               | bkp_claim_has_orders                    |
 | urlBase               | bookkeeping/claim/{id_bkp_claim}/orders |
 | lookupSqlValue        | {%TABLE%}.name                          |
@@ -26,7 +27,6 @@ No constants are defined for this model.
 
 | Column       | Title       | ADIOS Type | Length | Required | Notes         |
 | :----------- | ----------- | :--------: | :----: | :------: | :------------ |
-| record_info  | Record Info |    json    |        |   TRUE   |               |
 | id_bkp_claim | Claim       |   lookup   |   8    |   TRUE   | ID pohľadávky |
 | id_crm_order | Order       |   lookup   |   8    |   TRUE   | ID objednávky |
 

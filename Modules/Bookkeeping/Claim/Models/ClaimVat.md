@@ -12,6 +12,7 @@ No constants are defined for this model.
 
 | Property           | Value                                 |
 | ------------------ | ------------------------------------- |
+| storeRecordInfo    | TRUE                                  |
 | sqlName            | bkp_claim_vats                        |
 | urlBase            | bookkeeping/claim/{id_bkp_claim}/vats |
 | lookupSqlValue     | {%TABLE%}.name                        |

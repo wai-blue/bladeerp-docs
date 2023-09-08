@@ -10,23 +10,28 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property       | Value                                         |
-| :------------- | :-------------------------------------------- |
-| sqlName        | bkp_credit_note_vats                          |
-| urlBase        | bookkeeping/credit-note/{id_bkp_credit_note}/vats |
-| lookupSqlValue | {%TABLE%}.name                                |
-| tableTitle     | VATs                                          |
+| Property           | Value                                             |
+| :----------------- | :------------------------------------------------ |
+| storeRecordInfo    | TRUE                                              |
+| sqlName            | bkp_credit_note_vats                              |
+| urlBase            | bookkeeping/credit-note/{id_bkp_credit_note}/vats |
+| lookupSqlValue     | {%TABLE%}.name                                    |
+| tableTitle         | VATs                                              |
+| crud/browse/action | Bookkeeping/CreditNote/CreditNoteVats             |
+| crud/add/action    | Bookkeeping/CreditNote/CreditNoteVat/Add          |
+| crud/edit/action   | Bookkeeping/CreditNote/CreditNoteVat/Edit         |
 
 ## Data Structure
 
-| Column             | Title          | ADIOS Type | Length | Required | Notes                |
-| :----------------- | -------------- | :--------: | :----: | :------: | :------------------- |
-| id                 |                |    int     |   8    | NOT NULL | Jedinečné ID záznamu |
-| id_bkp_credit_note | CreditNote     |   lookup   |   8    | NOT NULL | ID dobropisu         |
-| id_bkp_vat         | VAT Rate       |   lookup   |   8    | NOT NULL | ID sadzby DPH        |
-| price_excl_vat     | Price Excl VAT |  decimal   |  15,2  | NOT NULL | Suma bez DPH         |
-| price_vat          | Price VAT      |  decimal   |  15,2  | NOT NULL | Suma DPH             |
-| price_incl_vat     | Price Incl VAT |  decimal   |  15,2  | NOT NULL | Suma s DPH           |
+| Column             | Title          | ADIOS Type | Length | Required | Notes                                      |
+| :----------------- | -------------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id                 |                |    int     |   8    | NOT NULL | Jedinečné ID záznamu                       |
+| record_info        | Record Info    |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
+| id_bkp_credit_note | CreditNote     |   lookup   |   8    | NOT NULL | ID dobropisu                               |
+| id_bkp_vat         | VAT Rate       |   lookup   |   8    | NOT NULL | ID sadzby DPH                              |
+| price_excl_vat     | Price Excl VAT |  decimal   |  15,2  | NOT NULL | Suma bez DPH                               |
+| price_vat          | Price VAT      |  decimal   |  15,2  | NOT NULL | Suma DPH                                   |
+| price_incl_vat     | Price Incl VAT |  decimal   |  15,2  | NOT NULL | Suma s DPH                                 |
 
 REVIEW DD: Nie je lepsie VAT sadzbu ukladat ako decimal? Ak to dame ako Decimal, moze sa nastavit parameter unit = "%".
 
@@ -40,8 +45,8 @@ REVIEW DD: Nie je lepsie VAT sadzbu ukladat ako decimal? Ak to dame ako Decimal,
 
 ### Foreign Keys
 
-| Column             | Model                                            | Relation | OnUpdate | OnDelete |
-| :----------------- | :----------------------------------------------- | :------: | -------- | -------- |
+| Column             | Model                                                | Relation | OnUpdate | OnDelete |
+| :----------------- | :--------------------------------------------------- | :------: | -------- | -------- |
 | id_bkp_credit_note | App/Widgets/Bookkeeping/CreditNote/Models/CreditNote |   1:N    | Cascade  | Cascade  |
 | id_bkp_vat         | App/Widgets/Bookkeeping/MainBook/Models/Vat          |   1:N    | Cascade  | Restrict |
 

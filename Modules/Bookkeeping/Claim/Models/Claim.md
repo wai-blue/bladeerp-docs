@@ -11,6 +11,7 @@ No constants are defined for this model.
 
 | Property              | Value                        |
 | --------------------- | ---------------------------- |
+| storeRecordInfo       | TRUE                         |
 | lookupSqlValue        | {%TABLE%}.name               |
 | formTitleForEditing   | Claim                        |
 | tableTitle            | Claims                       |
