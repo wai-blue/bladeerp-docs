@@ -2,10 +2,15 @@
 
 Oprávnenia na akcie pre jednotlivé role.
 TODO: Nahradiť vzorové údaje
-| Action                  | Main accountant | Accountant | Biller |
-| :---------------------- | :-------------: | :--------: | :----: |
-| ActionName              |        X        |            |        |
-| ActionName2/Add         |        X        |            |        |
-| AccountingPeriods/Edit  |        X        |            |        |
-| AccountingPeriod/Delete |        X        |     X      |        |
-| AccountingPeriod/Close  |                 |     X      |        |
+| Action                      | User | SuperUser |
+| :-------------------------- | :--: | :-------: |
+| Contacts                    |  X   |     x     |
+| Contact/AddContactAsCompany |  X   |     X     |
+| Contact/AddContactAsPerson  |  X   |     x     |
+| Contact/Edit                |  X   |     X     |
+| Contact/Delete              |  X   |     X     |
+| Categories                  |  X   |     X     |
+| Category/Add                |      |     X     |
+| Category/Edit               |      |     X     |
+| Category/Delete             |      |     X     |
+

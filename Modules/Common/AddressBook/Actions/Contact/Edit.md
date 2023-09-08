@@ -43,8 +43,7 @@ REVIEW DD: upravene pocas telefonatu, treba skontrolovat
             * id_com_contact_address:LOOKUP:city
             * id_com_contact_address:LOOKUP:postal_code
             * id_com_contact_address:LOOKUP:id_com_country
-            * id_com_contact_address:LOOKUP:gps_longitude
-            * id_com_contact_address:LOOKUP:gps_latitude
+            * id_com_contact_address:LOOKUP:location
             * id_com_contact_address:LOOKUP:description
 
         * ADIOS/Core/View/Input/Tags:
@@ -70,4 +69,4 @@ TODO: JG doplniť neexistujúcu akciu
           * idContact = $params[‘id’]
 
 ## Parameters Post-processing
-  1. Hide all company columns (`com_contact_companies.*`) when contact is person (`id_com_contact_company = NULL`).
+  1. Hide all company columns (`com_contact_companies.*`) when contact is person (`is_company=FALSE`).

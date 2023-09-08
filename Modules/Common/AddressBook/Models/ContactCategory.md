@@ -8,16 +8,18 @@ V modeli nie sú použité konštanty.
 
 ## Properties
 
-| Property              | Value                                  |
-| :-------------------- | :------------------------------------- |
-| isCrossTable          | FALSE                                  |
-| sqlName               | com_contact_categories                 |
-| urlBase               | common/address-book/contact-categories |
-| lookupSqlValue        | {%TABLE%}.name                         |
-| tableTitle            | Contact Categories                     |
-| formTitleForInserting | New Contact Category                   |
-| formTitleForEditing   | Contact Category                       |
-
+| Property              | Value                                   |
+| :-------------------- | :-------------------------------------- |
+| isCrossTable          | FALSE                                   |
+| sqlName               | com_contact_categories                  |
+| urlBase               | common/address-book/contact-categories  |
+| lookupSqlValue        | {%TABLE%}.name                          |
+| tableTitle            | Contact Categories                      |
+| formTitleForInserting | New Contact Category                    |
+| formTitleForEditing   | Contact Category                        |
+| crud/browse/action    | Common/AddressBook/ContactCategories    |
+| crud/add/action       | Common/AddressBook/ContactCategory/Add  |
+| crud/edit/action      | Common/AddressBook/ContactCategory/Edit |
 
 ## Data Structure
 | Column      | Title       | ADIOS Type | Length | Required | Notes       |
@@ -26,7 +28,8 @@ V modeli nie sú použité konštanty.
 | record_info | Record Info |    json    |        |   TRUE   |             |
 | is_active   | Is Active?  |  boolean   |   1    |   TRUE   | Je aktívna? |
 | name        | Name        |  varchar   |  100   |   TRUE   | Názov       |
-| description | Description |    text    |        |  FALSE   | Poznámka    |
+| notes       | Notes       |    text    |        |  FALSE   | Poznámka    |
+
 
 ### ADIOS Parameters
 | Column    | Parameter   | Value                           |
@@ -59,8 +62,7 @@ Not used.
 Not used.
 
 ### onBeforeDelete
-Nepovoliť vymazanie, ak je kategória použitá na niektorom kontakte (tbl: **com_contact_has_category**)
-REVIEW: Nemalo by toto byt zabezpecne vhodnou definiciou foreign keys?
+Not used.
 
 ### onAfterDelete
 Not used.

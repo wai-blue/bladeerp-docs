@@ -16,6 +16,9 @@ V modeli nie sú použité konštanty.
 | tableTitle            | Persons                                     |
 | formTitleForInserting | New Person                                  |
 | formTitleForEditing   | Person                                      |
+| crud/browse/action    | Common/AddressBook/ContactPersons           |
+| crud/add/action       | Common/AddressBook/ContactPerson/Add        |
+| crud/edit/action      | Common/AddressBook/ContactPerson/Edit       |
 
 ## Data Structure
 | Column         | Title        | ADIOS Type | Length | Required | Notes                          |
