@@ -26,7 +26,7 @@ No constants are defined for this model.
 
 | Column                                  | Title                            | ADIOS Type | Length | Required | Notes                                             |
 | :-------------------------------------- | -------------------------------- | :--------: | :----: | :------: | :------------------------------------------------ |
-| id                                      |                                  |    int     |   8    |   TRUE   | Jedinečné ID záznamu                              |
+| id                                      |                                  |    int     |   8    |   TRUE   | Unique record ID                              |
 | record_info                             | Record Info                      |    json    |        |   TRUE   |                                                   |
 | id_bkp_claim_state                      | State                            |   lookup   |   8    |   TRUE   | ID stavu pohľadávky                               |
 | id_com_contact                          | Customer                         |   lookup   |   8    |   TRUE   | ID odberateľa                                     |

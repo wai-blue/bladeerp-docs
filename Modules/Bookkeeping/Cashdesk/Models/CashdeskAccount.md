@@ -28,7 +28,7 @@ No constants are defined for this model.
 ## Data Structure
 | Column              | Title            | ADIOS Type | Length | Required | Notes                                                    |
 | :------------------ | ---------------- | :--------: | :----: | :------: | :------------------------------------------------------- |
-| id                  | ID               |    int     |   11   |   TRUE   | Jedinečné ID záznamu                                     |
+| id                  | ID               |    int     |   11   |   TRUE   | Unique record ID                                     |
 | record_info         | Record Info      |    json    |        |   TRUE   |                                                          |
 | account_name        | Name             |  varchar   |  100   |   TRUE   | Názov pokladnicneho uctu                                 |
 | account_acronym     | Acronym          |  varchar   |   5    |   TRUE   | Skratka pre pokladnicny ucet                             |

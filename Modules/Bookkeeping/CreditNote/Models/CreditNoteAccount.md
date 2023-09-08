@@ -29,7 +29,7 @@ REVIEW DD: isCrossTable?
 
 | Column              | Title        | ADIOS Type | Length | Required | Notes                                      |
 | :------------------ | ------------ | :--------: | :----: | :------: | :----------------------------------------- |
-| id                  |              |    int     |   8    |   TRUE   | Jedinečné ID záznamu                       |
+| id                  |              |    int     |   8    |   TRUE   | Unique record ID                       |
 | record_info         | Record Info  |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
 | id_bkp_credit_note  | Credit Note  |   lookup   |   8    |   TRUE   | ID dobropisu                               |
 | id_bkp_book_account | Book Account |   lookup   |   8    |   TRUE   | ID účtu z účtovnej osnovy                  |

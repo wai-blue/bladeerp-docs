@@ -29,7 +29,7 @@ No constants are defined for this model.
 
 | Column                  | Title            | ADIOS Type | Length | Required | Notes                     |
 | :---------------------- | ---------------- | :--------: | :----: | :------: | :------------------------ |
-| id                      | ID               |    int     |   11   |   TRUE   | Jedinečné ID záznamu      |
+| id                      | ID               |    int     |   11   |   TRUE   | Unique record ID      |
 | record_info             | Record Info      |    json    |        |   TRUE   |                           |
 | id_bkp_cashdesk_receipt | Cashdesk Receipt |   lookup   |   11   |   TRUE   | ID pokladničného dokladu  |
 | id_bkp_book_account     | Book Account     |   lookup   |   11   |   TRUE   | ID účtu z účtovnej osnovy |

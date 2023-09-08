@@ -29,7 +29,7 @@ No constants are defined for this model.
 
 | Column               | Title              | ADIOS Type | Length | Required | Notes                                                     |
 | :------------------- | ------------------ | :--------: | :----: | :------: | :-------------------------------------------------------- |
-| id                   |                    |    int     |   8    |   TRUE   | Jedinečné ID záznamu                                      |
+| id                   |                    |    int     |   8    |   TRUE   | Unique record ID                                      |
 | record_info          | Record Info        |    json    |        |   TRUE   |                                                           |
 | name                 | Name               |  varchar   |   50   |   TRUE   | Názov stavu                                               |
 | is_available         | Is Available       |  boolean   |   1    |   TRUE   | Je možné tento stav použiť?                               |

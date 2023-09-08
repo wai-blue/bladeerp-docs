@@ -35,7 +35,7 @@ No constants are defined for this model.
 
 | Column              | Title                   | ADIOS Type | Length | Required | Notes                                   |
 | :------------------ | ----------------------- | :--------: | :----: | :------: | :-------------------------------------- |
-| id                  | ID                      |    int     |   11   |   TRUE   | Jedinečné ID záznamu                    |
+| id                  | ID                      |    int     |   11   |   TRUE   | Unique record ID                    |
 | record_info         | Record Info             |    json    |        |   TRUE   |                                         |
 | id_bkp_bank_account | Bank Account            |   lookup   |   11   |   TRUE   | ID bankového účtu                       |
 | statement_datetime  | Date and Time Statement |  datetime  |        |   TRUE   | Dátum a čas závierky                    |
