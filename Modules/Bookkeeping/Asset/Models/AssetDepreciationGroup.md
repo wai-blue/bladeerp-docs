@@ -32,19 +32,21 @@ No constants are defined for this model.
 
 | Column                   | Title                                                      | ADIOS Type | Length | Required | Notes                                                                                    |
 | :----------------------- | :--------------------------------------------------------- | :--------: | :----: | :------: | :--------------------------------------------------------------------------------------- |
-| id                       | ID                                                         |    int     |   8    |   TRUE   | Jedinečné ID záznamu                                                                     |
+| id                       | ID                                                         |    int     |   8    |   TRUE   | Unique record ID                                                                         |
 | record_info              | Record Info                                                |    json    |        |   TRUE   |                                                                                          |
-| id_bkp_accounting_period | Accounting Period                                          |   lookup   |   8    |   TRUE   | ID účtovného obdobia                                                                     |
-| number                   | Group Number                                               |    int     |   2    |   TRUE   | Číslo odpisovej skupiny                                                                  |
-| period                   | Depreciation Period                                        |    int     |   2    |   TRUE   | Doba odpisovania v rokoch                                                                |
-| description              | Description                                                |    text    |        |  FALSE   | Popis                                                                                    |
+| id_bkp_accounting_period | Accounting Period                                          |   lookup   |   8    |   TRUE   |                                                                                          |
+| number                   | Group Number                                               |    int     |   2    |   TRUE   |                                                                                          |
+| period                   | Depreciation Period                                        |    int     |   2    |   TRUE   |                                                                                          |
+| description              | Description                                                |    text    |        |  FALSE   |                                                                                          |
 | coef_first_year          | Coefficient in the first year                              |    int     |   2    |   TRUE   | Koeficient odpisu pre zrýchlené odpisovanie v prvom roku                                 |
 | coef_next_year           | Coefficient in next years                                  |    int     |   2    |   TRUE   | Koeficient odpisu pre zrýchlené odpisovanie v ďalších rokoch                             |
 | coef_next_year_inc       | Coefficient in next years for the increased residual price |    int     |   2    |   TRUE   | Koeficient odpisu pre zrýchlené odpisovanie v ďalších rokoch pre zvýšenú zostatkovú cenu |
 
 ### ADIOS Parameters
 
-No additional ADIOS parameters needs to be defined.
+| Column | Parameter | Value   |
+| :----- | :-------- | ------- |
+| period | unit      | year(s) |
 
 ### Foreign Keys
 

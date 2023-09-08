@@ -27,7 +27,7 @@ No constants are defined for this model.
 
 | Column      | Title       | ADIOS Type | Length | Required | Notes                                      |
 | :---------- | ----------- | :--------: | :----: | :------: | :----------------------------------------- |
-| id          |             |    int     |   8    |   TRUE   | Jedinečné ID záznamu                       |
+| id          |             |    int     |   8    |   TRUE   | Unique record ID                       |
 | record_info | Record Info |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
 | name        | Name        |  varchar   |  100   |   TRUE   | Názov meny                                 |
 | acronym     | Acronym     |  varchar   |   3    |   TRUE   | Skratka meny                               |

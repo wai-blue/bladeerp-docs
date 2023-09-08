@@ -32,8 +32,8 @@ No constants are defined for this model.
 
 | Column                              | Title                                                                             | ADIOS Type | Length | Required | Notes                        |
 | :---------------------------------- | --------------------------------------------------------------------------------- | :--------: | :----: | :------: | :--------------------------- |
+| id                                  | ID                                                                                |    int     |   8    |   TRUE   | Unique record ID             |
 | record_info                         | Record Info                                                                       |    json    |        |   TRUE   |                              |
-| id                                  | ID                                                                                |    int     |   8    |   TRUE   | Jedinečné ID záznamu         |
 | id_bkp_asset                        | Property                                                                          |   lookup   |   8    |   TRUE   | Odpisovaný majetok           |
 | id_bkp_accounting_period            | Accounting period                                                                 |   lookup   |   8    |   TRUE   | Účtovné obdobie              |
 | year                                | Year                                                                              |    int     |   4    |   TRUE   | Rok odpisu                   |

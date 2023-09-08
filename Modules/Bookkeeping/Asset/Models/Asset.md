@@ -37,26 +37,26 @@ Tabuľka slúži na evidenciu majetku.
 
 | Column                     | Title                                           | ADIOS Type | Length | Required | Notes                                    |
 | :------------------------- | ----------------------------------------------- | :--------: | :----: | :------: | :--------------------------------------- |
-| id                         | ID                                              |    int     |   8    |   TRUE   | Jedinečné ID záznamu                     |
+| id                         | ID                                              |    int     |   8    |   TRUE   | Unique record ID                         |
 | record_info                | Record Info                                     |    json    |        |   TRUE   |                                          |
-| inventory_number           | Inventory Number                                |  varchar   |   50   |   TRUE   | Inventárne číslo                         |
-| name                       | Name                                            |  varchar   |  100   |   TRUE   | Názov                                    |
-| description                | Description                                     |    text    |        |  FALSE   | Popis                                    |
+| inventory_number           | Inventory Number                                |  varchar   |   50   |   TRUE   |                                          |
+| name                       | Name                                            |  varchar   |  100   |   TRUE   |                                          |
+| description                | Description                                     |    text    |        |  FALSE   |                                          |
 | id_bkp_currency            | Currency                                        |   lookup   |   8    |   TRUE   | ID meny v ktorej je uvedená vstupná cena |
-| entry_price                | Entry Price                                     |  decimal   |  15,2  |   TRUE   | Vstupná cena                             |
-| entry_date                 | Entry Date                                      |    date    |   8    |   TRUE   | Dátum obstarania                         |
-| procurement_method         | Procurement Method                              |  varchar   |  100   |  FALSE   | Spôsob obstarania                        |
-| commissioning_date         | Commissioning Date                              |    date    |   8    |   TRUE   | Dátum zaradenia do užívania              |
-| notes                      | Notes                                           |    text    |        |  FALSE   | Poznámky                                 |
-| id_bkp_depreciation_group  | Depreciation Group                              |   lookup   |   8    |   TRUE   | Odpisová skupina                         |
-| type                       | Property Type                                   |    int     |   1    |   TRUE   | Typ majetku                              |
-| method                     | Depreciation Method                             |    int     |   1    |   TRUE   | Metóda odpisovania                       |
-| is_automat                 | Automatically calculate accounting depreciation |  boolean   |   1    |  FALSE   | Automaticky vypočítavať účtovné odpisy   |
-| amount_accounting_residual | Residual Accounting Value                       |  decimal   |  15,2  |  FALSE   | Zostatková účtovná hodnota               |
-| amount_tax_residual        | Residual Tax Value                              |  decimal   |  15,2  |  FALSE   | Zostatková daňová hodnota                |
-| retirement_date            | Retirement Date                                 |    date    |   8    |  FALSE   | Dátum vyradenia                          |
-| retirement_reason          | Reason for Retirement                           |  varchar   |  100   |  FALSE   | Dôvod vyradenia                          |
-| retirement_method          | Retirement Method                               |  varchar   |  100   |  FALSE   | Spôsob vyradenia                         |
+| entry_price                | Entry Price                                     |  decimal   |  15,2  |   TRUE   |                                          |
+| entry_date                 | Entry Date                                      |    date    |   8    |   TRUE   |                                          |
+| procurement_method         | Procurement Method                              |  varchar   |  100   |  FALSE   |                                          |
+| commissioning_date         | Commissioning Date                              |    date    |   8    |   TRUE   |                                          |
+| notes                      | Notes                                           |    text    |        |  FALSE   |                                          |
+| id_bkp_depreciation_group  | Depreciation Group                              |   lookup   |   8    |   TRUE   |                                          |
+| type                       | Property Type                                   |    int     |   1    |   TRUE   |                                          |
+| method                     | Depreciation Method                             |    int     |   1    |   TRUE   |                                          |
+| is_automat                 | Automatically calculate accounting depreciation |  boolean   |   1    |  FALSE   |                                          |
+| amount_accounting_residual | Residual Accounting Value                       |  decimal   |  15,2  |  FALSE   |                                          |
+| amount_tax_residual        | Residual Tax Value                              |  decimal   |  15,2  |  FALSE   |                                          |
+| retirement_date            | Retirement Date                                 |    date    |   8    |  FALSE   |                                          |
+| retirement_reason          | Reason for Retirement                           |  varchar   |  100   |  FALSE   |                                          |
+| retirement_method          | Retirement Method                               |  varchar   |  100   |  FALSE   |                                          |
 
 ### ADIOS Parameters
 

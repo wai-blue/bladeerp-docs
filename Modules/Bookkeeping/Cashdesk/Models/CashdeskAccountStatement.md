@@ -29,7 +29,7 @@ No constants are defined for this model.
 
 | Column                  | Title                      | ADIOS Type | Length | Required | Notes                                   |
 | :---------------------- | -------------------------- | :--------: | :----: | :------: | :-------------------------------------- |
-| id                      | ID                         |    int     |   11   |   TRUE   | Jedinečné ID záznamu                    |
+| id                      | ID                         |    int     |   11   |   TRUE   | Unique record ID                    |
 | record_info             | Record Info                |    json    |        |   TRUE   |                                         |
 | id_bkp_cashdesk_account | Cashdesk Account           |   lookup   |   11   |   TRUE   | ID pokladne                             |
 | statement_datetime      | Date and Time of Statement |  datetime  |        |   TRUE   | Dátum a čas závierky                    |

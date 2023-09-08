@@ -27,7 +27,7 @@ No constants are defined for this model.
 
 | Column              | Title               | ADIOS Type | Length | Required | Notes                                      |
 | :------------------ | ------------------- | :--------: | :----: | :------: | :----------------------------------------- |
-| id                  |                     |    int     |   8    |   TRUE   | Jedinečné ID záznamu                       |
+| id                  |                     |    int     |   8    |   TRUE   | Unique record ID                       |
 | record_info         | Record Info         |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
 | id_bkp_liability    | Liability           |   lookup   |   8    |   TRUE   | ID záväzku                                 |
 | item                | Item                |  varchar   |  200   |   TRUE   | Položka                                    |

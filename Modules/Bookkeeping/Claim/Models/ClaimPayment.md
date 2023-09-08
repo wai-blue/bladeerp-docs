@@ -27,7 +27,7 @@ No constants are defined for this model.
 
 | Column       | Title         | ADIOS Type | Length | Required | Notes                |
 | :----------- | ------------- | :--------: | :----: | :------: | :------------------- |
-| id           |               |    int     |   8    |   TRUE   | Jedinečné ID záznamu |
+| id           |               |    int     |   8    |   TRUE   | Unique record ID |
 | record_info  | Record Info   |    json    |        |   TRUE   |                      |
 | id_bkp_claim | Claim         |   lookup   |   8    |   TRUE   | ID pohľadávky        |
 | payment_date | Payment Date  |    date    |   8    |   TRUE   | Dátum úhrady         |

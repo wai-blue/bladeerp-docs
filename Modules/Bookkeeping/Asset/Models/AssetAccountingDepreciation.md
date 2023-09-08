@@ -30,18 +30,18 @@ No constants are defined for this model.
 
 ## Data Structure
 
-| Column                              | Title                                  | ADIOS Type | Length | Required | Notes                        |
-| :---------------------------------- | -------------------------------------- | :--------: | :----: | :------: | :--------------------------- |
-| id                                  | ID                                     |    int     |   8    |   TRUE   | Jedinečné ID záznamu         |
-| record_info                         | Record Info                            |    json    |        |   TRUE   |                              |
-| id_bkp_asset                        | Property                               |   lookup   |   8    |   TRUE   | Odpisovaný majetok           |
-| id_bkp_accounting_period            | Accounting period                      |   lookup   |   8    |   TRUE   | Účtovné obdobie              |
-| year                                | Year                                   |    int     |   4    |   TRUE   | Rok odpisu                   |
-| month                               | Month                                  |    int     |   2    |   TRUE   | Mesiac odpisu                |
-| accounting_depreciation_coefficient | Coefficient of Accounting Depreciation |  decimal   |  5,2   |   TRUE   | Koeficient účtovných odpisov |
-| accounting_depreciation_amount      | Amount of Accounting Depreciation      |  decimal   |  15,2  |   TRUE   | Suma účtovných odpisov       |
-| amount_accounting_residual          | Residual Accounting Value              |  decimal   |  15,2  |  FALSE   | Zostatková účtovná hodnota   |
-| posting_date                        | Posting Date                           |    date    |   8    |   TRUE   | Dátum zaúčtovania            |
+| Column                              | Title                                  | ADIOS Type | Length | Required | Notes                      |
+| :---------------------------------- | -------------------------------------- | :--------: | :----: | :------: | :------------------------- |
+| id                                  | ID                                     |    int     |   8    |   TRUE   | Unique record ID           |
+| record_info                         | Record Info                            |    json    |        |   TRUE   |                            |
+| id_bkp_asset                        | Property                               |   lookup   |   8    |   TRUE   |                            |
+| id_bkp_accounting_period            | Accounting period                      |   lookup   |   8    |   TRUE   |                            |
+| year                                | Year                                   |    int     |   4    |   TRUE   |                            |
+| month                               | Month                                  |    int     |   2    |   TRUE   |                            |
+| accounting_depreciation_coefficient | Coefficient of Accounting Depreciation |  decimal   |  5,2   |   TRUE   |                            |
+| accounting_depreciation_amount      | Amount of Accounting Depreciation      |  decimal   |  15,2  |   TRUE   |                            |
+| amount_accounting_residual          | Residual Accounting Value              |  decimal   |  15,2  |  FALSE   | Zostatková účtovná hodnota |
+| posting_date                        | Posting Date                           |    date    |   8    |   TRUE   | Dátum zaúčtovania          |
 
 ### ADIOS Parameters
 

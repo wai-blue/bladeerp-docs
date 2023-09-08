@@ -25,7 +25,7 @@ No constants are defined for this model.
 
 | Column             | Title          | ADIOS Type | Length | Required | Notes                                      |
 | :----------------- | -------------- | :--------: | :----: | :------: | :----------------------------------------- |
-| id                 |                |    int     |   8    | NOT NULL | Jedinečné ID záznamu                       |
+| id                 |                |    int     |   8    | NOT NULL | Unique record ID                       |
 | record_info        | Record Info    |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
 | id_bkp_credit_note | CreditNote     |   lookup   |   8    | NOT NULL | ID dobropisu                               |
 | id_bkp_vat         | VAT Rate       |   lookup   |   8    | NOT NULL | ID sadzby DPH                              |
