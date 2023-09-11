@@ -7,19 +7,19 @@ Model slúži na evidenciu adries. Všetky adresy môžu slúžiť ako doručova
 V modeli nie sú použité konštanty.
 
 ## Properties
-| Property              | Value                                                                        |
-| :-------------------- | :--------------------------------------------------------------------------- |
-| isJunctionTable          | FALSE                                                                        |
-| storeRecordInfo       | TRUE                                                                         |
-| sqlName               | com_contact_addresses                                                        |
-| urlBase               | common/address-book/contact-addresses                                        |
-| lookupSqlValue        | concat(street_1, " ", city, " ", postal_code), id_com_country.lookupSqlValue |
-| tableTitle            | Contact Addresses                                                            |
-| formTitleForInserting | New Contact Address                                                          |
-| formTitleForEditing   | Contact Address                                                              |
-| crud/browse/action    | Common/AddressBook/ContactAddresses                                          |
-| crud/add/action       | Common/AddressBook/ContactAddress/Add                                        |
-| crud/edit/action      | Common/AddressBook/ContactAddress/Edit                                       |
+| Property              | Value                                                                               |
+| :-------------------- | :---------------------------------------------------------------------------------- |
+| isJunctionTable       | FALSE                                                                               |
+| storeRecordInfo       | TRUE                                                                                |
+| sqlName               | com_contact_addresses                                                               |
+| urlBase               | common/address-book/contact-addresses                                               |
+| lookupSqlValue        | concat(street_1, " ", city, " ", postal_code), id_com_country:LOOKUP:lookupSqlValue |
+| tableTitle            | Contact Addresses                                                                   |
+| formTitleForInserting | New Contact Address                                                                 |
+| formTitleForEditing   | Contact Address                                                                     |
+| crud/browse/action    | Common/AddressBook/ContactAddresses                                                 |
+| crud/add/action       | Common/AddressBook/ContactAddress/Add                                               |
+| crud/edit/action      | Common/AddressBook/ContactAddress/Edit                                              |
 
 REVIEW: JG k lookupSqlValue - potrebné vyriešiť ako v ADIOSe vyriešiť použitie "externej" lookup hodnoty
 
@@ -30,10 +30,10 @@ REVIEW: JG k lookupSqlValue - potrebné vyriešiť ako v ADIOSe vyriešiť použ
 | record_info    | Record Info      |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
 | id_com_contact | Contact          |    int     |   8    |   TRUE   | ID kontaktu                                |
 | is_active      | Is Active?       |  boolean   |   1    |   TRUE   | Aktívny kontakt?                           |
-| street_1       | Street - 1. line |  varchar   |  200   |  FALSE   | Ulica - 1. riadok                          |
+| street_1       | Street - 1. line |  varchar   |  200   |   TRUE   | Ulica - 1. riadok                          |
 | street_2       | Street - 2. line |  varchar   |  200   |  FALSE   | Ulica - 2. riadok                          |
-| city           | City             |  varchar   |  200   |  FALSE   | Mesto                                      |
-| postal_code    | ZIP              |  varchar   |   20   |  FALSE   | PSČ                                        |
+| city           | City             |  varchar   |  200   |   TRUE   | Mesto                                      |
+| postal_code    | ZIP              |  varchar   |   20   |   TRUE   | PSČ                                        |
 | id_com_country | Country          |    int     |   8    |  FALSE   | ID krajiny                                 |
 | email          | Contact Email    |  varchar   |  100   |  FALSE   | Kontaktný Email                            |
 | phone          | Contact Phone    |  varchar   |   20   |  FALSE   | Kontaktný Telefón                          |

@@ -25,7 +25,8 @@ Form
   * location
 * defaultValues:
   * is_active = TRUE
+  * id_com_country = com_address_book_settings_default_country_id
 
 ## Parameters Post-processing
 
-  1. Only active contacts are available for `id_com_contact`.
+  1. Only active contacts are available for `id_com_contact`. If the parameter `idContact != NULL` then the field is disabled and value is preselected (`id_com_contact = idContact`).
