@@ -1,4 +1,4 @@
-# Model Bookkeeping/Claim/ClaimAccount
+# Model Bookkeeping/Claim/ClaimHasAccount
 
 ## Introduction
 
@@ -20,9 +20,9 @@ No constants are defined for this model.
 | tableTitle            | Claim Accounts                           |
 | formTitleForInserting | New Claim Account                        |
 | formTitleForEditing   | Claim Account                            |
-| crud/browse/action    | Bookkeeping/Claim/ClaimAccounts          |
-| crud/add/action       | Bookkeeping/Claim/ClaimAccount/Add       |
-| crud/edit/action      | Bookkeeping/Claim/ClaimAccount/Edit      |
+| crud/browse/action    | Bookkeeping/Claim/ClaimHasAccounts       |
+| crud/add/action       | Bookkeeping/Claim/ClaimHasAccount/Add    |
+| crud/edit/action      | Bookkeeping/Claim/ClaimHasAccount/Edit   |
 
 ## Data Structure
 
