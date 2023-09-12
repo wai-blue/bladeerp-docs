@@ -32,6 +32,7 @@ Form
   * is_company = FALSE
   * id_com_contact_person:LOOKUP:is_active = TRUE
   * id_com_contact_address:LOOKUP:is_active = TRUE
+  * id_com_country = com_address_book_settings_default_country_id
 
 ## Parameters Post-processing
 

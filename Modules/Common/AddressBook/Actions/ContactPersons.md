@@ -1,8 +1,8 @@
-# Action Common/AddressBook/ContactAddresses
+# Action Common/AddressBook/ContactPersons
 
 ## Description
 
-List of all addresses related to selected contact from address book.
+List of all natural persons related to selected contact from address book.
 
 ## View
 
@@ -10,18 +10,17 @@ Table
 
 ## Default View Parameters
 
-* model: AApp/Widgets/Common/AddressBook/Models/ContactAddress
+* model: AApp/Widgets/Common/AddressBook/Models/ContactPerson
 * showColumns:
-  * street_1
-  * street_2
-  * city
-  * postal_code
-  * id_com_country
+  * title_before
+  * first_name
+  * middle_name
+  * last_name
+  * title_after
   * email
   * phone
-  * location
-  * notes
-* orderBy: id ASC
+  * url_linkedin
+* orderBy:   com_address_book_settings_default_person_name_ordering ASC
 * rowButtons:
   * deactivate
   * activate

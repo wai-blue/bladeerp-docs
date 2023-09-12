@@ -50,8 +50,6 @@ TODO: JG k lookupSqlValue - podobne ako v modeli ContactAddress, aj tu je potreb
 | website    | description | URL address of contact              |
 |            | default     | https://                            |
 
-REVIEW DD: vid navrh pre website.default
-
 ## Foreign Keys
 | Column                 | Model                                                                                                        | Relation | OnUpdate | OnDelete |
 | :--------------------- | :----------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |

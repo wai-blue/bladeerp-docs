@@ -34,11 +34,12 @@ REVIEW DD: upravene pocas telefonatu, treba skontrolovat
             * id_com_contact_person:LOOKUP:title_after
             * id_com_contact_person:LOOKUP:email
             * id_com_contact_person:LOOKUP:phone
+            * id_com_contact_person:LOOKUP:url_linkedin
 
         * group:
           * title: Primary adress
           * items:
-            * id_com_contact_address:LOOKUP:street
+            * id_com_contact_address:LOOKUP:street_1
             * id_com_contact_address:LOOKUP:street_2
             * id_com_contact_address:LOOKUP:city
             * id_com_contact_address:LOOKUP:postal_code
@@ -50,10 +51,9 @@ REVIEW DD: upravene pocas telefonatu, treba skontrolovat
           * title: Categories of the contact
           * description: In what categories the contact is?
           * inputParams:
-            * model: Widgets/Products/Models/ProductDomainAssignment",
-            * initialTags: ...
+            * model: App/Widgets/Common/AddressBook/Models/ContactCategories
       * Persons
-        * action: Widgets/Common/AddressBook/Actions/ContactPersons/Browse
+        * action: Widgets/Common/AddressBook/Actions/ContactPersons
 TODO: JG doplniť neexistujúcu akciu
         * params:
           * idContact = $params[‘id’]

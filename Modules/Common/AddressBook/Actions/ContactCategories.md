@@ -22,11 +22,9 @@ Table
   * activate
 
 ### rowButtons.deactivate
-
-Zobrazí sa iba na aktívnom riadku (`is_active=TRUE`)
-Po stlačení tlačidla sa nastaví `is_active` daného riadka na FALSE.
+* Zobrazí sa iba na aktívnom riadku (`is_active=TRUE`)
+* Po stlačení tlačidla sa nastaví `is_active` daného riadka na FALSE.
 
 ### rowButtons.activate
-
-Zobrazí sa iba na neaktívnom riadku (`is_active=FALSE`)
-Po stlačení tlačidla sa nastaví `is_active` daného riadka na TRUE.
+* Zobrazí sa iba na neaktívnom riadku (`is_active=FALSE`)
+* Po stlačení tlačidla sa nastaví `is_active` daného riadka na TRUE.
