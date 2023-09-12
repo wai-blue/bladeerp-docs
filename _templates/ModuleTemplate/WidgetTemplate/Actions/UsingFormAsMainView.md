@@ -18,6 +18,8 @@ Form
 * template:
   * full_name
   * closing_date
+  * state
+  * id_user
   * ADIOS/Core/Views/Inputs/Tags:
     * title: Categories of the contact
     * description: In what categories the contact is?
@@ -29,6 +31,11 @@ Form
     * inputParams:
       * param1: value1
       * param2: value2
+* columns:
+  * state
+    * readonly = TRUE
+  * id_user
+    * readonly = TRUE
 * defaultValues:
   * id_user = Predvolený je aktuálny používateľ
   * transaction_date = Predvolený je posledný dátum z účtovného obdobia

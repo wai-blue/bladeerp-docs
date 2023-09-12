@@ -14,7 +14,6 @@ Form
 * displayMode: window
 * template:
   * id_bkp_claim_state
-    * readonly
   * id_com_contact
   * id_bkp_accounting_period
   * id_com_numeric_sequence
@@ -29,6 +28,9 @@ Form
   * exchange_rate
   * price_total
   * notes
+* columns:
+  * id_bkp_claim_state
+    * readonly = TRUE
 * defaultValues:
   * id_bkp_claim_state = stav, ktory ma nastavene "is_default = 1"
 
