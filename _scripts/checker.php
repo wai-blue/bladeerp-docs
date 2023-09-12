@@ -329,7 +329,7 @@ foreach ($modules as $module) {
           ($properties['isJunctionTable'] ?? '') === 'TRUE'
           && strpos($model, 'Has') === FALSE
         ) {
-          $warnings[] = "[{$modelRef}] Model is a cross-table but does not contain 'Has' in it's name.";
+          $warnings[] = "[{$modelRef}] Model is a junction table but does not contain 'Has' in it's name.";
         }
 
         if (

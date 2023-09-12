@@ -26,7 +26,7 @@ No constants are defined for this model.
 
 | Column                                  | Title                            | ADIOS Type | Length | Required | Notes                                             |
 | :-------------------------------------- | -------------------------------- | :--------: | :----: | :------: | :------------------------------------------------ |
-| id                                      |                                  |    int     |   8    |   TRUE   | Unique record ID                              |
+| id                                      |                                  |    int     |   8    |   TRUE   | Unique record ID                                  |
 | record_info                             | Record Info                      |    json    |        |   TRUE   |                                                   |
 | id_bkp_claim_state                      | State                            |   lookup   |   8    |   TRUE   | ID stavu pohľadávky                               |
 | id_com_contact                          | Customer                         |   lookup   |   8    |   TRUE   | ID odberateľa                                     |
@@ -46,8 +46,8 @@ No constants are defined for this model.
 | id_bkp_currency                         | Currency                         |   lookup   |   8    |   TRUE   | ID meny v ktorej sú uvedené sumy                  |
 | exchange_rate                           | Exchange Rate Value              |  decimal   |  15,2  |  FALSE   | Hodnota prevodného kurzu voči  hlavnej mene       |
 | price_total                             | Total Price                      |  decimal   |  15,2  |   TRUE   | Celková hodnota pohľadávky                        |
-| price_paid                              | Paid Price                       |  decimal   |  15,2  |   TRUE   | Uhradená hodnota pohľadávky                       |
-| comment                                 | Description                      |    text    |        |  FALSE   | Poznámka k pohľadávke                             |
+| amount_paid                             | Amount Paid                      |  decimal   |  15,2  |   TRUE   | Uhradená hodnota pohľadávky                       |
+| notes                                   | Notes                            |    text    |        |  FALSE   | Poznámka k pohľadávke                             |
 
 ### ADIOS Parameters
 
@@ -125,7 +125,7 @@ TODO: Model pre Email Template zatiaľ neexistuje. Doplniť, keď bude vytvoren�
 ## Formatters
 
 * Červeným pozadím zvýrazniť riadky s pohľadávkami, ktoré sú po dátume splatnosti (stĺpec **due_date**). 
-* Zeleným pozadím zvýrazniť riadky s pohľadávkami, ktoré sú kompletne zaplatené (stĺpce **price_total**  a **price_paid**).
+* Zeleným pozadím zvýrazniť riadky s pohľadávkami, ktoré sú kompletne zaplatené (stĺpce **price_total**  a **amount_paid**).
 
 ### tableCellHTMLFormatter
 

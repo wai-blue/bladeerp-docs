@@ -47,11 +47,10 @@ No constants are defined for this model.
 | id_bkp_currency                         | Currency                         |   lookup   |   8    |   TRUE   | ID meny v ktorej sú uvedené sumy                        |
 | exchange_rate                           | Exchange Rate Value              |  decimal   |  15,2  |  FALSE   | Hodnota prevodného kurzu voči hlavnej mene              |
 | price_total                             | Total Price                      |  decimal   |  15,2  |   TRUE   | Celková hodnota záväzku                                 |
-| price_paid                              | Paid Price                       |  decimal   |  15,2  |   TRUE   | Uhradená hodnota záväzku                                |
-| comment                                 | Description                      |    text    |        |  FALSE   | Poznámka k záväzku                                      |
+| amount_paid                             | Amount Paid                      |  decimal   |  15,2  |   TRUE   | Uhradená hodnota záväzku                                |
+| notes                                   | Notes                            |    text    |        |  FALSE   | Poznámka k záväzku                                      |
 
 REVIEW DD: auto_recurrency_days ma iny nazov v ## Columns v Google Docs
-REVIEW DD: "Comment" alebo "Description" alebpo "Poznamka"?
 
 ### ADIOS Parameters
 
@@ -127,7 +126,7 @@ Potrebné aktualizovať hodnoty zo záväzku v účtovnej osnove (tab: **bkp_lia
 ## Formatters
 
 * Červeným pozadím zvýrazniť riadky so záväzkami, ktoré sú po dátume splatnosti (stĺpec **due_date**). 
-* Zeleným pozadím zvýrazniť riadky so záväzkami, ktoré sú kompletne zaplatené (stĺpce **price_total** a **price_paid**).
+* Zeleným pozadím zvýrazniť riadky so záväzkami, ktoré sú kompletne zaplatené (stĺpce **price_total** a **amount_paid**).
 
 ### tableCellHTMLFormatter
 
