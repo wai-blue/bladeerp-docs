@@ -37,7 +37,7 @@ No additional ADIOS parameters needs to be defined.
 | Column             | Model                                                | Relation | OnUpdate | OnDelete |
 | :----------------- | :--------------------------------------------------- | :------: | -------- | -------- |
 | id_bkp_credit_note | App/Widgets/Bookkeeping/CreditNote/Models/CreditNote |   1:N    | Cascade  | Cascade  |
-| id_bkp_claim       | App/Widgets/Bookkeeping/Claim/Models/Claim           |   1:N    | Cascade  | Restrict |
+| id_bkp_claim       | App/Widgets/Bookkeeping/Claims/Models/Claim           |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

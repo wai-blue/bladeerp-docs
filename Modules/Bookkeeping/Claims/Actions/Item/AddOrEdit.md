@@ -1,4 +1,4 @@
-# Action Bookkeeping/Claim/Item/AddOrEdit
+# Action Bookkeeping/Claims/Item/AddOrEdit
 
 ## Description
 
@@ -10,7 +10,7 @@ Form
 
 ## Default View Parameters
 
-* model: App/Widgets/Bookkeeping/Claim/Models/ClaimItem
+* model: App/Widgets/Bookkeeping/Claims/Models/Item
 * template:
   * item
   * item_sequence

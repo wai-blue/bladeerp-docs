@@ -1,4 +1,4 @@
-# Model Bookkeeping/Claim/ClaimItemHasService
+# Model Bookkeeping/Claims/ItemService
 
 REVIEW DD: Tato tabulka by mala byt v module, ktory bude spravovat Sluzby.
 
@@ -12,16 +12,16 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                                             |
-| :-------------------- | :---------------------------------------------------------------- |
-| storeRecordInfo       | FALSE                                                             |
-| sqlName               | bkp_claim_item_has_services                                       |
-| urlBase               | bookkeeping/claim/{id_bkp_claim}/item/{id_bkp_claim_item}/service |
-| lookupSqlValue        | {%TABLE%}.name                                                    |
-| tableTitle            | Claim Item Services                                               |
-| formTitleForInserting | New Claim Item Service                                            |
-| formTitleForEditing   | Claim Item Service                                                |
-| isJunctionTable          | TRUE                                                              |
+| Property              | Value                                                              |
+| :-------------------- | :----------------------------------------------------------------- |
+| isJunctionTable       | TRUE                                                               |
+| storeRecordInfo       | FALSE                                                              |
+| sqlName               | bkp_claim_item_has_services                                        |
+| urlBase               | bookkeeping/claims/{id_bkp_claim}/item/{id_bkp_claim_item}/service |
+| lookupSqlValue        | {%TABLE%}.name                                                     |
+| tableTitle            | Claim Item Services                                                |
+| formTitleForInserting | New Claim Item Service                                             |
+| formTitleForEditing   | Claim Item Service                                                 |
 
 ## Data Structure
 
@@ -36,10 +36,10 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column            | Model                                          | Relation | OnUpdate | OnDelete |
-| :---------------- | :--------------------------------------------- | :------: | -------- | -------- |
-| id_bkp_claim_item | App/Widgets/Bookkeeping/Claim/Models/ClaimItem |   1:N    | Cascade  | Cascade  |
-| id_ser_service    | App/Widgets/Warehouse/Products/Models/Service  |   1:N    | Cascade  | Restrict |
+| Column            | Model                                         | Relation | OnUpdate | OnDelete |
+| :---------------- | :-------------------------------------------- | :------: | -------- | -------- |
+| id_bkp_claim_item | App/Widgets/Bookkeeping/Claims/Models/Item    |   1:N    | Cascade  | Cascade  |
+| id_ser_service    | App/Widgets/Warehouse/Products/Models/Service |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

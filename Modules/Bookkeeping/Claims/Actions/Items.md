@@ -1,4 +1,4 @@
-# Action Bookkeeping/Claim/Items
+# Action Bookkeeping/Claims/Items
 
 ## Description
 
@@ -10,7 +10,7 @@ Table
 
 ## Default View Parameters
 
-* model: App/Widgets/Bookkeeping/Claim/Models/ClaimItem
+* model: App/Widgets/Bookkeeping/Claims/Models/Item
 * showColumns:
   * item
   * item_sequence

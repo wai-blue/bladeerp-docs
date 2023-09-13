@@ -1,4 +1,4 @@
-# Action Bookkeeping/Claim/Payment/Add
+# Action Bookkeeping/Claims/Payment/Add
 
 ## Description
 
@@ -10,7 +10,7 @@ Form
 
 ## Default View Parameters
 
-* model: App/Widgets/Bookkeeping/Claim/Models/ClaimPayment
+* model: App/Widgets/Bookkeeping/Claims/Models/Payment
 * template:
   * id_bkp_claim
   * payment_date
