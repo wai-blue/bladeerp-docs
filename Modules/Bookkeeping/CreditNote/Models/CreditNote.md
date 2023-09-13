@@ -27,7 +27,7 @@ No constants are defined for this model.
 
 | Column                                  | Title                            | ADIOS Type | Length | Required | Notes                                             |
 | :-------------------------------------- | -------------------------------- | :--------: | :----: | :------: | :------------------------------------------------ |
-| id                                      |                                  |    int     |   8    | NOT NULL | Unique record ID                              |
+| id                                      |                                  |    int     |   8    | NOT NULL | Unique record ID                                  |
 | record_info                             | Record Info                      |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author        |
 | id_bkp_credit_note_state                | State                            |   lookup   |   8    | NOT NULL | ID stavu dobropisu                                |
 | id_com_contact                          | Customer                         |   lookup   |   8    | NOT NULL | ID odberateľa                                     |
@@ -47,7 +47,7 @@ No constants are defined for this model.
 | id_bkp_currency                         | Currency                         |   lookup   |   8    | NOT NULL | ID meny v ktorej sú uvedené sumy                  |
 | exchange_rate                           | Exchange Rate Value              |  decimal   |  15,2  |   NULL   | Hodnota prevodného kurzu voči  hlavnej mene       |
 | price_total                             | Total Price                      |  decimal   |  15,2  | NOT NULL | Celková hodnota dobropisu                         |
-| price_paid                              | Paid Price                       |  decimal   |  15,2  | NOT NULL | Uhradená hodnota dobropisu                        |
+| amount_paid                             | Amount Paid                      |  decimal   |  15,2  | NOT NULL | Uhradená hodnota dobropisu                        |
 | notes                                   | Notes                            |    text    |        |   NULL   | Poznámka k dobropisu                              |
 
 ### ADIOS Parameters
@@ -123,7 +123,7 @@ Potrebné aktualizovať hodnoty z dobropisu v účtovnej osnove (tab: **bkp_cred
 ## Formatters
 
 * Červeným pozadím zvýrazniť riadky s dobropismi, ktoré sú po dátume splatnosti (stĺpec **due_date**). 
-* Zeleným pozadím zvýrazniť riadky s dobropismi, ktoré sú kompletne zaplatené (stĺpce **price_total**  a **price_paid**).
+* Zeleným pozadím zvýrazniť riadky s dobropismi, ktoré sú kompletne zaplatené (stĺpce **price_total**  a **amount_paid**).
 
 ### tableCellHTMLFormatter
 

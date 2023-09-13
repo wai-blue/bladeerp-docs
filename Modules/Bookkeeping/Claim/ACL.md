@@ -30,9 +30,9 @@ TODO: Dolná tabuľka je podľa Google Docs, urobiť kontrolu prosím a ponecha�
 | ClaimPayments            |        X        |     X      |   X    |
 | ClaimPayment/Add         |        X        |            |   X    |
 | ClaimPayment/Delete      |        X        |            |   X    |
-| ClaimAccounts            |        X        |     X      |   X    |
-| ClaimAccount/Add         |        X        |            |   X    |
-| ClaimAccount/Delete      |        X        |            |   X    |
+| ClaimHasAccounts         |        X        |     X      |   X    |
+| ClaimHasAccount/Add      |        X        |            |   X    |
+| ClaimHasAccount/Delete   |        X        |            |   X    |
 | ClaimOrders              |        X        |     X      |   X    |
 | ClaimOrder/Add           |        X        |            |   X    |
 | ClaimOrder/Delete        |        X        |            |   X    |
