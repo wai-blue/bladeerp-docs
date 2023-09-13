@@ -54,17 +54,10 @@ REVIEW DD: upravene pocas telefonatu, treba skontrolovat
             * model: App/Widgets/Common/AddressBook/Models/Category
       * Persons
         * action: Widgets/Common/AddressBook/Actions/Persons
-TODO: JG doplniť neexistujúcu akciu
         * params:
           * idContact = $params[‘id’]
       * Addresses
         * action: Widgets/Common/AddressBook/Actions/Addresses
-TODO: JG doplniť neexistujúcu akciu
-        * params:
-          * idContact = $params[‘id’]
-      * Categories
-        * action: Widgets/Common/AddressBook/Actions/Categories
-TODO: JG doplniť neexistujúcu akciu
         * params:
           * idContact = $params[‘id’]
 

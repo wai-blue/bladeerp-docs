@@ -1,8 +1,8 @@
-# Action Common/AddressBook/Contact/AddCategory
+# Action Common/AddressBook/Category/Add
 
 ## Description
 
-Create new Contact Category.
+Pridanie novej kategórie.
 
 ## View
 
@@ -13,11 +13,11 @@ Form
 * model: App/Widgets/Common/AddressBook/Models/Category
 * displayMode: window
 * template:
-  * name
-  * notes
+  * columns:
+    * name
+    * notes
 * defaultValues:
   * is_active = TRUE
 
 ## Parameters Post-processing
-
-[No post-processing of default parameters is necessary.]
+  [No post-processing of default parameters is necessary.]

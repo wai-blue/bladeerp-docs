@@ -27,16 +27,13 @@ Table
   * activate
 
 ### rowButtons.deactivate
-* Zobrazí sa iba na aktívnom riadku (`is_active=TRUE`)
-* Po stlačení tlačidla sa nastaví `is_active` daného riadka na FALSE.
+* Shown only on active row (`is_active=TRUE`).
+* Row item is deactivated `is_active=FALSE` onChange.
 
 ### rowButtons.activate
-* Zobrazí sa iba na neaktívnom riadku (`is_active=FALSE`)
-* Po stlačení tlačidla sa nastaví `is_active` daného riadka na TRUE.
+* Shown only on inactive row (`is_active=FALSE`).
+* Row item is re-activated `is_active=TRUE` onChange.
 
 ## Parameters Post-processing
-
-[No post-processing of default parameters is necessary.]
-
-  1. If the parameter `idContact != NULL` then show only addresses for given contact (`id_com_contact = idContact`).
+1. If the parameter `idContact != NULL` then show only addresses for given contact (`id_com_contact = idContact`).
   
