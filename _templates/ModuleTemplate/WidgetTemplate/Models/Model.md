@@ -34,11 +34,11 @@
 | crud/edit/action      | [Module]/[Widget]/[Model]/Edit                                       |
 | junctions             | `json`                                                               |
 |                       | `{`                                                                  |
-|                       | `  "contactHasCategory": {`                                          |
-|                       | `    "junctionModel": "App/Widgets/AddressBook/ContactHasCategory",` |
-|                       | `    "optionsModel": "App/Widgets/AddressBook/ContactCategory",`     |
+|                       | `  "ContactCategory": {`                                          |
+|                       | `    "junctionModel": "App/Widgets/AddressBook/ContactCategory",` |
+|                       | `    "optionsModel": "App/Widgets/AddressBook/Category",`     |
 |                       | `    "masterKeyColumn": "id_com_contact",`                           |
-|                       | `    "optionKeyColumn": "id_com_contact_category",`                  |
+|                       | `    "optionKeyColumn": "id_com_category",`                  |
 |                       | `  }`                                                                |
 |                       | `}`                                                                  |
 

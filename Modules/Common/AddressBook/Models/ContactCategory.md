@@ -1,51 +1,44 @@
 # Model Common/AddressBook/ContactCategory
 
 ## Introduction
-Model slúži na správu kategórií kontaktov.
+Model slúži na prepojenie kontaktov s kategóriami M:N.
 
 ## Constants
 V modeli nie sú použité konštanty.
 
 ## Properties
+| Property              | Value                |
+| :-------------------- | :------------------- |
+| isJunctionTable       | TRUE                 |
+| storeRecordInfo       | FALSE                |
+| sqlName               | com_contact_category |
+| urlBase               | -                    |
+| lookupSqlValue        | -                    |
+| tableTitle            | -                    |
+| formTitleForInserting | -                    |
+| formTitleForEditing   | -                    |
+| crud/browse/action    | -                    |
+| crud/add/action       | -                    |
+| crud/edit/action      | -                    |
 
-| Property              | Value                                   |
-| :-------------------- | :-------------------------------------- |
-| isJunctionTable          | FALSE                                   |
-| sqlName               | com_contact_categories                  |
-| urlBase               | common/address-book/contact-categories  |
-| lookupSqlValue        | {%TABLE%}.name                          |
-| tableTitle            | Contact Categories                      |
-| formTitleForInserting | New Contact Category                    |
-| formTitleForEditing   | Contact Category                        |
-| crud/browse/action    | Common/AddressBook/ContactCategories    |
-| crud/add/action       | Common/AddressBook/ContactCategory/Add  |
-| crud/edit/action      | Common/AddressBook/ContactCategory/Edit |
 
 ## Data Structure
-| Column      | Title       | ADIOS Type | Length | Required | Notes       |
-| :---------- | :---------- | :--------: | :----: | :------: | :---------- |
-| id          |             |    int     |   8    |   TRUE   | ID záznamu  |
-| record_info | Record Info |    json    |        |   TRUE   |             |
-| is_active   | Is Active?  |  boolean   |   1    |   TRUE   | Je aktívna? |
-| name        | Name        |  varchar   |  100   |   TRUE   | Názov       |
-| notes       | Notes       |    text    |        |  FALSE   | Poznámka    |
-
+| Column          | Title    | ADIOS Type | Length | Required | Notes        |
+| :-------------- | :------- | :--------: | :----: | :------: | :----------- |
+| id_com_contact  | Contact  |    int     |   8    |   TRUE   | ID kontaktu  |
+| id_com_category | Category |    int     |   8    |   TRUE   | ID kategórie |
 
 ### ADIOS Parameters
-| Column    | Parameter   | Value                           |
-| :-------- | :---------- | ------------------------------- |
-| is_active | description | Is this category active or not? |
-|           | default     | 1                               |
+No additional ADIOS parameters needs to be defined
 
 ## Foreign Keys
-Model does not contain foreign keys.
+| Column          | Model                                                           | Relation | OnUpdate | OnDelete |
+| :-------------- | :-------------------------------------------------------------- | :------: | -------- | -------- |
+| id_com_contact  | [App/Widgets/Common/AddressBook/Models/Contact](./Contact.md)   |   1:N    | Cascade  | Cascade  |
+| id_com_category | [App/Widgets/Common/AddressBook/Models/Category](./Category.md) |   1:N    | Cascade  | Restrict |
 
 ## Indexes
-| Name      |  Type   | Column + Order |
-| :-------- | :-----: | -------------: |
-| id        | PRIMARY |         id ASC |
-| is_active |  INDEX  | is_active DESC |
-| name      | UNIQUE  |       name ASC |
+Model does not contain indexes.
 
 ## Callbacks
 

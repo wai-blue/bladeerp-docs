@@ -1,4 +1,4 @@
-# Action Common/AddressBook/Contact/AsingContactToCategories
+# Action Common/AddressBook/Contact/AsingToCategories
 
 ## Description
 
@@ -10,7 +10,7 @@ Form
 
 ## Default View Parameters
 
-* model: App/Widgets/Common/AddressBook/Models/ContactHasCategory
+* model: App/Widgets/Common/AddressBook/Models/ContactCategory
 * displayMode: window
 * template:
   * id_com_contact
@@ -18,7 +18,7 @@ Form
       * title: Available Categories
       * description: In what categories the contact is?
       * inputParams:
-        * model: App/Widgets/Common/AddressBook/Models/ContactCategories
+        * model: App/Widgets/Common/AddressBook/Models/Category
 
 ## Parameters Post-processing
 

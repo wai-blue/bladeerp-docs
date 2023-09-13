@@ -1,4 +1,4 @@
-# Action Common/AddressBook/Contact/AddContactCategory
+# Action Common/AddressBook/Contact/AddCategory
 
 ## Description
 
@@ -10,7 +10,7 @@ Form
 
 ## Default View Parameters
 
-* model: App/Widgets/Common/AddressBook/Models/ContactCategory
+* model: App/Widgets/Common/AddressBook/Models/Category
 * displayMode: window
 * template:
   * name

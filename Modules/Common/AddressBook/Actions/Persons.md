@@ -1,4 +1,4 @@
-# Action Common/AddressBook/ContactPersons
+# Action Common/AddressBook/Persons
 
 ## Description
 
@@ -10,7 +10,7 @@ Table
 
 ## Default View Parameters
 
-* model: AApp/Widgets/Common/AddressBook/Models/ContactPerson
+* model: AApp/Widgets/Common/AddressBook/Models/Person
 * showColumns:
   * title_before
   * first_name

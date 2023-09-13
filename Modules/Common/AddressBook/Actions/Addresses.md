@@ -1,4 +1,4 @@
-# Action Common/AddressBook/ContactAddresses
+# Action Common/AddressBook/Addresses
 
 ## Description
 
@@ -10,7 +10,7 @@ Table
 
 ## Default View Parameters
 
-* model: AApp/Widgets/Common/AddressBook/Models/ContactAddress
+* model: AApp/Widgets/Common/AddressBook/Models/Address
 * showColumns:
   * street_1
   * street_2

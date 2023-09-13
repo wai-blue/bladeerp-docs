@@ -1,4 +1,4 @@
-# Common/AddressBook/ContactCategory/Edit
+# Action Common/AddressBook/Category/Edit
 
 ## Description
 
@@ -10,7 +10,7 @@ Form
 
 ## Default View Parameters
 
-* model: App/Widgets/Common/AddressBook/Models/ContactCategory
+* model: App/Widgets/Common/AddressBook/Models/Category
 * displayMode: window
 * template:
   * columns:

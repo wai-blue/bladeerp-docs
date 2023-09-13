@@ -1,7 +1,7 @@
-# Model Common/AddressBook/ContactAddress
+# Model Common/AddressBook/Address
 
 ## Introduction
-Model slúži na evidenciu adries. Všetky adresy môžu slúžiť ako doručovacie. Ako fakturačná slúži primárna adresa (tab: **com_contacts**, col: **id_com_contact_address**)
+Model slúži na evidenciu adries. Všetky adresy môžu slúžiť ako doručovacie. Ako fakturačná slúži primárna adresa (tab: **com_contacts**, col: **id_com_address**)
 
 ## Constants
 V modeli nie sú použité konštanty.
@@ -11,15 +11,15 @@ V modeli nie sú použité konštanty.
 | :-------------------- | :---------------------------------------------------------------------------------- |
 | isJunctionTable       | FALSE                                                                               |
 | storeRecordInfo       | TRUE                                                                                |
-| sqlName               | com_contact_addresses                                                               |
-| urlBase               | common/address-book/contact-addresses                                               |
+| sqlName               | com_addresses                                                                       |
+| urlBase               | common/address-book/addresses                                                       |
 | lookupSqlValue        | concat(street_1, " ", city, " ", postal_code), id_com_country:LOOKUP:lookupSqlValue |
 | tableTitle            | Contact Addresses                                                                   |
 | formTitleForInserting | New Contact Address                                                                 |
 | formTitleForEditing   | Contact Address                                                                     |
-| crud/browse/action    | Common/AddressBook/ContactAddresses                                                 |
-| crud/add/action       | Common/AddressBook/ContactAddress/Add                                               |
-| crud/edit/action      | Common/AddressBook/ContactAddress/Edit                                              |
+| crud/browse/action    | Common/AddressBook/Addresses                                                        |
+| crud/add/action       | Common/AddressBook/Address/Add                                                      |
+| crud/edit/action      | Common/AddressBook/Address/Edit                                                     |
 
 REVIEW: JG k lookupSqlValue - potrebné vyriešiť ako v ADIOSe vyriešiť použitie "externej" lookup hodnoty
 
@@ -51,8 +51,8 @@ REVIEW: JG k lookupSqlValue - potrebné vyriešiť ako v ADIOSe vyriešiť použ
 ## Foreign Keys
 | Column         | Model                                                                                          | Relation | OnUpdate | OnDelete |
 | :------------- | :--------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_com_contact | [App/Widgets/Common/AddressBook/Models/Contact](../../../Common/AddressBook/Models/Contact.md) |   1:N    | Cascade  | Restrict |
-| id_com_country | [App/Widgets/Common/AddressBook/Models/Country](../../../Common/AddressBook/Models/Country.md) |   1:N    | Cascade  | Restrict |
+| id_com_contact | [App/Widgets/Common/AddressBook/Models/Contact](./Contact.md) |   1:N    | Cascade  | Restrict |
+| id_com_country | [App/Widgets/Common/AddressBook/Models/Country](./Country.md) |   1:N    | Cascade  | Restrict |
 
 ## Indexes
 | Name      |  Type   | Column + Order |
