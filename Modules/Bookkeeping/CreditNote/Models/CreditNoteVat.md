@@ -48,7 +48,7 @@ REVIEW DD: Nie je lepsie VAT sadzbu ukladat ako decimal? Ak to dame ako Decimal,
 | Column             | Model                                                | Relation | OnUpdate | OnDelete |
 | :----------------- | :--------------------------------------------------- | :------: | -------- | -------- |
 | id_bkp_credit_note | App/Widgets/Bookkeeping/CreditNote/Models/CreditNote |   1:N    | Cascade  | Cascade  |
-| id_bkp_vat         | App/Widgets/Bookkeeping/MainBook/Models/Vat          |   1:N    | Cascade  | Restrict |
+| id_bkp_vat         | App/Widgets/Bookkeeping/Books/Models/Vat          |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

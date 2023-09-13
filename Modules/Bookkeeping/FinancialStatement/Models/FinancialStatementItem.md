@@ -46,10 +46,10 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column                     | Model                                                                                                                                        | Relation | OnUpdate | OnDelete |
-| :------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------- | :------: | :------: | :------: |
-| id_bkp_book_account        | [App/Widgets/Bookkeeping/MainBook/Models/BookAccount](../../MainBook/Models/BookAccount.md)                                   |   1:N    | Cascade  | Restrict |
-| id_bkp_financial_statement | [App/Widgets/Bookkeeping/FinancialStatement/Models/FinancialStatement](./FinancialStatement.md) |   1:N    | Cascade  | Restrict |
+| Column                     | Model                                                                | Relation | OnUpdate | OnDelete |
+| :------------------------- | :------------------------------------------------------------------- | :------: | :------: | :------: |
+| id_bkp_book_account        | App/Widgets/Bookkeeping/Books/Models/Account                         |   1:N    | Cascade  | Restrict |
+| id_bkp_financial_statement | App/Widgets/Bookkeeping/FinancialStatement/Models/FinancialStatement |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

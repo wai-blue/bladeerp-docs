@@ -18,9 +18,6 @@ No constants are defined for this model.
 | urlBase            | bookkeeping/claims/{id_bkp_claim}/vats |
 | lookupSqlValue     | {%TABLE%}.name                         |
 | tableTitle         | VATs                                   |
-| crud/browse/action | Bookkeeping/Claims/ClaimVats           |
-| crud/add/action    | Bookkeeping/Claims/ClaimVat/Add        |
-| crud/edit/action   | Bookkeeping/Claims/ClaimVat/Edit       |
 
 ## Data Structure
 
@@ -45,7 +42,7 @@ No constants are defined for this model.
 | Column       | Model                                       | Relation | OnUpdate | OnDelete |
 | :----------- | :------------------------------------------ | :------: | -------- | -------- |
 | id_bkp_claim | App/Widgets/Bookkeeping/Claims/Models/Claim |   1:N    | Cascade  | Cascade  |
-| id_bkp_vat   | App/Widgets/Bookkeeping/MainBook/Models/Vat |   1:N    | Cascade  | Restrict |
+| id_bkp_vat   | App/Widgets/Bookkeeping/Books/Models/Vat |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

@@ -46,7 +46,7 @@ No additional ADIOS parameters needs to be defined.
 | Column              | Model                                                | Relation | OnUpdate | OnDelete |
 | :------------------ | :--------------------------------------------------- | :------: | -------- | -------- |
 | id_bkp_currency     | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency |   1:N    | Cascade  | Restrict |
-| id_bkp_book_account | App/Widgets/Bookkeeping/MainBook/Models/BookAccount  |   1:N    | Cascade  | Restrict |
+| id_bkp_book_account | App/Widgets/Bookkeeping/Books/Models/Account         |   1:N    | Cascade  | Restrict |
 | id_user             | ADIOS/Core/Models/User                               |   1:N    | Cascade  | Restrict |
 
 ### Indexes

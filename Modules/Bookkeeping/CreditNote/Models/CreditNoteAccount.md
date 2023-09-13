@@ -41,10 +41,10 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column              | Model                                            | Relation | OnUpdate | OnDelete |
-| :------------------ | :----------------------------------------------- | :------: | -------- | -------- |
+| Column              | Model                                                | Relation | OnUpdate | OnDelete |
+| :------------------ | :--------------------------------------------------- | :------: | -------- | -------- |
 | id_bkp_credit_note  | App/Widgets/Bookkeeping/CreditNote/Models/CreditNote |   1:N    | Cascade  | Restrict |
-| id_bkp_book_account | App/Widgets/Bookkeeping/MainBook/Models/BookAccount  |   1:N    | Cascade  | Restrict |
+| id_bkp_book_account | App/Widgets/Bookkeeping/Books/Models/ccount          |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

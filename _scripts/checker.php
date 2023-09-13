@@ -269,8 +269,6 @@ foreach ($modules as $module) {
         } else if (count($indexes) === 1 && $indexes[0][0] ?? '' == 'id') {
           if ($modelContainsLookup) {
             $errors[] = "[{$modelRef}] Only one index for column `id` defined and model contains lookups.";
-          } else {
-            $warnings[] = "[{$modelRef}] Only one index for column `id` defined.";
           }
         } else {
           foreach ($indexes as $row) {

@@ -23,7 +23,7 @@ Grid
       * name (readonly)
       * closing_date (readonly)
   * B:
-    * action: Widgets/Bookkeeping/MainBook/FinancialStatementsEntries
+    * action: Widgets/Bookkeeping/Books/FinancialStatementsEntries
     * params:
       * idFinancialStatement = $params[‘id’]
 

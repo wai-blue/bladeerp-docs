@@ -20,9 +20,6 @@ No constants are defined for this model.
 | tableTitle            | Claim Accounts                            |
 | formTitleForInserting | New Claim Account                         |
 | formTitleForEditing   | Claim Account                             |
-| crud/browse/action    | Bookkeeping/Claims/ClaimBookAccounts      |
-| crud/add/action       | Bookkeeping/Claims/ClaimBookAccount/Add   |
-| crud/edit/action      | Bookkeeping/Claims/ClaimBookAccount/Edit  |
 
 ## Data Structure
 
@@ -38,10 +35,10 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column              | Model                                               | Relation | OnUpdate | OnDelete |
-| :------------------ | :-------------------------------------------------- | :------: | -------- | -------- |
-| id_bkp_claim        | App/Widgets/Bookkeeping/Claims/Models/Claim         |   1:N    | Cascade  | Restrict |
-| id_bkp_book_account | App/Widgets/Bookkeeping/MainBook/Models/BookAccount |   1:N    | Cascade  | Restrict |
+| Column              | Model                                        | Relation | OnUpdate | OnDelete |
+| :------------------ | :------------------------------------------- | :------: | -------- | -------- |
+| id_bkp_claim        | App/Widgets/Bookkeeping/Claims/Models/Claim  |   1:N    | Cascade  | Restrict |
+| id_bkp_book_account | App/Widgets/Bookkeeping/Books/Models/Account |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

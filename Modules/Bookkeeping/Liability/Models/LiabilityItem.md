@@ -56,7 +56,7 @@ REVIEW DD: id_bkp_vat - neukladat radsej priamo hodnotu VAT v %?
 | :--------------- | :------------------------------------------------- | :------: | -------- | -------- |
 | id_bkp_liability | App/Widgets/Bookkeeping/Liability/Models/Liability |   1:N    | Cascade  | Cascade  |
 | id_war_unit      | App/Widgets/Warehouse/Models/Unit                  |   1:N    | Cascade  | Restrict |
-| id_bkp_vat       | App/Widgets/Bookkeeping/MainBook/Models/Vat        |   1:N    | Cascade  | Restrict |
+| id_bkp_vat       | App/Widgets/Bookkeeping/Books/Models/Vat        |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 
