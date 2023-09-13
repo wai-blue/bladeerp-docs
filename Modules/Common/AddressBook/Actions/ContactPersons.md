@@ -20,7 +20,7 @@ Table
   * email
   * phone
   * url_linkedin
-* orderBy:   com_address_book_settings_default_person_name_ordering ASC
+* orderBy: settings_com_address_book_default_person_name_ordering ASC
 * rowButtons:
   * deactivate
   * activate

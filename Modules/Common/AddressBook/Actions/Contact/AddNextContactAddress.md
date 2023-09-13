@@ -25,7 +25,7 @@ Form
   * location
 * defaultValues:
   * is_active = TRUE
-  * id_com_country = com_address_book_settings_default_country_id
+  * id_com_country: settings_com_address_book_default_country_id
 
 ## Parameters Post-processing
 
