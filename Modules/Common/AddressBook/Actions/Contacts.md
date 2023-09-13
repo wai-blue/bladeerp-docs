@@ -16,16 +16,16 @@ Table
     * empty when `is_company=FALSE`
   * company_business_number
     * empty when `is_company=FALSE`
-  * id_com_contact_person
-  * id_com_contact_address
+  * id_com_person
+  * id_com_address
   * id_bkp_currency
   * language_code
   * is_active
 * orderBy: 
   * is_active DESC
   * company_name ASC
-  * `id_com_contact_person:LOOKUP`.last_name ASC
-  * `id_com_contact_person:LOOKUP`.first_name ASC
+  * `id_com_person:LOOKUP`.last_name ASC
+  * `id_com_person:LOOKUP`.first_name ASC
 * rowButtons:
   * deactivate
   * activate

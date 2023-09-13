@@ -1,4 +1,4 @@
-# Action Common/AddressBook/Contact/AddNextContactPerson
+# Action Common/AddressBook/Contact/AddNextPerson
 
 ## Description
 
@@ -10,7 +10,7 @@ Form
 
 ## Default View Parameters
 
-* model: App/Widgets/Common/AddressBook/Models/ContactPerson
+* model: App/Widgets/Common/AddressBook/Models/Person
 * displayMode: window
 * template:
   * id_com_contact

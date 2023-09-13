@@ -1,4 +1,4 @@
-# Model Common/AddressBook/ContactPerson
+# Model Common/AddressBook/Person
 
 ## Introduction
 Model slúži na evidenciu fyzických osôb a ich údajov
@@ -11,15 +11,15 @@ V modeli nie sú použité konštanty.
 | --------------------- | ------------------------------------------- |
 | isJunctionTable       | FALSE                                       |
 | storeRecordInfo       | TRUE                                        |
-| sqlName               | com_contact_persons                         |
+| sqlName               | com_persons                                 |
 | urlBase               | common/address-book/persons                 |
 | lookupSqlValue        | concat(first_name, last_name, phone, email) |
 | tableTitle            | Persons                                     |
 | formTitleForInserting | New Person                                  |
 | formTitleForEditing   | Person                                      |
-| crud/browse/action    | Common/AddressBook/ContactPersons           |
-| crud/add/action       | Common/AddressBook/ContactPerson/Add        |
-| crud/edit/action      | Common/AddressBook/ContactPerson/Edit       |
+| crud/browse/action    | Common/AddressBook/Persons                  |
+| crud/add/action       | Common/AddressBook/Person/Add               |
+| crud/edit/action      | Common/AddressBook/Person/Edit              |
 
 ## Data Structure
 | Column         | Title        | ADIOS Type | Length | Required | Notes                          |
@@ -43,9 +43,9 @@ V modeli nie sú použité konštanty.
 |              | default     | https://                       |
 
 ## Foreign Keys
-| Column         | Model                                                                                          | Relation | OnUpdate | OnDelete |
-| :------------- | :--------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_com_contact | [App/Widgets/Common/AddressBook/Models/Contact](../../../Common/AddressBook/Models/Contact.md) |   1:N    | Cascade  | Cascade  |
+| Column         | Model                                                         | Relation | OnUpdate | OnDelete |
+| :------------- | :------------------------------------------------------------ | :------: | -------- | -------- |
+| id_com_contact | [App/Widgets/Common/AddressBook/Models/Contact](./Contact.md) |   1:N    | Cascade  | Cascade  |
 
 ## Indexes
 | Name        |  Type   |  Column + Order |

@@ -1,4 +1,4 @@
-# Common/AddressBook/ContactCategories
+# Action Common/AddressBook/Categories
 
 ## Description
 
@@ -10,7 +10,7 @@ Table
 
 ## Default View Parameters
 
-* model: App/Widgets/Common/AddressBook/Models/ContactCategory
+* model: App/Widgets/Common/AddressBook/Models/Category
 * showColumns:
   * name
   * notes

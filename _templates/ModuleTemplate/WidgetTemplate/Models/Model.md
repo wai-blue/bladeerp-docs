@@ -19,27 +19,28 @@
 
 (see ADIOS.repo/src/Core/Model.php)
 
-| Property              | Value                                                                |
-| :-------------------- | :------------------------------------------------------------------- |
-| isJunctionTable       | TRUE/FALSE                                                           |
-| storeRecordInfo       | TRUE/FALSE                                                           |
-| sqlName               | [modulprefix_model_name v množnom čísle]                             |
-| urlBase               | [modul/widget/model-name v množnom čísle]                            |
-| lookupSqlValue        | {%TABLE%}.name                                                       |
-| tableTitle            | [Table Title]                                                        |
-| formTitleForInserting | [New …]                                                              |
-| formTitleForEditing   | [Model Name]                                                         |
-| crud/browse/action    | [Module]/[Widget]/[Model]s (plural)                                  |
-| crud/add/action       | [Module]/[Widget]/[Model]/Add                                        |
-| crud/edit/action      | [Module]/[Widget]/[Model]/Edit                                       |
-| junctions             | `{`                                                                  |
-|                       | `  "contactHasCategory": {`                                          |
-|                       | `    "junctionModel": "App/Widgets/AddressBook/ContactHasCategory",` |
-|                       | `    "optionsModel": "App/Widgets/AddressBook/ContactCategory",`     |
-|                       | `    "masterKeyColumn": "id_com_contact",`                           |
-|                       | `    "optionKeyColumn": "id_com_contact_category",`                  |
-|                       | `  }`                                                                |
-|                       | `}`                                                                  |
+| Property              | Value                                                             |
+| :-------------------- | :---------------------------------------------------------------- |
+| isJunctionTable       | TRUE/FALSE                                                        |
+| storeRecordInfo       | TRUE/FALSE                                                        |
+| sqlName               | [modulprefix_model_name v množnom čísle]                          |
+| urlBase               | [modul/widget/model-name v množnom čísle]                         |
+| lookupSqlValue        | {%TABLE%}.name                                                    |
+| tableTitle            | [Table Title]                                                     |
+| formTitleForInserting | [New …]                                                           |
+| formTitleForEditing   | [Model Name]                                                      |
+| crud/browse/action    | [Module]/[Widget]/[Model]s (plural)                               |
+| crud/add/action       | [Module]/[Widget]/[Model]/Add                                     |
+| crud/edit/action      | [Module]/[Widget]/[Model]/Edit                                    |
+| junctions             | `json`                                                            |
+|                       | `{`                                                               |
+|                       | `  "ContactCategory": {`                                          |
+|                       | `    "junctionModel": "App/Widgets/AddressBook/ContactCategory",` |
+|                       | `    "optionsModel": "App/Widgets/AddressBook/Category",`         |
+|                       | `    "masterKeyColumn": "id_com_contact",`                        |
+|                       | `    "optionKeyColumn": "id_com_category",`                       |
+|                       | `  }`                                                             |
+|                       | `}`                                                               |
 
 ## Data Structure
 

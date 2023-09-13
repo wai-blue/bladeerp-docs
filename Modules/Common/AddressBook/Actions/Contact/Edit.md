@@ -1,4 +1,4 @@
-# Common/AddressBook/Contact/Edit
+# Action Common/AddressBook/Contact/Edit
 
 ## Description
 
@@ -27,43 +27,43 @@ REVIEW DD: upravene pocas telefonatu, treba skontrolovat
         * group:
           * title: Primary contact person
           * items:
-            * id_com_contact_person:LOOKUP:title_before
-            * id_com_contact_person:LOOKUP:first_name
-            * id_com_contact_person:LOOKUP:middle_name
-            * id_com_contact_person:LOOKUP:last_name
-            * id_com_contact_person:LOOKUP:title_after
-            * id_com_contact_person:LOOKUP:email
-            * id_com_contact_person:LOOKUP:phone
-            * id_com_contact_person:LOOKUP:url_linkedin
+            * id_com_person:LOOKUP:title_before
+            * id_com_person:LOOKUP:first_name
+            * id_com_person:LOOKUP:middle_name
+            * id_com_person:LOOKUP:last_name
+            * id_com_person:LOOKUP:title_after
+            * id_com_person:LOOKUP:email
+            * id_com_person:LOOKUP:phone
+            * id_com_person:LOOKUP:url_linkedin
 
         * group:
           * title: Primary adress
           * items:
-            * id_com_contact_address:LOOKUP:street_1
-            * id_com_contact_address:LOOKUP:street_2
-            * id_com_contact_address:LOOKUP:city
-            * id_com_contact_address:LOOKUP:postal_code
-            * id_com_contact_address:LOOKUP:id_com_country
-            * id_com_contact_address:LOOKUP:location
-            * id_com_contact_address:LOOKUP:description
+            * id_com_address:LOOKUP:street_1
+            * id_com_address:LOOKUP:street_2
+            * id_com_address:LOOKUP:city
+            * id_com_address:LOOKUP:postal_code
+            * id_com_address:LOOKUP:id_com_country
+            * id_com_address:LOOKUP:location
+            * id_com_address:LOOKUP:description
 
         * ADIOS/Core/View/Input/Tags:
           * title: Categories of the contact
           * description: In what categories the contact is?
           * inputParams:
-            * model: App/Widgets/Common/AddressBook/Models/ContactCategories
+            * model: App/Widgets/Common/AddressBook/Models/Category
       * Persons
-        * action: Widgets/Common/AddressBook/Actions/ContactPersons
+        * action: Widgets/Common/AddressBook/Actions/Persons
 TODO: JG doplniť neexistujúcu akciu
         * params:
           * idContact = $params[‘id’]
       * Addresses
-        * action: Widgets/Common/AddressBook/Actions/ContactAddresses
+        * action: Widgets/Common/AddressBook/Actions/Addresses
 TODO: JG doplniť neexistujúcu akciu
         * params:
           * idContact = $params[‘id’]
       * Categories
-        * action: Widgets/Common/AddressBook/Actions/ContactCategories
+        * action: Widgets/Common/AddressBook/Actions/Categories
 TODO: JG doplniť neexistujúcu akciu
         * params:
           * idContact = $params[‘id’]

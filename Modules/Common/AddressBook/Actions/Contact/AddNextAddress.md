@@ -1,4 +1,4 @@
-# Action Common/AddressBook/Contact/AddNextContactAddress
+# Action Common/AddressBook/Contact/AddNextAddress
 
 ## Description
 
@@ -10,7 +10,7 @@ Form
 
 ## Default View Parameters
 
-* model: App/Widgets/Common/AddressBook/Models/ContactAddress
+* model: App/Widgets/Common/AddressBook/Models/Address
 * displayMode: window
 * template:
   * id_com_contact
@@ -25,7 +25,7 @@ Form
   * location
 * defaultValues:
   * is_active = TRUE
-  * id_com_country = com_address_book_settings_default_country_id
+  * id_com_country: settings_com_address_book_default_country_id
 
 ## Parameters Post-processing
 

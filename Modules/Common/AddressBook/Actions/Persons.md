@@ -1,4 +1,4 @@
-# Action Common/AddressBook/ContactPersons
+# Action Common/AddressBook/Persons
 
 ## Description
 
@@ -10,7 +10,7 @@ Table
 
 ## Default View Parameters
 
-* model: AApp/Widgets/Common/AddressBook/Models/ContactPerson
+* model: AApp/Widgets/Common/AddressBook/Models/Person
 * showColumns:
   * title_before
   * first_name
@@ -20,7 +20,7 @@ Table
   * email
   * phone
   * url_linkedin
-* orderBy:   com_address_book_settings_default_person_name_ordering ASC
+* orderBy: settings_com_address_book_default_person_name_ordering ASC
 * rowButtons:
   * deactivate
   * activate
