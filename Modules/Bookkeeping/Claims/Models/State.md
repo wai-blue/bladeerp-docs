@@ -1,4 +1,4 @@
-# Model Bookkeeping/Claim/ClaimState
+# Model Bookkeeping/Claims/State
 
 ## Introduction
 
@@ -12,18 +12,19 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                             |
-| --------------------- | --------------------------------- |
-| storeRecordInfo       | TRUE                              |
-| sqlName               | bkp_claim_states                  |
-| urlBase               | bookkeeping/claim/states          |
-| lookupSqlValue        | {%TABLE%}.name                    |
-| tableTitle            | States                            |
-| formTitleForInserting | New State                         |
-| formTitleForEditing   | State                             |
-| crud/browse/action    | Bookkeeping/Claim/States          |
-| crud/add/action       | Bookkeeping/Claim/State/AddOrEdit |
-| crud/edit/action      | Bookkeeping/Claim/State/AddOrEdit |
+| Property              | Value                              |
+| --------------------- | ---------------------------------- |
+| isJunctionTable       | FALSE                              |
+| storeRecordInfo       | TRUE                               |
+| sqlName               | bkp_claim_states                   |
+| urlBase               | bookkeeping/claims/states          |
+| lookupSqlValue        | {%TABLE%}.name                     |
+| tableTitle            | States                             |
+| formTitleForInserting | New State                          |
+| formTitleForEditing   | State                              |
+| crud/browse/action    | Bookkeeping/Claims/States          |
+| crud/add/action       | Bookkeeping/Claims/State/AddOrEdit |
+| crud/edit/action      | Bookkeeping/Claims/State/AddOrEdit |
 
 ## Data Structure
 
@@ -43,14 +44,14 @@ No constants are defined for this model.
 
 ### ADIOS Parameters
 
-| Column                      | Parameter   | Value                                                                   |
-| :-------------------------- | :---------- | ----------------------------------------------------------------------- |
-| is_default                  | description | Is this the default state or not?                                       |
-| state_sequence              | description | Order of the state in input lists.                                      |
-| is_send_mail                | description | Should a sequence code and a variable symbol be assigned in this state? |
-| is_send_claim               | description | Attach the claim to email?                                              |
-| is_allowed_update           | description | Is update allowed in this state?                                        |
-| is_allowed_delete           | description | Is it allowed to delete in this state?                                  |
+| Column            | Parameter   | Value                                                                   |
+| :---------------- | :---------- | ----------------------------------------------------------------------- |
+| is_default        | description | Is this the default state or not?                                       |
+| state_sequence    | description | Order of the state in input lists.                                      |
+| is_send_mail      | description | Should a sequence code and a variable symbol be assigned in this state? |
+| is_send_claim     | description | Attach the claim to email?                                              |
+| is_allowed_update | description | Is update allowed in this state?                                        |
+| is_allowed_delete | description | Is it allowed to delete in this state?                                  |
 
 ### Foreign Keys
 
@@ -58,19 +59,21 @@ Model does not contain foreign keys.
 
 ### Indexes
 
-| Name                        | Type    |                   Column + Order |
-| :-------------------------- | :------ | -------------------------------: |
-| id                          | PRIMARY |                           id ASC |
-| name                        | INDEX   |                         name ASC |
-| is_available                | INDEX   |                is_available DESC |
-| is_default                  | INDEX   |                  is_default DESC |
-| state_sequence              | INDEX   |              state_sequence DESC |
-| is_set_sequence_code        | INDEX   |        is_set_sequence_code DESC |
-| is_send_mail                | INDEX   |                is_send_mail DESC |
-| is_send_claim               | INDEX   |               is_send_claim DESC |
-| is_allowed_update           | INDEX   |           is_allowed_update DESC |
-| is_allowed_delete           | INDEX   |           is_allowed_delete DESC |
+| Name                 | Type    |            Column + Order |
+| :------------------- | :------ | ------------------------: |
+| id                   | PRIMARY |                    id ASC |
+| name                 | INDEX   |                  name ASC |
+| is_available         | INDEX   |         is_available DESC |
+| is_default           | INDEX   |           is_default DESC |
+| state_sequence       | INDEX   |       state_sequence DESC |
+| is_set_sequence_code | INDEX   | is_set_sequence_code DESC |
+| is_send_mail         | INDEX   |         is_send_mail DESC |
+| is_send_claim        | INDEX   |        is_send_claim DESC |
+| is_allowed_update    | INDEX   |    is_allowed_update DESC |
+| is_allowed_delete    | INDEX   |    is_allowed_delete DESC |
+
 TODO: | id_com_mail_template        | INDEX   |        id_com_mail_template DESC |
+
 ## Callbacks
 
 ### onBeforeInsert

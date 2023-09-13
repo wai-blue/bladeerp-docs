@@ -1,4 +1,4 @@
-# Action Bookkeeping/Claim/Payments
+# Action Bookkeeping/Claims/Payments
 
 ## Description
 
@@ -11,7 +11,7 @@ Table
 
 ## Default View Parameters
 
-* model: App/Widgets/Bookkeeping/Claim/Models/ClaimPayment
+* model: App/Widgets/Bookkeeping/Claims/Models/Payment
 * showColumns:
   * id_bkp_claim
   * payment_date

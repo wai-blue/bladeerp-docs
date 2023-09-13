@@ -32,8 +32,7 @@
 | crud/browse/action    | [Module]/[Widget]/[Model]s (plural)                                  |
 | crud/add/action       | [Module]/[Widget]/[Model]/Add                                        |
 | crud/edit/action      | [Module]/[Widget]/[Model]/Edit                                       |
-| junctions             | `json`                                                               |
-|                       | `{`                                                                  |
+| junctions             | `{`                                                                  |
 |                       | `  "contactHasCategory": {`                                          |
 |                       | `    "junctionModel": "App/Widgets/AddressBook/ContactHasCategory",` |
 |                       | `    "optionsModel": "App/Widgets/AddressBook/ContactCategory",`     |
@@ -41,8 +40,6 @@
 |                       | `    "optionKeyColumn": "id_com_contact_category",`                  |
 |                       | `  }`                                                                |
 |                       | `}`                                                                  |
-
-TODO: dopracovat priklad pre junctions
 
 ## Data Structure
 

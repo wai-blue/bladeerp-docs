@@ -1,8 +1,8 @@
-# Action Bookkeeping/Claim/Claim/Add
+# Action Bookkeeping/Claims/Claim/Add
 
 ## Description
 
-Úprava existujúcej pohľadávky.
+Vytvorenie novej pohľadávky.
 
 ## View
 
@@ -10,7 +10,7 @@ Form
 
 ## Default View Parameters
 
-* model: App/Widgets/Bookkeeping/Claim/Models/Claim
+* model: App/Widgets/Bookkeeping/Claims/Models/Claim
 * displayMode: window
 * template:
   * id_bkp_claim_state
@@ -28,6 +28,11 @@ Form
   * exchange_rate
   * price_total
   * notes
+* columns:
+  * id_bkp_claim_state
+    * readonly = TRUE
+* defaultValues:
+  * id_bkp_claim_state = stav, ktory ma nastavene "is_default = 1"
 
 ## Parameters Post-processing
 

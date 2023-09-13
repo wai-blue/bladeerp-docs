@@ -1,4 +1,4 @@
-# Action Bookkeeping/Claim/State/AddOrEdit
+# Action Bookkeeping/Claims/State/AddOrEdit
 
 ## Description
 
@@ -10,7 +10,7 @@ Form
 
 ## Default View Parameters
 
-* model: App/Widgets/Bookkeeping/Claim/Models/ClaimState
+* model: App/Widgets/Bookkeeping/Claims/Models/State
 * displayMode: window
 * template:
   * name

@@ -1,4 +1,4 @@
-# Model Bookkeeping/Claim/Claim
+# Model Bookkeeping/Claims/Claim
 ## Introduction
 
 Tabuľka slúži na ukladanie základných údajov o pohľadávke.
@@ -9,18 +9,18 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                        |
-| --------------------- | ---------------------------- |
-| storeRecordInfo       | TRUE                         |
-| lookupSqlValue        | {%TABLE%}.name               |
-| formTitleForEditing   | Claim                        |
-| tableTitle            | Claims                       |
-| sqlName               | bkp_claims                   |
-| urlBase               | bookkeeping/claim/claims     |
-| formTitleForInserting | New Claim                    |
-| crud/browse/action    | Bookkeeping/Claim/Claims     |
-| crud/add/action       | Bookkeeping/Claim/Claim/Add  |
-| crud/edit/action      | Bookkeeping/Claim/Claim/Edit |
+| Property              | Value                         |
+| --------------------- | ----------------------------- |
+| storeRecordInfo       | TRUE                          |
+| lookupSqlValue        | {%TABLE%}.name                |
+| formTitleForEditing   | Claim                         |
+| tableTitle            | Claims                        |
+| sqlName               | bkp_claims                    |
+| urlBase               | bookkeeping/claims/claims     |
+| formTitleForInserting | New Claim                     |
+| crud/browse/action    | Bookkeeping/Claims/Claims     |
+| crud/add/action       | Bookkeeping/Claims/Claim/Add  |
+| crud/edit/action      | Bookkeeping/Claims/Claim/Edit |
 
 ## Data Structure
 
@@ -57,16 +57,17 @@ No constants are defined for this model.
 
 ### Foreign Keys
 
-| Column                                  | Model                                                                                          | Relation | OnUpdate | OnDelete |
-| :-------------------------------------- | :--------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_bkp_claim_state                      | App/Widgets/Bookkeeping/Claim/Models/ClaimState                                                |   1:N    | Cascade  | Restrict |
-| id_bkp_accounting_period                | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod                                       |   1:N    | Cascade  | Restrict |
-| id_com_numeric_sequence                 | App/Widgets/Common/NumericSequence/Models/NumericSequence                                      |   1:N    | Cascade  | Restrict |
-| id_com_numeric_sequence_variable_symbol | App/Widgets/Common/NumericSequence/Models/NumericSequence                                      |   1:N    | Cascade  | Restrict |
-| id_bkp_currency                         | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency                                           |   1:N    | Cascade  | Restrict |
-| id_com_contact                          | [App/Widgets/Common/AddressBook/Models/Contact](../../../Common/AddressBook/Models/Contact.md) |   1:N    | Cascade  | Restrict |
+| Column                                  | Model                                                     | Relation | OnUpdate | OnDelete |
+| :-------------------------------------- | :-------------------------------------------------------- | :------: | -------- | -------- |
+| id_bkp_claim_state                      | App/Widgets/Bookkeeping/Claims/Models/State               |   1:N    | Cascade  | Restrict |
+| id_bkp_accounting_period                | App/Widgets/Bookkeeping/MainBook/Models/AccountingPeriod  |   1:N    | Cascade  | Restrict |
+| id_com_numeric_sequence                 | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
+| id_com_numeric_sequence_variable_symbol | App/Widgets/Common/NumericSequence/Models/NumericSequence |   1:N    | Cascade  | Restrict |
+| id_bkp_currency                         | App/Widgets/Bookkeeping/ExchangeRate/Models/Currency      |   1:N    | Cascade  | Restrict |
+| id_com_contact                          | App/Widgets/Common/AddressBook/Models/Contact             |   1:N    | Cascade  | Restrict |
 
 TODO: Model pre Email Template zatiaľ neexistuje. Doplniť, keď bude vytvorený.
+
 ### Indexes
 
 | Name                                    |  Type   |                              Column + Order |

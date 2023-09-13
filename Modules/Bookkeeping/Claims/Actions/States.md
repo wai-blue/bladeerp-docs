@@ -1,4 +1,4 @@
-# Action Bookkeeping/Claim/States
+# Action Bookkeeping/Claims/States
 
 ## Description
 
@@ -10,7 +10,7 @@ Table
 
 ## Default View Parameters
 
-* model: App/Widgets/Bookkeeping/Claim/Models/ClaimState
+* model: App/Widgets/Bookkeeping/Claims/Models/State
 * showColumns:
   * name
   * is_default

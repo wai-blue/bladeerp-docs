@@ -1,4 +1,4 @@
-# Model Bookkeeping/Claim/ClaimItem
+# Model Bookkeeping/Claims/Item
 
 ## Introduction
 
@@ -10,18 +10,19 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                  |
-| --------------------- | -------------------------------------- |
-| storeRecordInfo       | TRUE                                   |
-| sqlName               | bkp_claim_items                        |
-| urlBase               | bookkeeping/claim/{id_bkp_claim}/items |
-| lookupSqlValue        | {%TABLE%}.name                         |
-| tableTitle            | Claim Items                            |
-| formTitleForInserting | New Claim Item                         |
-| formTitleForEditing   | Claim Item                             |
-| crud/browse/action    | Bookkeeping/Claim/Items                |
-| crud/add/action       | Bookkeeping/Claim/Item/AddOrEdit       |
-| crud/edit/action      | Bookkeeping/Claim/Item/AddOrEdit       |
+| Property              | Value                                   |
+| --------------------- | --------------------------------------- |
+| isJunctionTable       | FALSE                                   |
+| storeRecordInfo       | TRUE                                    |
+| sqlName               | bkp_claim_items                         |
+| urlBase               | bookkeeping/claims/{id_bkp_claim}/items |
+| lookupSqlValue        | {%TABLE%}.name                          |
+| tableTitle            | Claim Items                             |
+| formTitleForInserting | New Claim Item                          |
+| formTitleForEditing   | Claim Item                              |
+| crud/browse/action    | Bookkeeping/Claims/Items                |
+| crud/add/action       | Bookkeeping/Claims/Item/AddOrEdit       |
+| crud/edit/action      | Bookkeeping/Claims/Item/AddOrEdit       |
 
 ## Data Structure
 
@@ -57,7 +58,7 @@ REVIEW DD: Nie je lepsie VAT sadzbu ukladat ako decimal? Ak to dame ako Decimal,
 
 | Column       | Model                                       | Relation | OnUpdate | OnDelete |
 | :----------- | :------------------------------------------ | :------: | -------- | -------- |
-| id_bkp_claim | App/Widgets/Bookkeeping/Claim/Models/Claim  |   1:N    | Cascade  | Cascade  |
+| id_bkp_claim | App/Widgets/Bookkeeping/Claims/Models/Claim |   1:N    | Cascade  | Cascade  |
 | id_whs_unit  | warApp/Widgets/Warehouse/Models/Unit_units  |   1:N    | Cascade  | Restrict |
 | id_bkp_vat   | App/Widgets/Bookkeeping/MainBook/Models/Vat |   1:N    | Cascade  | Restrict |
 

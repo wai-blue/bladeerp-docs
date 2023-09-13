@@ -1,4 +1,4 @@
-# Model Bookkeeping/Claim/ClaimHasAccount
+# Model Bookkeeping/Claims/ClaimBookAccount
 
 ## Introduction
 
@@ -10,19 +10,19 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                    |
-| :-------------------- | :--------------------------------------- |
-| isJunctionTable       | TRUE                                     |
-| storeRecordInfo       | FALSE                                    |
-| sqlName               | bkp_claim_accounts                       |
-| urlBase               | bookkeeping/claim/{id_bkp_claim}/account |
-| lookupSqlValue        | {%TABLE%}.name                           |
-| tableTitle            | Claim Accounts                           |
-| formTitleForInserting | New Claim Account                        |
-| formTitleForEditing   | Claim Account                            |
-| crud/browse/action    | Bookkeeping/Claim/ClaimHasAccounts       |
-| crud/add/action       | Bookkeeping/Claim/ClaimHasAccount/Add    |
-| crud/edit/action      | Bookkeeping/Claim/ClaimHasAccount/Edit   |
+| Property              | Value                                     |
+| :-------------------- | :---------------------------------------- |
+| isJunctionTable       | TRUE                                      |
+| storeRecordInfo       | FALSE                                     |
+| sqlName               | bkp_claim_accounts                        |
+| urlBase               | bookkeeping/claims/{id_bkp_claim}/account |
+| lookupSqlValue        | {%TABLE%}.name                            |
+| tableTitle            | Claim Accounts                            |
+| formTitleForInserting | New Claim Account                         |
+| formTitleForEditing   | Claim Account                             |
+| crud/browse/action    | Bookkeeping/Claims/ClaimBookAccounts      |
+| crud/add/action       | Bookkeeping/Claims/ClaimBookAccount/Add   |
+| crud/edit/action      | Bookkeeping/Claims/ClaimBookAccount/Edit  |
 
 ## Data Structure
 
@@ -40,7 +40,7 @@ No additional ADIOS parameters needs to be defined.
 
 | Column              | Model                                               | Relation | OnUpdate | OnDelete |
 | :------------------ | :-------------------------------------------------- | :------: | -------- | -------- |
-| id_bkp_claim        | App/Widgets/Bookkeeping/Claim/Models/Claim          |   1:N    | Cascade  | Restrict |
+| id_bkp_claim        | App/Widgets/Bookkeeping/Claims/Models/Claim         |   1:N    | Cascade  | Restrict |
 | id_bkp_book_account | App/Widgets/Bookkeeping/MainBook/Models/BookAccount |   1:N    | Cascade  | Restrict |
 
 ### Indexes

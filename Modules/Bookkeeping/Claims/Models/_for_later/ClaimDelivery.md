@@ -1,4 +1,4 @@
-# Model Bookkeeping/Claim/ClaimDelivery
+# Model Bookkeeping/Claims/ClaimDelivery
 
 ## Introduction
 
@@ -10,31 +10,29 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                       |
-| :-------------------- | :------------------------------------------ |
-| storeRecordInfo       | TRUE                                        |
-| sqlName               | bkp_claim_deliveries                        |
-| urlBase               | bookkeeping/claim/{id_bkp_claim}/deliveries |
-| lookupSqlValue        | {%TABLE%}.name                              |
-| tableTitle            | Claim Deliveries                            |
-| formTitleForInserting | New Claim Delivery                          |
-| formTitleForEditing   | Claim Delivery                              |
-| crud/browse/action    | Bookkeeping/Claim/ClaimDeliveries           |
-| crud/add/action       | Bookkeeping/Claim/ClaimDelivery/Add         |
-| crud/edit/action      | Bookkeeping/Claim/ClaimDelivery/Edit        |
+| Property              | Value                                        |
+| :-------------------- | :------------------------------------------- |
+| isJunctionTable       | TRUE                                         |
+| storeRecordInfo       | TRUE                                         |
+| sqlName               | bkp_claim_deliveries                         |
+| urlBase               | bookkeeping/claims/{id_bkp_claim}/deliveries |
+| lookupSqlValue        | {%TABLE%}.name                               |
+| tableTitle            | Claim Deliveries                             |
+| formTitleForInserting | New Claim Delivery                           |
+| formTitleForEditing   | Claim Delivery                               |
+| crud/browse/action    | Bookkeeping/Claims/ClaimDeliveries           |
+| crud/add/action       | Bookkeeping/Claims/ClaimDelivery/Add         |
+| crud/edit/action      | Bookkeeping/Claims/ClaimDelivery/Edit        |
 
 ## Data Structure
 
 | Column          | Title          | ADIOS Type | Length | Required | Notes                                |
 | :-------------- | -------------- | :--------: | :----: | :------: | :----------------------------------- |
-| id              |                |    int     |   8    |   TRUE   | Unique record ID                 |
 | record_info     | Record Info    |    json    |        |   TRUE   |                                      |
 | id_bkp_claim    | Claim          |   lookup   |   8    |   TRUE   | ID pohľadávky                        |
 | id_log_delivery | Delivery       |   lookup   |   8    |   TRUE   | ID dopravy                           |
 | delivery_price  | Delivery Price |  decimal   |  15,2  |   TRUE   | Cena za dopravu                      |
 | cash_fee        | Cash Fee       |  decimal   |  15,2  |  FALSE   | Poplatok za manipulaciu s hotovostou |
-
-REVIEW DD: preco id_log_delivery a nie iba id_delivery?
 
 ### ADIOS Parameters
 
@@ -44,7 +42,7 @@ No additional ADIOS parameters needs to be defined.
 
 | Column          | Model                                          | Relation | OnUpdate | OnDelete |
 | :-------------- | :--------------------------------------------- | :------: | -------- | -------- |
-| id_bkp_claim    | App/Widgets/Bookkeeping/Claim/Models/Claim         |   1:N    | Cascade  | Cascade  |
+| id_bkp_claim    | App/Widgets/Bookkeeping/Claims/Models/Claim    |   1:N    | Cascade  | Cascade  |
 | id_log_delivery | App/Widgets/Logistics/Delivery/Models/Delivery |   1:N    | Cascade  | Restrict |
 
 ### Indexes

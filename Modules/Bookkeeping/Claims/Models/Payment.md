@@ -1,4 +1,4 @@
-# Model Bookkeeping/Claim/ClaimPayment
+# Model Bookkeeping/Payment
 
 ## Introduction
 
@@ -10,18 +10,19 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                     |
-| :-------------------- | :---------------------------------------- |
-| storeRecordInfo       | TRUE                                      |
-| sqlName               | bkp_claim_payments                        |
-| urlBase               | bookkeeping/claim/{id_bkp_claim}/payments |
-| lookupSqlValue        | {%TABLE%}.name                            |
-| tableTitle            | Payments                                  |
-| formTitleForInserting | New Payment                               |
-| formTitleForEditing   | Payment                                   |
-| crud/browse/action    | Bookkeeping/Claim/Payments                |
-| crud/add/action       | Bookkeeping/Claim/Payment/AddOrEdit       |
-| crud/edit/action      | Bookkeeping/Claim/Payment/AddOrEdit       |
+| Property              | Value                                      |
+| :-------------------- | :----------------------------------------- |
+| isJunctionTable       | FALSE                                      |
+| storeRecordInfo       | TRUE                                       |
+| sqlName               | bkp_claim_payments                         |
+| urlBase               | bookkeeping/claims/{id_bkp_claim}/payments |
+| lookupSqlValue        | {%TABLE%}.name                             |
+| tableTitle            | Payments                                   |
+| formTitleForInserting | New Payment                                |
+| formTitleForEditing   | Payment                                    |
+| crud/browse/action    | Bookkeeping/Claims/Payments                |
+| crud/add/action       | Bookkeeping/Claims/Payment/AddOrEdit       |
+| crud/edit/action      | Bookkeeping/Claims/Payment/AddOrEdit       |
 
 ## Data Structure
 
@@ -39,9 +40,9 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column       | Model                                      | Relation | OnUpdate | OnDelete |
-| :----------- | :----------------------------------------- | :------: | -------- | -------- |
-| id_bkp_claim | App/Widgets/Bookkeeping/Claim/Models/Claim |   1:N    | Cascade  | Restrict |
+| Column       | Model                                       | Relation | OnUpdate | OnDelete |
+| :----------- | :------------------------------------------ | :------: | -------- | -------- |
+| id_bkp_claim | App/Widgets/Bookkeeping/Claims/Models/Claim |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

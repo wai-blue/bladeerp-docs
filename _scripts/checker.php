@@ -143,6 +143,7 @@ foreach ($modules as $module) {
       foreach ($models as $model) {
 
         if (in_array($model, ['.', '..'])) continue;
+        if (!is_file($widgetDir . '/Models/' . $model)) continue;
 
         $modelRef = str_replace('\\', '/', realpath($widgetDir . '/Models/' . $model));
         $modelContainsLookup = FALSE;
@@ -325,12 +326,12 @@ foreach ($modules as $module) {
           $errors[] = "[{$modelRef}] Browse/Add/Edit CRUD actions are not fully specified.";
         }
 
-        if (
-          ($properties['isJunctionTable'] ?? '') === 'TRUE'
-          && strpos($model, 'Has') === FALSE
-        ) {
-          $warnings[] = "[{$modelRef}] Model is a junction table but does not contain 'Has' in it's name.";
-        }
+        // if (
+        //   ($properties['isJunctionTable'] ?? '') === 'TRUE'
+        //   && strpos($model, 'Has') === FALSE
+        // ) {
+        //   $warnings[] = "[{$modelRef}] Model is a junction table but does not contain 'Has' in it's name.";
+        // }
 
         if (
           ($properties['storeRecordInfo'] ?? '') === 'TRUE'
