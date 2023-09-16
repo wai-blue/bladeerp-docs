@@ -25,7 +25,7 @@ Grid
       * amount (readonly)
       * is_accounted
   * B:
-    * action: Widgets/Bookkeeping/Books/TransactionItems
+    * action: Widgets/Bookkeeping/Books/Transaction/Items
     * params:
       * idTransaction = $params[‘id’]
 

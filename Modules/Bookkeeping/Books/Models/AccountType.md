@@ -1,4 +1,4 @@
-# Model Bookkeeping/Books/AccountType
+# Model Bookkeeping/Books/Account/Type
 
 ## Introduction
 
@@ -10,18 +10,18 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                   |
-| :-------------------- | :-------------------------------------- |
-| storeRecordInfo       | TRUE                                    |
-| sqlName               | bkp_book_account_types                  |
-| urlBase               | bookkeeping/books/account-types         |
-| lookupSqlValue        | {%TABLE%}.name                          |
-| tableTitle            | Book Account Types                      |
-| formTitleForInserting | New Type                                |
-| formTitleForEditing   | Account Type                            |
-| crud/browse/action    | Bookkeeping/Books/AccountTypes          |
-| crud/add/action       | Bookkeeping/Books/AccountType/AddOrEdit |
-| crud/edit/action      | Bookkeeping/Books/AccountType/AddOrEdit |
+| Property              | Value                                    |
+| :-------------------- | :--------------------------------------- |
+| storeRecordInfo       | TRUE                                     |
+| sqlName               | bkp_book_account_types                   |
+| urlBase               | bookkeeping/books/account-types          |
+| lookupSqlValue        | {%TABLE%}.name                           |
+| tableTitle            | Book Account Types                       |
+| formTitleForInserting | New Type                                 |
+| formTitleForEditing   | Account Type                             |
+| crud/browse/action    | Bookkeeping/Books/Account/Types          |
+| crud/add/action       | Bookkeeping/Books/Account/Type/AddOrEdit |
+| crud/edit/action      | Bookkeeping/Books/Account/Type/AddOrEdit |
 
 ## Data Structure
 

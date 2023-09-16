@@ -260,6 +260,14 @@ foreach ($modules as $module) {
           'Column + Order',
         ]);
 
+        if (!is_array($indexes)) $indexes = [];
+
+        foreach ($indexes as $row) {
+          if (isset($columns[$row[0]])) {
+            $columns[$row[0]]['index'] = $row;
+          }
+        }
+
         if ($indexes === NULL || count($indexes) === 0) {
           if ($modelContainsLookup) {
             $errors[] = "[{$modelRef}] Indexes are not defined or table structure is invalid and model contains lookups.";
@@ -269,12 +277,6 @@ foreach ($modules as $module) {
         } else if (count($indexes) === 1 && $indexes[0][0] ?? '' == 'id') {
           if ($modelContainsLookup) {
             $errors[] = "[{$modelRef}] Only one index for column `id` defined and model contains lookups.";
-          }
-        } else {
-          foreach ($indexes as $row) {
-            if (isset($columns[$row[0]])) {
-              $columns[$row[0]]['index'] = $row;
-            }
           }
         }
 
