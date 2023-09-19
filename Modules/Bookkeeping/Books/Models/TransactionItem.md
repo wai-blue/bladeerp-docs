@@ -10,20 +10,20 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                     |
-| :-------------------- | :---------------------------------------- |
-| storeRecordInfo       | TRUE                                      |
-| sqlName               | bkp_transaction_entries                   |
-| urlBase               | bookkeeping/books/transaction-entries |
-| lookupSqlValue        |                                           |
-| tableTitle            | Transaction Entries                       |
-| formTitleForInserting | New Transaction Item                      |
-| formTitleForEditing   | Transaction Item                          |
-| formAddButtonText     | Add Transaction Item                      |
-| formAddButtonText     | Update Transaction Item                   |
-| crud/browse/action    | Bookkeeping/Books/TransactionItems     |
-| crud/add/action       | Bookkeeping/Books/TransactionItem/Add  |
-| crud/edit/action      | Bookkeeping/Books/TransactionItem/Edit |
+| Property              | Value                                   |
+| :-------------------- | :-------------------------------------- |
+| storeRecordInfo       | TRUE                                    |
+| sqlName               | bkp_transaction_items                   |
+| urlBase               | bookkeeping/books/transaction-items     |
+| lookupSqlValue        |                                         |
+| tableTitle            | Transaction Items                       |
+| formTitleForInserting | New Transaction Item                    |
+| formTitleForEditing   | Transaction Item                        |
+| formAddButtonText     | Add Transaction Item                    |
+| formAddButtonText     | Update Transaction Item                 |
+| crud/browse/action    | Bookkeeping/Books/Transaction/Items     |
+| crud/add/action       | Bookkeeping/Books/Transaction/Item/Add  |
+| crud/edit/action      | Bookkeeping/Books/Transaction/Item/Edit |
 
 ## Data Structure
 
