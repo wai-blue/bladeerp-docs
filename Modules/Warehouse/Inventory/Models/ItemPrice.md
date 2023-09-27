@@ -4,8 +4,7 @@
 
 Prices of inventory items.
 **Rules:**
-* Current price of the item is the one which is valid TODAY (e.g. `valid_from_datetime < now() AND valid_to_datetime==NULL AND id_com_contact==NULL`).
-* There can exist additional current price(s) but only for given customer(s). (`id_com_contact!=NULL`) 
+* Current price of the item is the one which is valid TODAY (e.g. `valid_from_datetime < now() AND valid_to_datetime==NULL`).
 * When new price entered the previous one should NOT be deleted but only its end validity (`valid_to_datetime`) should be properly set. 
 
 ## Constants
@@ -20,7 +19,6 @@ No constants are defined for this model.
 | storeRecordInfo       | TRUE                                                                      |
 | sqlName               | whs_inventory_item_prices                                                 |
 | urlBase               | warehouse/inventory/item/{id_whs_inventory_item}/prices                   |
-| lookupSqlValue        | -                                                                         |
 | tableTitle            | Item Prices                                                               |
 | formTitleForInserting | New Item Price                                                            |
 | formTitleForEditing   | Item Price                                                                |
@@ -46,7 +44,8 @@ No constants are defined for this model.
 | sell_price            | Sell Price         |  decimal   |   8    |   TRUE   |                            |
 | valid_from_datetime   | Valid From         |  datetime  |        |   TRUE   |                            |
 | valid_to_datetime     | Valid Till         |  datetime  |        |  FALSE   |                            |
-| id_com_contact        | Price For Customer |   lookup   |        |  FALSE   | Special price for customer |
+
+TODO: Prices base on price levels (e.g. customers in levels), packages
 
 ### ADIOS Parameters
 

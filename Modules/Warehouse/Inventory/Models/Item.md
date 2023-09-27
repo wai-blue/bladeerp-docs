@@ -6,23 +6,27 @@ Invenoty item is a distinct product, part, or item that a company procures, manu
 
 ## Constants
 
-No constants are defined for this model.
+### Item Types Enums
+| Constant                        | Value | Description        |
+| :------------------------------ | :---: | :----------------- |
+| WHS_INVENTORY_ITEM_TYPE_PRODUCT |   1   | Item is PRODUCT    |
+| WHS_INVENTORY_ITEM_TYPE_SERVICE |   2   | Item is SERVICE    |
 
 ## Properties
 
-| Property              | Value                              |
-| :-------------------- | :--------------------------------- |
-| isJunctionTable       | FALSE                              |
-| storeRecordInfo       | TRUE                               |
-| sqlName               | whs_inventory_items                          |
-| urlBase               | warehouse/inventory/items          |
-| lookupSqlValue        | {%TABLE%}.name                     |
-| tableTitle            | Inventory Items                    |
-| formTitleForInserting | New Inventory Item                 |
-| formTitleForEditing   | Inventory Item                     |
-| crud/browse/action    | Warehouse/Inventory/Items (plural) |
-| crud/add/action       | Warehouse/Inventory/Item/Add       |
-| crud/edit/action      | Warehouse/Inventory/Item/Edit      |
+| Property              | Value                         |
+| :-------------------- | :---------------------------- |
+| isJunctionTable       | FALSE                         |
+| storeRecordInfo       | TRUE                          |
+| sqlName               | whs_inventory_items           |
+| urlBase               | warehouse/inventory/items     |
+| lookupSqlValue        | {%TABLE%}.name                |
+| tableTitle            | Inventory Items               |
+| formTitleForInserting | New Inventory Item            |
+| formTitleForEditing   | Inventory Item                |
+| crud/browse/action    | Warehouse/Inventory/Items     |
+| crud/add/action       | Warehouse/Inventory/Item/Add  |
+| crud/edit/action      | Warehouse/Inventory/Item/Edit |
 
 ## Data Structure
 
@@ -32,34 +36,33 @@ No constants are defined for this model.
 | record_info         | Record Info  |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author                        |
 | name                | Name         |  varchar   |  100   |   TRUE   |                                                                   |
 | description         | Description  |    text    |        |  FALSE   |                                                                   |
-| is_service          | Is Service   |  boolean   |   1    |   TRUE   | If the item is service (TRUE) or product (FALSE)                  |
+| type                | Item Type    |    enum    |   1    |   TRUE   | Type of item (product, service,...)                               |
 | is_active           | Is Active    |  boolean   |   1    |   TRUE   |                                                                   |
-| id_bkp_vat          | VAT of item  |   lookup   |   8    |   TRUE   | VAT which is used in case of item price                           |
-| id_whs_unit_default | Default Unit |   lookup   |   8    |  FALSE   | Unit wich will be used automatically when item is added somewhere |
+| vat_level           | VAT Level    |    int     |   2    |   TRUE   |                                                                   |
+| id_com_unit_default | Default Unit |   lookup   |   8    |  FALSE   | Unit wich will be used automatically when item is added somewhere |
 
 ### ADIOS Parameters
 
-| Column         | Parameter   | Value                                   |
-| :------------- | :---------- | --------------------------------------- |
-| is_service     | description | Is the item service or not (= product)? |
-|                | default     | 0                                       |
-| is_active      | description | Is the item active or not?              |
-|                | default     | 1                                       |
+| Column    | Parameter   | Value                        |
+| :-------- | :---------- | ---------------------------- |
+| type      | enum_values | WHS_INVENTORY_ITEM_TYPE_*    |
+| is_active | description | Is the item active or not?   |
+|           | default     | 1                            |
+| vat_level | enum_values | BKP_BOOK_ACCOUNT_VAT_LEVEL_* |
 
 ### Foreign Keys
 
-| Column              | Model                                                                                | Relation | OnUpdate | OnDelete |
-| :------------------ | :----------------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_bkp_vat          | [App/Widgets/Bookkeeping/Books/Models/Vat](../../../Bookkeeping/Books/Models/Vat.md) |   1:N    | Cascade  | Restrict |
-| id_whs_unit_default | [App/Widgets/Warehouse/Inventory/Models/Unit](./Unit.md)                             |   1:N    | Cascade  | Restrict |
+| Column              | Model                                                                                                | Relation | OnUpdate | OnDelete |
+| :------------------ | :--------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_com_unit_default | [App/Widgets/Common/Units/Models/Unit](../../../Common/Units/Models/Unit.md)                  |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 
-| Name                 |  Type   | Column + Order |
-| :------------------- | :-----: | -------------: |
-| id                   | PRIMARY |         id ASC |
-| is_active            |  INDEX  | is_active DESC |
-| is_service           |  INDEX  | is_service ASC |
+| Name      |  Type   | Column + Order |
+| :-------- | :-----: | -------------: |
+| id        | PRIMARY |         id ASC |
+| is_active |  INDEX  | is_active DESC |
+| type      |  INDEX  |       type ASC |
 
 ## Callbacks
 
