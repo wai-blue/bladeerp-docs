@@ -74,8 +74,8 @@
 
 [Model does not contain foreign keys.]
 
-| Column                   | Model                                                                                                                | Relation | OnUpdate | OnDelete |
-| :----------------------- | :------------------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| Column                   | Model                                                                                                          | Relation | OnUpdate | OnDelete |
+| :----------------------- | :------------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
 | id_bkp_accounting_period | [App/Widgets/Bookkeeping/Books/Models/AccountingPeriod](../../../Bookkeeping/Books/Models/AccountingPeriod.md) |   1:N    | Cascade  | Cascade  |
 | id_bkp_book_account_type | [App/Widgets/Bookkeeping/Books/Models/BookAccountType](../../../Bookkeeping/Books/Models/BookAccountType.md)   |   1:N    | Cascade  | Restrict |
 

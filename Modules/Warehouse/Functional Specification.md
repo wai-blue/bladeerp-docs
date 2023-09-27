@@ -10,25 +10,6 @@
 * Integration: Coordinating stock management with other parts of the ERP system, such as procurement, sales, and accounting, to maintain accurate and up-to-date data.
 
 ## Products / Inventory Items
-In an ERP system, "products" or "inventory items" refer to the items or goods that a company buys, manufactures, or sells. These products can include tangible physical items like electronics, clothing, or machinery, as well as intangible items like software licenses or services. Within the ERP, each product is typically identified by a unique code or SKU (Stock Keeping Unit) for easy tracking and management. The ERP system helps companies manage their products by storing information about them, including descriptions, pricing, suppliers, and inventory levels. This data is crucial for various business processes, such as procurement, sales, and inventory control.
+In an ERP system, "products" or "inventory items" refer to the items or goods that a company buys, manufactures, or sells. These products can include tangible physical items like electronics, clothing, or machinery, as well as intangible items like software lice@nses or services. Within the ERP, each product is typically identified by a unique code or SKU (Stock Keeping Unit) for easy tracking and management. The ERP system helps companies manage their products by storing information about them, including descriptions, pricing, suppliers, and inventory levels. This data is crucial for various business processes, such as procurement, sales, and inventory control.
 
-## Inventory Units
-
-Inventory units refer to the standardized measurements or quantities in which items or products are counted, stored, and managed within an inventory system. 
-
-Following units should be part of ERP and can can be deleted, changed or extended by the user:
-* Units of quantity (WHS_INVENTORY_UNIT_OF_QUANTITY)
-	* pieces (pcs)
-* Units of lenght (WHS_INVENTORY_UNIT_OF_LENGHT)
-	* meter (m)
-	* centimeter (cm)
-* Units of volume (WHS_INVENTORY_UNIT_OF_VOLUME) 
-	* liter (m)
-* Units of mass (WHS_INVENTORY_UNIT_OF_MASS) 
-	* gram (g)
-	* kilogram (kg)
-	* tona (t)
-*  Unit of areas (WHS_INVENTORY_UNIT_OF_AREA) 
-	* square meter (m2)
-	* square centimeter (cm2)
 

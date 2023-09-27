@@ -1,4 +1,4 @@
-# Model Bookkeeping/Books/Vat
+# Model Bookkeeping/Books/VatAccountingPeriod
 
 ## Introduction
 
@@ -6,7 +6,15 @@ Táto tabuľka slúži na ukladanie informácií o sadzbách DPH používaných 
 
 ## Constants
 
-No constants are defined for this model.
+### Vat Levels
+| Constant                             | Value | Description         |
+| :----------------------------------- | :---: | :------------------ |
+| BKP_BOOK_ACCOUNT_VAT_LEVEL_ZERO      |   0   | Zero Vat Level      |
+| BKP_BOOK_ACCOUNT_VAT_LEVEL_REDUCED   |   1   | Reduced Vat Level   |
+| BKP_BOOK_ACCOUNT_VAT_LEVEL_STANDARD  |   2   | Standard Vat Level  |
+| BKP_BOOK_ACCOUNT_VAT_LEVEL_SPECIAL_A |   3   | Special Vat Level A |
+| BKP_BOOK_ACCOUNT_VAT_LEVEL_SPECIAL_B |   4   | Special Vat Level B |
+| BKP_BOOK_ACCOUNT_VAT_LEVEL_SPECIAL_C |   5   | Special Vat Level C |
 
 ## Properties
 
@@ -29,13 +37,16 @@ No constants are defined for this model.
 | :----------------------- | ----------------- | :--------: | :----: | :------: | :----------------------------------------- |
 | id                       |                   |    int     |   8    |   TRUE   | Unique record ID                           |
 | record_info              | Record Info       |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
-| ratio                    | VAT ratio         |  decimal   |  5,2   |   TRUE   | Percento DPH                               |
+| level                    | VAT Level         |    int     |   2    |   TRUE   | Level of VAT                               |
+| ratio                    | VAT ratio         |  decimal   |  5,2   |   TRUE   | How much percent has this VAT              |
 | id_bkp_accounting_period | Accounting period |   lookup   |   8    |   TRUE   | ID účtovného obdobia                       |
 | id_bkp_book_account      | Book account      |   lookup   |   8    |   TRUE   | ID účtu z účtovnej osnovy                  |
 
 ### ADIOS Parameters
 
-No additional ADIOS parameters needs to be defined.
+| Column | Parameter   | Value                        |
+| :----- | :---------- | ---------------------------- |
+| level  | enum_values | BKP_BOOK_ACCOUNT_VAT_LEVEL_* |
 
 ### Foreign Keys
 
@@ -49,6 +60,7 @@ No additional ADIOS parameters needs to be defined.
 | Name                             |  Type   |               Column + Order |
 | :------------------------------- | :-----: | ---------------------------: |
 | id                               | PRIMARY |                       id ASC |
+| level                            |  INDEX  |                    level ASC |
 | ratio                            |  INDEX  |                    ratio ASC |
 | id_bkp_accounting_period         |  INDEX  | id_bkp_accounting_period ASC |
 | id_bkp_book_account              |  INDEX  |      id_bkp_book_account ASC |
