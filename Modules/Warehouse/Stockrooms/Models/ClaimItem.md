@@ -1,8 +1,8 @@
-# Model Warehouse/Inventory/ClaimItem
+# Model Warehouse/Stockrooms/ClaimItem
 
 ## Introduction
 
-Junction model between inventory item and claim item.
+Junction model between stockrooms item and claim item.
 
 ## Constants
 
@@ -14,20 +14,20 @@ No constants are defined for this model.
 | isJunctionTable       | TRUE                                                               |
 | storeRecordInfo       | FALSE                                                              |
 | sqlName               | whs_claim_items                                                    |
-| urlBase               | warehouse/inventory/item/{id_whs_inventory_item}/claim-items       |
+| urlBase               | warehouse/stockrooms/item/{id_whs_stockrooms_item}/claim-items       |
 | lookupSqlValue        | -                                                                  |
 | tableTitle            | Claim Items                                                        |
 | formTitleForInserting | New Claim Item                                                     |
 | formTitleForEditing   | Claim Item                                                         |
-| crud/browse/action    | Warehouse/Inventory/ClaimItem                                      |
-| crud/add/action       | Warehouse/Inventory/ClaimItem/Add                                  |
-| crud/edit/action      | Warehouse/Inventory/ClaimItem/Edit                                 |
+| crud/browse/action    | Warehouse/Stockrooms/ClaimItem                                      |
+| crud/add/action       | Warehouse/Stockrooms/ClaimItem/Add                                  |
+| crud/edit/action      | Warehouse/Stockrooms/ClaimItem/Edit                                 |
 | junctions             | `json`                                                             |
 |                       | `{`                                                                |
 |                       | `  "ClaimItem": {`                                                 |
-|                       | `    "junctionModel": "App/Widgets/Warehouse/Inventory/Models/ClaimItem",` |
+|                       | `    "junctionModel": "App/Widgets/Warehouse/Stockrooms/Models/ClaimItem",` |
 |                       | `    "optionsModel": "App/Bookkeeping/Claims/Models/Item",`        |
-|                       | `    "masterKeyColumn": "id_whs_inventory_item",`                  |
+|                       | `    "masterKeyColumn": "id_whs_stockrooms_item",`                  |
 |                       | `    "optionKeyColumn": "id_bkp_claim_item",`                      |
 |                       | `  }`                                                              |
 |                       | `}`                                                                |
@@ -37,7 +37,7 @@ No constants are defined for this model.
 | Column                | Title          | ADIOS Type | Length | Required | Notes            |
 | :-------------------- | -------------- | :--------: | :----: | :------: | :--------------- |
 | id                    |                |    int     |   8    |   TRUE   | Unique record ID |
-| id_whs_inventory_item | Inventory Item |   lookup   |   8    |   TRUE   |                  |
+| id_whs_stockrooms_item | Stockrooms Item |   lookup   |   8    |   TRUE   |                  |
 | id_bkp_claim_item     | Claim Item     |   lookup   |   8    |   TRUE   |                  |
 
 ### ADIOS Parameters
@@ -48,7 +48,7 @@ No additional ADIOS parameters needs to be defined.
 
 | Column                | Model                                                                                    | Relation | OnUpdate | OnDelete |
 | :-------------------- | :--------------------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_whs_inventory_item | [App/Widgets/Warehouse/Inventory/Models/Item](./Item.md)                                 |   1:N    | Cascade  | Restrict |
+| id_whs_stockrooms_item | [App/Widgets/Warehouse/Stockrooms/Models/Item](./Item.md)                                 |   1:N    | Cascade  | Restrict |
 | id_bkp_claim_item     | [App/Widgets/Bookkeeping/Claims/Models/Item](../../../Bookkeeping/Claims/Models/Item.md) |   1:N    | Cascade  | Cascade  |
 
 
@@ -57,7 +57,7 @@ No additional ADIOS parameters needs to be defined.
 | Name                  |  Type   |            Column + Order |
 | :-------------------- | :-----: | ------------------------: |
 | id                    | PRIMARY |                    id ASC |
-| id_whs_inventory_item |  INDEX  | id_whs_inventory_item ASC |
+| id_whs_stockrooms_item |  INDEX  | id_whs_stockrooms_item ASC |
 | id_bkp_claim_item     |  INDEX  |     id_bkp_claim_item ASC |
 
 ## Callbacks

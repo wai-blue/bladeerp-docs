@@ -1,8 +1,8 @@
-# Model Warehouse/Inventory/Package
+# Model Warehouse/Stockrooms/Package
 
 ## Introduction
 
-Evidence of all existing inventory packages (e.g. bottle, can, package, palette).
+Evidence of all existing stockrooms packages (e.g. bottle, can, package, palette).
 
 ## Constants
 
@@ -15,14 +15,14 @@ No constants are defined for this model.
 | isJunctionTable       | FALSE                            |
 | storeRecordInfo       | TRUE                             |
 | sqlName               | whs_packages                     |
-| urlBase               | warehouse/inventory/packages     |
+| urlBase               | warehouse/stockrooms/packages     |
 | lookupSqlValue        | {%TABLE%}.name                   |
 | tableTitle            | Packages                         |
 | formTitleForInserting | New Package                      |
 | formTitleForEditing   | Package                          |
-| crud/browse/action    | Warehouse/Inventory/Packages     |
-| crud/add/action       | Warehouse/Inventory/Package/Add  |
-| crud/edit/action      | Warehouse/Inventory/Package/Edit |
+| crud/browse/action    | Warehouse/Stockrooms/Packages     |
+| crud/add/action       | Warehouse/Stockrooms/Package/Add  |
+| crud/edit/action      | Warehouse/Stockrooms/Package/Edit |
 
 ## Data Structure
 

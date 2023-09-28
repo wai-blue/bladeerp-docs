@@ -15,7 +15,7 @@ Table
   * item
   * item_sequence
   * quantity
-  * id_bkp_vat
+  * vat_level
   * price_unit_excl_vat
   * price_unit_incl_vat
   * price_excl_vat

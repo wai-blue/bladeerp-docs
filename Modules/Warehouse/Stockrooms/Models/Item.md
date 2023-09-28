@@ -1,32 +1,32 @@
-# Model Warehouse/Inventory/Item
+# Model Warehouse/Stockrooms/Item
 
 ## Introduction
 
-Invenoty item is a distinct product, part, or item that a company procures, manufactures, stores, and tracks within its inventory. Each inventory item is assigned a unique identifier, often referred to as a Stock Keeping Unit (SKU) or part number, which allows for accurate identification and tracking.
+Invenoty item is a distinct product, part, or item that a company procures, manufactures, stores, and tracks within its stockrooms. Each stockrooms item is assigned a unique identifier, often referred to as a Stock Keeping Unit (SKU) or part number, which allows for accurate identification and tracking.
 
 ## Constants
 
 ### Item Types Enums
-| Constant                        | Value | Description        |
-| :------------------------------ | :---: | :----------------- |
-| WHS_INVENTORY_ITEM_TYPE_PRODUCT |   1   | Item is PRODUCT    |
-| WHS_INVENTORY_ITEM_TYPE_SERVICE |   2   | Item is SERVICE    |
+| Constant                         | Value | Description     |
+| :------------------------------- | :---: | :-------------- |
+| WHS_STOCKROOMS_ITEM_TYPE_PRODUCT |   1   | Item is PRODUCT |
+| WHS_STOCKROOMS_ITEM_TYPE_SERVICE |   2   | Item is SERVICE |
 
 ## Properties
 
-| Property              | Value                         |
-| :-------------------- | :---------------------------- |
-| isJunctionTable       | FALSE                         |
-| storeRecordInfo       | TRUE                          |
-| sqlName               | whs_inventory_items           |
-| urlBase               | warehouse/inventory/items     |
-| lookupSqlValue        | {%TABLE%}.name                |
-| tableTitle            | Inventory Items               |
-| formTitleForInserting | New Inventory Item            |
-| formTitleForEditing   | Inventory Item                |
-| crud/browse/action    | Warehouse/Inventory/Items     |
-| crud/add/action       | Warehouse/Inventory/Item/Add  |
-| crud/edit/action      | Warehouse/Inventory/Item/Edit |
+| Property              | Value                          |
+| :-------------------- | :----------------------------- |
+| isJunctionTable       | FALSE                          |
+| storeRecordInfo       | TRUE                           |
+| sqlName               | whs_stockrooms_items           |
+| urlBase               | warehouse/stockrooms/items     |
+| lookupSqlValue        | {%TABLE%}.name                 |
+| tableTitle            | Stockrooms Items               |
+| formTitleForInserting | New Stockrooms Item            |
+| formTitleForEditing   | Stockrooms Item                |
+| crud/browse/action    | Warehouse/Stockrooms/Items     |
+| crud/add/action       | Warehouse/Stockrooms/Item/Add  |
+| crud/edit/action      | Warehouse/Stockrooms/Item/Edit |
 
 ## Data Structure
 
@@ -45,7 +45,7 @@ Invenoty item is a distinct product, part, or item that a company procures, manu
 
 | Column    | Parameter   | Value                        |
 | :-------- | :---------- | ---------------------------- |
-| type      | enum_values | WHS_INVENTORY_ITEM_TYPE_*    |
+| type      | enum_values | WHS_STOCKROOMS_ITEM_TYPE_*    |
 | is_active | description | Is the item active or not?   |
 |           | default     | 1                            |
 | vat_level | enum_values | BKP_BOOK_ACCOUNT_VAT_LEVEL_* |

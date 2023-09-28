@@ -16,7 +16,7 @@ No constants are defined for this model.
 | formTitleForEditing   | Claim                         |
 | tableTitle            | Claims                        |
 | sqlName               | bkp_claims                    |
-| urlBase               | bookkeeping/claims/claims     |
+| urlBase               | bookkeeping/claims            |
 | formTitleForInserting | New Claim                     |
 | crud/browse/action    | Bookkeeping/Claims/Claims     |
 | crud/add/action       | Bookkeeping/Claims/Claim/Add  |

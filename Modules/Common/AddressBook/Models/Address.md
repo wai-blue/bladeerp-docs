@@ -7,19 +7,19 @@ Model slúži na evidenciu adries. Všetky adresy môžu slúžiť ako doručova
 V modeli nie sú použité konštanty.
 
 ## Properties
-| Property              | Value                                                                               |
-| :-------------------- | :---------------------------------------------------------------------------------- |
-| isJunctionTable       | FALSE                                                                               |
-| storeRecordInfo       | TRUE                                                                                |
-| sqlName               | com_addresses                                                                       |
-| urlBase               | common/address-book/addresses                                                       |
-| lookupSqlValue        | concat(street_1, " ", city, " ", postal_code), id_com_country:LOOKUP:lookupSqlValue |
-| tableTitle            | Contact Addresses                                                                   |
-| formTitleForInserting | New Contact Address                                                                 |
-| formTitleForEditing   | Contact Address                                                                     |
-| crud/browse/action    | Common/AddressBook/Addresses                                                        |
-| crud/add/action       | Common/AddressBook/Address/Add                                                      |
-| crud/edit/action      | Common/AddressBook/Address/Edit                                                     |
+| Property              | Value                                                                                    |
+| :-------------------- | :--------------------------------------------------------------------------------------- |
+| isJunctionTable       | FALSE                                                                                    |
+| storeRecordInfo       | TRUE                                                                                     |
+| sqlName               | com_addresses                                                                            |
+| urlBase               | common/address-book/addresses                                                            |
+| lookupSqlValue        | concat(street_1, " ", city, " ", postal_code, " ", id_com_country:LOOKUP:lookupSqlValue) |
+| tableTitle            | Contact Addresses                                                                        |
+| formTitleForInserting | New Contact Address                                                                      |
+| formTitleForEditing   | Contact Address                                                                          |
+| crud/browse/action    | Common/AddressBook/Addresses                                                             |
+| crud/add/action       | Common/AddressBook/Address/Add                                                           |
+| crud/edit/action      | Common/AddressBook/Address/Edit                                                          |
 
 REVIEW: JG k lookupSqlValue - potrebné vyriešiť ako v ADIOSe vyriešiť použitie "externej" lookup hodnoty
 
