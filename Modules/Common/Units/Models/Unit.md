@@ -2,7 +2,16 @@
 
 ## Introduction
 
-List of all units available in warehouse for expression of quantity in case of items
+The list of all physical units available in our system for physical measurement in case of items. The choice of units depends on the nature of the products being stored and the specific needs of the business. 
+
+Following physical units should be predefined in our system:
+* **Kilogram (KG)** or **Pound (LB)**: Weight units like kilograms or pounds are used for products that are sold or measured by weight, such as food items, bulk materials, or chemicals.
+
+* **Liter (L)** or **Gallon (GAL)**: Volume units like liters or gallons are used for liquids and certain chemicals. For example, chemicals may be stored and managed in liters.
+
+* **Square Meter (SQM)** or **Square Foot (SQFT)**: Area units are used for products that are measured by their physical area, such as flooring materials or textiles.
+
+* **Cubic Meter (CBM)** or **Cubic Foot (CBFT)**: These units are used for measuring the volume of products, especially for bulky items or items that need to be stored in terms of cubic dimensions.
 
 ## Constants
 
