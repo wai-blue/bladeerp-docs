@@ -30,17 +30,17 @@ Invenoty item is a distinct product, part, or item that a company procures, manu
 
 ## Data Structure
 
-| Column                      | Title           | ADIOS Type | Length | Required | Notes                                      |
-| :-------------------------- | --------------- | :--------: | :----: | :------: | :----------------------------------------- |
-| id                          |                 |    int     |   8    |   TRUE   | Unique record ID                           |
-| record_info                 | Record Info     |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
-| name                        | Name            |  varchar   |  100   |   TRUE   |                                            |
-| description                 | Description     |    text    |        |  FALSE   |                                            |
-| type                        | Item Type       |    enum    |   1    |   TRUE   | Type of item (product, service,...)        |
-| is_active                   | Is Active       |  boolean   |   1    |   TRUE   |                                            |
-| vat_level                   | VAT Level       |    int     |   2    |   TRUE   |                                            |
-| id_whs_item_package_default | Default Package |   lookup   |   8    |  FALSE   | Default Package used primary for the item. |
-
+| Column                        | Title             | ADIOS Type | Length | Required | Notes                                                                   |
+| :---------------------------- | ----------------- | :--------: | :----: | :------: | :---------------------------------------------------------------------- |
+| id                            |                   |    int     |   8    |   TRUE   | Unique record ID                                                        |
+| record_info                   | Record Info       |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author                              |
+| name                          | Name              |  varchar   |  100   |   TRUE   |                                                                         |
+| description                   | Description       |    text    |        |  FALSE   |                                                                         |
+| type                          | Item Type         |    enum    |   1    |   TRUE   | Type of item (product, service,...)                                     |
+| is_active                     | Is Active         |  boolean   |   1    |   TRUE   |                                                                         |
+| vat_level                     | VAT Level         |    int     |   2    |   TRUE   |                                                                         |
+| id_whs_item_package_default   | Default Package   |   lookup   |   8    |  FALSE   | Default Package used primary for the item.                              |
+| id_whs_item_mediafile_default | Default Mediafile |   lookup   |   8    |  FALSE   | Default Mediafile (e.g. picture of the item) used primary for the item. |
 
 ### ADIOS Parameters
 
@@ -53,9 +53,10 @@ Invenoty item is a distinct product, part, or item that a company procures, manu
 
 ### Foreign Keys
 
-| Column                      | Model                                                                   | Relation | OnUpdate | OnDelete |
-| :-------------------------- | :---------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_whs_item_package_default | [App/Widgets/Warehouse/Stockrooms/Models/ItemPackage](./ItemPackage.md) |   1:N    | Cascade  | Restrict |
+| Column                        | Model                                                                       | Relation | OnUpdate | OnDelete |
+| :---------------------------- | :-------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_whs_item_package_default   | [App/Widgets/Warehouse/Stockrooms/Models/ItemPackage](./ItemPackage.md)     |   1:N    | Cascade  | Cascade  |
+| id_whs_item_mediafile_default | [App/Widgets/Warehouse/Stockrooms/Models/ItemMediafile](./ItemMediafile.md) |   1:N    | Cascade  | Cascade  |
 
 ### Indexes
 
