@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Physical placement of items in stockrooms.
+Physical placement of item in specific package in stockroom.
 
 ## Constants
 
@@ -56,12 +56,14 @@ No additional ADIOS parameters needs to be defined.
 
 ### Indexes
 
-| Name                |  Type   |          Column + Order |
-| :------------------ | :-----: | ----------------------: |
-| id                  | PRIMARY |                  id ASC |
-| id_whs_stockroom    |  INDEX  |    id_whs_stockroom ASC |
-| id_whs_item         |  INDEX  |         id_whs_item ASC |
-| id_whs_item_package |  INDEX  | id_whs_item_package ASC |
+| Name                                  |  Type   |          Column + Order |
+| :------------------------------------ | :-----: | ----------------------: |
+| id                                    | PRIMARY |                  id ASC |
+| id_whs_stockroom                      |  INDEX  |    id_whs_stockroom ASC |
+| id_whs_item                           |  INDEX  |         id_whs_item ASC |
+| id_whs_item_package                   |  INDEX  | id_whs_item_package ASC |
+| id_whs_stockroom__id_whs_item_package | UNIQUE  |    id_whs_stockroom ASC |
+|                                       |         | id_whs_item_package ASC |
 
 ## Callbacks
 

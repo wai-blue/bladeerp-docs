@@ -20,6 +20,15 @@ V modeli nie sú použité konštanty.
 | crud/browse/action    | -                    |
 | crud/add/action       | -                    |
 | crud/edit/action      | -                    |
+| junctions             | `json`                                                                  |
+|                       | `{`                                                                     |
+|                       | `  "ContactCategory": {`                                                |
+|                       | `    "junctionModel": "App/Common/AddressBook/Models/ContactCategory",` |
+|                       | `    "optionsModel": "App/Common/AddressBook/Models/Category",`         |
+|                       | `    "masterKeyColumn": "id_com_contact",`                              |
+|                       | `    "optionKeyColumn": "id_com_category",`                             |
+|                       | `  }`                                                                   |
+|                       | `}`                                                                     |
 
 
 ## Data Structure
