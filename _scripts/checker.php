@@ -200,7 +200,9 @@ foreach ($modules as $module) {
             'index' => NULL,
           ];
 
-          if (!in_array($row[2], ["varchar", "int", "date", "datetime", "lookup", "file", "image", "boolean", "decimal", "text", "json"])) {
+          if (!in_array($row[2], ["varchar", "int", "date", "datetime", "lookup",
+                                  "file", "image", "boolean", "decimal", "text",
+                                  "json","mappoint"])) {
             $errors[] = "[{$modelRef}] Unknown ADIOS type for `{$row[0]}`.";
           }
           if ($row[2] == "lookup") {
