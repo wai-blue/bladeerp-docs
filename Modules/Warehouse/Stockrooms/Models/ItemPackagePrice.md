@@ -18,7 +18,7 @@ No constants are defined for this model.
 | isJunctionTable       | TRUE                                                                          |
 | storeRecordInfo       | TRUE                                                                          |
 | sqlName               | whs_item_package_prices                                                       |
-| urlBase               | warehouse/stockrooms/item/{id_whs_item}/prices                                |
+| urlBase               | warehouse/stockrooms/item/{id_whs_item_package}/prices                        |
 | tableTitle            | Item Package Prices                                                           |
 | formTitleForInserting | New Item Package Price                                                        |
 | formTitleForEditing   | Item Package Price                                                            |
@@ -40,7 +40,6 @@ No constants are defined for this model.
 | Column              | Title           | ADIOS Type | Length | Required | Notes            |
 | :------------------ | --------------- | :--------: | :----: | :------: | :--------------- |
 | id                  |                 |    int     |   8    |   TRUE   | Unique record ID |
-| id_whs_item         | Stockrooms Item |   lookup   |   8    |   TRUE   |                  |
 | id_whs_item_package | Item Package    |   lookup   |   8    |   TRUE   |                  |
 | sell_price          | Sell Price      |  decimal   |   8    |   TRUE   |                  |
 | valid_from_datetime | Valid From      |  datetime  |        |   TRUE   |                  |
@@ -56,7 +55,6 @@ No additional ADIOS parameters needs to be defined.
 
 | Column              | Model                                                                   | Relation | OnUpdate | OnDelete |
 | :------------------ | :---------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_whs_item         | [App/Widgets/Warehouse/Stockrooms/Models/Item](./Item.md)               |   1:N    | Cascade  | Restrict |
 | id_whs_item_package | [App/Widgets/Warehouse/Stockrooms/Models/ItemPackage](./ItemPackage.md) |   1:N    | Cascade  | Restrict |
 
 ### Indexes
@@ -64,11 +62,9 @@ No additional ADIOS parameters needs to be defined.
 | Name                |  Type   |           Column + Order |
 | :------------------ | :-----: | -----------------------: |
 | id                  | PRIMARY |                   id ASC |
-| id_whs_item         |  INDEX  |          id_whs_item ASC |
 | id_whs_item_package |  INDEX  |  id_whs_item_package ASC |
 | valid_from_datetime |  INDEX  | valid_from_datetime DESC |
 | valid_to_datetime   |  INDEX  |   valid_to_datetime DESC |
-| id_com_contact      |  INDEX  |       id_com_contact ASC |
 
 ## Callbacks
 

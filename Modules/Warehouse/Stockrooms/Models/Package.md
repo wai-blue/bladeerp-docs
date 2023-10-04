@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Evidence of all existing stockrooms packages.
+Evidence of all existing stockrooms packages related with specific units.
 
 Following packages should be predefined in our system:
 * **Each (EA)**: This is a generic unit of measurement used for individual items or products. It's often used for items that are sold or counted one by one, such as electronics, tools, or consumer goods.
@@ -23,28 +23,29 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                            |
-| :-------------------- | :------------------------------- |
-| isJunctionTable       | FALSE                            |
-| storeRecordInfo       | TRUE                             |
-| sqlName               | whs_packages                     |
+| Property              | Value                             |
+| :-------------------- | :-------------------------------- |
+| isJunctionTable       | FALSE                             |
+| storeRecordInfo       | TRUE                              |
+| sqlName               | whs_packages                      |
 | urlBase               | warehouse/stockrooms/packages     |
-| lookupSqlValue        | {%TABLE%}.name                   |
-| tableTitle            | Packages                         |
-| formTitleForInserting | New Package                      |
-| formTitleForEditing   | Package                          |
+| lookupSqlValue        | {%TABLE%}.name                    |
+| tableTitle            | Packages                          |
+| formTitleForInserting | New Package                       |
+| formTitleForEditing   | Package                           |
 | crud/browse/action    | Warehouse/Stockrooms/Packages     |
 | crud/add/action       | Warehouse/Stockrooms/Package/Add  |
 | crud/edit/action      | Warehouse/Stockrooms/Package/Edit |
 
 ## Data Structure
 
-| Column                   | Title                      | ADIOS Type | Length | Required | Notes                                      |
-| :----------------------- | -------------------------- | :--------: | :----: | :------: | :----------------------------------------- |
-| id                       |                            |    int     |   8    |   TRUE   | Unique record ID                           |
-| record_info              | Record Info                |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
-| name                     | Name                       |  varchar   |  100   |   TRUE   |                                            |
-| description              | Description                |    text    |        |  FALSE   |                                            |
+| Column      | Title       | ADIOS Type | Length | Required | Notes                                      |
+| :---------- | ----------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id          |             |    int     |   8    |   TRUE   | Unique record ID                           |
+| record_info | Record Info |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
+| name        | Name        |  varchar   |  100   |   TRUE   |                                            |
+| description | Description |    text    |        |  FALSE   |                                            |
+| id_com_unit | Unit        |   lookup   |        |  FALSE   |                                            |
 
 ### ADIOS Parameters
 
@@ -52,14 +53,17 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-Model does not contain foreign keys.
+| Column         | Model                                                                        | Relation | OnUpdate | OnDelete |
+| :------------- | :--------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_com_unit    | [App/Widgets/Common/Units/Models/Unit](../../../Common/Units/Models/Unit.md) |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 
-| Name |  Type   | Column + Order |
-| :--- | :-----: | -------------: |
-| id   | PRIMARY |         id ASC |
-| name | UNIQUE  |       name ASC |
+| Name        |  Type   |  Column + Order |
+| :---------- | :-----: | --------------: |
+| id          | PRIMARY |          id ASC |
+| name        | UNIQUE  |        name ASC |
+| id_com_unit |  INDEX  | id_com_unit ASC |
 
 ## Callbacks
 

@@ -6,11 +6,7 @@ Invenoty item is a distinct product, part, or item that a company procures, manu
 
 ## Constants
 
-### Item Types Enums
-| Constant              | Value | Description     |
-| :-------------------- | :---: | :-------------- |
-| WHS_ITEM_TYPE_PRODUCT |   1   | Item is PRODUCT |
-| WHS_ITEM_TYPE_SERVICE |   2   | Item is SERVICE |
+No constants are defined for this model.
 
 ## Properties
 
@@ -36,27 +32,20 @@ Invenoty item is a distinct product, part, or item that a company procures, manu
 | record_info                   | Record Info       |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author                              |
 | name                          | Name              |  varchar   |  100   |   TRUE   |                                                                         |
 | description                   | Description       |    text    |        |  FALSE   |                                                                         |
-| type                          | Item Type         |    enum    |   1    |   TRUE   | Type of item (product, service,...)                                     |
 | is_active                     | Is Active         |  boolean   |   1    |   TRUE   |                                                                         |
 | vat_level                     | VAT Level         |    int     |   2    |   TRUE   |                                                                         |
-| id_whs_item_package_default   | Default Package   |   lookup   |   8    |  FALSE   | Default Package used primary for the item.                              |
-| id_whs_item_mediafile_default | Default Mediafile |   lookup   |   8    |  FALSE   | Default Mediafile (e.g. picture of the item) used primary for the item. |
 
 ### ADIOS Parameters
 
 | Column    | Parameter   | Value                        |
 | :-------- | :---------- | ---------------------------- |
-| type      | enum_values | WHS_ITEM_TYPE_*              |
 | is_active | description | Is the item active or not?   |
 |           | default     | 1                            |
 | vat_level | enum_values | BKP_BOOK_ACCOUNT_VAT_LEVEL_* |
 
 ### Foreign Keys
 
-| Column                        | Model                                                                       | Relation | OnUpdate | OnDelete |
-| :---------------------------- | :-------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_whs_item_package_default   | [App/Widgets/Warehouse/Stockrooms/Models/ItemPackage](./ItemPackage.md)     |   1:N    | Cascade  | Cascade  |
-| id_whs_item_mediafile_default | [App/Widgets/Warehouse/Stockrooms/Models/ItemMediafile](./ItemMediafile.md) |   1:N    | Cascade  | Cascade  |
+Model does not contain foreign keys.
 
 ### Indexes
 
@@ -64,7 +53,6 @@ Invenoty item is a distinct product, part, or item that a company procures, manu
 | :-------- | :-----: | -------------: |
 | id        | PRIMARY |         id ASC |
 | is_active |  INDEX  | is_active DESC |
-| type      |  INDEX  |       type ASC |
 
 ## Callbacks
 

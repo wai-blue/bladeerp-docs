@@ -1,25 +1,29 @@
-# Model Common/AddressBook/ContactCategory
+# Model [Module]/[Widget]/[Model]
 
 ## Introduction
-Model slúži na prepojenie kontaktov s kategóriami M:N.
+
+[Short description of the junction model for relations M:N.]
 
 ## Constants
-V modeli nie sú použité konštanty.
+[No constants are defined for this model.]
 
 ## Properties
-| Property              | Value                |
-| :-------------------- | :------------------- |
-| isJunctionTable       | TRUE                 |
-| storeRecordInfo       | FALSE                |
-| sqlName               | com_contact_category |
-| urlBase               | -                    |
-| lookupSqlValue        | -                    |
-| tableTitle            | -                    |
-| formTitleForInserting | -                    |
-| formTitleForEditing   | -                    |
-| crud/browse/action    | -                    |
-| crud/add/action       | -                    |
-| crud/edit/action      | -                    |
+
+(see ADIOS.repo/src/Core/Model.php - method `recordSave()` - code `//save cross-table-alignments`)
+
+| Property              | Value                                                                   |
+| :-------------------- | :---------------------------------------------------------------------- |
+| isJunctionTable       | TRUE                                                                    |
+| storeRecordInfo       | FALSE/TRUE [TRUE used only in case of additional columns e.g. amount]   |
+| sqlName               | [modulprefix_model_name in plural]                                      |
+| urlBase               | - [defined only only in case of additional columns e.g. amount]         |
+| lookupSqlValue        | - [defined only only in case of additional columns e.g. amount]         |
+| tableTitle            | - [defined only only in case of additional columns e.g. amount]         |
+| formTitleForInserting | - [defined only only in case of additional columns e.g. amount]         |
+| formTitleForEditing   | - [defined only only in case of additional columns e.g. amount]         |
+| crud/browse/action    | - [defined only only in case of additional columns e.g. amount]         |
+| crud/add/action       | - [defined only only in case of additional columns e.g. amount]         |
+| crud/edit/action      | - [defined only only in case of additional columns e.g. amount]         |
 | junctions             | `json`                                                                  |
 |                       | `{`                                                                     |
 |                       | `  "ContactCategory": {`                                                |
@@ -33,14 +37,14 @@ V modeli nie sú použité konštanty.
 
 ## Data Structure
 
-| Column          | Title    | ADIOS Type | Length | Required | Notes        |
-| :-------------- | :------- | :--------: | :----: | :------: | :----------- |
-| id_com_contact  | Contact  |    int     |   8    |   TRUE   | ID kontaktu  |
-| id_com_category | Category |    int     |   8    |   TRUE   | ID kategórie |
+| Column          | Title    | ADIOS Type | Length | Required | Notes            |
+| :-------------- | :------- | :--------: | :----: | :------: | :--------------- |
+| id              |          |    int     |   8    |   TRUE   | Unique record ID |
+| id_com_contact  | Contact  |    int     |   8    |   TRUE   | [optional]       |
+| id_com_category | Category |    int     |   8    |   TRUE   | [optional]       |
 
 ### ADIOS Parameters
-
-No additional ADIOS parameters needs to be defined
+[No additional ADIOS parameters needs to be defined.]
 
 ## Foreign Keys
 

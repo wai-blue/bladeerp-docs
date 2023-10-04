@@ -40,7 +40,7 @@ No constants are defined for this model.
 | id_whs_item    | Stockrooms Item |   lookup   |   8    |   TRUE   |                                |
 | id_whs_package | Item Package    |   lookup   |   8    |   TRUE   |                                |
 | amount         | Amount          |  decimal   |  15,2  |   TRUE   | Amount of units in the package |
-| id_com_unit    | Unit            |   lookup   |        |  FALSE   |                                |
+
 
 ### ADIOS Parameters
 
@@ -55,7 +55,6 @@ No constants are defined for this model.
 | :------------- | :--------------------------------------------------------------------------- | :------: | -------- | -------- |
 | id_whs_item    | [App/Widgets/Warehouse/Stockrooms/Models/Item](./Item.md)                    |   1:N    | Cascade  | Restrict |
 | id_whs_package | [App/Widgets/Warehouse/Stockrooms/Models/Package](./Package.md)              |   1:N    | Cascade  | Restrict |
-| id_com_unit    | [App/Widgets/Common/Units/Models/Unit](../../../Common/Units/Models/Unit.md) |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 
