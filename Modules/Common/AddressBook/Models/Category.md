@@ -11,6 +11,7 @@ V modeli nie sú použité konštanty.
 | Property              | Value                            |
 | :-------------------- | :------------------------------- |
 | isJunctionTable       | FALSE                            |
+| storeRecordInfo       | TRUE                             |
 | sqlName               | com_categories                   |
 | urlBase               | common/address-book/categories   |
 | lookupSqlValue        | {%TABLE%}.name                   |
@@ -37,10 +38,10 @@ V modeli nie sú použité konštanty.
 | is_active | description | Is this category active or not? |
 |           | default     | 1                               |
 
-## Foreign Keys
+### Foreign Keys
 Model does not contain foreign keys.
 
-## Indexes
+### Indexes
 | Name      |  Type   | Column + Order |
 | :-------- | :-----: | -------------: |
 | id        | PRIMARY |         id ASC |

@@ -46,14 +46,14 @@
 ### ADIOS Parameters
 [No additional ADIOS parameters needs to be defined.]
 
-## Foreign Keys
+### Foreign Keys
 
 | Column          | Model                                                           | Relation | OnUpdate | OnDelete |
 | :-------------- | :-------------------------------------------------------------- | :------: | -------- | -------- |
 | id_com_contact  | [App/Widgets/Common/AddressBook/Models/Contact](./Contact.md)   |   1:N    | Cascade  | Cascade  |
 | id_com_category | [App/Widgets/Common/AddressBook/Models/Category](./Category.md) |   1:N    | Cascade  | Restrict |
 
-## Indexes
+### Indexes
 
 | Name                             |  Type   |      Column + Order |
 | :------------------------------- | :-----: | ------------------: |

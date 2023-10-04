@@ -29,3 +29,7 @@ Table
 * Shown only on inactive row (`is_active=FALSE`).
 * Row item is re-activated `is_active=TRUE` onChange.
 
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.
+

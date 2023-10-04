@@ -50,14 +50,14 @@ TODO: JG k lookupSqlValue - podobne ako v modeli Address, aj tu je potrebné vyr
 | website    | description | URL address of contact              |
 |            | default     | https://                            |
 
-## Foreign Keys
-| Column                 | Model                                                                                                        | Relation | OnUpdate | OnDelete |
-| :--------------------- | :----------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_com_person  | [App/Widgets/Common/AddressBook/Models/Person](./Person.md)                                                  |   1:1    | Cascade  | Restrict |
-| id_com_address | [App/Widgets/Common/AddressBook/Models/Address](./Address.md)               |   1:1    | Cascade  | Restrict |
-| id_bkp_currency        | [App/Widgets/Bookkeeping/ExchangeRate/Models/Currency](../../../Bookkeeping/ExchangeRate/Models/Currency.md) |   1:1    | Cascade  | Restrict |
+### Foreign Keys
+| Column          | Model                                                                                                        | Relation | OnUpdate | OnDelete |
+| :-------------- | :----------------------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_com_person   | [App/Widgets/Common/AddressBook/Models/Person](./Person.md)                                                  |   1:1    | Cascade  | Restrict |
+| id_com_address  | [App/Widgets/Common/AddressBook/Models/Address](./Address.md)                                                |   1:1    | Cascade  | Restrict |
+| id_bkp_currency | [App/Widgets/Bookkeeping/ExchangeRate/Models/Currency](../../../Bookkeeping/ExchangeRate/Models/Currency.md) |   1:1    | Cascade  | Restrict |
 
-## Indexes
+### Indexes
 | Name                    |  Type   |              Column + Order |
 | :---------------------- | :-----: | --------------------------: |
 | id                      | PRIMARY |                      id ASC |
@@ -67,6 +67,10 @@ TODO: JG k lookupSqlValue - podobne ako v modeli Address, aj tu je potrebné vyr
 | company_business_number | UNIQUE  | company_business_number ASC |
 | company_tax_number      | UNIQUE  |      company_tax_number ASC |
 | company_vat_number      | UNIQUE  |      company_vat_number ASC |
+| id_com_person           |  INDEX  |           id_com_person ASC |
+| id_com_address          |  INDEX  |          id_com_address ASC |
+| id_bkp_currency         |  INDEX  |         id_bkp_currency ASC |
+
 
 ## Callbacks
 

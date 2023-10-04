@@ -38,7 +38,7 @@ REVIEW: JG k lookupSqlValue - potrebné vyriešiť ako v ADIOSe vyriešiť použ
 | email          | Contact Email    |  varchar   |  100   |  FALSE   | Kontaktný Email                            |
 | phone          | Contact Phone    |  varchar   |   20   |  FALSE   | Kontaktný Telefón                          |
 | notes          | Notes            |    text    |        |  FALSE   | Poznámka k adrese                          |
-| location       | GPS Location     |  mapPoint  |        |  FALSE   | GPS location                               |
+| location       | GPS Location     |  mappoint  |        |  FALSE   | GPS location                               |
 
 ### ADIOS Parameters
 | Column    | Parameter   | Value                          |
@@ -48,17 +48,19 @@ REVIEW: JG k lookupSqlValue - potrebné vyriešiť ako v ADIOSe vyriešiť použ
 | street_1  | description | 1st row for a address data     |
 | street_2  | description | 2nd row for a address data     |
 
-## Foreign Keys
+### Foreign Keys
 | Column         | Model                                                                                          | Relation | OnUpdate | OnDelete |
 | :------------- | :--------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
 | id_com_contact | [App/Widgets/Common/AddressBook/Models/Contact](./Contact.md) |   1:N    | Cascade  | Restrict |
 | id_com_country | [App/Widgets/Common/AddressBook/Models/Country](./Country.md) |   1:N    | Cascade  | Restrict |
 
-## Indexes
-| Name      |  Type   | Column + Order |
-| :-------- | :-----: | -------------: |
-| id        | PRIMARY |         id ASC |
-| is_active |  INDEX  | is_active DESC |
+### Indexes
+| Name           |  Type   |      Column + Order |
+| :------------- | :-----: | ------------------: |
+| id             | PRIMARY |              id ASC |
+| is_active      |  INDEX  |      is_active DESC |
+| id_com_contact |  INDEX  | id_com_contact DESC |
+| id_com_country |  INDEX  | id_com_country DESC |
 
 ## Callbacks
 

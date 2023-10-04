@@ -33,7 +33,6 @@ No constants are defined for this model.
 | id_com_media_type | Media Type         |   lookup   |        |   TRUE   |                                            |
 | media             | Path to Media File |    file    |  255   |   TRUE   | Path to picture, video etc.                |
 | description       | Description        |    text    |        |  FALSE   |                                            |
-|                   |                    |            |        |          |                                            |
 
 ### ADIOS Parameters
 

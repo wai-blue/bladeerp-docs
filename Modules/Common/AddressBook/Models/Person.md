@@ -42,20 +42,21 @@ V modeli nie sú použité konštanty.
 | url_linkedin | description | URL address to LinkeIn profile |
 |              | default     | https://                       |
 
-## Foreign Keys
+### Foreign Keys
 | Column         | Model                                                         | Relation | OnUpdate | OnDelete |
 | :------------- | :------------------------------------------------------------ | :------: | -------- | -------- |
 | id_com_contact | [App/Widgets/Common/AddressBook/Models/Contact](./Contact.md) |   1:N    | Cascade  | Cascade  |
 
-## Indexes
-| Name        |  Type   |  Column + Order |
-| :---------- | :-----: | --------------: |
-| id          | PRIMARY |          id ASC |
-| first_name  |  INDEX  |  first_name ASC |
-| middle_name |  INDEX  | middle_name ASC |
-| last_name   |  INDEX  |   last_name ASC |
-| email       |  INDEX  |       email ASC |
-| phone       |  INDEX  |       phone ASC |
+### Indexes
+| Name           |  Type   |     Column + Order |
+| :------------- | :-----: | -----------------: |
+| id             | PRIMARY |             id ASC |
+| first_name     |  INDEX  |     first_name ASC |
+| middle_name    |  INDEX  |    middle_name ASC |
+| last_name      |  INDEX  |      last_name ASC |
+| email          |  INDEX  |          email ASC |
+| phone          |  INDEX  |          phone ASC |
+| id_com_contact |  INDEX  | id_com_contact ASC |
 
 ## Callbacks
 

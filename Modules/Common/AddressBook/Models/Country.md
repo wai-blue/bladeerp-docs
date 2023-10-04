@@ -33,9 +33,9 @@ V modeli nie sú použité konštanty.
 ### ADIOS Parameters
 No additional ADIOS parameters needs to be defined
 
-## Foreign Keys
+### Foreign Keys
 Model does not contain foreign keys.
-## Indexes
+### Indexes
 | Name      |  Type   | Column + Order |
 | :-------- | :-----: | -------------: |
 | id        | PRIMARY |         id ASC |
