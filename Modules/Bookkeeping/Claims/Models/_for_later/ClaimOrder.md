@@ -16,7 +16,7 @@ No constants are defined for this model.
 | :-------------------- | :--------------------------------------- |
 | isJunctionTable       | TRUE                                     |
 | storeRecordInfo       | FALSE                                    |
-| sqlName               | bkp_claim_has_orders                     |
+| sqlName               | bkp_claim_orders                         |
 | urlBase               | bookkeeping/claims/{id_bkp_claim}/orders |
 | lookupSqlValue        | {%TABLE%}.name                           |
 | tableTitle            | Claim Orders                             |
@@ -25,10 +25,11 @@ No constants are defined for this model.
 
 ## Data Structure
 
-| Column       | Title       | ADIOS Type | Length | Required | Notes         |
-| :----------- | ----------- | :--------: | :----: | :------: | :------------ |
-| id_bkp_claim | Claim       |   lookup   |   8    |   TRUE   | ID pohľadávky |
-| id_crm_order | Order       |   lookup   |   8    |   TRUE   | ID objednávky |
+| Column       | Title | ADIOS Type | Length | Required | Notes            |
+| :----------- | ----- | :--------: | :----: | :------: | :--------------- |
+| id           |       |    int     |   8    |   TRUE   | Unique record ID |
+| id_bkp_claim | Claim |   lookup   |   8    |   TRUE   | ID pohľadávky    |
+| id_crm_order | Order |   lookup   |   8    |   TRUE   | ID objednávky    |
 
 ### ADIOS Parameters
 
@@ -43,10 +44,11 @@ No additional ADIOS parameters needs to be defined.
 
 ### Indexes
 
-| Name         | Type  |        Column + Order |
-| :----------- | :---- | --------------------: |
-| id_bkp_claim | INDEX | id_bkp_claim_item ASC |
-| id_crm_order | INDEX |    id_ser_service ASC |
+| Name         | Type    |        Column + Order |
+| :----------- | :------ | --------------------: |
+| id           | PRIMARY |                id ASC |
+| id_bkp_claim | INDEX   | id_bkp_claim_item ASC |
+| id_crm_order | INDEX   |    id_ser_service ASC |
 
 ## Callbacks
 

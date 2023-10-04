@@ -1,4 +1,4 @@
-# Model Bookkeeping/CreditNot/CreditNoteHasClaim
+# Model Bookkeeping/CreditNot/CreditNoteClaim
 
 ## Introduction
 
@@ -12,21 +12,23 @@ No constants are defined for this model.
 
 | Property              | Value                                               |
 | :-------------------- | :-------------------------------------------------- |
+| isJunctionTable       | TRUE                                                |
 | storeRecordInfo       | FALSE                                               |
-| sqlName               | bkp_credit_note_has_claims                          |
+| sqlName               | bkp_credit_note_claims                              |
 | urlBase               | bookkeeping/credit-note/{id_bkp_credit_note}/claims |
 | lookupSqlValue        |                                                     |
 | tableTitle            | Credit Note Claims                                  |
 | formTitleForInserting | New Credit Note Claim                               |
 | formTitleForEditing   | Credit Note Claim                                   |
-| isJunctionTable          | TRUE                                                |
+| isJunctionTable       | TRUE                                                |
 
 ## Data Structure
 
-| Column             | Title       | ADIOS Type | Length | Required | Notes                                      |
-| :----------------- | ----------- | :--------: | :----: | :------: | :----------------------------------------- |
-| id_bkp_credit_note | Credit Note |   lookup   |   8    |   TRUE   | ID dobropisu                               |
-| id_bkp_claim       | Claim       |   lookup   |   8    |   TRUE   | ID pohľadávky                              |
+| Column             | Title       | ADIOS Type | Length | Required | Notes            |
+| :----------------- | ----------- | :--------: | :----: | :------: | :--------------- |
+| id                 |             |    int     |   8    |   TRUE   | Unique record ID |
+| id_bkp_credit_note | Credit Note |   lookup   |   8    |   TRUE   | ID dobropisu     |
+| id_bkp_claim       | Claim       |   lookup   |   8    |   TRUE   | ID pohľadávky    |
 
 ### ADIOS Parameters
 
@@ -41,10 +43,11 @@ No additional ADIOS parameters needs to be defined.
 
 ### Indexes
 
-| Name               | Type  |         Column + Order |
-| :----------------- | :---: | ---------------------: |
-| id_bkp_credit_note | INDEX | id_bkp_credit_note ASC |
-| id_bkp_claim       | INDEX |       id_bkp_claim ASC |
+| Name               |  Type   |         Column + Order |
+| :----------------- | :-----: | ---------------------: |
+| id                 | PRIMARY |                 id ASC |
+| id_bkp_credit_note |  INDEX  | id_bkp_credit_note ASC |
+| id_bkp_claim       |  INDEX  |       id_bkp_claim ASC |
 
 ## Callbacks
 

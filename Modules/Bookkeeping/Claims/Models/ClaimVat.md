@@ -23,6 +23,7 @@ No constants are defined for this model.
 
 | Column         | Title          | ADIOS Type | Length | Required | Notes            |
 | :------------- | -------------- | :--------: | :----: | :------: | :--------------- |
+| id             |                |    int     |   8    |   TRUE   | Unique record ID |
 | id_bkp_claim   | Claim          |   lookup   |   8    |   TRUE   | ID pohľadávky    |
 | id_bkp_vat     | VAT Rate       |   lookup   |   8    |   TRUE   | ID sadzby DPH    |
 | price_excl_vat | Price Excl VAT |  decimal   |  15,2  |   TRUE   | Suma bez DPH     |

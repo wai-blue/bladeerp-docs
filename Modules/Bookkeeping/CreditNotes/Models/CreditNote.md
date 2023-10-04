@@ -1,4 +1,4 @@
-# Model Bookkeeping/CreditNote/CreditNote
+# Model Bookkeeping/CreditNotes/CreditNote
 
 ## Introduction
 
@@ -10,18 +10,18 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                  |
-| :-------------------- | :------------------------------------- |
-| storeRecordInfo       | TRUE                                   |
-| sqlName               | bkp_credit_notes                       |
-| urlBase               | bookkeeping/credit-note/credit-notes   |
-| lookupSqlValue        | {%TABLE%}.sequence_code                |
-| tableTitle            | CreditNotes                            |
-| formTitleForInserting | New CreditNote                         |
-| formTitleForEditing   | Credit Note                            |
-| crud/browse/action    | Bookkeeping/CreditNote/CreditNotes     |
-| crud/add/action       | Bookkeeping/CreditNote/CreditNote/Add  |
-| crud/edit/action      | Bookkeeping/CreditNote/CreditNote/Edit |
+| Property              | Value                                   |
+| :-------------------- | :-------------------------------------- |
+| storeRecordInfo       | TRUE                                    |
+| sqlName               | bkp_credit_notes                        |
+| urlBase               | bookkeeping/credit-notes                |
+| lookupSqlValue        | {%TABLE%}.sequence_code                 |
+| tableTitle            | CreditNotes                             |
+| formTitleForInserting | New CreditNote                          |
+| formTitleForEditing   | Credit Note                             |
+| crud/browse/action    | Bookkeeping/CreditNotes/CreditNotes     |
+| crud/add/action       | Bookkeeping/CreditNotes/CreditNote/Add  |
+| crud/edit/action      | Bookkeeping/CreditNotes/CreditNote/Edit |
 
 ## Data Structure
 

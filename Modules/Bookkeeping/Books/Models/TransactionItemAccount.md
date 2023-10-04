@@ -20,6 +20,7 @@ No constants are defined for this model.
 
 | Column                  | Title            | ADIOS Type | Length | Required | Notes                     |
 | :---------------------- | ---------------- | :--------: | :----: | :------: | :------------------------ |
+| id                      |                  |    int     |   8    |   TRUE   | Unique record ID          |
 | id_bkp_transaction_item | Transaction Item |   lookup   |   8    |   TRUE   | ID položky dokladu        |
 | id_bkp_book_account     | Account          |   lookup   |   8    |   TRUE   | ID účtu z účtovnej osnovy |
 
@@ -40,6 +41,7 @@ No additional ADIOS parameters needs to be defined.
 
 | Name                    |  Type   |              Column + Order |
 | :---------------------- | :-----: | --------------------------: |
+| id                      | PRIMARY |                      id ASC |
 | id_bkp_transaction_item |  INDEX  | id_bkp_transaction_item ASC |
 | id_bkp_book_account     |  INDEX  |     id_bkp_book_account ASC |
 
