@@ -303,15 +303,19 @@ foreach ($modules as $module) {
           }
         }
 
-        if (($properties['isJunctionTable'] ?? '') === 'TRUE') {
-          if (isset($columns['id'])) {
-            $errors[] = "[{$modelRef}] Cross-tables cannot contain `id`.";
-          }
-        } else {
-          if (!isset($columns['id'])) {
-            $errors[] = "[{$modelRef}] Column `id` not found.";
-          }
+        if (!isset($columns['id'])) {
+          $errors[] = "[{$modelRef}] Column `id` not found.";
         }
+
+        // if (($properties['isJunctionTable'] ?? '') === 'TRUE') {
+        //   if (isset($columns['id'])) {
+        //     $errors[] = "[{$modelRef}] Cross-tables cannot contain `id`.";
+        //   }
+        // } else {
+        //   if (!isset($columns['id'])) {
+        //     $errors[] = "[{$modelRef}] Column `id` not found.";
+        //   }
+        // }
 
         // Miscelaneous
 
