@@ -58,8 +58,8 @@ REVIEW DD: VAT Rate ukladat ako decimal v %?
 | Column             | Model                                                | Relation | OnUpdate | OnDelete |
 | :----------------- | :--------------------------------------------------- | :------: | -------- | -------- |
 | id_bkp_credit_note | App/Widgets/Bookkeeping/CreditNote/Models/CreditNote |   1:N    | Cascade  | Cascade  |
-| id_com_unit        | App/Widgets/Common/Units/Models/Unit                    |   1:N    | Cascade  | Restrict |
-| id_bkp_vat         | App/Widgets/Bookkeeping/Books/Models/Vat          |   1:N    | Cascade  | Restrict |
+| id_com_unit        | App/Widgets/Common/CodeLists/Models/Unit             |   1:N    | Cascade  | Restrict |
+| id_bkp_vat         | App/Widgets/Bookkeeping/Books/Models/Vat             |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

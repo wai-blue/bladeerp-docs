@@ -49,6 +49,8 @@ $actionToCheck = $argv[3] ?? "";
 $modelToCheck = $argv[4] ?? "";
 
 $modules = [
+  'Common',
+  'Warehouse',
   'Bookkeeping',
 ];
 

@@ -33,7 +33,7 @@ No constants are defined for this model.
 | id_com_media_type | Media Type         |   lookup   |        |   TRUE   |                                            |
 | media             | Path to Media File |    file    |  255   |   TRUE   | Path to picture, video etc.                |
 | description       | Description        |    text    |        |  FALSE   |                                            |
-
+|                   |                    |            |        |          |                                            |
 
 ### ADIOS Parameters
 
@@ -41,11 +41,16 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-Model does not contain foreign keys.
+| Column            | Model                                                       | Relation | OnUpdate | OnDelete |
+| :---------------- | :---------------------------------------------------------- | :------: | -------- | -------- |
+| id_com_media_type | [App/Widgets/Common/CodeLists/Models/Media](./MediaType.md) |   1:N    | Cascade  | Cascade  |
 
 ### Indexes
 
-Model does not contain indexes.
+| Name              |  Type   |        Column + Order |
+| :---------------- | :-----: | --------------------: |
+| id                | PRIMARY |                id ASC |
+| id_com_media_type |  INDEX  | id_com_media_type ASC |
 
 ## Callbacks
 

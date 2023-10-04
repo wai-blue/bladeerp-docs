@@ -53,9 +53,9 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column         | Model                                                                        | Relation | OnUpdate | OnDelete |
-| :------------- | :--------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_com_unit    | [App/Widgets/Common/Units/Models/Unit](../../../Common/Units/Models/Unit.md) |   1:N    | Cascade  | Restrict |
+| Column      | Model                                                                                | Relation | OnUpdate | OnDelete |
+| :---------- | :----------------------------------------------------------------------------------- | :------: | -------- | -------- |
+| id_com_unit | [App/Widgets/Common/CodeLists/Models/Unit](../../../Common/CodeLists/Models/Unit.md) |   1:N    | Cascade  | Restrict |
 
 ### Indexes
 

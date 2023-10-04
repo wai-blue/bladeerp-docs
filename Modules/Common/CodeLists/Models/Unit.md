@@ -1,4 +1,4 @@
-# Model Common/Units/Unit
+# Model Common/CodeLists/Unit
 
 ## Introduction
 
@@ -24,14 +24,14 @@ No constants are defined for this model.
 | isJunctionTable       | FALSE                             |
 | storeRecordInfo       | TRUE                              |
 | sqlName               | com_units                         |
-| urlBase               | common/units/units                |
+| urlBase               | common/codelists/units            |
 | lookupSqlValue        | concat(name, ' ','(', symbol,')') |
 | tableTitle            | Units                             |
 | formTitleForInserting | New Unit                          |
 | formTitleForEditing   | Unit                              |
-| crud/browse/action    | Common/Units/Units                |
-| crud/add/action       | Common/Units/Unit/Add             |
-| crud/edit/action      | Common/Units/Unit/Edit            |
+| crud/browse/action    | Common/CodeLists/Units            |
+| crud/add/action       | Common/CodeLists/Unit/Add         |
+| crud/edit/action      | Common/CodeLists/Unit/Edit        |
 
 ## Data Structure
 

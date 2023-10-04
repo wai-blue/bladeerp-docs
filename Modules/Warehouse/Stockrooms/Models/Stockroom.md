@@ -52,11 +52,12 @@ No constants are defined for this model.
 
 [Model does not contain indexes.]
 
-| Name                 |  Type   | Column + Order |
-| :------------------- | :-----: | -------------: |
-| id                   | PRIMARY |         id ASC |
-| name                 | UNIQUE  |       name ASC |
-| is_active            |  INDEX  |  is_active ASC |
+| Name           |  Type   |     Column + Order |
+| :------------- | :-----: | -----------------: |
+| id             | PRIMARY |             id ASC |
+| name           | UNIQUE  |           name ASC |
+| is_active      |  INDEX  |      is_active ASC |
+| id_com_address |  INDEX  | id_com_address ASC |
 
 ## Callbacks
 

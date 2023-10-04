@@ -33,10 +33,11 @@ V modeli nie sú použité konštanty.
 
 ## Data Structure
 
-| Column          | Title    | ADIOS Type | Length | Required | Notes        |
-| :-------------- | :------- | :--------: | :----: | :------: | :----------- |
-| id_com_contact  | Contact  |    int     |   8    |   TRUE   | ID kontaktu  |
-| id_com_category | Category |    int     |   8    |   TRUE   | ID kategórie |
+| Column          | Title    | ADIOS Type | Length | Required | Notes            |
+| :-------------- | :------- | :--------: | :----: | :------: | :--------------- |
+| id              |          |    int     |   8    |   TRUE   | Unique record ID |
+| id_com_contact  | Contact  |   lookup   |   8    |   TRUE   | ID kontaktu      |
+| id_com_category | Category |   lookup   |   8    |   TRUE   | ID kategórie     |
 
 ### ADIOS Parameters
 

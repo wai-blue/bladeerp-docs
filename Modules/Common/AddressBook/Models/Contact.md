@@ -34,9 +34,9 @@ TODO: JG k lookupSqlValue - podobne ako v modeli Address, aj tu je potrebné vyr
 | company_business_number | Business Number         |  varchar   |   50   |  FALSE   | IČO                                   |
 | company_tax_number      | Tax Number              |  varchar   |   50   |  FALSE   | DIČ                                   |
 | company_vat_number      | VAT Bumber              |  varchar   |   50   |  FALSE   | DIČ DPH                               |
-| id_com_person   | Primary Contact Person  |    int     |   8    |   TRUE   | ID fyzickej osoby                     |
-| id_com_address  | Primary Address         |    int     |   8    |  FALSE   | ID primárnej adresy                   |
-| id_bkp_currency         | Primary Currency        |    int     |   8    |  FALSE   | ID používanej meny                    |
+| id_com_person           | Primary Contact Person  |   lookup   |   8    |   TRUE   | ID fyzickej osoby                     |
+| id_com_address          | Primary Address         |   lookup   |   8    |  FALSE   | ID primárnej adresy                   |
+| id_bkp_currency         | Primary Currency        |   lookup   |   8    |  FALSE   | ID používanej meny                    |
 | language_code           | Primary Language        |  varchar   |   10   |  FALSE   | Preferovaný jazyk                     |
 | website                 | WEB page                |  varchar   |  255   |  FALSE   | WEB stránka                           |
 | notes                   | Notes                   |    text    |        |  FALSE   | Poznámka ku kontaktu                  |

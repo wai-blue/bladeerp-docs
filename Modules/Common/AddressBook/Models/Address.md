@@ -28,13 +28,13 @@ REVIEW: JG k lookupSqlValue - potrebné vyriešiť ako v ADIOSe vyriešiť použ
 | :------------- | :--------------- | :--------: | :----: | :------: | :----------------------------------------- |
 | id             |                  |    int     |   8    |   TRUE   | ID záznamu                                 |
 | record_info    | Record Info      |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
-| id_com_contact | Contact          |    int     |   8    |   TRUE   | ID kontaktu                                |
+| id_com_contact | Contact          |   lookup   |   8    |   TRUE   | ID kontaktu                                |
 | is_active      | Is Active?       |  boolean   |   1    |   TRUE   | Aktívny kontakt?                           |
 | street_1       | Street - 1. line |  varchar   |  200   |   TRUE   | Ulica - 1. riadok                          |
 | street_2       | Street - 2. line |  varchar   |  200   |  FALSE   | Ulica - 2. riadok                          |
 | city           | City             |  varchar   |  200   |   TRUE   | Mesto                                      |
 | postal_code    | ZIP              |  varchar   |   20   |   TRUE   | PSČ                                        |
-| id_com_country | Country          |    int     |   8    |  FALSE   | ID krajiny                                 |
+| id_com_country | Country          |   lookup   |   8    |  FALSE   | ID krajiny                                 |
 | email          | Contact Email    |  varchar   |  100   |  FALSE   | Kontaktný Email                            |
 | phone          | Contact Phone    |  varchar   |   20   |  FALSE   | Kontaktný Telefón                          |
 | notes          | Notes            |    text    |        |  FALSE   | Poznámka k adrese                          |

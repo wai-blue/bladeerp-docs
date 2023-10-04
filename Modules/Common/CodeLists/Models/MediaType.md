@@ -42,8 +42,11 @@ No additional ADIOS parameters needs to be defined.
 Model does not contain foreign keys.
 
 ### Indexes
-
-Model does not contain indexes.
+    
+| Name |  Type   | Column + Order |
+| :--- | :-----: | -------------: |
+| id   | PRIMARY |         id ASC |
+| name | UNIQUE  |       name ASC |
 
 ## Callbacks
 

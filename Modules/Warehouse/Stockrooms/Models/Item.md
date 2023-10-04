@@ -26,14 +26,14 @@ No constants are defined for this model.
 
 ## Data Structure
 
-| Column                        | Title             | ADIOS Type | Length | Required | Notes                                                                   |
-| :---------------------------- | ----------------- | :--------: | :----: | :------: | :---------------------------------------------------------------------- |
-| id                            |                   |    int     |   8    |   TRUE   | Unique record ID                                                        |
-| record_info                   | Record Info       |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author                              |
-| name                          | Name              |  varchar   |  100   |   TRUE   |                                                                         |
-| description                   | Description       |    text    |        |  FALSE   |                                                                         |
-| is_active                     | Is Active         |  boolean   |   1    |   TRUE   |                                                                         |
-| vat_level                     | VAT Level         |    int     |   2    |   TRUE   |                                                                         |
+| Column      | Title       | ADIOS Type | Length | Required | Notes                                      |
+| :---------- | ----------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id          |             |    int     |   8    |   TRUE   | Unique record ID                           |
+| record_info | Record Info |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
+| name        | Name        |  varchar   |  100   |   TRUE   |                                            |
+| description | Description |    text    |        |  FALSE   |                                            |
+| is_active   | Is Active   |  boolean   |   1    |   TRUE   |                                            |
+| vat_level   | VAT Level   |    enum    |   2    |   TRUE   |                                            |
 
 ### ADIOS Parameters
 

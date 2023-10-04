@@ -26,7 +26,7 @@ V modeli nie sú použité konštanty.
 | :------------- | :----------- | :--------: | :----: | :------: | :----------------------------- |
 | id             |              |    int     |   8    |   TRUE   | ID záznamu                     |
 | record_info    | Record Info  |    json    |        |   TRUE   |                                |
-| id_com_contact | Contact      |    int     |   8    |   TRUE   | ID kontaktu                    |
+| id_com_contact | Contact      |   lookup   |   8    |   TRUE   | ID kontaktu                    |
 | first_name     | First Name   |  varchar   |  200   |   TRUE   | Krstné meno                    |
 | last_name      | Last Name    |  varchar   |  200   |  FALSE   | Priezvisko                     |
 | middle_name    | Middle Name  |  varchar   |  200   |  FALSE   | Stretné meno                   |
