@@ -1,4 +1,4 @@
-# Action Bookkeeping/CashRegisters/Receipt/Item/AddOrEdit
+# Controller Bookkeeping/CashRegisters/Receipt/Item/AddOrEdit
 
 ## Description
 

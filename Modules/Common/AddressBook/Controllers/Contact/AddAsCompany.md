@@ -1,4 +1,4 @@
-# Action Common/AddressBook/Contact/AddAsCompany
+# Controller Common/AddressBook/Contact/AddAsCompany
 
 ## Description
 

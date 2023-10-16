@@ -1,4 +1,4 @@
-# Action Bookkeeping/Banks/Account/Statements
+# Controller Bookkeeping/Banks/Account/Statements
 
 ## Description
 

@@ -1,4 +1,4 @@
-# Action [Module]/[Widget]/UsingFormAsMainView
+# Controller [Module]/[Widget]/UsingFormAsMainView
 
 ## Description
 

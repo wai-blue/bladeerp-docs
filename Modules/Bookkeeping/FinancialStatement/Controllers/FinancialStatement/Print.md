@@ -1,4 +1,4 @@
-# Action Bookkeeping/FinancialStatement/FinancialStatement/Print
+# Controller Bookkeeping/FinancialStatement/FinancialStatement/Print
 
 ## Description
 

@@ -1,4 +1,4 @@
-# Action Bookkeeping/Claims/State/AddOrEdit
+# Controller Bookkeeping/Claims/State/AddOrEdit
 
 ## Description
 

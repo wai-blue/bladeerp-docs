@@ -1,4 +1,4 @@
-# Action Bookkeeping/Assets/AccountingDepreciation/AddOrEdit
+# Controller Bookkeeping/Assets/AccountingDepreciation/AddOrEdit
 
 ## Description
 

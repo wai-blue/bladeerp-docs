@@ -1,4 +1,4 @@
-# Action Bookkeeping/Books/Account/Edit
+# Controller Bookkeeping/Books/Account/Edit
 
 ## Description
 

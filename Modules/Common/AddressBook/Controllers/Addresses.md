@@ -1,8 +1,8 @@
-# Action Common/AddressBook/Addresses
+# Controller Common/AddressBook/Addresses
 
 ## Description
 
-List of all addresses related to selected contact from address book.
+List of all addresses. The list can be filtered/reduced when related to some entity (e.g. to selected contact from address book or stockroom).
 
 ## View
 

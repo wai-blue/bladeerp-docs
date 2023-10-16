@@ -1,4 +1,4 @@
-# Action Bookkeeping/Books/Account/Types
+# Controller Bookkeeping/Books/Account/Types
 
 ## Description
 

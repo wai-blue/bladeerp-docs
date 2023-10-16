@@ -1,4 +1,4 @@
-# Action Bookkeeping/Assets/AccountingDepreciations
+# Controller Bookkeeping/Assets/AccountingDepreciations
 
 ## Description
 

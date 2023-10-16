@@ -1,4 +1,4 @@
-# Action [Module]/[Widget]/UsingCustomViewAsMainView
+# Controller [Module]/[Widget]/UsingCustomViewAsMainView
 
 ## Description
 

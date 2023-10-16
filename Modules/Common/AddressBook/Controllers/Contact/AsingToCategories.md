@@ -1,4 +1,4 @@
-# Action Common/AddressBook/Contact/AsingToCategories
+# Controller Common/AddressBook/Contact/AsingToCategories
 
 ## Description
 

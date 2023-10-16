@@ -1,4 +1,4 @@
-# Action [Module]/[Widget]/UsingGridAsMainView
+# Controller [Module]/[Widget]/UsingGridAsMainView
 
 ## Description
 

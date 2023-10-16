@@ -1,4 +1,4 @@
-# Action Common/AddressBook/Contact/AddNextPerson
+# Controller Common/AddressBook/Contact/AddNextPerson
 
 ## Description
 

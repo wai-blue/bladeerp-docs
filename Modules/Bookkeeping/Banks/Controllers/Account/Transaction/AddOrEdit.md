@@ -1,4 +1,4 @@
-# Action Bookkeeping/Banks/Account/Transaction/AddOrEdit
+# Controller Bookkeeping/Banks/Account/Transaction/AddOrEdit
 
 ## Description
 

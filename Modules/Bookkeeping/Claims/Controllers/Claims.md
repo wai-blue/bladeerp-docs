@@ -1,4 +1,4 @@
-# Action Bookkeeping/Claims/Claims
+# Controller Bookkeeping/Claims/Claims
 
 ## Description
 

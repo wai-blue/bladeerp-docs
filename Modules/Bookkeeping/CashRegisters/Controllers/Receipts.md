@@ -1,4 +1,4 @@
-# Action Bookkeeping/CashRegisters/Receipts
+# Controller Bookkeeping/CashRegisters/Receipts
 
 ## Description
 

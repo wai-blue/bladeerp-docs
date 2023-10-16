@@ -1,4 +1,4 @@
-# Action Common/AddressBook/Contacts
+# Controller Common/AddressBook/Contacts
 
 ## Description
 

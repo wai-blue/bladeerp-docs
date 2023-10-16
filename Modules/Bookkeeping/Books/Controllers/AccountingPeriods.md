@@ -1,4 +1,4 @@
-# Action Bookkeeping/Books/AccountingPeriods
+# Controller Bookkeeping/Books/AccountingPeriods
 
 ## Description
 

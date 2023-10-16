@@ -1,4 +1,4 @@
-# Action [Module]/[Widget]/Settings
+# Controller [Module]/[Widget]/Settings
 
 ## Description
 

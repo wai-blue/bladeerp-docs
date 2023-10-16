@@ -1,4 +1,4 @@
-# Action Bookkeeping/Assets/Asset/Print
+# Controller Bookkeeping/Assets/Asset/Print
 
 REVIEW DD: Definicia vzhladu tlacovych reportov je este pole neorane. Kazdy report moze vyzerat uplne inac, co nie je pripad formularov v appke, pretoze tie vykazuju vela prvkov "standardizacie". Takze tento zapis zatial neriesim / nekontrolujem.
 

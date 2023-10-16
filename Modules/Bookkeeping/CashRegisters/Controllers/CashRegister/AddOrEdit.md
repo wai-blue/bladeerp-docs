@@ -1,4 +1,4 @@
-# Action Bookkeeping/CashRegisters/CashRegister/AddOrEdit
+# Controller Bookkeeping/CashRegisters/CashRegister/AddOrEdit
 
 ## Description
 

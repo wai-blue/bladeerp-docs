@@ -1,4 +1,4 @@
-# Action Common/AddressBook/Category/Edit
+# Controller Common/AddressBook/Category/Edit
 
 ## Description
 

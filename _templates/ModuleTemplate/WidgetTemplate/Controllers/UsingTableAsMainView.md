@@ -1,4 +1,4 @@
-# Action [Module]/[Widget]/UsingTableAsMainView
+# Controller [Module]/[Widget]/UsingTableAsMainView
 
 ## Description
 
