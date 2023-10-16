@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Tabuľka na evidovanie účtovných odpisov DHM a DNM, z ktorej sa relevantné hodnoty premietnu do kariet majetku. Vypočítavajú sa raz mesačne použitím akcie Bookkeeping/Assets/Actions/AccountingDepreciations/Calculate
+Tabuľka na evidovanie účtovných odpisov DHM a DNM, z ktorej sa relevantné hodnoty premietnu do kariet majetku. Vypočítavajú sa raz mesačne použitím akcie Bookkeeping/Assets/Controllers/AccountingDepreciations/Calculate
 
 ## Constants
 

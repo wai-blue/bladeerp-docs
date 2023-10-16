@@ -66,9 +66,9 @@ foreach ($modules as $module) {
   $widgets = scandir($moduleDir);
   foreach ($widgets as $widget) {
     $widgetDir = $moduleDir . '/' . $widget;
-    if (!is_dir($widgetDir . '/Actions')) continue;
+    if (!is_dir($widgetDir . '/Controllers')) continue;
 
-    $actions = \HelperFunctions::scanDirRecursively($widgetDir . '/Actions');
+    $actions = \HelperFunctions::scanDirRecursively($widgetDir . '/Controllers');
     foreach ($actions as $action) {
       $allActions[] = "{$module}/{$widget}/" . str_replace('.md', '', $action);
     }
@@ -105,23 +105,23 @@ foreach ($modules as $module) {
     // $md = new \Markdown($widgetDir . '/Settings.md');
     // $md->findTableByColumns(['Setting', 'Data type', 'Default value', 'Description']);
 
-    // Actions
-    if (!is_dir($widgetDir . '/Actions')) {
-      $warnings[] = "[{$widget}] Actions are not specified.";
+    // Controllers
+    if (!is_dir($widgetDir . '/Controllers')) {
+      $warnings[] = "[{$widget}] Controllers are not specified.";
     } else if ($actionToCheck != '-') {
 
-      $actions = \HelperFunctions::scanDirRecursively($widgetDir . '/Actions');
+      $actions = \HelperFunctions::scanDirRecursively($widgetDir . '/Controllers');
       foreach ($actions as $action) {
 
         if (in_array($action, ['.', '..'])) continue;
 
-        $actionRef = str_replace('\\', '/', realpath($widgetDir . '/Actions/' . $action));
+        $actionRef = str_replace('\\', '/', realpath($widgetDir . '/Controllers/' . $action));
 
         if (!empty($actionToCheck) && strpos($actionRef, $actionToCheck) === FALSE) continue;
 
         echo "    Checking action {$action}...\n";
 
-        $md = new \Markdown($widgetDir . '/Actions/' . $action);
+        $md = new \Markdown($widgetDir . '/Controllers/' . $action);
 
         // Document outline
         if (

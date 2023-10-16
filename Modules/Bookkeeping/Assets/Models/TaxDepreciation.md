@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Tabuľka na evidovanie daňových odpisov DHM a DNM, z ktorej sa relevantné hodnoty premietnu do kariet majetku. Vypočítavajú sa raz ročne použitím akcie Bookkeeping/Assets/Actions/TaxDepreciations/Calculate
+Tabuľka na evidovanie daňových odpisov DHM a DNM, z ktorej sa relevantné hodnoty premietnu do kariet majetku. Vypočítavajú sa raz ročne použitím akcie Bookkeeping/Assets/Controllers/TaxDepreciations/Calculate
 
 ## Constants
 
