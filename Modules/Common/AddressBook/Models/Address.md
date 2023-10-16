@@ -18,8 +18,6 @@ V modeli nie sú použité konštanty.
 | formTitleForInserting | New Contact Address                                                                      |
 | formTitleForEditing   | Contact Address                                                                          |
 | crud/browse/action    | Common/AddressBook/Addresses                                                             |
-| crud/add/action       | Common/AddressBook/Address/Add                                                           |
-| crud/edit/action      | Common/AddressBook/Address/Edit                                                          |
 
 REVIEW: JG k lookupSqlValue - potrebné vyriešiť ako v ADIOSe vyriešiť použitie "externej" lookup hodnoty
 
@@ -28,8 +26,7 @@ REVIEW: JG k lookupSqlValue - potrebné vyriešiť ako v ADIOSe vyriešiť použ
 | :------------- | :--------------- | :--------: | :----: | :------: | :----------------------------------------- |
 | id             |                  |    int     |   8    |   TRUE   | ID záznamu                                 |
 | record_info    | Record Info      |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
-| id_com_contact | Contact          |   lookup   |   8    |   TRUE   | ID kontaktu                                |
-| is_active      | Is Active?       |  boolean   |   1    |   TRUE   | Aktívny kontakt?                           |
+| is_active      | Is Active?       |  boolean   |   1    |   TRUE   | Aktívna adresa?                            |
 | street_1       | Street - 1. line |  varchar   |  200   |   TRUE   | Ulica - 1. riadok                          |
 | street_2       | Street - 2. line |  varchar   |  200   |  FALSE   | Ulica - 2. riadok                          |
 | city           | City             |  varchar   |  200   |   TRUE   | Mesto                                      |
@@ -49,9 +46,8 @@ REVIEW: JG k lookupSqlValue - potrebné vyriešiť ako v ADIOSe vyriešiť použ
 | street_2  | description | 2nd row for a address data     |
 
 ### Foreign Keys
-| Column         | Model                                                                                          | Relation | OnUpdate | OnDelete |
-| :------------- | :--------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_com_contact | [App/Widgets/Common/AddressBook/Models/Contact](./Contact.md) |   1:N    | Cascade  | Restrict |
+| Column         | Model                                                         | Relation | OnUpdate | OnDelete |
+| :------------- | :------------------------------------------------------------ | :------: | -------- | -------- |
 | id_com_country | [App/Widgets/Common/AddressBook/Models/Country](./Country.md) |   1:N    | Cascade  | Restrict |
 
 ### Indexes
@@ -59,7 +55,6 @@ REVIEW: JG k lookupSqlValue - potrebné vyriešiť ako v ADIOSe vyriešiť použ
 | :------------- | :-----: | ------------------: |
 | id             | PRIMARY |              id ASC |
 | is_active      |  INDEX  |      is_active DESC |
-| id_com_contact |  INDEX  | id_com_contact DESC |
 | id_com_country |  INDEX  | id_com_country DESC |
 
 ## Callbacks

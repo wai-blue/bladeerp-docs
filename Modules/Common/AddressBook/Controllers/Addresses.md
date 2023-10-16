@@ -2,7 +2,7 @@
 
 ## Description
 
-List of all addresses. The list can be filtered/reduced when related to some entity (e.g. to selected contact from address book or stockroom).
+List of all addresses.
 
 ## View
 
@@ -35,5 +35,5 @@ Table
 * Row item is re-activated `is_active=TRUE` onChange.
 
 ## Parameters Post-processing
-1. If the parameter `idContact != NULL` then show only addresses for given contact (`id_com_contact = idContact`).
+[No post-processing of default parameters is necessary.]
   

@@ -1,25 +1,26 @@
 # Model Common/AddressBook/Country
 
 ## Introduction
-Model slúži na evidenciu krajín.
+* Model slúži na evidenciu krajín.
+* Pri inštalácii bude v aplikácii naimportovaný zoznam všetkých aktuálne existujúcich krajín.
 
 ## Constants
 V modeli nie sú použité konštanty.
 
 ## Properties
-| Property              | Value                           |
-| :-------------------- | :------------------------------ |
-| isJunctionTable       | FALSE                           |
-| storeRecordInfo       | TRUE                            |
-| sqlName               | com_countries                   |
-| urlBase               | common/address-book/countries   |
-| lookupSqlValue        | concat(name, " (", code, ")")   |
-| tableTitle            | Countries                       |
-| formTitleForInserting | New Country                     |
-| formTitleForEditing   | Country                         |
-| crud/browse/action    | Common/AddressBook/Countries    |
-| crud/add/action       | Common/AddressBook/Country/Add  |
-| crud/edit/action      | Common/AddressBook/Country/Edit |
+| Property              | Value                                |
+| :-------------------- | :----------------------------------- |
+| isJunctionTable       | FALSE                                |
+| storeRecordInfo       | TRUE                                 |
+| sqlName               | com_countries                        |
+| urlBase               | common/address-book/countries        |
+| lookupSqlValue        | concat(name, " (", code, ")")        |
+| tableTitle            | Countries                            |
+| formTitleForInserting | New Country                          |
+| formTitleForEditing   | Country                              |
+| crud/browse/action    | Common/AddressBook/Countries         |
+| crud/add/action       | Common/AddressBook/Country/AddOrEdit |
+| crud/edit/action      | Common/AddressBook/Country/AddOrEdit |
 
 ## Data Structure
 | Column      | Title                | ADIOS Type | Length | Required | Notes                                      |
