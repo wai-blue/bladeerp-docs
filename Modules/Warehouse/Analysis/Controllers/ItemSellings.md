@@ -23,7 +23,7 @@ Grid
   * B:
     * view: App\Widgets\Warehouse\Analysis\Views\MonthlySellings
     * params:
-      * year_back_from_date: [see Parameter Year Back From Date](#parameter-year-back-from-date)
+      * yearBackFromDate: [see Parameter Year Back From Date](#parameter-year-back-from-date)
       * dataset:  [see Dataset Monthly Sellings](#dataset-monthly-sellings)
   * C:
     * view: App\Widgets\Warehouse\Analysis\Views\BestSellerItems
