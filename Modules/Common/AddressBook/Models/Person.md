@@ -7,19 +7,19 @@ Model slúži na evidenciu fyzických osôb a ich údajov
 V modeli nie sú použité konštanty.
 
 ## Properties
-| Property              | Value                                       |
-| --------------------- | ------------------------------------------- |
-| isJunctionTable       | FALSE                                       |
-| storeRecordInfo       | TRUE                                        |
-| sqlName               | com_persons                                 |
-| urlBase               | common/address-book/persons                 |
-| lookupSqlValue        | concat(first_name, last_name, phone, email) |
-| tableTitle            | Persons                                     |
-| formTitleForInserting | New Person                                  |
-| formTitleForEditing   | Person                                      |
-| crud/browse/action    | Common/AddressBook/Persons                  |
-| crud/add/action       | Common/AddressBook/Person/Add               |
-| crud/edit/action      | Common/AddressBook/Person/Edit              |
+| Property               | Value                                       |
+| ---------------------- | ------------------------------------------- |
+| isJunctionTable        | FALSE                                       |
+| storeRecordInfo        | TRUE                                        |
+| sqlName                | com_persons                                 |
+| urlBase                | common/address-book/persons                 |
+| lookupSqlValue         | concat(first_name, last_name, phone, email) |
+| tableTitle             | Persons                                     |
+| formTitleForInserting  | New Person                                  |
+| formTitleForEditing    | Person                                      |
+| crud/browse/controller | Common/AddressBook/Persons                  |
+| crud/add/controller    | Common/AddressBook/Person/AddOrEdit         |
+| crud/edit/controller   | Common/AddressBook/Person/AddOrEdit         |
 
 ## Data Structure
 | Column         | Title        | ADIOS Type | Length | Required | Notes                          |

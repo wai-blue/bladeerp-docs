@@ -9,18 +9,18 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                         |
-| --------------------- | ----------------------------- |
-| storeRecordInfo       | TRUE                          |
-| lookupSqlValue        | {%TABLE%}.name                |
-| formTitleForEditing   | Claim                         |
-| tableTitle            | Claims                        |
-| sqlName               | bkp_claims                    |
-| urlBase               | bookkeeping/claims            |
-| formTitleForInserting | New Claim                     |
-| crud/browse/action    | Bookkeeping/Claims/Claims     |
-| crud/add/action       | Bookkeeping/Claims/Claim/Add  |
-| crud/edit/action      | Bookkeeping/Claims/Claim/Edit |
+| Property               | Value                         |
+| ---------------------- | ----------------------------- |
+| storeRecordInfo        | TRUE                          |
+| lookupSqlValue         | {%TABLE%}.name                |
+| formTitleForEditing    | Claim                         |
+| tableTitle             | Claims                        |
+| sqlName                | bkp_claims                    |
+| urlBase                | bookkeeping/claims            |
+| formTitleForInserting  | New Claim                     |
+| crud/browse/controller | Bookkeeping/Claims/Claims     |
+| crud/add/controller    | Bookkeeping/Claims/Claim/Add  |
+| crud/edit/controller   | Bookkeeping/Claims/Claim/Edit |
 
 ## Data Structure
 

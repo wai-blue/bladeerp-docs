@@ -18,20 +18,20 @@ Tabuľka slúži na evidenciu majetku.
 
 ## Properties
 
-| Property              | Value                                       |
-| :-------------------- | :------------------------------------------ |
-| storeRecordInfo       | TRUE                                        |
-| sqlName               | bkp_assets                                  |
-| urlBase               | bookkeeping/assets                          |
-| lookupSqlValue        | {%TABLE%}.inventory_number + {%TABLE%}.name |
-| tableTitle            | Assets                                      |
-| formTitleForInserting | New Asset                                   |
-| formTitleForEditing   | Detail Asset                                |
-| formAddButtonText     | Add Asset                                   |
-| formSaveButtonText    | Update Asset                                |
-| crud/browse/action    | Bookkeeping/Assets/Assets                   |
-| crud/add/action       | Bookkeeping/Assets/Asset/Add                |
-| crud/edit/action      | Bookkeeping/Assets/Asset/Edit               |
+| Property               | Value                                       |
+| :--------------------- | :------------------------------------------ |
+| storeRecordInfo        | TRUE                                        |
+| sqlName                | bkp_assets                                  |
+| urlBase                | bookkeeping/assets                          |
+| lookupSqlValue         | {%TABLE%}.inventory_number + {%TABLE%}.name |
+| tableTitle             | Assets                                      |
+| formTitleForInserting  | New Asset                                   |
+| formTitleForEditing    | Detail Asset                                |
+| formAddButtonText      | Add Asset                                   |
+| formSaveButtonText     | Update Asset                                |
+| crud/browse/controller | Bookkeeping/Assets/Assets                   |
+| crud/add/controller    | Bookkeeping/Assets/Asset/Add                |
+| crud/edit/controller   | Bookkeeping/Assets/Asset/Edit               |
 
 ## Data Structure
 

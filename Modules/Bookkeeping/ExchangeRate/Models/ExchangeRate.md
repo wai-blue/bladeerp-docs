@@ -12,18 +12,18 @@ No constants are defined for this model.
 
 (see ADIOS.repo/src/Core/Model.php)
 
-| Property              | Value                                      |
-| :-------------------- | :----------------------------------------- |
-| storeRecordInfo       | TRUE                                       |
-| sqlName               | bkp_exchange_rates                         |
-| urlBase               | bookkeeping/exchange/rates                 |
-| lookupSqlValue        |                                            |
-| tableTitle            | Exchange Rates                             |
-| formTitleForInserting | New Exchange Rate                          |
-| formTitleForEditing   | Exchange Rate                              |
-| crud/browse/action    | Bookkeeping/ExchangeRate/ExchangeRates     |
-| crud/add/action       | Bookkeeping/ExchangeRate/ExchangeRate/Add  |
-| crud/edit/action      | Bookkeeping/ExchangeRate/ExchangeRate/Edit |
+| Property               | Value                                      |
+| :--------------------- | :----------------------------------------- |
+| storeRecordInfo        | TRUE                                       |
+| sqlName                | bkp_exchange_rates                         |
+| urlBase                | bookkeeping/exchange/rates                 |
+| lookupSqlValue         |                                            |
+| tableTitle             | Exchange Rates                             |
+| formTitleForInserting  | New Exchange Rate                          |
+| formTitleForEditing    | Exchange Rate                              |
+| crud/browse/controller | Bookkeeping/ExchangeRate/ExchangeRates     |
+| crud/add/controller    | Bookkeeping/ExchangeRate/ExchangeRate/Add  |
+| crud/edit/controller   | Bookkeeping/ExchangeRate/ExchangeRate/Edit |
 
 ## Data Structure
 

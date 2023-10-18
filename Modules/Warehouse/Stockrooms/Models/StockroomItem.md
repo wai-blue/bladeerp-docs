@@ -10,27 +10,27 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                                                           |
-| :-------------------- | :------------------------------------------------------------------------------ |
-| isJunctionTable       | TRUE                                                                            |
-| storeRecordInfo       | FALSE                                                                           |
-| sqlName               | whs_stockroom_items                                                             |
-| urlBase               | warehouse/stockrooms/stockroom/{id_whs_stockroom}/items                         |
-| tableTitle            | Stockroom Items                                                                 |
-| formTitleForInserting | New Stockroom Item                                                              |
-| formTitleForEditing   | Stockroom Item                                                                  |
-| crud/browse/action    | Warehouse/Stockrooms/StockroomItems                                             |
-| crud/add/action       | Warehouse/Stockrooms/StockroomItem/Add                                          |
-| crud/edit/action      | Warehouse/Stockrooms/StockroomItem/Edit                                         |
-| junctions             | `json`                                                                          |
-|                       | `{`                                                                             |
-|                       | `  "StockroomItem": {`                                                          |
-|                       | `    "junctionModel": "App/Widgets/Warehouse/Stockrooms/Models/StockroomItem",` |
-|                       | `    "optionsModel": "App/Widgets/Warehouse/Stockrooms/Models/Item",`           |
-|                       | `    "masterKeyColumn": "id_whs_stockroom",`                                    |
-|                       | `    "optionKeyColumn": "id_whs_item",`                                         |
-|                       | `  }`                                                                           |
-|                       | `}`                                                                             |
+| Property               | Value                                                                           |
+| :--------------------- | :------------------------------------------------------------------------------ |
+| isJunctionTable        | TRUE                                                                            |
+| storeRecordInfo        | FALSE                                                                           |
+| sqlName                | whs_stockroom_items                                                             |
+| urlBase                | warehouse/stockrooms/stockroom/{id_whs_stockroom}/items                         |
+| tableTitle             | Stockroom Items                                                                 |
+| formTitleForInserting  | New Stockroom Item                                                              |
+| formTitleForEditing    | Stockroom Item                                                                  |
+| crud/browse/controller | Warehouse/Stockrooms/StockroomItems                                             |
+| crud/add/controller    | Warehouse/Stockrooms/StockroomItem/Add                                          |
+| crud/edit/controller   | Warehouse/Stockrooms/StockroomItem/Edit                                         |
+| junctions              | `json`                                                                          |
+|                        | `{`                                                                             |
+|                        | `  "StockroomItem": {`                                                          |
+|                        | `    "junctionModel": "App/Widgets/Warehouse/Stockrooms/Models/StockroomItem",` |
+|                        | `    "optionsModel": "App/Widgets/Warehouse/Stockrooms/Models/Item",`           |
+|                        | `    "masterKeyColumn": "id_whs_stockroom",`                                    |
+|                        | `    "optionKeyColumn": "id_whs_item",`                                         |
+|                        | `  }`                                                                           |
+|                        | `}`                                                                             |
 
 ## Data Structure
 

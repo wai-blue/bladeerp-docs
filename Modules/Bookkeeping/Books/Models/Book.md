@@ -11,18 +11,18 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                            |
-| --------------------- | -------------------------------- |
-| storeRecordInfo       | TRUE                             |
-| sqlName               | bkp_books                        |
-| urlBase               | bookkeeping/books                |
-| lookupSqlValue        | -                                |
-| tableTitle            | Books                            |
-| formTitleForInserting | New Book                         |
-| formTitleForEditing   | Book                             |
-| crud/browse/action    | Bookkeeping/Books/Books          |
-| crud/add/action       | Bookkeeping/Books/Book/AddOrEdit |
-| crud/edit/action      | Bookkeeping/Books/Book/AddOrEdit |
+| Property               | Value                            |
+| ---------------------- | -------------------------------- |
+| storeRecordInfo        | TRUE                             |
+| sqlName                | bkp_books                        |
+| urlBase                | bookkeeping/books                |
+| lookupSqlValue         | -                                |
+| tableTitle             | Books                            |
+| formTitleForInserting  | New Book                         |
+| formTitleForEditing    | Book                             |
+| crud/browse/controller | Bookkeeping/Books/Books          |
+| crud/add/controller    | Bookkeeping/Books/Book/AddOrEdit |
+| crud/edit/controller   | Bookkeeping/Books/Book/AddOrEdit |
 
 ## Data Structure
 

@@ -11,28 +11,28 @@
 
 (see ADIOS.repo/src/Core/Model.php - method `recordSave()` - code `//save cross-table-alignments`)
 
-| Property              | Value                                                                   |
-| :-------------------- | :---------------------------------------------------------------------- |
-| isJunctionTable       | TRUE                                                                    |
-| storeRecordInfo       | FALSE/TRUE [TRUE used only in case of additional columns e.g. amount]   |
-| sqlName               | [modulprefix_model_name in plural]                                      |
-| urlBase               | - [defined only only in case of additional columns e.g. amount]         |
-| lookupSqlValue        | - [defined only only in case of additional columns e.g. amount]         |
-| tableTitle            | - [defined only only in case of additional columns e.g. amount]         |
-| formTitleForInserting | - [defined only only in case of additional columns e.g. amount]         |
-| formTitleForEditing   | - [defined only only in case of additional columns e.g. amount]         |
-| crud/browse/action    | - [defined only only in case of additional columns e.g. amount]         |
-| crud/add/action       | - [defined only only in case of additional columns e.g. amount]         |
-| crud/edit/action      | - [defined only only in case of additional columns e.g. amount]         |
-| junctions             | `json`                                                                  |
-|                       | `{`                                                                     |
-|                       | `  "ContactCategory": {`                                                |
-|                       | `    "junctionModel": "App/Common/AddressBook/Models/ContactCategory",` |
-|                       | `    "optionsModel": "App/Common/AddressBook/Models/Category",`         |
-|                       | `    "masterKeyColumn": "id_com_contact",`                              |
-|                       | `    "optionKeyColumn": "id_com_category",`                             |
-|                       | `  }`                                                                   |
-|                       | `}`                                                                     |
+| Property               | Value                                                                   |
+| :--------------------- | :---------------------------------------------------------------------- |
+| isJunctionTable        | TRUE                                                                    |
+| storeRecordInfo        | FALSE/TRUE [TRUE used only in case of additional columns e.g. amount]   |
+| sqlName                | [modulprefix_model_name in plural]                                      |
+| urlBase                | - [defined only only in case of additional columns e.g. amount]         |
+| lookupSqlValue         | - [defined only only in case of additional columns e.g. amount]         |
+| tableTitle             | - [defined only only in case of additional columns e.g. amount]         |
+| formTitleForInserting  | - [defined only only in case of additional columns e.g. amount]         |
+| formTitleForEditing    | - [defined only only in case of additional columns e.g. amount]         |
+| crud/browse/controller | - [defined only only in case of additional columns e.g. amount]         |
+| crud/add/controller    | - [defined only only in case of additional columns e.g. amount]         |
+| crud/edit/controller   | - [defined only only in case of additional columns e.g. amount]         |
+| junctions              | `json`                                                                  |
+|                        | `{`                                                                     |
+|                        | `  "ContactCategory": {`                                                |
+|                        | `    "junctionModel": "App/Common/AddressBook/Models/ContactCategory",` |
+|                        | `    "optionsModel": "App/Common/AddressBook/Models/Category",`         |
+|                        | `    "masterKeyColumn": "id_com_contact",`                              |
+|                        | `    "optionKeyColumn": "id_com_category",`                             |
+|                        | `  }`                                                                   |
+|                        | `}`                                                                     |
 
 
 ## Data Structure

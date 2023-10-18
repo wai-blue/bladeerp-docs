@@ -10,27 +10,27 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                                                         |
-| :-------------------- | :---------------------------------------------------------------------------- |
-| isJunctionTable       | TRUE                                                                          |
-| storeRecordInfo       | FALSE                                                                         |
-| sqlName               | whs_item_packages                                                             |
-| urlBase               | warehouse/stockrooms/item/{id_whs_item}/packages                              |
-| tableTitle            | Item Packages                                                                 |
-| formTitleForInserting | New Item Package                                                              |
-| formTitleForEditing   | Item Package                                                                  |
-| crud/browse/action    | Warehouse/Stockrooms/ItemPackages                                             |
-| crud/add/action       | Warehouse/Stockrooms/ItemPackage/Add                                          |
-| crud/edit/action      | Warehouse/Stockrooms/ItemPackage/Edit                                         |
-| junctions             | `json`                                                                        |
-|                       | `{`                                                                           |
-|                       | `  "ItemPackage": {`                                                          |
-|                       | `    "junctionModel": "App/Widgets/Warehouse/Stockrooms/Models/ItemPackage",` |
-|                       | `    "optionsModel": "App/Widgets/Warehouse/Stockrooms/Models/Package",`      |
-|                       | `    "masterKeyColumn": "id_whs_item",`                                       |
-|                       | `    "optionKeyColumn": "id_whs_package",`                                                |
-|                       | `  }`                                                                         |
-|                       | `}`                                                                           |
+| Property               | Value                                                                         |
+| :--------------------- | :---------------------------------------------------------------------------- |
+| isJunctionTable        | TRUE                                                                          |
+| storeRecordInfo        | FALSE                                                                         |
+| sqlName                | whs_item_packages                                                             |
+| urlBase                | warehouse/stockrooms/item/{id_whs_item}/packages                              |
+| tableTitle             | Item Packages                                                                 |
+| formTitleForInserting  | New Item Package                                                              |
+| formTitleForEditing    | Item Package                                                                  |
+| crud/browse/controller | Warehouse/Stockrooms/ItemPackages                                             |
+| crud/add/controller    | Warehouse/Stockrooms/ItemPackage/Add                                          |
+| crud/edit/controller   | Warehouse/Stockrooms/ItemPackage/Edit                                         |
+| junctions              | `json`                                                                        |
+|                        | `{`                                                                           |
+|                        | `  "ItemPackage": {`                                                          |
+|                        | `    "junctionModel": "App/Widgets/Warehouse/Stockrooms/Models/ItemPackage",` |
+|                        | `    "optionsModel": "App/Widgets/Warehouse/Stockrooms/Models/Package",`      |
+|                        | `    "masterKeyColumn": "id_whs_item",`                                       |
+|                        | `    "optionKeyColumn": "id_whs_package",`                                    |
+|                        | `  }`                                                                         |
+|                        | `}`                                                                           |
 
 ## Data Structure
 

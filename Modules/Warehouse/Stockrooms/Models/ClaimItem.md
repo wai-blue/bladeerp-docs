@@ -9,27 +9,27 @@ Junction model between stockrooms item and claim item.
 No constants are defined for this model.
 
 ## Properties
-| Property              | Value                                                                       |
-| :-------------------- | :-------------------------------------------------------------------------- |
-| isJunctionTable       | TRUE                                                                        |
-| storeRecordInfo       | FALSE                                                                       |
-| sqlName               | whs_claim_items                                                             |
-| urlBase               | warehouse/stockrooms/item/{id_whs_item}/claim-items                         |
-| tableTitle            | Claim Items                                                                 |
-| formTitleForInserting | New Claim Item                                                              |
-| formTitleForEditing   | Claim Item                                                                  |
-| crud/browse/action    | Warehouse/Stockrooms/ClaimItem                                              |
-| crud/add/action       | Warehouse/Stockrooms/ClaimItem/Add                                          |
-| crud/edit/action      | Warehouse/Stockrooms/ClaimItem/Edit                                         |
-| junctions             | `json`                                                                      |
-|                       | `{`                                                                         |
-|                       | `  "ClaimItem": {`                                                          |
-|                       | `    "junctionModel": "App/Widgets/Warehouse/Stockrooms/Models/ClaimItem",` |
-|                       | `    "optionsModel": "App/Bookkeeping/Claims/Models/Item",`                 |
-|                       | `    "masterKeyColumn": "id_whs_item",`                                     |
-|                       | `    "optionKeyColumn": "id_bkp_claims_item",`                              |
-|                       | `  }`                                                                       |
-|                       | `}`                                                                         |
+| Property               | Value                                                                       |
+| :--------------------- | :-------------------------------------------------------------------------- |
+| isJunctionTable        | TRUE                                                                        |
+| storeRecordInfo        | FALSE                                                                       |
+| sqlName                | whs_claim_items                                                             |
+| urlBase                | warehouse/stockrooms/item/{id_whs_item}/claim-items                         |
+| tableTitle             | Claim Items                                                                 |
+| formTitleForInserting  | New Claim Item                                                              |
+| formTitleForEditing    | Claim Item                                                                  |
+| crud/browse/controller | Warehouse/Stockrooms/ClaimItem                                              |
+| crud/add/controller    | Warehouse/Stockrooms/ClaimItem/Add                                          |
+| crud/edit/controller   | Warehouse/Stockrooms/ClaimItem/Edit                                         |
+| junctions              | `json`                                                                      |
+|                        | `{`                                                                         |
+|                        | `  "ClaimItem": {`                                                          |
+|                        | `    "junctionModel": "App/Widgets/Warehouse/Stockrooms/Models/ClaimItem",` |
+|                        | `    "optionsModel": "App/Bookkeeping/Claims/Models/Item",`                 |
+|                        | `    "masterKeyColumn": "id_whs_item",`                                     |
+|                        | `    "optionKeyColumn": "id_bkp_claims_item",`                              |
+|                        | `  }`                                                                       |
+|                        | `}`                                                                         |
 
 ## Data Structure
 

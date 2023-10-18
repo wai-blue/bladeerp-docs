@@ -10,20 +10,20 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                            |
-| :-------------------- | :----------------------------------------------- |
-| storeRecordInfo       | TRUE                                             |
-| sqlName               | bkp_cash_register_receipt_items                  |
-| urlBase               | bookkeeping/cash-registers/receipt/items         |
-| lookupSqlValue        |                                                  |
-| tableTitle            | Cashdesk Receipt Items                           |
-| formTitleForInserting | New Cashdesk Receipt Item                        |
-| formTitleForEditing   | Cashdesk Receipt Item                            |
-| formAddButtonText     | Add Receipt Item                                 |
-| formSaveButtonText    | Update Receipt Item                              |
-| crud/browse/action    | Bookkeeping/CashRegisters/Receipt/Items          |
-| crud/add/action       | Bookkeeping/CashRegisters/Receipt/Item/AddOrEdit |
-| crud/edit/action      | Bookkeeping/CashRegisters/Receipt/Item/AddOrEdit |
+| Property               | Value                                            |
+| :--------------------- | :----------------------------------------------- |
+| storeRecordInfo        | TRUE                                             |
+| sqlName                | bkp_cash_register_receipt_items                  |
+| urlBase                | bookkeeping/cash-registers/receipt/items         |
+| lookupSqlValue         |                                                  |
+| tableTitle             | Cashdesk Receipt Items                           |
+| formTitleForInserting  | New Cashdesk Receipt Item                        |
+| formTitleForEditing    | Cashdesk Receipt Item                            |
+| formAddButtonText      | Add Receipt Item                                 |
+| formSaveButtonText     | Update Receipt Item                              |
+| crud/browse/controller | Bookkeeping/CashRegisters/Receipt/Items          |
+| crud/add/controller    | Bookkeeping/CashRegisters/Receipt/Item/AddOrEdit |
+| crud/edit/controller   | Bookkeeping/CashRegisters/Receipt/Item/AddOrEdit |
 
 ## Data Structure
 

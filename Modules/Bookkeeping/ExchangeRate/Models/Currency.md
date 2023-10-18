@@ -10,18 +10,18 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                  |
-| :-------------------- | :------------------------------------- |
-| storeRecordInfo       | TRUE                                   |
-| sqlName               | bkp_currencies                         |
-| urlBase               | bookkeeping/exchange/currencies        |
-| lookupSqlValue        | {%TABLE%}.name                         |
-| tableTitle            | Currencies                             |
-| formTitleForInserting | New Currency                           |
-| formTitleForEditing   | Currency                               |
-| crud/browse/action    | Bookkeeping/ExchangeRate/Currencies    |
-| crud/add/action       | Bookkeeping/ExchangeRate/Currency/Add  |
-| crud/edit/action      | Bookkeeping/ExchangeRate/Currency/Edit |
+| Property               | Value                                  |
+| :--------------------- | :------------------------------------- |
+| storeRecordInfo        | TRUE                                   |
+| sqlName                | bkp_currencies                         |
+| urlBase                | bookkeeping/exchange/currencies        |
+| lookupSqlValue         | {%TABLE%}.name                         |
+| tableTitle             | Currencies                             |
+| formTitleForInserting  | New Currency                           |
+| formTitleForEditing    | Currency                               |
+| crud/browse/controller | Bookkeeping/ExchangeRate/Currencies    |
+| crud/add/controller    | Bookkeeping/ExchangeRate/Currency/Add  |
+| crud/edit/controller   | Bookkeeping/ExchangeRate/Currency/Edit |
 
 ## Data Structure
 

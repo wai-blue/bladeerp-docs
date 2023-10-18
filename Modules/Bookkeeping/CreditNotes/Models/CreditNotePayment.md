@@ -10,18 +10,18 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                                 |
-| :-------------------- | :---------------------------------------------------- |
-| storeRecordInfo       | TRUE                                                  |
-| sqlName               | bkp_credit_note_payments                              |
-| urlBase               | bookkeeping/credit-note/{id_bkp_credit_note}/payments |
-| lookupSqlValue        |                                                       |
-| tableTitle            | Payments                                              |
-| formTitleForInserting | New Payment                                           |
-| formTitleForEditing   | Payment                                               |
-| crud/browse/action    | Bookkeeping/CreditNote/CreditNotePayments             |
-| crud/add/action       | Bookkeeping/CreditNote/CreditNotePayment/Add          |
-| crud/edit/action      | Bookkeeping/CreditNote/CreditNotePayment/Edit         |
+| Property               | Value                                                 |
+| :--------------------- | :---------------------------------------------------- |
+| storeRecordInfo        | TRUE                                                  |
+| sqlName                | bkp_credit_note_payments                              |
+| urlBase                | bookkeeping/credit-note/{id_bkp_credit_note}/payments |
+| lookupSqlValue         |                                                       |
+| tableTitle             | Payments                                              |
+| formTitleForInserting  | New Payment                                           |
+| formTitleForEditing    | Payment                                               |
+| crud/browse/controller | Bookkeeping/CreditNote/CreditNotePayments             |
+| crud/add/controller    | Bookkeeping/CreditNote/CreditNotePayment/Add          |
+| crud/edit/controller   | Bookkeeping/CreditNote/CreditNotePayment/Edit         |
 
 ## Data Structure
 

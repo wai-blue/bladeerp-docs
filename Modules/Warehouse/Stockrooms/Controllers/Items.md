@@ -19,3 +19,7 @@ Table
   * vat_level
   * id_com_unit_default  
 * orderBy: name ASC
+
+## Parameters Post-processing
+
+No post-processing of default parameters is necessary.

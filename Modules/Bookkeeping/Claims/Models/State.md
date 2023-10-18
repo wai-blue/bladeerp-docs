@@ -12,19 +12,19 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                              |
-| --------------------- | ---------------------------------- |
-| isJunctionTable       | FALSE                              |
-| storeRecordInfo       | TRUE                               |
-| sqlName               | bkp_claim_states                   |
-| urlBase               | bookkeeping/claims/states          |
-| lookupSqlValue        | {%TABLE%}.name                     |
-| tableTitle            | States                             |
-| formTitleForInserting | New State                          |
-| formTitleForEditing   | State                              |
-| crud/browse/action    | Bookkeeping/Claims/States          |
-| crud/add/action       | Bookkeeping/Claims/State/AddOrEdit |
-| crud/edit/action      | Bookkeeping/Claims/State/AddOrEdit |
+| Property               | Value                              |
+| ---------------------- | ---------------------------------- |
+| isJunctionTable        | FALSE                              |
+| storeRecordInfo        | TRUE                               |
+| sqlName                | bkp_claim_states                   |
+| urlBase                | bookkeeping/claims/states          |
+| lookupSqlValue         | {%TABLE%}.name                     |
+| tableTitle             | States                             |
+| formTitleForInserting  | New State                          |
+| formTitleForEditing    | State                              |
+| crud/browse/controller | Bookkeeping/Claims/States          |
+| crud/add/controller    | Bookkeeping/Claims/State/AddOrEdit |
+| crud/edit/controller   | Bookkeeping/Claims/State/AddOrEdit |
 
 ## Data Structure
 

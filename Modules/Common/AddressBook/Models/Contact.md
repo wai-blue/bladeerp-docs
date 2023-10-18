@@ -7,19 +7,19 @@ Model slúži na evidenciu a správu kontaktov. Ak sa jedná o fyzickú osobu, p
 No constants are defined for this model.
 
 ## Properties
-| Property              | Value                                                                             |
-| :-------------------- | :-------------------------------------------------------------------------------- |
-| isJunctionTable       | FALSE                                                                             |
-| storeRecordInfo       | TRUE                                                                              |
-| sqlName               | com_contacts                                                                      |
-| urlBase               | common/address-book/contacts                                                      |
-| lookupSqlValue        | concat(company_name, ', ', company_business_number), id_com_person.lookupSqlValue |
-| tableTitle            | Contacts                                                                          |
-| formTitleForInserting | New Contact                                                                       |
-| formTitleForEditing   | Contact                                                                           |
-| crud/browse/action    | Common/AddressBook/Contacts                                                       |
-| crud/add/action       | Common/AddressBook/Contact/Add                                                    |
-| crud/edit/action      | Common/AddressBook/Contact/Edit                                                   |
+| Property               | Value                                                                             |
+| :--------------------- | :-------------------------------------------------------------------------------- |
+| isJunctionTable        | FALSE                                                                             |
+| storeRecordInfo        | TRUE                                                                              |
+| sqlName                | com_contacts                                                                      |
+| urlBase                | common/address-book/contacts                                                      |
+| lookupSqlValue         | concat(company_name, ', ', company_business_number), id_com_person.lookupSqlValue |
+| tableTitle             | Contacts                                                                          |
+| formTitleForInserting  | New Contact                                                                       |
+| formTitleForEditing    | Contact                                                                           |
+| crud/browse/controller | Common/AddressBook/Contacts                                                       |
+| crud/add/controller    | Common/AddressBook/Contact/AddAddAsCompany                                        |
+| crud/edit/controller   | Common/AddressBook/Contact/Edit                                                   |
 
 TODO: JG k lookupSqlValue - podobne ako v modeli Address, aj tu je potrebné vyriešiť použitie "externej" LOOKUP hodnoty z foreign table v ADIOSe
 

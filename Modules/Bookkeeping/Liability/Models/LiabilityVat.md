@@ -10,16 +10,16 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property           | Value                                         |
-| :----------------- | :-------------------------------------------- |
-| storeRecordInfo    | TRUE                                          |
-| sqlName            | bkp_liability_vats                            |
-| urlBase            | bookkeeping/liability/{id_bkp_liability}/vats |
-| lookupSqlValue     | {%TABLE%}.name                                |
-| tableTitle         | VATs                                          |
-| crud/browse/action | Bookkeeping/Liability/LiabilitVats            |
-| crud/add/action    | Bookkeeping/Liability/LiabilitVat/Add         |
-| crud/edit/action   | Bookkeeping/Liability/LiabilitVat/Edit        |
+| Property               | Value                                         |
+| :--------------------- | :-------------------------------------------- |
+| storeRecordInfo        | TRUE                                          |
+| sqlName                | bkp_liability_vats                            |
+| urlBase                | bookkeeping/liability/{id_bkp_liability}/vats |
+| lookupSqlValue         | {%TABLE%}.name                                |
+| tableTitle             | VATs                                          |
+| crud/browse/controller | Bookkeeping/Liability/LiabilitVats            |
+| crud/add/controller    | Bookkeeping/Liability/LiabilitVat/Add         |
+| crud/edit/controller   | Bookkeeping/Liability/LiabilitVat/Edit        |
 
 ## Data Structure
 

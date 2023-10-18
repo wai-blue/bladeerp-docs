@@ -10,20 +10,20 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                            |
-| :-------------------- | :------------------------------- |
-| storeRecordInfo       | TRUE                             |
-| sqlName               | bkp_banks                        |
-| urlBase               | bookkeeping/banks                |
-| lookupSqlValue        | {%TABLE%}.name                   |
-| tableTitle            | Banks                            |
-| formTitleForInserting | New Bank                         |
-| formTitleForEditing   | Bank                             |
-| formAddButtonText     | Add                              |
-| formSaveButtonText    | Update                           |
-| crud/browse/action    | Bookkeeping/Banks/Banks          |
-| crud/add/action       | Bookkeeping/Banks/Bank/AddOrEdit |
-| crud/edit/action      | Bookkeeping/Banks/Bank/AddOrEdit |
+| Property               | Value                            |
+| :--------------------- | :------------------------------- |
+| storeRecordInfo        | TRUE                             |
+| sqlName                | bkp_banks                        |
+| urlBase                | bookkeeping/banks                |
+| lookupSqlValue         | {%TABLE%}.name                   |
+| tableTitle             | Banks                            |
+| formTitleForInserting  | New Bank                         |
+| formTitleForEditing    | Bank                             |
+| formAddButtonText      | Add                              |
+| formSaveButtonText     | Update                           |
+| crud/browse/controller | Bookkeeping/Banks/Banks          |
+| crud/add/controller    | Bookkeeping/Banks/Bank/AddOrEdit |
+| crud/edit/controller   | Bookkeeping/Banks/Bank/AddOrEdit |
 
 ## Data Structure
 

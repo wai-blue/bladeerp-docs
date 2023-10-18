@@ -10,20 +10,20 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                            |
-| :-------------------- | :----------------------------------------------- |
-| storeRecordInfo       | TRUE                                             |
-| sqlName               | bkp_banks                                        |
-| urlBase               | bookkeeping/cash-registers                       |
-| lookupSqlValue        | {%TABLE%}.name                                   |
-| tableTitle            | Banks                                            |
-| formTitleForInserting | New Bank                                         |
-| formTitleForEditing   | Bank                                             |
-| formAddButtonText     | Add                                              |
-| formSaveButtonText    | Update                                           |
-| crud/browse/action    | Bookkeeping/CashRegisters/CashRegisters          |
-| crud/add/action       | Bookkeeping/CashRegisters/CashRegister/AddOrEdit |
-| crud/edit/action      | Bookkeeping/CashRegisters/CashRegister/AddOrEdit |
+| Property               | Value                                            |
+| :--------------------- | :----------------------------------------------- |
+| storeRecordInfo        | TRUE                                             |
+| sqlName                | bkp_banks                                        |
+| urlBase                | bookkeeping/cash-registers                       |
+| lookupSqlValue         | {%TABLE%}.name                                   |
+| tableTitle             | Banks                                            |
+| formTitleForInserting  | New Bank                                         |
+| formTitleForEditing    | Bank                                             |
+| formAddButtonText      | Add                                              |
+| formSaveButtonText     | Update                                           |
+| crud/browse/controller | Bookkeeping/CashRegisters/CashRegisters          |
+| crud/add/controller    | Bookkeeping/CashRegisters/CashRegister/AddOrEdit |
+| crud/edit/controller   | Bookkeeping/CashRegisters/CashRegister/AddOrEdit |
 
 ## Data Structure
 

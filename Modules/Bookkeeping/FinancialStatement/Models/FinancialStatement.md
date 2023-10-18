@@ -14,20 +14,20 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                                  |
-| :-------------------- | :----------------------------------------------------- |
-| storeRecordInfo       | TRUE                                                   |
-| sqlName               | bkp_financial_statements                               |
-| urlBase               | bookkeeping/financial-statements                       |
-| lookupSqlValue        | {%TABLE%}.name                                         |
-| tableTitle            | Financial Statements                                   |
-| formTitleForInserting | New Statement                                          |
-| formTitleForEditing   | Financial Statement                                    |
-| formAddButtonText     | Add Statement                                          |
-| formSaveButtonText    | -                                                      |
-| crud/browse/action    | Bookkeeping/FinancialStatement/FinancialStatements     |
-| crud/add/action       | Bookkeeping/FinancialStatement/FinancialStatement/Add  |
-| crud/edit/action      | Bookkeeping/FinancialStatement/FinancialStatement/Edit |
+| Property               | Value                                                  |
+| :--------------------- | :----------------------------------------------------- |
+| storeRecordInfo        | TRUE                                                   |
+| sqlName                | bkp_financial_statements                               |
+| urlBase                | bookkeeping/financial-statements                       |
+| lookupSqlValue         | {%TABLE%}.name                                         |
+| tableTitle             | Financial Statements                                   |
+| formTitleForInserting  | New Statement                                          |
+| formTitleForEditing    | Financial Statement                                    |
+| formAddButtonText      | Add Statement                                          |
+| formSaveButtonText     | -                                                      |
+| crud/browse/controller | Bookkeeping/FinancialStatement/FinancialStatements     |
+| crud/add/controller    | Bookkeeping/FinancialStatement/FinancialStatement/Add  |
+| crud/edit/controller   | Bookkeeping/FinancialStatement/FinancialStatement/Edit |
 
 ## Data Structure
 

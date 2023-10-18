@@ -10,27 +10,27 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                                                       |
-| :-------------------- | :-------------------------------------------------------------------------- |
-| isJunctionTable       | TRUE                                                                        |
-| storeRecordInfo       | FALSE                                                                       |
-| sqlName               | whs_item_medias                                                             |
-| urlBase               | warehouse/stockrooms/item/{id_whs_item}/medias                              |
-| tableTitle            | Item Medias                                                                 |
-| formTitleForInserting | New Item Media                                                              |
-| formTitleForEditing   | Item Media                                                                  |
-| crud/browse/action    | Warehouse/Stockrooms/ItemMedias                                             |
-| crud/add/action       | Warehouse/Stockrooms/ItemMedia/Add                                          |
-| crud/edit/action      | Warehouse/Stockrooms/ItemMedia/Edit                                         |
-| junctions             | `json`                                                                      |
-|                       | `{`                                                                         |
-|                       | `  "ItemMedia": {`                                                          |
-|                       | `    "junctionModel": "App/Widgets/Warehouse/Stockrooms/Models/ItemMedia",` |
-|                       | `    "optionsModel": "App/Widgets/Common/CodeLists/Models/Media",`          |
-|                       | `    "masterKeyColumn": "id_whs_item",`                                     |
-|                       | `    "optionKeyColumn": "id_com_media",`                                    |
-|                       | `  }`                                                                       |
-|                       | `}`                                                                         |
+| Property               | Value                                                                       |
+| :--------------------- | :-------------------------------------------------------------------------- |
+| isJunctionTable        | TRUE                                                                        |
+| storeRecordInfo        | FALSE                                                                       |
+| sqlName                | whs_item_medias                                                             |
+| urlBase                | warehouse/stockrooms/item/{id_whs_item}/medias                              |
+| tableTitle             | Item Medias                                                                 |
+| formTitleForInserting  | New Item Media                                                              |
+| formTitleForEditing    | Item Media                                                                  |
+| crud/browse/controller | Warehouse/Stockrooms/ItemMedias                                             |
+| crud/add/controller    | Warehouse/Stockrooms/ItemMedia/Add                                          |
+| crud/edit/controller   | Warehouse/Stockrooms/ItemMedia/Edit                                         |
+| junctions              | `json`                                                                      |
+|                        | `{`                                                                         |
+|                        | `  "ItemMedia": {`                                                          |
+|                        | `    "junctionModel": "App/Widgets/Warehouse/Stockrooms/Models/ItemMedia",` |
+|                        | `    "optionsModel": "App/Widgets/Common/CodeLists/Models/Media",`          |
+|                        | `    "masterKeyColumn": "id_whs_item",`                                     |
+|                        | `    "optionKeyColumn": "id_com_media",`                                    |
+|                        | `  }`                                                                       |
+|                        | `}`                                                                         |
 
 ## Data Structure
 

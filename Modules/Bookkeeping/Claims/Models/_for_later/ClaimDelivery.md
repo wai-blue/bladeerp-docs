@@ -10,19 +10,19 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                        |
-| :-------------------- | :------------------------------------------- |
-| isJunctionTable       | TRUE                                         |
-| storeRecordInfo       | TRUE                                         |
-| sqlName               | bkp_claim_deliveries                         |
-| urlBase               | bookkeeping/claims/{id_bkp_claim}/deliveries |
-| lookupSqlValue        | {%TABLE%}.name                               |
-| tableTitle            | Claim Deliveries                             |
-| formTitleForInserting | New Claim Delivery                           |
-| formTitleForEditing   | Claim Delivery                               |
-| crud/browse/action    | Bookkeeping/Claims/ClaimDeliveries           |
-| crud/add/action       | Bookkeeping/Claims/ClaimDelivery/Add         |
-| crud/edit/action      | Bookkeeping/Claims/ClaimDelivery/Edit        |
+| Property               | Value                                        |
+| :--------------------- | :------------------------------------------- |
+| isJunctionTable        | TRUE                                         |
+| storeRecordInfo        | TRUE                                         |
+| sqlName                | bkp_claim_deliveries                         |
+| urlBase                | bookkeeping/claims/{id_bkp_claim}/deliveries |
+| lookupSqlValue         | {%TABLE%}.name                               |
+| tableTitle             | Claim Deliveries                             |
+| formTitleForInserting  | New Claim Delivery                           |
+| formTitleForEditing    | Claim Delivery                               |
+| crud/browse/controller | Bookkeeping/Claims/ClaimDeliveries           |
+| crud/add/controller    | Bookkeeping/Claims/ClaimDelivery/Add         |
+| crud/edit/controller   | Bookkeeping/Claims/ClaimDelivery/Edit        |
 
 ## Data Structure
 

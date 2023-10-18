@@ -16,20 +16,20 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                         |
-| :-------------------- | :-------------------------------------------- |
-| storeRecordInfo       | TRUE                                          |
-| sqlName               | bkp_bank_account_statements                   |
-| urlBase               | bookkeeping/banks/account-statements          |
-| lookupSqlValue        |                                               |
-| tableTitle            | Bank Account Statements                       |
-| formTitleForInserting |                                               |
-| formTitleForEditing   |                                               |
-| formAddButtonText     | Create Statement                              |
-| formSaveButtonText    |                                               |
-| crud/browse/action    | Bookkeeping/Banks/Account/Statements          |
-| crud/add/action       | Bookkeeping/Banks/Account/Statement/AddOrEdit |
-| crud/edit/action      | Bookkeeping/Banks/Account/Statement/AddOrEdit |
+| Property               | Value                                         |
+| :--------------------- | :-------------------------------------------- |
+| storeRecordInfo        | TRUE                                          |
+| sqlName                | bkp_bank_account_statements                   |
+| urlBase                | bookkeeping/banks/account-statements          |
+| lookupSqlValue         |                                               |
+| tableTitle             | Bank Account Statements                       |
+| formTitleForInserting  |                                               |
+| formTitleForEditing    |                                               |
+| formAddButtonText      | Create Statement                              |
+| formSaveButtonText     |                                               |
+| crud/browse/controller | Bookkeeping/Banks/Account/Statements          |
+| crud/add/controller    | Bookkeeping/Banks/Account/Statement/AddOrEdit |
+| crud/edit/controller   | Bookkeeping/Banks/Account/Statement/AddOrEdit |
 
 ## Data Structure
 

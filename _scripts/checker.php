@@ -125,7 +125,7 @@ foreach ($modules as $module) {
 
         // Document outline
         if (
-          $md->hasH1('Action') === FALSE
+          $md->hasH1('Controller') === FALSE
           || $md->hasH2('Description') === FALSE
           || $md->hasH2('View') === FALSE
           || $md->hasH2('Default View Parameters') === FALSE
@@ -326,9 +326,9 @@ foreach ($modules as $module) {
         if (
           ($properties['isJunctionTable'] ?? '') !== 'TRUE'
           && (
-            empty($properties['crud/browse/action'])
-            || empty($properties['crud/add/action'])
-            || empty($properties['crud/edit/action'])
+            empty($properties['crud/browse/controller'])
+            || empty($properties['crud/add/controller'])
+            || empty($properties['crud/edit/controller'])
           )
         ) {
           $errors[] = "[{$modelRef}] Browse/Add/Edit CRUD actions are not fully specified.";
@@ -358,16 +358,16 @@ foreach ($modules as $module) {
           $errors[] = "[{$modelRef}] `storeRecordInfo` = FALSE and `record_info` is defined.";
         }
 
-        if (!empty($properties['crud/browse/action']) && !in_array($properties['crud/browse/action'], $allActions)) {
-          $errors[] = "[{$modelRef}] crud/browse/action `{$properties['crud/browse/action']}` is not specified.";
+        if (!empty($properties['crud/browse/controller']) && !in_array($properties['crud/browse/controller'], $allActions)) {
+          $errors[] = "[{$modelRef}] crud/browse/controller `{$properties['crud/browse/controller']}` is not specified.";
         }
 
-        if (!empty($properties['crud/add/action']) && !in_array($properties['crud/add/action'], $allActions)) {
-          $errors[] = "[{$modelRef}] crud/add/action `{$properties['crud/add/action']}` is not specified.";
+        if (!empty($properties['crud/add/controller']) && !in_array($properties['crud/add/controller'], $allActions)) {
+          $errors[] = "[{$modelRef}] crud/add/controller `{$properties['crud/add/controller']}` is not specified.";
         }
 
-        if (!empty($properties['crud/edit/action']) && !in_array($properties['crud/edit/action'], $allActions)) {
-          $errors[] = "[{$modelRef}] crud/edit/action `{$properties['crud/edit/action']}` is not specified.";
+        if (!empty($properties['crud/edit/controller']) && !in_array($properties['crud/edit/controller'], $allActions)) {
+          $errors[] = "[{$modelRef}] crud/edit/controller `{$properties['crud/edit/controller']}` is not specified.";
         }
 
       }

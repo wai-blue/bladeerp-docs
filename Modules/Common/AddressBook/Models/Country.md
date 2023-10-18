@@ -8,19 +8,19 @@
 V modeli nie sú použité konštanty.
 
 ## Properties
-| Property              | Value                                |
-| :-------------------- | :----------------------------------- |
-| isJunctionTable       | FALSE                                |
-| storeRecordInfo       | TRUE                                 |
-| sqlName               | com_countries                        |
-| urlBase               | common/address-book/countries        |
-| lookupSqlValue        | concat(name, " (", code, ")")        |
-| tableTitle            | Countries                            |
-| formTitleForInserting | New Country                          |
-| formTitleForEditing   | Country                              |
-| crud/browse/action    | Common/AddressBook/Countries         |
-| crud/add/action       | Common/AddressBook/Country/AddOrEdit |
-| crud/edit/action      | Common/AddressBook/Country/AddOrEdit |
+| Property               | Value                                |
+| :--------------------- | :----------------------------------- |
+| isJunctionTable        | FALSE                                |
+| storeRecordInfo        | TRUE                                 |
+| sqlName                | com_countries                        |
+| urlBase                | common/address-book/countries        |
+| lookupSqlValue         | concat(name, " (", code, ")")        |
+| tableTitle             | Countries                            |
+| formTitleForInserting  | New Country                          |
+| formTitleForEditing    | Country                              |
+| crud/browse/controller | Common/AddressBook/Countries         |
+| crud/add/controller    | Common/AddressBook/Country/AddOrEdit |
+| crud/edit/controller   | Common/AddressBook/Country/AddOrEdit |
 
 ## Data Structure
 | Column      | Title                | ADIOS Type | Length | Required | Notes                                      |

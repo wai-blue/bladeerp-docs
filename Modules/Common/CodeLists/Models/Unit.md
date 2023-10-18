@@ -19,19 +19,19 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                             |
-| :-------------------- | :-------------------------------- |
-| isJunctionTable       | FALSE                             |
-| storeRecordInfo       | TRUE                              |
-| sqlName               | com_units                         |
-| urlBase               | common/codelists/units            |
-| lookupSqlValue        | concat(name, ' ','(', symbol,')') |
-| tableTitle            | Units                             |
-| formTitleForInserting | New Unit                          |
-| formTitleForEditing   | Unit                              |
-| crud/browse/action    | Common/CodeLists/Units            |
-| crud/add/action       | Common/CodeLists/Unit/Add         |
-| crud/edit/action      | Common/CodeLists/Unit/Edit        |
+| Property               | Value                             |
+| :--------------------- | :-------------------------------- |
+| isJunctionTable        | FALSE                             |
+| storeRecordInfo        | TRUE                              |
+| sqlName                | com_units                         |
+| urlBase                | common/codelists/units            |
+| lookupSqlValue         | concat(name, ' ','(', symbol,')') |
+| tableTitle             | Units                             |
+| formTitleForInserting  | New Unit                          |
+| formTitleForEditing    | Unit                              |
+| crud/browse/controller | Common/CodeLists/Units            |
+| crud/add/controller    | Common/CodeLists/Unit/AddOrEdit   |
+| crud/edit/controller   | Common/CodeLists/Unit/AddOrEdit   |
 
 ## Data Structure
 

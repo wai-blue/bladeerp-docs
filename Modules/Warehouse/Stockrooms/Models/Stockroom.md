@@ -10,19 +10,19 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                               |
-| :-------------------- | :---------------------------------- |
-| isJunctionTable       | FALSE                               |
-| storeRecordInfo       | TRUE                                |
-| sqlName               | whs_stockrooms                      |
-| urlBase               | warehouse/stockrooms                |
-| lookupSqlValue        | {%TABLE%}.name                      |
-| tableTitle            | Stockrooms                          |
-| formTitleForInserting | New Stockroom                       |
-| formTitleForEditing   | Stockroom                           |
-| crud/browse/action    | Warehouse/Stockrooms                |
-| crud/add/action       | Warehouse/Stockrooms/Stockroom/Add  |
-| crud/edit/action      | Warehouse/Stockrooms/Stockroom/Edit |
+| Property               | Value                               |
+| :--------------------- | :---------------------------------- |
+| isJunctionTable        | FALSE                               |
+| storeRecordInfo        | TRUE                                |
+| sqlName                | whs_stockrooms                      |
+| urlBase                | warehouse/stockrooms                |
+| lookupSqlValue         | {%TABLE%}.name                      |
+| tableTitle             | Stockrooms                          |
+| formTitleForInserting  | New Stockroom                       |
+| formTitleForEditing    | Stockroom                           |
+| crud/browse/controller | Warehouse/Stockrooms                |
+| crud/add/controller    | Warehouse/Stockrooms/Stockroom/Add  |
+| crud/edit/controller   | Warehouse/Stockrooms/Stockroom/Edit |
 
 ## Data Structure
 

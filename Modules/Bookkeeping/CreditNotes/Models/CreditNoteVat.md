@@ -10,16 +10,16 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property           | Value                                             |
-| :----------------- | :------------------------------------------------ |
-| storeRecordInfo    | TRUE                                              |
-| sqlName            | bkp_credit_note_vats                              |
-| urlBase            | bookkeeping/credit-note/{id_bkp_credit_note}/vats |
-| lookupSqlValue     | {%TABLE%}.name                                    |
-| tableTitle         | VATs                                              |
-| crud/browse/action | Bookkeeping/CreditNote/CreditNoteVats             |
-| crud/add/action    | Bookkeeping/CreditNote/CreditNoteVat/Add          |
-| crud/edit/action   | Bookkeeping/CreditNote/CreditNoteVat/Edit         |
+| Property               | Value                                             |
+| :--------------------- | :------------------------------------------------ |
+| storeRecordInfo        | TRUE                                              |
+| sqlName                | bkp_credit_note_vats                              |
+| urlBase                | bookkeeping/credit-note/{id_bkp_credit_note}/vats |
+| lookupSqlValue         | {%TABLE%}.name                                    |
+| tableTitle             | VATs                                              |
+| crud/browse/controller | Bookkeeping/CreditNote/CreditNoteVats             |
+| crud/add/controller    | Bookkeeping/CreditNote/CreditNoteVat/Add          |
+| crud/edit/controller   | Bookkeeping/CreditNote/CreditNoteVat/Edit         |
 
 ## Data Structure
 

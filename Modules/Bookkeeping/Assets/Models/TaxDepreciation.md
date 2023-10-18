@@ -10,20 +10,20 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                        |
-| :-------------------- | :------------------------------------------- |
-| storeRecordInfo       | TRUE                                         |
-| sqlName               | bkp_asset_tax_depreciations                  |
-| urlBase               | bookkeeping/assets/tax-depreciations         |
-| lookupSqlValue        |                                              |
-| tableTitle            | Asset Tax Depreciations                      |
-| formTitleForInserting |                                              |
-| formTitleForEditing   | Detail Depreciation                          |
-| formAddButtonText     |                                              |
-| formSaveButtonText    |                                              |
-| crud/browse/action    | Bookkeeping/Assets/TaxDepreciations          |
-| crud/add/action       | Bookkeeping/Assets/TaxDepreciation/AddOrEdit |
-| crud/edit/action      | Bookkeeping/Assets/TaxDepreciation/AddOrEdit |
+| Property               | Value                                        |
+| :--------------------- | :------------------------------------------- |
+| storeRecordInfo        | TRUE                                         |
+| sqlName                | bkp_asset_tax_depreciations                  |
+| urlBase                | bookkeeping/assets/tax-depreciations         |
+| lookupSqlValue         |                                              |
+| tableTitle             | Asset Tax Depreciations                      |
+| formTitleForInserting  |                                              |
+| formTitleForEditing    | Detail Depreciation                          |
+| formAddButtonText      |                                              |
+| formSaveButtonText     |                                              |
+| crud/browse/controller | Bookkeeping/Assets/TaxDepreciations          |
+| crud/add/controller    | Bookkeeping/Assets/TaxDepreciation/AddOrEdit |
+| crud/edit/controller   | Bookkeeping/Assets/TaxDepreciation/AddOrEdit |
 
 ## Data Structure
 

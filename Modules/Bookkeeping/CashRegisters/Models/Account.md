@@ -10,20 +10,20 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                       |
-| :-------------------- | :------------------------------------------ |
-| storeRecordInfo       | TRUE                                        |
-| sqlName               | bkp_cash_register_accounts                  |
-| urlBase               | bookkeeping/cash-registers/accounts         |
-| lookupSqlValue        | {%TABLE%}.name                              |
-| tableTitle            | Cashdesk Accounts                           |
-| formTitleForInserting | New Cashdesk Account                        |
-| formTitleForEditing   | Cashdesk Account                            |
-| formAddButtonText     | Add Account                                 |
-| formSaveButtonText    | Update Account                              |
-| crud/browse/action    | Bookkeeping/CashRegisters/Accounts          |
-| crud/add/action       | Bookkeeping/CashRegisters/Account/AddOrEdit |
-| crud/edit/action      | Bookkeeping/CashRegisters/Account/AddOrEdit |
+| Property               | Value                                       |
+| :--------------------- | :------------------------------------------ |
+| storeRecordInfo        | TRUE                                        |
+| sqlName                | bkp_cash_register_accounts                  |
+| urlBase                | bookkeeping/cash-registers/accounts         |
+| lookupSqlValue         | {%TABLE%}.name                              |
+| tableTitle             | Cashdesk Accounts                           |
+| formTitleForInserting  | New Cashdesk Account                        |
+| formTitleForEditing    | Cashdesk Account                            |
+| formAddButtonText      | Add Account                                 |
+| formSaveButtonText     | Update Account                              |
+| crud/browse/controller | Bookkeeping/CashRegisters/Accounts          |
+| crud/add/controller    | Bookkeeping/CashRegisters/Account/AddOrEdit |
+| crud/edit/controller   | Bookkeeping/CashRegisters/Account/AddOrEdit |
 
 ## Data Structure
 | Column              | Title            | ADIOS Type | Length | Required | Notes                                                    |

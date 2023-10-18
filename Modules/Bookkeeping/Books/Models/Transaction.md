@@ -10,18 +10,18 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                 |
-| :-------------------- | :------------------------------------ |
-| storeRecordInfo       | TRUE                                  |
-| sqlName               | bkp_transactions                      |
-| urlBase               | bookkeeping/books/transactions    |
-| lookupSqlValue        | -                                     |
-| tableTitle            | Transactions                          |
-| formTitleForInserting | New Transaction                       |
-| formTitleForEditing   | Transaction                           |
-| crud/browse/action    | Bookkeeping/Books/Transactions     |
-| crud/add/action       | Bookkeeping/Books/Transaction/Add  |
-| crud/edit/action      | Bookkeeping/Books/Transaction/Edit |
+| Property               | Value                              |
+| :--------------------- | :--------------------------------- |
+| storeRecordInfo        | TRUE                               |
+| sqlName                | bkp_transactions                   |
+| urlBase                | bookkeeping/books/transactions     |
+| lookupSqlValue         | -                                  |
+| tableTitle             | Transactions                       |
+| formTitleForInserting  | New Transaction                    |
+| formTitleForEditing    | Transaction                        |
+| crud/browse/controller | Bookkeeping/Books/Transactions     |
+| crud/add/controller    | Bookkeeping/Books/Transaction/Add  |
+| crud/edit/controller   | Bookkeeping/Books/Transaction/Edit |
 
 ## Data Structure
 

@@ -8,19 +8,19 @@ V modeli nie sú použité konštanty.
 
 ## Properties
 
-| Property              | Value                            |
-| :-------------------- | :------------------------------- |
-| isJunctionTable       | FALSE                            |
-| storeRecordInfo       | TRUE                             |
-| sqlName               | com_categories                   |
-| urlBase               | common/address-book/categories   |
-| lookupSqlValue        | {%TABLE%}.name                   |
-| tableTitle            | Contact Categories               |
-| formTitleForInserting | New Contact Category             |
-| formTitleForEditing   | Contact Category                 |
-| crud/browse/action    | Common/AddressBook/Categories    |
-| crud/add/action       | Common/AddressBook/Category/Add  |
-| crud/edit/action      | Common/AddressBook/Category/Edit |
+| Property               | Value                            |
+| :--------------------- | :------------------------------- |
+| isJunctionTable        | FALSE                            |
+| storeRecordInfo        | TRUE                             |
+| sqlName                | com_categories                   |
+| urlBase                | common/address-book/categories   |
+| lookupSqlValue         | {%TABLE%}.name                   |
+| tableTitle             | Contact Categories               |
+| formTitleForInserting  | New Contact Category             |
+| formTitleForEditing    | Contact Category                 |
+| crud/browse/controller | Common/AddressBook/Categories    |
+| crud/add/controller    | Common/AddressBook/Category/Add  |
+| crud/edit/controller   | Common/AddressBook/Category/Edit |
 
 ## Data Structure
 | Column      | Title       | ADIOS Type | Length | Required | Notes       |

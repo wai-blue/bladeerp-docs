@@ -23,19 +23,19 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                             |
-| :-------------------- | :-------------------------------- |
-| isJunctionTable       | FALSE                             |
-| storeRecordInfo       | TRUE                              |
-| sqlName               | whs_packages                      |
-| urlBase               | warehouse/stockrooms/packages     |
-| lookupSqlValue        | {%TABLE%}.name                    |
-| tableTitle            | Packages                          |
-| formTitleForInserting | New Package                       |
-| formTitleForEditing   | Package                           |
-| crud/browse/action    | Warehouse/Stockrooms/Packages     |
-| crud/add/action       | Warehouse/Stockrooms/Package/Add  |
-| crud/edit/action      | Warehouse/Stockrooms/Package/Edit |
+| Property               | Value                             |
+| :--------------------- | :-------------------------------- |
+| isJunctionTable        | FALSE                             |
+| storeRecordInfo        | TRUE                              |
+| sqlName                | whs_packages                      |
+| urlBase                | warehouse/stockrooms/packages     |
+| lookupSqlValue         | {%TABLE%}.name                    |
+| tableTitle             | Packages                          |
+| formTitleForInserting  | New Package                       |
+| formTitleForEditing    | Package                           |
+| crud/browse/controller | Warehouse/Stockrooms/Packages     |
+| crud/add/controller    | Warehouse/Stockrooms/Package/Add  |
+| crud/edit/controller   | Warehouse/Stockrooms/Package/Edit |
 
 ## Data Structure
 

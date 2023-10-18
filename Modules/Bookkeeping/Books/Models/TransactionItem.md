@@ -21,9 +21,9 @@ No constants are defined for this model.
 | formTitleForEditing   | Transaction Item                        |
 | formAddButtonText     | Add Transaction Item                    |
 | formAddButtonText     | Update Transaction Item                 |
-| crud/browse/action    | Bookkeeping/Books/Transaction/Items     |
-| crud/add/action       | Bookkeeping/Books/Transaction/Item/Add  |
-| crud/edit/action      | Bookkeeping/Books/Transaction/Item/Edit |
+| crud/browse/controller    | Bookkeeping/Books/Transaction/Items     |
+| crud/add/controller       | Bookkeeping/Books/Transaction/Item/Add  |
+| crud/edit/controller      | Bookkeeping/Books/Transaction/Item/Edit |
 
 ## Data Structure
 

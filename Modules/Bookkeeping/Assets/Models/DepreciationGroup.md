@@ -10,20 +10,20 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                          |
-| :-------------------- | :--------------------------------------------- |
-| storeRecordInfo       | TRUE                                           |
-| sqlName               | bkp_asset_depreciation_groups                  |
-| urlBase               | bookkeeping/asset-depreciation-groups          |
-| lookupSqlValue        | {%TABLE%}.number + {%TABLE%}.period            |
-| tableTitle            | Asset Depreciation Groups                      |
-| formTitleForInserting | New Depreciation Group                         |
-| formTitleForEditing   | Depreciation Group                             |
-| formAddButtonText     | Add Group                                      |
-| formSaveButtonText    | Update Group                                   |
-| crud/browse/action    | Bookkeeping/Assets/DepreciationGroups          |
-| crud/add/action       | Bookkeeping/Assets/DepreciationGroup/AddOrEdit |
-| crud/edit/action      | Bookkeeping/Assets/DepreciationGroup/AddOrEdit |
+| Property               | Value                                          |
+| :--------------------- | :--------------------------------------------- |
+| storeRecordInfo        | TRUE                                           |
+| sqlName                | bkp_asset_depreciation_groups                  |
+| urlBase                | bookkeeping/asset-depreciation-groups          |
+| lookupSqlValue         | {%TABLE%}.number + {%TABLE%}.period            |
+| tableTitle             | Asset Depreciation Groups                      |
+| formTitleForInserting  | New Depreciation Group                         |
+| formTitleForEditing    | Depreciation Group                             |
+| formAddButtonText      | Add Group                                      |
+| formSaveButtonText     | Update Group                                   |
+| crud/browse/controller | Bookkeeping/Assets/DepreciationGroups          |
+| crud/add/controller    | Bookkeeping/Assets/DepreciationGroup/AddOrEdit |
+| crud/edit/controller   | Bookkeeping/Assets/DepreciationGroup/AddOrEdit |
 
 ## Data Structure
 

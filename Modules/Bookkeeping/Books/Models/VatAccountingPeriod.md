@@ -18,18 +18,18 @@ Táto tabuľka slúži na ukladanie informácií o sadzbách DPH používaných 
 
 ## Properties
 
-| Property              | Value                      |
-| --------------------- | -------------------------- |
-| storeRecordInfo       | TRUE                       |
-| sqlName               | bkp_vats                   |
-| urlBase               | bookkeeping/books/vats     |
-| lookupSqlValue        | -                          |
-| tableTitle            | Vats                       |
-| formTitleForInserting | New Vat                    |
-| formTitleForEditing   | Vat                        |
-| crud/browse/action    | Bookkeeping/Books/Vats     |
-| crud/add/action       | Bookkeeping/Books/Vat/Add  |
-| crud/edit/action      | Bookkeeping/Books/Vat/Edit |
+| Property               | Value                      |
+| ---------------------- | -------------------------- |
+| storeRecordInfo        | TRUE                       |
+| sqlName                | bkp_vats                   |
+| urlBase                | bookkeeping/books/vats     |
+| lookupSqlValue         | -                          |
+| tableTitle             | Vats                       |
+| formTitleForInserting  | New Vat                    |
+| formTitleForEditing    | Vat                        |
+| crud/browse/controller | Bookkeeping/Books/Vats     |
+| crud/add/controller    | Bookkeeping/Books/Vat/Add  |
+| crud/edit/controller   | Bookkeeping/Books/Vat/Edit |
 
 ## Data Structure
 

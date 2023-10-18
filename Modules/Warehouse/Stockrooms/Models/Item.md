@@ -10,19 +10,19 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                          |
-| :-------------------- | :----------------------------- |
-| isJunctionTable       | FALSE                          |
-| storeRecordInfo       | TRUE                           |
-| sqlName               | whs_items                      |
-| urlBase               | warehouse/stockrooms/items     |
-| lookupSqlValue        | {%TABLE%}.name                 |
-| tableTitle            | Stockrooms Items               |
-| formTitleForInserting | New Stockrooms Item            |
-| formTitleForEditing   | Stockrooms Item                |
-| crud/browse/action    | Warehouse/Stockrooms/Items     |
-| crud/add/action       | Warehouse/Stockrooms/Item/Add  |
-| crud/edit/action      | Warehouse/Stockrooms/Item/Edit |
+| Property               | Value                          |
+| :--------------------- | :----------------------------- |
+| isJunctionTable        | FALSE                          |
+| storeRecordInfo        | TRUE                           |
+| sqlName                | whs_items                      |
+| urlBase                | warehouse/stockrooms/items     |
+| lookupSqlValue         | {%TABLE%}.name                 |
+| tableTitle             | Stockrooms Items               |
+| formTitleForInserting  | New Stockrooms Item            |
+| formTitleForEditing    | Stockrooms Item                |
+| crud/browse/controller | Warehouse/Stockrooms/Items     |
+| crud/add/controller    | Warehouse/Stockrooms/Item/Add  |
+| crud/edit/controller   | Warehouse/Stockrooms/Item/Edit |
 
 ## Data Structure
 
@@ -33,7 +33,7 @@ No constants are defined for this model.
 | name        | Name        |  varchar   |  100   |   TRUE   |                                            |
 | description | Description |    text    |        |  FALSE   |                                            |
 | is_active   | Is Active   |  boolean   |   1    |   TRUE   |                                            |
-| vat_level   | VAT Level   |    enum    |   2    |   TRUE   |                                            |
+| vat_level   | VAT Level   |    int     |   2    |   TRUE   |                                            |
 
 ### ADIOS Parameters
 
@@ -53,6 +53,7 @@ Model does not contain foreign keys.
 | :-------- | :-----: | -------------: |
 | id        | PRIMARY |         id ASC |
 | is_active |  INDEX  | is_active DESC |
+| vat_level |  INDEX  |  vat_level ASC |
 
 ## Callbacks
 

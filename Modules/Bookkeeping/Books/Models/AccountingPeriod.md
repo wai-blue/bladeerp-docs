@@ -14,18 +14,18 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                   |
-| :-------------------- | :-------------------------------------- |
-| storeRecordInfo       | TRUE                                    |
-| sqlName               | bkp_accounting_periods                  |
-| urlBase               | bookkeeping/books/accounting-periods    |
-| lookupSqlValue        | {%TABLE%}.name                          |
-| tableTitle            | Accounting periods                      |
-| formTitleForInserting | New Accounting Period                   |
-| formTitleForEditing   | Accounting Period                       |
-| crud/browse/action    | Bookkeeping/Books/AccountingPeriods     |
-| crud/add/action       | Bookkeeping/Books/AccountingPeriod/Add  |
-| crud/edit/action      | Bookkeeping/Books/AccountingPeriod/Edit |
+| Property               | Value                                   |
+| :--------------------- | :-------------------------------------- |
+| storeRecordInfo        | TRUE                                    |
+| sqlName                | bkp_accounting_periods                  |
+| urlBase                | bookkeeping/books/accounting-periods    |
+| lookupSqlValue         | {%TABLE%}.name                          |
+| tableTitle             | Accounting periods                      |
+| formTitleForInserting  | New Accounting Period                   |
+| formTitleForEditing    | Accounting Period                       |
+| crud/browse/controller | Bookkeeping/Books/AccountingPeriods     |
+| crud/add/controller    | Bookkeeping/Books/AccountingPeriod/Add  |
+| crud/edit/controller   | Bookkeeping/Books/AccountingPeriod/Edit |
 
 ## Data Structure
 

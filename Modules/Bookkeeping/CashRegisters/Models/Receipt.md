@@ -10,20 +10,20 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                               |
-| :-------------------- | :---------------------------------- |
-| storeRecordInfo       | TRUE                                |
-| sqlName               | bkp_cash_register_receipts           |
-| urlBase               | bookkeeping/cash-registers/receipts |
-| lookupSqlValue        |                                     |
-| tableTitle            | Cashdesk Receipt                    |
-| formTitleForInserting | New Cashdesk Receipt                |
-| formTitleForEditing   | Cashdesk Receipt                    |
-| formAddButtonText     | Add Receipt                         |
-| formSaveButtonText    | Update Receipt                      |
-| crud/browse/action    | Bookkeeping/CashRegisters/Receipts       |
-| crud/add/action       | Bookkeeping/CashRegisters/Receipt/Add    |
-| crud/edit/action      | Bookkeeping/CashRegisters/Receipt/Edit   |
+| Property               | Value                                  |
+| :--------------------- | :------------------------------------- |
+| storeRecordInfo        | TRUE                                   |
+| sqlName                | bkp_cash_register_receipts             |
+| urlBase                | bookkeeping/cash-registers/receipts    |
+| lookupSqlValue         |                                        |
+| tableTitle             | Cashdesk Receipt                       |
+| formTitleForInserting  | New Cashdesk Receipt                   |
+| formTitleForEditing    | Cashdesk Receipt                       |
+| formAddButtonText      | Add Receipt                            |
+| formSaveButtonText     | Update Receipt                         |
+| crud/browse/controller | Bookkeeping/CashRegisters/Receipts     |
+| crud/add/controller    | Bookkeeping/CashRegisters/Receipt/Add  |
+| crud/edit/controller   | Bookkeeping/CashRegisters/Receipt/Edit |
 
 ## Data Structure
 

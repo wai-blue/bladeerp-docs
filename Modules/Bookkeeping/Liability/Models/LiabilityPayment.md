@@ -10,18 +10,18 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                             |
-| :-------------------- | :------------------------------------------------ |
-| storeRecordInfo       | TRUE                                              |
-| sqlName               | bkp_liability_payments                            |
-| urlBase               | bookkeeping/liability/{id_bkp_liability}/payments |
-| lookupSqlValue        |                                                   |
-| tableTitle            | Payments                                          |
-| formTitleForInserting | New Payment                                       |
-| formTitleForEditing   | Payment                                           |
-| crud/browse/action    | Bookkeeping/Liability/LiabilitPayments            |
-| crud/add/action       | Bookkeeping/Liability/LiabilitPayment/Add         |
-| crud/edit/action      | Bookkeeping/Liability/LiabilitPayment/Edit        |
+| Property               | Value                                             |
+| :--------------------- | :------------------------------------------------ |
+| storeRecordInfo        | TRUE                                              |
+| sqlName                | bkp_liability_payments                            |
+| urlBase                | bookkeeping/liability/{id_bkp_liability}/payments |
+| lookupSqlValue         |                                                   |
+| tableTitle             | Payments                                          |
+| formTitleForInserting  | New Payment                                       |
+| formTitleForEditing    | Payment                                           |
+| crud/browse/controller | Bookkeeping/Liability/LiabilitPayments            |
+| crud/add/controller    | Bookkeeping/Liability/LiabilitPayment/Add         |
+| crud/edit/controller   | Bookkeeping/Liability/LiabilitPayment/Edit        |
 
 ## Data Structure
 

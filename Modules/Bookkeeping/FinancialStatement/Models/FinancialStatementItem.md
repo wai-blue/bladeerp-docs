@@ -15,20 +15,20 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                                      |
-| --------------------- | ---------------------------------------------------------- |
-| storeRecordInfo       | TRUE                                                       |
-| sqlName               | bkp_financial_statement_items                              |
-| urlBase               | bookkeeping/financial-statement-items                      |
-| lookupSqlValue        |                                                            |
-| tableTitle            | Account Balances                                           |
-| formTitleForInserting |                                                            |
-| formTitleForEditing   |                                                            |
-| formAddButtonText     |                                                            |
-| formSaveButtonText    |                                                            |
-| crud/browse/action    | Bookkeeping/FinancialStatement/FinancialStatementItems     |
-| crud/add/action       | Bookkeeping/FinancialStatement/FinancialStatementItem/Add  |
-| crud/edit/action      | Bookkeeping/FinancialStatement/FinancialStatementItem/Edit |
+| Property               | Value                                                      |
+| ---------------------- | ---------------------------------------------------------- |
+| storeRecordInfo        | TRUE                                                       |
+| sqlName                | bkp_financial_statement_items                              |
+| urlBase                | bookkeeping/financial-statement-items                      |
+| lookupSqlValue         |                                                            |
+| tableTitle             | Account Balances                                           |
+| formTitleForInserting  |                                                            |
+| formTitleForEditing    |                                                            |
+| formAddButtonText      |                                                            |
+| formSaveButtonText     |                                                            |
+| crud/browse/controller | Bookkeeping/FinancialStatement/FinancialStatementItems     |
+| crud/add/controller    | Bookkeeping/FinancialStatement/FinancialStatementItem/Add  |
+| crud/edit/controller   | Bookkeeping/FinancialStatement/FinancialStatementItem/Edit |
 
 ## Data Structure
 

@@ -10,20 +10,20 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                               |
-| :-------------------- | :-------------------------------------------------- |
-| storeRecordInfo       | TRUE                                                |
-| sqlName               | bkp_asset_accounting_depreciations                  |
-| urlBase               | bookkeeping/assets/accounting-depreciations         |
-| lookupSqlValue        | -                                                   |
-| tableTitle            | Asset Accounting Depreciations                      |
-| formTitleForInserting |                                                     |
-| formTitleForEditing   | Detail Depreciation                                 |
-| formAddButtonText     |                                                     |
-| formSaveButtonText    |                                                     |
-| crud/browse/action    | Bookkeeping/Assets/AccountingDepreciations          |
-| crud/add/action       | Bookkeeping/Assets/AccountingDepreciation/AddOrEdit |
-| crud/edit/action      | Bookkeeping/Assets/AccountingDepreciation/AddOrEdit |
+| Property               | Value                                               |
+| :--------------------- | :-------------------------------------------------- |
+| storeRecordInfo        | TRUE                                                |
+| sqlName                | bkp_asset_accounting_depreciations                  |
+| urlBase                | bookkeeping/assets/accounting-depreciations         |
+| lookupSqlValue         | -                                                   |
+| tableTitle             | Asset Accounting Depreciations                      |
+| formTitleForInserting  |                                                     |
+| formTitleForEditing    | Detail Depreciation                                 |
+| formAddButtonText      |                                                     |
+| formSaveButtonText     |                                                     |
+| crud/browse/controller | Bookkeeping/Assets/AccountingDepreciations          |
+| crud/add/controller    | Bookkeeping/Assets/AccountingDepreciation/AddOrEdit |
+| crud/edit/controller   | Bookkeeping/Assets/AccountingDepreciation/AddOrEdit |
 
 ## Data Structure
 

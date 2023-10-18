@@ -10,20 +10,20 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                                |
-| :-------------------- | :--------------------------------------------------- |
-| storeRecordInfo       | TRUE                                                 |
-| sqlName               | bkp_cash_register_account_statements                  |
-| urlBase               | bookkeeping/cash-registers/account-statements        |
-| lookupSqlValue        |                                                      |
-| tableTitle            | Cashdesk Account Statements                          |
-| formTitleForInserting |                                                      |
-| formTitleForEditing   |                                                      |
-| formAddButtonText     | Create Statement                                     |
-| formSaveButtonText    |                                                      |
-| crud/browse/action    | Bookkeeping/CashRegisters/Account/Statements          |
-| crud/add/action       | Bookkeeping/CashRegisters/Account/Statement/AddOrEdit |
-| crud/edit/action      | Bookkeeping/CashRegisters/Account/Statement/AddOrEdit |
+| Property               | Value                                                 |
+| :--------------------- | :---------------------------------------------------- |
+| storeRecordInfo        | TRUE                                                  |
+| sqlName                | bkp_cash_register_account_statements                  |
+| urlBase                | bookkeeping/cash-registers/account-statements         |
+| lookupSqlValue         |                                                       |
+| tableTitle             | Cashdesk Account Statements                           |
+| formTitleForInserting  |                                                       |
+| formTitleForEditing    |                                                       |
+| formAddButtonText      | Create Statement                                      |
+| formSaveButtonText     |                                                       |
+| crud/browse/controller | Bookkeeping/CashRegisters/Account/Statements          |
+| crud/add/controller    | Bookkeeping/CashRegisters/Account/Statement/AddOrEdit |
+| crud/edit/controller   | Bookkeeping/CashRegisters/Account/Statement/AddOrEdit |
 
 ## Data Structure
 

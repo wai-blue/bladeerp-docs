@@ -12,18 +12,18 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                       |
-| :-------------------- | :------------------------------------------ |
-| storeRecordInfo       | TRUE                                        |
-| sqlName               | bkp_credit_note_states                      |
-| urlBase               | bookkeeping/credit_note/states              |
-| lookupSqlValue        | {%TABLE%}.name                              |
-| tableTitle            | States                                      |
-| formTitleForInserting | New State                                   |
-| formTitleForEditing   | State                                       |
-| crud/browse/action    | Bookkeeping/CreditNote/CreditNoteStates     |
-| crud/add/action       | Bookkeeping/CreditNote/CreditNoteState/Add  |
-| crud/edit/action      | Bookkeeping/CreditNote/CreditNoteState/Edit |
+| Property               | Value                                       |
+| :--------------------- | :------------------------------------------ |
+| storeRecordInfo        | TRUE                                        |
+| sqlName                | bkp_credit_note_states                      |
+| urlBase                | bookkeeping/credit_note/states              |
+| lookupSqlValue         | {%TABLE%}.name                              |
+| tableTitle             | States                                      |
+| formTitleForInserting  | New State                                   |
+| formTitleForEditing    | State                                       |
+| crud/browse/controller | Bookkeeping/CreditNote/CreditNoteStates     |
+| crud/add/controller    | Bookkeeping/CreditNote/CreditNoteState/Add  |
+| crud/edit/controller   | Bookkeeping/CreditNote/CreditNoteState/Edit |
 
 ## Data Structure
 

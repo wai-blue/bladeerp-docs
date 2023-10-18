@@ -10,18 +10,18 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                                                |
-| :-------------------- | :--------------------------------------------------- |
-| storeRecordInfo       | TRUE                                                 |
-| sqlName               | bkp_credit_note_accounts                             |
-| urlBase               | bookkeeping/credit-note/{id_bkp_credit_note}/account |
-| lookupSqlValue        |                                                      |
-| tableTitle            | CreditNote Accounts                                  |
-| formTitleForInserting | New CreditNote Account                               |
-| formTitleForEditing   | CreditNote Account                                   |
-| crud/browse/action    | Bookkeeping/CreditNote/CreditNoteAccounts            |
-| crud/add/action       | Bookkeeping/CreditNote/CreditNoteAccount/Add         |
-| crud/edit/action      | Bookkeeping/CreditNote/CreditNoteAccount/Edit        |
+| Property               | Value                                                |
+| :--------------------- | :--------------------------------------------------- |
+| storeRecordInfo        | TRUE                                                 |
+| sqlName                | bkp_credit_note_accounts                             |
+| urlBase                | bookkeeping/credit-note/{id_bkp_credit_note}/account |
+| lookupSqlValue         |                                                      |
+| tableTitle             | CreditNote Accounts                                  |
+| formTitleForInserting  | New CreditNote Account                               |
+| formTitleForEditing    | CreditNote Account                                   |
+| crud/browse/controller | Bookkeeping/CreditNote/CreditNoteAccounts            |
+| crud/add/controller    | Bookkeeping/CreditNote/CreditNoteAccount/Add         |
+| crud/edit/controller   | Bookkeeping/CreditNote/CreditNoteAccount/Edit        |
 
 REVIEW DD: isJunctionTable?
 

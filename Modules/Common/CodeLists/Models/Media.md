@@ -10,19 +10,19 @@ No constants are defined for this model.
 
 ## Properties
 
-| Property              | Value                       |
-| :-------------------- | :-------------------------- |
-| isJunctionTable       | FALSE                       |
-| storeRecordInfo       | TRUE                        |
-| sqlName               | com_medias                  |
-| urlBase               | common/codelists/medias     |
-| lookupSqlValue        | {%TABLE%}.media             |
-| tableTitle            | Medias                      |
-| formTitleForInserting | New Media                   |
-| formTitleForEditing   | Media                       |
-| crud/browse/action    | Common/CodeLists/Medias     |
-| crud/add/action       | Common/CodeLists/Media/Add  |
-| crud/edit/action      | Common/CodeLists/Media/Edit |
+| Property               | Value                            |
+| :--------------------- | :------------------------------- |
+| isJunctionTable        | FALSE                            |
+| storeRecordInfo        | TRUE                             |
+| sqlName                | com_medias                       |
+| urlBase                | common/codelists/medias          |
+| lookupSqlValue         | {%TABLE%}.media                  |
+| tableTitle             | Medias                           |
+| formTitleForInserting  | New Media                        |
+| formTitleForEditing    | Media                            |
+| crud/browse/controller | Common/CodeLists/Medias          |
+| crud/add/controller    | Common/CodeLists/Media/AddOrEdit |
+| crud/edit/controller   | Common/CodeLists/Media/AddOrEdit |
 
 ## Data Structure
 
