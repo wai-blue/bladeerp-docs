@@ -4,7 +4,15 @@
 
 Shows monthly selling summary for 12 months.
 
-## View
+## Input Parameters
+
+| Parameter        | PHP Data type | Default value | Description |
+| ---------------- | ------------- | ------------- | ----------- |
+| yearBackFromDate | integer       | 0             | ...         |
+| dataset          | array         | []            | ...         |
+| parameter1       | ?string       | NULL          | ...         |
+
+## View (View / Description)
 
 Grid
 
