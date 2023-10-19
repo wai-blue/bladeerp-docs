@@ -29,6 +29,13 @@ Table
 * rowButtons:
   * deactivate
   * activate
+* leftTitleButtons:
+  * addAsCompany:
+    * text: "New Company"
+    * controller: Common/AddressBook/Contact/AddAsCompany
+  * addAsPerson:
+    * text: "New Person"
+    * controller: Common/AddressBook/Contact/AddAsPerson
 
 ### rowButtons.deactivate
 * Shown only on active row (`is_active=TRUE`).
