@@ -26,14 +26,19 @@ No constants are defined for this model.
 
 ## Data Structure
 
-| Column                   | Title                      | ADIOS Type | Length | Required | Notes                                      |
-| :----------------------- | -------------------------- | :--------: | :----: | :------: | :----------------------------------------- |
-| id                       |                            |    int     |   8    |   TRUE   | Unique record ID                           |
-| record_info              | Record Info                |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
-| name                     | Name                       |  varchar   |  100   |   TRUE   |                                            |
-| description              | Description                |    text    |        |  FALSE   |                                            |
-| id_com_address           | Address                    |    date    |   8    |   TRUE   |                                            |
-| is_active                | Is Active                  |  boolean   |   1    |   TRUE   |                                            |
+| Column         | Title            | ADIOS Type | Length | Required | Notes                                      |
+| :------------- | ---------------- | :--------: | :----: | :------: | :----------------------------------------- |
+| id             |                  |    int     |   8    |   TRUE   | Unique record ID                           |
+| record_info    | Record Info      |    json    |        |   TRUE   | Info about INSERT and UPDATE time & author |
+| name           | Name             |  varchar   |  100   |   TRUE   |                                            |
+| description    | Description      |    text    |        |  FALSE   |                                            |
+| is_active      | Is Active        |  boolean   |   1    |   TRUE   |                                            |
+| street_1       | Street - 1. line |  varchar   |  200   |   TRUE   | Ulica - 1. riadok                          |
+| street_2       | Street - 2. line |  varchar   |  200   |  FALSE   | Ulica - 2. riadok                          |
+| city           | City             |  varchar   |  200   |   TRUE   | Mesto                                      |
+| postal_code    | ZIP              |  varchar   |   20   |   TRUE   | PSČ                                        |
+| id_com_country | Country          |   lookup   |   8    |  FALSE   | ID krajiny                                 |
+| location       | GPS Location     |  mappoint  |        |  FALSE   | GPS location                               |
 
 ### ADIOS Parameters
 
@@ -44,9 +49,7 @@ No constants are defined for this model.
 
 ### Foreign Keys
 
-| Column         | Model                                                                                          | Relation | OnUpdate | OnDelete |
-| :------------- | :--------------------------------------------------------------------------------------------- | :------: | -------- | -------- |
-| id_com_address | [App/Widgets/Common/AddressBook/Models/Address](../../../Common/AddressBook/Models/Address.md) |   1:N    | Cascade  | Cascade  |
+[Model does not contain foreign keys.]
 
 ### Indexes
 
@@ -57,7 +60,6 @@ No constants are defined for this model.
 | id             | PRIMARY |             id ASC |
 | name           | UNIQUE  |           name ASC |
 | is_active      |  INDEX  |      is_active ASC |
-| id_com_address |  INDEX  | id_com_address ASC |
 
 ## Callbacks
 
