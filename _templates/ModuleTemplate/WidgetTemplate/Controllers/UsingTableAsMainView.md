@@ -27,6 +27,13 @@ Table
   * Button2
   * Button3
   * ...
+* leftTitleButtons:
+  * leftButton1:
+    * text: "New Company"
+    * controller: Common/AddressBook/Contact/AddAsCompany
+  * leftButton2:
+    * text: "New Person"
+    * controller: Common/AddressBook/Contact/AddAsPerson
 
 ### rowButtons.Button1
 
