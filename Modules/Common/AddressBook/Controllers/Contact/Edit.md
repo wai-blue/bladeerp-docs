@@ -6,60 +6,24 @@ Detail kontaktu.
 
 ## View
 
-Form
+[App/Widgets/Common/AddressBook/Views/Contact/Edit](./../../Views/Contact/Edit.md)
 
-## Default View Parameters
+## Output Parameters
 
-REVIEW DD: upravene pocas telefonatu, treba skontrolovat
+### contact
+* model: [App/Widgets/Common/AddressBook/Models/Contact](./../../Models/Contact.md)
 
-* model: App/Widgets/Common/AddressBook/Models/Contact
-* displayMode: window
-* template:
-  * columns:
-    * tabs:
-      * Contact Detail
-        * company_name
-        * company_business_number
-        * company_tax_number
-        * company_vat_number
-        * company_description
+### contact_categories
+* model: [App/Widgets/Common/AddressBook/Models/ContactCategory](./../../Models/ContactCategory.md)
+* filter: contact['id]
 
-        * group:
-          * title: Primary contact person
-          * items:
-            * id_com_person:LOOKUP:title_before
-            * id_com_person:LOOKUP:first_name
-            * id_com_person:LOOKUP:middle_name
-            * id_com_person:LOOKUP:last_name
-            * id_com_person:LOOKUP:title_after
-            * id_com_person:LOOKUP:email
-            * id_com_person:LOOKUP:phone
-            * id_com_person:LOOKUP:url_linkedin
+### persons
+* model:[App/Widgets/Common/AddressBook/Models/Person](./../../Models/Person.md)
+* filter: contact['id]
 
-        * group:
-          * title: Primary adress
-          * items:
-            * id_com_address:LOOKUP:street_1
-            * id_com_address:LOOKUP:street_2
-            * id_com_address:LOOKUP:city
-            * id_com_address:LOOKUP:postal_code
-            * id_com_address:LOOKUP:id_com_country
-            * id_com_address:LOOKUP:location
-            * id_com_address:LOOKUP:description
-
-        * ADIOS/Core/View/Input/Tags:
-          * title: Categories of the contact
-          * description: In what categories the contact is?
-          * inputParams:
-            * model: App/Widgets/Common/AddressBook/Models/Category
-      * Persons
-        * action: Widgets/Common/AddressBook/Actions/Persons
-        * params:
-          * idContact = $params[‘id’]
-      * Addresses
-        * action: Widgets/Common/AddressBook/Actions/Addresses
-        * params:
-          * idContact = $params[‘id’]
+### addresses
+* model: [App/Widgets/Common/AddressBook/Models/Address](./../../Models/Address.md)
+* filter: contact['id]
 
 ## Parameters Post-processing
-  1. Hide all company columns (`com_contact_companies.*`) when contact is person (`is_company=FALSE`).
+No post-processing of default parameters is necessary.

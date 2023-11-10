@@ -6,40 +6,37 @@ Create new contact - company. Natural person data are related to primary contact
 
 ## View
 
-Form
+[App/Widgets/Common/AddressBook/Views/Contact/AddAsCompany](./../../Views/Contact/AddAsCompany.md)
 
-## Default View Parameters
+## Output Parameters
 
-* model: App/Widgets/Common/AddressBook/Models/Contact
-* displayMode: window
-* template:
-  * company_name
-  * company_business_number
-  * company_tax_number
-  * company_vat_number
-  * id_com_person:LOOKUP:title_before
-  * id_com_person:LOOKUP:first_name
-  * id_com_person:LOOKUP:middle_name
-  * id_com_person:LOOKUP:last_name
-  * id_com_person:LOOKUP:title_after
-  * id_com_person:LOOKUP:email
-  * id_com_person:LOOKUP:phone
-  * id_com_address:LOOKUP:street_1
-  * id_com_address:LOOKUP:street_2
-  * id_com_address:LOOKUP:city
-  * id_com_address:LOOKUP:postal_code
-  * id_com_address:LOOKUP:id_com_country
-  * id_com_address:LOOKUP:notes
-  * id_com_address:LOOKUP:location
-* defaultValues:
-  * is_active = TRUE
-  * is_company = TRUE
-  * id_com_person:LOOKUP:is_active = TRUE
-  * id_com_address:LOOKUP:is_active = TRUE
-  * id_com_country: settings_com_address_book_default_country_id
+### categories
+* model: [App/Widgets/Common/AddressBook/Models/Category](./../../Models/Category.md)
+
+### new_contact
+* model: [App/Widgets/Common/AddressBook/Models/Contact](./../../Models/Contact.md)
+
+### new_contact_categories
+* model: [App/Widgets/Common/AddressBook/Models/ContactCategory](./../../Models/ContactCategory.md)
+
+### new_person
+* model:[App/Widgets/Common/AddressBook/Models/Person](./../../Models/Person.md)
+
+### new_address
+* model: [App/Widgets/Common/AddressBook/Models/Address](./../../Models/Address.md)
 
 ## Parameters Post-processing
 
-  1. OnChange of `company_business_number` search all available company data on FINSTAT WEB via API and fill them to related input fields. 
-  2. Create new contact and its related new person (`id_com_person`) and new address (`id_com_address`) all togeher (= in one transaction).
-  
+### Transactions
+Create new [person](#new_person), new [address](#new_address) and new contact [contact](#new_contact) in one transaction.
+
+### new_person
+* model:[App/Widgets/Common/AddressBook/Models/Person](./../../Models/Person.md)
+
+### new_address
+* model: [App/Widgets/Common/AddressBook/Models/Address](./../../Models/Address.md)
+
+### new_contact
+* model: [App/Widgets/Common/AddressBook/Models/Contact](./../../Models/Contact.md)
+* Use ID of newly created [person](#new_person) as primary contact person (`id_com_person`).
+* Use ID of newly created [address](#new_address) as primary address (`id_com_address`).
