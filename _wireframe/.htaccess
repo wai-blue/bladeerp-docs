@@ -1,0 +1,7 @@
+RewriteEngine On
+
+RewriteRule ^assets/(.*)$ vendor/wai-blue/adios-wireframe/src/assets/$1
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?wireframe=$1&%{QUERY_STRING}

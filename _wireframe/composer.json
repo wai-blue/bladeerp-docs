@@ -1,0 +1,5 @@
+{
+  "require": {
+    "wai-blue/adios-wireframe": "dev-main"
+  }
+}
