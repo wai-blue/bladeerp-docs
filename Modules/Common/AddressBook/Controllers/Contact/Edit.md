@@ -8,22 +8,24 @@ Detail kontaktu.
 
 [App/Widgets/Common/AddressBook/Views/Contact/Edit](./../../Views/Contact/Edit.md)
 
-## Output Parameters
+## View Parameters
+
+### categories
+All existing [categories](./../../Models/Category.md) which can be assigned to the contact.
 
 ### contact
-* model: [App/Widgets/Common/AddressBook/Models/Contact](./../../Models/Contact.md)
+Selected [contact](./../../Models/Contact.md) to edit.
 
 ### contact_categories
-* model: [App/Widgets/Common/AddressBook/Models/ContactCategory](./../../Models/ContactCategory.md)
-* filter: contact['id]
+All [contact categories](./../../Models/ContactCategory.md) related to the contact (`contact['id]`).
 
 ### persons
-* model:[App/Widgets/Common/AddressBook/Models/Person](./../../Models/Person.md)
-* filter: contact['id]
+All existing [natural persons](./../../Models/Person.md) related to the contact (`contact['id]`).
 
 ### addresses
-* model: [App/Widgets/Common/AddressBook/Models/Address](./../../Models/Address.md)
-* filter: contact['id]
+All existing [addresses](./../../Models/Address.md) related to the contact (`contact['id]`).
 
-## Parameters Post-processing
-No post-processing of default parameters is necessary.
+## View Data Post-processing
+1. Validate all entered inputs.
+2. Show all validation errors if any.
+3. If case of no validation error then save the data.

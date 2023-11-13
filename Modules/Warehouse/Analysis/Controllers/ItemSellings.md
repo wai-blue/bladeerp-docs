@@ -8,7 +8,7 @@ Prepares data form monthly selling (sales?) summary for 12 months.
 
 App/Widgets/Warehouse/Analysis/ItemSellings
 
-## Output Parameters
+## View Parameters
 
 ### commentSoldItem
 The item is considered as sold when it is a part of payed claim (see [Stockrooms/Models/ClaimItem](./../../Stockrooms/Models/ClaimItem.md)).

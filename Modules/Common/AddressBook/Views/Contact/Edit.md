@@ -23,17 +23,15 @@ Form
 * model: $input['contact]
 * displayMode: window
 * template:
-  * columns:
     * tabs:
-      * Contact Detail
+      * Company Detail
         * company_name
         * company_business_number
         * company_tax_number
         * company_vat_number
         * company_description
-
         * group:
-          * title: Primary contact person
+          * title: Primary Contact Person
           * items:
             * id_com_person:LOOKUP:title_before
             * id_com_person:LOOKUP:first_name
@@ -43,9 +41,8 @@ Form
             * id_com_person:LOOKUP:email
             * id_com_person:LOOKUP:phone
             * id_com_person:LOOKUP:url_linkedin
-
         * group:
-          * title: Primary adress
+          * title: Primary Address
           * items:
             * id_com_address:LOOKUP:street_1
             * id_com_address:LOOKUP:street_2
@@ -53,17 +50,24 @@ Form
             * id_com_address:LOOKUP:postal_code
             * id_com_address:LOOKUP:id_com_country
             * id_com_address:LOOKUP:location
-            * id_com_address:LOOKUP:description
-
+            * id_com_address:LOOKUP:description      
+        * group:
+          * title: Additional Contact Data
+          * items:
+            * id_bkp_currency
+            * language_code
+            * website
+            * notes
+      * Categories
         * ADIOS/Core/View/Input/Tags:
           * title: Categories of the contact
           * description: In what categories the contact is?
           * inputParams:
             * model: * model: $input['contact_categories]
-      * Persons
+      * All Contact Persons
         * model: $input['persons]
-      * Addresses
+      * All Addresses
         * model: $input['addresses]
 
 ## Parameters Post-processing
-  1. Hide all company columns (`com_contact_companies.*`) when contact is person (`is_company=FALSE`).
+  1. Hide all Company Detail data (`company_*`) when the contact is natural person (`is_company=FALSE`). Show all of them otherwise (`is_company=TRUE`)

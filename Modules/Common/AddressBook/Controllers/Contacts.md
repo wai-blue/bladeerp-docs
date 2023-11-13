@@ -8,11 +8,11 @@ Zoznam všetkých kontaktov adresára
 
 [App/Widgets/Common/AddressBook/Views/Contacts](./../Views/Contacts.md)
 
-## Output Parameters
+## View Parameters
 
 ### contacts
 [App/Widgets/Common/AddressBook/Models/Contact](./../Models/Contact.md)
 
-## Parameters Post-processing
+## View Data Post-processing
 
-No post-processing of default parameters is necessary.
+No post-processing of view data is necessary.

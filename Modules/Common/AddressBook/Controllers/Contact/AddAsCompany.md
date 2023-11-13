@@ -8,35 +8,34 @@ Create new contact - company. Natural person data are related to primary contact
 
 [App/Widgets/Common/AddressBook/Views/Contact/AddAsCompany](./../../Views/Contact/AddAsCompany.md)
 
-## Output Parameters
+## View Parameters
 
 ### categories
-* model: [App/Widgets/Common/AddressBook/Models/Category](./../../Models/Category.md)
+All existing [categories](./../../Models/Category.md)
 
-### new_contact
-* model: [App/Widgets/Common/AddressBook/Models/Contact](./../../Models/Contact.md)
+### currencies
+All existing [currencies](./../../../../Bookkeeping/ExchangeRate/Models/Currency.md)
 
-### new_contact_categories
-* model: [App/Widgets/Common/AddressBook/Models/ContactCategory](./../../Models/ContactCategory.md)
-
-### new_person
-* model:[App/Widgets/Common/AddressBook/Models/Person](./../../Models/Person.md)
-
-### new_address
-* model: [App/Widgets/Common/AddressBook/Models/Address](./../../Models/Address.md)
-
-## Parameters Post-processing
+## View Data Post-processing
+1. Validate all entered inputs.
+2. Show all validation errors if any.
+3. If case of no validation error then do following:
 
 ### Transactions
-Create new [person](#new_person), new [address](#new_address) and new contact [contact](#new_contact) in one transaction.
+Create [new_person](#new_person), [new_address](#new_address) and [new_contact](#new_contact) in one transaction.
 
 ### new_person
-* model:[App/Widgets/Common/AddressBook/Models/Person](./../../Models/Person.md)
+* Newly created [person](./../../Models/Person.md).
 
 ### new_address
-* model: [App/Widgets/Common/AddressBook/Models/Address](./../../Models/Address.md)
+* Newly created [address](./../../Models/Address.md).
 
 ### new_contact
 * model: [App/Widgets/Common/AddressBook/Models/Contact](./../../Models/Contact.md)
+* Newly created [contact](./../../Models/Contact.md) to company.
 * Use ID of newly created [person](#new_person) as primary contact person (`id_com_person`).
 * Use ID of newly created [address](#new_address) as primary address (`id_com_address`).
+
+### new_contact_categories
+* Newly assigned [categories to the contact](./../../Models/ContactCategory.md).
+
