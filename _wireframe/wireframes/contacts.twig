@@ -1,15 +1,38 @@
+{% set button1 %}
+    {{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Add person', 'icon': 'fas fa-plus', 'modal': true, 'targetModal': '#exampleModal'}) }}
+{% endset %}
+
+{% set button2 %}
+    {{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Add company', 'icon': 'fas fa-plus'}) }}
+{% endset %}
+
+
+<div class="row">
+    {{ include('components/breadcrumbs.twig', {
+      'last':'',
+      'this':'Dashboard'
+    }) }}
+</div>
 <div class="shadow-sm m-1">
   {{ include('components/table.twig', {
     'title': {
       'text': 'Contacts',
-      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Add contact', 'icon': 'fas fa-plus', 'onclick': 'add_contact()'}),
+      'leftButtons': button1 ~ button2,
     },
     'columns': [
-      {'title':'Given Name','type': 'varchar'},
-      {'title':'Last Name','type': 'varchar'},
-      {'title':'Age','type': 'varchar'},
+      {'title':'Company Mane','type': 'varchar'},
+      {'title':'Business Number','type': 'varchar'},
+      {'title':'Primary Conctact Person','type': 'varchar'},
+      {'title':'Primary Address','type': 'varchar'},
+      {'title':'Currency','type': 'lookup', 'options': ['€','$']},
+      {'title':'Primary Language','type': 'lookup', 'options': ['English','Slovak']},
+      {'title':'Is Active','type': 'active', 'options': ['active','inactive']},
+      {'title':'','type': 'activeButton'},
     ],
     'minRowCount': 5,
     'maxRowCount': 15
   }) }}
+</div>
+<div>
+{{ include('contacts/addPersonModal.twig') }}
 </div>
