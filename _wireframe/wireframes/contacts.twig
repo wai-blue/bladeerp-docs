@@ -5,9 +5,9 @@
       'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Add contact', 'icon': 'fas fa-plus', 'onclick': 'add_contact()'}),
     },
     'columns': [
-      'Given Name',
-      'Last Name',
-      'Age'
+      {'title':'Given Name','type': 'varchar'},
+      {'title':'Last Name','type': 'varchar'},
+      {'title':'Age','type': 'varchar'},
     ],
     'minRowCount': 5,
     'maxRowCount': 15
