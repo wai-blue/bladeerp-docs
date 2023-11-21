@@ -170,11 +170,21 @@
                     </div>
                   </div>
                   <div class="card-body">
-                    {% for i in 0..5 %}
+                    <div class="tag-containter">
+                      <style>
+                        .todo-tag {
+                          display: inline-block;
+                        }
+                      </style>
+                      {% for i in 0..5 %}
+                        {{ include("components/tag.twig",{
+                          'text':'Tag Test',
+                        } )}}
+                      {% endfor %}
                       {{ include("components/inputs/varchar.twig",{
-                        'title':'test',
-                      } )}}
-                    {% endfor %}
+                          'title':'Tag Name',
+                        })}}
+                    </div>
                   </div>
                 </div>
               </div>
