@@ -1,7 +1,7 @@
 # Model Common/AddressBook/Address
 
 ## Introduction
-Model slúži na evidenciu adries. Všetky adresy môžu slúžiť ako doručovacie. Ako fakturačná slúži primárna adresa (tab: **com_contacts**, col: **id_com_address**)
+Model slúži na evidenciu adries ku kontaktom. Všetky adresy môžu slúžiť ako doručovacie. Ako fakturačná slúži primárna adresa (tab: **com_contacts**, col: **id_com_address**)
 
 ## Constants
 V modeli nie sú použité konštanty.
@@ -17,9 +17,9 @@ V modeli nie sú použité konštanty.
 | tableTitle             | Contact Addresses                                                                        |
 | formTitleForInserting  | New Contact Address                                                                      |
 | formTitleForEditing    | Contact Address                                                                          |
-| crud/browse/controller | Common/AddressBook/Addresses                                                             |
-| crud/add/controller    | Common/AddressBook/Address/AddOrEdit                                                     |
-| crud/edit/controller   | Common/AddressBook/Address/AddOrEdit                                                     |
+| crud/browse/controller | Common/AddressBook/Contact/Addresses                                                     |
+| crud/add/controller    | Common/AddressBook/Contact/Address/AddOrEdit                                             |
+| crud/edit/controller   | Common/AddressBook/Contact/Address/AddOrEdit                                             |
 
 REVIEW: JG k lookupSqlValue - potrebné vyriešiť ako v ADIOSe vyriešiť použitie "externej" lookup hodnoty
 

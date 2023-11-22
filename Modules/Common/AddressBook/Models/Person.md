@@ -1,7 +1,7 @@
 # Model Common/AddressBook/Person
 
 ## Introduction
-Model slúži na evidenciu fyzických osôb a ich údajov
+Model slúži na evidenciu fyzických osôb ku kontaktom.
 
 ## Constants
 V modeli nie sú použité konštanty.
@@ -17,9 +17,9 @@ V modeli nie sú použité konštanty.
 | tableTitle             | Persons                                     |
 | formTitleForInserting  | New Person                                  |
 | formTitleForEditing    | Person                                      |
-| crud/browse/controller | Common/AddressBook/Persons                  |
-| crud/add/controller    | Common/AddressBook/Person/AddOrEdit         |
-| crud/edit/controller   | Common/AddressBook/Person/AddOrEdit         |
+| crud/browse/controller | Common/AddressBook/Contact/Persons          |
+| crud/add/controller    | Common/AddressBook/Contact/Person/AddOrEdit |
+| crud/edit/controller   | Common/AddressBook/Contact/Person/AddOrEdit |
 
 ## Data Structure
 | Column         | Title        | ADIOS Type | Length | Required | Notes                          |

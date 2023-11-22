@@ -29,7 +29,7 @@ Table
 * leftTitleButtons:
   * addCategory:
     * text: "New Category"
-    * controller: [Common/AddressBook/Category/Add](../Controllers/Category/AddOrEdit.md)
+    * controller: [Common/AddressBook/Category/AddOrEdit](../Controllers/Category/AddOrEdit.md)
 
 ### rowButtons.deactivate
 * Shown only on active row (`is_active=TRUE`).
