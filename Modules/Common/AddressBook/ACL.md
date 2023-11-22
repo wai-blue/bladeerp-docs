@@ -13,7 +13,6 @@ TODO: Nahradiť vzorové údaje
 | Contact/AddNextAddress    |  X   |     X     |
 | Persons                   |  X   |     X     |
 | Contact/AddNextPerson     |  X   |     X     |
-| Contact/AsingToCategories |  X   |     X     |
 | Categories                |  X   |     X     |
 | Category/Add              |      |     X     |
 | Category/Edit             |      |     X     |
