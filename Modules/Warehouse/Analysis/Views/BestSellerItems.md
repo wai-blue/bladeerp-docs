@@ -21,5 +21,6 @@ Table
     * type: virtual
     * data: $input['virt_sell_price_sum']
 
-## Parameters Post-processing
-[No post-processing of default parameters is necessary.]
+## View Data Post-processing
+
+No post-processing of view data is necessary.

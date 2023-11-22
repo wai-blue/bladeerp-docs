@@ -18,7 +18,8 @@ Form
 
 (see ADIOS.repo/src/Core/View/Form.php)
 
-* model: $input['contact'](./../../../../Modules/Common/AddressBook/Models/Contact.md)
+* model: [App/Widgets/Common/AddressBook/Models/Contact](./../../../../Modules/Common/AddressBook/Models/Contact.md)
+* dataset: $input['contact']
 * cssClass: inline
 * displayMode: (inline|window|desktop)
 * template:
@@ -46,18 +47,9 @@ Form
   * id_user = Predvolený je aktuálny používateľ
   * transaction_date = Predvolený je posledný dátum z účtovného obdobia
 
-## Parameters Post-processing
+## View Data Post-processing
 
-[No post-processing of default parameters is necessary.]
-
-[When one sentence description is sufficient, then use numbered list (see below).]
-  1. Input for `id_bkp_accounting_period` will be readonly.
-  2. Účtovné obdobie sa bude ponúkať iba z otvorených účtovných období podľa stĺpca is_open v tabuľke bkp_accounting_periods.
-  3. Dátum `closing_date` musí byť väčší alebo rovný dátumu posledného dokladu z vybraného účtovného obdobia.
-
-## Parameters Post-processing
-
-[No post-processing of default parameters is necessary.]
+[No post-processing of view data is necessary.]
 
 [When one sentence description is sufficient, then use numbered list (see below).]
 1. Post-processing functionality 1. 

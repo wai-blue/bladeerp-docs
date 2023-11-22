@@ -20,9 +20,9 @@ App/Core/Views/MyCustomView
 * displayMode: (inline|window|desktop)
 * ... any parameter accepted by the custom view
 
-## Parameters Post-processing
+## View Data Post-processing
 
-[No post-processing of default parameters is necessary.]
+[No post-processing of view data is necessary.]
 
 [When one sentence description is sufficient, then use numbered list (see below).]
 1. Post-processing functionality 

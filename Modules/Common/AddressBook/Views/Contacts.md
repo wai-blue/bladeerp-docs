@@ -2,7 +2,7 @@
 
 ## Description
 
-Zoznam kontaktov adresára
+List of all contact in address book.
 
 ## Input Parameters
 
@@ -38,10 +38,10 @@ Table
 * leftTitleButtons:
   * addAsCompany:
     * text: "New Company"
-    * controller: Common/AddressBook/Contact/AddAsCompany
+    * controller: [Common/AddressBook/Contact/AddAsCompany](./../Controllers/Contact/AddAsCompany.md)
   * addAsPerson:
     * text: "New Person"
-    * controller: Common/AddressBook/Contact/AddAsPerson
+    * controller: [Common/AddressBook/Contact/AddAsPerson](./../Controllers/Contact/AddAsPerson.md)
 
 ### rowButtons.deactivate
 * Shown only on active row (`is_active=TRUE`).
@@ -51,6 +51,6 @@ Table
 * Shown only on inactive row (`is_active=FALSE`).
 * Row item is re-activated `is_active=TRUE` onChange.
 
-## Parameters Post-processing
+## View Data Post-processing
 
-No post-processing of default parameters is necessary.
+No post-processing of view data is necessary.

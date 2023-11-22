@@ -6,7 +6,9 @@ Get data to create new contact - natural person.
 
 ## Input Parameters
 
-[No input parameters]
+| Parameter      | PHP Data type | Default value | Description                       |
+| -------------- | ------------- | ------------- | --------------------------------- |
+| id_com_contact | integer       | 0             | Id of contact to add next address |
 
 ## Parent View
 
@@ -60,6 +62,6 @@ Form
   * id_bkp_currency: settings_bkp_default_currency_code
   * language_code: settings_com_address_book_default_language_code
 
-## Parameters Post-processing
+## View Data Post-processing
 
-No post-processing of default parameters is necessary.
+No post-processing of view data is necessary.

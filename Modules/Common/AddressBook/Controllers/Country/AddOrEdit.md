@@ -6,16 +6,13 @@ Add new country or edit it.
 
 ## View
 
-Form
+[App/Widgets/Common/AddressBook/Views/Country/AddOrEdit](./../../Views/Country/AddOrEdit.md)
 
-## Default View Parameters
+## View Parameters
 
-* model: App/Widgets/Common/AddressBook/Models/Country
-* template:
-  * columns:
-    * name
-    * full_name
-    * code
+### country
+Existing country but only in case of edit. Otherwise empty.
 
-## Parameters Post-processing
-  No post-processing of default parameters is necessary.
+## View Data Post-processing
+
+No post-processing of view data is necessary.

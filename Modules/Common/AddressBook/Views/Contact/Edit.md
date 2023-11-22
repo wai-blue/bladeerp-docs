@@ -6,12 +6,12 @@ Detail kontaktu.
 
 ## Input Parameters
 
-| Parameter          | How  | PHP Data type | Default value | Description                  |
-| ------------------ | ---- | ------------- | ------------- | ---------------------------- |
-| contact            | POST | array         | []            | Contact                      |
-| contact_categories | POST | array         | []            | Categories of Contact        |
-| persons            | POST | array         | []            | Persons related to Contact   |
-| addresses          | POST | array         | []            | Addresses related to Contact |
+| Parameter          | PHP Data type | Default value | Description                  |
+| ------------------ | ------------- | ------------- | ---------------------------- |
+| contact            | array         | []            | Contact                      |
+| contact_categories | array         | []            | Categories of Contact        |
+| persons            | array         | []            | Persons related to Contact   |
+| addresses          | array         | []            | Addresses related to Contact |
 
 ## Parent View
 
@@ -19,7 +19,8 @@ Form
 
 ## Default View Parameters
 
-* model: $input['contact](./../../Models/Contact.md)
+* model: [App/Widgets/Common/AddressBook/Models/Contact](./../../../../Modules/Common/AddressBook/Models/Contact.md)
+* dataset: $input['contact']
 * displayMode: window
 * template:
     * tabs:
@@ -53,7 +54,7 @@ Form
         * group:
           * title: Additional Contact Data
           * items:
-            * id_bkp_currency](./../../../../Bookkeeping/ExchangeRate/Models/Currency.md)
+            * [id_bkp_currency](./../../../../Bookkeeping/ExchangeRate/Models/Currency.md)
             * language_code
             * website
             * notes
@@ -62,12 +63,19 @@ Form
           * title: Categories of the contact
           * description: In what categories the contact is?
           * inputParams:
-            * initialTags: $input['contact_categories](./../../Models/ContactCategory.md)
-            * allTags: [App/Widgets/Common/AddressBook/Models/Category](./../../Models/Category.md)
+            * initialTags: $input[contact_categories]
+            * allTags: [App/Widgets/Common/AddressBook/Models/Category]
       * All Contact Persons
-        * model: $input['persons](./../../Models/Person.md)
+        * inputParams:
+          * id_com_contact = $input[contact['id']]
+          * persons = $input[persons]          
+        * view: [App/Widgets/Common/AddressBook/Views/Contact/Persons](./../../Views/Contact/Persons.md)
       * All Addresses
-        * model: $input['addresses](./../../Models/Address.md)
+        * inputParams:
+          * id_com_contact = $input[contact['id']]
+          * addresses = $input[addresses]          
+        * view: [App/Widgets/Common/AddressBook/Views/Contact/Addresses](./../../Views/Contact/Addresses.md)
 
-## Parameters Post-processing
+## View Data Post-processing
+
   1. Hide all Company Detail data (`company_*`) when the contact is natural person (`is_company=FALSE`). Show all of them otherwise (`is_company=TRUE`)
