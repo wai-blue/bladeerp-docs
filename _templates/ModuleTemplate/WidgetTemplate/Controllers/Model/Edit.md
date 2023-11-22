@@ -9,6 +9,7 @@ Detail of [model].
 [App/Widgets/Common/AddressBook/Views/Contact/Edit](../../../Views/Contact/Edit.md)
 
 ## View Parameters
+[No view parameters are prepared.]
 
 ### [categories]
 [All existing [categories](../../../Models/Category.md) which can be assigned to the contact.]
@@ -17,7 +18,9 @@ Detail of [model].
 [Selected [contact](../../../Models/Contact.md) to edit.]
 
 ## View Data Post-processing
+
 [No post-processing of view data is necessary.]
-1. Validate all entered inputs.
-2. Show all validation errors if any.
-3. If case of no validation error then save the data.
+1. [Add one sentence description of special post-processing here like separate point.]
+
+# [Special Post Processing]
+[Add multiple sentences description of special post-processing here. Describe all necessary conditions and special results.]

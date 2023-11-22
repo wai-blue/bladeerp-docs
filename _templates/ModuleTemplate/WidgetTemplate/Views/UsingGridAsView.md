@@ -1,15 +1,22 @@
-# View Warehouse/Analysis/MonthlySellings
+# View [Module]/[Widget]/Views/[Model]/[ViewName]
 
 ## Description
 
-Shows monthly selling summary for 12 months.
+[Shows monthly selling summary for 12 months.]
 
-## View
+## Input Parameters
+[No input parameters]
+| Parameter | PHP Data type | Default value | Description       |
+| --------- | ------------- | ------------- | ----------------- |
+| title     | array         | []            | Title of the view |
+| dataset   | array         | []            | List of XYZ       |
+
+## Parent View
 
 [Use existing view component here - see ADIOS.repo/src/Core/View/]
 [Grid]
 
-## Default View Parameters
+## Parent View Parameters
 [All input parameters and datasets used in the view must be prepared in Controller which is calling this View.]
 
 * layout:

@@ -10,9 +10,15 @@ List all items of [model].
 
 ## View Parameters
 
-### contacts
+[No view parameters are prepared.]
+
+### [contacts]
 [App/Widgets/Common/AddressBook/Models/Contact](../Models/Contact.md)
 
 ## View Data Post-processing
 
 [No post-processing of view data is necessary.]
+1. [Add one sentence description of special post-processing here like separate point.]
+
+# [Special Post Processing]
+[Add multiple sentences description of special post-processing here. Describe all necessary conditions and special results.]
