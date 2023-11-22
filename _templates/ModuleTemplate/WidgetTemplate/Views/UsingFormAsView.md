@@ -1,18 +1,24 @@
-# Controller [Module]/[Widget]/UsingFormAsMainView
+# View [Module]/[Widget]/Views/UsingFormAsMainView
 
 ## Description
 
-Vytvorenie novej uzávierky.
+[Edit main contact of company]
 
-## View
+## Input Parameters
+
+| Parameter | PHP Data type | Default value | Description     |
+| --------- | ------------- | ------------- | --------------- |
+| contact   | array         | []            | Contact to edit |
+
+## Parent View
 
 Form
 
-## Default View Parameters
+## Parent View Parameters
 
 (see ADIOS.repo/src/Core/View/Form.php)
 
-* model: App/Widgets/Bookkeeping/Books/Models/AccountingPeriod
+* model: $input['contact'](./../../../../Modules/Common/AddressBook/Models/Contact.md)
 * cssClass: inline
 * displayMode: (inline|window|desktop)
 * template:
@@ -60,7 +66,7 @@ Form
 
 [Or use sub-chapters in case of more complicated or multi-sentence descriptions.]
 ### Comment [Subject (e.g. Sold Item)]
-[Comment to the subject (e.g. The item is considered as sold when it is a part of payed claim (see [Stockrooms/Models/ClaimItem](./../../Stockrooms/Models/ClaimItem.md)).)]
+[Comment to the subject (e.g. The item is considered as sold when it is a part of payed claim (see [Stockrooms/Models/ClaimItem](../../Stockrooms/Models/ClaimItem.md)).)]
 
 ### Parameter [Name of parameter (e.g. Limit)]
 [Description of the parameter (e.g. The parameter defines how many top items are evaluated and shown. Default value is 5.)]
@@ -68,5 +74,5 @@ Form
 ### Dataset [Name of dataset (e.g. Monthly Sellings)]
 [Description of the dataset with all included partial data to have posibility reference them (e.g. from views)]
 Example:
-* `data` - evaluate sell price summary (see `sell_price` from [Stockrooms/Models/ItemPackagePrice](./../../Stockrooms/Models/ItemPackagePrice.md)) of all [sold](#comment-sold-item) warehouse items month by month in given 12 months period.
+* `data` - evaluate sell price summary (see `sell_price` from [Stockrooms/Models/ItemPackagePrice](../../Stockrooms/Models/ItemPackagePrice.md)) of all [sold](#comment-sold-item) warehouse items month by month in given 12 months period.
 * `labels` - evaluated months in 3-letter form (e.g. 'Jan', 'Feb', 'Mar',... 'Dec').
