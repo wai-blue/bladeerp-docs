@@ -5,8 +5,7 @@
 Get data to create new contact - company. Natural person data are related to primary contact person from the company.
 
 ## Input Parameters
-
-No input parameters.
+[No input parameters]
 
 ## Parent View
 
@@ -52,7 +51,8 @@ Form
           * title: Categories of the contact
           * description: In what categories the contact is?
           * inputParams:
-            * model: * model: $input['contact_categories]
+            * initialTags: ['']
+            * allTags: [App/Widgets/Common/AddressBook/Models/Category](./../../Models/Category.md)
 * defaultValues:
   * is_active = TRUE
   * is_company = TRUE
@@ -64,4 +64,4 @@ Form
 
 ## Parameters Post-processing
 
-  1. OnChange of `company_business_number` search all available company data on FINSTAT WEB via API and fill them to related input fields. 
+  1. OnChange of `company_business_number` search all available company data on FINSTAT WEB via API and fill them to related input fields (`company_*`). 

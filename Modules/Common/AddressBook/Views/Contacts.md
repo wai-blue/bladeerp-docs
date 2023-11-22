@@ -16,7 +16,7 @@ Table
 
 ## Parent View Parameters
 
-* model: $input['contacts']
+* model: [App/Widgets/Common/AddressBook/Models/Contact](./../../Models/Contact.md)
 * showColumns:
   * company_name
     * empty when `is_company=FALSE`

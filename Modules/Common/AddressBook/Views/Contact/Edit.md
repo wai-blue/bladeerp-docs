@@ -12,7 +12,6 @@ Detail kontaktu.
 | contact_categories | POST | array         | []            | Categories of Contact        |
 | persons            | POST | array         | []            | Persons related to Contact   |
 | addresses          | POST | array         | []            | Addresses related to Contact |
-| currencies         | POST | array         | []            | List of available currencies |
 
 ## Parent View
 
@@ -20,7 +19,7 @@ Form
 
 ## Default View Parameters
 
-* model: $input['contact]
+* model: $input['contact](./../../Models/Contact.md)
 * displayMode: window
 * template:
     * tabs:
@@ -54,7 +53,7 @@ Form
         * group:
           * title: Additional Contact Data
           * items:
-            * id_bkp_currency
+            * id_bkp_currency](./../../../../Bookkeeping/ExchangeRate/Models/Currency.md)
             * language_code
             * website
             * notes
@@ -63,11 +62,12 @@ Form
           * title: Categories of the contact
           * description: In what categories the contact is?
           * inputParams:
-            * model: * model: $input['contact_categories]
+            * initialTags: $input['contact_categories](./../../Models/ContactCategory.md)
+            * allTags: [App/Widgets/Common/AddressBook/Models/Category](./../../Models/Category.md)
       * All Contact Persons
-        * model: $input['persons]
+        * model: $input['persons](./../../Models/Person.md)
       * All Addresses
-        * model: $input['addresses]
+        * model: $input['addresses](./../../Models/Address.md)
 
 ## Parameters Post-processing
   1. Hide all Company Detail data (`company_*`) when the contact is natural person (`is_company=FALSE`). Show all of them otherwise (`is_company=TRUE`)

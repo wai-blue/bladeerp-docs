@@ -6,9 +6,7 @@ Get data to create new contact - natural person.
 
 ## Input Parameters
 
-| Parameter          | How  | PHP Data type | Default value | Description                  |
-| ------------------ | ---- | ------------- | ------------- | ---------------------------- |
-| currencies         | POST | array         | []            | List of available currencies |
+[No input parameters]
 
 ## Parent View
 
@@ -41,7 +39,7 @@ Form
       * group:
           * title: Additional Contact Data
           * items:
-            * id_bkp_currency
+            * [id_bkp_currency](./../../../../Bookkeeping/ExchangeRate/Models/Currency.md)
             * language_code
             * website
             * notes
@@ -50,7 +48,8 @@ Form
         * title: Categories of the contact
         * description: In what categories the contact is?
         * inputParams:
-          * model: * model: $input['contact_categories]
+          * initialTags: ['']
+          * allTags: [App/Widgets/Common/AddressBook/Models/Category](./../../Models/Category.md)
 
 * defaultValues:
   * is_active = TRUE

@@ -2,7 +2,7 @@
 
 ## Description
 
-Detail kontaktu.
+Detail of contact.
 
 ## View
 
@@ -26,6 +26,4 @@ All existing [natural persons](./../../Models/Person.md) related to the contact 
 All existing [addresses](./../../Models/Address.md) related to the contact (`contact['id]`).
 
 ## View Data Post-processing
-1. Validate all entered inputs.
-2. Show all validation errors if any.
-3. If case of no validation error then save the data.
+No post-processing of view data is necessary.
