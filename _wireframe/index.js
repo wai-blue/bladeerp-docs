@@ -1,3 +1,3 @@
-function add_contact() {
-  window_render('contacts/add');
+function add_contactCompany() {
+  window_render('contacts/addCompanySide');
 }

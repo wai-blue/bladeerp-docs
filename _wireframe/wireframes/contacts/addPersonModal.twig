@@ -1,4 +1,5 @@
 <!-- Modal -->
+<script src='{{ config.rewriteBase }}/assets/js/tagToggle.js'></script>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -32,16 +33,123 @@
 
       <div class="tab-content">
         <div id="home" class="tab-pane fade in active show">
-          <div class="adios ui Form" style="padding-top: 20px;">
-            <div class="row">
+          <div class="adios ui Form"
+          style="padding-top: 20px; display: flex; flex-wrap: wrap;">
+            <div class="card shadow-sm mb-2 " style="margin-right: 30px; ">
+              <div class="card-header py-2">
+                <div class="row">
+                  <div class="col-12">
+                    <h6 class="m-2 font-weight-bold text-primary">Primary Contact Person</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'Title Before',
+                    'Description':'Title Before',
+                  })}}
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'First Name',
+                    'Description':'First Name',
+                  })}}
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'Middle Name',
+                    'Description':'Middle Name',
+                  })}}
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'Last Name',
+                    'Description':'Last Name',
+                  })}}
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'Title After',
+                    'Description':'Title After',
+                  })}}
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'Email',
+                    'Description':'Email',
+                  })}}
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'Phone',
+                    'Description':'Phone',
+                  })}}
+              </div>
+            </div>
+            <div class="card shadow-sm mb-2 " style="margin-right: 30px; ">
+              <div class="card-header py-2">
+                <div class="row">
+                  <div class="col-12">
+                    <h6 class="m-2 font-weight-bold text-primary">Address</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Street 1',
+                  'Description':'Street 1',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Street 2',
+                  'Description':'Street 2',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'City',
+                  'Description':'City',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Postal Code',
+                  'Description':'Postal Code',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Country',
+                  'Description':'Country',
+                })}}
+                {{ include("components/inputs/text.twig",{
+                  'title':'Notes',
+                  'Description':'Notes',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Location',
+                  'Description':'Location',
+                })}}
+              </div>
+            </div>
+            <div class="card shadow-sm mb-2 " style="margin-right: 30px; ">
+              <div class="card-header py-2">
+                <div class="row">
+                  <div class="col-12">
+                    <h6 class="m-2 font-weight-bold text-primary">Additional Contact Data</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Currency',
+                  'Description':'Currency',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Language Code',
+                  'Description':'Language Code',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Website',
+                  'Description':'Website',
+                })}}
+                {{ include("components/inputs/text.twig",{
+                  'title':'Notes',
+                  'Description':'Notes',
+                })}}
+              </div>
+            </div>
+          
+            <!-- <div class="row">
               <div class="col-12">
                 <div class="row">
                   <div class="col">
                     <div class="card shadow-sm mb-2 ">
-                      <div class="card-header py-1">
+                      <div class="card-header py-2">
                         <div class="row">
                           <div class="col-12">
-                            <h6 class="m-0 font-weight-bold text-primary">Primary Contact Person</h6>
+                            <h6 class="m-2 font-weight-bold text-primary">Primary Contact Person</h6>
                           </div>
                         </div>
                       </div>
@@ -79,10 +187,10 @@
                   </div>
                   <div class="col">
                     <div class="card shadow-sm mb-2 ">
-                      <div class="card-header py-1">
+                      <div class="card-header py-2">
                         <div class="row">
                           <div class="col-12">
-                            <h6 class="m-0 font-weight-bold text-primary">Address</h6>
+                            <h6 class="m-2 font-weight-bold text-primary">Address</h6>
                           </div>
                         </div>
                       </div>
@@ -122,10 +230,10 @@
                 <div class="row">
                   <div class="col">
                     <div class="card shadow-sm mb-2 ">
-                      <div class="card-header py-1">
+                      <div class="card-header py-2">
                         <div class="row">
                           <div class="col-12">
-                            <h6 class="m-0 font-weight-bold text-primary">Additional Contact Data</h6>
+                            <h6 class="m-2 font-weight-bold text-primary">Additional Contact Data</h6>
                           </div>
                         </div>
                       </div>
@@ -154,7 +262,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div id="menu1" class="tab-pane fade">
@@ -162,22 +270,17 @@
             <div class="row">
               <div class="col-12">
                 <div class="card shadow-sm mb-2 ">
-                  <div class="card-header py-1">
+                  <div class="card-header py-2">
                     <div class="row">
                       <div class="col-12">
-                        <h6 class="m-0 font-weight-bold text-primary">Categories</h6>
+                        <h6 class="m-2 font-weight-bold text-primary">Categories</h6>
                       </div>
                     </div>
                   </div>
                   <div class="card-body">
                     <div class="tag-containter">
-                      <style>
-                        .todo-tag {
-                          display: inline-block;
-                        }
-                      </style>
                       {% for i in 0..5 %}
-                        {{ include("components/tag.twig",{
+                        {{ include("components/activate-tag.twig",{
                           'text':'Tag Test',
                         } )}}
                       {% endfor %}
