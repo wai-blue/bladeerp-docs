@@ -25,5 +25,5 @@ All existing [natural persons](../../Models/Person.md) related to the contact (`
 ### addresses
 All existing [addresses](../../Models/Address.md) related to the contact (`contact['id]`).
 
-## View Data Post-processing
-No post-processing of view data is necessary.
+## View Parameters Post-processing
+No post-processing of view parameters is necessary.

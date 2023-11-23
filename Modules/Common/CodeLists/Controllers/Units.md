@@ -13,8 +13,8 @@ List of all units used in application.
 ### units
 [App/Widgets/Common/CodeLists/Models/Unit](../Models/Unit.md)
 
-## View Data Post-processing
+## View Parameters Post-processing
 
-No post-processing of view data parameters is necessary.
+No post-processing of view parameters parameters is necessary.
 
 

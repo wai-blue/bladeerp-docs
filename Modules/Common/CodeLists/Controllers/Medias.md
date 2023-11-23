@@ -13,8 +13,8 @@ List of all medias placed in the application.
 ### media
 [App/Widgets/Common/CodeLists/Models/Media](../Models/Media.md)
 
-## View Data Post-processing
+## View Parameters Post-processing
 
-No post-processing of view data parameters is necessary.
+No post-processing of view parameters parameters is necessary.
 
 

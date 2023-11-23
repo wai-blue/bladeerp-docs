@@ -13,6 +13,6 @@ Add new media type or edit it.
 ### media
 Existing media but only in case of edit. Otherwise empty.
 
-## View Data Post-processing
+## View Parameters Post-processing
 
-No post-processing of view data is necessary.
+No post-processing of view parameters is necessary.

@@ -47,9 +47,9 @@ Form
   * id_user = Predvolený je aktuálny používateľ
   * transaction_date = Predvolený je posledný dátum z účtovného obdobia
 
-## View Data Post-processing
+## View Parameters Post-processing
 
-[No post-processing of view data is necessary.]
+[No post-processing of view parameters is necessary.]
 
 [When one sentence description is sufficient, then use numbered list (see below).]
 1. Post-processing functionality 1. 

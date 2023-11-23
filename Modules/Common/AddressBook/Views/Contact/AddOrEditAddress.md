@@ -35,6 +35,6 @@ Form
   * is_active = TRUE
   * id_com_country: settings_com_address_book_default_country_id
 
-## View Data Post-processing
+## View Parameters Post-processing
 
 1. Edit existing address if $input['address'] is NOT empty. Otherwise create new one.

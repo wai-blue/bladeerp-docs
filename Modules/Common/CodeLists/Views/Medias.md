@@ -28,7 +28,7 @@ Table
     * text: "New Media"
     * controller: [Common/CodeLists/Media/AddOrEdit](../Controllers/Media/AddOrEdit.md)
 
-## View Data Post-processing
+## View Parameters Post-processing
 
-No post-processing of view data is necessary.
+No post-processing of view parameters is necessary.
 

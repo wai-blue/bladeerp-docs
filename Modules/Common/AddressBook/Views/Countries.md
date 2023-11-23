@@ -28,7 +28,7 @@ Table
     * text: "New Country"
     * controller: [Common/AddressBook/Country/AddOrEdit](../Controllers/Country/AddOrEdit.md)
 
-## View Data Post-processing
+## View Parameters Post-processing
 
-No post-processing of view data is necessary.
+No post-processing of view parameters is necessary.
 

@@ -12,9 +12,9 @@ Create new [model].
 
 [No view parameters are prepared.]
 
-## View Data Post-processing
+## View Parameters Post-processing
 
-[No post-processing of view data is necessary.]
+[No post-processing of view parameters is necessary.]
 1. [Add one sentence description of special post-processing here like separate point.]
 
 # [Special Post Processing]

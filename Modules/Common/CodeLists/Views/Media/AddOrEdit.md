@@ -25,6 +25,6 @@ Form
     * media
     * description
 
-## View Data Post-processing
+## View Parameters Post-processing
 
 1. Edit existing media if $input['media'] is NOT empty. Otherwise create new one.

@@ -34,7 +34,7 @@ Grid
       * type: 'line'
       * dataset: $input['dataset']
 
-## View Data Post-processing
+## View Parameters Post-processing
 
 1. If the parameter `title` is not given (NULL or empty) then area A is hidden.
 

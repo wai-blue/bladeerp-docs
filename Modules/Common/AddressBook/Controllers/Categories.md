@@ -13,7 +13,7 @@ List of all categories which can be used in address book.
 ### categories
 [App/Widgets/Common/AddressBook/Models/Category](../Models/Category.md)
 
-## View Data Post-processing
+## View Parameters Post-processing
 
-No post-processing of view data parameters is necessary.
+No post-processing of view parameters parameters is necessary.
 

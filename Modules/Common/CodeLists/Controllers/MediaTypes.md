@@ -13,6 +13,6 @@ List of all media types used in application.
 ### mediatype
 [App/Widgets/Common/CodeLists/Models/MediaType](../Models/MediaType.md)
 
-## View Data Post-processing
+## View Parameters Post-processing
 
-No post-processing of view data parameters is necessary.
+No post-processing of view parameters parameters is necessary.

@@ -16,6 +16,6 @@ ID of the contact to which person is assigned.
 ### person
 Existing person but only in case of edit. Otherwise empty.
 
-## View Data Post-processing
+## View Parameters Post-processing
 
-No post-processing of view data parameters is necessary.
+No post-processing of view parameters parameters is necessary.

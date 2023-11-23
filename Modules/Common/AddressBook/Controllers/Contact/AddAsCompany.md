@@ -12,7 +12,7 @@ Create new contact - company. Natural person data are related to primary contact
 
 No view parameters are prepared.
 
-## View Data Post-processing
+## View Parameters Post-processing
 
 * Use ID of newly created person as primary contact person (`id_com_person`).
 * Use ID of newly created address as primary address (`id_com_address`).

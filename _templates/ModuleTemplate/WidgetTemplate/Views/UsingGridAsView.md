@@ -35,9 +35,9 @@
       * type: 'line'
       * dataset: $input['dataset'] [Referenced data prepared by Controller]
 
-## View Data Post-processing
+## View Parameters Post-processing
 
-[No post-processing of view data is necessary.]
+[No post-processing of view parameters is necessary.]
 
 [Define specific behaviour here like conditional hiding/showng parts of view or filtering params and related behaviour.]
 [1. If the parameter `title` is not given (NULL or empty) then area A is hidden.]

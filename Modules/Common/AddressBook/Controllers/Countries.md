@@ -13,7 +13,7 @@ List of all countries which can be used in address book.
 ### countries
 [App/Widgets/Common/AddressBook/Models/Country](../Models/Country.md)
 
-## View Data Post-processing
+## View Parameters Post-processing
 
-No post-processing of view data parameters is necessary.
+No post-processing of view parameters parameters is necessary.
 

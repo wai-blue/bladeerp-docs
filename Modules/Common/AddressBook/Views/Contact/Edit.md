@@ -76,6 +76,6 @@ Form
           * addresses = $input[addresses]          
         * view: [App/Widgets/Common/AddressBook/Views/Contact/Addresses](../../Views/Contact/Addresses.md)
 
-## View Data Post-processing
+## View Parameters Post-processing
 
   1. Hide all Company Detail data (`company_*`) when the contact is natural person (`is_company=FALSE`). Show all of them otherwise (`is_company=TRUE`)

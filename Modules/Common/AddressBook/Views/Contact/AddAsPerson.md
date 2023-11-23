@@ -62,6 +62,6 @@ Form
   * id_bkp_currency: settings_bkp_default_currency_code
   * language_code: settings_com_address_book_default_language_code
 
-## View Data Post-processing
+## View Parameters Post-processing
 
-No post-processing of view data is necessary.
+No post-processing of view parameters is necessary.

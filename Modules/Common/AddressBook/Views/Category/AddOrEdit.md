@@ -26,6 +26,6 @@ Form
 * defaultValues:
   * is_active = TRUE
 
-## View Data Post-processing
+## View Parameters Post-processing
 
 1. Edit existing category if $input['category'] is NOT empty. Otherwise create new one.

@@ -32,6 +32,6 @@ Form
 * defaultValues:
   * id_com_contact = $input['id_com_contact']
 
-## View Data Post-processing
+## View Parameters Post-processing
 
 1. Edit existing person if $input['person'] is NOT empty. Otherwise create new one.
