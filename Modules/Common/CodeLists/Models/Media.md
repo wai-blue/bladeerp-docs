@@ -40,9 +40,9 @@ No additional ADIOS parameters needs to be defined.
 
 ### Foreign Keys
 
-| Column            | Model                                                       | Relation | OnUpdate | OnDelete |
-| :---------------- | :---------------------------------------------------------- | :------: | -------- | -------- |
-| id_com_media_type | [App/Widgets/Common/CodeLists/Models/Media](./MediaType.md) |   1:N    | Cascade  | Cascade  |
+| Column            | Model                                                           | Relation | OnUpdate | OnDelete |
+| :---------------- | :-------------------------------------------------------------- | :------: | -------- | -------- |
+| id_com_media_type | [App/Widgets/Common/CodeLists/Models/MediaType](./MediaType.md) |   1:N    | Cascade  | Cascade  |
 
 ### Indexes
 

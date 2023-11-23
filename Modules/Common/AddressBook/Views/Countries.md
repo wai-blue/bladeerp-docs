@@ -26,7 +26,7 @@ Table
 * leftTitleButtons:
   * addCountry:
     * text: "New Country"
-    * controller: [Common/AddressBook/Country/Add](../Controllers/Country/AddOrEdit.md)
+    * controller: [Common/AddressBook/Country/AddOrEdit](../Controllers/Country/AddOrEdit.md)
 
 ## View Data Post-processing
 
