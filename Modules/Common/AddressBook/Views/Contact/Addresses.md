@@ -17,7 +17,7 @@ Table
 
 ## Parent View Parameters
 
-* model: [App/Widgets/Common/AddressBook/Models/Address](./../.././Models/Address.md)
+* model: [App/Widgets/Common/AddressBook/Models/Address](../.././Models/Address.md)
 * dataset: $input['addresses'] 
 * showColumns:
   * street_1

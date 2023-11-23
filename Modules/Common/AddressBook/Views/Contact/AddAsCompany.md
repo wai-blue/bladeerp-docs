@@ -13,7 +13,7 @@ Form
 
 ## Default View Parameters
 
-* model: [App/Widgets/Common/AddressBook/Models/Contact](./../../Models/Contact.md)
+* model: [App/Widgets/Common/AddressBook/Models/Contact](../../Models/Contact.md)
 * displayMode: window
 * template:
     * tabs:
@@ -52,7 +52,7 @@ Form
           * description: In what categories the contact is?
           * inputParams:
             * initialTags: ['']
-            * allTags: [App/Widgets/Common/AddressBook/Models/Category](./../../Models/Category.md)
+            * allTags: [App/Widgets/Common/AddressBook/Models/Category](../../Models/Category.md)
 * defaultValues:
   * is_active = TRUE
   * is_company = TRUE

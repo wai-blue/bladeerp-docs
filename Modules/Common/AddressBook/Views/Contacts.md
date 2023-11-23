@@ -16,7 +16,7 @@ Table
 
 ## Parent View Parameters
 
-* model: [App/Widgets/Common/AddressBook/Models/Contact](./../../Models/Contact.md)
+* model: [App/Widgets/Common/AddressBook/Models/Contact](../../Models/Contact.md)
 * showColumns:
   * company_name
     * empty when `is_company=FALSE`
@@ -38,10 +38,10 @@ Table
 * leftTitleButtons:
   * addAsCompany:
     * text: "New Company"
-    * controller: [Common/AddressBook/Contact/AddAsCompany](./../Controllers/Contact/AddAsCompany.md)
+    * controller: [Common/AddressBook/Contact/AddAsCompany](../Controllers/Contact/AddAsCompany.md)
   * addAsPerson:
     * text: "New Person"
-    * controller: [Common/AddressBook/Contact/AddAsPerson](./../Controllers/Contact/AddAsPerson.md)
+    * controller: [Common/AddressBook/Contact/AddAsPerson](../Controllers/Contact/AddAsPerson.md)
 
 ### rowButtons.deactivate
 * Shown only on active row (`is_active=TRUE`).

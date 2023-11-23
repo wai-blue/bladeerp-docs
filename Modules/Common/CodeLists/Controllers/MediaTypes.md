@@ -6,12 +6,12 @@ List of all media types used in application.
 
 ## View
 
-[App/Widgets/Common/CodeLists/Views/MediaTypes](./../Views/MediaTypes.md)
+[App/Widgets/Common/CodeLists/Views/MediaTypes](../Views/MediaTypes.md)
 
 ## View Parameters
 
 ### mediatype
-[App/Widgets/Common/CodeLists/Models/MediaType](./../Models/MediaType.md)
+[App/Widgets/Common/CodeLists/Models/MediaType](../Models/MediaType.md)
 
 ## View Data Post-processing
 

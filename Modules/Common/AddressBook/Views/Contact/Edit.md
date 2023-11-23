@@ -19,7 +19,7 @@ Form
 
 ## Default View Parameters
 
-* model: [App/Widgets/Common/AddressBook/Models/Contact](./../../../../Modules/Common/AddressBook/Models/Contact.md)
+* model: [App/Widgets/Common/AddressBook/Models/Contact](../../../../Modules/Common/AddressBook/Models/Contact.md)
 * dataset: $input['contact']
 * displayMode: window
 * template:
@@ -54,7 +54,7 @@ Form
         * group:
           * title: Additional Contact Data
           * items:
-            * [id_bkp_currency](./../../../../Bookkeeping/ExchangeRate/Models/Currency.md)
+            * [id_bkp_currency](../../../../Bookkeeping/ExchangeRate/Models/Currency.md)
             * language_code
             * website
             * notes
@@ -69,12 +69,12 @@ Form
         * inputParams:
           * id_com_contact = $input[contact['id']]
           * persons = $input[persons]          
-        * view: [App/Widgets/Common/AddressBook/Views/Contact/Persons](./../../Views/Contact/Persons.md)
+        * view: [App/Widgets/Common/AddressBook/Views/Contact/Persons](../../Views/Contact/Persons.md)
       * All Addresses
         * inputParams:
           * id_com_contact = $input[contact['id']]
           * addresses = $input[addresses]          
-        * view: [App/Widgets/Common/AddressBook/Views/Contact/Addresses](./../../Views/Contact/Addresses.md)
+        * view: [App/Widgets/Common/AddressBook/Views/Contact/Addresses](../../Views/Contact/Addresses.md)
 
 ## View Data Post-processing
 

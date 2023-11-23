@@ -16,7 +16,7 @@ Form
 
 ## Default View Parameters
 
-* model: [App/Widgets/Common/AddressBook/Models/Country](./../../Models/Country.md)
+* model: [App/Widgets/Common/AddressBook/Models/Country](../../Models/Country.md)
 * dataset: $input['country']
 * template:
   * columns:

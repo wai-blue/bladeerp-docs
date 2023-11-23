@@ -6,12 +6,12 @@ List of all units used in application.
 
 ## View
 
-[App/Widgets/Common/CodeLists/Views/Units](./../Views/Units.md)
+[App/Widgets/Common/CodeLists/Views/Units](../Views/Units.md)
 
 ## View Parameters
 
 ### units
-[App/Widgets/Common/CodeLists/Models/Unit](./../Models/Unit.md)
+[App/Widgets/Common/CodeLists/Models/Unit](../Models/Unit.md)
 
 ## View Data Post-processing
 

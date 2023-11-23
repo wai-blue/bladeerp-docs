@@ -16,7 +16,7 @@ Form
 
 ## Default View Parameters
 
-* model: [App/Widgets/Common/AddressBook/Models/Category](./../../Models/Category.md)
+* model: [App/Widgets/Common/AddressBook/Models/Category](../../Models/Category.md)
 * dataset: $input['category']
 * displayMode: window
 * template:

@@ -16,7 +16,7 @@ Form
 
 ## Default View Parameters
 
-* model: [App/Widgets/Common/CodeLists/Models/Media](./../../Models/Media.md)
+* model: [App/Widgets/Common/CodeLists/Models/Media](../../Models/Media.md)
 * dataset: $input['media']
 * displayMode: window
 * template:

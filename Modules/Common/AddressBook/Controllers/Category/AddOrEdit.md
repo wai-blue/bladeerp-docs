@@ -6,7 +6,7 @@ Add new category or edit existing one.
 
 ## View
 
-[App/Widgets/Common/AddressBook/Views/Category/AddOrEdit](./../../Views/Category/AddOrEdit.md)
+[App/Widgets/Common/AddressBook/Views/Category/AddOrEdit](../../Views/Category/AddOrEdit.md)
 
 ## View Parameters
 

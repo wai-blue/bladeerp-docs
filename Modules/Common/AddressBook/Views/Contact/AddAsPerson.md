@@ -16,7 +16,7 @@ Form
 
 ## Default View Parameters
 
-* model: [App/Widgets/Common/AddressBook/Models/Contact](./../../Models/Contact.md)
+* model: [App/Widgets/Common/AddressBook/Models/Contact](../../Models/Contact.md)
 * displayMode: window
 * template:
   * tabs:
@@ -41,7 +41,7 @@ Form
       * group:
           * title: Additional Contact Data
           * items:
-            * [id_bkp_currency](./../../../../Bookkeeping/ExchangeRate/Models/Currency.md)
+            * [id_bkp_currency](../../../../Bookkeeping/ExchangeRate/Models/Currency.md)
             * language_code
             * website
             * notes
@@ -51,7 +51,7 @@ Form
         * description: In what categories the contact is?
         * inputParams:
           * initialTags: ['']
-          * allTags: [App/Widgets/Common/AddressBook/Models/Category](./../../Models/Category.md)
+          * allTags: [App/Widgets/Common/AddressBook/Models/Category](../../Models/Category.md)
 
 * defaultValues:
   * is_active = TRUE

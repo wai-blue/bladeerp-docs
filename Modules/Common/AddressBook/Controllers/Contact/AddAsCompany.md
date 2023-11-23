@@ -6,7 +6,7 @@ Create new contact - company. Natural person data are related to primary contact
 
 ## View
 
-[App/Widgets/Common/AddressBook/Views/Contact/AddAsCompany](./../../Views/Contact/AddAsCompany.md)
+[App/Widgets/Common/AddressBook/Views/Contact/AddAsCompany](../../Views/Contact/AddAsCompany.md)
 
 ## View Parameters
 

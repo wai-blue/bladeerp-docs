@@ -17,7 +17,7 @@ Table
 
 ## Default View Parameters
 
-* model: [App/Widgets/Common/AddressBook/Models/Person](./../.././Models/Person.md)
+* model: [App/Widgets/Common/AddressBook/Models/Person](../.././Models/Person.md)
 * dataset: $input['persons'] 
 * showColumns:
   * title_before
@@ -35,7 +35,7 @@ Table
 * leftTitleButtons:
   * addOrEditPerson:
     * text: "New Address"
-    * controller: [Common/AddressBook/Contact/AddOrEditPerson](./../../Controllers/Contact/AddOrEditPerson.md)
+    * controller: [Common/AddressBook/Contact/AddOrEditPerson](../../Controllers/Contact/AddOrEditPerson.md)
     * inputParams:
       * id_com_contact = $input['id_com_contact']
 

@@ -6,7 +6,7 @@ Add new media type or edit it.
 
 ## View
 
-[App/Widgets/Common/CodeLists/Views/Media/AddOrEdit](./../../Views/Media/AddOrEdit.md)
+[App/Widgets/Common/CodeLists/Views/Media/AddOrEdit](../../Views/Media/AddOrEdit.md)
 
 ## View Parameters
 

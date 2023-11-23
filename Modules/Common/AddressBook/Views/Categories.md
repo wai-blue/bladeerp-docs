@@ -16,7 +16,7 @@ Table
 
 ## Default View Parameters
 
-* model: [App/Widgets/Common/AddressBook/Models/Category](./../Models/Category.md)
+* model: [App/Widgets/Common/AddressBook/Models/Category](../Models/Category.md)
 * showColumns:
   * name
   * notes

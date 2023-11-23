@@ -18,7 +18,7 @@ Form
 
 (see ADIOS.repo/src/Core/View/Form.php)
 
-* model: [App/Widgets/Common/AddressBook/Models/Contact](./../../../../Modules/Common/AddressBook/Models/Contact.md)
+* model: [App/Widgets/Common/AddressBook/Models/Contact](../../../../Modules/Common/AddressBook/Models/Contact.md)
 * dataset: $input['contact']
 * cssClass: inline
 * displayMode: (inline|window|desktop)

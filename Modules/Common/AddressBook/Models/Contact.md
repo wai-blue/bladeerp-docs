@@ -77,7 +77,7 @@ TODO: JG k lookupSqlValue - podobne ako v modeli Address, aj tu je potrebné vyr
 ### onBeforeInsert
 * If new contact is a company (`is_company=TRUE`) then all the company related data (cols: `company_*`) must be entered.
 * Transactions - create new contact (`id`), new person (`id_com_person`) and new address (`id_com_address`) in one transaction.
-* New contact (`id`) must be created first due to mandatory relation in new [person](./../Models/Person.md) and new [address](./../Models/Address.md).
+* New contact (`id`) must be created first due to mandatory relation in new [person](../Models/Person.md) and new [address](../Models/Address.md).
 
 ### onAfterInsert
 Not used.

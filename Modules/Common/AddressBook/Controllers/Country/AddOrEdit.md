@@ -6,7 +6,7 @@ Add new country or edit it.
 
 ## View
 
-[App/Widgets/Common/AddressBook/Views/Country/AddOrEdit](./../../Views/Country/AddOrEdit.md)
+[App/Widgets/Common/AddressBook/Views/Country/AddOrEdit](../../Views/Country/AddOrEdit.md)
 
 ## View Parameters
 

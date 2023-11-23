@@ -6,12 +6,12 @@ List of all medias placed in the application.
 
 ## View
 
-[App/Widgets/Common/CodeLists/Views/Medias](./../Views/Medias.md)
+[App/Widgets/Common/CodeLists/Views/Medias](../Views/Medias.md)
 
 ## View Parameters
 
 ### media
-[App/Widgets/Common/CodeLists/Models/Media](./../Models/Media.md)
+[App/Widgets/Common/CodeLists/Models/Media](../Models/Media.md)
 
 ## View Data Post-processing
 

@@ -6,12 +6,12 @@ List of all categories which can be used in address book.
 
 ## View
 
-[App/Widgets/Common/AddressBook/Views/Categories](./../Views/Categories.md)
+[App/Widgets/Common/AddressBook/Views/Categories](../Views/Categories.md)
 
 ## View Parameters
 
 ### categories
-[App/Widgets/Common/AddressBook/Models/Category](./../Models/Category.md)
+[App/Widgets/Common/AddressBook/Models/Category](../Models/Category.md)
 
 ## View Data Post-processing
 

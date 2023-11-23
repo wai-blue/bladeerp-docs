@@ -6,7 +6,7 @@ Create new contact - natural person.
 
 ## View
 
-[App/Widgets/Common/AddressBook/Views/Contact/AddAsPerson](./../../Views/Contact/AddAsPerson.md)
+[App/Widgets/Common/AddressBook/Views/Contact/AddAsPerson](../../Views/Contact/AddAsPerson.md)
 
 ## View Parameters
 
