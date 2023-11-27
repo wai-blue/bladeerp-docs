@@ -1,30 +1,120 @@
-{% set x %}
-{{ include("components/inputs/varchar.twig",{
-                    'title':'Title Before',
-                    'Description':'Title Before',
-                  })}} 
+{% set pcp %}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Title Before',
+    'Description':'Title Before',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'First Name',
+    'Description':'First Name',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Middle Name',
+    'Description':'Middle Name',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Last Name',
+    'Description':'Last Name',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Title After',
+    'Description':'Title After',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Email',
+    'Description':'Email',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Phone',
+    'Description':'Phone',
+  })}}
 {% endset %}
-{% set y %}
-{{ include("components/inputs/varchar.twig",{
-                    'title':'Title Before',
-                    'Description':'Title Before',
-                  })}} 
+
+{% set address %}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Street 1',
+    'Description':'Street 1',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Street 2',
+    'Description':'Street 2',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'City',
+    'Description':'City',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Postal Code',
+    'Description':'Postal Code',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Country',
+    'Description':'Country',
+  })}}
+  {{ include("components/inputs/text.twig",{
+    'title':'Notes',
+    'Description':'Notes',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Location',
+    'Description':'Location',
+  })}}
 {% endset %}
-{% set z %}
-{{ include('components/card.twig', {
-              'title': 'Primary Contact Person',
-              'content': x ~ y
-            })}}
+
+{% set acd %}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Currency',
+    'Description':'Currency',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Language Code',
+    'Description':'Language Code',
+    })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Website',
+    'Description':'Website',
+  })}}
+  {{ include("components/inputs/text.twig",{
+    'title':'Notes',
+    'Description':'Notes',
+  })}}
 {% endset %}
+
+{% set formContent %}
+  <div class="form-container">
+    <div class="form-col">
+      {{ include('components/card.twig', {
+        'title': 'Primary Contact Person',
+        'content': pcp
+      }) }}
+    </div>
+    <div class="form-col">
+      {{ include('components/card.twig', {
+        'title': 'Address',
+        'content': address
+      }) }}
+    </div>
+    <div class="form-col">
+      {{ include('components/card.twig', {
+        'title': 'Additional Contact Data',
+        'content': acd
+      }) }}
+    </div>
+    {# <div class="form-col">
+    </div> #}
+  </div>
+{% endset %}
+
+
 {{include('components/modal.twig', {
     'modalId': 'personModal',
     'title': 'Add Person',
     'content': include('components/nav-tabs.twig', {
+      'tabName':'tab',
       'tabs': [
         {
           'title' : 'Personal Data',
           'content': include('components/form.twig', {
-            'content': z ~ z
+            'content': formContent
           })
         }
       ]
