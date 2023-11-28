@@ -1,4 +1,4 @@
-              {# breadcrumbs#}
+{# breadcrumbs#}
 <div class="row">
     {{ include('components/breadcrumbs.twig', {
       'last':'',
@@ -19,6 +19,7 @@
       <div class="row-4">
         {{ include('components/card.twig', {
         'title': 'Most active contacts',
+        'settings': true,
         'extracss': 'padding: 0;',
         'content': include('components/table.twig', {
           'columns': [
@@ -34,6 +35,7 @@
       <div class="row-8">
         {{ include('components/card.twig', {
         'title': 'Most active contacts',
+        'settings': true,
         'extracss': 'padding: 0;',
         'content': include('components/table.twig', {
           'columns': [
@@ -52,6 +54,7 @@
       <div class="row-8">
         {{ include('components/card.twig', {
         'title': 'Tržby za rok 2023',
+        'settings': true,
         'content': include('components/graph.twig', {
           'columns': [
             'Given Name',
@@ -67,6 +70,7 @@
       <div class="row-4">
         {{ include('components/card.twig', {
         'title': 'To do list',
+        'settings': true,
         'extracss': 'padding: 0;',
         'content': include('components/todolist.twig', {
           'columns': [

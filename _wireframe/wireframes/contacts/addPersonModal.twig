@@ -1,0 +1,347 @@
+{% set pcp %}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Title Before',
+    'Description':'Title Before',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'First Name',
+    'Description':'First Name',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Middle Name',
+    'Description':'Middle Name',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Last Name',
+    'Description':'Last Name',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Title After',
+    'Description':'Title After',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Email',
+    'Description':'Email',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Phone',
+    'Description':'Phone',
+  })}}
+{% endset %}
+
+{% set address %}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Street 1',
+    'Description':'Street 1',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Street 2',
+    'Description':'Street 2',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'City',
+    'Description':'City',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Postal Code',
+    'Description':'Postal Code',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Country',
+    'Description':'Country',
+  })}}
+  {{ include("components/inputs/text.twig",{
+    'title':'Notes',
+    'Description':'Notes',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Location',
+    'Description':'Location',
+  })}}
+{% endset %}
+
+{% set acd %}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Currency',
+    'Description':'Currency',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Language Code',
+    'Description':'Language Code',
+    })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Website',
+    'Description':'Website',
+  })}}
+  {{ include("components/inputs/text.twig",{
+    'title':'Notes',
+    'Description':'Notes',
+  })}}
+{% endset %}
+
+{% set formContent %}
+  <div class="form-container">
+    <div class="form-col">
+      {{ include('components/card.twig', {
+        'title': 'Primary Contact Person',
+        'content': pcp
+      }) }}
+    </div>
+    <div class="form-col">
+      {{ include('components/card.twig', {
+        'title': 'Address',
+        'content': address
+      }) }}
+    </div>
+    <div class="form-col">
+      {{ include('components/card.twig', {
+        'title': 'Additional Contact Data',
+        'content': acd
+      }) }}
+    </div>
+    {# <div class="form-col">
+    </div> #}
+  </div>
+{% endset %}
+
+
+{{include('components/modal.twig', {
+    'modalId': 'personModal',
+    'title': 'Add Person',
+    'content': include('components/nav-tabs.twig', {
+      'tabName':'tab',
+      'tabs': [
+        {
+          'title' : 'Personal Data',
+          'content': include('components/form.twig', {
+            'content': formContent
+          })
+        }
+      ]
+    })
+  })
+}}
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Person</h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div style="padding: 10px">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+      <div class="modal-body" style="overflow: scroll; max-height:65vh;">
+      
+
+      <ul class="nav nav-tabs">
+        <li class="active nav-item"><a class="nav-link active" data-toggle="tab" href="#home">Personal Data</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu1">Categories</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu2">Persons</a></li>
+        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu3">Addresses</a></li>
+      </ul>
+
+      {% set personsAdd %}
+        {{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Add person', 'icon': 'fas fa-plus'}) }}
+      {% endset %}
+      {% set addressAdd %}
+        {{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Add address', 'icon': 'fas fa-plus'}) }}
+      {% endset %}
+
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade in active show">
+          <div class="adios ui Form"
+          style="padding-top: 20px; display: flex; flex-wrap: wrap;">
+            <div class="card shadow-sm mb-2 " style="margin-right: 30px; ">
+              <div class="card-header py-2">
+                <div class="row">
+                  <div class="col-12">
+                    <h6 class="m-2 font-weight-bold text-primary">Primary Contact Person</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'Title Before',
+                    'Description':'Title Before',
+                  })}}
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'First Name',
+                    'Description':'First Name',
+                  })}}
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'Middle Name',
+                    'Description':'Middle Name',
+                  })}}
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'Last Name',
+                    'Description':'Last Name',
+                  })}}
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'Title After',
+                    'Description':'Title After',
+                  })}}
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'Email',
+                    'Description':'Email',
+                  })}}
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'Phone',
+                    'Description':'Phone',
+                  })}}
+              </div>
+            </div>
+            <div class="card shadow-sm mb-2 " style="margin-right: 30px; ">
+              <div class="card-header py-2">
+                <div class="row">
+                  <div class="col-12">
+                    <h6 class="m-2 font-weight-bold text-primary">Address</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Street 1',
+                  'Description':'Street 1',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Street 2',
+                  'Description':'Street 2',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'City',
+                  'Description':'City',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Postal Code',
+                  'Description':'Postal Code',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Country',
+                  'Description':'Country',
+                })}}
+                {{ include("components/inputs/text.twig",{
+                  'title':'Notes',
+                  'Description':'Notes',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Location',
+                  'Description':'Location',
+                })}}
+              </div>
+            </div>
+            <div class="card shadow-sm mb-2 " style="margin-right: 30px; ">
+              <div class="card-header py-2">
+                <div class="row">
+                  <div class="col-12">
+                    <h6 class="m-2 font-weight-bold text-primary">Additional Contact Data</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Currency',
+                  'Description':'Currency',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Language Code',
+                  'Description':'Language Code',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Website',
+                  'Description':'Website',
+                })}}
+                {{ include("components/inputs/text.twig",{
+                  'title':'Notes',
+                  'Description':'Notes',
+                })}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="menu1" class="tab-pane fade">
+          <div class="adios ui Form" style="padding-top: 20px;">
+            <div class="row">
+              <div class="col-12">
+                <div class="card shadow-sm mb-2 ">
+                  <div class="card-header py-2">
+                    <div class="row">
+                      <div class="col-12">
+                        <h6 class="m-2 font-weight-bold text-primary">Categories</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    {{ include('components/inputs/button-selector.twig', {
+                      'options': ['Tag #1','Tag #2','Tag #3','Tag #4','Tag #5'],
+                      'multiselect':true
+                      })
+                    }}
+
+                    {{ include('components/inputs/varchar.twig', {
+                      'title':'New tag'
+                      })
+                    }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="menu2" class="tab-pane fade">
+          <div class="shadow-sm m-1">
+            {{ include('components/table.twig', {
+              'title': {
+                'text': 'Persons',
+                'leftButtons': personsAdd,
+              },
+              'columns': [
+                {'title':'Title Before','type': 'varchar'},
+                {'title':'First Name','type': 'varchar'},
+                {'title':'Last Name','type': 'varchar'},
+                {'title':'Middle Name','type': 'varchar'},
+                {'title':'Title After','type': 'varchar'},
+                {'title':'Email','type': 'varchar'},
+                {'title':'Phone','type': 'varchar'},
+                {'title':'LinkedIn URL','type': 'varchar'},
+              ],
+              'minRowCount': 2,
+              'maxRowCount': 5
+            }) }}
+          </div>
+        </div>
+        <div id="menu3" class="tab-pane fade">
+          <div class="shadow-sm m-1">
+            {{ include('components/table.twig', {
+              'title': {
+                'text': 'Addresses',
+                'leftButtons': addressAdd,
+              },
+              'columns': [
+                {'title':'Street 1','type': 'varchar'},
+                {'title':'Street 2','type': 'varchar'},
+                {'title':'City','type': 'varchar'},
+                {'title':'Postal Code','type': 'varchar'},
+                {'title':'Country','type': 'varchar'},
+                {'title':'Notes','type': 'varchar'},
+                {'title':'Location','type': 'varchar'},
+              ],
+              'minRowCount': 1,
+              'maxRowCount': 3
+            }) }}
+          </div>
+        </div>
+      </div>
+
+
+        
+      </div>
+    </div>
+  </div>
+</div>

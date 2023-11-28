@@ -1,0 +1,385 @@
+<!-- Modal -->
+
+{% set html_string %}
+
+<script src='{{ config.rewriteBase }}/assets/js/tagToggle.js'></script>
+<ul class="nav nav-tabs">
+  <li class="active nav-item"><a class="nav-link active" data-toggle="tab" href="#home">Personal Data</a></li>
+  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu1">Categories</a></li>
+  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu2">Persons</a></li>
+  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu3">Addresses</a></li>
+</ul>
+
+{% set personsAdd %}
+{{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Add person', 'icon': 'fas fa-plus'})
+}}
+{% endset %}
+{% set addressAdd %}
+{{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Add address', 'icon': 'fas fa-plus'})
+}}
+{% endset %}
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active show">
+    <div class="adios ui Form" style="padding-top: 20px; display: flex; flex-wrap: wrap;">
+      <div class="card shadow-sm mb-2 " style="margin-right: 30px; ">
+        <div class="card-header py-2">
+          <div class="row">
+            <div class="col-12">
+              <h6 class="m-2 font-weight-bold text-primary">Company Data</h6>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          {{ include("components/inputs/varchar.twig",{
+            'title':'Company Name',
+            'Description':'Company Name',
+          })}}
+          {{ include("components/inputs/varchar.twig",{
+            'title':'Company Business Number',
+            'Description':'Company Business Number',
+          })}}
+          {{ include("components/inputs/varchar.twig",{
+            'title':'Tax Number',
+            'Description':'Tax Number',
+          })}}
+          {{ include("components/inputs/varchar.twig",{
+            'title':'Vat Number',
+            'Description':'Vat Number',
+          })}}
+          {{ include("components/inputs/lookup.twig",{
+            'title':'Currency',
+            'Description':'Currency',
+            'options': ['€', '$']
+          })}}
+          {{ include("components/inputs/lookup.twig",{
+            'title':'Language Code',
+            'Description':'Language Code',
+            'options': ['SK', 'EN']
+          })}}
+          {{ include("components/inputs/varchar.twig",{
+            'title':'Website',
+            'Description':'Website',
+          })}}
+          {{ include("components/inputs/text.twig",{
+            'title':'Notes',
+            'Description':'Notes',
+          })}}
+        </div>
+      </div>
+      
+      <div class="card shadow-sm mb-2 " style="margin-right: 30px; ">
+        <div class="card-header py-2">
+          <div class="row">
+            <div class="col-12">
+              <h6 class="m-2 font-weight-bold text-primary">Company Address</h6>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          {{ include("components/inputs/varchar.twig",{
+          'title':'Street 1',
+          'Description':'Street 1',
+          })}}
+          {{ include("components/inputs/varchar.twig",{
+          'title':'Street 2',
+          'Description':'Street 2',
+          })}}
+          {{ include("components/inputs/varchar.twig",{
+          'title':'City',
+          'Description':'City',
+          })}}
+          {{ include("components/inputs/varchar.twig",{
+          'title':'Postal Code',
+          'Description':'Postal Code',
+          })}}
+          {{ include("components/inputs/varchar.twig",{
+          'title':'Country',
+          'Description':'Country',
+          })}}
+          {{ include("components/inputs/text.twig",{
+          'title':'Notes',
+          'Description':'Notes',
+          })}}
+          {{ include("components/inputs/varchar.twig",{
+          'title':'Location',
+          'Description':'Location',
+          })}}
+        </div>
+      </div>
+      <div class="card shadow-sm mb-2 " style="margin-right: 30px; ">
+        <div class="card-header py-2">
+          <div class="row">
+            <div class="col-12">
+              <h6 class="m-2 font-weight-bold text-primary">Primary Contact Person</h6>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          {{ include("components/inputs/varchar.twig",{
+          'title':'Title Before',
+          'Description':'Title Before',
+          })}}
+          {{ include("components/inputs/varchar.twig",{
+          'title':'First Name',
+          'Description':'First Name',
+          })}}
+          {{ include("components/inputs/varchar.twig",{
+          'title':'Middle Name',
+          'Description':'Middle Name',
+          })}}
+          {{ include("components/inputs/varchar.twig",{
+          'title':'Last Name',
+          'Description':'Last Name',
+          })}}
+          {{ include("components/inputs/varchar.twig",{
+          'title':'Title After',
+          'Description':'Title After',
+          })}}
+          {{ include("components/inputs/varchar.twig",{
+          'title':'Email',
+          'Description':'Email',
+          })}}
+          {{ include("components/inputs/varchar.twig",{
+          'title':'Phone',
+          'Description':'Phone',
+          })}}
+        </div>
+      </div>
+      <div class="card shadow-sm mb-2 " style="margin-right: 30px; ">
+        <div class="card-header py-2">
+          <div class="row">
+            <div class="col-12">
+              <h6 class="m-2 font-weight-bold text-primary">Additional Contact Data</h6>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          {{ include("components/inputs/varchar.twig",{
+          'title':'Currency',
+          'Description':'Currency',
+          })}}
+          {{ include("components/inputs/varchar.twig",{
+          'title':'Language Code',
+          'Description':'Language Code',
+          })}}
+          {{ include("components/inputs/varchar.twig",{
+          'title':'Website',
+          'Description':'Website',
+          })}}
+          {{ include("components/inputs/text.twig",{
+          'title':'Notes',
+          'Description':'Notes',
+          })}}
+        </div>
+      </div>
+
+      <!-- <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col">
+            <div class="card shadow-sm mb-2 ">
+              <div class="card-header py-2">
+                <div class="row">
+                  <div class="col-12">
+                    <h6 class="m-2 font-weight-bold text-primary">Primary Contact Person</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'Title Before',
+                    'Description':'Title Before',
+                  })}}
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'First Name',
+                    'Description':'First Name',
+                  })}}
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'Middle Name',
+                    'Description':'Middle Name',
+                  })}}
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'Last Name',
+                    'Description':'Last Name',
+                  })}}
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'Title After',
+                    'Description':'Title After',
+                  })}}
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'Email',
+                    'Description':'Email',
+                  })}}
+                  {{ include("components/inputs/varchar.twig",{
+                    'title':'Phone',
+                    'Description':'Phone',
+                  })}}
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm mb-2 ">
+              <div class="card-header py-2">
+                <div class="row">
+                  <div class="col-12">
+                    <h6 class="m-2 font-weight-bold text-primary">Address</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Street 1',
+                  'Description':'Street 1',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Street 2',
+                  'Description':'Street 2',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'City',
+                  'Description':'City',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Postal Code',
+                  'Description':'Postal Code',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Country',
+                  'Description':'Country',
+                })}}
+                {{ include("components/inputs/text.twig",{
+                  'title':'Notes',
+                  'Description':'Notes',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Location',
+                  'Description':'Location',
+                })}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="card shadow-sm mb-2 ">
+              <div class="card-header py-2">
+                <div class="row">
+                  <div class="col-12">
+                    <h6 class="m-2 font-weight-bold text-primary">Additional Contact Data</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Currency',
+                  'Description':'Currency',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Language Code',
+                  'Description':'Language Code',
+                })}}
+                {{ include("components/inputs/varchar.twig",{
+                  'title':'Website',
+                  'Description':'Website',
+                })}}
+                {{ include("components/inputs/text.twig",{
+                  'title':'Notes',
+                  'Description':'Notes',
+                })}}
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            
+          </div>
+        </div>
+      </div>
+    </div> -->
+    </div>
+  </div>
+  <div id="menu1" class="tab-pane fade">
+    <div class="adios ui Form" style="padding-top: 20px;">
+      <div class="row">
+        <div class="col-12">
+          <div class="card shadow-sm mb-2 ">
+            <div class="card-header py-2">
+              <div class="row">
+                <div class="col-12">
+                  <h6 class="m-2 font-weight-bold text-primary">Categories</h6>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="tag-containter">
+                {{ include('components/inputs/button-selector.twig', {
+                  'options': ['Tag #1','Tag #2','Tag #3','Tag #4','Tag #5'],
+                  'multiselect':true
+                  })}}
+
+                {{ include('components/inputs/varchar.twig', {
+                  'title':'New tag'
+                  })}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="menu2" class="tab-pane fade">
+    <div class="shadow-sm m-1">
+      {{ include('components/table.twig', {
+      'title': {
+      'text': 'Persons',
+      'leftButtons': personsAdd,
+      },
+      'columns': [
+      {'title':'Title Before','type': 'varchar'},
+      {'title':'First Name','type': 'varchar'},
+      {'title':'Last Name','type': 'varchar'},
+      {'title':'Middle Name','type': 'varchar'},
+      {'title':'Title After','type': 'varchar'},
+      {'title':'Email','type': 'varchar'},
+      {'title':'Phone','type': 'varchar'},
+      {'title':'LinkedIn URL','type': 'varchar'},
+      ],
+      'minRowCount': 2,
+      'maxRowCount': 5
+      }) }}
+    </div>
+  </div>
+  <div id="menu3" class="tab-pane fade">
+    <div class="shadow-sm m-1">
+      {{ include('components/table.twig', {
+      'title': {
+      'text': 'Addresses',
+      'leftButtons': addressAdd,
+      },
+      'columns': [
+      {'title':'Street 1','type': 'varchar'},
+      {'title':'Street 2','type': 'varchar'},
+      {'title':'City','type': 'varchar'},
+      {'title':'Postal Code','type': 'varchar'},
+      {'title':'Country','type': 'varchar'},
+      {'title':'Notes','type': 'varchar'},
+      {'title':'Location','type': 'varchar'},
+      ],
+      'minRowCount': 1,
+      'maxRowCount': 3
+      }) }}
+    </div>
+  </div>
+</div>
+
+{% endset %}
+
+{{ include('window.twig', {
+  'title': 'Add Company',
+  'header': {
+    'left':
+      include('components/button.twig', {'type': 'save'})
+      ~ include('components/button.twig', {'type': 'delete'})
+  },
+  'content': html_string
+}) }}
