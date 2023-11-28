@@ -10,5 +10,5 @@ $options = [
   'isWindow' => (bool) ($_REQUEST['__IS_WINDOW__'] ?? false),
 ];
 
-$loader = new \AdiosWireframe\Loader($options, $config);
+$loader = new \AdiosWireframe\Loader($options, $config, $_REQUEST);
 echo $loader->render($wireframe);
