@@ -1,7 +1,8 @@
 <?php
 
 require('vendor/autoload.php');
-require('config.php');
+require('config-app.php');
+require('config-env.php');
 
 $wireframe = $_REQUEST['wireframe'] ?? 'index';
 

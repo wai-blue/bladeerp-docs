@@ -1,5 +1,11 @@
 {
   "require": {
     "wai-blue/adios-wireframe": "dev-main"
-  }
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../../adios-wireframe"
+    }
+  ]
 }
