@@ -1,3 +1,41 @@
+{# Company Data #}
+{% set cd %}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Company Name',
+    'Description':'Company Name',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Company Business Number',
+    'Description':'Company Business Number',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Tax Number',
+    'Description':'Tax Number',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Vat Number',
+    'Description':'Vat Number',
+  })}}
+  {{ include("components/inputs/lookup.twig",{
+    'title':'Currency',
+    'Description':'Currency',
+    'options': ['€', '$']
+  })}}
+  {{ include("components/inputs/lookup.twig",{
+    'title':'Language Code',
+    'Description':'Language Code',
+    'options': ['SK', 'EN']
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Website',
+    'Description':'Website',
+  })}}
+  {{ include("components/inputs/text.twig",{
+    'title':'Notes',
+    'Description':'Notes',
+  })}}
+{% endset %}
+
 {# Primary Contact Person #}
 {% set pcp %}
   {{ include("components/inputs/varchar.twig",{
@@ -82,19 +120,25 @@
   })}}
 {% endset %}
 
-{# Add Person Form with Cards #}
-{% set formContentPerson %}
+{# Add Company Form with Cards #}
+{% set formContentCompany %}
   <div class="form-container">
     <div class="form-col">
       {{ include('components/card.twig', {
-        'title': 'Primary Contact Person',
-        'content': pcp
+        'title': 'Company Data',
+        'content': cd
       }) }}
     </div>
     <div class="form-col">
       {{ include('components/card.twig', {
-        'title': 'Address',
+        'title': 'Company Address',
         'content': address
+      }) }}
+    </div>
+    <div class="form-col">
+      {{ include('components/card.twig', {
+        'title': 'Primary Contact Person',
+        'content': pcp
       }) }}
     </div>
     <div class="form-col">
@@ -130,7 +174,7 @@
 
 {# Person Add Button #}
 {% set personsAdd %}
-  {{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Add person', 'icon': 'fas fa-plus', 'modal': '#personxModal'}) }}
+  {{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Add person', 'icon': 'fas fa-plus'}) }}
 {% endset %}
 
 {# Table With Persons #}
@@ -185,18 +229,17 @@
   </div>
 {% endset %}
 
-
-{# Person Modal #}
+{# Company Modal #}
 {{include('components/modal.twig', {
-    'modalId': 'personModal',
-    'title': 'Add Person',
+    'modalId': 'companyModal',
+    'title': 'Add Company',
     'content': include('components/nav-tabs.twig', {
-      'tabName':'tab',
+      'tabName':'tabCompany',
       'tabs': [
         {
-          'title' : 'Personal Data',
+          'title' : 'Company Data',
           'content': include('components/form.twig', {
-            'content': formContentPerson
+            'content': formContentCompany
           })
         },
         {
