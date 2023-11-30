@@ -1,0 +1,33 @@
+{% set pcp %}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Title Before',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'First Name',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Middle Name',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Last Name',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Title After',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Email',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Phone',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'LinkedIn',
+  })}}
+{% endset %}
+
+{{include('components/modal.twig', {
+'modalId': 'personalModal',
+'title': 'Add Person',
+'content': 'x',
+})
+}}
