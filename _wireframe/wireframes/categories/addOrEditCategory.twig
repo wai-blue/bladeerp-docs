@@ -1,0 +1,18 @@
+{% set country %}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Category Name',
+  })}}
+  {{ include("components/inputs/text.twig",{
+    'title':'Notes',
+  })}}
+{% endset %}
+
+{{include('components/modal.twig', {
+  'modalId': 'category',
+  'title': 'Add Category',
+  'modalSmall': true,
+  'content': include('components/form.twig', {
+  'content': country
+  }),
+})
+}}

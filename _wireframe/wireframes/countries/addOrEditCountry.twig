@@ -1,0 +1,21 @@
+{% set country %}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Country Name',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Country Full Name',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Country Code',
+  })}}
+{% endset %}
+
+{{include('components/modal.twig', {
+  'modalId': 'country',
+  'title': 'Add Country',
+  'modalSmall': true,
+  'content': include('components/form.twig', {
+  'content': country
+  }),
+})
+}}

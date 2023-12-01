@@ -1,36 +1,33 @@
-{% set pcp %}
+{% set address %}
   {{ include("components/inputs/varchar.twig",{
-    'title':'Title Before',
+    'title':'Street 1',
   })}}
   {{ include("components/inputs/varchar.twig",{
-    'title':'First Name',
+    'title':'Street 2',
   })}}
   {{ include("components/inputs/varchar.twig",{
-    'title':'Middle Name',
+    'title':'City',
   })}}
   {{ include("components/inputs/varchar.twig",{
-    'title':'Last Name',
+    'title':'Postal Code',
   })}}
   {{ include("components/inputs/varchar.twig",{
-    'title':'Title After',
+    'title':'Country',
+  })}}
+  {{ include("components/inputs/text.twig",{
+    'title':'Notes',
   })}}
   {{ include("components/inputs/varchar.twig",{
-    'title':'Email',
-  })}}
-  {{ include("components/inputs/varchar.twig",{
-    'title':'Phone',
-  })}}
-  {{ include("components/inputs/varchar.twig",{
-    'title':'LinkedIn',
+    'title':'Location',
   })}}
 {% endset %}
 
 {{include('components/modal.twig', {
-'modalId': 'personalModal',
-'title': 'Add Person',
+'modalId': 'addressModal',
 'modalSmall': true,
+'title': 'Add Address',
 'content': include('components/form.twig', {
-  'content': pcp
+  'content': address
   }),
 })
 }}

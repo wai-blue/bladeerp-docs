@@ -110,18 +110,13 @@
   }) }}
 {% endset %}
 
-{# Person Add Button #}
-{% set personsAdd %}
-  {{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Add person', 'icon': 'fas fa-plus', 'modal': '#personxModal'}) }}
-{% endset %}
-
 {# Table With Persons #}
 {% set persons %}
   <div class="shadow-sm m-1">
     {{ include('components/table.twig', {
       'title': {
         'text': 'Persons',
-        'leftButtons': personsAdd,
+        'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary per-personalModal', 'text': 'Add person', 'icon': 'fas fa-plus', 'modal': '#personalModal'}),
       },
       'columns': [
         {'title':'Title Before','type': 'varchar'},
@@ -132,16 +127,13 @@
         {'title':'Email','type': 'varchar'},
         {'title':'Phone','type': 'varchar'},
         {'title':'LinkedIn URL','type': 'varchar'},
+        {'title':'Is Active','type': 'active', 'options': ['active','inactive']},
+        {'title':'','type': 'activeButton'},
       ],
       'minRowCount': 2,
       'maxRowCount': 5
     }) }}
   </div>
-{% endset %}
-
-{# Add Address Button #}
-{% set addressAdd %}
-  {{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Add address', 'icon': 'fas fa-plus'}) }}
 {% endset %}
 
 {# Table with Addresses #}
@@ -150,7 +142,7 @@
     {{ include('components/table.twig', {
       'title': {
         'text': 'Addresses',
-        'leftButtons': addressAdd,
+        'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary per-addressModal', 'text': 'Add address', 'icon': 'fas fa-plus'})
       },
       'columns': [
         {'title':'Street 1','type': 'varchar'},
@@ -160,6 +152,8 @@
         {'title':'Country','type': 'varchar'},
         {'title':'Notes','type': 'varchar'},
         {'title':'Location','type': 'varchar'},
+        {'title':'Is Active','type': 'active', 'options': ['active','inactive']},
+        {'title':'','type': 'activeButton'},
       ],
       'minRowCount': 1,
       'maxRowCount': 3

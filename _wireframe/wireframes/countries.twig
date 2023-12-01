@@ -1,19 +1,12 @@
-{% set button1 %}
-    {{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New Country', 'icon': 'fas fa-plus', 'modal': '', }) }}
-{% endset %}
-
-
 <div class="row">
     {{ include('components/breadcrumbs.twig', {
-      'last':'',
-      'this':'Dashboard'
     }) }}
 </div>
 <div class="shadow-sm m-1">
   {{ include('components/table.twig', {
     'title': {
-      'text': 'Contacts',
-      'leftButtons': button1 ~ button2 ~ button3,
+      'text': 'Countries',
+      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New Country', 'icon': 'fas fa-plus', 'modal': '#country', }),
     },
     'columns': [
       {'title':'Country Name','type': 'varchar'},
@@ -25,4 +18,7 @@
     'minRowCount': 5,
     'maxRowCount': 15
   }) }}
+</div>
+<div>
+  {{ include('countries/addOrEditCountry.twig') }}
 </div>
