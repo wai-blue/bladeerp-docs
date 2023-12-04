@@ -82,16 +82,18 @@ Model does not contain foreign keys.
 
 ### Indexes
 
-| Name    |  Type   | Column + Order |
-| :------ | :-----: | -------------: |
-| id      | PRIMARY |         id ASC |
-| pattern | UNIQUE  |    pattern ASC |
+| Name      |  Type   | Column + Order |
+| :-------- | :-----: | -------------: |
+| id        | PRIMARY |         id ASC |
+| name      | UNIQUE  |       name ASC |
+| type      |  INDEX  |      type DESC |
+| is_active |  INDEX  | is_active DESC |
 
 ## Callbacks
 
 ### onBeforeInsert
 
-Not used.
+Allow create only in case of valid [pattern](#pattern).
 
 ### onAfterInsert
 
@@ -99,7 +101,7 @@ Not used.
 
 ### onBeforeUpdate
 
-Not used.
+Allow update only in case of valid [pattern](#pattern).
 
 ### onAfterUpdate
 
