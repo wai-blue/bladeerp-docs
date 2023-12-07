@@ -17,6 +17,7 @@ Table
 ## Default View Parameters
 
 * model: [App/Widgets/Common/AddressBook/Models/Category](../Models/Category.md)
+* dataset: $input['categories']
 * showColumns:
   * name
   * notes
