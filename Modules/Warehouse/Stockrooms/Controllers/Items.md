@@ -6,20 +6,13 @@ List of all stockrooms items.
 
 ## View
 
-Table
+[App/Widgets/Warehouse/Stockrooms/Views/Items](../Views/Items.md)
 
-## Default View Parameters
+## View Parameters
 
-* model: App/Widgets/Warehouse/Stockrooms/Models/Item
-* showColumns:
-  * name
-  * description
-  * type
-  * is_active
-  * vat_level
-  * id_com_unit_default  
-* orderBy: name ASC
+### stockroom_item
+[App/Widgets/Warehouse/Stockrooms/Models/Items](../Models/Item.md)
 
-## Parameters Post-processing
+## View Parameters Post-processing
 
-No post-processing of default parameters is necessary.
+No post-processing of view parameters parameters is necessary.
