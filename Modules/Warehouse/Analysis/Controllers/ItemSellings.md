@@ -6,7 +6,7 @@ Prepares data form monthly selling (sales?) summary for 12 months.
 
 ## View
 
-App/Widgets/Warehouse/Analysis/ItemSellings
+[App/Widgets/Warehouse/Analysis/ItemSellings](../Views/ItemSellings.md)
 
 ## View Parameters
 

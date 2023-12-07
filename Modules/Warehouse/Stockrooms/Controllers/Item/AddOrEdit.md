@@ -10,7 +10,7 @@ Add new stockroom item or edit existing one.
 
 ## View Parameters
 
-### stockroom_item
+### stockroomItem
 Existing stockroom item but only in case of edit. Otherwise empty.
 
 ## View Parameters Post-processing
