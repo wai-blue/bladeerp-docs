@@ -10,7 +10,7 @@ List of all stockrooms packages.
 
 ## View Parameters
 
-### stockroom_package
+### stockroomPackage
 [App/Widgets/Warehouse/Stockrooms/Models/Package](../Models/Package.md)
 
 ## View Parameters Post-processing

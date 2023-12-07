@@ -6,9 +6,9 @@ Add new stockroom item or edit it.
 
 ## Input Parameters
 
-| Parameter      | PHP Data type | Default value | Description            |
-| -------------- | ------------- | ------------- | ---------------------- |
-| stockroom_item | array         | []            | Stockroom item to edit |
+| Parameter     | PHP Data type | Default value | Description            |
+| ------------- | ------------- | ------------- | ---------------------- |
+| stockroomItem | array         | []            | Stockroom item to edit |
 
 ## Parent View
 
@@ -17,7 +17,7 @@ Form
 ## Default View Parameters
 
 * model: [App/Widgets/Warehouse/Stockrooms/Models/Item](../../Models/Item.md)
-* dataset: $input['stockroom_item']
+* dataset: $input['stockroomItem']
 * displayMode: window
 * template:
   * columns:
@@ -31,4 +31,4 @@ Form
 
 ## View Parameters Post-processing
 
-1. Edit existing item if $input['stockroom_item'] is NOT empty. Otherwise create new one.
+1. Edit existing item if $input['stockroomItem'] is NOT empty. Otherwise create new one.

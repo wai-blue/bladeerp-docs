@@ -4,6 +4,13 @@
 
 Shows monthly selling summary for 12 months.
 
+## Input Parameters
+
+| Parameter        | PHP Data type | Default value | Description           |
+| ---------------- | ------------- | ------------- | --------------------- |
+| monthlySellings  | array         |               | Monthly sellings data |
+| bestSellerItems  | array         |               | Best seller data      |
+
 ## Parent View
 
 Grid
@@ -21,14 +28,11 @@ Grid
     * params:
       * title: 'Year Warehouse Sellings'
   * B:
-    * view: App\Widgets\Warehouse\Analysis\Views\MonthlySellings
+    * view: [App\Widgets\Warehouse\Analysis\Views\MonthlySellings](../Views/MonthlySellings.md)
     * params:
-      * yearBackFromDate: Controller->yearBackFromDate
-      * dataset: Controller->dataset
+      * dataset: $input['monthlySellings']
   * C:
-    * view: App\Widgets\Warehouse\Analysis\Views\BestSellerItems
+    * view: [App\Widgets\Warehouse\Analysis\Views\BestSellerItems](../Views/BestSellerItems.md)
     * params:
       * title: 'Best Seller Items'
-      * year_back_from_date: Controller->yearBackFromDate
-      * limit: Controller->limit
-      * dataset: Controller->dataset
+      * dataset: $input['bestSellerItems']
