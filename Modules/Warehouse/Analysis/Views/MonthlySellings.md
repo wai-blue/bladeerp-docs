@@ -6,11 +6,11 @@ Shows monthly selling summary for 12 months.
 
 ## Input Parameters
 
-| Parameter        | PHP Data type | Default value | Description |
-| ---------------- | ------------- | ------------- | ----------- |
-| yearBackFromDate | integer       | 0             | ...         |
-| dataset          | array         | []            | ...         |
-| parameter1       | ?string       | NULL          | ...         |
+| Parameter     | PHP Data type | Default value | Description              |
+| ------------- | ------------- | ------------- | ------------------------ |
+| title         | string        | ""            |                          |
+| sellings_data | array         | []            | Sellings data for graph  |
+| data_labels   | array         | []            | Labels for data in graph |
 
 ## View (View / Description)
 
@@ -32,7 +32,8 @@ Grid
     * view: ADIOS\Core\Views\Chart
     * params:
       * type: 'line'
-      * dataset: $input['dataset']
+      * labels: $input['data_labels']
+      * dataset: $input['sellings_data']
 
 ## View Parameters Post-processing
 

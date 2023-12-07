@@ -4,7 +4,15 @@
 
 Show top sellers from warehouse items.
 
-## View
+## Input Parameters
+
+| Parameter           | PHP Data type | Default value | Description          |
+| ------------------- | ------------- | ------------- | -------------------- |
+| title               | string        | ""            |                      |
+| virt_sell_price_sum | array         | []            | Summ of sold prices  |
+| virt_item_name      | array         | []            | Names of sumed items |
+
+## Parent View
 
 Table
 
