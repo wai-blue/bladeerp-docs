@@ -31,7 +31,7 @@ Table
 * leftTitleButtons:
   * addNew:
     * text: "New Item"
-    * controller: [Common/AddressBook/Contact/AddOrEdit](../Controllers/Item/AddOrEdit.md)
+    * controller: [Common/Warehouse/Stockrooms/Item/AddOrEdit](../Controllers/Item/AddOrEdit.md)
 
 ### rowButtons.deactivate
 * Shown only on active row (`is_active=TRUE`).
