@@ -1,0 +1,24 @@
+{{ include('components/grid.twig', {
+    'layoutLg': [
+    'A A A',
+    'B B C'
+    ],
+    'areas': {
+      'A': include('components/title.twig', {'title': 'Year Warehouse Sellings'}),
+      'B': include('components/card.twig', {
+        'settings': true,
+        'content': include('components/graph.twig')
+      }),
+      'C': include('components/card.twig', {
+        'title': 'Best Selling Items',
+        'settings': true,
+        'content': include('components/table.twig', {
+          'columns': [
+            {'title':'Item Name','type': 'varchar'},
+            {'title':'Sell Price','type': 'int'},
+          ]
+        })
+      }),
+    }
+  })
+}}

@@ -1,0 +1,21 @@
+
+
+{% set item %}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Item Name',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Item Description',
+  })}}
+  {{ include("components/inputs/int.twig",{
+    'title':'Vat Level',
+  })}}
+  {{ include("components/inputs/image.twig",{
+    'title':'Item Image',
+  })}}
+{% endset %}
+
+{{include('components/form.twig', {
+  'content': item
+  })
+}}
