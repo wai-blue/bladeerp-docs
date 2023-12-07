@@ -31,4 +31,4 @@ Form
 
 ## View Parameters Post-processing
 
-1. Edit existing item if $input['item'] is NOT empty. Otherwise create new one.
+1. Edit existing item if $input['stockroom_item'] is NOT empty. Otherwise create new one.
