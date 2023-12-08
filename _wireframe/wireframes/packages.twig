@@ -1,33 +1,21 @@
 <div class="row">
-    {{ include('components/breadcrumbs.twig', {
-      'last':'',
-      'this':'Dashboard'
-    }) }}
-</div>
-<div class="shadow-sm m-1">
-  {{ include('components/table.twig', {
-    'title': {
-      'text': 'Packages',
-      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New Package', 'icon': 'fas fa-plus', 'modal': '#newItemModal', }),
-    },
-    'columns': [
-      {'title':'Package Name','type': 'varchar'},
-      {'title':'Description','type': 'text'},
-      {'title':'Units','type': 'int'},
-      {'title':'','type': 'lookup', 'options': ['EA','CS','PLT','CTN','ROL','PPH',]},
-
-    ],
-    'minRowCount': 5,
-    'maxRowCount': 15
+  {{ include('components/breadcrumbs.twig', {
+    'last':'',
+    'this':'Dashboard'
   }) }}
-
-{#   {{ include('window.twig', {
-  'title': 'Add Item',
-  'header': {
-    'left':
-      include('components/button.twig', {'type': 'save'})
-      ~ include('components/button.twig', {'type': 'delete'})
-  },
-  'content': include('/warehouse/addOrEditPackages.twig')
-}) }} #}
 </div>
+{{ include('components/table.twig', {
+  'title': {
+    'text': 'Packages',
+    'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New Package', 'icon': 'fas fa-plus', 'onclick': 'add_package()', }),
+  },
+  'columns': [
+    {'title':'Package Name','type': 'varchar'},
+    {'title':'Description','type': 'text'},
+    {'title':'Units','type': 'int'},
+    {'title':'','type': 'lookup', 'options': config.globalUnits.packageUnits },
+
+  ],
+  'minRowCount': 5,
+  'maxRowCount': 15
+}) }}

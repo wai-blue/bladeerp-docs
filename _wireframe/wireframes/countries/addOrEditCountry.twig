@@ -10,12 +10,15 @@
   })}}
 {% endset %}
 
-{{include('components/modal.twig', {
-  'modalId': 'country',
+{{ include('window.twig', {
   'title': 'Add Country',
-  'modalSmall': true,
+  'header': {
+    'left': 
+      include('components/button.twig', {'type': 'save'})
+      ~ include('components/button.twig', {'type': 'delete'})
+  },
+  'cssClass': 'modal modal-small',
   'content': include('components/form.twig', {
   'content': country
   }),
-})
-}}
+})}}

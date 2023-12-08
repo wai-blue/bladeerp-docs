@@ -112,53 +112,49 @@
 
 {# Table With Persons #}
 {% set persons %}
-  <div class="shadow-sm m-1">
-    {{ include('components/table.twig', {
-      'title': {
-        'text': 'Persons',
-        'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary per-personalModal', 'text': 'Add person', 'icon': 'fas fa-plus', 'modal': '#personalModal'}),
-      },
-      'columns': [
-        {'title':'Title Before','type': 'varchar'},
-        {'title':'First Name','type': 'varchar'},
-        {'title':'Last Name','type': 'varchar'},
-        {'title':'Middle Name','type': 'varchar'},
-        {'title':'Title After','type': 'varchar'},
-        {'title':'Email','type': 'varchar'},
-        {'title':'Phone','type': 'varchar'},
-        {'title':'LinkedIn URL','type': 'varchar'},
-        {'title':'Is Active','type': 'active', 'options': ['active','inactive']},
-        {'title':'','type': 'activeButton'},
-      ],
-      'minRowCount': 2,
-      'maxRowCount': 5
-    }) }}
-  </div>
+  {{ include('components/table.twig', {
+    'title': {
+      'text': 'Persons',
+      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary per-personalModal', 'text': 'Add person', 'icon': 'fas fa-plus', 'modal': '#personalModal'}),
+    },
+    'columns': [
+      {'title':'Title Before','type': 'varchar'},
+      {'title':'First Name','type': 'varchar'},
+      {'title':'Last Name','type': 'varchar'},
+      {'title':'Middle Name','type': 'varchar'},
+      {'title':'Title After','type': 'varchar'},
+      {'title':'Email','type': 'varchar'},
+      {'title':'Phone','type': 'varchar'},
+      {'title':'LinkedIn URL','type': 'varchar'},
+      {'title':'Is Active','type': 'active', 'options': ['active','inactive']},
+      {'title':'','type': 'activeButton'},
+    ],
+    'minRowCount': 2,
+    'maxRowCount': 5
+  }) }}
 {% endset %}
 
 {# Table with Addresses #}
 {% set addresses %}
-  <div class="shadow-sm m-1">
-    {{ include('components/table.twig', {
-      'title': {
-        'text': 'Addresses',
-        'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary per-addressModal', 'text': 'Add address', 'icon': 'fas fa-plus'})
-      },
-      'columns': [
-        {'title':'Street 1','type': 'varchar'},
-        {'title':'Street 2','type': 'varchar'},
-        {'title':'City','type': 'varchar'},
-        {'title':'Postal Code','type': 'varchar'},
-        {'title':'Country','type': 'varchar'},
-        {'title':'Notes','type': 'varchar'},
-        {'title':'Location','type': 'varchar'},
-        {'title':'Is Active','type': 'active', 'options': ['active','inactive']},
-        {'title':'','type': 'activeButton'},
-      ],
-      'minRowCount': 1,
-      'maxRowCount': 3
-    }) }}
-  </div>
+  {{ include('components/table.twig', {
+    'title': {
+      'text': 'Addresses',
+      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary per-addressModal', 'text': 'Add address', 'icon': 'fas fa-plus'})
+    },
+    'columns': [
+      {'title':'Street 1','type': 'varchar'},
+      {'title':'Street 2','type': 'varchar'},
+      {'title':'City','type': 'varchar'},
+      {'title':'Postal Code','type': 'varchar'},
+      {'title':'Country','type': 'varchar'},
+      {'title':'Notes','type': 'varchar'},
+      {'title':'Location','type': 'varchar'},
+      {'title':'Is Active','type': 'active', 'options': ['active','inactive']},
+      {'title':'','type': 'activeButton'},
+    ],
+    'minRowCount': 1,
+    'maxRowCount': 3
+  }) }}
 {% endset %}
 
 

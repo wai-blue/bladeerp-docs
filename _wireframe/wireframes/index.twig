@@ -8,7 +8,7 @@
 
 {# top buttons #}
 <div class="row">
-  {% for i in 1..8 %}
+  {% for i in 1..3 %}
     {{ include('components/quick-actions-buttons.twig') }}
   {% endfor %}
 </div>
@@ -65,13 +65,12 @@
       }) }}
       </div>
     </div>
+    {# TODO list #}
     <div class="col-4">
-      {# TODO list #}
       <div class="row-4">
         {{ include('components/card.twig', {
         'title': 'To do list',
         'settings': true,
-        'extracss': 'padding: 0;',
         'content': include('components/todolist.twig', {
           'columns': [
             '',

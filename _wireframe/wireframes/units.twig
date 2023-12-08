@@ -1,0 +1,18 @@
+<div class="row">
+  {{ include('components/breadcrumbs.twig', {
+    'last':'',
+    'this':'Dashboard'
+  }) }}
+</div>
+{{ include('components/table.twig', {
+  'title': {
+    'text': 'Units',
+    'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New Unit', 'icon': 'fas fa-plus', 'onclick': 'add_unit()', }),
+  },
+  'columns': [
+    {'title':'Unit Name','type': 'varchar'},
+    {'title':'Symbol','type': 'varchar', 'sampleValues': config.globalUnits.units|merge(config.globalUnits.packageUnits) },
+  ],
+  'minRowCount': 5,
+  'maxRowCount': 15
+}) }}

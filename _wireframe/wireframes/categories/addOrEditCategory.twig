@@ -1,4 +1,4 @@
-{% set country %}
+{% set category %}
   {{ include("components/inputs/varchar.twig",{
     'title':'Category Name',
   })}}
@@ -7,12 +7,15 @@
   })}}
 {% endset %}
 
-{{include('components/modal.twig', {
-  'modalId': 'category',
+{{ include('window.twig', {
   'title': 'Add Category',
-  'modalSmall': true,
+  'header': {
+    'left': 
+      include('components/button.twig', {'type': 'save'})
+      ~ include('components/button.twig', {'type': 'delete'})
+  },
+  'cssClass': 'modal modal-small',
   'content': include('components/form.twig', {
-  'content': country
+  'content': category
   }),
-})
-}}
+})}}

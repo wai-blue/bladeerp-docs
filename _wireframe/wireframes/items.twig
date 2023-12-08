@@ -1,14 +1,13 @@
 <div class="row">
-    {{ include('components/breadcrumbs.twig', {
-      'last':'',
-      'this':'Dashboard'
-    }) }}
+  {{ include('components/breadcrumbs.twig', {
+    'last':'',
+    'this':'Dashboard'
+  }) }}
 </div>
-<div class="shadow-sm m-1">
   {{ include('components/table.twig', {
     'title': {
       'text': 'Items',
-      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New Item', 'icon': 'fas fa-plus', 'modal': '#newItemModal', }),
+      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New Item', 'icon': 'fas fa-plus', 'onclick': 'add_item()', }),
     },
     'columns': [
       {'title':'Default picture','type': 'image'},
@@ -21,14 +20,3 @@
     'minRowCount': 5,
     'maxRowCount': 15
   }) }}
-
-{#   {{ include('window.twig', {
-  'title': 'Add Item',
-  'header': {
-    'left':
-      include('components/button.twig', {'type': 'save'})
-      ~ include('components/button.twig', {'type': 'delete'})
-  },
-  'content': include('/warehouse/addOrEditItem.twig')
-}) }} #}
-</div>

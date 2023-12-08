@@ -1,0 +1,18 @@
+<div class="row">
+    {{ include('components/breadcrumbs.twig', {
+      'last':'',
+      'this':'Dashboard'
+    }) }}
+</div>
+{{ include('components/table.twig', {
+  'title': {
+    'text': 'Media Types',
+    'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New Media Type', 'icon': 'fas fa-plus', 'onclick': 'add_media_type()', }),
+  },
+  'columns': [
+    {'title':'Media Type Name','type': 'varchar'},
+    {'title':'Media Type Description','type': 'text'},
+  ],
+  'minRowCount': 5,
+  'maxRowCount': 15
+}) }}

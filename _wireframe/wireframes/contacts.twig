@@ -12,26 +12,24 @@
       'this':'Dashboard'
     }) }}
 </div>
-<div class="shadow-sm m-1">
-  {{ include('components/table.twig', {
-    'title': {
-      'text': 'Contacts',
-      'leftButtons': button1 ~ button2,
-    },
-    'columns': [
-      {'title':'Company Mane','type': 'varchar'},
-      {'title':'Business Number','type': 'varchar'},
-      {'title':'Primary Conctact Person','type': 'varchar'},
-      {'title':'Primary Address','type': 'varchar'},
-      {'title':'Currency','type': 'lookup', 'options': ['€','$']},
-      {'title':'Primary Language','type': 'lookup', 'options': ['English','Slovak']},
-      {'title':'Is Active','type': 'active', 'options': ['active','inactive']},
-      {'title':'','type': 'activeButton'},
-    ],
-    'minRowCount': 5,
-    'maxRowCount': 15
-  }) }}
-</div>
+{{ include('components/table.twig', {
+  'title': {
+    'text': 'Contacts',
+    'leftButtons': button1 ~ button2,
+  },
+  'columns': [
+    {'title':'Company Mane','type': 'varchar'},
+    {'title':'Business Number','type': 'varchar'},
+    {'title':'Primary Conctact Person','type': 'varchar'},
+    {'title':'Primary Address','type': 'varchar'},
+    {'title':'Currency','type': 'lookup', 'options': ['€','$']},
+    {'title':'Primary Language','type': 'lookup', 'options': ['English','Slovak']},
+    {'title':'Is Active','type': 'active', 'options': ['active','inactive']},
+    {'title':'','type': 'activeButton'},
+  ],
+  'minRowCount': 5,
+  'maxRowCount': 15
+}) }}
 <div>
   {{ include('contacts/addPersonModal.twig') }}
 </div>

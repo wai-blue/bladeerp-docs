@@ -1,18 +1,14 @@
-{% set package %}
+{% set mediaType %}
   {{ include("components/inputs/varchar.twig",{
-    'title':'Package Name',
+    'title':'Media Type Name',
   })}}
-  {{ include("components/inputs/varchar.twig",{
-    'title':'Package Description',
-  })}}
-  {{ include("components/inputs/lookup.twig",{
-    'title':'Unit',
-    'options': config.globalUnits.packageUnits
+  {{ include("components/inputs/text.twig",{
+    'title':'Media Type Description',
   })}}
 {% endset %}
 
 {{ include('window.twig', {
-  'title': 'Add Package',
+  'title': 'Add Media Type',
   'header': {
     'left': 
       include('components/button.twig', {'type': 'save'})
@@ -20,6 +16,6 @@
   },
   'cssClass': 'modal modal-small',
   'content': include('components/form.twig', {
-  'content': package
+  'content': mediaType
   }),
 })}}

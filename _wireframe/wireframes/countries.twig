@@ -2,11 +2,10 @@
     {{ include('components/breadcrumbs.twig', {
     }) }}
 </div>
-<div class="shadow-sm m-1">
   {{ include('components/table.twig', {
     'title': {
       'text': 'Countries',
-      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New Country', 'icon': 'fas fa-plus', 'modal': '#country', }),
+      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New Country', 'icon': 'fas fa-plus', 'onclick': 'add_country()', }),
     },
     'columns': [
       {'title':'Country Name','type': 'varchar'},
@@ -18,7 +17,6 @@
     'minRowCount': 5,
     'maxRowCount': 15
   }) }}
-</div>
-<div>
+{# <div>
   {{ include('countries/addOrEditCountry.twig') }}
-</div>
+</div> #}

@@ -1,20 +1,18 @@
-{% set item %}
-  {{ include("components/inputs/varchar.twig",{
-    'title':'Item Name',
-  })}}
-  {{ include("components/inputs/varchar.twig",{
-    'title':'Item Description',
-  })}}
-  {{ include("components/inputs/int.twig",{
-    'title':'Vat Level',
+{% set media %}
+  {{ include("components/inputs/lookup.twig",{
+    'title':'Media Type Name',
+    'options': config.globalUnits.mediaTypes
   })}}
   {{ include("components/inputs/image.twig",{
-    'title':'Item Image',
+    'title':'Media',
+  })}}
+  {{ include("components/inputs/text.twig",{
+    'title':'Media Description',
   })}}
 {% endset %}
 
 {{ include('window.twig', {
-  'title': 'Add Item',
+  'title': 'Add Media',
   'header': {
     'left': 
       include('components/button.twig', {'type': 'save'})
@@ -22,6 +20,6 @@
   },
   'cssClass': 'modal modal-small',
   'content': include('components/form.twig', {
-  'content': item
+  'content': media
   }),
 })}}

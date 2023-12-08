@@ -1,25 +1,20 @@
 <div class="row">
-    {{ include('components/breadcrumbs.twig', {
-      'last':'',
-      'this':'Dashboard'
-    }) }}
-</div>
-<div class="shadow-sm m-1">
-  {{ include('components/table.twig', {
-    'title': {
-      'text': 'Categories',
-      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New Category', 'icon': 'fas fa-plus', 'modal': '#category', }),
-    },
-    'columns': [
-      {'title':'Category Name','type': 'varchar'},
-      {'title':'Notes','type': 'text'},
-      {'title':'Is Active','type': 'active', 'options': ['active','inactive']},
-      {'title':'','type': 'activeButton'},
-    ],
-    'minRowCount': 5,
-    'maxRowCount': 15
+  {{ include('components/breadcrumbs.twig', {
+    'last':'',
+    'this':'Dashboard'
   }) }}
 </div>
-<div>
-  {{ include('categories/addOrEditCategory.twig') }}
-</div>
+{{ include('components/table.twig', {
+  'title': {
+    'text': 'Categories',
+    'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New Category', 'icon': 'fas fa-plus', 'onclick': 'add_category()', }),
+  },
+  'columns': [
+    {'title':'Category Name','type': 'varchar'},
+    {'title':'Notes','type': 'text'},
+    {'title':'Is Active','type': 'active', 'options': ['active','inactive']},
+    {'title':'','type': 'activeButton'},
+  ],
+  'minRowCount': 5,
+  'maxRowCount': 15
+}) }}
