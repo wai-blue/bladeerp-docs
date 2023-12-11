@@ -25,12 +25,16 @@
   })}}
 {% endset %}
 
-{{include('components/modal.twig', {
-'modalId': 'personalModal',
-'title': 'Add Person',
-'modalSmall': true,
-'content': include('components/form.twig', {
-  'content': pcp
-  }),
-})
-}}
+{# Person Modal #}
+{{ include('window.twig', {
+  'title': 'Add Person',
+  'header': {
+    'left': 
+      include('components/button.twig', {'type': 'save'})
+      ~ include('components/button.twig', {'type': 'delete'})
+  },
+  'cssClass': 'modal modal-small',
+  'content': include('components/form.twig', {
+    'content': pcp
+    }),
+})}}

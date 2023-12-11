@@ -152,7 +152,7 @@
     {{ include('components/table.twig', {
       'title': {
         'text': 'Persons',
-        'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary com-personalModal', 'text': 'Add person', 'icon': 'fas fa-plus'}),
+        'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary com-personalModal', 'text': 'Add person', 'icon': 'fas fa-plus', 'onclick': 'add_person_connection()'}),
       },
       'columns': [
         {'title':'Title Before','type': 'varchar'},
@@ -178,7 +178,7 @@
     {{ include('components/table.twig', {
       'title': {
         'text': 'Addresses',
-        'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary com-addressModal', 'text': 'Add address', 'icon': 'fas fa-plus'}),
+        'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary com-addressModal', 'text': 'Add address', 'icon': 'fas fa-plus', 'onclick': 'add_person_connection()'}),
       },
       'columns': [
         {'title':'Street 1','type': 'varchar'},

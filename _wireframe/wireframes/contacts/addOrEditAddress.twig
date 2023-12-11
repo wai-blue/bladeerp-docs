@@ -22,12 +22,15 @@
   })}}
 {% endset %}
 
-{{include('components/modal.twig', {
-'modalId': 'addressModal',
-'modalSmall': true,
-'title': 'Add Address',
-'content': include('components/form.twig', {
-  'content': address
-  }),
-})
-}}
+{{ include('window.twig', {
+  'title': 'Add Address',
+  'header': {
+    'left': 
+      include('components/button.twig', {'type': 'save'})
+      ~ include('components/button.twig', {'type': 'delete'})
+  },
+  'cssClass': 'modal modal-small',
+  'content': include('components/form.twig', {
+    'content': address
+    }),
+})}}

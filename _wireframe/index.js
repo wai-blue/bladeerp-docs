@@ -19,3 +19,15 @@ function add_media() {
 function add_unit() {
   window_render('codeList/addOrEditUnit');
 }
+
+/* Big Modals */
+function add_person() {
+  window_render('contacts/addPersonModal');
+}
+/* Modals On Top Big Modals */
+function add_person_connection() {
+  window_render('contacts/addOrEditPerson');
+}
+function add_address_connection() {
+  window_render('contacts/addOrEditAddress');
+}

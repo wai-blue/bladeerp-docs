@@ -115,7 +115,7 @@
   {{ include('components/table.twig', {
     'title': {
       'text': 'Persons',
-      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary per-personalModal', 'text': 'Add person', 'icon': 'fas fa-plus', 'modal': '#personalModal'}),
+      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary per-personalModal', 'text': 'Add person', 'icon': 'fas fa-plus', 'onclick': 'add_person_connection()'}),
     },
     'columns': [
       {'title':'Title Before','type': 'varchar'},
@@ -139,7 +139,7 @@
   {{ include('components/table.twig', {
     'title': {
       'text': 'Addresses',
-      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary per-addressModal', 'text': 'Add address', 'icon': 'fas fa-plus'})
+      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary per-addressModal', 'text': 'Add address', 'icon': 'fas fa-plus', 'onclick': 'add_address_connection()' })
     },
     'columns': [
       {'title':'Street 1','type': 'varchar'},
@@ -157,39 +157,36 @@
   }) }}
 {% endset %}
 
-
 {# Person Modal #}
-{{include('components/modal.twig', {
-    'modalId': 'personModal',
-    'title': 'Add Person',
+{{ include('window.twig', {
+  'title': 'Add Person',
+  'header': {
+    'left': 
+      include('components/button.twig', {'type': 'save'})
+      ~ include('components/button.twig', {'type': 'delete'})
+  },
+  'cssClass': 'modal',
+  'content': include('components/form.twig', {
     'content': include('components/nav-tabs.twig', {
       'tabName':'tab',
       'tabs': [
         {
           'title' : 'Personal Data',
-          'content': include('components/form.twig', {
-            'content': formContentPerson
-          })
+          'content': formContentPerson
         },
         {
           'title' : 'Categories',
-          'content': include('components/form.twig', {
-            'content': categoriesCard
-          })
+          'content': categoriesCard
         },
         {
           'title' : 'Persons',
-          'content': include('components/form.twig', {
-            'content': persons
-          })
+          'content': persons
         },
         {
           'title' : 'Addresses',
-          'content': include('components/form.twig', {
-            'content': addresses
-          })
+          'content': addresses
         },
       ]
     })
-  })
-}}
+  }),
+})}}

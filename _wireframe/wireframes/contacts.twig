@@ -1,5 +1,5 @@
 {% set button1 %}
-    {{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Add person', 'icon': 'fas fa-plus', 'modal': '#personModal',}) }}
+    {{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Add person', 'icon': 'fas fa-plus', 'onclick': 'add_person()',}) }}
 {% endset %}
 
 {% set button2 %}
@@ -31,14 +31,5 @@
   'maxRowCount': 15
 }) }}
 <div>
-  {{ include('contacts/addPersonModal.twig') }}
-</div>
-<div>
   {{ include('contacts/addCompanyModal.twig') }}
-</div>
-<div>
-  {{ include('contacts/addOrEditPerson.twig') }}
-</div>
-<div>
-  {{ include('contacts/addOrEditAddress.twig') }}
 </div>
