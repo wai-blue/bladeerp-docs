@@ -19,7 +19,7 @@ Table
 ## Default View Parameters
 
 * params:
-  * title: $input['title']
+  * title: $input['title]
   * showTitle: FALSE when $input['title'] is empty. TRUE otherwise.
 * showColumns:
   * virt_item_name:

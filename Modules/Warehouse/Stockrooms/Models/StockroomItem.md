@@ -16,9 +16,9 @@ No constants are defined for this model.
 | storeRecordInfo        | FALSE                                                                           |
 | sqlName                | whs_stockroom_items                                                             |
 | urlBase                | warehouse/stockrooms/stockroom/{id_whs_stockroom}/items                         |
-| tableTitle             | Stockroom Items                                                                 |
-| formTitleForInserting  | New Stockroom Item                                                              |
-| formTitleForEditing    | Stockroom Item                                                                  |
+| tableTitle             | Warehouse items                                                                 |
+| formTitleForInserting  | New Warehouse item                                                              |
+| formTitleForEditing    | Warehouse item                                                                  |
 | crud/browse/controller | Warehouse/Stockrooms/StockroomItems                                             |
 | crud/add/controller    | Warehouse/Stockrooms/StockroomItem/Add                                          |
 | crud/edit/controller   | Warehouse/Stockrooms/StockroomItem/Edit                                         |

@@ -9,6 +9,6 @@
 * Reporting: Generating reports and analytics to gain insights into inventory turnover, demand patterns, and stock-related costs.
 * Integration: Coordinating stock management with other parts of the ERP system, such as procurement, sales, and accounting, to maintain accurate and up-to-date data.
 
-## Products / Stockroom Items
-In an ERP system, "products" or "stockroom items" refer to the items or goods that a company buys, manufactures, or sells. These products can include tangible physical items like electronics, clothing, or machinery, as well as intangible items like software licenses or services. Within the ERP, each product is typically identified by a unique code or SKU (Stock Keeping Unit) for easy tracking and management. The ERP system helps companies manage their products by storing information about them, including descriptions, pricing, suppliers, and stockroom levels. This data is crucial for various business processes, such as procurement, sales, and stockroom control.
+## Products / Warehouse items
+In an ERP system, "products" or "warehouse items" refer to the items or goods that a company buys, manufactures, or sells. These products can include tangible physical items like electronics, clothing, or machinery, as well as intangible items like software licenses or services. Within the ERP, each product is typically identified by a unique code or SKU (Stock Keeping Unit) for easy tracking and management. The ERP system helps companies manage their products by storing information about them, including descriptions, pricing, suppliers, and stockroom levels. This data is crucial for various business processes, such as procurement, sales, and stockroom control.
 

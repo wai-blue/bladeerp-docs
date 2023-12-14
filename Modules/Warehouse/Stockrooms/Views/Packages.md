@@ -6,9 +6,9 @@ List of all stockrooms packages.
 
 ## Input Parameters
 
-| Parameter         | PHP Data type | Default value | Description                    |
-| ----------------- | ------------- | ------------- | ------------------------------ |
-| stockroomPackages | array         | []            | List of all stockroom packages |
+| Parameter   | PHP Data type | Default value | Description                    |
+| ----------- | ------------- | ------------- | ------------------------------ |
+| packages    | array         | []            | List of all stockroom packages |
 
 ## Parent View
 
@@ -17,7 +17,7 @@ Table
 ## Default View Parameters
 
 * model: [App/Widgets/Warehouse/Stockrooms/Models/Package](../Models/Package.md)
-* dataset: $input['stockroomPackages']
+* dataset: $input['packages']
 * showColumns:    
   * name
   * description

@@ -10,7 +10,7 @@ Add new stockroom package or edit existing one.
 
 ## View Parameters
 
-### stockroomPackage
+### package
 Existing stockroom package but only in case of edit. Otherwise empty.
 
 ## View Parameters Post-processing

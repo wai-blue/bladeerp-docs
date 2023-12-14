@@ -6,9 +6,9 @@ Add new stockroom package or edit it.
 
 ## Input Parameters
 
-| Parameter        | PHP Data type | Default value | Description               |
-| ---------------- | ------------- | ------------- | ------------------------- |
-| stockroomPackage | array         | []            | Stockroom package to edit |
+| Parameter   | PHP Data type | Default value | Description                     |
+| ----------- | ------------- | ------------- | ------------------------------- |
+| package     | array         | []            | Stockroom package to edit       |
 
 ## Parent View
 
@@ -17,7 +17,7 @@ Form
 ## Default View Parameters
 
 * model: [App/Widgets/Warehouse/Stockrooms/Models/Package](../../Models/Package.md)
-* dataset: $input['stockroomPackage']
+* dataset: $input['package']
 * displayMode: window
 * template:
   * columns:
@@ -27,4 +27,4 @@ Form
 
 ## View Parameters Post-processing
 
-1. Edit existing package if $input['stockroomPackage'] is NOT empty. Otherwise create new one.
+1. Edit existing package if $input['package'] is NOT empty. Otherwise create new one.

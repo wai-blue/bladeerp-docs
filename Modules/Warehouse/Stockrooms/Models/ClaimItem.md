@@ -36,7 +36,7 @@ No constants are defined for this model.
 | Column             | Title          | ADIOS Type | Length | Required | Notes            |
 | :----------------- | -------------- | :--------: | :----: | :------: | :--------------- |
 | id                 |                |    int     |   8    |   TRUE   | Unique record ID |
-| id_whs_item        | Stockroom Item |   lookup   |   8    |   TRUE   |                  |
+| id_whs_item        | Warehouse item |   lookup   |   8    |   TRUE   |                  |
 | id_bkp_claims_item | Claim Item     |   lookup   |   8    |   TRUE   |                  |
 
 ### ADIOS Parameters
