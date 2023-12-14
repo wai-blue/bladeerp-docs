@@ -8,7 +8,7 @@ List of all stockrooms items.
 
 | Parameter      | PHP Data type | Default value | Description                 |
 | -------------- | ------------- | ------------- | --------------------------- |
-| stockroomItems | array         | []            | List of all stockroom items |
+| warehouseItems | array         | []            | List of all warehouse items |
 
 ## Parent View
 
@@ -17,7 +17,7 @@ Table
 ## Default View Parameters
 
 * model: [App/Widgets/Warehouse/Stockrooms/Models/Item](../Models/Item.md)
-* dataset: $input['stockroomItems']
+* dataset: $input['warehouseItems']
 * showColumns:  
   * id_com_media_default
   * name

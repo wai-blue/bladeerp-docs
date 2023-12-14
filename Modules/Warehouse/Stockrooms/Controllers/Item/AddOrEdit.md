@@ -2,7 +2,7 @@
 
 ## Description
 
-Add new stockroom item or edit existing one.
+Add new warehouse item or edit existing one.
 
 ## View
 
@@ -10,8 +10,8 @@ Add new stockroom item or edit existing one.
 
 ## View Parameters
 
-### stockroomItem
-Existing stockroom item but only in case of edit. Otherwise empty.
+### warehouseItem
+Existing warehouse item but only in case of edit. Otherwise empty.
 
 ## View Parameters Post-processing
 

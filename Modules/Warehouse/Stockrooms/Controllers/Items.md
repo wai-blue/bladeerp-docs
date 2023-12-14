@@ -10,7 +10,7 @@ List of all stockrooms items.
 
 ## View Parameters
 
-### stockroomItem
+### warehouseItem
 [App/Widgets/Warehouse/Stockrooms/Models/Item](../Models/Item.md)
 
 ## View Parameters Post-processing

@@ -28,6 +28,7 @@ Grid
     * view: ADIOS\Core\Views\Title
     * params:
       * title: $input['title']
+      * showTitle: FALSE when $input['title'] is empty. TRUE otherwise.
   * B:
     * view: ADIOS\Core\Views\Chart
     * params:
