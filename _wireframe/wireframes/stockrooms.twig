@@ -1,0 +1,21 @@
+{{ include('components/breadcrumbs.twig', {'previous': {'itemSellings': 'Warehouse',}, 'last': 'Stockrom'}) }}
+{{ include('components/table.twig', {
+  'title': {
+    'text': 'Stockrooms',
+    'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New Stockroom', 'icon': 'fas fa-plus', 'onclick': 'add_stockroom()', }),
+  },
+  'columns': [
+    {'title':'Stockroom Nane','type': 'varchar'},
+    {'title':'Stockroom Description','type': 'text'},
+    {'title':'Street 1','type': 'varchar'},
+    {'title':'Street 2','type': 'varchar'},
+    {'title':'City','type': 'varchar'},
+    {'title':'Postal Code','type': 'varchar'},
+    {'title':'Country','type': 'lookup', 'options': config.globalUnits.countries},
+    {'title':'Location','type': 'varchar'},
+    {'title':'Is Active','type': 'active', },
+    {'title':'','type': 'activeButton'},
+  ],
+  'minRowCount': 5,
+  'maxRowCount': 15
+}) }}

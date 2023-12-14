@@ -1,0 +1,40 @@
+{% set stockroom %}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Stockroom Name',
+  })}}
+  {{ include("components/inputs/text.twig",{
+    'title':'Stockroom Description',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Street 1',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Street 2',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'City',
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Postal Code',
+  })}}
+  {{ include("components/inputs/lookup.twig",{
+    'title':'Countries',
+    'options': config.globalUnits.countries
+  })}}
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Location',
+  })}}
+{% endset %}
+
+{{ include('window.twig', {
+  'title': 'Add Stockroom',
+  'header': {
+    'left': 
+      include('components/button.twig', {'type': 'save'})
+      ~ include('components/button.twig', {'type': 'delete'})
+  },
+  'cssClass': 'modal modal-small',
+  'content': include('components/form.twig', {
+  'content': stockroom
+  }),
+})}}

@@ -3,15 +3,10 @@
 {% endset %}
 
 {% set button2 %}
-    {{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Add company', 'icon': 'fas fa-plus', 'modal': '#companyModal'}) }}
+    {{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Add company', 'icon': 'fas fa-plus', 'onclick': 'add_company()'}) }}
 {% endset %}
 
-<div class="row">
-    {{ include('components/breadcrumbs.twig', {
-      'last':'',
-      'this':'Dashboard'
-    }) }}
-</div>
+{{ include('components/breadcrumbs.twig', {'last': 'Contacts'}) }}
 {{ include('components/table.twig', {
   'title': {
     'text': 'Contacts',
@@ -30,6 +25,3 @@
   'minRowCount': 5,
   'maxRowCount': 15
 }) }}
-<div>
-  {{ include('contacts/addCompanyModal.twig') }}
-</div>

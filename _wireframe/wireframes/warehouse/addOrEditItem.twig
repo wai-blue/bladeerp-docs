@@ -1,3 +1,4 @@
+{# item Form #}
 {% set item %}
   {{ include("components/inputs/varchar.twig",{
     'title':'Item Name',
@@ -13,15 +14,69 @@
   })}}
 {% endset %}
 
+{# Medias Table #}
+{% set medias %}
+  {{ include('components/table.twig', {
+    'title': {
+      'text': 'Media',
+      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New Media', 'icon': 'fas fa-plus', 'onclick': 'add_media()', }),
+    },
+    'columns': [
+      {'title':'Media Type Name','type': 'varchar', 'sampleValues': config.globalUnits.mediaTypes},
+      {'title':'Media','type': 'image'},
+      {'title':'Description','type': 'text'},
+    ],
+    'minRowCount': 5,
+    'maxRowCount': 7
+  }) }}
+{% endset %}
+
+{# Packages Table #}
+{% set packages %}
+  {{ include('components/table.twig', {
+    'title': {
+      'text': 'Packages',
+      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New Package', 'icon': 'fas fa-plus', 'onclick': 'add_package()', }),
+    },
+    'columns': [
+      {'title':'Package Name','type': 'varchar'},
+      {'title':'Description','type': 'text'},
+      {'title':'Units','type': 'int'},
+      {'title':'','type': 'lookup', 'options': config.globalUnits.packageUnits },
+
+    ],
+    'minRowCount': 3,
+    'maxRowCount': 5
+  }) }}
+{% endset %}
 {{ include('window.twig', {
-  'title': 'Add Item',
+  'title': 'Add Person',
+  'cssClass': 'modal',
   'header': {
     'left': 
       include('components/button.twig', {'type': 'save'})
       ~ include('components/button.twig', {'type': 'delete'})
   },
-  'cssClass': 'modal modal-small',
+  'cssClass': 'modal',
   'content': include('components/form.twig', {
-  'content': item
+    'content': include('components/nav-tabs.twig', {
+      'tabName':'tab',
+      'tabs': [
+        {
+          'title' : 'Item Detail',
+          'content': include('components/form.twig', {
+            'content': item
+          }),
+        },
+        {
+          'title' : 'Pictures & Other Media',
+          'content': medias
+        },
+        {
+          'title' : 'Packages',
+          'content': packages
+        },
+      ]
+    })
   }),
 })}}

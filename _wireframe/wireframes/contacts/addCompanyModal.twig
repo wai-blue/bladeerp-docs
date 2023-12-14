@@ -198,37 +198,35 @@
 {% endset %}
 
 {# Company Modal #}
-{{include('components/modal.twig', {
-    'modalId': 'companyModal',
-    'title': 'Add Company',
+{{ include('window.twig', {
+  'title': 'Add Company',
+  'header': {
+    'left': 
+      include('components/button.twig', {'type': 'save'})
+      ~ include('components/button.twig', {'type': 'delete'})
+  },
+  'cssClass': 'modal',
+  'content': include('components/form.twig', {
     'content': include('components/nav-tabs.twig', {
       'tabName':'tabCompany',
       'tabs': [
         {
           'title' : 'Company Data',
-          'content': include('components/form.twig', {
-            'content': formContentCompany
-          })
+          'content': formContentCompany
         },
         {
           'title' : 'Categories',
-          'content': include('components/form.twig', {
-            'content': categoriesCard
-          })
+          'content': categoriesCard
         },
         {
           'title' : 'Persons',
-          'content': include('components/form.twig', {
-            'content': persons
-          })
+          'content': persons
         },
         {
           'title' : 'Addresses',
-          'content': include('components/form.twig', {
-            'content': addresses
-          })
+          'content': addresses
         },
       ]
     })
-  })
-}}
+  }),
+})}}

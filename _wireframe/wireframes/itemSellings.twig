@@ -1,9 +1,4 @@
-<div class="row">
-  {{ include('components/breadcrumbs.twig', {
-    'last':'',
-    'this':'Dashboard'
-  }) }}
-</div>
+{{ include('components/breadcrumbs.twig', {'last': 'Warehouse'}) }}
 {{ include('components/grid.twig', {
     'layoutLg': [
     'A A A',
@@ -13,7 +8,9 @@
       'A': include('components/title.twig', {'title': 'Year Warehouse Sellings'}),
       'B': include('components/card.twig', {
         'settings': true,
-        'content': include('components/graph.twig')
+        'content': include('components/graph.twig', {
+          'image': 'Line-Graph.jpg'
+        })
       }),
       'C': include('components/card.twig', {
         'title': 'Best Selling Items',

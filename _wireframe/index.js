@@ -4,6 +4,9 @@ function add_country() {
 function add_category() {
   window_render('categories/addOrEditCategory');
 }
+function add_stockroom() {
+  window_render('warehouse/addOrEditStockroom');
+}
 function add_item() {
   window_render('warehouse/addOrEditItem');
 }
@@ -23,6 +26,9 @@ function add_unit() {
 /* Big Modals */
 function add_person() {
   window_render('contacts/addPersonModal');
+}
+function add_company() {
+  window_render('contacts/addCompanyModal');
 }
 /* Modals On Top Big Modals */
 function add_person_connection() {

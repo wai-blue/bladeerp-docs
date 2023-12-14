@@ -1,13 +1,9 @@
-<div class="row">
-  {{ include('components/breadcrumbs.twig', {
-    'last':'',
-    'this':'Dashboard'
-  }) }}
-</div>
+{{ include('components/breadcrumbs.twig', {'previous': {'itemSellings': 'Warehouse',}, 'last': 'Packages'}) }}
 {{ include('components/table.twig', {
   'title': {
     'text': 'Packages',
-    'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New Package', 'icon': 'fas fa-plus', 'onclick': 'add_package()', }),
+    'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New Package', 'icon': 'fas fa-plus', 'onclick': 'add_package()', }) ~
+      include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Assign Package', 'icon': 'fas fa-plus', }),
   },
   'columns': [
     {'title':'Package Name','type': 'varchar'},

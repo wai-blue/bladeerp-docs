@@ -1,7 +1,4 @@
-<div class="row">
-    {{ include('components/breadcrumbs.twig', {
-    }) }}
-</div>
+{{ include('components/breadcrumbs.twig', {'previous': {'contacts': 'Contacts',}, 'last': 'Countries'}) }}
   {{ include('components/table.twig', {
     'title': {
       'text': 'Countries',
