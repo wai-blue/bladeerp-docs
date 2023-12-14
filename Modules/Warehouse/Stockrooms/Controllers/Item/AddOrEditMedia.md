@@ -1,0 +1,1 @@
+TODO Define controller to assign existing media (picture, vide etc.) to the warehouse item

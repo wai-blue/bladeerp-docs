@@ -39,7 +39,6 @@ No constants are defined for this model.
 | id                 |                     |    int     |   8    |   TRUE   | Unique record ID |
 | id_whs_item        | Stockrooms Item     |   lookup   |   8    |   TRUE   |                  |
 | id_com_media       | Item Media          |   lookup   |   8    |   TRUE   |                  |
-| is_default_picture | Is Default Picture? |  boolean   |   1    |  FALSE   |                  |
 
 ### ADIOS Parameters
 
