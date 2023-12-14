@@ -6,9 +6,10 @@ List of all stockrooms packages.
 
 ## Input Parameters
 
-| Parameter   | PHP Data type | Default value | Description                    |
-| ----------- | ------------- | ------------- | ------------------------------ |
-| packages    | array         | []            | List of all stockroom packages |
+| Parameter   | PHP Data type | Default value | Description                     |
+| ----------- | ------------- | ------------- | ------------------------------- |
+| packages    | array         | []            | List of all stockroom packages  |
+| id_whs_item | integer       | 0             | Item for filtering and relation |
 
 ## Parent View
 
@@ -25,9 +26,14 @@ Table
 * orderBy:
   * name ASC
 * leftTitleButtons:
-  * addNew:
+  * addNew:    
+    * hidden when warehouse item for filtering is given (input `id_whs_item > 0`)
     * text: "New Package"
     * controller: [Common/Warehouse/Stockrooms/Package/AddOrEdit](../Controllers/Package/AddOrEdit.md)
+  * assignPackageToItem:    
+    * hidden when warehouse item for filtering is NOT given (input `id_whs_item == 0`)
+    * text: "Assign Package"
+    * controller: [Common/Warehouse/Stockrooms/Item/AddOrEditPackage](../Controllers/Item/AddOrEditPackage.md)
 
 ## Parameters Post-processing
 

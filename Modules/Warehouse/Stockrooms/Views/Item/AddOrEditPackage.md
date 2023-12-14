@@ -1,0 +1,1 @@
+TODO Define view to assign existing package to the warehouse item
