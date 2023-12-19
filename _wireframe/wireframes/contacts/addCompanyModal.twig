@@ -16,9 +16,8 @@
     'title':'Currency',
     'options': ['€', '$']
   })}}
-  {{ include("components/inputs/lookup.twig",{
-    'title':'Language Code',
-    'options': ['SK', 'EN']
+  {{ include("components/inputs/varchar.twig",{
+    'title':'Language Code'
   })}}
   {{ include("components/inputs/varchar.twig",{
     'title':'Website',
@@ -151,8 +150,8 @@
   <div class="shadow-sm m-1">
     {{ include('components/table.twig', {
       'title': {
-        'text': 'Persons',
-        'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary com-personalModal', 'text': 'Add person', 'icon': 'fas fa-plus', 'onclick': 'add_person_connection()'}),
+        'text': 'All Contact Persons',
+        'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary com-personalModal', 'text': 'New Person', 'icon': 'fas fa-plus', 'onclick': 'add_person_connection()'}),
       },
       'columns': [
         {'title':'Title Before','type': 'varchar'},
@@ -177,8 +176,8 @@
   <div class="shadow-sm m-1">
     {{ include('components/table.twig', {
       'title': {
-        'text': 'Addresses',
-        'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary com-addressModal', 'text': 'Add address', 'icon': 'fas fa-plus', 'onclick': 'add_person_connection()'}),
+        'text': 'All Addresses',
+        'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary com-addressModal', 'text': 'New Address', 'icon': 'fas fa-plus', 'onclick': 'add_person_connection()'}),
       },
       'columns': [
         {'title':'Street 1','type': 'varchar'},
@@ -199,7 +198,7 @@
 
 {# Company Modal #}
 {{ include('window.twig', {
-  'title': 'Add Company',
+  'title': 'New Company',
   'header': {
     'left': 
       include('components/button.twig', {'type': 'save'})

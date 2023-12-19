@@ -64,7 +64,7 @@
   })}}
 {% endset %}
 
-{# Add Person Form with Cards #}
+{# New Person Form with Cards #}
 {% set formContentPerson %}
   <div class="form-container">
     <div class="form-col">
@@ -115,7 +115,7 @@
   {{ include('components/table.twig', {
     'title': {
       'text': 'Persons',
-      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary per-personalModal', 'text': 'Add person', 'icon': 'fas fa-plus', 'onclick': 'add_person_connection()'}),
+      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary per-personalModal', 'text': 'New Person', 'icon': 'fas fa-plus', 'onclick': 'add_person_connection()'}),
     },
     'columns': [
       {'title':'Title Before','type': 'varchar'},
@@ -139,7 +139,7 @@
   {{ include('components/table.twig', {
     'title': {
       'text': 'Addresses',
-      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary per-addressModal', 'text': 'Add address', 'icon': 'fas fa-plus', 'onclick': 'add_address_connection()' })
+      'leftButtons': include('components/button.twig', {'cssClass': 'btn-primary per-addressModal', 'text': 'New Address', 'icon': 'fas fa-plus', 'onclick': 'add_address_connection()' })
     },
     'columns': [
       {'title':'Street 1','type': 'varchar'},
@@ -159,7 +159,7 @@
 
 {# Person Modal #}
 {{ include('window.twig', {
-  'title': 'Add Person',
+  'title': 'New Person',
   'header': {
     'left': 
       include('components/button.twig', {'type': 'save'})

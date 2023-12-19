@@ -1,16 +1,16 @@
 {% set button1 %}
-    {{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Add person', 'icon': 'fas fa-plus', 'onclick': 'add_person()',}) }}
+    {{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New person', 'icon': 'fas fa-plus', 'onclick': 'add_person()',}) }}
 {% endset %}
 
 {% set button2 %}
-    {{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'Add company', 'icon': 'fas fa-plus', 'onclick': 'add_company()'}) }}
+    {{ include('components/button.twig', {'cssClass': 'btn-primary', 'text': 'New company', 'icon': 'fas fa-plus', 'onclick': 'add_company()'}) }}
 {% endset %}
 
 {{ include('components/breadcrumbs.twig', {'last': 'Contacts'}) }}
 {{ include('components/table.twig', {
   'title': {
     'text': 'Contacts',
-    'leftButtons': button1 ~ button2,
+    'leftButtons': button2 ~ button1,
   },
   'columns': [
     {'title':'Company Mane','type': 'varchar'},
